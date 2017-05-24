@@ -364,6 +364,10 @@ Small Device Styles
     font-size:14px;
   }
 
+  .container {
+    width: auto;
+  }
+
   #downloads {
     display: none;
   }
