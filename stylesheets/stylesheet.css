@@ -54,6 +54,9 @@ Theme Styles
 body {
   background-color: #f2f2f2;
   box-sizing: border-box;
+}
+
+div#all {
   color:#373737;
   font-size: 16px;
   font-family: 'Ubuntu Mono', monospace;
