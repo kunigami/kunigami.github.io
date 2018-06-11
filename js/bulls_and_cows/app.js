@@ -20,6 +20,7 @@ class BullsAndCows extends React.Component {
     });
 
     let solvedMessage;
+    let plugMessage;
     if (!this.isSolved()) {
       itemsReact.push(
         <Item key={"current"}>
@@ -36,16 +37,42 @@ class BullsAndCows extends React.Component {
 
     return (
       <Page>
-        <Header title={"Bulls and Cows Solver"}>
-          Think of a 4-digit number with no repeated digits. Then choose the
-          outcome (x, y), where x is the number of digits the solver got right
-          AND in the right position, and y be the number of digits it got right
-          but in the wrong position.
+        <Header title={"A Bulls and Cows Solver"}>
+          <p>
+            If you are not familiar with this game, check this{" "}
+            <a
+              href="https://en.wikipedia.org/wiki/Bulls_and_Cows"
+              target="_blank"
+            >
+              Wikipedia article
+            </a>.
+          </p>
+          <p>
+            <b>How to use the solver.</b> Think of a 4-digit number with no
+            repeated digits. Then choose the outcome (x, y) in the dropdown
+            below, where x is the number of digits the solver got right AND in
+            the right position (bulls), and y be the number of digits it got
+            right but in the wrong position (cows).
+          </p>
+          <p className="margin_top_xxxl">
+            If you are interested in the implementation of the solver, check our{" "}
+            <a
+              href={"https://kunigami.blog/2018/06/03/bulls-and-cows/"}
+              target="_blank"
+            >
+              blog post
+            </a>.
+          </p>
         </Header>
         <Body>
           <ol>{itemsReact}</ol>
           {solvedMessage}
-          {this.renderOptions()}
+          <div>
+            {this.renderOptions()}
+            <button className="margin_left_l" onClick={this.resetGuesses}>
+              Reset
+            </button>
+          </div>
         </Body>
       </Page>
     );
@@ -96,6 +123,10 @@ class BullsAndCows extends React.Component {
       </select>
     );
   }
+
+  resetGuesses = () => {
+    this.setState({ items: [], node: this.props.decisionTree });
+  };
 }
 
 function Item({ children }) {
