@@ -130,12 +130,12 @@ Theme Styles
 *******************************************************************************/
 
 body {
-  background-color: #f2f2f2;
+  background-color: #fbf8f3;
   box-sizing: border-box;
 }
 
 div#all {
-  color: #373737;
+  color: #5b5b5b;
   font-size: 16px;
   font-family: "Ubuntu Mono", monospace;
   -webkit-font-smoothing: antialiased;
@@ -148,7 +148,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  color: #222222;
+  color: #5b5b5b;
   letter-spacing: -1px;
 }
 
@@ -190,7 +190,7 @@ footer p {
 
 a {
   text-decoration: none;
-  color: #007edf;
+  color: #358497;
   text-shadow: none;
 
   transition: color 0.5s ease;
