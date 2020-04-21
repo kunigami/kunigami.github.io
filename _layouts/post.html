@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="post">
+    <div class="body">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.date | date_to_string }}</p>
+        {{ content }}
+
+
+        Tags:
+        {% assign my_array = site.emptyArray %}
+
+        {% for tag in site.tags %}
+            {% assign my_array = my_array | push: tag[0] %}
+        {% endfor %}
+
+        {{ my_array | array_to_sentence_string: '' }}
+    </div>
+</div>
