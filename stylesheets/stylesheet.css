@@ -463,3 +463,17 @@ Small Device Styles
     font-size: 11px;
   }
 }
+
+.post {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica, Arial;
+  font-weight: normal;
+  font-size: 16px;
+  color: #5b5b5b;
+}
+
+.post .body {
+  width: 500px;
+}
