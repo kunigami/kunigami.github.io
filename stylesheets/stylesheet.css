@@ -468,7 +468,7 @@ Small Device Styles
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: Helvetica, Arial;
+  font-family: Verdana, Helvetica, Arial;
   font-weight: normal;
   font-size: 16px;
   color: #5b5b5b;
@@ -480,4 +480,16 @@ Small Device Styles
 
 .fb_iframe_widget_fluid_desktop iframe {
   width: 100% !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .post .body {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.highlight pre {
+  box-sizing: border-box;
 }
