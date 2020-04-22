@@ -8,7 +8,6 @@ layout: default
         <p>{{ page.date | date_to_string }}</p>
         {{ content }}
 
-
         Tags:
         {% assign my_array = site.emptyArray %}
 
@@ -17,5 +16,7 @@ layout: default
         {% endfor %}
 
         {{ my_array | array_to_sentence_string: '' }}
+
+        <div class="fb-comments" data-href="http://kuniga.me/{{ page.url }}" data-numposts="5" data-width="100%"></div>
     </div>
 </div>

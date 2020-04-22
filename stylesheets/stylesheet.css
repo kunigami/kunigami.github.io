@@ -477,3 +477,7 @@ Small Device Styles
 .post .body {
   width: 500px;
 }
+
+.fb_iframe_widget_fluid_desktop iframe {
+  width: 100% !important;
+}
