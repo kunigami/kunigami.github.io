@@ -3,32 +3,12 @@ layout: default
 title: Blog
 ---
 
-<h1>Latest Posts</h1>
+<h1>Posts</h1>
 
 <ul>
   {% for post in site.posts %}
     <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
+      <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
-<!--
-
-    <!DOCTYPE HTML>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="1;https://kunigami.blog/">
-        <script type="text/javascript">
-            window.location.href = "https://kunigami.blog/"
-        </script>
-        <title>Page Redirection</title>
-    </head>
-    <body>
-        If you are not redirected automatically, follow the <a href='https://kunigami.blog/'>link</a>
-    </body>
-</html>
-
-
- -->
