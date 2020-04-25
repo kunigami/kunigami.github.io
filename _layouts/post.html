@@ -2,20 +2,25 @@
 layout: default
 ---
 
-<div class="post">
-    <div class="body">
+<div id="page">
+    <div class="inner">
+        <p>
+            <a href="{{ site.url }}">kuniga.me</a> > <a href="{{ site.url }}/blog">NP-Incompleteness</a> > {{ page.title }}
+        </p>
+
         <h1>{{ page.title }}</h1>
         <p>{{ page.date | date_to_string }}</p>
         {{ content }}
 
-        Tags:
-        {% assign my_array = site.emptyArray %}
 
-        {% for tag in site.tags %}
-            {% assign my_array = my_array | push: tag[0] %}
+        {% assign my_array = site.emptyArray %}
+        {% for tag in page.tags %}
+            {% assign my_array = my_array | push: tag %}
         {% endfor %}
 
-        {{ my_array | array_to_sentence_string: '' }}
+        <div class="tags">
+            Tags: {{ my_array | array_to_sentence_string: '' }}
+        </div>
 
         <div class="fb-comments" data-href="http://kuniga.me/{{ page.url }}" data-numposts="5" data-width="100%"></div>
     </div>

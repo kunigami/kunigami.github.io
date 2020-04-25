@@ -359,23 +359,30 @@ form {
 }
 
 .inner {
-  max-width: 640px;
+  box-sizing: border-box;
+  width: 640px;
 }
 
-/* ----------------------------------------------------------------------------
- * Blog
- * ----------------------------------------------------------------------------
- */
+.tags {
+  margin-top: 20px;
+}
 
-.post {
-  align-items: center;
+.fb-comments {
+  margin-top: 20px;
+}
+
+.fb_iframe_widget_fluid_desktop iframe {
+  width: 100% !important;
+}
+
+.right {
   display: flex;
   flex-direction: column;
-  color: #5b5b5b;
+  align-items: flex-end;
 }
 
-.post .body {
-  width: 500px;
+.top_margin {
+  margin-top: 30px;
 }
 
 /* ----------------------------------------------------------------------------
@@ -384,8 +391,8 @@ form {
  */
 
 @media only screen and (max-width: 1000px) {
-  body {
+  .inner {
     width: 100%;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 }
