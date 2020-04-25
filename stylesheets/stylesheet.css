@@ -1,14 +1,15 @@
-/*******************************************************************************
-Slate Theme for GitHub Pages
-by Jason Costello, @jsncostello, modified by @kunigami
-*******************************************************************************/
+/* ----------------------------------------------------------------------------
+ * Slate Theme for GitHub Pages
+ * by Jason Costello, @jsncostello, modified by @kunigami
+ * ----------------------------------------------------------------------------
+ */
 
 @import url(pygment_trac.css);
 
-/*******************************************************************************
-MeyerWeb Reset
-*******************************************************************************/
-
+/* ----------------------------------------------------------------------------
+ * MeyerWeb Reset
+ * ----------------------------------------------------------------------------
+ */
 html,
 body,
 div,
@@ -125,19 +126,16 @@ table {
   border-spacing: 0;
 }
 
-/*******************************************************************************
-Theme Styles
-*******************************************************************************/
-
+/* ----------------------------------------------------------------------------
+ * Theme Styles
+ * ----------------------------------------------------------------------------
+ */
 body {
-  background-color: #fbf8f3;
+  background-color: #fff;
   box-sizing: border-box;
-}
-
-div#all {
   color: #5b5b5b;
-  font-size: 16px;
-  font-family: "Ubuntu Mono", monospace;
+  font-size: 15px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -347,130 +345,32 @@ form {
   padding: 20px;
 }
 
-/*******************************************************************************
-Full-Width Styles
-*******************************************************************************/
+/* ----------------------------------------------------------------------------
+ * kuniga.me overrides
+ * ----------------------------------------------------------------------------
+ */
 
-.outer {
+#page {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .inner {
-  position: relative;
   max-width: 640px;
-  padding: 0px 10px;
-  margin: 0 auto;
 }
 
-#header_wrap {
-}
-
-#header_wrap .inner {
-  padding: 25px 10px 0 10px;
-}
-
-#header_wrap h1 {
-  padding-bottom: 20px;
-}
-
-#project_title {
-  margin: 0;
-}
-
-#project_tagline {
-  color: #3f4347;
-}
-
-#downloads {
-  position: absolute;
-  width: 210px;
-  z-index: 10;
-  bottom: -40px;
-  right: 0;
-  height: 70px;
-  background: url("../images/icon_download.png") no-repeat 0% 90%;
-}
-
-#main_content {
-}
-
-#footer_wrap {
-  background: #212121;
-}
-
-.margin_left_l {
-  margin-left: 10px;
-}
-
-.margin_top_xxxl {
-  margin-top: 30px;
-}
-
-/*******************************************************************************
-Small Device Styles
-*******************************************************************************/
-
-@media screen and (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  .container {
-    width: auto;
-  }
-
-  #downloads {
-    display: none;
-  }
-
-  .inner {
-    min-width: 320px;
-    max-width: 480px;
-  }
-
-  #project_title {
-    font-size: 32px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  h3 {
-    font-size: 21px;
-  }
-
-  h4 {
-    font-size: 18px;
-  }
-
-  h5 {
-    font-size: 14px;
-  }
-
-  h6 {
-    font-size: 12px;
-  }
-
-  code,
-  pre {
-    min-width: 320px;
-    max-width: 480px;
-    font-size: 11px;
-  }
-}
+/* ----------------------------------------------------------------------------
+ * Blog
+ * ----------------------------------------------------------------------------
+ */
 
 .post {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: Verdana, Helvetica, Arial;
-  font-weight: normal;
-  font-size: 16px;
   color: #5b5b5b;
 }
 
@@ -478,18 +378,14 @@ Small Device Styles
   width: 500px;
 }
 
-.fb_iframe_widget_fluid_desktop iframe {
-  width: 100% !important;
-}
+/* ----------------------------------------------------------------------------
+ * Small Device Styles
+ * ----------------------------------------------------------------------------
+ */
 
 @media only screen and (max-width: 1000px) {
-  .post .body {
-    box-sizing: border-box;
+  body {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 10px;
   }
-}
-
-.highlight pre {
-  box-sizing: border-box;
 }

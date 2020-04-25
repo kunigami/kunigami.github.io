@@ -1,10 +1,8 @@
 class Page extends React.Component {
   render() {
     return (
-      <div id="all">
-        <div id="header_wrap" className="outer">
-          {this.props.children}
-        </div>
+      <div id="page">
+        {this.props.children}
       </div>
     );
   }
@@ -13,7 +11,7 @@ class Page extends React.Component {
 class Header extends React.Component {
   render() {
     return (
-      <div id="header_wrap" className="outer">
+      <div id="header_wrap">
         <header className="inner">
           <h1 id="project_title">{this.props.title}</h1>
           {this.props.children}
@@ -26,11 +24,9 @@ class Header extends React.Component {
 class Body extends React.Component {
   render() {
     return (
-      <div id="main_content_wrap" className="outer">
-        <section id="main_content" className="inner">
-          {this.props.children}
-        </section>
-      </div>
+      <section id="main_content" className="inner">
+        {this.props.children}
+      </section>
     );
   }
 }
@@ -38,7 +34,7 @@ class Body extends React.Component {
 class Section extends React.Component {
   render() {
     return (
-      <div id="header_wrap" className="outer">
+      <div>
         <header className="inner">
           <h3>{this.props.title}</h3>
           {this.props.children}
