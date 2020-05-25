@@ -45,13 +45,13 @@ This solution is `O(n^2)`, but can we do it in `O(n)`? There are two things we c
 
 **Constant time removal.** Strings are a list of characters, so removing characters require `O(n)` time in the worst case. A more suitable data structure for this operation is a doubly-linked list, which allows us perform all the operations describe above in `O(1)`, including removing doubles.
 
-In this particular case, since we don’t need to insert new elements, we can use a hybrid approach and use an array with an additional array for the pointers, prev (representing the linked list pointers). Instead of removing an element of an array, which is expensive, we simply update the pointers such that it looks like they were removed.
+In this particular case, since we don’t need to insert new elements, we can use a hybrid approach and use an array with an additional array for the pointers, `prev` (representing the linked list pointers). Instead of removing an element of an array, which is expensive, we simply update the pointers such that it looks like they were removed.
 
 More concretely, the pointer at position `p` points to the first non-removed element to its left. If there are no elements to the left, we use `-1` as sentinel. We initialize the pointers at each position so that it points to the previous element, that is, `prev[i] = i - 1`.
 
 We then iterate over the characters of the string. At any given iteration there are two cases we need to consider: when the new pair is ahead (e.g. `aa`) and when the new pair shows up because deleting a previous pair made them adjacent (e.g. `abba` after deleting `bb`).
 
-**Case 1.** When we remove a pair of adjacent indexes such as `(i, i+1)`, we need to make the next index, i+2 point to the previous index. However, the index prior to i might have been removed. The source of truth of the previous element is in `prev[i]`, so we have `prev[i + 2] = prev[i]`.
+**Case 1.** When we remove a pair of adjacent indexes such as `(i, i+1)`, we need to make the next index, `i+2` point to the previous index. However, the index prior to `i` might have been removed. The source of truth of the previous element is in `prev[i]`, so we have `prev[i + 2] = prev[i]`.
 
 **Case 2.** In our solution we might need to remove non-adjacent elements. For example in `abba`. We first remove `bb`, leaving us with `a--a`. The a’s are not adjacent in the original array, but they’re in regards to `prev`, such that `s[3] = s[prev[3]] = s[0]`. In general terms, we can check if `s[i] = s[prev[i]]`. Removing them requires updating the pointer of the next element `prev[i+1] = prev[prev[i]]`.
 
@@ -72,7 +72,9 @@ while i != -1:
     i = prev[i]
 {% endhighlight %}
 
-Worth noting that the resulting string `r` is reversed. The full code is given:
+It's worth noting that `prev` is only correct for indices that were not deleted themselves. Consider the example: `abccddba`. When we remove `cc`, index 4 now points to index 1. However, once `dd` is removed, then `bb`, index 4 is incorrect, but that's fine because it was deleted with `dd`. Also worth noting that the resulting string `r` is reversed.
+
+The full code is given:
 
 {% highlight python %}
 def remove_doubles(s):
@@ -93,6 +95,7 @@ def remove_doubles(s):
     # Reverse
     return r[::-1]
 {% endhighlight %}
+
 
 **Complexity.** The first loop is clearly linear and if we notice that `p[i] < i`, we can see the second loop is also linear.
 
