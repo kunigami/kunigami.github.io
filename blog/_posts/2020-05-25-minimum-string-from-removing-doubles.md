@@ -101,7 +101,7 @@ def remove_doubles(s):
 
 ## Conclusion
 
-This was an nice problem because while the greedy solution works, but understanding why requires more thought.
+This was an nice problem because while the greedy solution works, understanding why requires more thought.
 
 The code challenge has only small strings, so an `O(n^2)` passes easily. But by introducing the artificial constraint that the code must run in `O(n)`, we made the problem more challenging and interesting.
 
