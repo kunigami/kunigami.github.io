@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Shortest string from removing doubles"
+title: "Shortest String From Removing Doubles"
 tags: [puzzle, python]
 ---
 
