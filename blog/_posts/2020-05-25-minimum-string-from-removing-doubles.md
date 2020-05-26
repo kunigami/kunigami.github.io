@@ -4,14 +4,14 @@ title: "Shortest string from removing doubles"
 tags: [puzzle, python]
 ---
 
-I recently ran into this interesting programming puzzle: given a string S, find the shortest string that can be obtained by removing any two consecutive characters which are the same.
+I recently ran into this interesting programming puzzle: given a string S, find the shortest string that can be obtained by repeatedly removing any two consecutive characters which are the same.
 
 For example `abcdeefgh` can be reduced to `abcdfgh` by erasing the `ee`. Some other examples:
 
 * `abbbc -> abc`
-* `aaaa -> (empty string)`
-* `abba -> (empty string)`
-* `abcddcbe -> ae`
+* `aaaa -> aa -> (empty string)`
+* `abba -> aa -> (empty string)`
+* `abcddcbe -> abccbe -> abbe -> ae`
 
 We will call a pair of consecutive characters that are the same a *double*.
 
@@ -45,14 +45,9 @@ This solution is `O(n^2)`, but can we do it in `O(n)`? There are two things we c
 
 **Constant time removal.** Strings are a list of characters, so removing characters require `O(n)` time in the worst case. A more suitable data structure for this operation is a doubly-linked list, which allows us perform all the operations describe above in `O(1)`, including removing doubles.
 
-In this particular case, since we don’t need to insert new elements, we can use a hybrid approach and use an array with an additional array for the pointers, `prev` (representing the linked list pointers). Instead of removing an element of an array, which is expensive, we simply update the pointers such that it looks like they were removed.
+In this particular case, since we don’t need to insert new elements, we can use a hybrid approach by using an additional array for the pointers, `prev` (representing the linked list pointers). Instead of removing an element of an array, which is expensive, we simply update the pointers such that it looks like they were removed.
 
 More concretely, the pointer at position `p` points to the first non-removed element to its left. If there are no elements to the left, we use `-1` as sentinel. We initialize the pointers at each position so that it points to the previous element, that is, `prev[i] = i - 1`.
-
-<figure class="center_children">
-    <img src="{{site.url}}/resources/blog/2020-05-25-minimum-string-from-removing-doubles/example-prev.png" alt="example of prev"/>
-    <figcaption>Example of prev for "cbbcc". The red cells correspond to items just removed. The dark blue index cells were just updated.</figcaption>
-</figure>
 
 We then iterate over the characters of the string. At any given iteration there are two cases we need to consider: when the new pair is ahead (e.g. `aa`) and when the new pair shows up because deleting a previous pair made them adjacent (e.g. `abba` after deleting `bb`).
 
@@ -78,6 +73,11 @@ while i != -1:
 {% endhighlight %}
 
 It's worth noting that `prev` is only correct for indices that were not deleted themselves. Consider the example: `abccddba`. When we remove `cc`, index 4 now points to index 1. However, once `dd` is removed, then `bb`, index 4 is incorrect, but that's fine because it was deleted with `dd`. Also worth noting that the resulting string `r` is reversed.
+
+<figure class="center_children">
+    <img src="{{site.url}}/resources/blog/2020-05-25-minimum-string-from-removing-doubles/example-prev.png" alt="example of prev"/>
+    <figcaption>Example of prev for "cbbcc". The red cells correspond to items just removed. The dark blue index cells were just updated.</figcaption>
+</figure>
 
 The full code is given:
 
