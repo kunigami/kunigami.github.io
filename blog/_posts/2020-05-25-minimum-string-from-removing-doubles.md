@@ -48,7 +48,7 @@ This solution is `O(n^2)`, but can we do it in `O(n)`? There are two things we c
 In this particular case, since we don’t need to insert new elements, we can use a hybrid approach and use an array with an additional array for the pointers, `prev` (representing the linked list pointers). Instead of removing an element of an array, which is expensive, we simply update the pointers such that it looks like they were removed.
 
 More concretely, the pointer at position `p` points to the first non-removed element to its left. If there are no elements to the left, we use `-1` as sentinel. We initialize the pointers at each position so that it points to the previous element, that is, `prev[i] = i - 1`.
-resources/blog/2020-05-25-minimum-string-from-removing-doubles
+
 <figure class="center_children">
     <img src="{{site.url}}/resources/blog/2020-05-25-minimum-string-from-removing-doubles/example-prev.png" alt="example of prev"/>
     <figcaption>Example of prev for "cbbcc". The red cells correspond to items just removed. The dark blue index cells were just updated.</figcaption>
