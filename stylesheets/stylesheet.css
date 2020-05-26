@@ -385,6 +385,21 @@ form {
   margin-top: 30px;
 }
 
+.center_children {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center_children img {
+  width: max-content;
+}
+
+figcaption {
+  color: #6b6b6b;
+  font-size: 13px;
+}
+
 /* ----------------------------------------------------------------------------
  * Small Device Styles
  * ----------------------------------------------------------------------------

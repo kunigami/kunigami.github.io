@@ -9,8 +9,8 @@ I recently ran into this interesting programming puzzle: given a string S, find 
 For example `abcdeefgh` can be reduced to `abcdfgh` by erasing the `ee`. Some other examples:
 
 * `abbbc -> abc`
-* `aaaa -> (empy string)`
-* `abba -> (empy string)`
+* `aaaa -> (empty string)`
+* `abba -> (empty string)`
 * `abcddcbe -> ae`
 
 We will call a pair of consecutive characters that are the same a *double*.
@@ -48,6 +48,11 @@ This solution is `O(n^2)`, but can we do it in `O(n)`? There are two things we c
 In this particular case, since we don’t need to insert new elements, we can use a hybrid approach and use an array with an additional array for the pointers, `prev` (representing the linked list pointers). Instead of removing an element of an array, which is expensive, we simply update the pointers such that it looks like they were removed.
 
 More concretely, the pointer at position `p` points to the first non-removed element to its left. If there are no elements to the left, we use `-1` as sentinel. We initialize the pointers at each position so that it points to the previous element, that is, `prev[i] = i - 1`.
+resources/blog/2020-05-25-minimum-string-from-removing-doubles
+<figure class="center_children">
+    <img src="{{site.url}}/resources/blog/2020-05-25-minimum-string-from-removing-doubles/example-prev.png" alt="example of prev"/>
+    <figcaption>Example of prev for "cbbcc". The red cells correspond to items just removed. The dark blue index cells were just updated.</figcaption>
+</figure>
 
 We then iterate over the characters of the string. At any given iteration there are two cases we need to consider: when the new pair is ahead (e.g. `aa`) and when the new pair shows up because deleting a previous pair made them adjacent (e.g. `abba` after deleting `bb`).
 
