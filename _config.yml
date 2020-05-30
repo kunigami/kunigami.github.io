@@ -1,1 +1,4 @@
 emptyArray: []
+collections:
+  docs:
+    output: true
