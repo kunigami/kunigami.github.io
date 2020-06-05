@@ -11,7 +11,13 @@ Syntax for common tasks I run into often. Assumes Python 3.
 
 {% highlight python %}
 xs = [1, 2, 3]
-ys = [x * x for x in xs]
+ys = [f(x) for x in xs]
+{% endhighlight %}
+
+### Map over dictionary
+
+{% highlight python %}
+ys = {k: f(v) for k, v in xs.items()}
 {% endhighlight %}
 
 ### Sort dictionary
