@@ -14,6 +14,15 @@ xs = [1, 2, 3]
 ys = [f(x) for x in xs]
 {% endhighlight %}
 
+### Filter list
+
+{% highlight python %}
+xs = [1, 2, 3]
+ys = [x for x in xs if x % 2 == 0]
+{% endhighlight %}
+
+NOTE: filter and map can be combined into one.
+
 ### Map over dictionary
 
 {% highlight python %}
