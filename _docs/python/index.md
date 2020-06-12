@@ -38,6 +38,24 @@ d = {'a': 3, 'b': 2}
 xs = sorted(d.items(), key=lambda x: x[1])
 {% endhighlight %}
 
+## Object Oriented
+
+Basic Syntax:
+
+{% highlight python %}
+class C:
+    def __init__(self, param):
+        self.param
+
+    def method(self):
+        return self.param
+
+    @staticmethod
+    def static_method():
+        return 1
+{% endhighlight %}
+
+
 ## Files
 
 ### Read file
