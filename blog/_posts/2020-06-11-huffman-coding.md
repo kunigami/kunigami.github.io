@@ -65,7 +65,7 @@ def build_tree(frequency_map):
     return q2.front()
 {% endhighlight %}
 
-For the sake of code simplicity assume `front()` returns `None` if the queue is empty and the operator `less()` assumes `None` is infinite. Note we never have both operands equal to `None` since `Q1.length + Q2.lengh >= 2`. The complete implementation is on my github.
+For the sake of code simplicity assume `front()` returns `None` if the queue is empty and the operator `less()` assumes `None` is infinite. Note we never have both operands equal to `None` since `Q1.length + Q2.lengh >= 2`. The complete implementation is on my [github](https://github.com/kunigami/blog-examples/tree/master/huffman).
 
 Let’s get some intuition on why using two queues is a correct implementation. We need to prove that each step `x` and `y` are the nodes with the smallest frequencies over all nodes.
 
