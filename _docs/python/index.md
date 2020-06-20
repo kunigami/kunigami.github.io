@@ -5,7 +5,9 @@ title: "Python Cheatsheet"
 
 Syntax for common tasks I run into often. Assumes Python 3.
 
-## Collections
+# Collections
+
+## List
 
 ### Map over list
 
@@ -23,6 +25,8 @@ ys = [x for x in xs if x % 2 == 0]
 
 NOTE: filter and map can be combined into one.
 
+## Dictionaries
+
 ### Map over dictionary
 
 {% highlight python %}
@@ -38,7 +42,31 @@ d = {'a': 3, 'b': 2}
 xs = sorted(d.items(), key=lambda x: x[1])
 {% endhighlight %}
 
-## Object Oriented
+## Sets
+
+### Create
+
+{% highlight python %}
+s = set([1, 2, 3])
+{% endhighlight %}
+
+### Difference
+
+{% highlight python %}
+s1 = set([1, 2])
+s2 = set([2, 3])
+s1 = s1 - s2 # {1}
+{% endhighlight %}
+
+### Union
+
+{% highlight python %}
+s1 = set([1, 2])
+s2 = set([2, 3])
+s1 = s1.union(s2) # {1, 2, 3}
+{% endhighlight %}
+
+# Object Oriented
 
 Basic Syntax:
 
@@ -56,9 +84,9 @@ class C:
 {% endhighlight %}
 
 
-## Files
+# Files
 
-### Read file
+## Read file
 
 {% highlight python %}
 with open(filename, "r") as file:
