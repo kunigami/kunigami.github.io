@@ -392,6 +392,11 @@ form {
   width: max-content;
 }
 
+.image_float_left {
+  float: left;
+  margin-right: 20px;
+}
+
 figcaption {
   color: #6b6b6b;
   font-size: 13px;

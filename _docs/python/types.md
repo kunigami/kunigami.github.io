@@ -47,3 +47,17 @@ s: str = 'abc'
 {% highlight python %}
 pseudo_int: int = 'a'  # type: ignore
 {% endhighlight %}
+
+## Classes
+
+{% highlight python %}
+class C:
+
+    _n: int
+
+    def __init__(self, n: int) -> None:
+        self._n = n
+
+    def inc(self) -> None:
+        self._n += 1
+{% endhighlight %}

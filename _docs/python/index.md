@@ -47,7 +47,7 @@ xs = sorted(d.items(), key=lambda x: x[1])
 ### Create
 
 {% highlight python %}
-s = set([1, 2, 3])
+s = {1, 2, 3}
 {% endhighlight %}
 
 ### Difference
@@ -64,6 +64,13 @@ s1 = s1 - s2 # {1}
 s1 = set([1, 2])
 s2 = set([2, 3])
 s1 = s1.union(s2) # {1, 2, 3}
+{% endhighlight %}
+
+### Map over set
+
+{% highlight python %}
+xs = {1, 2, 3}
+ys = {f(x) for x in xs}
 {% endhighlight %}
 
 # Object Oriented
