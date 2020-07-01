@@ -16,7 +16,7 @@ There was an initial standard proposal called [Promises/A](http://wiki.commonjs.
 
 Google Chrome implements the Promises/A+ standard [[3](https://developers.google.com/api-client-library/javascript/features/promises)]. The code snippets in this post were test on the regular Chrome, version 43.
 
-### Introduction
+## Introduction
 
 Promises are an abstraction to make working with asynchronous code in a more expressive manner [[4](https://blog.domenic.me/youre-missing-the-point-of-promises/)]. In synchronous code, we think in terms of return's for normal execution and throw's for exceptions. In asynchronous world, the code flow is structured around callbacks, for example, onSuccess or onFailure callbacks.
 
@@ -93,7 +93,7 @@ In this case, we'd have to change the functions to return promise objects.
 
 We'll next cover small examples exploring the behavior of promises to understand how they work.
 
-### Examples
+## Examples
 
 **Creating a promise**
 
@@ -399,13 +399,13 @@ In our examples, we mostly exclusively focused on the "normal" execution flow, i
 
 If we want, we can only provide the `onFulfill()` callback to the `then()` method, but if we want to provide only the `onReject()`, we'll need to pass an empty function as `onFulfill()`. To cover this case, promises also have the `catch()` which does essentially this.
 
-### Conclusion
+## Conclusion
 
 We saw that promises can be used to make code dealing with callback more legible and easier to reason about. There are some complexities encapsulate in promise objects and its methods, so it can be a bit daunting to understand how they work behind the scenes. We covered some small examples and proceeded in steps to make it easier to digest.
 
 When writing this post, I've initially tried reading the ES6 spec, but it was a bit too abstract to follow. I've also found the [promise/A+ spec](https://github.com/promises-aplus/promises-spec) which contains pseudo-code more similar to JavaScript and only describes the `then()` method behavior.
 
-### References
+## References
 
 * [[1](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-constructor)] Draft ECMA-262, 6th Edition - Rev 37.
 * [[2](https://github.com/promises-aplus/promises-spec)] Promises/A+ Spec

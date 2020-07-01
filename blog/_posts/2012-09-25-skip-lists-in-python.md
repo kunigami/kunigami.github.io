@@ -55,23 +55,23 @@ This idea can be translated into the following code:
 {% highlight python %}
 
 def updateList(self, elem):
-    
+
     update = [None]*len(self.head.next)
     x = self.head
-    
+
     for i in reversed(range(len(self.head.next))):
-        while x.next[i] != None and \ 
+        while x.next[i] != None and \
             x.next[i].elem < elem:
             x = x.next[i]
         update[i] = x
-        
+
     return update
 
 {% endhighlight %}
 
-It returns a list of nodes in each level that contains the greatest value that is smaller than `elem`. 
+It returns a list of nodes in each level that contains the greatest value that is smaller than `elem`.
 
-The actual `find` function returns the node corresponding to the query element or `None` if it is not present in the skip list. 
+The actual `find` function returns the node corresponding to the query element or `None` if it is not present in the skip list.
 
 {% highlight python %}
 
@@ -86,11 +86,13 @@ def find(self, elem, update = None):
 
 {% endhighlight %}
 
+**Complexity**
+
 
 
 The complexity of the search is given by the following Theorem [2]:
 
- The number of moves in a search is $$O(\log n)$$ with high probability.
+**Theorem:** The number of moves in a search is $$O(\log n)$$ with high probability.
 
 By high probability we mean that we can set an arbitrarily high probability by increasing the constant hidden in the $$O()$$ notation. The proof of this Theorem is sketched in Appendix A.
 
@@ -107,7 +109,7 @@ def insert(self, elem):
     while len(self.head.next) < len(node.next):
         self.head.next.append(None)
 
-    update = self.updateList(elem)            
+    update = self.updateList(elem)
     if self.find(elem, update) == None:
         for i in range(len(node.next)):
             node.next[i] = update[i].next[i]
@@ -149,7 +151,7 @@ We ran 10000 insertions in each of these structures with a random sequence, an i
 
 As we can see, for random input Red-black tree and Skip list have similar performance. For increasing and decreasing sequences, Skip list performed better than Red-black tree because the former is unaffected by the ordering of insertions, while the latter has to make many balancing operations in such cases.
 
-As for linked lists, we can verify it's much slower than the other two structures since it has $$O(n)$$ worst case insertion time, but it outperforms when the elements are inserted in decreasing order since in this case insertion is $$O(1)$$ :) 
+As for linked lists, we can verify it's much slower than the other two structures since it has $$O(n)$$ worst case insertion time, but it outperforms when the elements are inserted in decreasing order since in this case insertion is $$O(1)$$ :)
 
 ### Conclusion
 
@@ -159,8 +161,10 @@ Demaine's analysis [2] is stronger than Pugh's [1]. The latter proves that the c
 
 ### References
 
-* [[1]("ftp://ftp.cs.umd.edu/pub/skipLists/skiplists.pdf")]  Skip Lists: A Probabilistic Alternative to Balanced Trees - W. Pugh.
-* [[2]("http://videolectures.net/mit6046jf05_demaine_lec12/")]  Introduction to Algorithms MIT - Lecture 12: Skip Lists - Erik Demaine
+* [[1](ftp://ftp.cs.umd.edu/pub/skipLists/skiplists.pdf)] 
+ Skip Lists: A Probabilistic Alternative to Balanced Trees - W. Pugh.
+* [[2](http://videolectures.net/mit6046jf05_demaine_lec12/)] 
+ Introduction to Algorithms MIT - Lecture 12: Skip Lists - Erik Demaine
 
 ### Appendix A: Proofs
 
@@ -168,7 +172,7 @@ In this section we present the proof of the Theorem stated in the post. Let $$L(
 
 Before proving the Theorem, let's prove the following Lemma:
 
- The number of levels in a skip list is $$O(L(n))$$ with high probability.
+**Lemma:** The number of levels in a skip list is $$O(L(n))$$ with high probability.
 
 Proof:
 
@@ -176,9 +180,9 @@ Let's consider the error-probability, that is, the probability that there are mo
 
 $$Pr\{E_1 \cup E_2 \cup \cdots \cup E_k \} \le Pr\{E_1\} + Pr\{E_2\} + \cdots + Pr\{E_k \}$$
 
-Thus, 
+Thus,
 
-$$Pr\{ \mbox{max level } \ge c \cdot L(n) \} \le$$ 
+$$Pr\{ \mbox{max level } \ge c \cdot L(n) \} \le$$
 $$n \cdot Pr\{\mbox{node level } \ge c \cdot L(n) \}$$
 
 Since each node height is given by a [geometric distribution](http://en.wikipedia.org/wiki/Geometric_distribution), we have that for some given level $$x$$:
@@ -192,13 +196,13 @@ $$Pr\{\mbox{node level } \ge x \} = p^{k}$$
 
 Also, $$p^{c \cdot L(n)} = p^{c \cdot \log_{1/p} n} = \frac{1}{n^{c}}$$
 
-Finally, 
+Finally,
 
-$$Pr\{ \mbox{max level } < c \cdot L(n) \} \ge 1 - \frac{1}{n^{c - 1}}$$ 
+$$Pr\{ \mbox{max level } < c \cdot L(n) \} \ge 1 - \frac{1}{n^{c - 1}}$$
 
 Thus, for a sufficiently large constant $$c$$, we have a very high probability, which proves the Lemma.
 
- The number of moves in a search is $$O(\log n)$$ with high probability.
+**Theorem:** The number of moves in a search is $$O(\log n)$$ with high probability.
 
 Proof:
 
@@ -212,11 +216,11 @@ Then, the length of the path is given by the number of movements until we reach 
 
 To prove our claim, let the number of movements be $$c'cL(n)$$ for some other constant $$c'$$. In [2], some combinatoric relations are used to show that
 
-$$Pr\{\mbox{# up moves} \le cL(n) \mbox{ among } c'cL(n) \mbox{ moves}\} \le \frac{1}{n^\alpha}$$
+$$Pr\{\mbox{\hash  up moves} \le cL(n) \mbox{ among } c'cL(n) \mbox{ moves}\} \le \frac{1}{n^\alpha}$$
 
 where $$\alpha = ((c'- 1) - L(c'e)) \cdot c$$. We also have the converse:
 
-$$Pr\{\mbox{# up moves} > cL(n) \mbox{ among } O(cL(n)) \mbox{ moves}\} = 1 - \frac{1}{n^\alpha}$$
+$$Pr\{\mbox{\hash  up moves} > cL(n) \mbox{ among } O(cL(n)) \mbox{ moves}\} = 1 - \frac{1}{n^\alpha}$$
 
 Since $$(c'- 1) > L(c'e)$$ for sufficiently large values of $$c'$$, we can choose $$c'$$ to make $$\alpha$$ arbitrarily large, which makes the probability above very high, proving the claim.
 

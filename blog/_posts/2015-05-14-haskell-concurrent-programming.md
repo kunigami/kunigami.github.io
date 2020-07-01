@@ -128,6 +128,8 @@ Then, in runtime, we can provide the `-Nx` flag to the RTS (Run Time System) whe
 
 One challenge in parallelizing Haskell code is due to lazy evaluation. We have less control on when part of the code will be actually evaluated so we need to impose some strictness to guarantee it will be executed in parallel.
 
+**Weak head normal form vs. normal form**
+
 
 
 [This answer](http://stackoverflow.com/questions/6872898/haskell-what-is-weak-head-normal-form) on StackOverflow gives a very nice explanation between **Weak Head Normal Form** (WHNF) and **Normal Form** (NF). Copying parts of it here.
@@ -136,19 +138,38 @@ One challenge in parallelizing Haskell code is due to lazy evaluation. We have l
 > 
 > These expressions are all in normal form:
 > 
-> 
+> `
+> 42
+> (2, "hello")
+> \x -> (x + 1)
+> `
 > 
 > These expressions are not in normal form:
 > 
-> 
+> `
+> 1 + 2                 -- we could evaluate this to 3
+> (\x -> x + 1) 2       -- we could apply the function
+> "he" ++ "llo"         -- we could apply the (++)
+> (1 + 1, 2 + 2)        -- we could evaluate 1 + 1 and 2 + 2
+> `
 > 
 > An expression in **weak head normal form** has been evaluated to the outermost data constructor or lambda abstraction (the head). Sub-expressions may or may not have been evaluated.
 > 
-> 
+> `
+> (1 + 1, 2 + 2)       -- the outermost part is the data constructor (,)
+> \x -> 2 + 2          -- the outermost part is a lambda abstraction
+> 'h' : ("e" ++ "llo") -- the outermost part is the data constructor (:)
+> `
 > 
 > These expressions are not in weak head normal form:
 > 
-> 
+> `
+> 1 + 2                -- the outermost part here is an application
+>                      -- of (+)
+> (\x -> x + 1) 2      -- the outermost part is an application of
+>                      -- (\x -> x + 1)
+> "he" ++ "llo"        -- the outermost part is an application of (++)
+> `
 > 
 > 
 
@@ -204,6 +225,8 @@ parallelMap _ _      = []
 {% endhighlight %}
 
 If b has a nested structure, it's not guaranteed that calling r par will fully evaluate r, since it only guarantees to evaluate the outermost constructor. To overcome that, one option is to use evaluation strategies.
+
+**Evaluation Strategies**
 
 
 

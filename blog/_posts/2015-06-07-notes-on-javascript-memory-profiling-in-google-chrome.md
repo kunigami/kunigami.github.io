@@ -32,6 +32,8 @@ A node `u` is a **dominator** of a node `v`, is it belongs to every single path 
 
 V8 is the JavaScript engine that powers Google Chrome. In this section, we'll describe some of its characteristics.
 
+**Data types representation**
+
 
 
 JavaScript has a few primitive data types. The [spec](http://www.ecma-international.org/ecma-262/5.1/) describes them but does not dictates how they should be represented in memory.
@@ -39,9 +41,14 @@ JavaScript has a few primitive data types. The [spec](http://www.ecma-internatio
 This may differ from JavaScript engine to engine. Let's briefly describe how V8 handles that, according to Jay Conrod [[2](http://jayconrod.com/posts/52/a-tour-of-v8-object-representation)]:
 
 - *Numbers*: can be represented as Small Integers (SMIs) if they represent integers, using 32 bits. If the number is used as a double type or needs to be boxed (for example, use properties like `toString()`), they are stored as heap objects.
+
 - *Strings* can be stored in the VM heap or externally, in the renderer's memory, and a wrapper object is created. This is useful for representing script sources and other content that is received from the Web.
+
 - *Objects* are key-value data structures, where the keys are strings. In practice they can be represented as hash tables (dictionary mode) or more efficient structures when objects share properties with other objects or when they are used as arrays. A more in depth study of these representations can be seen in [[2](http://jayconrod.com/posts/52/a-tour-of-v8-object-representation)].
+
 - *DOM elements* and *images* are not a basic type of V8. They are an abstraction provided by Google Chrome and external to V8.
+
+**Garbage collection**
 
 
 
@@ -52,6 +59,10 @@ Any object that is not reached from the root can be garbage collected. V8 classi
 All allocated objects start as young generation. As garbage collections occur, objects that were not removed are moved to the old generation. Young generation objects are garbage collected much more often than old objects.
 
 It's an optimization that makes sense. Statistically, if an object "survived" to many garbage collections, they are less likely to be collected, so we can make these checks less often.
+
+
+
+---
 
 
 
@@ -85,6 +96,8 @@ The reason we need a separate count is that DOM nodes use native memory and do n
 The heap snapshot dumps the current memory into the dev tools for analysis. It offers different views: *Summary*, *Comparison*, *Containment* and *Statistics*.
 
 The statistics is just a pie chart showing a break down of objects by their types. Not much to see here. Let's focus on the other three.
+
+**1. Summary view**
 
 
 

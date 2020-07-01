@@ -30,6 +30,8 @@ A simple solution is to add a "teleport" probability, in which at each node we c
 
 (2) $$Pr(v,t) = \beta \left(\sum_{(u, v) \in V} \dfrac{Pr(u, t-1)}{d(u)} \right) + \dfrac{(1 - \beta)}{N}$$
 
+**Matricial form**
+
 
 
 Let $$M$$ be the adjacency matrix corresponding to the set of arcs $$A$$, that is, $$M$$ is a $$N \times N$$ matrix, and $$M_{(i, j)} = 1$$ if, and only if, $$(i, j) \in A$$. Let $$M'$$ be $$M$$ normalized its values normalized by the sum of each row. That is,
@@ -56,6 +58,8 @@ where $$E$$ is a $$N \times N$$ matrix with all ones. With that in mind, we can 
 (6) $$Pr(t) = \hat{M} Pr(t-1)$$
 
 In the next section we'll show $$\hat{M}$$ has some interesting properties that guarantees the page rank converges to a final value. Using that information, we'll be able to iterate until $$\mid Pr(t) - Pr(t - 1)\mid < \epsilon$$.
+
+**Properties of the transition matrix**
 
 
 

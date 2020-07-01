@@ -162,6 +162,8 @@ $$h_{w,b}(x) = g(w^Tx + b)$$
 
 Where $$g$$ is the sign function, that is, $$g(z) = 1$$ if $$z \ge 0$$ and $$g(z) = -1$$ otherwise.
 
+**Margin**
+
 
 
 For each training example $$x^{(i)}$$, we can define a margin as:
@@ -182,6 +184,8 @@ The constraint is to enforce (3). The problem with this model is that we can arb
 
 The alternative is to normalize the  by dividing by $$\mid\mid w \mid\mid$$, so it becomes indifferent to scaling.
 
+**Primal form**
+
 
 
 It's possible to show that in order to maximize the margin, we can minimize the following linear programming with quadratic objective function:
@@ -189,6 +193,8 @@ It's possible to show that in order to maximize the margin, we can minimize the 
 $$\min \frac{1}{2} \mid\mid w \mid\mid^2$$
 
 s.t. $$y^{(i)}(w^Tx^{(i)} + b) \ge 1$$, for $$i = 1, \cdots, m$$
+
+**Dual form**
 
 
 
@@ -209,6 +215,8 @@ Moreover, $$w$$ can be obtained by the following equation:
 
 $$w = \sum_{i=1}^{m} \alpha_i y^{(i)} x^{(i)}$$
 
+**Non-linear SVM: Kernels**
+
 
 
 Kernel is a way to generate features from the training set. For example, we can generate $$m$$ features from the $$m$$ points in the training set by having feature $$f_i$$ to be the similarity of a point to it. One common similarity function is the Gaussian distance. Given points $$x^{(i)}$$ and $$x^{(j)}$$, we can compute it by:
@@ -223,11 +231,11 @@ Unfortunately, SVM was discussed in a high level and apart from kernels, it was 
 
 ### References
 
-* [[1]("http://en.wikipedia.org/wiki/Backpropagation#Derivation")] Wikipedia: Back-propagation
-* [[2]("http://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf")] Prof. Cosma Shalizi's notes - Logistic Regression
-* [[4]("http://cs229.stanford.edu/notes/cs229-notes3.pdf")] Prof. Andrew Ng's notes - Support Vector Machine
-* [[5]("http://en.wikipedia.org/wiki/Support_vector_machine")] Wikipedia: Support Vector Machine
-* [[6]("http://www.cs.ucf.edu/courses/cap6412/fall2009/papers/Berwick2003.pdf")] An Idiot's guide to Support Vector Machines
+* [[1](http://en.wikipedia.org/wiki/Backpropagation#Derivation)] Wikipedia: Back-propagation
+* [[2](http://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf)] Prof. Cosma Shalizi's notes - Logistic Regression
+* [[4](http://cs229.stanford.edu/notes/cs229-notes3.pdf)] Prof. Andrew Ng's notes - Support Vector Machine
+* [[5](http://en.wikipedia.org/wiki/Support_vector_machine)] Wikipedia: Support Vector Machine
+* [[6](http://www.cs.ucf.edu/courses/cap6412/fall2009/papers/Berwick2003.pdf)] An Idiot's guide to Support Vector Machines
 
 ### Appendix: Derivation of the backpropagation relations
 
@@ -293,9 +301,7 @@ $$
 
 If we name $$\delta^{(\ell)} = \dfrac{\partial J(\Theta)}{\partial z^{(\ell)}}$$, we now have
 
-(5)
-
-$$
+(5) $$
 \dfrac{\partial J(\Theta)}{\partial a^{(\ell - 1)}} =
 
 (\Theta^{(\ell -1)})^T \delta^{(\ell)}
@@ -314,7 +320,9 @@ $$
 Replacing (5) here,
 
 $$
-= (\Theta^{(\ell -1)})^T \delta^{(\ell)}
+=
+
+(\Theta^{(\ell -1)})^T \delta^{(\ell)}
 \dfrac{\partial a^{(\ell-1)}}{\partial z^{(\ell-1)}}
 $$
 

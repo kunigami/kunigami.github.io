@@ -21,7 +21,9 @@ As in [1], we'll be more detailed in describing the `MaybeT` which is the simple
 
 ### The MaybeT monad
 
-Let's start by recapping the Maybe monad, as seen in a [previous post](2013/05/26/monads-in-haskell-part-i/).
+Let's start by recapping the Maybe monad, as seen in a [previous post]({{site.url}}/blog/2013/05/26/monads-in-haskell---part-i.html).
+
+**Review of the Maybe monad**
 
 
 
@@ -47,6 +49,8 @@ instance Monad Maybe where
 
 Remembering, `return` wraps an element in the monad and `>>=` is the bind operator, which takes an element wrapped in a monad, extracts it, applies a function `f`, which returns another element wrapped in the monad.
 
+**The MaybeT data type**
+
 
 
 Monads can contain other monads and one particular useful combination is of a monad containing the Maybe monad. While we can accomplish that by regular use of monads, we can also avoid some boilerplate code by having a special type that encodes this combination, in this case the `MaybeT` data type.
@@ -58,6 +62,8 @@ We can think of `MaybeT` data type as a 3-layer wrapping. The inner layer being 
 newtype MaybeT m a = MaybeT { runMaybeT :: m (Maybe a) }
 
 {% endhighlight %}
+
+**MaybeT is a Monad**
 
 
 
@@ -112,7 +118,7 @@ x >>= f = MaybeT $
 
 ### The ListT monad
 
-Let's review the list `[]` monad, as we saw in a previous [post](2013/05/26/monads-in-haskell-part-i/).
+Let's review the list `[]` monad, as we saw in a previous [post]({{site.url}}/blog/2013/05/26/monads-in-haskell---part-i.html).
 
 {% highlight haskell %}
 
@@ -145,7 +151,7 @@ instance (Monad m) => Monad (ListT m) where
 
 ### The StateT monad
 
-We've talked about the State monad [before](2013/07/28/monads-in-haskell-part-ii/). It can be defined in the following way:
+We've talked about the State monad [before]({{site.url}}/blog/2013/07/28/monads-in-haskell---part-ii.html). It can be defined in the following way:
 
 {% highlight haskell %}
 
@@ -221,6 +227,6 @@ At one point, it discusses the real power of combining multiple monad transforme
 
 ### References
 
-* [[1]("http://en.wikibooks.org/wiki/Haskell/Monad_transformers")] Wikibooks: Haskell/Monad
-* [[2]("http://book.realworldhaskell.org/read/monad-transformers.html")] Real World Haskell: Chapter 18. Monad transformers
-* [[3]("http://blog.sigfpe.com/2006/05/grok-haskell-monad-transformers.html")] A Neighborhood of Infinity: Grok Haskell Monad Transformers
+* [[1](http://en.wikibooks.org/wiki/Haskell/Monad_transformers)] Wikibooks: Haskell/Monad
+* [[2](http://book.realworldhaskell.org/read/monad-transformers.html)] Real World Haskell: Chapter 18. Monad transformers
+* [[3](http://blog.sigfpe.com/2006/05/grok-haskell-monad-transformers.html)] A Neighborhood of Infinity: Grok Haskell Monad Transformers

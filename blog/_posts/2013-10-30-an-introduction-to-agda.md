@@ -20,13 +20,17 @@ We'll first talk about the basic concepts such as assisted theorem proving and d
 
 
 
+---
+
+
+
 ### Assisted Theorem Proving
 We can classify theorem proving in the following categories:
 
-1. Manual
-2. Manual with machine support
-3. Interactive
-4. Automated
+1) Manual
+2) Manual with machine support
+3) Interactive
+4) Automated
 
 (1) is the oldest, most known and widely used method by mathematicians. (2) Since the introduction of computers, we now can have machines to verify syntax and make manual proofs less error prone. (3) We can also write proofs in a way the machine understands so that it can perform some logical deductions steps for us. (4) In the last extreme case, we can let the machine do all the job and find proofs by itself.
 
@@ -36,9 +40,15 @@ Basically speaking, dependent type is a type that depends on a value. In typed p
 
 
 
+---
+
+
+
 ### Agda
 
 Agda is a dependent type language based on intuitionistic type theory, introduced by Martin-Löf. It was first implemented by Catarina Coquand (who is married to Thierry Coquand, which inspired the Coq tool, another famous assisted proof tool). Later it was rewritten as Agda 2 by Ulf Norell, one of the authors of the tutorial we're going to follow.
+
+**Installing**
 
 
 
@@ -65,6 +75,8 @@ Agda has a very good integration with Emacs. On Mac we can make use of that inte
 > agda-mode setup
 
 {% endhighlight %}
+
+**Main Concepts**
 
 
 
@@ -270,15 +282,15 @@ I have close to zero knowledge in formal systems. I've been exposed briefly to i
 I was initially interested in learn Coq but due to some problems in setting it up, I ended up looking for alternatives and found Agda. It seems that Coq is based on Ocaml and Agda is based on Haskell and since I've been focused in learning Haskell, it was a pleasant surprise. Agda has also has a good integration with Emacs, which is my favorite editor, so this was a plus.
 
 ### References
-* [[1]("http://en.wikipedia.org/wiki/Per_Martin-L%C3%B6f")]
+* [[1](http://en.wikipedia.org/wiki/Per_Martin-L%C3%B6f)] 
  Per Martin-Löf - Wikipedia
-* [[2]("http://en.wikipedia.org/wiki/Proof_assistant#Comparison_of_systems")]
+* [[2](http://en.wikipedia.org/wiki/Proof_assistant#Comparison_of_systems)] 
  Proof Assistant - Comparison of Systems - Wikipedia
-* [[3]("http://www.cse.chalmers.se/~ulfn/papers/afp08/tutorial.pdf")]
+* [[3](http://www.cse.chalmers.se/~ulfn/papers/afp08/tutorial.pdf)] 
  Dependently Typed Programming in Agda - Ulf Norell and James Chapman
-* [[4]("http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft0.pdf")]
+* [[4](http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft0.pdf)] 
  Interactive Theorem Proving, Lecture Notes 0 - Anton Setzer
-* [[5]("http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft1.pdf")]
+* [[5](http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft1.pdf)] 
  Interactive Theorem Proving, Lecture Notes 1 - Anton Setzer
-* [[6]("http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft2.pdf")]
+* [[6](http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft2.pdf)] 
  Interactive Theorem Proving, Lecture Notes 2 - Anton Setzer
