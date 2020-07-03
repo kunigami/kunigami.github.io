@@ -71,7 +71,16 @@ For the list-based queue, the invariant was that if the front list is empty, the
 
 The definition of the stream queue is the following:
 
-[gist]1d447c16ca84d2ea00a1cd2924f48c62[/gist]
+{% highlight ocaml %}
+(*
+  - size of front stream
+  - stream representing the front of the queue
+  - size of rear stream
+  -  stream representing the (reversed) rear of the queue
+*)
+type 'a queueStream = int * 'a stream * int * 'a stream;;
+
+{% endhighlight %}
 
 We store the lengths of the streams explicitly for efficiency.
 
@@ -79,15 +88,37 @@ We'll be using the Stream developed in the previous chapter, so we'll refer to t
 
 Inserting an element at the end of the queue is straightforward, since the rear stream represents the end of the queue and is reversed:
 
-[gist]74bcbe3ce89b38430a80203c777e83ad[/gist]
+{% highlight ocaml %}
+let push (elem: 'a) (queue: 'a queueStream): ('a queueStream) = match queue with
+  (frontSize, front, rearSize, rear) ->
+    check (frontSize, front, rearSize + 1, Stream2.insert elem rear)
+;;
+{% endhighlight %}
 
 The problem is that inserting at `rear` can cause the invariant of the queue to be violated. `check()` changes the structure so to conform to the invariant by potentially reversing `rear` and concatenating with `front`:
 
-[gist]ce82f3cdee629ab255953d2c2298c357[/gist]
+{% highlight ocaml %}
+let check (queue: 'a queueStream): ('a queueStream) = match queue with
+  (leftSize, left, rightSize, right) ->
+    if rightSize <= leftSize then queue
+    else (leftSize + rightSize, Stream2.concat left (Stream2.reverse right), 0, Stream2.empty)
+;;
+
+{% endhighlight %}
 
 Removing an element from the queue requires us to evaluate the first element of the front stream. Again, the invariant can be violated in this case so we need to invoke `check()` again:
 
-[gist]5dc5973fe28067e778d74c3529620f4a[/gist]
+{% highlight ocaml %}
+let pop (queue: 'a queueStream): ('a queueStream) = match queue with
+  (leftSize, left, rightSize, right) ->
+    let forcedLeft = Lazy.force left in
+    match forcedLeft with
+      | Nil -> raise Empty_queue
+      | StreamCell (_, rest) -> check (leftSize - 1, rest, rightSize, right)
+;;
+
+
+{% endhighlight %}
 
 The complete code for the stream queue is on [Github](https://github.com/kunigami/ocaml-data-structures/blob/master/queue/queue_stream.ml).
 
@@ -115,23 +146,102 @@ On the other hand, we don't want to evaluate the front list when we perform a pe
 
 The signature of the structure is as follows:
 
-[gist]d5a5c1535085666ad1b1265d0a2471d6[/gist]
+{% highlight ocaml %}
+(*
+    Implemention of queue using lazy lists. As opposed to the stream-based
+    queue, this structure allows for a monolithic amortization analysis, for
+    example, using the Physicist's method as described in Okazaki's Purely
+    Functional Data Structures, Chapter 6.
+
+    Only the front list needs to be lazy. The rear of the queue is a regular
+    list. We store a copy of the suspended list to be able to access the head of
+    the list without having to evaluate the entire list.
+
+    The first element in the structure is the evaluated version of the front
+    (forcedFront). The second represents the size of the front list (frontSize).
+    The third element is the suspended version of the front (lazyFront). The
+    fourth element is the size of the rear list (rearSize) and finally the fifth
+    element is the rear list (rear).
+
+    The invariants that must be respected by all operations are:
+    1) The front list must never be smaller than the rear list
+    2) Whenever lazyFront is non-empty, forcedFront is non-empty
+*)
+type 'a queueSuspended = 'a list * int * ('a list) Lazy.t * int * 'a list;;
+{% endhighlight %}
 
 As mentioned in the code above, the invariants we want to enforce is that the front list is never smaller than the rear list
 
-[gist]1950b6900f155f5e272d3341cfe198a5[/gist]
+{% highlight ocaml %}
+let conformToFrontNotSmallerThanRear (
+  queue: 'a queueSuspended
+): ('a queueSuspended) = match queue with
+  (forcedFront, frontSize, lazyFront, rearSize, rear) ->
+    if rearSize <= frontSize then queue
+    else
+      let front = Lazy.force lazyFront
+      in (
+        front,
+        frontSize + rearSize,
+        lazy (front @ (List.rev rear)),
+        0,
+        []
+      )
+;;
+{% endhighlight %}
 
 and that the evaluated version of the front list is never empty if the lazy version still has some elements.
 
-[gist]d18f44127e04d4b26c2afcaab916cb8d[/gist]
+{% highlight ocaml %}
+let conformToForcedFrontInvariant (
+  queue: 'a queueSuspended
+): ('a queueSuspended) = match queue with
+  | ([], frontSize, lazyFront, rearSize, rear) ->
+    (Lazy.force lazyFront, frontSize, lazyFront, rearSize, rear)
+  | queue -> queue
+;;
+{% endhighlight %}
 
 The push and pop operations are similar to the other versions of queue, but since we mutate the structure, we might need to adjust it to conform to the invariants:
 
-[gist]d0cf8389d9026c72c9e955711211c341[/gist]
+{% highlight ocaml %}
+let conformToInvariants (queue: 'a queueSuspended): ('a queueSuspended) = 
+  let queue = conformToFrontNotSmallerThanRear queue
+  in conformToForcedFrontInvariant queue
+;;
+
+let push (queue: 'a queueSuspended) (elem: 'a): ('a queueSuspended) =
+  match queue with (forcedFront, frontSize, lazyFront, rearSize, rear) ->
+    conformToInvariants (
+      forcedFront,
+      frontSize,
+      lazyFront,
+      rearSize + 1,
+      elem :: rear
+    )
+;;
+
+let pop (queue: 'a queueSuspended): ('a queueSuspended) = match queue with
+  | ([], _, _, _, _) -> raise Empty_queue
+  | (head :: forcedFront, frontSize, lazyFront, rearSize, rear) ->
+      conformToInvariants (
+        forcedFront,
+        frontSize - 1,
+        lazy (List.tl (Lazy.force lazyFront)),
+        rearSize,
+        rear
+        )
+;;
+{% endhighlight %}
 
 Finally, because of our second invariant, `peek`ing at the queue is straightforward:
 
-[gist]9a6f74fb2a132b0729e3f30348a1fef7[/gist]
+{% highlight ocaml %}
+let peek (queue: 'a queueSuspended): 'a = match queue with
+  | ([], _, _, _, _) -> raise Empty_queue
+  | (head :: forcedFront, _, _, _, _) -> head
+;;
+{% endhighlight %}
 
 The complete code for the suspended queue is on [Github](https://github.com/kunigami/ocaml-data-structures/blob/master/queue/queue_suspended.ml).
 
