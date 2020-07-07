@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "The Visitor pattern and Vtables in C++ "
+title: "The Visitor pattern and Vtables in C++"
 tags: [c++, compilers, computer science, java, programming, software engineering]
 ---
 
-The other day I was developing a Java code and I needed to use `instanceof`, but since I have read that this is a sign of bad design, I asked for help and was recommended the [Visitor]("http://en.wikipedia.org/wiki/Visitor_pattern") pattern.
+The other day I was developing a Java code and I needed to use `instanceof`, but since I have read that this is a sign of bad design, I asked for help and was recommended the [Visitor](http://en.wikipedia.org/wiki/Visitor_pattern) pattern.
 
-In this post we’ll talk about this design pattern in Java, that is where my need began, but also in C++ because the implementation is related to [vtables]("http://en.wikipedia.org/wiki/Virtual_method_table"), which I’ve been wanting to read about.
+In this post we’ll talk about this design pattern in Java, that is where my need began, but also in C++ because the implementation is related to [vtables](http://en.wikipedia.org/wiki/Virtual_method_table), which I’ve been wanting to read about.
 
 ### Visitors in Java
 
@@ -15,7 +15,7 @@ Let us consider the following example, where we have the classes `Dog` and `Cat`
 {% highlight java %}
 
 // Listing 1
-interface Animal {    
+interface Animal {
 }
 public class Dog implements Animal {
 	public void bark(){
@@ -45,6 +45,7 @@ Here we can quote Scott Meyers, from *Effective C++* book:
 
 > Anytime you find yourself writing code of the form “if the object is of type T1, then do something, but if it’s of type T2, then do something else,” slap yourself.
 
+
 To get rid of `instanceof`, we can add the method `emitSound()` to `Animal` interface and replace `bark()/meow()` for it. In our method `emitSound()`, we let polymorphism choose the correct implementation.
 
 {% highlight java %}
@@ -72,7 +73,7 @@ public static void emitSound(Animal animal){
 
 {% endhighlight %}
 
-Another possibility is to delegate the implementation of `emitSound()` to another class through the use of the Visitor pattern. This pattern considers two types of classes: an  and a . The element implements a method usually named `accept()` while the visitor implements the method `visit()`. The `accept()` method receives a visitor as a parameter and calls the method `visit()` from this visitor with itself as parameter. This way, the visitor can implement the `visit()` method for each possible element.
+Another possibility is to delegate the implementation of `emitSound()` to another class through the use of the Visitor pattern. This pattern considers two types of classes: an **element** and a **visitor**. The element implements a method usually named `accept()` while the visitor implements the method `visit()`. The `accept()` method receives a visitor as a parameter and calls the method `visit()` from this visitor with itself as parameter. This way, the visitor can implement the `visit()` method for each possible element.
 
 We can implement like this:
 
@@ -106,7 +107,7 @@ public class SoundEmissor implements AnimalVisitor {
     @Override
     public void visit(Dog dog){
         System.out.println("Woof");
-    }	
+    }
 }
 ...
 public static void emitSound(Animal animal){
@@ -116,7 +117,7 @@ public static void emitSound(Animal animal){
 
 {% endhighlight %}
 
-The advantage of this approach is that `SoundEmissor` may contain members and methods related to the way animals emit sounds. Otherwise, these methods would ended up being implemented in `Animal`. 
+The advantage of this approach is that `SoundEmissor` may contain members and methods related to the way animals emit sounds. Otherwise, these methods would ended up being implemented in `Animal`.
 
 Another advantage is that the visitor implementation can be chosen at runtime and, being a dependency injection, simplifies testing.
 
@@ -133,7 +134,7 @@ struct Animal {
 struct Dog : public Animal {
     void bark(){
         cout << "Woof\n";
-    } 
+    }
 };
 struct Cat : public Animal {
     void meow(){
@@ -198,7 +199,7 @@ struct SoundEmissor : public AnimalVisitor {
     }
     void visit(Dog *dog){
         cout << "Woof\n";
-    }    
+    }
 };
 struct Dog : public Animal {
     void accept(AnimalVisitor *visitor){
@@ -221,7 +222,7 @@ void emitSound(Animal *animal){
 
 We just saw that the Visitor pattern relies on the use of virtual functions. So now, let's analyse how C++ implements these kind of functions. Before that, we need to understand the concept of dynamic dispatch.
 
- is a technique used in cases where different classes (with a common ancestor) implement the same methods, but we can’t tell on compile time what is the type of a given instance, as in the cases above.
+**Dynamic dispatch** is a technique used in cases where different classes (with a common ancestor) implement the same methods, but we can’t tell on compile time what is the type of a given instance, as in the cases above.
 
 In C++ and Java, this type of dispatch is also known as single dispatch since it only considers the type of the object calling the method. In Lisp and other few languages, there is the multiple dispatch that also takes into account the type of the parameters.
 
@@ -252,7 +253,7 @@ Although the C++ standard does not specify how dynamic dispatch should be implem
 
 Each class that defines or inherits at least one virtual method has its own vtable. This table points to the virtual methods defined by the nearest ancestral (including the class itself) that are visible for that class. Besides, each instance of these classes will have an additional member, a pointer that points to the table corresponding to the class used to instantiate that object.
 
-As an example, if we were to instantiate a `Dog` from :
+As an example, if we were to instantiate a `Dog` from **Listing 5**:
 
 {% highlight cpp %}
 
@@ -327,5 +328,5 @@ We can also see the value that the instances of such classes will have: `vptr=((
 
 ### Referências
 
-* [[1]("http://publib.boulder.ibm.com/infocenter/comphelp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8a.doc%2Flanguage%2Fref%2Fthe_typeid_operator.htm")] The typeid operator (C++ only)
-* [[2]("http://www.learncpp.com/cpp-tutorial/125-the-virtual-table/")] LearnCpp.com – The Virtual Table
+[1] [The typeid operator](http://publib.boulder.ibm.com/infocenter/comphelp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8a.doc%2Flanguage%2Fref%2Fthe_typeid_operator.htm) (C++ only)
+[2] [LearnCpp.com – The Virtual Table](http://www.learncpp.com/cpp-tutorial/125-the-virtual-table/)

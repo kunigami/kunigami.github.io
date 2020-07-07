@@ -8,7 +8,7 @@ tags: [data structures, python]
 
 In a Donald Knuth's paper called Dancing Links [1], he shows an algorithm that can be used to solve puzzles like Sudoku via backtracking in a efficient way.
 
-The backtracking algorithm is named simply the  for a lack of a better name [1] and because it's very simple and not the focus of the paper. 
+The backtracking algorithm is named simply the **Algorithm X** for a lack of a better name [1] and because it's very simple and not the focus of the paper.
 
 The main concept is actually a data structure used to implement the algorithm X. It's a sparse matrix where Knuth uses some clever tricks to make removing/restoring columns and rows efficient and in-place operations. He refers to these operations as dancing links, in allusion to how the pointers from the cells change during these operations.
 
@@ -22,7 +22,7 @@ The Sudoku puzzle can be modeled as a more generaal problem, the set cover probl
 
 Given a set of items `U` and a set `S` of sets each of which covering some subset of `U`, the set cover problem consists in finding a subset of `S` such that each element is covered by exactly one set. This problem is known to be NP-Complete.
 
-The set cover can be viewed as a binary matrix where the columns represent the elements to be covered and the rows represent the sets. An entry 1 in the cell `i,j`, means that the set `i` covers element `j`. 
+The set cover can be viewed as a binary matrix where the columns represent the elements to be covered and the rows represent the sets. An entry 1 in the cell `i,j`, means that the set `i` covers element `j`.
 
 The objective is then finding a subset of the rows that such that for each column, it has exactly an entry 1 in exactly one column.
 
@@ -50,7 +50,7 @@ In our case, our nodes (depicted in green in Fig. 1)  are doubly linked and form
 
 Here's an example for the matrix $$\begin{pmatrix}0 & 1\\1 & 1\end{pmatrix}$$:
 
-<figure class="None">
+<figure class="center_children">
     <a href="http://kunigami.files.wordpress.com/2015/04/dancing-links.png"><img src="{{site.url}}/resources/blog/2013-04-28-the-algorithm-x-and-the-dancing-links/2015_04_dancing-links.png" alt="Figure 1: Sparse matrix example" /></a>
     <figcaption> Figure 1: Sparse matrix example</figcaption>
 </figure>
@@ -59,26 +59,26 @@ Note that the pointers that are coming/going to the border of the page are circu
 
 For each node we also have a pointer to the corresponding header of its column.
 
- A known way to remove or de-attach a node from a doubly linked circular list is to make its neighbors to point to each other:
+**Removing a node.** A known way to remove or de-attach a node from a doubly linked circular list is to make its neighbors to point to each other:
 
 `node.prev.next = node.next
 node.next.prev = node.prev
 `
 
- Knuth tells us that it's also possible to restore or re-attach a node to its original position assuming we didn't touch it since the removal:
+**Restoring a node.** Knuth tells us that it's also possible to restore or re-attach a node to its original position assuming we didn't touch it since the removal:
 
 `node.prev = node
 node.next = node`
 
- For our algorithm, removing a column is just a matter of de-attaching its corresponding header from the other headers (not from the nodes in the column), so we call this a *None*.
+**Removing a column.** For our algorithm, removing a column is just a matter of de-attaching its corresponding header from the other headers (not from the nodes in the column), so we call this a *horizontal de-attachment*.
 
- To remove a row, we want to de-attach each node in that row from it's vertical neighbors, but we are not touching the links between nodes of the same row, so we call this a *None*.
+**Removing a row.** To remove a row, we want to de-attach each node in that row from it's vertical neighbors, but we are not touching the links between nodes of the same row, so we call this a *vertical de-attachment*.
 
 ### A Python implementation
 
 We'll present a simple implementation of these ideas in Python. The complete code can be found on [Github](https://github.com/kunigami/blog-examples/tree/master/2013-04-28-dancing-links).
 
-
+**Data Structures**
 
 Our basic structures are nodes representing cells and heads representing columns (and also a special head sentinel). We need all the four links (left, up, right, down), but we don't need to declare them explicitly because python allow us to set them dynamically. We will have an additional field pointing to the corresponding header. The main difference is that we only attach/de-attach nodes vertically and heads horizontally, so we have different methods for them:
 
@@ -91,7 +91,7 @@ class Node:
     def deattach(self):
         self.up.down = self.down
         self.down.up = self.up
-        
+
     def attach(self):
         self.down.up = self.up.down = self
 
@@ -102,7 +102,7 @@ class Head:
     def deattach(self):
         self.left.right = self.right
         self.right.left = self.left
-        
+
     def attach(self):
         self.right.left = self.left.right = self
 
@@ -121,7 +121,7 @@ class SparseMatrix:
             for j in range(n):
                 srow[j].right = srow[(j + 1) % n]
                 srow[j].left = srow[(j - 1 + n) % n]
-            
+
     def createUpDownLinks(self, scols):
         for scol in scols:
             n = len(scol)
@@ -129,22 +129,22 @@ class SparseMatrix:
                 scol[i].down = scol[(i + 1) % n]
                 scol[i].up = scol[(i - 1 + n) % n]
                 scol[i].head = scol[0]
-        
+
     def __init__(self, mat):
-        
+
         nrows = len(mat)
         ncols = len(mat[0])
-    
+
         srow = [[ ] for _ in range(nrows)]
-        heads = [Head(j) for j in range(ncols)]        
+        heads = [Head(j) for j in range(ncols)]
         scol = [[head] for head in heads]
 
         # Head of the column heads
         self.head = Head(-1)
         heads = [self.head] + heads
-            
+
         self.createLeftRightLinks([heads])
-            
+
         for i in range(nrows):
             for j in range(ncols):
                 if mat[i][j] == 1:
@@ -157,7 +157,7 @@ class SparseMatrix:
 
 {% endhighlight %}
 
-
+**Iterators**
 
 We were repeating the following code in several places:
 
@@ -226,12 +226,12 @@ for it in LeftIterator(node):
 
 {% endhighlight %}
 
+**Algorithm**
 
-      
-With our data structures and syntax sugar iterators set, we're ready to implement our backtracking algorithm. 
+With our data structures and syntax sugar iterators set, we're ready to implement our backtracking algorithm.
 
 The basic operation is the covering and uncovering of a column. The covering consists in removing that column and also all the rows from its row list (remember that a column can only be covered by exactly one row, so we can remove the other rows from the candidate list).
-  
+
 {% highlight python %}
 
 class DancingLinks:
@@ -246,7 +246,7 @@ class DancingLinks:
         for row in UpIterator(col):
             for cell in LeftIterator(row):
                 cell.attach()
-        col.attach()    
+        col.attach()
 
    ...
 
@@ -271,7 +271,7 @@ The main body of the algorithm is given below, which is essentially the definiti
             return False
 
         self.cover(col)
-        
+
         for row in DownIterator(col):
 
             for cell in RightIterator(row):
@@ -285,7 +285,7 @@ The main body of the algorithm is given below, which is essentially the definiti
                 self.uncover(cell.head)
 
         self.uncover(col)
-        
+
         return False
 
 {% endhighlight %}
@@ -296,17 +296,17 @@ Knuth notes that in order to reduce the expected size of the search tree we shou
 
 In this post we revisited concepts like the set cover problem and the sparse matrix data structure. We saw that with a clever trick we can remove and insert rows and columns efficiently and in-place.
 
+**Complexity**
 
-
-Suppose that in a given node we have a $$n \times m$$ matrix. In the naive approach, for each candidate row we need to go through all of the rows and columns to generate a new matrix, leading to a $$O(n^2m)$$ complexity for each node. 
+Suppose that in a given node we have a $$n \times m$$ matrix. In the naive approach, for each candidate row we need to go through all of the rows and columns to generate a new matrix, leading to a $$O(n^2m)$$ complexity for each node.
 
 In the worst case, using a sparse matrix will lead to the same complexity, but hard set cover instances are generally sparse, so in practice we may have a performance boost. Also, since we do everything in-place, our memory footprint is considerably smaller.
 
 ### References
 
-* [[1]("http://arxiv.org/pdf/cs/0011047v1.pdf")] 
+* [[1](http://arxiv.org/pdf/cs/0011047v1.pdf)] 
  Dancing Links - D. E. Knuth ([arxiv.org](http://arxiv.org/pdf/cs/0011047v1.pdf))
-* [[2]("http://en.wikipedia.org/wiki/Algorithm_X")] 
+* [[2](http://en.wikipedia.org/wiki/Algorithm_X)] 
  Wikipedia - Algorithm X
-* [[3]("http://en.wikipedia.org/wiki/Dancing_Links")] 
+* [[3](http://en.wikipedia.org/wiki/Dancing_Links)] 
  Wikipedia - Dancing Links

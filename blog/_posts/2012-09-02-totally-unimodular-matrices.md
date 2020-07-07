@@ -38,8 +38,6 @@ Also, since $$[A^T, -A^T, I, -I]$$ is TU,
 
 **1. Bipartite Graphs**
 
-
-
 Let $$G = (V, E)$$ be an undirected graph and $$M$$ the incidence matrix of $$G$$. That is, a binary matrix where each line corresponds to a vertex $$v$$ and each column to an edge $$e$$. We have $$M_{v,e} = 1$$ if $$v$$ is an endpoint of $$e$$ or $$M_{v,e} = 0$$ otherwise. Then, we have the following result:
 
 **Theorem 2.** The incidence matrix of a graph $$G$$ is totally unimodular if and only if, $$G$$ is bipartite.
@@ -75,8 +73,6 @@ It's not hard to see that if $$M$$ is the incidence matrix of the graph, then th
 If the graph is bipartite, we can use Theorem 2 and the [strong duality](http://en.wikipedia.org/wiki/Strong_duality) for linear programs to conclude that (1) = (2).
 
 **2. Directed Graphs**
-
-
 
 Let $$D = (V, A)$$ a directed graph, and $$M$$ be the incidence matrix of $$D$$. That is, a matrix where each line corresponds to a vertex and each column to an arc. For each arc $$e = (u, v)$$, we have $$M_{u, e} = -1$$ and $$M_{v, e} = 1$$ and 0 otherwise. For directed graphs, we have a even stronger result:
 

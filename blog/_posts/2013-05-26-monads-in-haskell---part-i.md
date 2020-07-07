@@ -6,7 +6,7 @@ tags: [category theory, haskell]
 
 ### Introduction
 
-In this post we write some notes about monads and describe the Maybe and List Monad types. My main reference was [Chapter 14](http://book.realworldhaskell.org/read/monads.html) from *None* and [A Fistful of Monads](http://learnyouahaskell.com/a-fistful-of-monads) from *None*
+In this post we write some notes about monads and describe the Maybe and List Monad types. My main reference was [Chapter 14](http://book.realworldhaskell.org/read/monads.html) from *Real World Haskell* and [A Fistful of Monads](http://learnyouahaskell.com/a-fistful-of-monads) from *Learn You a Haskell for Great Good!*
 
 ### The Monad typeclass
 
@@ -30,7 +30,7 @@ class Monad m where
 
 {% endhighlight %}
 
-When a type `m` implements this typeclass it is considered a *None*. Note that `>>` and `fail` have default implementation, but it's possible to override them.
+When a type `m` implements this typeclass it is considered a *monadic type*. Note that `>>` and `fail` have default implementation, but it's possible to override them.
 
 One simplistic way to get a grasp of Monads is to think that the type `m` is a kind of a box. Then the `return` function puts the type `a` inside the box `m`. Also, the chain operator `(>>=)` receives a box containing `a` and a function that takes `a` and return the type `b` inside a box.
 
@@ -197,15 +197,15 @@ If we compare with the list comprehension syntax that gets the same output, we c
 
 When we implement the Monad typeclass for a given type, Haskell doesn't have means to check the properties that actually makes the type a Monad. So we have to guarantee it ourselves when declaring our type monadic by verifying the following 3 properties:
 
- `return x >>= f` is equivalent to `f x`
+**Left identity.** `return x >>= f` is equivalent to `f x`
 
 In our analogy, it means that if we put our element in the box (`return`) and apply the operator (`>>=`), it must extract this element and apply `f`, which should be the as applying it directly.
 
- `m >>= return` is equivalent to `m`
+**Right identity.** `m >>= return` is equivalent to `m`
 
 It means that we are sending the element inside a box `m` and applying the operator `(>>=)`, which will extract the element and just put it again inside the box (`return`), so the same thing that entered must come out, in this case, `m`.
 
- states that `(m >>= f) >>= g` is equivalent to `m >>= (\x -> f x >>= g)`
+**Associativity.** states that `(m >>= f) >>= g` is equivalent to `m >>= (\x -> f x >>= g)`
 
 In a expression, the associativity property means that we can execute the operations in a chain in any order (e.g. `(a + b) + c == a + (b + c)`).
 
@@ -230,7 +230,7 @@ Note however that we're not actually executing the functions in the chain in dif
 
 ### References
 
-* [[1]("http://book.realworldhaskell.org/read/monads.html")] 
+* [[1](http://book.realworldhaskell.org/read/monads.html)] 
  Real World Haskell – Chapter 14. Monads
-* [[2]("http://learnyouahaskell.com/a-fistful-of-monads")] 
+* [[2](http://learnyouahaskell.com/a-fistful-of-monads)] 
  Learn You a Haskell for Great Good! - A Fistful of Monads

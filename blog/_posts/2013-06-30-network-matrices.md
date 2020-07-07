@@ -6,7 +6,7 @@ tags: [combinatorics, integer programming]
 
 ### Introduction
 
-In this post we're going to write about a special case of the $$\{0, \pm 1\}$$ matrix, which is called network matrix. They play an important role in our study of [totally unimodular matrices](2012/09/02/totally-unimodular-matrices-2/).
+In this post we're going to write about a special case of the $$\{0, \pm 1\}$$ matrix, which is called network matrix. They play an important role in our study of [totally unimodular matrices]({{site.url}}/blog/2012/09/02/totally-unimodular-matrices.html).
 
 We'll first define a network matrix and provide an example. We'll later show some properties and then describe a polynomial-time algorithm to recognize network matrices.
 
@@ -29,14 +29,14 @@ Matrices with this structure are called **network matrices**.
 
 **Example.** In Figure 1 we see a sample digraph $$G(V,A)$$ and a given directed tree $$T$$ on the vertex set $$V$$. The corresponding network matrix $$M$$ represented by $$G$$ and $$T$$ is given on Table 1.
 
-<figure class="None">
+<figure class="center_children">
     <a href="http://kunigami.files.wordpress.com/2015/06/example1.png"><img src="{{site.url}}/resources/blog/2013-06-30-network-matrices/2015_06_example1.png" alt="F" /></a>
     <figcaption> Figure 1. Directed graph G(V,A) and a directed tree T on V</figcaption>
 </figure>
 
 For each arc $$(u,v) \in A$$, we have a column in $$M$$ representing the path from $$u$$ to $$v$$ in T. The signs indicate the direction of the edges in the path.
 
-<figure class="None">
+<figure class="center_children">
     <a href="http://kunigami.files.wordpress.com/2015/06/table-crop.png"><img src="{{site.url}}/resources/blog/2013-06-30-network-matrices/2015_06_table-crop.png" alt="Table 1. Network Matrix of G and T" /></a>
     <figcaption> Table 1. Network Matrix of G and T</figcaption>
 </figure>
@@ -78,7 +78,7 @@ This question can be answered by a neat reduction to problem of deciding wether 
 
 The idea is that if such a partitioning exists, vertex with different signs will be in the same partition because they share a common vertex and vertex with the same signs must be on different partitions. If we now multiply all rows in $$R_2$$ by -1, we'll have our property.
 
-Conversely, if no partition exists, it's possible to show (see Example 1, from this [post](2012/09/02/totally-unimodular-matrices-2/)) that such matrix is not TU. Since by Theorem 1 all network matrices are TU, we conclude that this matrix is also not a network matrix. Summarizing we have that
+Conversely, if no partition exists, it's possible to show (see Example 1, from this [post]({{site.url}}/blog/2012/09/02/totally-unimodular-matrices.html)) that such matrix is not TU. Since by Theorem 1 all network matrices are TU, we conclude that this matrix is also not a network matrix. Summarizing we have that
 
 **Observation 1.** *The matrix $$M$$ from the Case 1 is a network matrix if and only if its graph $$G_R$$ define as above is bipartite.*
 
@@ -146,5 +146,5 @@ We provided explanations about the two observations, but we left out the proofs 
 
 ### References
 
-* [[1]("http://www.amazon.com/Theory-Integer-Programming-Alexander-Schrijver/dp/0471982326/")] 
+* [[1](http://www.amazon.com/Theory-Integer-Programming-Alexander-Schrijver/dp/0471982326/)] 
  Theory of Linear and Integer Programming – A. Schrijver (Chapter 19)

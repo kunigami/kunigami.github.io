@@ -168,9 +168,9 @@ The function `f` will return another function `h` wrapped inside a Reader instan
 
 ### References
 
-* [[1]("http://learnyouahaskell.com/for-a-few-monads-more")] 
+* [[1](http://learnyouahaskell.com/for-a-few-monads-more)] 
  Learn You a Haskell for Great Good! – For a Few Monads More
-* [[2]("http://book.realworldhaskell.org/read/code-case-study-parsing-a-binary-data-format.html")] 
+* [[2](http://book.realworldhaskell.org/read/code-case-study-parsing-a-binary-data-format.html)] 
  Real World Haskell - Chapter 10. Code case study: parsing a binary data format
-* [[3]("http://book.realworldhaskell.org/read/programming-with-monads.html")] 
+* [[3](http://book.realworldhaskell.org/read/programming-with-monads.html)] 
  Real World Haskell - Chapter 15. Programming with monads

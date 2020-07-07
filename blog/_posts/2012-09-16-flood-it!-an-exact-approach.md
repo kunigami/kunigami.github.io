@@ -4,9 +4,9 @@ title: "Flood it! An exact approach"
 tags: [approximation algorithms, c++, coin-or, computational complexity, integer programming]
 ---
 
-[Flood-it](http://www.labpixies.com/gadget_page.php?id=10) is a game created by LabPixies, which was recently aquired by Google. 
+[Flood-it](http://www.labpixies.com/gadget_page.php?id=10) is a game created by LabPixies, which was recently aquired by Google.
 
-The game consists of a $$n \times n$$ board with random colors cells. Let's call the top-left cell a *None* and the region connected to the seed cell and with the same color as it, the *None*. At each round, the player chooses a color for the flooded region which may flood adjacent regions, expanding the flooded region. The final objective is to flood all the board.
+The game consists of a $$n \times n$$ board with random colors cells. Let's call the top-left cell a *seed cell* and the region connected to the seed cell and with the same color as it, the *flooded region*. At each round, the player chooses a color for the flooded region which may flood adjacent regions, expanding the flooded region. The final objective is to flood all the board.
 
 <figure class="center_children">
     <a href="http://kunigami.files.wordpress.com/2013/09/flooding.png"><img src="{{site.url}}/resources/blog/2012-09-16-flood-it!-an-exact-approach/2013_09_flooding.png" alt="" /></a>
@@ -17,13 +17,13 @@ In the original game, there are three different sizes of boards: 14, 21 or 28. T
 
 A paper from Clifford, Jalsenius, Montanaro and Sach [1], presents theoretical results regarding the general version of this problem, where the size of the board and the number of colors can be unbounded.
 
-In this post we'll highlight the main results of their paper and present an integer linear programming approach to solve it exactly. 
+In this post we'll highlight the main results of their paper and present an integer linear programming approach to solve it exactly.
 
-### None
+### NP-Hardness
 
 For $$C \ge 3$$, the game is shown to be NP-hard even if one is allowed to start flooding from an arbitrary cell. The proof given in [1] is based on a reduction from the [shortest common supersequence](http://en.wikipedia.org/wiki/Shortest_common_supersequence) problem (SCS for short).
 
-### None
+### Greedy approaches
 
 There are two greedy approaches one might try:
 
@@ -32,6 +32,7 @@ There are two greedy approaches one might try:
 > 2. The most frequent color in the perimeter of the current region.
 > 
 
+
 In Figure 2, we have an instance where this strategies can be arbitrarily bad [1]. They use $$n$$ colors while the optimal solution is 3.
 
 <figure class="center_children">
@@ -39,35 +40,38 @@ In Figure 2, we have an instance where this strategies can be arbitrarily bad [1
     <figcaption> Figure 2: A 10x10 board for which the greedy algorithms perform badly [1]</figcaption>
 </figure>
 
-### None
+### Approximation algorithms
 
 Surprisingly, the following naïve strategy:
 
 > Cycle through all colors until the board is colored.
 
+
 gives a solution with a value within a factor of the optimal value.
 
-More specifically, if $$L$$ is the optimal number of movements and $$C$$ the number of available colors, then this algorithm solves the problem with no more than $$C L$$ movements. To see why, let $$\{c_1, c_2, \cdots, c_L \}$$ be the color sequence of the optimal solution. In the worst case, each cycle covers at least one color in the sequence. Thus, this algorithm is $$C$$ approximated. 
+More specifically, if $$L$$ is the optimal number of movements and $$C$$ the number of available colors, then this algorithm solves the problem with no more than $$C L$$ movements. To see why, let $$\{c_1, c_2, \cdots, c_L \}$$ be the color sequence of the optimal solution. In the worst case, each cycle covers at least one color in the sequence. Thus, this algorithm is $$C$$ approximated.
 
-This can be refined to $$C-1$$ observing that the cycle does not need to have the current color of the flooded region. 
+This can be refined to $$C-1$$ observing that the cycle does not need to have the current color of the flooded region.
 
-The authors improve this bound with a randomized algorithm that achieves a $$\frac{2c}{3}$$ expected factor. 
+The authors improve this bound with a randomized algorithm that achieves a $$\frac{2c}{3}$$ expected factor.
 
 They also give a lower bound, proving that if the number of colors is arbitrary, no polynomial time approximated algorithm with a constant factor can exist unless P=NP.
 
-### None
+### Bounds
 
-An upper bound for the number of movements required for solving any $$n \times n$$ is given by the following theorem: 
+An upper bound for the number of movements required for solving any $$n \times n$$ is given by the following theorem:
 
 > Theorem 1: There exists a polynomial time algorithm for Flood-It which can flood any n x n board with C colors in at most $$2n + (\sqrt{2C})n + C$$ moves.
+
 
 Conversely, we can set an lower bound for a $$n \times n$$ board:
 
 > Theorem 2: For $$2 \le C \le n^2$$, there exists an $$n \times n$$ board with (up to) $$c$$ colors which requires at least $$(\sqrt{C - 1})n/2 - C/2$$ moves to flood.
 
+
 That is, we can't expect an algorithm to perform much better than the one from Theorem 1 for arbitrary boards.
 
-### None
+### Integer Linear Programming
 
 Let $$C$$ be the number of colors and $$k$$ an upper bound for the optimal solution. A component is a connected region of pixels with same color, considering 4-adjacency. Two components $$i$$ and $$j$$ are adjacenct if there exists at least a pixel in $$i$$ adjacent to a pixel in $$j$$.
 
@@ -81,7 +85,7 @@ For simplicity, we'll assume that the component of the seed cell has index $$i =
 
 $$\displaystyle \min \sum_{c=1}^{C} \sum_{t=1}^{k} x_{ct}$$
 
-(2) For each component $$i$$, 
+(2) For each component $$i$$,
 
 $$\displaystyle \sum_{t=1}^{k} y_{it} = 1$$
 
@@ -117,9 +121,9 @@ Constraint (2) states that we fill a component exactly in one iteration. Constra
 
 Finally, constraints (6)-(9) state the variables are binary and each component starts unfilled except the component of the seed cell.
 
-### None
+### Computational Experiments
 
-We've implemented this model in C++ using the COIN-OR Cbc library. The code is available, as always, on [github](https://github.com/kunigami/blog-Examples/tree/master/2012-09-16-flood-it). 
+We've implemented this model in C++ using the COIN-OR Cbc library. The code is available, as always, on [github](https://github.com/kunigami/blog-Examples/tree/master/2012-09-16-flood-it).
 
 The first task was obtaining "real" instances. I don't know whether the colors of Flood it! boards are uniformly chosen. Thus, I preferred to take some print screens from the original game and do some image processing to convert it matrices with integer representing colors.
 
@@ -163,14 +167,15 @@ Solution:
 
 For the 6x6 instance obtained the same way, the solver does not find the optimal solution in an hour.
 
-### None
+### Conclusion
 
 In this post we gave a brief summary of Clifford et al. paper and then presented a integer linear programming approach to solve instances exactly.
 
-As our experimental results showed, even for the smallest boards (14 x 14) we're not able to obtain optimal solutions in feasible time. 
+As our experimental results showed, even for the smallest boards (14 x 14) we're not able to obtain optimal solutions in feasible time.
 
 As future work, we may try devising alternative models or find additional inequalities. Another possibility is to solve this same model using a commercial solver like CPLEX.
 
-### None
+### References
 
-* [[1]("http://arxiv.org/abs/1001.4420")]  Clifford R., Jalsenius M., Montanaro A. and Sach B. - The Complexity of Flood Filling Games ([arxiv.org](http://arxiv.org/abs/1001.4420))
+* [[1](http://arxiv.org/abs/1001.4420)] 
+ Clifford R., Jalsenius M., Montanaro A. and Sach B. - The Complexity of Flood Filling Games ([arxiv.org](http://arxiv.org/abs/1001.4420))

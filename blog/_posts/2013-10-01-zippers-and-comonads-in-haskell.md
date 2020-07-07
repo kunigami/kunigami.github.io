@@ -24,7 +24,7 @@ data Tree a = Empty
 
 {% endhighlight %}
 
-<figure class="center_children">
+<figure class="None">
     <a href="http://en.wikipedia.org/wiki/File:Hansel-and-gretel-rackham.jpg"><img src="{{site.url}}/resources/blog/2013-10-01-zippers-and-comonads-in-haskell/2014_08_hansel-and-gretel-rackham.jpg" alt="http://en.wikipedia.org/wiki/File:Hansel-and-gretel-rackham.jpg" /></a>
     <figcaption> <a href="http://en.wikipedia.org/wiki/Hansel_and_Gretel">Hansel and Gretel</a></figcaption>
 </figure>
@@ -175,7 +175,7 @@ instance Comonad Universe where
 
 {% endhighlight %}
 
-If we analyze the type description of `duplicate` and using the [wrap analogy for Monads](2013/05/26/monads-in-haskell-part-i/), we see that it's wrapping an already wrapped element again.
+If we analyze the type description of `duplicate` and using the [wrap analogy for Monads]({{site.url}}/blog/2013/05/26/monads-in-haskell---part-i.html), we see that it's wrapping an already wrapped element again.
 
 The focus of this instance of `Universe` is the universe `x` we received as a parameter. The left list is an infinite list of all universes in which we go to the left of the current state of universe `x`. The right list is analogous. This forms a set of "parallel" universes.
 
@@ -276,9 +276,9 @@ Once again, going a step further and reading more about the subject, led me to l
 
 ### References
 
-* [[1]("http://www.st.cs.uni-saarland.de/edu/seminare/2005/advanced-fp/docs/huet-zipper.pdf")] Functional Pearl: The Zipper - Gérard Huet - *Journal of Functional Programming*.
-* [[2]("http://learnyouahaskell.com/zippers")] *Learn you a good haskell* - Zippers
-* [[3]("http://hackage.haskell.org/package/AvlTree")] Hackage: AvlTree
-* [[4]("http://www.haskell.org/haskellwiki/Zipper")] Haskell Wiki - Zipper
-* [[5]("http://blog.sigfpe.com/2006/12/evaluating-cellular-automata-is.html")] A Neighborhood of Infinity - Evaluating Cellular Automata
-* [[6]("http://hackage.haskell.org/package/comonad-0.1.1/docs/Control-Comonad.html")] Hackage - comonad-0.1.1
+* [[1](http://www.st.cs.uni-saarland.de/edu/seminare/2005/advanced-fp/docs/huet-zipper.pdf)] Functional Pearl: The Zipper - Gérard Huet - *Journal of Functional Programming*.
+* [[2](http://learnyouahaskell.com/zippers)] *Learn you a good haskell* - Zippers
+* [[3](http://hackage.haskell.org/package/AvlTree)] Hackage: AvlTree
+* [[4](http://www.haskell.org/haskellwiki/Zipper)] Haskell Wiki - Zipper
+* [[5](http://blog.sigfpe.com/2006/12/evaluating-cellular-automata-is.html)] A Neighborhood of Infinity - Evaluating Cellular Automata
+* [[6](http://hackage.haskell.org/package/comonad-0.1.1/docs/Control-Comonad.html)] Hackage - comonad-0.1.1

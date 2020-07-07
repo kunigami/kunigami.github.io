@@ -88,8 +88,6 @@ def find(self, elem, update = None):
 
 **Complexity**
 
-
-
 The complexity of the search is given by the following Theorem [2]:
 
 **Theorem:** The number of moves in a search is $$O(\log n)$$ with high probability.
