@@ -82,13 +82,14 @@ CASP is a competition held annually to measure the progress of predictors. The i
 Another approach to the computational costs involved in the prediction is to distribute the work across several machines. One such example is **Folding@home**, which relies on volunteers lending their idle CPU time to perform chunks of work in a distributed fashion which is then sent back to the server.
 
 An alternative to offering idle CPU power from volunteers' machines is to lend CPU power from their own brains. Humans are good at solving puzzles and softwares like **Foldit** rely on this premise to find suitable folds. According to [Wikipedia](https://en.wikipedia.org/wiki/Foldit):
-> A 2010 paper in the science journal Nature **credited Foldit's 57,000 players with providing useful results that matched or outperformed algorithmically computed solutions
+> A 2010 paper in the science journal Nature credited Foldit's 57,000 players with providing useful results that matched or outperformed algorithmically computed solutions
 
 ## Conclusion
 
 Here are some questions that I had before writing this post:
 * What is protein folding? Why predicting it important?
 * What are some of the existing computational methods to help solving this problem?
+
 Questions that are still unanswered are details on the algorithms like the Rosetta method. I also learned about Protein Design in the process, which I'm looking into studying next. The approach used by DeepMind seem very interesting, but as of this writing, they haven't published a paper with more details.
 
 As a final observation, while researching for this post, I ran into this [Stack Exchange discussion](https://biology.stackexchange.com/questions/8871/statistical-analysis-of-protein-folding-problem), in which one of the comments summarizes my impressions:
