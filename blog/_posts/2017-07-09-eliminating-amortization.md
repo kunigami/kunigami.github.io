@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eliminating Amortization"
-tags: [data structures, ocaml, Purely Funcional Data Structures]
+tags: [data structures, ocaml]
 ---
 
 <figure class="image_float_left">
@@ -263,7 +263,7 @@ module MakeTest(Queue: IQueue) =
         resultAsList
         [10]
     ;;
-    
+
     ...
     let run = run_test_tt_main suite
   end

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eulerian Circuits"
-tags: [combinatorial optimization, computational complexity, Euler, Eulerian Circuits, graph theory, javascript]
+tags: [combinatorial optimization, computational complexity, graph theory, javascript]
 ---
 
 <figure class="image_float_left">

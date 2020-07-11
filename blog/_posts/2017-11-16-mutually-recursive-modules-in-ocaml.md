@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mutually Recursive Modules in OCaml"
-tags: [bootstrapped heaps, data structures, heaps, ocaml, Purely Funcional Data Structures, recursive modules]
+tags: [bootstrapped heaps, data structures, heaps, ocaml, recursive modules]
 ---
 
 In Chapter 10 of *Purely Functional Data Structures*, Okasaki describes a technique called data structure bootstrapping. It's a way to reuse existing implementation of data structures to construct (bootstrap) new ones.
@@ -114,9 +114,9 @@ end
 
 This will lead to a compilation error:
 
-> 
+>
 > Error: Recursive modules require an explicit module type.
-> 
+>
 
 We need to write the signatures explicitly:
 
@@ -221,5 +221,3 @@ I was struggling a lot to get the syntax right for the recursive modules require
 * [1] Purely Function Data Structures, Chapter 10 – Chris Okasaki
 * [[2](https://blog.janestreet.com/a-trick-recursive-modules-from-recursive-signatures/)] Jane Street Tech Blog - A trick: recursive modules from recursive signatures
 * [[3](https://github.com/yuga/readpfds/blob/2a62a6303141ea579eedf7366f82504d39149d0c/OCaml/bootStrappedHeap.ml)] Github yuga/readpfds: bootStrappedHeap.ml
-
-

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Persistent Data Structures"
-tags: [data structures, ocaml, Purely Funcional Data Structures]
+tags: [data structures, ocaml]
 ---
 
 <figure class="image_float_left">

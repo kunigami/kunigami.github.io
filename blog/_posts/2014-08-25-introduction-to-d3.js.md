@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introduction to d3.js"
-tags: [d3.js, data visualization, javascript, Mike Bostok]
+tags: [d3.js, data visualization, javascript]
 ---
 
 <figure class="image_float_left">

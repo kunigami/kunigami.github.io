@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Haskell Profiling and Optimization"
-tags: [haskell, Real World Haskell, spoj]
+tags: [haskell, spoj]
 ---
 
 <figure class="image_float_left">

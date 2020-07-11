@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Amortization and Persistence via Lazy Evaluation"
-tags: [amortized analysis, data structures, lazy evaluation, ocaml, Purely Funcional Data Structures, queue, stream]
+tags: [amortized analysis, data structures, lazy evaluation, ocaml, queue, stream]
 ---
 
 <figure class="image_float_left">
@@ -205,7 +205,7 @@ let conformToForcedFrontInvariant (
 The push and pop operations are similar to the other versions of queue, but since we mutate the structure, we might need to adjust it to conform to the invariants:
 
 {% highlight ocaml %}
-let conformToInvariants (queue: 'a queueSuspended): ('a queueSuspended) = 
+let conformToInvariants (queue: 'a queueSuspended): ('a queueSuspended) =
   let queue = conformToFrontNotSmallerThanRear queue
   in conformToForcedFrontInvariant queue
 ;;

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Numerical Representations as inspiration for Data Structures"
-tags: [binary numbers, binomial heaps, data structures, number theory, ocaml, Purely Funcional Data Structures, python, random access lists, skewed binary numbers]
+tags: [binary numbers, binomial heaps, data structures, number theory, ocaml, python, random access lists, skewed binary numbers]
 ---
 
 <figure class="image_float_left">

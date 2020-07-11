@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DNA Sequencing"
-tags: [bioinformatics, DNA, genetics]
+tags: [bioinformatics, genetics]
 ---
 
 <figure class="image_float_left">

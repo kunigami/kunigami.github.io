@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Paper Reading - Spanner: Google's Globally-Distributed Database"
-tags: [databases, distributed systems, Google, paper reading, Spanner]
+tags: [databases, distributed systems, paper reading]
 ---
 
 This is the first post under the category "Paper Reading" which will consist in summarizing my notes after reading a paper.

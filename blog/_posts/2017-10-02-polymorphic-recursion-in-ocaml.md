@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Polymorphic Recursion in OCaml"
-tags: [data structures, ocaml, parametric polymorphism, Purely Funcional Data Structures, structural decomposition, universally quantified type]
+tags: [data structures, ocaml, parametric polymorphism, structural decomposition, universally quantified type]
 ---
 
 In Chapter 10 of *Purely Functional Data Structures*, Okasaki describes recursive types that are non-uniform. In this post we'll learn more about these types, how to implement them in OCaml and see an example by studying the implementation of *Random Access Binary Lists* using such a construct.
@@ -56,7 +56,7 @@ This time we'll get a compilation error:
 
 The important thing is that this allow us binding the recursive calls with different types. According to the Jane Street Tech Blog [3]:
 
-> 
+>
 > Note that a polymorphic type annotation holds inside the body of a recursive definition as well as outside, allowing what is known as polymorphic recursion, where a recursive call is made at some non-trivial instantiation of the polymorphic type.
 
 So for example, we can write this function to calculate the size of a sequence:
@@ -273,4 +273,3 @@ This post helped me understand a bit more about OCaml's type system. Digging a l
 * [[3](https://blog.janestreet.com/ensuring-that-a-function-is-polymorphic-in-ocaml-3-12/)] Ensuring that a function is polymorphic in Ocaml 3.12
 * [[4](https://en.wikipedia.org/wiki/Parametric_polymorphism)] Wikipedia - Parametric polymorphism
 * [[5](https://stackoverflow.com/questions/14299638/existential-vs-universally-quantified-types-in-haskell)] Existential vs. Universally quantified types in Haskell
-

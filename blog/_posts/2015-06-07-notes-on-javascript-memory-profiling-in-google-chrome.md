@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Notes on Javascript Memory Profiling in Google Chrome"
-tags: [Google Chrome, Google IO, javascript]
+tags: [javascript]
 ---
 
 In this post we'll explore the topic of Javascript memory management, in particular in Google Chrome. This post is based on a talk by Loreena Lee and John McCutchan at [Google I/O 2013](https://www.youtube.com/watch?v=x9Jlu_h_Lyw).

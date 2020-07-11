@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Paper Reading - F1: A Distributed SQL Database That Scales"
-tags: [databases, distributed systems, F1, Google, paper reading, Spanner]
+tags: [databases, distributed systems, paper reading]
 ---
 
 In this post we’ll discuss [F1: A Distributed SQL Database That Scales](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/41344.pdf). We’ll provide a brief overview of the paper’s contents and study in more details the architecture of the system and the implementation details. At the end, we provide an Appendix to cover some distributed systems and databases concepts mentioned throughout the paper.
@@ -120,9 +120,9 @@ More generally, the query plan created by F1 is a DAG (directed aclyclic graph) 
 
 The paper says:
 
-> 
+>
 > A technique frequently used by distributed database systems is to take advantage of an explicit co-partitioning of the stored data.
-> 
+>
 
 It's not very clear to me what they mean with that, especially because they don't cite any references, but from context it suggests that the base operators (the scan and lookup join) are in the same machine as the data (co-located) and they do as much of the processing upfront as possible. This helps minimize data transfer which can become the bottleneck in a distributed computation. F1 cannot do that because Spanner abstracts the data location from F1.
 
@@ -154,7 +154,7 @@ It seems that we could make an analogy between Google's systems and similar open
 
 I was unfamiliar with several of the terminology and concepts used throughout the paper, so I had to do some extra research. Here I attempt to explain some of these topics by quoting snippets from the paper.
 
-> 
+>
 > We also have a lot of experience with eventual consistency
 > systems at Google
 

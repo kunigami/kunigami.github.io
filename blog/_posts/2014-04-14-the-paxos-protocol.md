@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Paxos Protocol"
-tags: [distributed systems, Leslie Lamport, paxos algorithm]
+tags: [distributed systems, paxos algorithm]
 ---
 
 <figure class="image_float_left">

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Turing Machines and Undecidability"
-tags: [automata, computational complexity, finite automata, Jeffrey Ullman, logic, push-down automata, turing machines, undecidability]
+tags: [automata, computational complexity, finite automata, logic, push-down automata, turing machines, undecidability]
 ---
 
 <figure class="image_float_left">
@@ -130,7 +130,7 @@ We can now answer the question in the beginning of this section by the following
 
 Suppose there's such an algorithm. Then we have an algorithm to decide whether a string is in $$L_d$$. First we check if $$w$$ is a valid encoding of a TM. If it's not, then we assume it represents a TM that defines an empty language, so obviously it doesn't accept itself and thus should go into $$L_d$$.
 
-Otherwise, we ask our hypothetical algorithm whether it accepts $$(w, w)$$. If it does, then the TM corresponding to $$w$$ accepts itself and should not go into $$L_d$$. On the other hand, if our algorithm doesn't accept, it should go into $$L_d$$. We just described an algorithm that defines $$L_d$$, but in the previous section we proved that $$L_d$$ has no TM that defines it. This contradiction means that our assumption that an algorithm exists for $$L_u$$ is incorrect. 
+Otherwise, we ask our hypothetical algorithm whether it accepts $$(w, w)$$. If it does, then the TM corresponding to $$w$$ accepts itself and should not go into $$L_d$$. On the other hand, if our algorithm doesn't accept, it should go into $$L_d$$. We just described an algorithm that defines $$L_d$$, but in the previous section we proved that $$L_d$$ has no TM that defines it. This contradiction means that our assumption that an algorithm exists for $$L_u$$ is incorrect.
 
 This is equivalent to the [halting problem](http://en.wikipedia.org/wiki/Halting_problem), in which we want to know whether a program (a Turing machine) will halt for a given input or run forever.
 
@@ -290,4 +290,3 @@ $$\cdots \hash ABfCDE\hash AfDE\hash fE\hash f\hash \hash $$
 $$\cdots \hash ABfCDE\hash AfDE\hash fE\hash f\hash \hash $$
 
 Note that the final closing is carried over using several auxiliary snapshots that don't actually correspond to the actual simulation, but it's easy to obtain the right snapshots from a solution to the MPCP.
-
