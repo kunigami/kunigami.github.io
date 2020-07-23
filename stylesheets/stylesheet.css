@@ -152,10 +152,12 @@ h6 {
 
 h1 {
   font-size: 24px;
+  margin: 30px 0 20px 0;
 }
 
 h2 {
   font-size: 20px;
+  margin: 25px 0 20px 0;
 }
 
 h3 {
@@ -353,6 +355,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .inner {

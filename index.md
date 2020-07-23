@@ -11,7 +11,8 @@ like to learn and build things.
 
 ## Links
 
+* [Blog]({{ site.url }}/blog/)
+* [Cheat sheets]({{ site.url }}/docs/)
 * [Github](https://github.com/kunigami)
-* [Blog](https://www.kuniga.me/blog/)
-* [Twitter](https://twitter.com/kunigami/)
 * [Papers](http://www.informatik.uni-trier.de/~ley/pers/hd/k/Kunigami:Guilherme)
+* [Twitter](https://twitter.com/kunigami/)

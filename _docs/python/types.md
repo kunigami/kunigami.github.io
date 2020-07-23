@@ -5,6 +5,8 @@ title: "Python Type Hints Cheatsheet"
 
 # Types
 
+Common types.
+
 ## Primitive Types
 
 * `bool`
@@ -34,7 +36,9 @@ High-order functions. `Callable[Tin, Tout]`. `Tin` is a tuple with the types of 
 
 `Any` is equivalent to not providing the type annotation. `object` is the base of all types.
 
-# Annotation
+# Annotation Syntax
+
+How to provide annotation in different scenarios.
 
 ## Local Variables
 
