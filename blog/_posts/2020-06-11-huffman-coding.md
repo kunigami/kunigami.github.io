@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Huffman Coding"
-tags: [data structures]
+tags: [data structures, python]
 ---
 
 David Albert Huffman was an American pioneer in computer science, known for his Huffman coding. He was also one of the pioneers in the field of mathematical origami [1].
