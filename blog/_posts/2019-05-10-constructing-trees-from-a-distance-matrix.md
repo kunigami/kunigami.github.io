@@ -131,5 +131,4 @@ The idea of reconstructing the genealogical tree of all the species is fascinati
 ### References
 
 * [1] *Bioinformatics Algorithms: An Active Learning Approach* – Compeau, P. and Pevzner P. - Chapter 10
-
 * [2] *The Blink Watchmaker* - Richard Dawkins
