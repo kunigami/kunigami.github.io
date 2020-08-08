@@ -32,6 +32,7 @@ Selected posts organized by theme. Most of them are primers (introductory) and i
 
 * De Bruijn Graphs ([post]({{site.url}}/blog/2018/12/26/de-bruijn-graphs-and-sequences.html))
 * Eulerian Circuits ([post]({{site.url}}/blog/2018/11/26/eulerian-circuits.html))
+* Lagrangean Relaxation - Theory ([post]({{site.url}}/blog/2013/11/11/lawler-and-an-introduction-to-matroids.html))
 * Matroids ([post]({{site.url}}/blog/2013/11/11/lawler-and-an-introduction-to-matroids.html))
 * Trees from a Distance Matrix ([post]({{site.url}}/blog/2019/05/10/constructing-trees-from-a-distance-matrix.html))
 

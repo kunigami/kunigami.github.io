@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lagrangean Relaxation - Theory"
-tags: [graph theory]
+tags: [combinatorial optimization, graph theory]
 ---
 
 In this post we will comment briefly on relaxations of Integer Linear formulations and focus on Lagrangian relaxations. Then we will demonstrate the application of this technique in the [Facility Location Problem](https://en.wikipedia.org/wiki/Facility_location). Unless stated otherwise, we are talking about minimization problems.
