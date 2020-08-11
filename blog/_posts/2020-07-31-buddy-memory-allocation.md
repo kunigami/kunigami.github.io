@@ -5,6 +5,7 @@ tags: [data structures, python]
 vanity: "2020-07-31-buddy-memory-allocation"
 main_image: "alloc.png"
 excerpt_separator: <!--more-->
+tweet: "We describe how the algorithm works and provide a Python implementation"
 ---
 
 {% include blog_vars.html %}
