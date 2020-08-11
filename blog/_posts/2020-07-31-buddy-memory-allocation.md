@@ -2,11 +2,18 @@
 layout: post
 title: "Buddy Memory Allocation"
 tags: [data structures, python]
+vanity: "2020-07-31-buddy-memory-allocation"
+main_image: "alloc.png"
+excerpt_separator: <!--more-->
 ---
+
+{% include blog_vars.html %}
 
 In this post we'll discuss an algorithm for dynamic memory allocation known as the Buddy Algorithm. It's performs well in practice in terms of reducing [internal memory fragmentation](https://en.wikipedia.org/wiki/Fragmentation_(computing)#Internal_fragmentation) and is used by popular memory allocators.
 
 We'll first present the problem we're trying to solve, then describe the Buddy algorithm and a Python implementation at a high-level, for didactic purposes. Finally we'll do some simple time-complexity analysis.
+
+<!--more-->
 
 ## Problem
 
@@ -23,7 +30,7 @@ When a request asking for a block of size k comes, it looks for the smallest ava
 If k is less than half the size of the block, it is split into two (left, right), and the two resulting blocks are called buddies. If k is still less than half the size of left buddy, the split process continues until k is larger than half of the resulting buddy. See *Figure 1* for an example.
 
 <figure class="center_children">
-    <img src="{{site.url}}/resources/blog/2020-07-31-buddy-memory-allocation/alloc.png" alt="example of prev"/>
+    <img src="{{resources_path}}/{{page.main_image}}" alt="example of prev"/>
     <figcaption>Figure 1: Example of splitting after allocating.</figcaption>
 </figure>
 
@@ -36,7 +43,7 @@ When a block is released, we will try to merge it with its buddy. There are 3 co
 If a buddy is found we combine them into one block. We repeat this process while there's an available buddy to merge.
 
 <figure class="center_children">
-    <img src="{{site.url}}/resources/blog/2020-07-31-buddy-memory-allocation/merge.png" alt="example of prev"/>
+    <img src="{{resources_path}}/merge.png" alt="example of prev"/>
     <figcaption>Example of merging after freeing.</figcaption>
 </figure>
 
