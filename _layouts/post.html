@@ -27,14 +27,15 @@ layout: default
         <p>{{ page.date | date_to_string }}</p>
         {{ content }}
 
-
-        {% assign my_array = site.emptyArray %}
+        {% assign tags = site.emptyArray %}
         {% for tag in page.tags %}
-            {% assign my_array = my_array | push: tag %}
+            {% capture tag_link %}<a href="{{ site.url }}/blog/tags/#{{ tag }}" target="_blank">{{ tag }}</a>{% endcapture %}
+            {% assign tags = tags | push: tag_link %}
         {% endfor %}
 
         <div class="tags">
-            Tags: {{ my_array | array_to_sentence_string: '' }}
+            <a href="https://github.com/kunigami/kunigami.github.io/tree/master/{{ page.path }}" target="_blank">Github</a> |
+            Tags: {{ tags | array_to_sentence_string: '' }}
         </div>
 
         <div class="fb-comments" data-href="http://kuniga.me/{{ page.url }}" data-numposts="5" data-width="100%"></div>
