@@ -276,7 +276,7 @@ This also makes it clearer that if we measure the first qubit, regardless of the
 The Deutsch-Jozsa Algorithm is a generalization of the Deutsch for $n$-qubits. The circuit is almost exactly the same:
 
 <figure class="center_children">
-    <img src="{{resources_path}}/deutsch-jozsa.png" alt="a diagram depicting the Deutsch-Jozsa Algorithm"/>
+    <img src="{{resources_path}}/deutsch_jozsa.png" alt="a diagram depicting the Deutsch-Jozsa Algorithm"/>
     <figcaption>Figure 5: Quantum circuit representing the Deutsch-Josza Algorithm</figcaption>
 </figure>
 
