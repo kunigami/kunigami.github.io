@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Monad Transformers"
-tags: [haskell, monad transformers, monads]
+tags: [category theory, haskell]
 ---
 
 In this post we'll talk briefly about Monad Transformers. Chapter 18 from the Real World Haskell inspired this, but as usual, it was a bit hard for me to digest. The best source so far for this subject was the Haskell wiki [1].

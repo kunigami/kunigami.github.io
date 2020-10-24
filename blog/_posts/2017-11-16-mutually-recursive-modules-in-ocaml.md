@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mutually Recursive Modules in OCaml"
-tags: [bootstrapped heaps, data structures, heaps, ocaml, recursive modules]
+tags: [data structures, ocaml]
 ---
 
 In Chapter 10 of *Purely Functional Data Structures*, Okasaki describes a technique called data structure bootstrapping. It's a way to reuse existing implementation of data structures to construct (bootstrap) new ones.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bulls and Cows"
-tags: [brute force, puzzle, react, rust]
+tags: [puzzle, javascript, rust]
 ---
 
 *Bulls and Cows* (also known as MOO) is a 2-player game in which one player comes up with a secret and the other has to guess the secret. The secret consists of 4 digits from 0 to 9, where each digit is distinct. Player 2 has to guess these 4 digits, in the right order. At each guess from player 2, player 1 provides feedback as hints. The hints are two numbers: one telling how many digits from the secret player 2 got in the right order (*bull*), and another telling how many digits they got but in the **wrong** order (*cow*).
@@ -43,7 +43,7 @@ In pseudo-code code, the search looks like this:
 def search(possible_secrets):
     for guess in possible_secrets:
         for each hint:
-            new_possible_secrets # possible_secrets that would return hint for 'guess' 
+            new_possible_secrets # possible_secrets that would return hint for 'guess'
             decision_subtree = search(new_possible_secrets)
             if height(decision_subree) < height(best_subtree):
                 best_decision_subtree = decision_subree
@@ -154,7 +154,7 @@ for guess in &possibilities {
     }
 
     visited_classes.insert(class_id, true);
-    
+
     // Search continues...
 }
 {% endhighlight %}

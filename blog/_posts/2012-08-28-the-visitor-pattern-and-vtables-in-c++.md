@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Visitor pattern and Vtables in C++"
-tags: [c++, compilers, computer science, java, programming, software engineering]
+tags: [c++, compilers, java, software engineering]
 ---
 
 The other day I was developing a Java code and I needed to use `instanceof`, but since I have read that this is a sign of bad design, I asked for help and was recommended the [Visitor](http://en.wikipedia.org/wiki/Visitor_pattern) pattern.

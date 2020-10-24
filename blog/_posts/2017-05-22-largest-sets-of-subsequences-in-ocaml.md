@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Largest sets of subsequences in OCaml"
-tags: [data science, data structures, data visualization, ocaml, puzzle, r, trivial pursuit]
+tags: [data structures, data visualization, ocaml, puzzle, r]
 ---
 
 I've noticed that there is this set of words in English that look very similar: *tough*, *though*, *through*, *thought*, *thorough*, *through* and *trough*. Except *thought*, they have one property in common: they're all subsequence of *thorough*. It made me wonder if there are interesting sets of words that are subsequences of other words.
@@ -105,8 +105,8 @@ The implementation in OCaml is given below:
 
 {% highlight ocaml %}
 (* Search for all subsequences of s in a trie *)
-let rec searchSubsequenceImpl 
-  (s: char list) 
+let rec searchSubsequenceImpl
+  (s: char list)
   (trie: trie)
 : char list list = match s with
   | [] -> []

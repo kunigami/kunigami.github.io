@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "US as an hexagonal map"
-tags: [cartography, combinatorics, d3.js, data visualization, integer programming]
+tags: [combinatorics, d3.js, data visualization, integer programming]
 ---
 
 In this post we'll study a way to visualize maps in a hexagonal grid, in which each entity have uniform area. We'll then model that as a mathematical problem.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Totally Unimodular Matrices"
-tags: [combinatorics, integer programming, linear algebra, math]
+tags: [combinatorics, integer programming, linear algebra]
 ---
 
 An **unimodular matrix** is a square matrix with integer entries such that its determinant is either -1, 0 or 1. A matrix is said **totally unimodular** (TU for short) if all its square submatrices are unimodular.
@@ -117,9 +117,9 @@ In future posts, we'll keep exploring this subject by studying other examples an
 
 ### References
 
-* [[1](http://www.amazon.com/Theory-Integer-Programming-Alexander-Schrijver/dp/0471982326/)] 
+* [[1](http://www.amazon.com/Theory-Integer-Programming-Alexander-Schrijver/dp/0471982326/)]
  Theory of Linear and Integer Programming - A. Schrijver
-* [[2](http://www.imada.sdu.dk/~marco/Teaching/Fall2009/DM204/Slides/TUM-lau.pdf)] 
+* [[2](http://www.imada.sdu.dk/~marco/Teaching/Fall2009/DM204/Slides/TUM-lau.pdf)]
  Marco Chiarandini - Scheduling, Timetabling and Routing DM204 (Lecture Notes)
-* [[3](http://www.lehigh.edu/~tkr2/teaching/ie418/lectures/Lecture8.pdf)] 
- Ted Ralphs - Integer Programming IE418 (Lecture Notes) 
+* [[3](http://www.lehigh.edu/~tkr2/teaching/ie418/lectures/Lecture8.pdf)]
+ Ted Ralphs - Integer Programming IE418 (Lecture Notes)

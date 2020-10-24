@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "An Introduction to the Parsec Library"
-tags: [automata, compilers, haskell, introduction, parsec]
+tags: [automata, compilers, haskell]
 ---
 
 ### Introduction

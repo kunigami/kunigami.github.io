@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Supervised Machine Learning"
-tags: [artificial intelligence, calculus, combinatorial optimization, coursera, linear regression, logistic regression, neural networks, support vector machines]
+tags: [artificial intelligence, calculus, combinatorial optimization, coursera]
 ---
 
 <figure class="image_float_left">

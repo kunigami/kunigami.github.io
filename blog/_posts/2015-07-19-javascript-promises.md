@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JavaScript Promises"
-tags: [es6, javascript, promise]
+tags: [javascript]
 ---
 
 <figure class="image_float_left">

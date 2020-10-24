@@ -142,12 +142,16 @@ body {
 h1,
 h2,
 h3,
+h3 a,
+h3 a:hover,
+h3 a:focus,
 h4,
 h5,
 h6 {
   margin: 10px 0;
   color: #5b5b5b;
   letter-spacing: -1px;
+  text-decoration: none;
 }
 
 h1 {

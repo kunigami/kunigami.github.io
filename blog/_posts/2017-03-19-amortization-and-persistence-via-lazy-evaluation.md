@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Amortization and Persistence via Lazy Evaluation"
-tags: [amortized analysis, data structures, lazy evaluation, ocaml, queue, stream]
+tags: [data structures, ocaml]
 ---
 
 <figure class="image_float_left">

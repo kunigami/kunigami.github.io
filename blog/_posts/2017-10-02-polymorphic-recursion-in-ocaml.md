@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Polymorphic Recursion in OCaml"
-tags: [data structures, ocaml, parametric polymorphism, structural decomposition, universally quantified type]
+tags: [data structures, ocaml]
 ---
 
 In Chapter 10 of *Purely Functional Data Structures*, Okasaki describes recursive types that are non-uniform. In this post we'll learn more about these types, how to implement them in OCaml and see an example by studying the implementation of *Random Access Binary Lists* using such a construct.

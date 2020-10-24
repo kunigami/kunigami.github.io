@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "An Introduction to Agda"
-tags: [agda, artificial intelligence, emacs, haskell, logic, software]
+tags: [agda, artificial intelligence, emacs, haskell]
 ---
 
 <figure class="image_float_left">
@@ -282,15 +282,15 @@ I have close to zero knowledge in formal systems. I've been exposed briefly to i
 I was initially interested in learn Coq but due to some problems in setting it up, I ended up looking for alternatives and found Agda. It seems that Coq is based on Ocaml and Agda is based on Haskell and since I've been focused in learning Haskell, it was a pleasant surprise. Agda has also has a good integration with Emacs, which is my favorite editor, so this was a plus.
 
 ### References
-* [[1](http://en.wikipedia.org/wiki/Per_Martin-L%C3%B6f)] 
+* [[1](http://en.wikipedia.org/wiki/Per_Martin-L%C3%B6f)]
  Per Martin-Löf - Wikipedia
-* [[2](http://en.wikipedia.org/wiki/Proof_assistant#Comparison_of_systems)] 
+* [[2](http://en.wikipedia.org/wiki/Proof_assistant#Comparison_of_systems)]
  Proof Assistant - Comparison of Systems - Wikipedia
-* [[3](http://www.cse.chalmers.se/~ulfn/papers/afp08/tutorial.pdf)] 
+* [[3](http://www.cse.chalmers.se/~ulfn/papers/afp08/tutorial.pdf)]
  Dependently Typed Programming in Agda - Ulf Norell and James Chapman
-* [[4](http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft0.pdf)] 
+* [[4](http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft0.pdf)]
  Interactive Theorem Proving, Lecture Notes 0 - Anton Setzer
-* [[5](http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft1.pdf)] 
+* [[5](http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft1.pdf)]
  Interactive Theorem Proving, Lecture Notes 1 - Anton Setzer
-* [[6](http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft2.pdf)] 
+* [[6](http://www.cs.swan.ac.uk/~csetzer/lectures/intertheo/07/intertheodraft2.pdf)]
  Interactive Theorem Proving, Lecture Notes 2 - Anton Setzer

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Turing Machines and Undecidability"
-tags: [automata, computational complexity, finite automata, logic, push-down automata, turing machines, undecidability]
+tags: [computational complexity]
 ---
 
 <figure class="image_float_left">

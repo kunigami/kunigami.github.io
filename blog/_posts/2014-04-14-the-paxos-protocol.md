@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Paxos Protocol"
-tags: [distributed systems, paxos algorithm]
+tags: [distributed systems]
 ---
 
 <figure class="image_float_left">

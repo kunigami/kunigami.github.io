@@ -28,9 +28,9 @@ For $$C \ge 3$$, the game is shown to be NP-hard even if one is allowed to start
 There are two greedy approaches one might try:
 
 > 1. Pick the color that maximizes the number of cells covered.
-> 
+>
 > 2. The most frequent color in the perimeter of the current region.
-> 
+>
 
 
 In Figure 2, we have an instance where this strategies can be arbitrarily bad [1]. They use $$n$$ colors while the optimal solution is 3.
@@ -177,5 +177,5 @@ As future work, we may try devising alternative models or find additional inequa
 
 ### References
 
-* [[1](http://arxiv.org/abs/1001.4420)] 
+* [[1](http://arxiv.org/abs/1001.4420)]
  Clifford R., Jalsenius M., Montanaro A. and Sach B. - The Complexity of Flood Filling Games ([arxiv.org](http://arxiv.org/abs/1001.4420))

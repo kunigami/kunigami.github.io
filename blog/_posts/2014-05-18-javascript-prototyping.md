@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Javascript Prototyping"
-tags: [javascript, prototype]
+tags: [javascript]
 ---
 
 <figure class="image_float_left">
@@ -350,4 +350,4 @@ It will generate this code: [http://goo.gl/W7jFRU](http://goo.gl/W7jFRU)
 
 * [[1](http://www.amazon.com/dp/0596517742)] Javascript: The Good Parts - Douglas Crockford
 * [[2](http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/)] Yehuda Katz - Understanding Prototypes in Javascript
-* [[3](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/)] MDN - JavaScript reference 
+* [[3](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/)] MDN - JavaScript reference
