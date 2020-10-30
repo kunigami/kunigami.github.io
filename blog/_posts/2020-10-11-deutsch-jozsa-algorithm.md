@@ -5,6 +5,7 @@ tags: [quantum computing, linear algebra]
 vanity: "2020-10-11-deutsch-jozsa-algorithm"
 excerpt_separator: <!--more-->
 tweet: "We describe the Deutsch-Jozsa Algorithm which showcases quantum parallelism."
+main_image: "deutsch_jozsa.png"
 ---
 
 {% include blog_vars.html %}
