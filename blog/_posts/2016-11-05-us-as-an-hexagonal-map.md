@@ -141,11 +141,13 @@ Instead of working with $$b_{x,y,s}$$ we use $$X_{x, s}$$, and equals 1 if and o
 6) A piece has to be placed in exactly one spot in the grid:
 
 $$\sum_{x \in G} X_{x,p} = 1$$ for all $$p \in P$$
+
 $$\sum_{y \in G} Y_{y,p} = 1$$ for all $$p \in P$$
 
 7) A spot can only be occupied by at most one state:
 
 $$\sum_s X_{xs} \le 1$$ for all $$x \in G$$
+
 $$\sum_s Y_{y,s} \le 1$$ for all $$y \in G$$
 
 In a hexagonal grid, if we have the piece p1 in position $$(x,y)$$, it will be adjacent to another piece p2 if and only if p2 is in one of these six positions: 1: $$(x-1, y)$$, 2: $$(x+1, y)$$, 3: $$(x-1, y-1)$$, 4: $$(x, y-1)$$, 5: $$(x-1, y+1)$$ or 6: $$(x, y+1)$$. We can define two adjacency categories: Type I, which happens when $$p1.y - p2.y = 0$$ and $$\mid p1.x - p2.x \mid = 1$$ (cases 1 and 2); and Type II, which is when $$\mid p1.y - p2.y \mid = 1$$ and $$p1.x - p2.x \le 0$$ (cases 3, 4, 5 and 6).
@@ -155,20 +157,27 @@ Let's define $$Y_{d=0, p1, p2, y} = 1$$ iff $$p1.y - p2.y = 0$$ for a given y. S
 8) We can have the following constraints do model the variables we just defined:
 
 $$Y_{d=0, p1, p2, y} = \mbox{EQ}(Y_{y, p_1}, Y_{y, p2})$$
+
 $$X_{\mid d \mid=1, p1, p2, x} = \mbox{EQ}(X_{x, p1}, X_{x-1, p2} + X_{x+1, p2})$$
+
 $$Y_{\mid d \mid=1, p1, p2, y} = \mbox{EQ}(Y_{y, p1}, Y_{y-1, p2} + Y_{y+1, p2})$$
+
 $$X_{d \ge 0, p1, p2, x} = \mbox{EQ}(X_{x, p1}, X_{x, p2} + X_{x+1, p2})$$
 
 9) Let $$Y_{d=0, p1, p2} = 1$$ iff $$p1.x - p2.y = 0$$ for any y. We can define analogous variables for the other cases:
 
 $$Y_{d=0, p1, p2} = \sum_{y} Y_{d=0, p1, p2, y}$$
+
 $$X_{\mid d \mid=1, p1, p2} = \sum_{x} X_{d=0, p1, p2, x}$$
+
 $$Y_{\mid d \mid=1, p1, p2} = \sum_{y} Y_{d=0, p1, p2, y}$$
+
 $$X_{d \ge 0, p1, p2} = \sum_{x} Y_{d \ge 0, p1, p2, x}$$
 
 10) Let $$T'_{p1, p2} = 1$$ iff p1 and p2 have the Type I adjacency and $$T''_{p1, p2} = 1$$ iff p1 and p2 have Type II adjacency:
 
 $$T'_{p1, p2} = \mbox{AND}(Y_{d=0, p1, p2}, X_{\mid d \mid=1, p1, p2})$$
+
 $$T''_{p1, p2} = \mbox{AND}(Y_{\mid d \mid=1, p1, p2}, X_{d \ge 0, p1, p2})$$
 
 11) Finally, we say that p1 and p2 are adjacency iff either Type I or Type II occurs:
@@ -202,9 +211,7 @@ Also, the layout of the US map was devised by someone from NPR and they did a ma
 
 **Data sources**
 
-
-
-[[5](http://users.econ.umn.edu/~holmes/data/BorderData.html)] US State Borders
-[[6](https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population)] Wikipedia - Population of US states and territories
-[[7](http://wikitables.geeksta.net/)] Tool to download Wikipedia tables as CSV
-[[8](https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_area)] List of US states and territories by area
+* [[5](http://users.econ.umn.edu/~holmes/data/BorderData.html)] US State Borders
+* [[6](https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population)] Wikipedia - Population of US states and territories
+* [[7](http://wikitables.geeksta.net/)] Tool to download Wikipedia tables as CSV
+* [[8](https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_area)] List of US states and territories by area

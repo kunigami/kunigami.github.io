@@ -326,7 +326,7 @@ hr {
 }
 
 table {
-  border: 1px solid #373737;
+  border-style: hidden;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -334,13 +334,13 @@ table {
 th {
   font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 10px;
-  background: #373737;
-  color: #fff;
+  background: #dddfe2;
+  border: 0;
 }
 
 td {
   padding: 10px;
-  border: 1px solid #373737;
+  border-bottom: 1px solid #373737;
 }
 
 form {
