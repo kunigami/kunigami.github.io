@@ -33,7 +33,7 @@ We'll further assume that there are only two candidates, A and B, and a vote has
 
 ## Ballpark estimate
 
-If we assume there are sets of states that divide the electoral votes into roughly two, then candidate A needs to win ~50% of the electoral votes.
+If we assume there are sets of states that divide the electoral votes into roughly two equal parts, then candidate A needs to win ~50% of the electoral votes.
 
 Also, since the number of electoral votes is roughly proportional to the population and assuming the voting participation rate is roughly the same across the states, candidate A needs to win ~50% of the votes of a set of states that add up to ~50% of the electoral votes. This is ~25% of the total votes for A and ~75% for B, so we'd expect the exact results we'll compute to be around this ratio.
 
@@ -194,7 +194,7 @@ We also generate the map with the states where A gets $\lfloor v/2 \rfloor + 1$ 
 
 ## Analysis
 
-It's theoretically possible for a candidate to win the US election (with the caveat of the Maine-Nebraska simplification) by wining only 21.3% of the popular votes. This ratio is also not too far from our ballpark estimate of 25%.
+It's theoretically possible for a candidate to win the US election (with the caveat of the Maine-Nebraska simplification) by wining only 21.3% of the popular votes. This ratio is not too far from our ballpark estimate of 25%.
 
 While populous states yield a lot of electoral votes, it also requires a lot of popular votes to be won, so it doesn't matter too much in finding the optimal solution. A better heuristic are picking states with low voter turnout (like Texas, ~50%), since it requires a smaller subset of the population to win, but it still yields electoral votes that are proportional to the full population.
 
@@ -212,6 +212,7 @@ This post was a good way for me to learn how the voting system works in the US. 
 
 * [US as an hexagonal map
 ]({{site.url}}/blog/2016/11/05/us-as-an-hexagonal-map.html) describes an alternative way that represents US states in a uniform way, since the geographical representation puts too much emphasis in large states like Alaska. A similar issue exists with electoral votes where states like New York feels underrepresented even though it was a large number of votes. There are alternative representation as well, like [here](https://blog.revolutionanalytics.com/2016/10/tilegrams-in-r.html).
+* [Shortest String From Removing Doubles]({{site.url}}/blog/2020/05/25/minimum-string-from-removing-doubles.html) is another puzzle in which we use backtracking to recover the solution from an auxiliary array. I don't know if the solution can be classified as dynamic programming because it does't build open smaller instances of the problem explicitly.
 
 ## References
 
