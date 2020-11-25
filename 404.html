@@ -4,13 +4,51 @@ permalink: /404.html
 ---
 
 <script>
-
-// Handle old URLs from my wordpress site
-const url = window.location;
+let path = window.location.pathname;
+let mutated = false;
+const query = window.location.search;
 
 if (path.endsWith('/')) {
-    url = url.slice(0, -1);
-    window.location.replace(url);
+    path = path.slice(0, -1);
+    mutated = true;
+}
+
+function pad(num, size) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
+}
+
+// Uber hack: when I migrated my wordpress posts to github pages I did
+// not realize the timestamps were not on my local time. This caused some
+// dates to be shifted by a day. Try the next day if we didn't find the
+// date.
+const re = new RegExp('^\/blog\/([0-9]+)\/([0-9]+)\/([0-9]+)\/[a-z\-]+');
+const matches = path.match(re);
+
+if (matches) {
+    const year = matches[1];
+    const month = matches[2];
+    const day = matches[3];
+    const old_date_str = [year, month, day].join('/');
+    const timestamp = Date.parse([year, month, day].join('-'));
+    const shifted_timestamp = timestamp + 1000 * 60 * 60 * 24;
+    const date = new Date(shifted_timestamp);
+
+    const new_date_str = [
+        date.getUTCFullYear(),
+        pad(date.getUTCMonth() + 1, 2),
+        pad(date.getUTCDate(), 2)
+    ].join('/');
+    console.log(old_date_str, new_date_str);
+
+    path = path.replace(old_date_str, new_date_str);
+    console.log(path);
+    mutated = true;
+}
+
+if (query == '' && mutated) {
+    window.location.replace('{{site.url}}' + path + '?redirected=1');
 }
 </script>
 
