@@ -156,7 +156,7 @@ def solve_inverse_knapsack(items, W):
     return [i for i in range(len(items)) if i not in solution_lookup]
 {% endhighlight %}
 
-The full source is on Github.
+The full source is on [Github]({{github}}/solve.py).
 
 ## Results
 
