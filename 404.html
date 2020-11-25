@@ -1,0 +1,19 @@
+---
+layout: default
+permalink: /404.html
+---
+
+<script>
+
+// Handle old URLs from my wordpress site
+const url = window.location;
+
+if (path.endsWith('/')) {
+    url = url.slice(0, -1);
+    window.location.replace(url);
+}
+</script>
+
+# 404
+
+Page not found! :(
