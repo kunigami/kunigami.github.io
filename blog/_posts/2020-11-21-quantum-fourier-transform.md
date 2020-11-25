@@ -29,15 +29,13 @@ where $k$ are all states in a computational base and $x$ is a $n$ qubit state, t
 
 $$(2) \quad \ket{y} = \sum_{k = 0}^{2^n - 1} y_k \ket{k}$$
 
-where $y_k$ is defined as:
+where $y_k$ is defined the same way as (1):
 
-$$y_k = \frac{1}{2^{n/2}} \sum_{j = 0}^{2^n - 1} x_j e^{- 2 \pi i j k / 2^n} \qquad \forall k = 0, \cdots, N - 1$$
-
-which is almost exactly (1) but by convention it uses the negative in the exponent, which is known as the *inverse* Fourier transform.
+$$y_k = \frac{1}{2^{n/2}} \sum_{j = 0}^{2^n - 1} x_j e^{2 \pi i j k / 2^n} \qquad \forall k = 0, \cdots, N - 1$$
 
 If $x$ is a computational base state, say $\ket{j}$ (so $x_j = 1$ and 0 otherwise), then $y_k$ can be written as:
 
-$$y_k = \frac{1}{2^{n/2}} e^{- 2 \pi i j k / 2^n} \qquad \forall k = 0, \cdots, 2^n - 1$$
+$$y_k = \frac{1}{2^{n/2}} e^{2 \pi i j k / 2^n} \qquad \forall k = 0, \cdots, 2^n - 1$$
 
 and (2) as:
 
