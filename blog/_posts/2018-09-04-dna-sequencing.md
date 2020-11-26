@@ -14,7 +14,9 @@ Frederick Sanger was a British biochemist. He is known for the first sequencing 
 In this post we'll talk about one of the first steps of DNA analysis, DNA sequencing, which is obtaining the data from the DNA, how it's performed (we'll focus on the Sanger method) and some interesting computational problems associated with it.
 
 This is the second post in the series of Biochemistry studies from a Computer Scientist perspective. Our first post is a brief discussion of basic concepts in [Cell Biology]({{site.url}}/blog/2018/04/30/cell-biology-and-programming.html).
-# DNA Sequencing
+
+## DNA Sequencing
+
 DNA sequencing is the determination of the physical order of the nucleotide bases in a molecule of DNA.
 
 The first living organism to have its genome sequenced was a bacteria, [Haemophilus influenzae](https://en.wikipedia.org/wiki/Haemophilus_influenzae), whose genome is about 1.8 million base pairs.
@@ -24,9 +26,13 @@ The first living organism to have its genome sequenced was a bacteria, [Haemoph
 In the human genome, there are 3 billion of base-pairs, and it took 13 years for it to [be completed](https://en.wikipedia.org/wiki/Human_Genome_Project).
 
 There are two main methods of sequencing, Sanger and Next-generation [5]. We'll talk about the Sanger in details and discuss briefly the Next-generation from a real-world use case.
-# Sanger Sequencing
+
+## Sanger Sequencing
+
 The Sanger method is able to determine the nucleotide sequence of small fragments (up to abound 900bps) [5] of DNA.
+
 ### Overview
+
 The first step is cloning the fragment into multiple copies (like billions) by a process called **amplification**. This is essentially mimicking the DNA cloning process in an artificial setup. In very high level we have:
 * Separate the double strands (denaturation)
 * Add a special molecule (primer) to the extremity of each strand
@@ -57,7 +63,8 @@ To separate the double strands we heat the solution up to 96ºC, in a process w
 In the same solution we have the primer molecules (aka oligonucleotides) which are carefully chosen to match the beginning of the DNA strand. They also bind to DNA at a higher temperature than the strands (e.g. 55ºC). This is important because we can now lower the temperature of the solution slowly, enough so that primers can bind, but not so low to the point where the original strands will join back together. This slow cooling is called **annealing**. These primers can be [synthesized artificially](https://en.wikipedia.org/wiki/Oligonucleotide_synthesis).
 
 *Gap in understanding:* how to choose the right primer, since we need to know at least some of sequence from the nucleotide in order to know which primer will end up binding there? One possible explanation is that we know the exact sequence where a DNA was cut if we restriction enzymes, since their binding site is known [9] and hence we have an idea of the result endpoints after the cut.
-# □
+
+
 We also add an enzyme, DNA polymerase, and nucleotides to the solution. The enzyme is able to extend the original primer segment by binding free nucleotides in the solution. In particular we use the enzyme of a bacteria that lives at 70ºC (*Thermus Acquaticus*), also know as **Taq polymerase** because it is functional at higher temperatures. Performing the replication at a higher temperature prevents the separated strands from gluing together again.
 
 The dideoxy nucleotide are modified versions of the regular nucleotide by supressing the OH group. They can still be incorporated to the primer via the DNA polymerase, but they prevent other nucleotides to binding to them via the sugar-phosphate binding.
@@ -87,7 +94,9 @@ After the process is over, we have the sequence of many fragments based on the c
 We can see that the principles resemble the Sanger method, but it uses different technologies to allow a very automated and parallel procedure.
 
 This whole process is very vague and it's hard to have a good understanding of it. It's understandable given that a lot of the information is likely industry secret.
-# Sequencing vs Genotyping in personal genomics
+
+## Sequencing vs Genotyping in personal genomics
+
 Some of the most popular personal genetic analysis companies, such as 23andMe, provide a service in which they analyze the user DNA for a small fee. It's way cheaper than the full genome analysis provided by Illumina, but that's because these companies don't do DNA *sequencing*, but rather *genotyping*.
 
 **Genotyping** is the process of determining which genetic variants an individual possesses. This is easier than sequencing because a lot of known diseases and traits can be traced back to specific regions and specific chromosomes.
@@ -95,7 +104,9 @@ Some of the most popular personal genetic analysis companies, such as 23andMe, p
 This is the information you most likely want to know about yourself. Remember that the majority of DNA in complex organisms is not useful (introns). In humans genome, exome (the part of DNA consisting of exons) account for less than 2% of total DNA.
 
 Sequencing technology has not yet progressed to the point where it is feasible to sequence an entire person’s genome quickly and cheaply enough to keep costs down for consumers. It took the Human Genome Project, a consortium of multiple research labs, over 10 years to sequence the whole genomes of just a few individuals.
-# Sequence Assembly Problem
+
+## Sequence Assembly Problem
+
 Current technology is unable to sequence large segments of DNA, so it has to break it down into small fragments. Once that is done, we need to reconstruct the original sequence from the data of individual fragments.
 
 There are two scenarios:
@@ -108,8 +119,9 @@ There is a family of computational methods for the mapping case known as [Seque
 One thing I can think of is that if we repeat the experiments multiple times, each time cutting the molecules at different places, it might be possible to infer the relative order of the segments if they're unique enough.
 
 For example, if the original segment is: GATTCAGC and we run two experiments, one yielding (GAT, TCAGC) and another (GATTC, AGC), then in this case there's only one way to assemble (order) these sequences in a consistent way.
-# □
-# Conclusion
+
+## Conclusion
+
 In this post we studied some aspects of DNA sequencing. I found the Sanger method fascinating. In Computer Science ideas usually translate to algorithms and code very directly, but in other science branches the mapping from ideas to implementation is a problem in itself.
 
 In Mechanics for example, we have to work with the physical world, so when converting from a circular movement to a linear one requires some clever tricks.
@@ -117,7 +129,9 @@ In Mechanics for example, we have to work with the physical world, so when conve
 This needs to be taken to another level in Molecular Biology, because we don't have direct access to the medium like we do in a mechanical device, for example, we can't directly manipulate a double strand of DNA fragment to separate it, but have to resort to indirect ways.
 
 The field of Biotechnology seems to be progressing at such a pace that it was challenging to find good sources of information. I'm yet to find a resource that explains end to end the steps from the process that takes a sample of cells and outputs the DNA nucleotides to a computer, including the technical challenges in doing so. This is what this post aimed to do.
-# References
+
+## References
+
 * [[1](https://en.wikipedia.org/wiki/Frederick_Sanger)] Wikipedia - Frederick Sanger
 * [[2](https://blog.genohub.com/2015/01/27/illuminas-latest-release-hiseq-3000-4000-nextseq-550-and-hiseq-x5/)] Genohub - Illumina’s Latest Release: HiSeq 3000, 4000, NextSeq 550 and HiSeq X5
 * [[3](https://www.illumina.com/systems/sequencing-platforms/hiseq-x.html)] Illumina Hiseq-X
