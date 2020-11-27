@@ -2,3 +2,8 @@ emptyArray: []
 collections:
   docs:
     output: true
+plugins:
+  - jekyll-feed
+title: NP-Incompleteness
+description: Kunigami's Technical Blog
+author: Guilherme Kunigami
