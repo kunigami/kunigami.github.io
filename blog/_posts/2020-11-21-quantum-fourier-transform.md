@@ -280,3 +280,5 @@ I assume it wasn't a clear straight path of discovery from (3) to (8) but I can'
 * [The Deutsch-Jozsa Algorithm]({{site.url}}/blog/2020/10/11/deutsch-jozsa-algorithm.html) besides being the pre-requisite for this post, I noticed similarities between the quantum Fourier transform computation and the Deutsch-Jozsa Algorithm, in which we leverage the ability of quantum circuits to "entangle" information from the input efficiently. In the Deutsch-Jozsa Algorithm, we entangled all the computations of some $f: \curly{\ket{0}, \ket{1}}^{\otimes n} \rightarrow \curly{\ket{0}, \ket{1}}$ while here we entangle all the bits of the input into the each bit of the output, like the last factor of (8) $(\ket{0} + e^{2 \pi i (0.j_1j_2 \cdots j_n} \ket{1})$.
 
 ## References
+
+* [[1](https://www.amazon.com/Quantum-Computation-Information-10th-Anniversary/dp/1107002176)] Quantum Computation and Quantum Information - Nielsen, M. and Chuang, I.
