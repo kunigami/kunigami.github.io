@@ -1,4 +1,4 @@
-
+// Hand-curated hierarchy of tags
 const tagsHierarchy = {
     'biology': [
         'evolutionary biology',
@@ -24,8 +24,6 @@ const tagsHierarchy = {
         'graph theory',
         'human-computer interaction',
         'integer programming',
-        'linear algebra',
-        'number theory',
         'numerical optimization',
         'operating systems',
         'probabilistic algorithms',
@@ -35,6 +33,8 @@ const tagsHierarchy = {
     'math': [
         'calculus',
         'combinatorics',
+        'linear algebra',
+        'number theory',
         'probability',
     ],
     'personal': [
