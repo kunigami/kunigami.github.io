@@ -413,6 +413,13 @@ figcaption {
   font-family: Menlo, monospace;
 }
 
+img.icon {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  vertical-align: bottom;
+}
+
 /* ----------------------------------------------------------------------------
  * Small Device Styles
  * ----------------------------------------------------------------------------
