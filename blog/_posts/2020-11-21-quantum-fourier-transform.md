@@ -6,6 +6,7 @@ vanity: "2020-11-21-quantum-fourier-transform"
 excerpt_separator: <!--more-->
 tweet: "We learn how to implement the quantum fourier transform using quantum circuits."
 description: "Quantum fourier transform"
+main_image: "quantum-circuit.png"
 ---
 
 {% include blog_vars.html %}
