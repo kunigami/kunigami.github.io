@@ -120,7 +120,7 @@ Let's start with a quick detour. Recall that Euler's formula states:
 
 $$e^{ix} = \cos x + i \sin x$$
 
-So we can see $x$ as angular displacements in a circle and every $2 \pi$ is a full resolution.
+So we can see $x$ as angular displacements in a circle and every $2 \pi$ is a full revolution.
 
 Say we have an angle $2 \pi \alpha$ for some real $\alpha$. Let $k$ be the integer part of $\alpha$ and $\beta$ its decimal. Then our angle is $2 \pi k + 2 \pi \beta$. The first term represents full revolutions, so we can throw away the integer part of $\alpha$ when computing $\cos 2 \pi \alpha$ and $\sin 2 \pi \alpha$, and thus $e^{i 2 \pi \alpha}$. For example, $e^{6.7 * 2 \pi i} = e^{0.7 * 2 \pi i}$.
 
@@ -214,7 +214,7 @@ If $j_i = 0$, it returns $\alpha \ket{0} + \beta \ket{1}$, the original state, a
 
 ### Swapping qubits
 
-Let $x_0$ and $y_0$ be 2 qubits in the computational base. We can swap their values using 3 CNOT gates. Let $CNOT(x, y)$ be the NOT gate applied to $y$ (target) and controlled by $x$. Assuming the qubits are in the computational base $\curly{0, 2}$, $CNOT(x, y)$ is equivalent to $x \oplus y$ (XOR).
+Let $x_0$ and $y_0$ be 2 qubits in the computational base. We can swap their values using 3 CNOT gates. Let $CNOT(x, y)$ be the NOT gate applied to $y$ (target) and controlled by $x$. Assuming the qubits are in the computational base $\curly{0, 1}$, $CNOT(x, y)$ is equivalent to $x \oplus y$ (XOR).
 
 We start off with $(x_0, y_0)$. Then we apply CNOT to the second bit, so $(x_1, y_1) = (x_0, x_0 \oplus y_0)$, then we apply CNOT to the first bit, $(x_2, y_2) = (y_1 \oplus x_1, y_1) = (x_0 \oplus y_0 \oplus x_0, x_0 \oplus y_0) = (y_0 , x_0 \oplus y_0)$, the last step comes from the fact that $\oplus$ is associative and commutative, so $x_0 \oplus y_0 \oplus x_0 = y_0 \oplus (x_0 \oplus x_0) = y_0 \oplus 0 = y_0$.
 
