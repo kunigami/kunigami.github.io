@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Huffman Coding"
+description: "Primer on the Huffman coding algorithm"
 tags: [data structures, python]
 ---
 

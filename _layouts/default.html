@@ -19,7 +19,7 @@
     <title>{{ page.title }}</title>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Kunigami.github.io : " />
+    <meta name="description" content="NP-Incompleteness: {{ page.description }}" />
     <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" media="screen" href="{{site.baseurl}}/stylesheets/stylesheet.css">
@@ -54,6 +54,7 @@
             ket: ["{\\mid #1 \\rangle}", 1],
             abs: ["{\\mid #1 \\mid}", 1],
             curly: ["\\{ #1 \\}", 1],
+            Mod: ["{\\ (\\mbox{mod} \\ #1)}", 1],
           }
         }
       });

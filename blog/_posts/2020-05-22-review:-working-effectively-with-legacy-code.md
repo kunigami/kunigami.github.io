@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Review: Working Effectively With Legacy Code"
+description: "Review of Michael C. Feathers' Working Effectively With Legacy Code"
 tags: [review, software engineering]
 ---
 

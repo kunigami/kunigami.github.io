@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "A Puzzling Election"
+description: "What is the minimum number of popular votes to win the US election"
 tags: [combinatorial optimization, computational complexity, observable, puzzle]
 vanity: "2020-11-06-puzzling-election"
 excerpt_separator: <!--more-->

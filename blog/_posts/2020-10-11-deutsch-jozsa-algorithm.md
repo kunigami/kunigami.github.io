@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Deutsch-Jozsa Algorithm"
+description: "Introduction to quantum computing and the Deutsch-Jozsa Algorithm"
 tags: [quantum computing, linear algebra]
 vanity: "2020-10-11-deutsch-jozsa-algorithm"
 excerpt_separator: <!--more-->

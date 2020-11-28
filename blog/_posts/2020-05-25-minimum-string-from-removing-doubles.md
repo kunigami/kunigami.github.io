@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Shortest String From Removing Doubles"
+description: "Theory and implementation to solve this programming puzzle"
 tags: [puzzle, python]
 ---
 

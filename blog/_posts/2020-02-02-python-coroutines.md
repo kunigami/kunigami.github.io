@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Python Coroutines"
+description: "Study of Python Coroutines for asynchronous programming"
 tags: [python]
 ---
 
@@ -60,8 +61,8 @@ def filter_step(lines):
 
 def print_step(lines):
     for w in filtered_words:
-        print(w)    
-            
+        print(w)
+
 words = get_words()
 filtered_words = filter_step(words)
 print_step(filtered_words)
@@ -101,8 +102,8 @@ def echo():
     while True:
         line = (yield)
         print(line)
-        
-gen = echo() 
+
+gen = echo()
 gen.send(None)
 gen.send("hello")
 gen.send("world")
@@ -128,7 +129,7 @@ Since in a coroutine most of the times the first `send()` will be to initialize 
 def coroutine(fn):
     def start(*args, **kwargs):
         gen = fn(*args, **kwargs)
-        next(gen) 
+        next(gen)
         return gen
     return start
 {% endhighlight %}
@@ -181,7 +182,7 @@ One of the interesting implementation of the multitasking system is system calls
 
 {% highlight python %}
 # Excerpt from http://www.dabeaz.com/coroutines/pyos4.py
-    
+
 # coroutine that will be wrapped in a task
 def foo():
     mytid = yield GetTid()
@@ -190,7 +191,7 @@ def foo():
 # A system call
 class GetTid(SystemCall):
     def handle(self):
-        # The scheduler "injects" task in the 
+        # The scheduler "injects" task in the
         # system call
         self.task.sendval = self.task.tid
 
@@ -198,12 +199,12 @@ class Scheduler(object):
     ...
     def mainloop(self):
        ...
-       # RHS of foo's yied 
+       # RHS of foo's yied
        result = task.run()
        if isinstance(result, SystemCall):
            result.task  = task
            result.sched = self
-           result.handle()     
+           result.handle()
 {% endhighlight %}
 
 The tutorial then covers one of the most important parts of the multitasking system which is the ability to do asynchronous I/O operations (e.g. reading and writing to a file).
@@ -214,20 +215,20 @@ The idea is to introduce a "system call" corresponding to performing I/O. When a
 class ReadWait(SystemCall):
     def __init__(self, file):
         self.file = file
-        
+
     def handle(self):
         fd = self.file.fileno()
         self.sched.waitforread(self.task, fd)
 
-class Scheduler(object):        
+class Scheduler(object):
 
     # Add task and file descriptor to the list
     # to be checked on polling
     def waitforread(self, task, fd):
        self.read_waiting[fd] = task
-    
+
     # select.select is an OS API to determine
-    # when a file descriptor is "ready" 
+    # when a file descriptor is "ready"
     def iopoll(self,timeout):
         if self.read_waiting or self.write_waiting:
            read_fds, write_fds, _x = select.select(
@@ -236,9 +237,9 @@ class Scheduler(object):
            )
            for fd in read_fds: self.schedule(self.read_waiting.pop(fd))
            # ...
-   
+
     # Models polling as a regular task - whenever
-    # it gets run by the scheduler it counts as a 
+    # it gets run by the scheduler it counts as a
     # poll
     def iotask(self):
         while True:
@@ -261,7 +262,7 @@ def server(port):
     while True:
         yield ReadWait(sock)
         client, addr = sock.accept()
-        yield NewTask(handle_client(client, addr)) 
+        yield NewTask(handle_client(client, addr))
 {% endhighlight %}
 
 **Trampolining**
@@ -296,10 +297,10 @@ class Task(object):
         while True:
             try:
                 result = self.target.send(self.sendval)
-                
-                if isinstance(result, SystemCall): 
+
+                if isinstance(result, SystemCall):
                     return result
-                
+
                 # sub-routine call
                 if isinstance(result, types.GeneratorType):
                     # put the caller on the stack
@@ -307,19 +308,19 @@ class Task(object):
                     self.sendval = None
                     self.target  = result
                 else:
-                    if not self.stack: 
+                    if not self.stack:
                         return
                     self.sendval = result
                     # resume execution to caller
                     self.target = self.stack.pop()
             # current coroutine finished
             except StopIteration:
-                # invalid state 
-                if not self.stack: 
+                # invalid state
+                if not self.stack:
                     raise
                 self.sendval = None
                 self.target = self.stack.pop()
-                
+
 # Example coroutine and sub-coroutine
 def Accept(sock):
     yield ReadWait(sock)
@@ -401,7 +402,7 @@ print(type(g_async()))
 
 def g_coro():
     yield 10
-    
+
 # <class 'generator'>
 print(type(g_async()))
 
@@ -430,7 +431,7 @@ async def sleep(id):
     print("will sleep", id)
     await asyncio.sleep(4)
     print("slept", id)
-    
+
 async def main():
     await sleep(1)
     await sleep(2)

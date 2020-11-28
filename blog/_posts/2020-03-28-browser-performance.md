@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Browser Performance"
+description: "Basics of browser performance using Chrome"
 tags: [chrome, css, javascript]
 ---
 
@@ -103,8 +104,8 @@ It's possible to write our own events that show up in Timings. We just need to a
     expensive();
     performance.mark('expensive-end');
     const value = performance.measure(
-        'expensive-mark', 
-        'expensive-start', 
+        'expensive-mark',
+        'expensive-start',
         'expensive-end',
     );
 {% endhighlight %}
@@ -226,15 +227,15 @@ In [17], Lewis suggests reducing the complexity of CSS selectors such as
 
 {% highlight css %}
 .box:nth-last-child(-n+1) .title {
-  /* styles */ 
+  /* styles */
 }
 {% endhighlight %}
 
 to
 
 {% highlight css %}
-.final-box-title { 
-  /* styles */ 
+.final-box-title {
+  /* styles */
 }
 {% endhighlight %}
 
@@ -266,8 +267,8 @@ It's unclear however which specific CSS properties are expensive.
 In [19] Lewis suggests creating layers for elements that are updated very often, to avoid these updates from causing updates in the rest of the page. One way to force the creation of a layer is:
 
 {% highlight css %}
-.moving-element { 
-  will-change: transform; 
+.moving-element {
+  will-change: transform;
 }
 {% endhighlight %}
 

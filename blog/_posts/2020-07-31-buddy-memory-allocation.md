@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Buddy Memory Allocation"
+description: "An algorithm for dynamic memory allocation"
 tags: [data structures, python]
 vanity: "2020-07-31-buddy-memory-allocation"
 main_image: "alloc.png"

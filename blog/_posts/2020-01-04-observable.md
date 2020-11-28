@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Observable"
+description: "First impressions on the Observable platform"
 tags: [data visualization, javascript, observable]
 ---
 
