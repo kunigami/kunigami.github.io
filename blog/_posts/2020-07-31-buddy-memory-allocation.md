@@ -46,7 +46,7 @@ If a buddy is found we combine them into one block. We repeat this process while
 
 <figure class="center_children">
     <img src="{{resources_path}}/merge.png" alt="example of prev"/>
-    <figcaption>Example of merging after freeing.</figcaption>
+    <figcaption>Figure 2: Example of merging after freeing.</figcaption>
 </figure>
 
 Note from Figure 2 that the buddy of a block can be either before or after it in memory.
@@ -266,7 +266,7 @@ def alloc(self, size):
 
 Note that in the last line we don't return the block address directly but the user address hides the address space for the metadata the block keeps inline.
 
-The `split()` finds the buddy address, set is metatada and add it to the list of free blocks:
+The `split()` finds the buddy address, set its metatada and add it to the list of free blocks:
 
 {% highlight python %}
 def split(self, block, size):
@@ -365,15 +365,15 @@ The Wikipedia article is a good start and provides a good intuition, but lacks d
 
 Fortunately Knuth wrote about it in *The Art of Computer Programming* but I had a lot of trouble following it. The content is dense and skips non-obvious steps. Moreover, it relied on concepts from previous sessions and used notation I'm unfamiliar with I had to do lookups often.
 
-The idea of the algorithm is relatively straighforward but the implementation is hard mostly because the data structure is inline with the memory it's allocatin/freeing. That was a pretty interesting constraint.
+The idea of the algorithm is relatively straighforward but the implementation is hard mostly because the data structure is inline with the memory it's allocating/freeing. That was a pretty interesting constraint.
 
-I debated about whether to implement this is a low-level language like C or Rust and work with pointer arithmetic but opted to do in Python to the fully explicit about when working with addresses and to make it easier to undertand by building on top of high-level abstractions.
+I debated about whether to implement this is a low-level language like C or Rust and work with pointer arithmetic but opted to do in Python to the fully explicit about when working with addresses and to make it easier to understand by building on top of high-level abstractions.
 
-I also started off by writing everything as a single function and wrote tests before refactoring. Particularly useful as encapsulating memory access into the `Memory` class, which made it very easy to swap the implementation using Python list with bit-arrays later.
+I also started off by writing everything as a single function and wrote tests before refactoring. Particularly useful was encapsulating memory access into the `Memory` class, which made it very easy to swap the implementation using Python list with bit-arrays later.
 
 ## Related Posts
 
-* [Skip Lists in Python]({{site.url}}/blog/2012/09/25/skip-lists-in-python.html) and [The Algorithm X and the Dancing Links]({{site.url}}/blog/2013/04/28/the-algorithm-x-and-the-dancing-links.html) are not really related but they implement linked-structures in Python and hide their implementation details behind classes.
+* [Skip Lists in Python]({{site.url}}/blog/2012/09/25/skip-lists-in-python.html) and [The Algorithm X and the Dancing Links]({{site.url}}/blog/2013/04/28/the-algorithm-x-and-the-dancing-links.html) are not really related but they also implement linked-structures in Python and hide their implementation details behind classes.
 * [CPU caches]({{site.url}}/blog/2020/04/24/cpu-cache.html) - we touched upon virtual memory in that post. We didn't explicitly mentioned it here, but abstracting the offsets as we did in `block.get_user_addr()` is in a way using virtual address which doesn't directly map to the actual memory address.
 
 ## References
