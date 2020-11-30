@@ -4,52 +4,63 @@ permalink: /404.html
 ---
 
 <script>
-let path = window.location.pathname;
-let mutated = false;
-const query = window.location.search;
-
-if (path.endsWith('/')) {
-    path = path.slice(0, -1);
-    mutated = true;
-}
-
 function pad(num, size) {
     num = num.toString();
     while (num.length < size) num = "0" + num;
     return num;
 }
 
-// Uber hack: when I migrated my wordpress posts to github pages I did
-// not realize the timestamps were not on my local time. This caused some
-// dates to be shifted by a day. Try the next day if we didn't find the
-// date.
-const re = new RegExp('^\/blog\/([0-9]+)\/([0-9]+)\/([0-9]+)\/[a-z\-]+');
-const matches = path.match(re);
+function redirect() {
+    let path = window.location.pathname;
+    let mutated = false;
+    const query = window.location.search;
 
-if (matches) {
-    const year = matches[1];
-    const month = matches[2];
-    const day = matches[3];
-    const old_date_str = [year, month, day].join('/');
-    const timestamp = Date.parse([year, month, day].join('-'));
-    const shifted_timestamp = timestamp + 1000 * 60 * 60 * 24;
-    const date = new Date(shifted_timestamp);
+    if (path.endsWith('/')) {
+        path = path.slice(0, -1);
+        window.location.replace('{{site.url}}' + path);
+        return;
+    }
 
-    const new_date_str = [
-        date.getUTCFullYear(),
-        pad(date.getUTCMonth() + 1, 2),
-        pad(date.getUTCDate(), 2)
-    ].join('/');
-    console.log(old_date_str, new_date_str);
+    const re_bad_concat = new RegExp('^\/blog[0-9]+');
+    let matches = path.match(re_bad_concat);
+    if (matches) {
+        path = path.replace('blog', 'blog/');
+        window.location.replace('{{site.url}}' + path);
+        return;
+    }
 
-    path = path.replace(old_date_str, new_date_str);
-    console.log(path);
-    mutated = true;
+    // Uber hack: when I migrated my wordpress posts to github pages I did
+    // not realize the timestamps were not on my local time. This caused some
+    // dates to be shifted by a day. Try the next day if we didn't find the
+    // date.
+    const re = new RegExp('^\/blog\/([0-9]+)\/([0-9]+)\/([0-9]+)\/[a-z\-]+');
+    matches = path.match(re);
+
+    if (matches) {
+        const year = matches[1];
+        const month = matches[2];
+        const day = matches[3];
+        const old_date_str = [year, month, day].join('/');
+        const timestamp = Date.parse([year, month, day].join('-'));
+        const shifted_timestamp = timestamp + 1000 * 60 * 60 * 24;
+        const date = new Date(shifted_timestamp);
+
+        const new_date_str = [
+            date.getUTCFullYear(),
+            pad(date.getUTCMonth() + 1, 2),
+            pad(date.getUTCDate(), 2)
+        ].join('/');
+        path = path.replace(old_date_str, new_date_str);
+        mutated = true;
+    }
+
+    if (query == '' && mutated) {
+        window.location.replace('{{site.url}}' + path + '?redirected=1');
+        return;
+    }
 }
 
-if (query == '' && mutated) {
-    window.location.replace('{{site.url}}' + path + '?redirected=1');
-}
+redirect();
 </script>
 
 # 404
