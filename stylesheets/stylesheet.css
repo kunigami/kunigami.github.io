@@ -340,7 +340,7 @@ th {
 
 td {
   padding: 10px;
-  border-bottom: 1px solid #373737;
+  border-bottom: 1px solid #dddfe2;
 }
 
 form {
@@ -418,6 +418,10 @@ img.icon {
   margin: 0px;
   padding: 0px;
   vertical-align: bottom;
+}
+
+.books-table td {
+  vertical-align: top;
 }
 
 /* ----------------------------------------------------------------------------

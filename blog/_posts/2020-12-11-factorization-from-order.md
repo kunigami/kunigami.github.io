@@ -229,7 +229,7 @@ We just proved, for all $i$, that $d_i = 0$ if $r$ is odd and $d_i = d$ if $x^{r
 
 *Proof.* Not included here. This is also not included in [1].
 
-**Lemma A.** Suppose $g$ is a generator for $Z_{p^\alpha}^{\*}$ and $r$ the order of $g$ $\Mod{p^\alpha}$. Then $r = \abs{Z_{p^\alpha}^{\*}} = \varphi(p^\alpha)$.
+**Lemma 3.7.** Suppose $g$ is a generator for $Z_{p^\alpha}^{\*}$ and $r$ the order of $g$ $\Mod{p^\alpha}$. Then $r = \abs{Z_{p^\alpha}^{\*}} = \varphi(p^\alpha)$.
 
 *Proof.* We first prove that every $x \in Z_{p^\alpha}^{\*}$ can be expressed as $x \equiv g^{i} \Mod{p^\alpha}$ for $0 \le i \le r - 1$. From the *Cyclic Group Theorem*, there is $k \ge 0$ such $x \equiv g^k \Mod{p^\alpha}$. Let $k'$ be the smallest such $k$. If $k' > r$, then there is $0 < \delta < k'$ such that $k' = r + \delta$, and $g^{k'} \equiv g^{r} g^{\delta} \Mod{p^\alpha}$, which implies $g^{k'} \equiv g^{\delta} \Mod{p^\alpha}$ which contradicts the fact $k'$ is minimal, thus $k' \le r$. We also know that $k' \neq r$ because $g^0 \equiv g^r \equiv 1 \Mod{p^\alpha}$.
 
@@ -241,21 +241,21 @@ We also note that every element of $S$ is in $Z_{p^\alpha}^{\*}$, so $S$ is a su
 
 Combining the lower bound and upper bound of $r$, we conclude it has to be exactly $ \varphi(p^\alpha)$. *QED*
 
-**Lemma 3.7** For a prime $p$ and integer $\alpha$, $\varphi(p^\alpha) = p^{\alpha - 1}(p - 1)$.
+**Lemma 3.8** For a prime $p$ and integer $\alpha$, $\varphi(p^\alpha) = p^{\alpha - 1}(p - 1)$.
 
 *Proof.* We start by noting that $\varphi(p) = p - 1$ since no number smaller than $p$ has a common prime factor with $p$. For $p^\alpha$, the only numbers smaller than it that share a prime factor with it must be multiples of $p$, that is, $p k$ for $k = 1, \cdots, p^{\alpha - 1} - 1$. So the number of co-primes of $p^\alpha$ is $p^\alpha - 1$ minus $p^{\alpha - 1} - 1$, so $\varphi(p^\alpha) = p^{\alpha - 1}(p - 1)$. *QED*
 
-**Lemma 3.8** Let $p$ be an odd prime and $2^d$ the largest power of 2 dividing $\varphi(p^\alpha)$. Let $r'$ be the order of a randomly chosen element $x$ from  $Z_{p^\alpha}^{\*}$. Then the probability that $2^d$ divides $r$ is 1/2.
+**Lemma 3.9** Let $p$ be an odd prime and $2^d$ the largest power of 2 dividing $\varphi(p^\alpha)$. Let $r'$ be the order of a randomly chosen element $x$ from  $Z_{p^\alpha}^{\*}$. Then the probability that $2^d$ divides $r$ is 1/2.
 
-*Proof.* From Lemma 3.7 we have $\varphi(p^\alpha) = p^{\alpha - 1}(p - 1)$. Since $p$ is odd, $p-1$ and $\varphi(p^\alpha)$ are even and thus $d \ge 1$.
+*Proof.* From Lemma 3.8 we have $\varphi(p^\alpha) = p^{\alpha - 1}(p - 1)$. Since $p$ is odd, $p-1$ and $\varphi(p^\alpha)$ are even and thus $d \ge 1$.
 
 From the *Cyclic Group Theorem*, there is $g \in Z_{p^\alpha}^{\*}$ such that a randomly chosen element $x$ satisfies $x \equiv g^{k} \Mod{p^{\alpha}}$. Let's consider 2 cases:
 
-Case 1: $k$ is odd. We have that $x^r \equiv g^{kr} \equiv 1 \Mod{p^{\alpha - 1}}$. Let $r_g$ be the order of $g^{k} \Mod{p^\alpha}$. From *Lemma A*, $r_g = \varphi(p^\alpha)$ and then from *Lemma 3.3* we conclude that $r_g \mid kr$ and thus $\varphi(p^\alpha) \mid kr$. Since $k$ is odd, $r$ and $\varphi(p^\alpha)$ have the same number of 2 factors, hence $2^d$ divides $r$.
+Case 1: $k$ is odd. We have that $x^r \equiv g^{kr} \equiv 1 \Mod{p^{\alpha - 1}}$. Let $r_g$ be the order of $g^{k} \Mod{p^\alpha}$. From *Lemma 3.7*, $r_g = \varphi(p^\alpha)$ and then from *Lemma 3.3* we conclude that $r_g \mid kr$ and thus $\varphi(p^\alpha) \mid kr$. Since $k$ is odd, $r$ and $\varphi(p^\alpha)$ have the same number of 2 factors, hence $2^d$ divides $r$.
 
 Case 2: $k$ is even. From *Lemma 3.2* $g^{\varphi(p^\alpha)} \equiv 1 \Mod{p^\alpha}$, and since $k/2$ is integer, $g^{\varphi(p^\alpha) k/2} \equiv 1 \Mod{p^\alpha}$, so $x^{\varphi(p^\alpha)/2} \equiv 1 \Mod{p^\alpha}$, and by *Lemma 3.3* $r \mid \varphi(p^\alpha) / 2$. It must be that $2^d \nmid r$ otherwise $2^d \mid \varphi(p^\alpha) / 2$ and $2^{d+1} \mid \varphi(p^\alpha)$ contradicting the fact that $d$ is maximum.
 
-Summarizing $k$ is odd if and only if $2^d \mid r$. It remains to show that $k$ is odd with 1/2 probability for a random $x$ from  $Z_{p^\alpha}^{\*}$. We can refer to the proof of *Lemma A.* that states every $x \in Z_{p^\alpha}^{\*}$ can be expressed as $x \equiv g^{i} \Mod{p^\alpha}$ for $0 \le i \le r - 1 = \varphi(p^\alpha) - 1$. Since $\varphi(p^\alpha)$ is even, $\varphi(p^\alpha) - 1$ is odd and if we divide the set of numbers $\curly{0, \cdots, \varphi(p^\alpha) - 1}$ into odds and evens we get two sets of the same size.
+Summarizing $k$ is odd if and only if $2^d \mid r$. It remains to show that $k$ is odd with 1/2 probability for a random $x$ from  $Z_{p^\alpha}^{\*}$. We can refer to the proof of *Lemma 3.7.* that states every $x \in Z_{p^\alpha}^{\*}$ can be expressed as $x \equiv g^{i} \Mod{p^\alpha}$ for $0 \le i \le r - 1 = \varphi(p^\alpha) - 1$. Since $\varphi(p^\alpha)$ is even, $\varphi(p^\alpha) - 1$ is odd and if we divide the set of numbers $\curly{0, \cdots, \varphi(p^\alpha) - 1}$ into odds and evens we get two sets of the same size.
 
 **Theorem 3.** Let $N$ be an odd non-prime positive integer $N$ with prime factors $N = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_m^{\alpha_m}$. Let $x$ be an element chosen at random from $Z_N^{\*}$ and $r$ the order of $x \Mod{N}$. Then
 
@@ -269,6 +269,10 @@ Let $x \in Z_N^{\*}$, $x_i \in Z_{p_i^{\alpha_i}}^{\*}$ such that $x \equiv x_i 
 
 Let $r_i$ be the order of $x_i \Mod{p_i^{\alpha_i}}$ as in *Definition 3*. Let $d_i$ be the largest exponent such that $2^{d_i}$ divides $r_i$. By *Lemma 3.6* if $r$ is odd or $x^{r/2} \equiv -1 \mod{N}$ then $d_i$ is the same for any $i$.
 
-[1] claims it's enough to use *Lemma 3.8* to prove it, but it's not clear to me why. My hunch is to show that if $r \mbox{ is odd or } x^{r/2} \equiv -1 \Mod{N}$ then all of $x_1, x_2, \cdots, x_m$ will be either divisible by $2^d$ (as defined in *Lemma 3.8*) or not. Since only $\frac{1}{2^m}$ of all the possible values of $x_1, x_2, \cdots, x_m$ can satisfy that, then the condition  $r \mbox{ is odd or } x^{r/2} \equiv -1 \Mod{N}$ cannot happen with more than that probability.
+[1] claims it's enough to use *Lemma 3.9* to prove it, but it's not clear to me why. My hunch is to show that if $r \mbox{ is odd or } x^{r/2} \equiv -1 \Mod{N}$ then all of $x_1, x_2, \cdots, x_m$ will be either divisible by $2^d$ (as defined in *Lemma 3.9*) or not. Since only $\frac{1}{2^m}$ of all the possible values of $x_1, x_2, \cdots, x_m$ can satisfy that, then the condition  $r \mbox{ is odd or } x^{r/2} \equiv -1 \Mod{N}$ cannot happen with more than that probability.
 
 I'll leave this as is for now. If I figure out I can update the post.
+
+## References
+
+* [[1](https://www.amazon.com/Quantum-Computation-Information-10th-Anniversary/dp/1107002176)] Quantum Computation and Quantum Information - Nielsen, M. and Chuang, I.
