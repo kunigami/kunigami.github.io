@@ -29,11 +29,11 @@ In this section we define a bunch of terminology, most of which the reader might
 
 **Euler $\varphi$ function.** is defined as the number of co-primes of $N$ less than $N$ and denoted as $\varphi(N)$. Note that $\abs{Z_N^{\*}} = \varphi(N)$.
 
-## Order-Finding
+## Theory
+
+We'll now state a few Theorems from which we'll build the prime factoring algorithm. Their proofs are described in the *Appendix*.
 
 **Theorem 1.** Given co-primes $x$, $N$ and $r$ the order of $x \Mod{N}$, then $r \le N$.
-
-## Order-Finding
 
 **Theorem 2.** Let $N$ be a non-prime number and $1 \le x \le N$ a non-trivial solution to $x^2 \equiv 1 \Mod{N}$ (by non-trivial we mean $x \not \equiv \pm 1 \Mod{N}$), then at least one of $\gcd (x - 1, N)$ or $\gcd (x + 1, N)$ is a non-trivial factor of $N$.
 
@@ -41,7 +41,9 @@ In this section we define a bunch of terminology, most of which the reader might
 
 $$p(r \mbox{ is even and } x^{r/2} \not \equiv -1 \Mod{N}) \ge 1 - \frac{1}{2^m}$$
 
-This second theorem seems highly specific but combined with Theorem B, it allows us to find a factor of $N$. To see how, suppose $r$ is even and $x^{r/2} \not \equiv -1 \Mod{N}$, which can happen with probability at least $1 - \frac{1}{2^m}$. Let $y = x^{r/2}$, so $y \not \equiv -1 \Mod{N}$. We also have $y \not \equiv 1 \Mod{N}$, since otherwise $r/2$ would be the order of $x \Mod{N}$. This means that by Theorem B, $\gcd (y - 1, N)$ or $\gcd (y + 1, N)$ is a non-trivial factor of $N$.
+## Prime actoring Algorithm
+
+*Theorem 3* seems highly specific but combined with *Theorem 2*, it allows us to find a factor of $N$. To see how, suppose $r$ is even and $x^{r/2} \not \equiv -1 \Mod{N}$, which can happen with probability at least $1 - \frac{1}{2^m}$. Let $y = x^{r/2}$, so $y \not \equiv -1 \Mod{N}$. We also have $y \not \equiv 1 \Mod{N}$, since otherwise $r/2$ would be the order of $x \Mod{N}$. This means that by Theorem B, $\gcd (y - 1, N)$ or $\gcd (y + 1, N)$ is a non-trivial factor of $N$.
 
 We can now define the algorithm to obtain a non-trivial factor of $N$. Here's a simple Python implementation:
 
