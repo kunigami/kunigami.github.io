@@ -67,7 +67,7 @@ Since $e^{2 \pi i 2^k \varphi}$ is scalar we can do some re-arranging:
 
 $$\ket{\psi_3} = \frac{\ket{0} + e^{2 \pi i 2^k \varphi} \ket{1}}{\sqrt{2}} \ket{u}$$
 
-In this view, the first qubit was $\ket{0}$ became $\frac{\ket{0} + e^{2 \pi i 2^k \varphi} \ket{1}}{\sqrt{2}}$ while the $n$-qubit $\ket{u}$ was unchanged, which is a bit counter intuitive especially given the firt qubit was the control one.
+In this view, the first qubit $\ket{0}$ became $\frac{\ket{0} + e^{2 \pi i 2^k \varphi} \ket{1}}{\sqrt{2}}$ while the $n$-qubit $\ket{u}$ remained unchanged, which is a bit counter intuitive especially given the first qubit was the control one.
 
 ### The whole picture
 
@@ -79,7 +79,7 @@ In this view, the first qubit was $\ket{0}$ became $\frac{\ket{0} + e^{2 \pi i 2
 
 We can see that this circuit combines $t$ of the small circuit from the previous session. The output of $U^{2^i}$ is fed into $U^{2^{i+1}}$ but as we saw above we can assume it doesn't change the input so the final state would still be $\ket{u}$.
 
-For each of the control qubit, there will be a corresponding $U^{2^k}$, so it will end as $\frac{\ket{0} + e^{2 \pi i 2^k \varphi} \ket{1}}{\sqrt{2}}$ as we saw above.
+For each of the control qubits, there will be a corresponding $U^{2^k}$, so it will end as $\frac{\ket{0} + e^{2 \pi i 2^k \varphi} \ket{1}}{\sqrt{2}}$ as we saw above.
 
 If we look at the whole state after applying this larger circuit we end up with
 
@@ -202,7 +202,7 @@ We have that $\abs{1 - e^{2ix}}^2 = 4 \abs{\sin x}^2$ (see *Appendix*), so
 
 $$p(m = b) = \frac{1}{N^2} \frac{\abs{\sin (\pi \delta)}^2}{\abs{\sin (\pi \delta / N)}^2}$$
 
-Since $\delta < 1$ and assuming $t > 0$, $\delta / N \le 1/2$, recalling $N = 2^t$, and using $\sin x \le x$ for $x \le \pi/2$(see *Appendix*),
+Since $\delta < 1$ and assuming $t > 0$, $\delta / N \le 1/2$, recalling $N = 2^t$, and using $\sin x \le x$ for $x \le \pi/2$ (see *Appendix*),
 
 $$p(m = b) \ge \frac{1}{N^2} \frac{\abs{\sin (\pi \delta)}^2}{(\pi \delta / N)^2} = \frac{\abs{\sin (\pi \delta)}^2}{(\pi \delta)^2}$$
 

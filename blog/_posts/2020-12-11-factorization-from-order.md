@@ -41,7 +41,7 @@ We'll now state a few Theorems from which we'll build the prime factoring algori
 
 $$p(r \mbox{ is even and } x^{r/2} \not \equiv -1 \Mod{N}) \ge 1 - \frac{1}{2^m}$$
 
-## Prime actoring Algorithm
+## Prime Factoring Algorithm
 
 *Theorem 3* seems highly specific but combined with *Theorem 2*, it allows us to find a factor of $N$. To see how, suppose $r$ is even and $x^{r/2} \not \equiv -1 \Mod{N}$, which can happen with probability at least $1 - \frac{1}{2^m}$. Let $y = x^{r/2}$, so $y \not \equiv -1 \Mod{N}$. We also have $y \not \equiv 1 \Mod{N}$, since otherwise $r/2$ would be the order of $x \Mod{N}$. This means that by Theorem B, $\gcd (y - 1, N)$ or $\gcd (y + 1, N)$ is a non-trivial factor of $N$.
 
