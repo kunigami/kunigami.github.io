@@ -101,7 +101,7 @@ $$
 \end{aligned}
 $$
 
-It's possible to show that $[a_0, \cdots, a_n] = p_n / q_n$ and furthermore, that $p_n$ and $q_n$ are co-primes. This provides an easy $(n)$ algorithm to recover $p$ and $q$ given $[a_0, \cdots, a_n]$.
+It's possible to show that $[a_0, \cdots, a_n] = p_n / q_n$ and furthermore, that $p_n$ and $q_n$ are co-primes. This provides an easy $O(n)$ algorithm to recover $p$ and $q$ given $[a_0, \cdots, a_n]$.
 
 ### Finding Nearby Rational Numbers
 
@@ -113,15 +113,19 @@ It's possible to show that $x$ has a continued fraction $a = [a_0, \cdots, a_n]$
 
 This means that if we feed $x$'s continued fraction to the algorithm from the section above, we'll invariably run into $p = p_k$ and $q = q_k$.
 
-This flexibility is important because the value we'll measure $\varphi$ is not exactly $s/r$ but an approximation.
+This flexibility is important in the context of our problem because the value we'll measure, $\varphi$, is not exactly $s/r$ but an approximation.
 
 ### Recovering $r$ via Continued Fractions
 
-We'll be able to extract $s/r$ but we don't know $s$. We do know that both $s$ and $r$ are integers, so $s/r$ is a rational, so we will use continued fractions to extract them.
+We'll now see how to recover $s$ and $r$ from $\varphi$. We know that both $s$ and $r$ are integers, so $s/r$ is a rational, and we can use continued fractions to extract them.
 
-We first compute the continued fraction of $\varphi$. Then we try to recover its numerator and denominator, and as we discussed above, we'll invariably pass by $p_k / q_k$ such that $p_k / q_k = s / r$.
+We first compute the continued fraction of $\varphi$. Then we try to recover its numerator and denominator, and it can be shown that
 
-The problem is that we don't know for which $k$ that's the case, but we can determine if $r = q_k$ by checking whether $x^{q_k} \equiv 1 \Mod{N}$. If $r$ and $s$ are co-primes, then we'll find it.
+$$\abs{\frac{s}{r} - \varphi} \le \frac{1}{2r^2}$$
+
+So by the discussion in the previous section we'll invariably pass by $p_k / q_k$ such that $p_k / q_k = s / r$.
+
+The problem is that we don't know for which $k$ that's the case, but we can determine if $r = q_k$ for each $k$ by checking whether $x^{q_k} \equiv 1 \Mod{N}$. If $r$ and $s$ are co-primes, then we'll find it.
 
 If not, let $r_0 = q_k$ for a given iteration $k$ and assume that $x^{r_0} \not \equiv 1 \Mod{N}$. We can show that $r_0$ is a factor of $r$ (see *Lemma 3* in *Appendix*). Let $x_0 \equiv x^{r_0} \Mod{N}$. The order of $x_0$ is $r_{r_0} = r/r_0$ since $x_0^{r/r_0} = x^{r}$. We'll obtain $r_1$, which if happens to be the order of $x_0$ allows us to get $r$ via $r = r_1 r_0$. Otherwise we repeat for $x_0' \equiv x^{r_1}$. Since $r_0$ is a proper factor of $r$, $r_0 \le r/2$, so on each iteraction we at least halve the order, which means we only need $O(\log r)$ iterations. If we reach the point where $r_{n} = 1$, it means that $q_k$ is not valid and hence $p_k / q_k \ne s / r$.
 
