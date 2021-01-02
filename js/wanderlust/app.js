@@ -96,6 +96,12 @@ function renderMap() {
   leftlet_map.addLayer(marker_cluster);
 }
 
+function GoogleMapsLink({lat, lng, children}) {
+    return <a href={`https://www.google.com/maps/place/${lat},${lng}`} target="_blank">
+        {children}
+    </a>;
+}
+
 function Popup({ name, description, img_name, img_link, photographer, lat, lng }) {
   let img_src = null;
   if (img_name) {
@@ -119,9 +125,9 @@ function Popup({ name, description, img_name, img_link, photographer, lat, lng }
     const attribution = <span>Photo by: {photographer}</span>;
     img_dom = (
       <figure>
-        <a href={`https://www.google.com/maps/place/${lat},${lng}`} target="_blank">
+        <GoogleMapsLink lat={lat} lng={lng}>
             <img src={img_src} />
-        </a>
+        </GoogleMapsLink>
         <figcaption>{attribution}</figcaption>
       </figure>
     );
@@ -134,7 +140,9 @@ function Popup({ name, description, img_name, img_link, photographer, lat, lng }
       <p>
         <b>{name}</b>
       </p>
-      <p>{description ? description : ""}</p>
+      <p>{description ? description + " " : ""}
+        <GoogleMapsLink lat={lat} lng={lng}>(Google maps)</GoogleMapsLink>
+      </p>
       {img_dom}
     </div>
   );
