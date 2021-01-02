@@ -72,6 +72,8 @@ function renderMap() {
           photographer={marker_data.photographer}
           img_name={marker_data.img_name}
           img_link={marker_data.img_link}
+          lat={marker_data.lat}
+          lng={marker_data.lng}
         />,
         popop_div_root
       );
@@ -94,7 +96,7 @@ function renderMap() {
   leftlet_map.addLayer(marker_cluster);
 }
 
-function Popup({ name, description, img_name, img_link, photographer }) {
+function Popup({ name, description, img_name, img_link, photographer, lat, lng }) {
   let img_src = null;
   if (img_name) {
     img_src = `../resources/wanderlust/${img_name}`;
@@ -117,7 +119,9 @@ function Popup({ name, description, img_name, img_link, photographer }) {
     const attribution = <span>Photo by: {photographer}</span>;
     img_dom = (
       <figure>
-        <img src={img_src} />
+        <a href={`https://www.google.com/maps/place/${lat},${lng}`} target="_blank">
+            <img src={img_src} />
+        </a>
         <figcaption>{attribution}</figcaption>
       </figure>
     );
