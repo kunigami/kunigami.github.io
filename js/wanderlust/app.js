@@ -96,13 +96,23 @@ function renderMap() {
   leftlet_map.addLayer(marker_cluster);
 }
 
-function GoogleMapsLink({lat, lng, children}) {
-    return <a href={`https://www.google.com/maps/place/${lat},${lng}`} target="_blank">
-        {children}
-    </a>;
+function GoogleMapsLink({ lat, lng, children }) {
+  return (
+    <a href={`https://www.google.com/maps/place/${lat},${lng}`} target="_blank">
+      {children}
+    </a>
+  );
 }
 
-function Popup({ name, description, img_name, img_link, photographer, lat, lng }) {
+function Popup({
+  name,
+  description,
+  img_name,
+  img_link,
+  photographer,
+  lat,
+  lng,
+}) {
   let img_src = null;
   if (img_name) {
     img_src = `../resources/wanderlust/${img_name}`;
@@ -126,7 +136,7 @@ function Popup({ name, description, img_name, img_link, photographer, lat, lng }
     img_dom = (
       <figure>
         <GoogleMapsLink lat={lat} lng={lng}>
-            <img src={img_src} />
+          <img src={img_src} />
         </GoogleMapsLink>
         <figcaption>{attribution}</figcaption>
       </figure>
@@ -140,8 +150,11 @@ function Popup({ name, description, img_name, img_link, photographer, lat, lng }
       <p>
         <b>{name}</b>
       </p>
-      <p>{description ? description + " " : ""}
-        <GoogleMapsLink lat={lat} lng={lng}>(Google maps)</GoogleMapsLink>
+      <p>
+        {description ? description + " " : ""}
+        <GoogleMapsLink lat={lat} lng={lng}>
+          (Google maps)
+        </GoogleMapsLink>
       </p>
       {img_dom}
     </div>

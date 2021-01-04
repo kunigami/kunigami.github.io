@@ -13,6 +13,34 @@ const markers = [
     img_link: "https://www.flickr.com/photos/kunigami/50788433627/",
     visited: true,
   },
+  {
+    name: "Antelope Canyon",
+    description:
+      "Antelope Canyon is a slot canyon in the American Southwest, on Navajo land east of Page, Arizona.",
+    lat: 36.86470241618197,
+    lng: -111.37357693817302,
+  },
+  {
+    name: "Havasu Falls",
+    description:
+      "Havasu Falls is a waterfall of Havasu Creek, located in the Grand Canyon, Arizona, United States. It is within Havasupai tribal lands.",
+    lat: 36.25549664057389,
+    lng: -112.6978814550031,
+  },
+  {
+    name: "Horseshoe Bend",
+    description:
+      "Horseshoe Bend is a horseshoe-shaped incised meander of the Colorado River located near the town of Page, Arizona, United States.",
+    lat: 36.88032695559509,
+    lng: -111.51014454598656,
+  },
+  {
+    name: "Monument Valley",
+    description:
+      "Famous natural area on the Navajo Nation Reservation features towering red sandstone buttes.",
+    lat: 36.99818269582502,
+    lng: -110.09847885332755,
+  },
   // -- California
   {
     name: "Red Rock Canyon State Park",
@@ -23,6 +51,14 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50787619163/",
     visited: true,
+  },
+  // -- Hawaii
+  {
+    name: "Kalalau Valley",
+    description:
+      "The Kalalau Valley is located on the northwest side of the island of Kauaʻi in the state of Hawaii.",
+    lat: 22.1799987,
+    lng: -159.6711207,
   },
   // -- Utah
   {
@@ -43,6 +79,23 @@ const markers = [
     visited: true,
   },
 
+  // Australia
+  {
+    name: "Bay of Fires",
+    description: "Stumpy’s Bay to Bay of Fires Lodge.",
+    lat: -40.93777,
+    lng: 148.25361,
+  },
+
+  // Bolivia
+  {
+    name: "Salar de Uyuni",
+    description:
+      "Salar de Uyuni, amid the Andes in southwest Bolivia, is the world’s largest salt flat.",
+    lat: -20.16324964478777,
+    lng: -67.6317594936942,
+  },
+
   // Brazil
   {
     name: "Iguazu Falls",
@@ -54,13 +107,51 @@ const markers = [
     img_link: "https://www.flickr.com/photos/kunigami/50788055268",
     visited: true,
   },
+  {
+    name: "Chapada Diamantina",
+    description:
+      "Rugged, rocky & biodiverse nature preserve known for its waterfalls, caves & former diamond mines.",
+    lat: -12.54622966371189,
+    lng: -41.69042884729987,
+  },
+  {
+    name: "Chapada dos Guimarães",
+    description:
+      "A viewing deck overlooks this tall, scenic waterfall in Chapada dos Guimarães National Park.",
+    lat: -15.405106632100686,
+    lng: -55.83118054906799,
+  },
+  {
+    name: "Fernando de Noronha",
+    description:
+      "Fernando de Noronha is a volcanic archipelago about 350 kilometers off Brazil's northeast coast.",
+    lat: -3.8554112845505024,
+    lng: -32.427750322234026,
+  },
+  {
+    name: "Parque Nacional dos Lençóis Maranhenses",
+    description:
+      "It’s known for its vast desert landscape of tall, white sand dunes and seasonal rainwater lagoons.",
+    lat: -2.486253606843343,
+    lng: -43.128595120333074,
+  },
 
   // Cambodia
   {
     name: "Angkor Wat",
-    description: "Temple complex surrounded by a wide moat and intricate carvings.",
+    description:
+      "Temple complex surrounded by a wide moat and intricate carvings.",
     lat: 13.4124693,
     lng: 103.8669857,
+  },
+
+  // Canada
+  {
+    name: "Peyto Lake",
+    description:
+      "Unique glacier-fed waterway in a valley known for its bright turquoise water & scenic beauty.",
+    lat: 51.77835376750945,
+    lng: -116.53237765205041,
   },
 
   // Chile
@@ -83,11 +174,20 @@ const markers = [
     img_link: "https://www.flickr.com/photos/kunigami/50788960847",
     visited: true,
   },
-    {
+  {
     name: "Zhangjiajie National Forest Park",
     description: "Tall boulders (seen on Avatar).",
     lat: 29.315305,
     lng: 110.434767,
+  },
+
+  // Croatia
+  {
+    name: "Plitvice Lakes National Park",
+    description:
+      "It's known for a chain of 16 terraced lakes, joined by waterfalls, that extend into a limestone canyon.",
+    lat: 44.8653966,
+    lng: 15.5820119,
   },
 
   // Egypt
@@ -100,6 +200,14 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50787740683",
     visited: true,
+  },
+
+  // Equador
+  {
+    name: "Galapagos Island",
+    description: "Darwin.",
+    lat: -0.82927,
+    lng: -90.98206,
   },
 
   // Ethiopia
@@ -175,6 +283,14 @@ const markers = [
     visited: true,
   },
 
+  // Ireland
+  {
+    name: "Cliffs of Moher",
+    description: "Cliffs in Ireland.",
+    lat: 52.97278178463433,
+    lng: -9.430060029427306,
+  },
+
   // Italy
   {
     name: "Cinque Terre",
@@ -236,7 +352,8 @@ const markers = [
   // Malaysia
   {
     name: "Batu Caves",
-    description: "Limestone caves at the top of steep steps housing Hindu temples & shrines, plus a huge deity statue.",
+    description:
+      "Limestone caves at the top of steep steps housing Hindu temples & shrines, plus a huge deity statue.",
     lat: 3.2602148,
     lng: 101.5868289,
   },
@@ -265,6 +382,14 @@ const markers = [
       "Deadvlei is a white clay pan located near the more famous salt pan of Sossusvlei, inside the Namib-Naukluft Park in Namibia.",
     lat: -24.7592732,
     lng: 15.2923894,
+  },
+
+  // Nepal
+  {
+    name: "Mount Everest Base Camp",
+    description: "n/a",
+    lat: 27.9343193,
+    lng: 86.7818523,
   },
 
   // Netherlands
@@ -299,6 +424,15 @@ const markers = [
     lng: -69.3133206,
   },
 
+  // Philippines
+  {
+    name: "Chocolate Hills Complex",
+    description:
+      "Popular observation area known for its panoramic views of its hilly, tree-filled surrounds.",
+    lat: 9.80489371215848,
+    lng: 124.16906501364669,
+  },
+
   // Scotland
   {
     name: "The Storr",
@@ -322,12 +456,39 @@ const markers = [
     lng: -4.77938,
   },
 
+  // Sweden
+  {
+    name: "Kungsleden",
+    description:
+      "Kungsleden is a hiking trail in northern Sweden, approximately 440 kilometres long, between Abisko in the north and Hemavan in the south. It passes through, near the southern end, the Vindelfjällen Nature Reserve, one of the largest protected areas in Europe.",
+    lat: 68.36168,
+    lng: 18.7234,
+  },
+
   // Turkmenistan
   {
     name: "Darvaza Gas Crater",
-    description: "Natural gas field with a collapsed crater thought to have been burning continuously since 1971.",
+    description:
+      "Natural gas field with a collapsed crater thought to have been burning continuously since 1971.",
     lat: 40.2526031,
     lng: 58.4397004,
+  },
+
+  // Venezuela
+  {
+    name: "Mount Roraima",
+    description:
+      "Mount Roraima is the highest of the Pakaraima chain of tepuis or plateaux in South America.",
+    lat: 5.14333,
+    lng: -60.7625,
+  },
+
+  // Vietnam
+  {
+    name: "Hạ Long Bay",
+    description: "Multiple tree-covered limestone islands.",
+    lat: 20.9361865,
+    lng: 107.1593762,
   },
 
   // Yemen
