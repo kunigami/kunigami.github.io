@@ -4,6 +4,16 @@ const markers = [
   // United States
   // -- Arizona
   {
+    name: "Cactus Forest",
+    description: "Cacti from the Saguaro National Park",
+    lat: 32.23041339658249,
+    lng: -111.14510525157992,
+    img_name: "saguaro.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/50803431808/",
+    visited: true,
+  },
+  {
     name: "Chiricahua National Monument",
     description: "Amazing rock formations in Southeastern Arizona",
     lat: 32.0135714,
@@ -66,6 +76,18 @@ const markers = [
     description: "Unique Rock Formation in Southern Utah",
     lat: 36.99593,
     lng: -112.00625,
+  },
+  // -- Washington
+  {
+    name: "Diablo Lake",
+    description:
+      "Cyan blue lake in North Cascades National Park.",
+    lat: 48.7142378,
+    lng:-121.1355309,
+    img_name: "diablo_lake.png",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/50804258467/",
+    visited: true,
   },
   // -- Wyoming
   {
