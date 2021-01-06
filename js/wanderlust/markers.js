@@ -71,6 +71,17 @@ const markers = [
     lng: -159.6711207,
   },
   // -- Utah
+    {
+    name: "Bryce Canyon",
+    description:
+    "Crimson-colored hoodoos, which are spire-shaped rock formations",
+    lat: 37.566307868258306,
+    lng: -112.21969399706641,
+    img_name: "bryce.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/50807912907/",
+    visited: true,
+  },
   {
     name: "The Wave",
     description: "Unique Rock Formation in Southern Utah",
@@ -331,6 +342,17 @@ const markers = [
 
   // Japan
   {
+    name: "Fushimi Inari Shrine",
+    description:
+      "Known for its numerous Torii gates",
+    lat: 34.967340614218074,
+    lng: 135.77263945495233,
+    img_name: "fushimi_inari.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/50807076678/",
+    visited: true,
+  },
+  {
     name: "Shirakawa-go",
     description:
       "Historic Villages of Shirakawa-gō. One of Japan's UNESCO World Heritage Sites",
@@ -485,6 +507,15 @@ const markers = [
       "Kungsleden is a hiking trail in northern Sweden, approximately 440 kilometres long, between Abisko in the north and Hemavan in the south. It passes through, near the southern end, the Vindelfjällen Nature Reserve, one of the largest protected areas in Europe.",
     lat: 68.36168,
     lng: 18.7234,
+  },
+
+  // Turkey
+  {
+    name: "Pamukkale",
+    description:
+      "Cotton Castle (Turkish). Thermal Springs",
+    lat: 37.92337084547643,
+    lng: 29.131354362511228,
   },
 
   // Turkmenistan
