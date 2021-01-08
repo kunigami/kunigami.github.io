@@ -53,6 +53,27 @@ const markers = [
   },
   // -- California
   {
+    name: "Ancient Bristlecone Pine Forest",
+    description: "Oldest Trees in the world",
+    lat: 37.38079104393285,
+    lng: -118.16166570419409,
+    img_name: "bristlecone.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/50812863502/",
+    visited: true,
+  },
+  {
+    name: "Cinder Cone at Lassen National Park",
+    description:
+      "The cone was built to a height of 230 m above the surrounding area. Then, like many cinder cones, it was snuffed out when several basalt lava flows erupted from its base",
+    lat: 40.547385,
+    lng: -121.319973,
+    img_name: "cinder_cone.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/50812764206/",
+    visited: true,
+  },
+  {
     name: "Red Rock Canyon State Park",
     description: "Joshua Trees and Red Rock formations",
     lat: 35.3975446,
@@ -60,6 +81,13 @@ const markers = [
     img_name: "red_rock_canyon.jpg",
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50787619163/",
+    visited: true,
+  },
+  {
+    name: "Fern Canyon",
+    description: "Redwoods National Park.",
+    lat: 41.40104620211404,
+    lng: -124.06586779793305,
     visited: true,
   },
   // -- Hawaii
@@ -71,10 +99,10 @@ const markers = [
     lng: -159.6711207,
   },
   // -- Utah
-    {
+  {
     name: "Bryce Canyon",
     description:
-    "Crimson-colored hoodoos, which are spire-shaped rock formations",
+      "Crimson-colored hoodoos, which are spire-shaped rock formations",
     lat: 37.566307868258306,
     lng: -112.21969399706641,
     img_name: "bryce.jpg",
@@ -91,10 +119,9 @@ const markers = [
   // -- Washington
   {
     name: "Diablo Lake",
-    description:
-      "Cyan blue lake in North Cascades National Park.",
+    description: "Cyan blue lake in North Cascades National Park.",
     lat: 48.7142378,
-    lng:-121.1355309,
+    lng: -121.1355309,
     img_name: "diablo_lake.png",
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50804258467/",
@@ -119,6 +146,12 @@ const markers = [
     lat: -40.93777,
     lng: 148.25361,
   },
+  {
+    name: "Great Barrier Reef",
+    description: "The Great Barrier Reef is the world's largest coral reef.",
+    lat: -17.998522961701028,
+    lng: 146.83370745678155,
+  },
 
   // Bolivia
   {
@@ -127,6 +160,15 @@ const markers = [
       "Salar de Uyuni, amid the Andes in southwest Bolivia, is the world’s largest salt flat.",
     lat: -20.16324964478777,
     lng: -67.6317594936942,
+  },
+
+  // Botswana
+  {
+    name: "Okavango Delta",
+    description:
+      "The Okavango Delta is a vast inland river delta in northern Botswana. It's known for its sprawling grassy plains, which flood seasonally, becoming a lush animal habitat.",
+    lat: -19.628682151586847,
+    lng: 22.900244790130884,
   },
 
   // Brazil
@@ -255,6 +297,14 @@ const markers = [
       "https://en.wikipedia.org/wiki/Danakil_Depression#/media/File:ET_Afar_asv2018-01_img46_Dallol.jpg",
   },
 
+  // France
+  {
+    name: "Lavender Fields of Provence",
+    description: "Lavender Fields of Provence.",
+    lat: 43.86508366667945,
+    lng: 5.427702093675174,
+  },
+
   // Greece
   {
     name: "Monasteries of Meteora",
@@ -315,6 +365,12 @@ const markers = [
     img_link: "https://www.flickr.com/photos/kunigami/50788945632",
     visited: true,
   },
+  {
+    name: "Kolukkumalai Tea Estate",
+    description: "Tea plantations in Munnar, Kerala, India.",
+    lat: 10.075677536514016,
+    lng: 77.22178397931653,
+  },
 
   // Ireland
   {
@@ -339,12 +395,18 @@ const markers = [
     lat: 41.8902102,
     lng: 12.4900422,
   },
+  {
+    name: "Venice",
+    description:
+      "Venice, the capital of northern Italy’s Veneto region, is built on more than 100 small islands in a lagoon in the Adriatic Sea. It has no roads, just canals",
+    lat: 45.43440028570622,
+    lng: 12.338469167604442,
+  },
 
   // Japan
   {
     name: "Fushimi Inari Shrine",
-    description:
-      "Known for its numerous Torii gates",
+    description: "Known for its numerous Torii gates",
     lat: 34.967340614218074,
     lng: 135.77263945495233,
     img_name: "fushimi_inari.jpg",
@@ -362,6 +424,13 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50788808272/",
     visited: true,
+  },
+  {
+    name: "Ashikaga Flower Park",
+    description:
+      "Charming flower gardens offering 8 seasonal thematic displays & a spring wisteria festival.",
+    lat: 36.315072480873724,
+    lng: 139.52010803165786,
   },
 
   // Jordan
@@ -411,6 +480,15 @@ const markers = [
     lng: -88.5707365,
   },
 
+  // Myanmar
+  {
+    name: "Old Bagan",
+    description:
+      "Bagan is an ancient city and a UNESCO World Heritage Site in the Mandalay Region of Myanmar",
+    lat: 21.171739824825504,
+    lng: 94.85881533957875,
+  },
+
   // Morocco
   {
     name: "Chefchaouen",
@@ -443,6 +521,15 @@ const markers = [
       "Keukenhof, also known as the Garden of Europe, is one of the world's largest flower gardens, situated in the town of Lisse, in the Netherlands.",
     lat: 52.2697282,
     lng: 4.5469674,
+  },
+
+  // New Zealand
+  {
+    name: "Piopiotahi",
+    description:
+      "Milford Sound is a fiord in the southwest of New Zealand’s South Island. It’s known for towering Mitre Peak, plus rainforests and waterfalls like Stirling and Bowen falls, which plummet down its sheer sides.",
+    lat: -44.63507813222853,
+    lng: 167.89796460430344,
   },
 
   // Norway
@@ -509,11 +596,26 @@ const markers = [
     lng: 18.7234,
   },
 
+  // Tanzania
+  {
+    name: "Serengeti National Park",
+    description:
+      "Vast nature reserve best known for its annual wildebeest migration, with lions, elephants & rhino.",
+    lat: -2.333880200584234,
+    lng: 34.83305583000156,
+  },
+
   // Turkey
   {
-    name: "Pamukkale",
+    name: "Cappadocia",
     description:
-      "Cotton Castle (Turkish). Thermal Springs",
+      "Known for its distinctive “fairy chimneys,” tall, cone-shaped rock formations clustered in Monks Valley, Göreme and elsewhere",
+    lat: 38.649597784097764,
+    lng: 34.83383186504822,
+  },
+  {
+    name: "Pamukkale",
+    description: "Cotton Castle (Turkish). Thermal Springs",
     lat: 37.92337084547643,
     lng: 29.131354362511228,
   },
@@ -525,6 +627,23 @@ const markers = [
       "Natural gas field with a collapsed crater thought to have been burning continuously since 1971.",
     lat: 40.2526031,
     lng: 58.4397004,
+  },
+
+  // UAE
+  {
+    name: "Sheikh Zayed Grand Mosque",
+    description: "The largest mosque in Abu Dhabi.",
+    lat: 24.423573631874092,
+    lng: 54.47371836430741,
+  },
+
+  // Uzbekistan
+  {
+    name: "Registan",
+    description:
+      "The Registan was the heart of the ancient city of Samarkand of the Timurid Empire, now in Uzbekistan.",
+    lat: 39.65487833264421,
+    lng: 66.9757633211604,
   },
 
   // Venezuela
@@ -542,6 +661,13 @@ const markers = [
     description: "Multiple tree-covered limestone islands.",
     lat: 20.9361865,
     lng: 107.1593762,
+  },
+  {
+    name: "Mù Cang Chải",
+    description:
+      "Mù Cang Chải is a rural district of Yên Bái Province, in the Northwest region of Vietnam.",
+    lat: 21.795010848388312,
+    lng: 104.1515230568566,
   },
 
   // Yemen
