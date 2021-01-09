@@ -120,7 +120,7 @@ def get_max_rectangle(b):
 
 It's easy to see that the algorithm above is $O(nm)$.
 
-Note that if the problem asked for the larget **square**, the problem is easier. Let $s_{ij}$ be the length of any side of the largest square that ends at row $i$ and column $j$ and we know how to comput it for $i' = i - 1$ or $j' = j - 1$. Then $s_{ij} = \min(s_{ij'}, s_{i'j}, s_{i'j'}) + 1$.
+Note that if the problem asked for the largest **square**, the problem is easier. Let $s_{ij}$ be the length of any side of the largest square that ends at row $i$ and column $j$ and we know how to comput it for $i' = i - 1$ or $j' = j - 1$. Then $s_{ij} = \min(s_{ij'}, s_{i'j}, s_{i'j'}) + 1$.
 
 ## Conclusion
 
