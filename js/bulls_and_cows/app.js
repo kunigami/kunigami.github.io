@@ -57,7 +57,7 @@ class BullsAndCows extends React.Component {
           <p className="margin_top_xxxl">
             If you are interested in the implementation of the solver, check our{" "}
             <a
-              href={"https://kunigami.blog/2018/06/03/bulls-and-cows/"}
+              href={"https://www.kuniga.me/blog/2018/06/04/bulls-and-cows/"}
               target="_blank"
             >
               blog post
