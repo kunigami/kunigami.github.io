@@ -21,6 +21,10 @@ like to learn and build things.
             <td><a href="{{ site.url }}/wanderlust/">Wanderlust</a> - World Map with places I'd like to visit or have visited. (2020 - present)</td>
             <td><img src="{{ site.url }}/resources/home/wanderlust.png" alt="Screenshot of the Wanderlust page"/></td>
         </tr>
+        <tr>
+            <td><a href="{{ site.url }}/bulls_and_cows/">Bulls and Cows Solver</a> - Solver for the game "Bulls and Cows" (aka "MOO"). (2018)</td>
+            <td><img src="{{ site.url }}/resources/home/bulls_and_cows.png" alt="Screenshot of the Wanderlust page"/></td>
+        </tr>
     </tbody>
 </table>
 
