@@ -9,7 +9,9 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-This is a classic programming puzzle. Suppose we're given an array of $n$ values reprenting the height $h_i \ge 0$ of bars in a histogram, for $i = 0, \cdots, n-1$.
+This is a classic programming puzzle. Suppose we're given an array of $n$ values reprenting the height $h_i \ge 0$ of bars in a histogram, for $i = 0, \cdots, n-1$. We want to find the largest rectangle that fits "inside" that histogram.
+
+More formally, we'd like to find indices $l$ and $r$, $l \le r$ such that $(l - r + 1) \bar h$ is maximum, where $\bar h$ is the smallest $h_i$ for $i \in \curly{l, \cdots, r}$.
 
 In this post we'll describe an $O(n)$ algorithm that solves this problem.
 
