@@ -410,6 +410,10 @@ I learned a bunch of things I didn’t know through a process of exploration and
 
 That’s one aspect I like the most in writing posts which is to focus on one topic and try to learn as much as possible in a bounded window of time.
 
+## Related Posts
+
+* [Sockets]({{site.url}}/blog/2020/03/07/sockets.html). As discussed in this post, we previously talked about network sockets, which is another case of data transfer (between different machines the network) that is modeled as a file. We can see that in that post where it mentions `socket()` returns a file descriptor.
+
 ## References
 
 * [[1](https://tldp.org/LDP/intro-linux/html/chap_03.html)] Introduction to Linux: Chapter 3. About files and the file system
