@@ -5,7 +5,9 @@ tags: [probabilistic algorithms, rust]
 ---
 
 In this post we'll study the hyper log log algorithm and provide an implementation in Rust.
-### Introduction
+
+## Introduction
+
 <figure class="image_float_left">
     <img src="{{site.url}}/resources/blog/2018-04-01-hyperloglog-in-rust/2018_03_frajollet.png" alt="frajollet" />
 </figure>
@@ -13,7 +15,9 @@ In this post we'll study the hyper log log algorithm and provide an implementati
 [Philippe Flajolet](https://en.wikipedia.org/wiki/Philippe_Flajolet) was a French computer scientist at INRIA [5]. He introduced the field of [Analytic Combinatorics](http://algo.inria.fr/flajolet/Publications/book.pdf) and is known for the creation of a family of algorithms of probabilistic counting, including the *HyperLogLog*.
 
 *HyperLogLog* is a probabilistic algorithm to determine the number of distinct elements (or **cardinality**) from a multi-set (a set that allows repeated values) with high accuracy using very low memory. It is then suitable for streaming applications or distributed databases in which we do not have the luxury of keeping all distinct values in memory at any time.
-### The HyperLogLog
+
+## The HyperLogLog
+
 The intuition behind the *HyperLogLog* is the following. Imagine we have a basket full of balls, each containing a number, which can be repeated. We want to estimate how many distinct numbers we see in the basket with the limitation that we can only look at one ball at a time and we do not have paper and pen, so we have to rely on memory.
 
 <figure class="center_children">
@@ -51,7 +55,9 @@ The bulk of the HyperLogLog paper [1] is actually proving that this metric yield
 **Hashing**
 
 Not all real world input will be numbers that are distributed uniformly. For example, we might be interested in counting the number of distinct values of a string column in a database. We then need to transform these values using a hash function which maps these inputs to numbers uniformly.
-### Algorithm
+
+## Algorithm
+
 We are now ready to outline the core of the algorithm to estimate the cardinality of a multi-set of values.
 
 Given a stream of n elements:
@@ -116,7 +122,9 @@ for element in elements {
 
 {% endhighlight %}
 
-We don't need to know much Rust to read the code above. It's worth mentioning that Rust is very strict about types, so we need to perform explicit conversions. Also we use 2 bit operations: one is to obtain the least significant k bits of an integer by using a bit mask. It relies on the fact that `(2^k)-1` is a number with `k` bits 1 and doing a bitwise `AND` with any number has the effect of only extracting the first k bits of that number. The other trick is to divide a number by `2^k`, which can be done by shifting the bits to the right, via the `>>` operator.
+We don't need to know much Rust to read the code above. It's worth mentioning that Rust is very strict about types, so we need to perform explicit conversions.
+
+We use 2 bit operations: one is to obtain the least significant k bits of an integer by using a bit mask. It relies on the fact that `(2^k)-1` is a number with `k` bits 1 and doing a bitwise `AND` with any number has the effect of only extracting the first k bits of that number. The other trick is to divide a number by `2^k`, which can be done by shifting the bits to the right, via the `>>` operator.
  
 The hash function we use here is from the package `[farmhash](https://github.com/seiflotfy/rust-farmhash)`, which is a Rust implementation of Google's Farmhash, which in turn is a variant of Murmurhash [6]. It basically takes a string and shuffles its bits in a hopefully uniform way, generating a 32-bit integer:
 
@@ -192,7 +200,9 @@ if estimate <= 2.5 * m_multiplier {
 {% endhighlight %}
 
 The complete code is available on [Github](https://github.com/kunigami/blog-examples/blob/master/hyper-log-log/hyperloglog/src/main.rs).
-### Experiments
+
+## Experiments
+
 For values of b ranging from 4 to 16, I ran the program 100 times for n=100k, with numbers randomly selected from 1 to 100k. Then I plotted the results using the box plot chart using a R script:
 
 <figure class="center_children">
@@ -202,11 +212,15 @@ For values of b ranging from 4 to 16, I ran the program 100 times for n=100k, wi
 In the chart above, the x-axis represents the number of experiments we divided the input into, and the y-axis represents the relative error compared to the actual value. We can see that as we increase the number of experiments, the errors go down.
 
 This chart was also helpful in finding a bug in my implementation: the initial plot had a sudden spike for values larger than 11, which was when the small range correction applied. After some debugging, I realized that algorithm should you the natural logarithm, not log2. It was great to spot the bug via data visualization!
-### Conclusion
+
+## Conclusion
+
 I've been wanting to study the *HyperLogLog* algorithm for a while, and also one of my resolutions for this year is to learn Rust. It was a productive exercise to implement it.
 
 I'll post some future impression on Rust from someone with experience in C++ in a future post.
-### References
+
+## References
+
 * [[1](http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf)] HyperLogLog: the analysis of a near-optimal cardinality estimation algorithm
 * [[2](http://algo.inria.fr/flajolet/Publications/FlMa85.pdf)] Probabilistic Counting Algorithms for Database Applications
 * [[3](https://medium.com/@thutrangpham/curiosity-2-how-does-prestodb-implement-approx-distinct-1675a0049a4d)] Thu Trang Pham - Curiosity #2: How does Prestodb implement approx_distinct?
