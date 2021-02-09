@@ -393,7 +393,7 @@ Directory containing information about kernel processes. It is a mount of a pseu
 
 `/sys/kernel/security` - The default mount point of the `securityfs` filesystem, which is an in-memory pseudo file-system intended for secure application [19].
 
-## /var/
+### /var/
 
 Variable size files (e.g. logs). Usually stored in a separate disk partition to avoid less important data affecting the main data (for example: avoiding rogue logs from filling up the disk).
 
