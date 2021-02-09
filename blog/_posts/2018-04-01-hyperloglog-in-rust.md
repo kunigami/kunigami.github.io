@@ -124,9 +124,11 @@ for element in elements {
 
 We don't need to know much Rust to read the code above. It's worth mentioning that Rust is very strict about types, so we need to perform explicit conversions.
 
+
 We use 2 bit operations: one is to obtain the least significant k bits of an integer by using a bit mask. It relies on the fact that `(2^k)-1` is a number with `k` bits 1 and doing a bitwise `AND` with any number has the effect of only extracting the first k bits of that number. The other trick is to divide a number by `2^k`, which can be done by shifting the bits to the right, via the `>>` operator.
- 
-The hash function we use here is from the package `[farmhash](https://github.com/seiflotfy/rust-farmhash)`, which is a Rust implementation of Google's Farmhash, which in turn is a variant of Murmurhash [6]. It basically takes a string and shuffles its bits in a hopefully uniform way, generating a 32-bit integer:
+
+
+The hash function we use here is from the package [`farmhash`](https://github.com/seiflotfy/rust-farmhash), which is a Rust implementation of Google's Farmhash, which in turn is a variant of Murmurhash [6]. It basically takes a string and shuffles its bits in a hopefully uniform way, generating a 32-bit integer:
 
 {% highlight rust %}
 fn hash(value: &String) -> u32 {
