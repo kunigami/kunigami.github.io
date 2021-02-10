@@ -216,7 +216,7 @@ $umask
 002
 {% endhighlight %}
 
-The last digit is the ocal of `010`, which indicates that we want to turn off the second bit (*write*) of the third group (*others*). Another way to see this is by a bitwise operation. Suppose `p` is a 3-digit octal representing the initial file permission and `m` the 3-digit octal from `umask`. The resulting permission can be obtained via `~m & p`. We can do the following in Python for example:
+The last digit is the octal of `010`, which indicates that we want to turn off the second bit (*write*) of the third group (*others*). Another way to see this is by a bitwise operation. Suppose `p` is a 3-digit octal representing the initial file permission and `m` the 3-digit octal from `umask`. The resulting permission can be obtained via `~m & p`. We can do the following in Python for example:
 
 {% highlight text %}
 >>> p = 0o666
@@ -397,9 +397,6 @@ Directory containing information about kernel processes. It is a mount of a pseu
 
 Variable size files (e.g. logs). Usually stored in a separate disk partition to avoid less important data affecting the main data (for example: avoiding rogue logs from filling up the disk).
 
-One conclusion from analyzing these directories is that not only files are a suitable abstraction for data transportation, but filesystems are a suitable for organizing these file interfaces, as we can see with the vast array of different types of pseudo filesystems.
-Permissions
-
 ## Conclusion
 
 I originally intended to write about the Virtual Filesystem from the kernel perspective, mainly looking up to Love's book *Linux Kernel Development* but that focuses mostly on the actual C API of the system, and I didn't have much content for a post.
@@ -409,6 +406,8 @@ Instead I decided to write about filesystems from the user perspective and looki
 I learned a bunch of things I didn’t know through a process of exploration and following through rabbit holes and am relatively happy with the results.
 
 That’s one aspect I like the most in writing posts which is to focus on one topic and try to learn as much as possible in a bounded window of time.
+
+One conclusion from the last section is that not only files are a suitable abstraction for data transportation, but filesystems are a suitable for organizing these file interfaces, as we can see with the vast array of different types of pseudo filesystems.
 
 ## Related Posts
 
