@@ -128,7 +128,7 @@ class C:
 
 {% highlight python %}
 with open(filename, "r") as file:
-    print(file.readLines())
+    print(file.readlines())
 {% endhighlight %}
 
 # Other Data Structures
