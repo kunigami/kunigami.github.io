@@ -25,6 +25,36 @@ ys = [x for x in xs if x % 2 == 0]
 
 NOTE: filter and map can be combined into one.
 
+### Sort list
+
+Using default sorting:
+
+{% highlight python %}
+>>> sorted([5, 2, 3, 1, 4])
+[1, 2, 3, 4, 5]
+{% endhighlight %}
+
+Sorting using key function. For example, sort list of pairs by the second element:
+
+{% highlight python %}
+sorted([[1, 3], [2, 2], [3, 1]], key=lambda x: x[1])
+{% endhighlight %}
+
+Sorting by custom comparator:
+
+{% highlight python %}
+import functools
+
+# Function that returns
+# < 0 if a < b
+# > 0 if a > b
+# = 0 if a = b
+def cmp(a, b):
+    return a - b
+
+sorted([3, 2, 1], key=functools.cmp_to_key(cmp))
+{% endhighlight %}
+
 ## Dictionaries
 
 ### Map over dictionary
@@ -73,6 +103,7 @@ xs = {1, 2, 3}
 ys = {f(x) for x in xs}
 {% endhighlight %}
 
+
 # Object Oriented
 
 Basic Syntax:
@@ -98,4 +129,32 @@ class C:
 {% highlight python %}
 with open(filename, "r") as file:
     print(file.readLines())
+{% endhighlight %}
+
+# Other Data Structures
+
+## Queue
+
+The `Queue` class is an advanced implementation that can be used for example in multi-thread applications. We can still use it as a plain queue data structure.
+
+{% highlight python %}
+from queue import Queue
+
+# Create
+q = Queue()
+
+# Insert back
+q.put(item)
+
+# Retrieve and remove front
+first = q.get()
+
+# Front element without removing
+first = q[0]
+
+# Size
+len(q)
+
+# Is empty?
+q.empty()
 {% endhighlight %}
