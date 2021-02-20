@@ -331,7 +331,7 @@ y_i - \epsilon^i_x
 
 Since $e^i = T^i b^b$, we have $T^i \delta^i = (y_i - \epsilon^i_x) b^i$. Wrapping up,
 
-$$(G) \quad x^i = \hat x^i + (y_i - \epsilon^i_x) b^i = \begin{bmatrix} x^{i-1} \\ 0 \end{bmatrix} + (y_i - \epsilon^i_x) b^i$$.
+$$(8) \quad x^i = \hat x^i + (y_i - \epsilon^i_x) b^i = \begin{bmatrix} x^{i-1} \\ 0 \end{bmatrix} + (y_i - \epsilon^i_x) b^i$$.
 
 It remains to work out the base case, $T^1 x^1 = [t_0] x^1 = [y_1]$, so $x^1 = [y_1 / t_0]$.
 
@@ -341,7 +341,7 @@ The solution we're seeking is $x = x^i$.
 
 In the forward and backward vectors step, we need $O(n)$ to operations to compute $\epsilon_f^i$ and $\epsilon_b^i$, at each iteration $n$, for a total of $O(n^2)$.
 
-During the final step, we need $O(n)$ to compute $\epsilon_x^i$ and also $(G)$ at each iteration $n$, for a total of $O(n^2)$.
+During the final step, we need $O(n)$ to compute $\epsilon_x^i$ and also $(8)$ at each iteration $n$, for a total of $O(n^2)$.
 
 So overall the algorithm has $O(n^2)$ complexity, compared to $O(n^3)$ from a Gaussian elimination for general matrices.
 
