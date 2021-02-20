@@ -392,6 +392,8 @@ def levinson(mat, y):
     return x
 {% endhighlight %}
 
+The full code is on [Github]({{github}}/levinson.py).
+
 Let's make some observations on the code. First, we use `numpy`, especially it's `dot` function which performs a dot product between two vectors of the same size. We also leverage the overloaded operators with `numpy.array`s which behave more like in linear algebra.
 
 For example, adding two `numpy.array`s does element-wise sum:
