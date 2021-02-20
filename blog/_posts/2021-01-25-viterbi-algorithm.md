@@ -5,6 +5,7 @@ description: "Compute the most likely states given observations of a Hidden Mark
 tags: [combinatorial optimization, artificial intelligence]
 vanity: "2021-01-25-viterbi-algorithm"
 excerpt_separator: <!--more-->
+tweet: "We describe an algorithm to compute most likely states given observations of a Hidden Markov Model."
 ---
 
 {% include blog_vars.html %}

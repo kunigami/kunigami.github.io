@@ -38,7 +38,7 @@ All these objects provide an abstraction over specific implementations of the un
 
 Consider a file named log.txt located in `/var/tmp/`. The kernel will keep the following objects in memory:
 
-<figure class="image_float_left">
+<figure class="center_children">
     <img src="{{resources_path}}/diagram.png" alt="Diagram depicting the different entities of VFS" />
 </figure>
 
