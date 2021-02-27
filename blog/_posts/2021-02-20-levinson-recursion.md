@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Levinson Recursion"
-tags: [operating systems]
+tags: [linear algebra]
 vanity: "2021-02-20-levinson-recursion"
 excerpt_separator: <!--more-->
 ---
