@@ -4,6 +4,7 @@ title: "Levinson Recursion"
 tags: [linear algebra]
 vanity: "2021-02-20-levinson-recursion"
 excerpt_separator: <!--more-->
+tweet: "We describe an algorithm to solve Ax = b more efficiently if A is a Toeplitz matrix."
 ---
 
 {% include blog_vars.html %}
