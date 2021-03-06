@@ -173,7 +173,7 @@ If we assume that adding, accessing and removing from `bag` can be done in $O(1)
 
 I learned about the $\lfloor N/2 \rfloor$ and $\lfloor N/3 \rfloor$ majority problems recently in programming puzzle sites. In particular, [2] led me to the *Boyer–Moore Majority Vote Algorithm* and showed a solution to the $\lfloor N/3 \rfloor$ version.
 
-They don't provide a proof of correctness of the solution but it seems relatively obvious. However, once I tried to write a proof down I realized how tricky it is. I tried to make some analogies but the result was a sketch of a proof at best.
+They don't provide a proof of correctness of the solution but it seemed relatively obvious. However, once I tried to write a proof down I realized how tricky it is. I tried to make some analogies but the result was a sketch of a proof at best.
 
 I tried reading Boyer–Moore's original paper [4] but they only cover the $\lfloor N/2 \rfloor$ case. The paper points to Misra and Gries' paper [3] though which was a really nice finding.
 
