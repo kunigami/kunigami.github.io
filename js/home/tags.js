@@ -25,6 +25,7 @@ const tagsHierarchy = {
         'human-computer interaction',
         'integer programming',
         'numerical optimization',
+        'online optimization',
         'operating systems',
         'probabilistic algorithms',
         'quantum computing',
