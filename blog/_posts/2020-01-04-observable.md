@@ -31,8 +31,11 @@ Before we start, some assumptions I'm making are familiarity with imperative pro
 * Generators
 * Views
 * Importing from other notebooks
+
 Let's start by delving into the details of JavaScript snippets and cell references.
+
 # Observable vs. JavaScript
+
 [Observable’s not JavaScript](https://observablehq.com/@observablehq/observables-not-javascript) - in this notebook Bostock explains the differences between JavaScript and Observable. Some notes I found interesting from that notebook:
 * A cell is composed by a cell name and an expression:
   * `[cell name] = [expression]`
@@ -49,7 +52,9 @@ It can be simple statements like 1 + 2, or multi-line statements like
 * Cells can refer to other cells in any part of the code - Observable builds a dependency DAG to figure out the right order. This also means dependencies cannot be circular. [How Observable Runs](https://observablehq.com/@observablehq/how-observable-runs) explains this in more details.
 * Constructs like async functions (await) and generators (yield) have special behavior in a cell. We'll expand in the *Generators* section below.
 * Cells can be mutated if declared with a qualifier (mutable). We'll expand in the *Mutability* section below.
+
 # Mutability
+
 [Introduction to Mutable State](https://observablehq.com/@observablehq/introduction-to-mutable-state) - cells are read-only by default but Observable allows changing the value of a cell by declaring it `mutable`. When changing the value of the cell elsewhere, the `mutable` keyword also must be used.
 
 It's important to note that the cell is immutable, but if the cell is a reference to a value, say an `Object`, then the value can be mutated. This can lead to unexpected behavior, so  I created a notebook, [Mutating references](https://observablehq.com/@kunigami/mutating-references), to highlight this issue.
@@ -113,28 +118,32 @@ One natural question that crossed my mind is whether I should have written this 
 * Consistency: Observable only supports JavaScript, so if I'm writing a post about Python I'd need to fallback to a post, and I wouldn't want to have a mix of both.
 * Durability: Observable has a lot of potential but it's still mostly experimental and I'm not sure I can rely on it sticking around for a long time.
 # References
+
 ### Notebooks mentioned in the post
-* Introduction
+
+* **Introduction**
   * [Why Observable](https://observablehq.com/@observablehq/why-observable)
   * [Five-Minute Introduction](https://observablehq.com/@observablehq/five-minute-introduction)
   * [Observable’s not JavaScript](https://observablehq.com/@observablehq/observables-not-javascript)
   * [How Observable Runs](https://observablehq.com/@observablehq/how-observable-runs)
-* Mutability
+* **Mutability**
   * [Introduction to Mutable State](https://observablehq.com/@observablehq/introduction-to-mutable-state)
   * [Mutating references](https://observablehq.com/@kunigami/mutating-references)
-* Markdown
+* **Markdown**
   * [Markdown summary](https://observablehq.com/@jaynel/markdown-summary)
   * [KaTeX on Observable](https://observablehq.com/@kunigami/tex-katex-on-observable)
-* Views
+* **Views**
   * [Introduction to Generators](https://observablehq.com/@observablehq/introduction-to-generators)
   * [Introduction to Views](https://observablehq.com/@observablehq/introduction-to-views)
   * [Synchronized Views](https://observablehq.com/@mbostock/synchronized-views)
-*  Importing
+*  **Importing**
   * [Introduction to Imports](https://observablehq.com/@observablehq/introduction-to-imports)
-* Integration
+* **Integration**
   * [React Notebook](https://observablehq.com/@kunigami/react)
-### Other
-[[1](https://observablehq.com/@observablehq/why-observable)] Observable - Why Observable?
-[[2]({{site.url}}/blog/2014/08/25/introduction-to-d3.js.html)] Introduction to d3.js
-[[3]({{site.url}}/blog/2017/05/01/openvis-conf-2017.html)] OpenViz Conf - 2017
-[[4]({{site.url}}/blog/2019/07/01/async-functions-in-javascript.html)] Async Functions in JavaScript
+
+### Other References
+
+* [[1](https://observablehq.com/@observablehq/why-observable)] Observable - Why Observable?
+* [[2]({{site.url}}/blog/2014/08/25/introduction-to-d3.js.html)] Introduction to d3.js
+* [[3]({{site.url}}/blog/2017/05/01/openvis-conf-2017.html)] OpenViz Conf - 2017
+* [[4]({{site.url}}/blog/2019/07/01/async-functions-in-javascript.html)] Async Functions in JavaScript
