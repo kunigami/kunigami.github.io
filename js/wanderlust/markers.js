@@ -89,6 +89,7 @@ const markers = [
     lat: 41.40104620211404,
     lng: -124.06586779793305,
     img_name: "redwoods.jpg",
+    photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51033477057",
     visited: true,
   },
