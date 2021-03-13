@@ -84,10 +84,12 @@ const markers = [
     visited: true,
   },
   {
-    name: "Fern Canyon",
-    description: "Redwoods National Park.",
+    name: "Redwoods National Park",
+    description: "Old growth Redwood forest. Home of the tallest trees in the world",
     lat: 41.40104620211404,
     lng: -124.06586779793305,
+    img_name: "redwoods.jpg",
+    img_link: "https://www.flickr.com/photos/kunigami/51033477057",
     visited: true,
   },
   // -- Hawaii
