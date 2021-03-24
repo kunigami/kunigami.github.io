@@ -63,6 +63,16 @@ const markers = [
     visited: true,
   },
   {
+    name: "Cholla Garden",
+    description: "Garden of the cactus plant known as Teddy Bear Cholla in Joshua Tree National Park",
+    lat: 33.925661614092725,
+    lng: -115.92893906366216,
+    img_name: "cholla.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51033477057",
+    visited: true,
+  },
+  {
     name: "Cinder Cone at Lassen National Park",
     description:
       "The cone was built to a height of 230 m above the surrounding area. Then, like many cinder cones, it was snuffed out when several basalt lava flows erupted from its base",
@@ -70,7 +80,17 @@ const markers = [
     lng: -121.319973,
     img_name: "cinder_cone.jpg",
     photographer: "me",
-    img_link: "https://www.flickr.com/photos/kunigami/50812764206/",
+    img_link: "https://www.flickr.com/photos/kunigami/51068149218/",
+    visited: true,
+  },
+  {
+    name: "Forty-Nine Palm Oasis",
+    description: "Palm Oasis in the middle of the desert in Joshua Tree National Parl",
+    lat: 34.10556608298197,
+    lng: -116.1047898389797,
+    img_name: "palm_oasis.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51068149408",
     visited: true,
   },
   {
