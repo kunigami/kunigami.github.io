@@ -33,6 +33,12 @@ class Wanderlust extends React.Component {
           the map.
         </p>
 
+        <p>
+          You'll note this map is heavily skewed towards Western USA (since that's where
+          I have more opportunities to explore) and natural places (personal preference). If
+          you have other places on your wanderlust list, please let me know!
+        </p>
+
         <p>NOTE: This page is better viewed on desktop.</p>
 
         <div>
