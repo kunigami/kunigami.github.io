@@ -55,7 +55,7 @@ The wavy chart we often see as representing sounds is a graphical representation
     <figcaption>Figure 3: Depiction of the air molecules in a tube and their corresponding graphs showing the displacement and pressure at an instant of time. <a href="https://www.acs.psu.edu/drussell/Demos/StandingWaves/StandingWaves.html">Source: Dan Russell</a></figcaption>
 </figure>
 
-Note how pressure and motion are the inverse of each other. It is intuitive: when pressure is the highest, there's no room for displacement.
+This [simulation](http://physics.bu.edu/~duffy/semester1/c20_disp_pressure.html) makes it easier to visualize the relationship between these charts.
 
 It's more convenient to work with the graphical form when modeling sounds because they're much simpler, so we'll primarily work with them from now on but it helps knowing what it's actually happening behind the scenes to have better intuitions.
 
