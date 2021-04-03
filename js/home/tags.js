@@ -3,6 +3,7 @@ const tagsHierarchy = {
     'biology': [
         'evolutionary biology',
         'genetics',
+        'human anatomy',
         'molecular biology',
     ],
     'computer science': [
@@ -31,6 +32,9 @@ const tagsHierarchy = {
         'quantum computing',
         'software engineering',
     ],
+    'linguistics': [
+        'phonetics',
+    ],
     'math': [
         'calculus',
         'combinatorics',
@@ -43,6 +47,9 @@ const tagsHierarchy = {
         'project',
         'retrospective',
         'travel',
+    ],
+    'physics': [
+        'acoustics',
     ],
     'programming languages': [
         'agda',
