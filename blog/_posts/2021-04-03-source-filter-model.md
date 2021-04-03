@@ -317,7 +317,7 @@ This model can be used for example to efficiently encode voice. In [8] (see *Ana
 
 I love inter-disciplinary studies like these. In here we covered subjects from math, physics, biology and linguistics!
 
-Even though I had learned about sound waves in high school, I still had a lot to learn by writing this post. I think there are primarily 3 reasons:
+Even though I had learned about sound waves in high school, I realized I still had a lot to learn while writing this post. I think there are primarily 3 reasons:
 
 * The internet - there's so much content freely available in the internet, including videos and animations. Back then I only had the books and teachers as resources.
 * Intellectual curiosity - it's one thing to be passively taught a subject in high school as opposed to genuine personal curiosity in trying to understand things much more deeply.
