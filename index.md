@@ -30,6 +30,7 @@ like to learn and build things.
 
 ## Links
 
+* [Contact]({{ site.url }}/contact/)
 * [Cheat sheets]({{ site.url }}/docs/)
 * [Github](https://github.com/kunigami)
 * [Papers](http://www.informatik.uni-trier.de/~ley/pers/hd/k/Kunigami:Guilherme)
