@@ -53,6 +53,8 @@ const tagsHierarchy = {
     ],
     'programming languages': [
         'agda',
+        'bash',
+        'c',
         'c++',
         'css',
         'haskell',

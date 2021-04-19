@@ -2,7 +2,7 @@
 layout: post
 title: "Chroot Jailing"
 vanity: "2021-04-19-chroot-jail"
-tags: [operating systems]
+tags: [operating systems, bash, c]
 excerpt_separator: <!--more-->
 ---
 
