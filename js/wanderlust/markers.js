@@ -496,11 +496,32 @@ const markers = [
 
   // Mexico
   {
+    name: "Gran Cenote",
+    description:
+      "One of multiple cenotes (underground sinkholes) in the Yucatan Peninsula.",
+    lat: 20.246823368379435,
+    lng: -87.46415808600378,
+  },
+  {
     name: "Chichén-Itzá",
     description:
       "Archaeological site with excavated ruins of the large Maya city.",
     lat: 20.680334,
     lng: -88.5707365,
+  },
+  {
+    name: "Hierve el Agua",
+    description:
+      "Ancient geological site featuring towering, waterfall-like rock formations, pools & springs.",
+    lat: 16.865753242292385,
+    lng: -96.27599567087927,
+  },
+  {
+    name: "Palenque National Park",
+    description:
+      "Palenque, also anciently known as Lakamha, was a Maya city state in southern Mexico that flourished in the 7th century.",
+    lat: 17.485512166526405,
+    lng: -92.04572560297886,
   },
 
   // Myanmar
