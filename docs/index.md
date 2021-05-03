@@ -15,6 +15,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [General]({{ site.url }}/docs/python/)
 * [NumPy]({{ site.url }}/docs/python/numpy.html)
+* [Pandas]({{ site.url }}/docs/python/pandas.html)
 * [Type Hints]({{ site.url }}/docs/python/types.html)
 
 ## Linear Algebra

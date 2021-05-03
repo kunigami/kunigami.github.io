@@ -369,6 +369,12 @@ const markers = [
 
   // India
   {
+    name: "Chand Bawri",
+    description: "Chand Baori is a stepwell situated in the village of Abhaneri in the Indian state of Rajasthan.",
+    lat: 27.007379920230612,
+    lng:  76.60643437687226,
+  },
+  {
     name: "Hawa Mahal",
     description: "Beautiful palace of Mughal architecture in Jaipur, India.",
     lat: 26.9251416,
@@ -718,7 +724,7 @@ const markers = [
   {
     name: "Socotra Island",
     description: "Island with the unique dragon's blood tree.",
-    lat: 12.4014383,
-    lng: 53.1578601,
+    lat: 12.511573363989033,
+    lng: 53.83185149889994,
   },
 ];

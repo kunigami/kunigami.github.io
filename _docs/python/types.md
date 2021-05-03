@@ -36,6 +36,16 @@ High-order functions. `Callable[Tin, Tout]`. `Tin` is a tuple with the types of 
 
 `Any` is equivalent to not providing the type annotation. `object` is the base of all types.
 
+## Union Types
+
+When the variable can be one of many types:
+
+{% highlight python %}
+from typing import TypeVar, Union
+ID = Union[str, int]
+{% endhighlight %}
+
+
 # Annotation Syntax
 
 How to provide annotation in different scenarios.
