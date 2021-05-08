@@ -26,3 +26,4 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [Bash]({{ site.url }}/docs/bash/bash.html)
 * [Git]({{ site.url }}/docs/git/git.html)
+* [LaTeX]({{ site.url }}/docs/latex/latex.html)
