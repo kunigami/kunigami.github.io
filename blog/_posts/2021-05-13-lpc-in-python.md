@@ -18,6 +18,8 @@ The output is a matrix of coefficients corresponding to the source and filter mo
 
 In this post we'll study the encoding of a audio signal using LPC, which can achieve 15x compression. We'll then decode it into a very noisy but intelligible speech.
 
+<!--more-->
+
 This study is largely based on Kim's excellent [article](https://ccrma.stanford.edu/~hskim08/lpc/), which also provides the code in Matlab.
 
 The contribution of this post will be:
