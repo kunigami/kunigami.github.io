@@ -32,6 +32,9 @@ const tagsHierarchy = {
         'quantum computing',
         'software engineering',
     ],
+    'electrical engineering': [
+        'signal processing',
+    ],
     'linguistics': [
         'phonetics',
     ],
