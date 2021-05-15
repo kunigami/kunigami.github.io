@@ -446,6 +446,8 @@ scipy.io.wavfile.write("example.wav", sample_rate, xhat)
 print('done')
 {% endhighlight %}
 
+The full code is available as a [Jupyter notebook]({{github}}/lpc.ipynb)
+
 ### Results
 
 Running with the audio `speech.wav` provided by [1], we obtained
