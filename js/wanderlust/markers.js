@@ -234,6 +234,14 @@ const markers = [
     lng: -43.128595120333074,
   },
 
+  // Austria
+  {
+    name: "Hallstatt",
+    description: "Hallstatt is a village on Lake Hallstatt's western shore in Austria's mountainous Salzkammergut region.",
+    lat: 47.557600303976095,
+    lng: 13.64545911243289,
+  },
+
   // Cambodia
   {
     name: "Angkor Wat",
@@ -326,6 +334,14 @@ const markers = [
     description: "Lavender Fields of Provence.",
     lat: 43.86508366667945,
     lng: 5.427702093675174,
+  },
+
+  // Germany
+  {
+    name: "Neuschwanstein Castle",
+    description: "Turreted, 19th-century, hilltop castle built for King Ludwig II.",
+    lat: 47.55815322752,
+    lng: 10.749821857890307,
   },
 
   // Greece
@@ -583,6 +599,13 @@ const markers = [
   },
 
   // Norway
+  {
+    name: "Geirangerfjord",
+    description:
+      "Iconic fjord offering snowy mountain peaks, lush plant life, cascading falls & spectacular views.",
+    lat: 62.10331827445209,
+    lng: 7.095297294161887,
+  },
   {
     name: "Preikestolen",
     description:
