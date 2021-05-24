@@ -113,6 +113,14 @@ const markers = [
     img_link: "https://www.flickr.com/photos/kunigami/51033477057",
     visited: true,
   },
+  // -- Colorado
+  {
+    name: "Cliff Palace in Mesa Verde National Park",
+    description:
+      "Cliff dwelling built by Ancestral Puebloans from 1190 to 1260.",
+    lat: 37.16779555670772,
+    lng: -108.47332428961647,
+  },
   // -- Hawaii
   {
     name: "Kalalau Valley",
@@ -160,6 +168,14 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50788723171/",
     visited: true,
+  },
+
+  // Algeria
+  {
+    name: "Timgad",
+    description: "Timgad was a Roman city in the Aurès Mountains of Algeria. It was founded by the Roman Emperor Trajan around CE 100.",
+    lat: 35.49726639943841,
+    lng: 6.469364172911276,
   },
 
   // Australia
@@ -242,6 +258,21 @@ const markers = [
     lng: 13.64545911243289,
   },
 
+  // Bhutan
+  {
+    name: "Paro Taktsang",
+    description: "Sacred mountainside monastery with ornately designed temples & art, plus legendary meditation caves.",
+    lat: 27.492567586337824,
+    lng: 89.36211710089127,
+  },
+
+  {
+    name: "Punakha Dzong",
+    description: "Imposing palace & fortress dating to the 17th century in a serene setting overlooking the river.",
+    lat: 27.604243734505143,
+    lng: 89.86823615050018,
+  },
+
   // Cambodia
   {
     name: "Angkor Wat",
@@ -279,6 +310,54 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50788960847",
     visited: true,
+  },
+  {
+    name: "Longmen Grottoes",
+    description: "Vast, UNESCO–listed site with thousands of statues of Buddha carved in caves excavated from cliffs.",
+    lat: 34.5983596843618,
+    lng: 112.47349736240065,
+  },
+  {
+    name: "Mogao Caves",
+    description: "Complex featuring 492 cave temples with Buddhist artwork, believed to span from 4th-14th centuries.",
+    lat: 40.11597653917494,
+    lng: 94.83222718539928,
+  },
+  {
+    name: "Potala Palace",
+    description: "Built in the 17th century, this renowned palace complex features hundreds of rooms & shrines.",
+    lat: 29.656240082436756,
+    lng: 91.11877232048839,
+  },
+  {
+    name: "Shilin Stone Forest in Yunnan",
+    description: "Rocky, karst parkland featuring a forest of tall limestone formations & green trees.",
+    lat: 24.82363552976476,
+    lng: 103.32756741435762,
+  },
+  {
+    name: "Classical Gardens of Suzhou",
+    description: "Built over 1000 years, from the 11th-19th centuries, these gardens define the Chinese style.",
+    lat: 31.33455547912024,
+    lng: 120.62878325062533,
+  },
+  {
+    name: "Shilin Stone Forest in Yunnan",
+    description: "Rocky, karst parkland featuring a forest of tall limestone formations & green trees.",
+    lat: 24.82363552976476,
+    lng: 103.32756741435762,
+  },
+  {
+    name: "Terracota Warriors",
+    description: "Lifelike sculptures of terra-cotta warriors built around the 3rd century BC.",
+    lat: 34.3842746367123,
+    lng: 109.27847034635566,
+  },
+  {
+    name: "Yungang Grottoes",
+    description: "Begun in 460 A.D., these massive statues were cut into the rock over the course of 64 years.",
+    lat: 40.11172964495947,
+    lng: 113.13251317665217,
   },
   {
     name: "Zhangjiajie National Forest Park",
@@ -415,6 +494,22 @@ const markers = [
     description: "Tea plantations in Munnar, Kerala, India.",
     lat: 10.075677536514016,
     lng: 77.22178397931653,
+  },
+  {
+    name: "Meenakshi Amman Temple",
+    description: "Ancient, walled, Hindu place of worship with sacred water tank and colourful, sculpted gate towers.",
+    lat: 9.920519070884145,
+    lng: 78.119663666074,
+  },
+
+
+  // Indonesia
+  {
+    name: "",
+    description:
+      "Dating to the 9th century, this site is renowned as the largest Buddhist temple in the world.",
+    lat: -7.607342627039068,
+    lng: 110.2037284446244,
   },
 
   // Ireland
