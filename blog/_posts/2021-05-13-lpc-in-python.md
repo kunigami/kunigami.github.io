@@ -446,7 +446,7 @@ scipy.io.wavfile.write("example.wav", sample_rate, xhat)
 print('done')
 {% endhighlight %}
 
-The full code is available as a [Jupyter notebook]({{github}}/lpc.ipynb)
+The full code is available as a [Jupyter notebook]({{github}}/lpc.ipynb).
 
 ### Results
 
