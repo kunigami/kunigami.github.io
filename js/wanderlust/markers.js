@@ -377,6 +377,16 @@ const markers = [
 
   // Egypt
   {
+    name: "Giza Necropolis",
+    description: "Includes the Pyramid of Giza, the only remaining of the Seven Wonders of the Ancient World.",
+    lat: 29.97747274226785,
+    lng:  31.13245258817376,
+    img_name: "giza.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51226844608",
+    visited: true,
+  },
+  {
     name: "Luxor Temple",
     description: "Ancient Egyptian temple complex.",
     lat: 25.699502,
@@ -464,10 +474,34 @@ const markers = [
 
   // India
   {
+    name: "Ajanta Caves",
+    description: "The Ajanta Caves are approximately 30 rock-cut Buddhist cave monuments which date from the 2nd century BCE to about 480 CE.",
+    lat: 20.552181778026124,
+    lng: 75.70329502130777,
+  },
+  {
     name: "Chand Bawri",
     description: "Chand Baori is a stepwell situated in the village of Abhaneri in the Indian state of Rajasthan.",
     lat: 27.007379920230612,
-    lng:  76.60643437687226,
+    lng: 76.60643437687226,
+  },
+  {
+    name: "Chittorgarh Fort",
+    description: "The Chittor Fort or Chittorgarh is one of the largest fort in India. It is a UNESCO World Heritage Site.",
+    lat: 27.007379920230612,
+    lng: 76.60643437687226,
+  },
+  {
+    name: "Elephanta Caves",
+    description: "Elephanta Caves are a UNESCO World Heritage Site and a collection of cave temples predominantly dedicated to the Hindu god Shiva.",
+    lat: 18.96386645818726,
+    lng: 72.93153649719797,
+  },
+  {
+    name: "Ellora Caves",
+    description: "Grand archeological site from the 6th to 10th century featuring religious monuments cut into rock.",
+    lat: 20.03011435281772,
+    lng: 75.17909161644513,
   },
   {
     name: "Hawa Mahal",
@@ -505,7 +539,7 @@ const markers = [
 
   // Indonesia
   {
-    name: "",
+    name: "Borobudur",
     description:
       "Dating to the 9th century, this site is renowned as the largest Buddhist temple in the world.",
     lat: -7.607342627039068,
