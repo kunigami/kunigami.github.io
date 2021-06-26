@@ -41,9 +41,11 @@ const tagsHierarchy = {
     'math': [
         'calculus',
         'combinatorics',
+        'functional analysis',
         'linear algebra',
         'number theory',
         'probability',
+        'topology',
     ],
     'personal': [
         'conference',
