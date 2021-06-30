@@ -372,14 +372,6 @@ form {
   margin-top: 20px;
 }
 
-.fb-comments {
-  margin-top: 20px;
-}
-
-.fb_iframe_widget_fluid_desktop iframe {
-  width: 100% !important;
-}
-
 .right {
   display: flex;
   flex-direction: column;
@@ -423,6 +415,10 @@ figcaption {
 
 .books-table td {
   vertical-align: top;
+}
+
+.giscus {
+  margin-top: 10px;
 }
 
 /* ----------------------------------------------------------------------------
