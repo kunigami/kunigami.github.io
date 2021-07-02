@@ -9,6 +9,13 @@ Revert changes to uncommitted file
 git checkout -- <file>
 {% endhighlight %}
 
+Discard the most recent local commit:
+
+{% highlight text %}
+git reset --hard HEAD~1
+{% endhighlight %}
+
+
 ## Branch
 
 Creates new branch `foo`:
