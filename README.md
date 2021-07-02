@@ -7,7 +7,11 @@ http://kuniga.me/
 
 ## Building
 
-### Dependencies
+* Get repo
+
+`git clone git@github.com:kunigami/kunigami.github.io.git`
+
+### MacOS
 
 * Upgrade ruby. the MacOS version is outdated:
 
@@ -17,19 +21,27 @@ http://kuniga.me/
 
 `echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile`
 
-* Install jekyll
+* Install dependencies:
 
-`gem install --user-install bundler jekyll`
+`bundle install`
 
-### Run site locally
+### Linux (Ubuntu)
 
-* Get repo
+* Get ruby dev:
 
-`git clone git@github.com:kunigami/kunigami.github.io.git`
+`apt install ruby-dev`
+
+* Install dependencies:
+
+`bundle install`
+
+## Run
 
 * Run website on localhost
 
 `bundle exec jekyll serve`
+
+* Open `https://localhost:4000` in the browser
 
 ## References
 
