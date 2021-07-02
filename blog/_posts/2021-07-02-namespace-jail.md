@@ -529,6 +529,10 @@ We should now have a minimal jailed system up and running!
 bin   home   lib   lib32   lib64   libx32   old_root   proc   tmp   usr
 {% endhighlight %}
 
+## Code
+
+The full example is available on [Github]({{github}}/main.cpp).
+
 ## Conclusion
 
 In this post we went through all the details of creating a shell process with user and mounts namespaced. Once we unmount the old root after pivoting, the old directories do not stay around (though hidden) like it does via chroot [8].
