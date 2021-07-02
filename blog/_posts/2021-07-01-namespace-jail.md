@@ -221,23 +221,143 @@ struct NamespaceProcess {
 }
 {% endhighlight %}
 
-Once we try this out, we get:
+When we run:
 
-{% highlight text %}
+{% highlight bash %}
 ^_^: whoami
 nobody
+^_^: id
+uid=65534 gid=65534 groups=65534
 {% endhighlight %}
 
-The user namespace starts blank. We'll resolve this later, but let's leave it as is for now.
+The user metadata starts blank and `65534` represents undefined. Let's fix this.
 
-## Mount Isolation
+## Mapping User IDs
 
-Namespacing the user is interesting for us because we don't need root access to run root-only operations in the child process, since `uid=0` is considered root.
+We can create a mapping between IDs inside the namespace and outside. The map is stored in the file `/proc/<pid>/uid_map`, where `<pid>` is the ID of the current process.
 
-{% highlight text %}
+So for example, if we have a process with PID 31378, we can inspect that file:
+ 
+{% highlight bash %}
+> cat /proc/31378/uid_map
+0 0 4294967295
+{% endhighlight %}
+ 
+Each line represent one mapping. The meaning of each column is "ID_inside-ns", "ID-outside-ns" and "length" []. These three numbers represent 2 ranges of the same length, the first is `[ID_inside-ns, ID_inside-ns + length - 1]` and the second is `[ID_outside-ns, ID_outside-ns + length - 1]`, and ids in the first range map to ids in the second range.
+ 
+This is much easier to understand with an example, if we have a line with `10 1000 3`, it means the range of ids `[10, 11, 12]` in the current process maps to the parent process `[1000, 1001, 1002]`, thus `0 0 4294967295` (which is the default mapping) effectively represent a 1:1 mapping between every id.
+
+We can create a simple map so that the user ID 0 in the child maps to our current user running the parent:
+
+{% highlight cpp %}
+map<int, int> get_uid_map() {
+  map<int, int> uid_map = {
+    {
+      0,
+      getuid(),
+    }
+  };
+  return uid_map;
+}
+{% endhighlight %}
+
+Then we write to the file corresponding to a given pid:
+
+{% highlight cpp %}
+int set_uid_map(map<int, int> uid_map, int pid) {
+  string uid_map_filename = format("/proc/%d/uid_map", pid);
+
+  ofstream fs;      
+  fs.open(uid_map_filename.c_str());
+  
+  if (fs.fail()) {
+    fatal_action("opening uid_map file");
+    return 1;
+  }
+
+  for (auto const& [in_id, out_id]: uid_map) {
+    fs << in_id << " " << out_id << " " << 1 << endl;
+  }
+  
+  fs.close();
+  return 0;
+}
+{% endhighlight %}
+
+The trick part is that the child process does not have privileges to write to its own `uid_map` file, so it's the parent that has to do it. Let's assume we have a function `before_child_runs()` that takes the child `pid` and as the name suggests runs before the child. This is where we set the uid map:
+
+{% highlight cpp %}
+int before_child_runs(int pid) {
+    uid_map = get_uid_map();
+    set_uid_map(uid_map, pid);
+    return 0;
+}
+{% endhighlight %}
+
+To guarantee the right order of execution, we'll need more synchronization.
+
+## Synchonization II
+
+We'll use pipes for this. The idea is that the parent process opens a pipe, which has two file descriptors. `pipe_fd[0]` is the read end of the pipe, and `pipe_fd[1]` is the write end.
+
+When we clone a process the child inherits a copy of the open file descriptors, so we can use it as a IPC (inter-process communication) medium. We can also use it as a synchronization mechanism too, because the `read()` function blocks until it receives the requested amount of data or the other side closes the file descriptor.
+
+{% highlight cpp %}
+struct NamespaceProcess {
+
+private:
+  int pipe_fd[2];
+
+  // ...
+
+  int child_function_wrapper() {
+    // won't use
+    close(pipe_fd[1]);
+
+    // Block on parent - request a non-zero number of chars
+    char ch;
+    if (read(pipe_fd[0], &ch, 1) != 0) {
+      cerr << "Failure in child: read from pipe returned != 0" << endl;
+    }
+
+    close(pipe_fd[0]);
+
+    // ...
+  }
+
+  int run() {
+    if (pipe(pipe_fd) == -1) {
+        fatal_action("open pipe");
+    }
+
+    int clone_flags = get_custom_clone_flags() | SIGCHLD;
+    int pid = create_child(clone_flags);
+
+    // won't use, but has to be closed after the child
+    // was created
+    close(pipe_fd[0]);
+
+    before_child_runs(pid);
+
+    // Unblocks child
+    close(pipe_fd[1]);
+
+    // ...
+  }  
+{% endhighlight %}
+
+Now we can check the user is correct:
+
+{% highlight bash %}
+^_^: whoami
+kunigami
 ^_^: id
 uid=0 gid=65534 groups=65534
 {% endhighlight %}
+
+Note that we have to do the same for the group id, which is a very similar process but we'll skip for the sake of simplicity.
+
+## Mount Isolation
 
 Let's also create a mount namespace by adding the `CLONE_NEWNS` flag.
 
@@ -378,7 +498,7 @@ struct NamespaceProcess {
 }
 {% endhighlight %}
 
-**Warning:** Make sure `new_root()` is run by the child process and that the mount namespace is used! If you get permission denied and have to use `sudo` you're doing it wrong!
+**Warning:** Make sure `new_root()` is run by the child process and that the mount namespace is used! If you get permission denied and have to use `sudo` you're doing it wrong! (Speaking from experience >.<)
 
 The child just needs to provide some paths that it would like to mount (read-only):
 
@@ -409,7 +529,25 @@ We should now have a minimal jailed system up and running!
 bin   home   lib   lib32   lib64   libx32   old_root   proc   tmp   usr
 {% endhighlight %}
 
+## Conclusion
+
+In this post we went through all the details of creating a shell process with user and mounts namespaced. Once we unmount the old root after pivoting, the old directories do not stay around (though hidden) like it does via chroot.
+
+The process of starting with everything disabled and painfully add capabilities is a great way to understand how things are implemented behind the scenes, for example the `/proc/<pid>/uid_map`. 
+
+
+
 ## References
 
 * [[1](https://en.wikipedia.org/wiki/Chroot)] namespaces
+https://tldp.org/LDP/lpg/node11.html
 * [2] pivot_root 
+
+* [1] https://en.wikipedia.org/wiki/Linux_namespaces
+* [2] https://medium.com/@teddyking/linux-namespaces-850489d3ccf
+* [3] https://man7.org/linux/man-pages/man2/clone.2.html
+* [4] https://stackoverflow.com/a/3992545/279973
+* [5] https://medium.com/@teddyking/namespaces-in-go-user-a54ef9476f2a
+* [6] https://man7.org/linux/man-pages/man7/user_namespaces.7.html
+* [7] https://news.ycombinator.com/item?id=23167383
+* [8] https://man7.org/linux/man-pages/man2/pivot_root.2.html
