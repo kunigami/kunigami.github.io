@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Namespace Jailing"
-vanity: "2021-07-01-namespace-jail"
-tags: [operating systems, bash, c]
+vanity: "2021-07-02-namespace-jail"
+tags: [operating systems, bash, c++]
 excerpt_separator: <!--more-->
 ---
 
