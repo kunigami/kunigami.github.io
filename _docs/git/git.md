@@ -54,3 +54,10 @@ Send changes to a remote repo + branch, for example, the remote repository alias
 {% highlight text %}
 git push origin test
 {% endhighlight %}
+
+"Pull" remote branch (e.g. `my_remote_branch`) that does not exist in your local repo and switch to it. Note: this only works if  `my_remote_branch` only appears in exactly one of the remote repos:
+
+{% highlight text %}
+git switch my_remote_branch
+{% endhighlight %}
+
