@@ -243,7 +243,7 @@ So for example, if we have a process with PID 31378, we can inspect that file:
 0 0 4294967295
 {% endhighlight %}
 
-Each line represent one mapping. The meaning of each column is "ID_inside-ns", "ID-outside-ns" and "length" []. These three numbers represent 2 ranges of the same length, the first is `[ID_inside-ns, ID_inside-ns + length - 1]` and the second is `[ID_outside-ns, ID_outside-ns + length - 1]`, and ids in the first range map to ids in the second range.
+Each line represent one mapping. The meaning of each column is "ID_inside-ns", "ID-outside-ns" and "length" [4]. These three numbers represent 2 ranges of the same length, the first is `[ID_inside-ns, ID_inside-ns + length - 1]` and the second is `[ID_outside-ns, ID_outside-ns + length - 1]`, and ids in the first range map to ids in the second range.
 
 This is much easier to understand with an example, if we have a line with `10 1000 3`, it means the range of ids `[10, 11, 12]` in the current process maps to the parent process `[1000, 1001, 1002]`, thus `0 0 4294967295` (which is the default mapping) effectively represent a 1:1 mapping between every id.
 
@@ -284,7 +284,7 @@ int set_uid_map(map<int, int> uid_map, int pid) {
 }
 {% endhighlight %}
 
-The trick part is that the child process does not have privileges to write to its own `uid_map` file, so it's the parent that has to do it. Let's assume we have a function `before_child_runs()` that takes the child `pid` and as the name suggests runs before the child. This is where we set the uid map:
+The tricky part is that the child process does not have privileges to write to its own `uid_map` file, so it's the parent that has to do it. Let's assume we have a function `before_child_runs()` that takes the child `pid` and as the name suggests runs before the child. This is where we set the uid map:
 
 {% highlight cpp %}
 int before_child_runs(int pid) {
@@ -484,7 +484,7 @@ int new_root() {
 }
 {% endhighlight %}
 
-We need to make sure this functions is run before `child_function()` so we can do:
+We need to make sure this function is run before `child_function()` so we can do:
 
 {% highlight cpp %}
 // sub_process.cpp
@@ -531,11 +531,11 @@ bin   home   lib   lib32   lib64   libx32   old_root   proc   tmp   usr
 
 ## Conclusion
 
-In this post we went through all the details of creating a shell process with user and mounts namespaced. Once we unmount the old root after pivoting, the old directories do not stay around (though hidden) like it does via chroot [8].
+In this post we went through all the details of creating a shell process with user and mount namespaces. Once we unmount the old root after `pivot_root`, the old root does not stay around (though hidden) like it does via chroot [8].
 
-The process of starting with everything disabled and painfully add capabilities is a great way to understand how things are implemented behind the scenes, for example the `/proc/<pid>/uid_map`.
+The process of starting with everything disabled and painfully adding capabilities is a great way to understand how things are implemented behind the scenes, for example the `/proc/<pid>/uid_map`.
 
-Ed King's series [3] on Linux namespaces using Go is very instructive. The man pages from man7.org are very helpful, especially the examples!
+Ed King's series [3] on Linux namespaces using Go is very instructive, where they use a higher-level API, which makes it easier to follow. The man pages from man7.org are very helpful, especially the examples!
 
 I'd like to sandbox the network as well, but will leave it to a future post.
 
