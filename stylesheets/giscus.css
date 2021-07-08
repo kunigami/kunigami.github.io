@@ -6,11 +6,7 @@ Copyright (c) 2018 GitHub Inc.
 https://github.com/primer/primitives/blob/main/LICENSE
 */
 
-[data-theme='light'] {
-    color-scheme: light;
-}
-
-[data-theme='light'] {
+* {
     --color-auto-black: red;
     --color-auto-white: red;
     --color-auto-gray-0: red;
@@ -880,7 +876,7 @@ https://github.com/primer/primitives/blob/main/LICENSE
     --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
 }
 
-[data-theme='light'] .pagination-loader-container {
+.pagination-loader-container {
 background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line.svg);
     }
 
