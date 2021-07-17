@@ -14,7 +14,7 @@ like to learn and build things.
 <table class="books-table">
     <tbody>
         <tr>
-            <td><a href="{{ site.url }}/blog/">NP-Incompleteness</a> - My technical blog. (2012 - present)</td>
+            <td><a href="{{ site.url }}/blog/">NP-Incompleteness</a> - My technical blog. (2009 - present)</td>
             <td><img src="{{ site.url }}/resources/home/escher_drawing_hands.jpg" alt="Screenshot of the Wanderlust page"/></td>
         </tr>
         <tr>
