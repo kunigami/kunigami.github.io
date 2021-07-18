@@ -18,13 +18,13 @@ Technically, the contest only takes place on the 5th, while on other days we hav
 
 In past competitions, the trip was financed by the SBC (Sociedade Brasileira de Computação), but this year the organization decided to use the sponsor the training camp during the month of January, at USP. Given that, we had to raise funding ourselves.
 
-Initially, our coach Alberto asked Instituto de Computação for money, but it didn't have a budget. He then went after Unicamp's dean, which could only pay for half of the tickets. In the end Alberto gave up on going to the finals, IC used a postgraduate money to pay for my ticket and the other two were bought by the dean's funding.
+Initially, our coach Alberto asked Instituto de Computação (IC) for money, but it didn't have a budget. He then went after Unicamp's dean, which could only pay for half of the tickets. In the end Alberto gave up on going to the finals, IC used a postgraduate budget to pay for my ticket and the other two were bought by the dean's funding.
 
 We were initially given tickets departing São Paulo on January 28th, arriving in Harbin on the 30th, but after negotiating with the travel agency, we were able to change the itinerary to arrive in Beijing on the 30th and only go to Harbin on the 1st of February. Since we were already going to be staying in Harbin for 5 days, we found it more interesting to spend the extra time in Beijing.
 
 ## Pre-competition
 
-We traveled to China during one of the coldest months of the year. The city of Beijing is very reminiscent of São Paulo with its skyscrapers, but I got the impression that Beijing is much clear. Unfortunately, due to lack of organization and knowledge, we were only able to visit the Forbidden City during the three days of our stay.
+We traveled to China during one of the coldest months of the year. The city of Beijing is very reminiscent of São Paulo with its skyscrapers, but I got the impression that Beijing is much cleaner. Unfortunately, due to lack of organization and knowledge, we were only able to visit the Forbidden City during the three days of our stay.
 
 <figure class="center_children">
     <img src="{{resources_path}}/forbiddencity.jpeg" alt="View of the Forbidden City"/>
