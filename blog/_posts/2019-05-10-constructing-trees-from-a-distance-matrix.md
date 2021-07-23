@@ -100,7 +100,7 @@ $$\ell_j \le (d_{ij} + d_{jk} - d_{ik})/2$$
 
 This means that finding the minimum of (2) will satisfy these constraints.
 
-**Finding Limb Length**: a simple approach to find $\ell_j$ is to, for each $j$, iterate over all $i$ and $k$ and find the minimum of (2), which leads to an $O(n^2)$ algorithm. `@balvisio` pointed out in the comments that we can solve this in $O(1)$.
+**Finding Limb Length**: a simple approach to find $\ell_j$ is to, for each $j$, iterate over all $i$ and $k$ and find the minimum of (2), which leads to an $O(n^2)$ algorithm. `@balvisio` pointed out in the comments that we can solve this in $O(n)$.
 
 Recall that when we remove $p_j$ it will generate 3 trees ($j$, $T_1$ and $T_2$), $i$ will be in one of them, say $T_1$, and it's possible to show there exists $k$ which is in $T_2$, which automatically satisifes (3).
 
@@ -152,4 +152,4 @@ The idea of reconstructing the genealogical tree of all the species is fascinati
 ### References
 
 * [1] *Bioinformatics Algorithms: An Active Learning Approach* – Compeau, P. and Pevzner P. - Chapter 10
-* [2] *The Blink Watchmaker* - Richard Dawkins
+* [2] *The Blind Watchmaker* - Richard Dawkins
