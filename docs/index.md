@@ -18,6 +18,10 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Pandas]({{ site.url }}/docs/python/pandas.html)
 * [Type Hints]({{ site.url }}/docs/python/types.html)
 
+## Rust
+
+* [General]({{ site.url }}/docs/rust/)
+
 ## Linear Algebra
 
 * [Matrices]({{ site.url }}/docs/math/matrix.html)
