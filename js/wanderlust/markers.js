@@ -31,6 +31,17 @@ const markers = [
     lng: -111.37357693817302,
   },
   {
+    name: "Grand Canyon",
+    description:
+      "One of the most famous canyons in the world, carved by the Colorado river.",
+    lat: 36.06714174570464,
+    lng: -112.11638907022639,
+    img_name: "grand_canyon.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51334389876/",
+    visited: true,
+  },
+  {
     name: "Havasu Falls",
     description:
       "Havasu Falls is a waterfall of Havasu Creek, located in the Grand Canyon, Arizona, United States. It is within Havasupai tribal lands.",
@@ -128,6 +139,36 @@ const markers = [
       "The Kalalau Valley is located on the northwest side of the island of Kauaʻi in the state of Hawaii.",
     lat: 22.1799987,
     lng: -159.6711207,
+  },
+  // -- New Mexico
+  {
+    name: "Chaco Culture National Historical Park",
+    description:
+      "Ruins from Puebloan people.",
+    lat: 36.05536703154945,
+    lng: -107.95712276204746,
+  },
+  {
+    name: "White Sands National Park",
+    description:
+      "Landscape filled with gypsum sand dunes.",
+    lat: 32.78778371883236,
+    lng: -106.32397942084717,
+    img_name: "white_sands.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51334597028/",
+    visited: true,
+  },
+  // Texas
+  {
+    name: "Santa Elena Canyon",
+    description: "Giant walls surrounding the Rio Grande, in the border of the US and Mexico",
+    lat: 29.172282302934672,
+    lng: -103.60246473625729,
+    img_name: "santa_elena_canyon.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51335412760/",
+    visited: true,
   },
   // -- Utah
   {
@@ -397,6 +438,27 @@ const markers = [
     visited: true,
   },
 
+  // England
+  {
+    name: "British Museum",
+    description: "One of the largest natural history museums in the world.",
+    lat: 51.5193839182863,
+    lng: -0.1269542555425667,
+    img_name: "rosetta.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51334653908",
+    visited: true,
+  },
+  {
+    name: "White Cliffs of Dover",
+    description: "White chalk cliffs rise 350 feet from the sea.",
+    lat: 51.13473906458341,
+    lng: 1.3572182590023552,
+    img_name: "dover_cliffs.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51333705027",
+    visited: true,
+  },
   // Equador
   {
     name: "Galapagos Island",
@@ -544,6 +606,34 @@ const markers = [
       "Dating to the 9th century, this site is renowned as the largest Buddhist temple in the world.",
     lat: -7.607342627039068,
     lng: 110.2037284446244,
+  },
+
+  // Iran
+  {
+    name: "Bam Citadel",
+    description: "The Arg-e Bam is the largest adobe building in the world.",
+    lat: 29.115176273815155,
+    lng: 58.369317332187286,
+  },
+  {
+    name: "Persepolis",
+    description: "Ruins of a 518 BC Achaemenid empire capital.",
+    lat: 29.933267569582167,
+    lng: 52.886444738853385,
+  },
+  {
+    name: "Shushtar Historical Hydraulic System",
+    description: "Complex irrigation system & UNESCO site with water mills, dams, tunnels & canals.",
+    lat: 32.044218764946585,
+    lng: 48.85846733320769,
+  },
+
+  // Iraq
+  {
+    name: "Ziggurat of Ur",
+    description: "Monumental place of worship built for a Bronze Age Sumerian king, often restored over 4,000 years.",
+    lat: 30.96649516884495,
+    lng: 46.10404623212625,
   },
 
   // Ireland
