@@ -2,7 +2,7 @@
 layout: post
 title: "Discrete Fourier Transforms"
 tags: [linear algebra, functional analysis, signal processing]
-vanity: "2021-07-06-dft"
+vanity: "2021-07-31-dft"
 excerpt_separator: <!--more-->
 ---
 
