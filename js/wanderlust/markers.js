@@ -159,6 +159,15 @@ const markers = [
     img_link: "https://www.flickr.com/photos/kunigami/51334597028/",
     visited: true,
   },
+  // -- New York
+  {
+    name: "Niagara Falls,",
+    description:
+      "The most famous waterfalls in the US.",
+    lat: 43.08406371690949,
+    lng: -79.06502726278184,
+  },
+
   // Texas
   {
     name: "Santa Elena Canyon",
@@ -353,6 +362,12 @@ const markers = [
     visited: true,
   },
   {
+    name: "Kizil Thousand Buddha Caves",
+    description: "Extensive complex of ancient carved caves known for Buddhist murals in a variety of styles.",
+    lat: 41.78927440243314,
+    lng: 82.50799992086527,
+  },
+  {
     name: "Longmen Grottoes",
     description: "Vast, UNESCO–listed site with thousands of statues of Buddha carved in caves excavated from cliffs.",
     lat: 34.5983596843618,
@@ -508,6 +523,12 @@ const markers = [
     visited: true,
   },
   {
+    name: "Navagio Beach",
+    description: "Iconic pebble beach between towering cliffs with a shipwreck & turquoise water, reached by boat.",
+    lat: 37.85949040887617,
+    lng: 20.624864375003003,
+  },
+  {
     name: "Santorini",
     description: "Small Greek Island known for its while buildings",
     lat: 36.4624199,
@@ -606,6 +627,20 @@ const markers = [
       "Dating to the 9th century, this site is renowned as the largest Buddhist temple in the world.",
     lat: -7.607342627039068,
     lng: 110.2037284446244,
+  },
+  {
+    name: "Ratenggaro Village",
+    description:
+      "Traditional Village with iconic high roofs.",
+    lat: -9.62720973623224,
+    lng: 119.0031081065439,
+  },
+  {
+    name: "Tumpak Sewu Waterfalls",
+    description:
+      "The waterfall is overshadowed by Semeru, an active volcano and the highest mountain in Java.",
+    lat: -8.230778637200986,
+    lng: 112.91777188048432,
   },
 
   // Iran
@@ -710,6 +745,15 @@ const markers = [
     visited: true,
   },
 
+  // Kazakhstan
+  {
+    name: "Kaindy Lake",
+    description:
+      "Lake Kaindy is a 400-meter-long lake located in Kazakhstan.",
+    lat: 42.98478876084527,
+    lng: 78.46588932854154,
+  },
+
   // Madagascar
   {
     name: "Avenue of the Baobabs",
@@ -749,6 +793,20 @@ const markers = [
       "Archaeological site with excavated ruins of the large Maya city.",
     lat: 20.680334,
     lng: -88.5707365,
+  },
+  {
+    name: "El Tajin",
+    description:
+      "Hosts the Pyramid of the Niches, a masterpiece of ancient Mexican and American architecture.",
+    lat: 20.443268954486545,
+    lng: -97.37813941920652,
+  },
+  {
+    name: "Guachimontones",
+    description:
+      "Large circular pyramids are the highlight of this unique archaeological site dating to 300 BCE.",
+    lat: 20.69785233998074,
+    lng: -103.83396882679372,
   },
   {
     name: "Hierve el Agua",
@@ -816,6 +874,13 @@ const markers = [
     lat: -44.63507813222853,
     lng: 167.89796460430344,
   },
+  {
+    name: "Punakaiki Pancake Rocks  ",
+    description:
+      "Pancake Rocks are a heavily eroded limestone area where the sea bursts through a number of vertical blowholes during high tides.",
+    lat:-42.114105127032076,
+    lng: 171.32627617034458,
+  },
 
   // Norway
   {
@@ -858,6 +923,12 @@ const markers = [
 
   // Scotland
   {
+    name: "Fingal's Cave",
+    description: "Cave known for its resounding acoustics & abstract rock formations.",
+    lat: 56.43145163449158,
+    lng: -6.341378939035621,
+  },
+  {
     name: "The Storr",
     description: "Rock formation in Northern Scotland.",
     lat: 57.4959496,
@@ -887,6 +958,13 @@ const markers = [
     lat: 68.36168,
     lng: 18.7234,
   },
+  {
+    name: "Laitaure Delta",
+    description:
+      "The Rapa delta is considered to be the most beautiful river delta in Scandinavia. It can be seen from above from the Skierfeklippan peak",
+    lat: 67.16749163371166,
+    lng: 18.212099916970978,
+  },
 
   // Tanzania
   {
@@ -904,6 +982,13 @@ const markers = [
       "Known for its distinctive “fairy chimneys,” tall, cone-shaped rock formations clustered in Monks Valley, Göreme and elsewhere",
     lat: 38.649597784097764,
     lng: 34.83383186504822,
+  },
+  {
+    name: "Derinkuyu Underground City",
+    description:
+      "The Derinkuyu underground city is an ancient multi-level underground city.",
+    lat: 38.37375643390762,
+    lng: 34.73505487666728,
   },
   {
     name: "Pamukkale",
