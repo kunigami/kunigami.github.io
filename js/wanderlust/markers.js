@@ -131,6 +131,32 @@ const markers = [
       "Cliff dwelling built by Ancestral Puebloans from 1190 to 1260.",
     lat: 37.16779555670772,
     lng: -108.47332428961647,
+    img_name: "cliff_palace.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51385114594/",
+    visited: true,
+  },
+  {
+    name: "Great Sand Dunes National Park",
+    description:
+      "The Park conserves an area of large sand dunes up to 230 m tall.",
+    lat: 37.75264382446697,
+    lng:  -105.53244945971352,
+    img_name: "great_sand_dunes.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51384369581/",
+    visited: true,
+  },
+  // -- DC
+  {
+    name: "Museums of Washington DC",
+    description:
+      "Washington DC has many wonderful (and free) museums, including the Smithsonian National Museum of Natural History, National Air and Space Museum, National Gallery of Art",
+    lat: 38.89133974746184,
+    lng: -77.02611265939058,
+    img_name: "smithsonian.jpg",
+    photographer: "me",
+    visited: true,
   },
   // -- Hawaii
   {
@@ -161,12 +187,23 @@ const markers = [
   },
   // -- New York
   {
-    name: "Niagara Falls,",
+    name: "American Museum of Natural History",
+    description:
+      "From dinosaurs to outer space and everything in between, this huge museum showcases natural wonders.",
+    lat: 40.78187652923415,
+    lng: -73.97385945289521,
+    img_name: "amnh.jpg",
+    photographer: "me",
+    visited: true,
+  },
+  {
+    name: "Niagara Falls",
     description:
       "The most famous waterfalls in the US.",
     lat: 43.08406371690949,
     lng: -79.06502726278184,
   },
+
 
   // Texas
   {
@@ -181,7 +218,18 @@ const markers = [
   },
   // -- Utah
   {
-    name: "Bryce Canyon",
+    name: "Arches National Park",
+    description:
+      "Known as the site of more than 2,000 natural sandstone arches",
+    lat: 38.74641197424302,
+    lng: -109.49905024279148,
+    img_name: "arches.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51385410020/",
+    visited: true,
+  },
+  {
+    name: "Bryce Canyon National Park",
     description:
       "Crimson-colored hoodoos, which are spire-shaped rock formations",
     lat: 37.566307868258306,
@@ -189,6 +237,17 @@ const markers = [
     img_name: "bryce.jpg",
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50807912907/",
+    visited: true,
+  },
+    {
+    name: "Canyonlands National Park",
+    description:
+      "Known for its dramatic desert landscape carved by the Colorado River",
+    lat: 38.32102101074824,
+    lng: -109.83546234153653,
+    img_name: "canyonlands.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51384650588/",
     visited: true,
   },
   {
@@ -501,6 +560,13 @@ const markers = [
     lat: 43.86508366667945,
     lng: 5.427702093675174,
   },
+  {
+    name: "Louvre Museum",
+    description:
+      "The Louvre, or the Louvre Museum, is the world's second-largest art museum.",
+    lat: 48.861327592885104,
+    lng:  2.3376365452761454,
+  },
 
   // Germany
   {
@@ -731,6 +797,16 @@ const markers = [
     lat: 36.315072480873724,
     lng: 139.52010803165786,
   },
+  {
+    name: "Tokyo National Museum",
+    description:
+      "Museum complex devoted to the art & antiquities of Japan, as well as other Asian countries..",
+    lat: 35.7186819141621,
+    lng: 139.77622731392006,
+    visited: true,
+    img_name: "tokyo_museum.jpg",
+    photographer: "me",
+  },
 
   // Jordan
   {
@@ -814,6 +890,13 @@ const markers = [
       "Ancient geological site featuring towering, waterfall-like rock formations, pools & springs.",
     lat: 16.865753242292385,
     lng: -96.27599567087927,
+  },
+  {
+    name: "Museo Nacional de Antropología",
+    description:
+      "Anthropology museum showcasing artifacts from as far back as the ancient Maya civilization.",
+    lat: 19.426594088199124,
+    lng: -99.18626292196433,
   },
   {
     name: "Palenque National Park",
