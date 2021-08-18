@@ -90,6 +90,10 @@ Conversely, if the target LRLP can satisfy $n + m$ constraints (note this is an 
 
 Hence, the original ILP has a feasible solution if and only if LRLP satisfies $n + m$ constraints.
 
+## Related Posts
+
+* [Lagrangean Relaxation - Theory]({{site.url}}/blog/2012/02/05/lagrangean-relaxation-theory.html). This problem seems related to the Lagrangean Relaxation, in which we remove some of the constraints and add them to the objective function and penalize violated constraints. How good of a solution would we get if we relaxed all the constraints and tried to optimize it? In theory the multipliers would be real values, so we might end up picking fractions of constraints, but I wonder if in practice it would yield good approximations.
+
 ## References
 
 * [[1](https://math.stackexchange.com/questions/2969290/maximizing-the-total-number-of-feasible-constraints-of-a-linear-program
