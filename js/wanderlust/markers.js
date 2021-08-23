@@ -327,7 +327,7 @@ const markers = [
     lng: -54.4249245,
     img_name: "iguazu.jpg",
     photographer: "me",
-    img_link: "https://www.flickr.com/photos/kunigami/50788055268",
+    img_link: "https://www.flickr.com/photos/kunigami/51396869852",
     visited: true,
   },
   {
