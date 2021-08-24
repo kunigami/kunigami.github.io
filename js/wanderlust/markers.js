@@ -175,6 +175,13 @@ const markers = [
     lng: -107.95712276204746,
   },
   {
+    name: "Rock Formations of San Juan County",
+    description:
+      "Famous ones include King of Wings and The Alien Chair.",
+    lat: 36.1730792611538,
+    lng: -107.97276445191888,
+  },
+  {
     name: "White Sands National Park",
     description:
       "Landscape filled with gypsum sand dunes.",
@@ -754,6 +761,12 @@ const markers = [
     lng: 9.6738363,
   },
   {
+    name: "Duomo di Milano",
+    description: "One of the largest cathedrals in the world, this iconic masterpiece took over 600 years to complete.",
+    lat: 45.46431327475497,
+    lng: 9.19193965680113,
+  },
+  {
     name: "Colosseum",
     description:
       "Largest ancient amphitheatre ever built, and is still the largest standing amphitheater in the world today.",
@@ -766,6 +779,12 @@ const markers = [
       "Venice, the capital of northern Italy’s Veneto region, is built on more than 100 small islands in a lagoon in the Adriatic Sea. It has no roads, just canals",
     lat: 45.43440028570622,
     lng: 12.338469167604442,
+  },
+  {
+    name: "The Trulli of Alberobello",
+    description: "The trulli , limestone dwellings found in the southern region of Puglia, are remarkable examples of drywall (mortarless) construction, a prehistoric building technique still in use in this region.",
+    lat: 40.783138320116066,
+    lng: 17.239711151841274,
   },
 
   // Japan
@@ -1059,6 +1078,13 @@ const markers = [
   },
 
   // Turkey
+  {
+    name: "Archaeological Museum",
+    description:
+      "Museum showing Turkey's rich archaeological heritage",
+    lat: 41.01045960031307,
+    lng: 28.983437611651677,
+  },
   {
     name: "Cappadocia",
     description:
