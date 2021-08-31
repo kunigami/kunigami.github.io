@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-In this post we'll learn about discrete filters. Their definitions, some properties and examples.
+In this post we'll learn about discrete filters, including definitions, some properties and examples.
 
 <!--more-->
 
@@ -18,9 +18,7 @@ A **discrete-time system** is a transform that takes in discrete-time sequences 
 
 $$y_t = \mathscr{H}(\vec{x}, t)$$
 
-Note 1: we include $t$ as an explicit parameter to make it clear it's dependent on $t$, so even if $x_{t_1} = x_{t_2}$, it could be that $\mathscr{H}(x_{t_1}, t_1) \neq \mathscr{H}(x_{t_2}, t_2)$.
-
-Note 2: the input of the function is $\vec{x}$, not $x_t$ because $y_t$ could depend on more than just $x_t$, for example a window function where $y_t = x_{t-1} + x_{t} + x_{t+1}$.
+Note: the input of the function is $\vec{x}$, not $x_t$ because $y_t$ could depend on more than just $x_t$, for example a window function where $y_t = x_{t-1} + x_{t} + x_{t+1}$.
 
 A discrete-time system is said **linear** if it satisfies:
 
