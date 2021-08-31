@@ -1,4 +1,4 @@
-http://kuniga.me/
+Source code for: http://kuniga.me/
 
 
 ## Details
@@ -9,7 +9,11 @@ http://kuniga.me/
 
 * Get repo
 
-`git clone git@github.com:kunigami/kunigami.github.io.git`
+    git clone git@github.com:kunigami/kunigami.github.io.git
+
+Setup:
+
+    git config --local core.hooksPath .githooks/
 
 ### MacOS
 
