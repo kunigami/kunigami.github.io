@@ -14,7 +14,7 @@ In this post we'll learn about discrete filters, including definitions, some pro
 
 ## Discrete Filter
 
-A **discrete-time system** is a transform that takes in discrete-time sequences as inputs and producing another number of discrete-time sequences at its output. In the general case we can think of it as a function $\mathscr{H}$ from a vector $\vec{x}$ to another vector $\vec{y}$ that is also dependent on the time parameter $t$:
+A **discrete-time system** is a transform that takes in discrete-time sequences as inputs and produces another discrete-time sequence at its output. In the general case we can think of it as a function $\mathscr{H}$ from a vector $\vec{x}$ to another vector $\vec{y}$ that is also dependent on the time parameter $t$:
 
 $$y_t = \mathscr{H}(\vec{x}, t)$$
 
@@ -314,7 +314,7 @@ It's possible to show that the *frequency response* of this filter is
 
 $$H(\omega) = \frac{1}{N} \frac{\sin(\omega N/2)}{\sin(\omega / 2)} e^{-i \frac{N -1}{2} \omega}$$
 
-If we plot the amplitude (see Figure 3), we can see that it magnifies mostly low frequencies which matches that intuition that moving average smooth a signal, removing high-frequency noises.
+If we plot the amplitude (see Figure 3), we can see that it magnifies mostly low frequencies which matches that intuition that moving average smooths a signal, removing high-frequency noises.
 
 <figure class="center_children">
     <img src="{{resources_path}}/mag-mov-avg.png" alt="Line chart of magnitude vs. frequency"/>
