@@ -78,6 +78,7 @@ const tagsHierarchy = {
         'coin-or',
         'd3.js',
         'emacs',
+        'git',
         'observable',
     ],
 }
