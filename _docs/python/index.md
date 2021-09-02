@@ -121,6 +121,14 @@ class C:
         return 1
 {% endhighlight %}
 
+Check if object is instance of a class:
+
+{% highlight python %}
+class MyClass:
+    pass
+x = MyClass()
+isinstance(x, MyClass)
+{% endhighlight %}
 
 # Files
 
