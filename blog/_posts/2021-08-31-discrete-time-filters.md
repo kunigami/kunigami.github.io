@@ -436,4 +436,4 @@ I learned a bunch of things from this post, including: convolution, the leaky in
 * [[2](https://dspillustrations.com/pages/posts/misc/linearity-causality-and-time-invariance-of-a-system.html)] Linearity, Causality and Time-Invariance of a System
 * [[3]({{site.url}}/blog/2021/07/31/discrete-fourier-transform.html)] Discrete Fourier Transforms
 
-All the charts have been generated using Matplotlib, the source code available as a [Jupyter notebook](https://github.com/kunigami/kunigami.github.io/blob/master/blog/code/2021-08-31-discrete-filters/charts.ipynb).
+All the charts have been generated using Matplotlib, the source code available as a [Jupyter notebook](https://github.com/kunigami/kunigami.github.io/blob/master/blog/code/2021-08-31-discrete-time-filters/charts.ipynb).
