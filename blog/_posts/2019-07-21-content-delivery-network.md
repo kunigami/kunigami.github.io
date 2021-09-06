@@ -15,7 +15,7 @@ Here are the topics we'll explore in this post.
 * Caching
 * Routing
 
-### Introduction
+## Introduction
 
 Content Delivery Networks, in a simplistic definition, is like the cache of the internet. It serves static content to end users. This cache is a bunch of machines that are located closer to the users than data centers.
 
@@ -25,9 +25,9 @@ Companies often use use CDNs via third-party companies like Akamai and Cloudflar
 
 Let's see next reasons why a company would spend money in CDN services or infrastructure.
 
-### Advantages
+## Advantages
 
-**CDNs are closer to the user.**Due to smaller scale and partnerships with internet providers, CDN machines are often physically located closer to the user than a data center can be.
+**CDNs are closer to the user.** Due to smaller scale and partnerships with internet providers, CDN machines are often physically located closer to the user than a data center can be.
 
 Why does this matter? Data has to traverse the distance between the provider and the requester. Being closer to the user means lower latency. It also less hops to go through, meaning less required bandwidth [2].
 
@@ -39,7 +39,7 @@ Due to shared infrastructure, CDN companies can shield small companies from DDoS
 
 Before we go into more details on how CDNs work, let's review some terminology and concepts.
 
-### Definitions and Terminology
+## Definitions and Terminology
 
 **Network edge.** is the part of network before a request traverses before reaching the data center. Think of the data center as a polygonal area  and the edge being the perimeter/boundary.
 
@@ -67,7 +67,7 @@ Before we go into more details on how CDNs work, let's review some terminology a
 * Tier 3: pays for all its traffic.
 Most of ISPs are [Tier 2](https://en.wikipedia.org/wiki/Tier_2_network) [7].
 
-### Caching
+## Caching
 
 One of the primary purposes of a CDN is caching static content for websites [8]. The CDN machines act as a look through cache, that is, the CDN serves the data if cached, or makes a request to the origin server behind the scenes, caches it and then returns it, making the actual data fetching transparent to the user.  We can see that the CDN acts as a *proxy server*, or an intermediary which the client can talk to instead of the origin server.
 
@@ -87,8 +87,7 @@ we can see the line `cache-control: public`. In fact, if we look at the origin o
 www.gstatic.com/og/_/js/k=og.og2.en_US.mOcfcqNpMkc.O/rt=j/m=drt,def/exm=in,fot/d=1/ed=1/rs=AA2YrTtfvY3V9vNuxwOxTw6H0xc0DK_I7A
 {% endhighlight %}
 
-**Caching and Privacy**
-
+### Caching and Privacy
 
 One of the important aspect of caching is to make sure privacy is honored. Consider the case of a private photo that is cached by a CDN. We need to make sure that it's highly unlikely that someone without access will be able to see it.
 
@@ -100,7 +99,7 @@ In theory if someone has access to the URL they can see my private photo but for
 
 To make it extra safe the server could generate a new hash every so often so that even if someone got handle of an URL, it will soon be rendered invalid, minimizing unintended leaks. This is similar to the concept of some strategies for 2-fac authentication we [discussed previously]({{site.url}}/blog/2018/10/01/two-factor-authentication.html) where a code is generated that makes the system vulnerable very temporarily.
 
-### Routing
+## Routing
 
 Because CDNs is in between client and origin server, and due to its positioning, both physical and strategical, they can provide routing as well. According to this article from [Imperva](https://www.imperva.com/learn/performance/route-optimization-anycast) [9], this can mean improved performance by use of better infrastructure:
 > Much focus is given to [CDN caching](https://www.imperva.com/learn/performance/cdn-caching/) and FEO features, but it’s direct tier 1 network access that often provides the largest performance gains. It can revolutionize your website page load speeds and response times, especially if you’re catering to a global audience.
@@ -108,13 +107,13 @@ CDNs are often comprised of multiple distributed data centers, which they can le
 
 CDNs can also rely on advanced routing techniques such as [Anycast](https://blog.cloudflare.com/cloudflares-architecture-eliminating-single-p/) [10] that performs routing at the [Network Layer](https://en.wikipedia.org/wiki/OSI_model), to avoid bottlenecks and single point of failures of a given hardware.
 
-### Conclusion
+## Conclusion
 
 I wanted to understand CDNs better than being "the cache of the internet". Some key concepts were new to me, including some aspects of the routing and the ISPs tiers.
 
 While writing this post, I realized I know very little of the practical aspects of the internet: How it is structured, its major players, etc. I'll keep studying these topics further.
 
-### References
+## References
 
 * [[1](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)] Cloudflare - What is a CDN?
 * [[2](https://www.cloudflare.com/learning/cdn/performance/)] Cloudflare - CDN Performance
