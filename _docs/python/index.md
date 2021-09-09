@@ -5,6 +5,12 @@ title: "Python Cheatsheet"
 
 Syntax for common tasks I run into often. Assumes Python 3.
 
+# Index
+{:.no_toc}
+
+1. TOC
+{:toc}
+
 # Collections
 
 ## List
@@ -128,6 +134,38 @@ class MyClass:
     pass
 x = MyClass()
 isinstance(x, MyClass)
+{% endhighlight %}
+
+## Dataclasses
+
+Lightweight syntax for creating classes / records.
+
+{% highlight python %}
+from dataclasses import dataclass
+
+@dataclass
+class Point:
+     x: int
+     y: int
+
+p = Point(10, 20)
+print(p.x) # 10
+
+q = Point(y=10, x=20)
+print(q.x) # 20
+{% endhighlight %}
+
+Complex types:
+
+{% highlight python %}
+# ... continued from above
+
+@dataclass
+class Polygon:
+    pts: [Point]
+
+pol = Polygon([p, q])
+print(pol.pts) # [Point(x=10, y=20), Point(x=20, y=10)]
 {% endhighlight %}
 
 # Files
