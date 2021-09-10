@@ -360,7 +360,7 @@ For the white noise, we get samples from a normal distribution. The function `ra
 
 $$\mathcal{N}(\mu, \sigma^2) = \mathcal{N}(0, 1) \cdot \sigma  + \mu$$
 
-I don't know anything about digital filters but for now we can assume `lfilter()` is filtering a source signal (third argument) and amplifying certain frequencies specified by the coefficients in `a` (second argument).
+I don't know anything about digital filters (EDIT: this makes a lot more sense after [Z-transform]({{site.url}}/blog/2021/09/11/z-transform.html)) but for now we can assume `lfilter()` is filtering a source signal (third argument) and amplifying certain frequencies specified by the coefficients in `a` (second argument).
 
 {% highlight python %}
 def run_source_filter(a, g, block_size):
