@@ -37,7 +37,7 @@ The Z-transform is a function of a vector $\vec{x}$ and a complex variable $z \i
 
 $$(2) \qquad \mathscr{Z}(\vec{x}, z) = \sum_{t = -\infty}^{\infty} x_t z^{-t}$$
 
-If we set $z = e^{i \omega}$ for $0 \le \omega \le 2 \pi$ we get the Discrete-Time Fourier Transform [link], so we can think of the Z-transform as an abstraction.
+If we set $z = e^{i \omega}$ for $0 \le \omega \le 2 \pi$ we get the [Discrete-Time Fourier Transform]({{site.url}}/blog/2021/07/31/discrete-fourier-transform.html), so we can think of the Z-transform as an abstraction.
 
 According to [1], Z-transform doesn't have a physical interpretation like the DTFT does, but it's useful as a mathematical tool.
 
@@ -245,9 +245,9 @@ This was the first time I used matplotlib's 3D plot and it's possibly the first 
 
 ## Related Posts
 
-[Linear Predictive Coding in Python]({{site.url}}/blog/2021/07/31/lpc-in-python.html) - While looking into translating the Matlab code into Python, I had to look up the definition of [lfilter](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html), which I couldn't undertand at the time.
+[Linear Predictive Coding in Python]({{site.url}}/blog/2021/07/31/lpc-in-python.html) - While looking into translating the Matlab code into Python, I had to look up the definition of [lfilter](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html), which I couldn't understand at the time.
 
-They describe a filter in terms of the coefficients $a$ and $b$ in the CCDE form (which they call *direct II transposed structure*). It also mentions the rational transfer function! Everything makes much more sense now.
+The docs describe a filter in terms of the coefficients $a$ and $b$ in the CCDE form (which they call *direct II transposed structure*). It also mentions the rational transfer function! Everything makes much more sense now.
 
 So when we have:
 

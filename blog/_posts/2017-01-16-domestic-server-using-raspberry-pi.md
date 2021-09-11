@@ -61,17 +61,13 @@ We can then insert the card into the Raspberry Pi and connect a monitor/keyboard
 **SSH.** After installed, it felts very sluggish to run GUI, so I decided to do everything through SSH. The [instructables](http://www.instructables.com/id/Use-ssh-to-talk-with-your-Raspberry-Pi/) has a very detailed guide for enabling it through the UI. After changing the password as instructed in the guide, I go the internal IP of the Pi using
 
 {% highlight text %}
-
 hostname -I
-
 {% endhighlight %}
 
 I can then connect through:
 
 {% highlight text %}
-
 ssh pi@<IP>
-
 {% endhighlight %}
 
 We can then install everything through command line.
