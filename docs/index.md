@@ -11,6 +11,10 @@ title: Doc
 
 Cheat Sheets are different from posts in that they're a living document (posts are not constantly updated).
 
+## C++
+
+* [General]({{ site.url }}/docs/cpp/)
+
 ## Python
 
 * [General]({{ site.url }}/docs/python/)
