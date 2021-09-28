@@ -18,7 +18,7 @@ In this post we'll explore a solution to this puzzle. Feel free to stop here and
 
 ## Solution
 
-We can simplify the problem a bit by normalizing the coeficient of $x$ so that all constraints are of either $x \le a$ or $x \ge a$ form. For example, $3x \le 7$ is normalized to $x \le \frac{7}{3}$ and $-2x \le 1$ to $x \ge -\frac{1}{2}$.
+We can simplify the problem a bit by normalizing the coefficient of $x$ so that all constraints are of either $x \le a$ or $x \ge a$ form. For example, $3x \le 7$ is normalized to $x \le \frac{7}{3}$ and $-2x \le 1$ to $x \ge -\frac{1}{2}$.
 
 The key observation is that in our solution we can't have a pair $x \ge a$ and $x \le b$ if $b < a$ since their intersection is already empty. This implies that in our solution, all the right-hand side (RHS) of the "$\ge$" constraints will be smaller or equal to the RHS of the "$\le$" constraints.
 
@@ -92,7 +92,7 @@ Hence, the original ILP has a feasible solution if and only if LRLP satisfies $n
 
 ## Related Posts
 
-* [Lagrangean Relaxation - Theory]({{site.url}}/blog/2012/02/05/lagrangean-relaxation-theory.html). This problem seems related to the Lagrangean Relaxation, in which we remove some of the constraints and add them to the objective function and penalize violated constraints. How good of a solution would we get if we relaxed all the constraints and tried to optimize it? In theory the multipliers would be real values, so we might end up picking fractions of constraints, but I wonder if in practice it would yield good approximations.
+* [Lagrangian Relaxation - Theory]({{site.url}}/blog/2012/02/05/lagrangean-relaxation-theory.html). This problem seems related to the Lagrangian Relaxation, in which we remove some of the constraints and add them to the objective function and penalize violated constraints. How good of a solution would we get if we relaxed all the constraints and tried to optimize it? In theory the multipliers would be real values, so we might end up picking fractions of constraints, but I wonder if in practice it would yield good approximations.
 
 ## References
 

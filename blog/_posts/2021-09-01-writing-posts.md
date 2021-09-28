@@ -164,7 +164,7 @@ git reset <hash>
 
 This will set the current index back to that ancestor commit and the changes from `post-writing` relative to that ancestor will show up as un-committed changes.
 
-This command assumes `post-writing` was created off the `master`. It it was created off some other branch `foo`, reseting the index would include changes from `foo` as well. Hence the note in the *Writing* section.
+This command assumes `post-writing` was created off the `master`. It it was created off some other branch `foo`, resetting the index would include changes from `foo` as well. Hence the note in the *Writing* section.
 
 To simplify things, we can alias the second command as `compress`:
 

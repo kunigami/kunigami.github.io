@@ -161,7 +161,7 @@ We assume the denominator and numerator are co-prime so they can't be called out
 
 We can visualize the zeros and poles in the complex plane for $z$. The convention is to display poles as crosses (X) and zeros as dots (O).
 
-We also overlay the unit circle because inside the unit circle the system is BIBO. We can use this plot to quickly detect if any poles lie outside of the unit cirtcle. Figure 1 has two example filters.
+We also overlay the unit circle because inside the unit circle the system is BIBO. We can use this plot to quickly detect if any poles lie outside of the unit circle. Figure 1 has two example filters.
 
 <figure class="center_children">
     <img src="{{resources_path}}/zero-pole-plot.png" alt="See caption"/>
@@ -199,7 +199,7 @@ $$H(z) = \frac{1}{N} \frac{1 - z^{-N}}{1 - z^{-1}}$$
 In Figure 2 we plot $\abs{H(z)}$ (z-axis) over $z$ (xy-plane). When $\abs{z} \rightarrow 0$, then $\abs{z^{-N}} \rightarrow \infty$ so we have to crop the chart for low values of $\abs{z}$.
 
 <figure class="center_children">
-    <img src="{{resources_path}}/abs_xfer_func.png" alt="3D surface plot showing that as we approach the xy-origin, H(z) goes to infity"/>
+    <img src="{{resources_path}}/abs_xfer_func.png" alt="3D surface plot showing that as we approach the xy-origin, H(z) goes to infinity"/>
     <figcaption>Figure 2: plot of |H(z)| for the moving average with N = 8</figcaption>
 </figure>
 
@@ -300,7 +300,7 @@ Conversely, if $\abs{z} \ge 1$, then $\abs{z^n} \ge 1 \ne 0$, so $\sum_{n = 0}^{
 
 **Lemma 4.** If $\sum_{n = 0}^{\infty} a_n$ converges, then $\abs{a_n} \le M$ for all $n$.
 
-*Proof.* By definition, given an arbritary $\epsilon > 0$, there exists $L$ and $N$ such that $\abs{S_n - L} < \epsilon$ for $n \ge N$. Then  $\abs{S_{n+1} - L} < \epsilon$, and we claim that $\abs{a_{n+1}} < 2 \epsilon$ because otherwise adding $a_{n+1}$ to $S_n$ would violate the constraint for $S_{n+1}$.
+*Proof.* By definition, given an arbitrary $\epsilon > 0$, there exists $L$ and $N$ such that $\abs{S_n - L} < \epsilon$ for $n \ge N$. Then  $\abs{S_{n+1} - L} < \epsilon$, and we claim that $\abs{a_{n+1}} < 2 \epsilon$ because otherwise adding $a_{n+1}$ to $S_n$ would violate the constraint for $S_{n+1}$.
 
 Now, since $N$ is finite, the upper bound $M = \max(\abs{a_n})$ for $n \le N$ is defined. It's easy to see that $\abs{a_n} \le \max(M, 2\epsilon)$ for all $n$. *QED*
 

@@ -42,11 +42,11 @@ Also, since the number of electoral votes is roughly proportional to the populat
 
 Let $S^\*$ the set of states A won in an optimal solution. If a state $i$ is in $S^\*$, A needs exactly the minimum majority of votes, so if there were $v_i$ votes, we need $\lfloor v_i/2 \rfloor + 1$ votes. If a state is not in $S^\*$, there's no reason to spend any votes there, so it should be 0.
 
-Given these observtions, we can model this problem as picking a set of items corresponding to the states and DC, with weights equal to their electoral votes and costs equal to the minimum majority of popular votes.
+Given these observations, we can model this problem as picking a set of items corresponding to the states and DC, with weights equal to their electoral votes and costs equal to the minimum majority of popular votes.
 
 Picking a state corresponds to candidate A winning that state. We want to pick a set of items that minimizes the total cost (number of popular votes) but has total weight greater or equal 270 (the minimum majority of the electoral votes).
 
-More generally, let $S$ be a set of items, wher item $i \in S$ has cost $c_i$ and weight $w_i$. The problem can be formulated as an integer linear programming if we introduce $x_i \in \{0, 1\}$ where $x_i = 1$ corresponds to picking that item.
+More generally, let $S$ be a set of items, where item $i \in S$ has cost $c_i$ and weight $w_i$. The problem can be formulated as an integer linear programming if we introduce $x_i \in \{0, 1\}$ where $x_i = 1$ corresponds to picking that item.
 
 $$\min \sum_{i \in S} x_i c_i$$
 
@@ -54,7 +54,7 @@ Subject to
 
 $$\sum_{i \in S} x_i w_i \ge W$$
 
-We'll call this the *Inverse Knapsack Problem*. To recall, the *Knapsack Problem* costist of maximizing the value of a set of items with totsl weight not exceeding $W$, which can be modelled as integer linear programming:
+We'll call this the *Inverse Knapsack Problem*. To recall, the *Knapsack Problem* consist of maximizing the value of a set of items with total weight not exceeding $W$, which can be modelled as integer linear programming:
 
 $$\max \sum_{i \in S} x_i c_i$$
 
@@ -78,7 +78,7 @@ Consider an instance of $D_1$ with $C_1$ and $W_1$.
 
 Let $X$ denote a subset of $S$ and $c(X)$ and $w(X)$ the total value and weight of the items in $X$, respectively. Let $C_T$ be the sum of values of all items, i.e. $C_T = c(S)$. Let $W_T$ be the sum of weights of all items, i.e. $W_T = w(S)$.
 
-We create an instace of $D_2$ with $C_2 = C_T - C_1$ and $W_2 = W_T - W_1$.
+We create an instance of $D_2$ with $C_2 = C_T - C_1$ and $W_2 = W_T - W_1$.
 
 Suppose $D_1$ is true. Then there's a set of items $X^\*$ such that $c(X^\*) \ge C_1$ and $w(X^\*) \le W_1$. Let $Y^\*$ be the set of items not in $X^\*$ (i.e. $S \setminus X^\*$).
 
@@ -207,13 +207,13 @@ It's election time and was interesting to be able to model a real world example 
 
 I had forgotten how to retrieve the items of the knapsack using dynamic programming, and was only able to come up with a $O(nW)$-memory solution. Is it possible to do it using $O(W)$ memory?
 
-This post was a good way for me to learn how the voting system works in the US. I've recently read *The Quartet: Orchestrating the Second American Revolution*, and learned how there needed to be compromises to make the Constituion pass, which left a lot of power to states. This can be seen in the fact that the number of senators is proportional to the number of states (not population) and also the electoral votes, in which 48 states treat them as a unit.
+This post was a good way for me to learn how the voting system works in the US. I've recently read *The Quartet: Orchestrating the Second American Revolution*, and learned how there needed to be compromises to make the Constitution pass, which left a lot of power to states. This can be seen in the fact that the number of senators is proportional to the number of states (not population) and also the electoral votes, in which 48 states treat them as a unit.
 
 ## Related Posts
 
 * [US as an hexagonal map
 ]({{site.url}}/blog/2016/11/05/us-as-an-hexagonal-map.html) describes an alternative way that represents US states in a uniform way, since the geographical representation puts too much emphasis in large states like Alaska. A similar issue exists with electoral votes where states like New York feels underrepresented even though it was a large number of votes. There are alternative representation as well, like [here](https://blog.revolutionanalytics.com/2016/10/tilegrams-in-r.html).
-* [Shortest String From Removing Doubles]({{site.url}}/blog/2020/05/25/minimum-string-from-removing-doubles.html) is another puzzle in which we use backtracking to recover the solution from an auxiliary array. I don't know if the solution can be classified as dynamic programming because it does't build open smaller instances of the problem explicitly.
+* [Shortest String From Removing Doubles]({{site.url}}/blog/2020/05/25/minimum-string-from-removing-doubles.html) is another puzzle in which we use backtracking to recover the solution from an auxiliary array. I don't know if the solution can be classified as dynamic programming because it doesn't build open smaller instances of the problem explicitly.
 
 ## References
 

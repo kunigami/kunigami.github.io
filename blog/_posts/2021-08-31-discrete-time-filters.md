@@ -245,7 +245,7 @@ Because FIR filters' impulse response have a finite number of non-zero terms, th
 
 ### Magnitude
 
-As we discussed earlier, the amplitude of the frequency response $H(\omega)$ scales the amplitude of the original signal when a filter is applied. The frequency response is a function which can return different amplitudes for different frequencies $0 \le \omega \le 2 \pi$, and can be thus used to boost certain frequencies and atenuate others.
+As we discussed earlier, the amplitude of the frequency response $H(\omega)$ scales the amplitude of the original signal when a filter is applied. The frequency response is a function which can return different amplitudes for different frequencies $0 \le \omega \le 2 \pi$, and can be thus used to boost certain frequencies and attenuate others.
 
 We can categorize filters based on what types of frequencies it boosts (if any).
 
@@ -290,7 +290,7 @@ Let's consider two basic filters and investigate some of their properties.
 
 ### Moving Average
 
-A classic example of filter is the moving average, which consits of taking the average of the previous $N$ samples:
+A classic example of filter is the moving average, which consists of taking the average of the previous $N$ samples:
 
 $$y_t = \mathscr{H}(\vec{x}, t) = \frac{1}{N} \sum_{k = 0}^{N - 1} x_{t - k}$$
 
@@ -354,7 +354,7 @@ If we call $\lambda_N = \frac{N - 1}{N}$, then $\frac{1}{N} = 1 - \lambda_N$:
 
 $$\mathscr{H}_{N}(\vec{x}, t) = \lambda_N  \mathscr{H}_{N - 1}(\vec{x}, t - 1) + (1 -  \lambda_N) x_{t}$$
 
-As $N$ becomes large, adding a term to the average changes little, so $\mathscr{H}\_{N+1}$ and $\mathscr{H}_{N}$ become approximately the same. Thus, assuming a sufficiently large $N$ we can drop the $N$ paremeter to get:
+As $N$ becomes large, adding a term to the average changes little, so $\mathscr{H}\_{N+1}$ and $\mathscr{H}_{N}$ become approximately the same. Thus, assuming a sufficiently large $N$ we can drop the $N$ parameter to get:
 
 $$\mathscr{H}(\vec{x}, t) = \lambda \mathscr{H}(\vec{x}, t - 1) + (1 -  \lambda) x_{t}$$
 
