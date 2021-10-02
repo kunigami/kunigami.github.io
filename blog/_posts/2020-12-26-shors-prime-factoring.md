@@ -17,7 +17,7 @@ Peter Shor is an American professor at MIT. He received his B.S. in Mathematics 
 
 In this post we'll combine the parts we studied before to understand Peter Shor's prime factorization quantum algorithm, which can find a factor of a composite number exponentially faster than the best known algorithm using classic computation.
 
-We'll need basic familiarity with quantum computing, covered in a [previous post]({{site.url}}/blog/2020/10/11/deutsch-jozsa-algorithm.html). The bulk of the post is showing how to efficiently solve the order-finding problem since we learned from [Number Factorization from Order-Finding]({{site.url}}/blog/2020-12-11-factorization-from-order.html) that it is the bottleneck step in finding a prime factor of a composite number. The remaining is putting everything together and do some analysis of the performance of the algorithm as a whole.
+We'll need basic familiarity with quantum computing, covered in a [previous post]({{site.url}}/blog/2020/10/11/deutsch-jozsa-algorithm.html). The bulk of the post is showing how to efficiently solve the order-finding problem since we learned from [Number Factorization from Order-Finding]({{site.url}}/blog/2020/12/11/factorization-from-order.html) that it is the bottleneck step in finding a prime factor of a composite number. The remaining is putting everything together and do some analysis of the performance of the algorithm as a whole.
 
 <!--more-->
 
@@ -177,7 +177,7 @@ Is mind-blowing. It's as if a bunch of eigenvectors are "hiding" inside $\ket{1}
 
 ## Related Posts
 
-* [Consistent Hashing]({{site.url}}/blog/2019/04/12/consistent-hashing.html) - this is a trivia rather than real relatedeness, but I found out that [Tom Leighton](https://en.wikipedia.org/wiki/F._Thomson_Leighton) was the advisor of both [Daniel Lewin](https://en.wikipedia.org/wiki/Daniel_Lewin) (founder of Akamai, featured in that post) and Peter Shor (featured in this post).
+* [Consistent Hashing]({{site.url}}/blog/2019/04/12/consistent-hashing.html) - this is a trivia rather than real relatedness, but I found out that [Tom Leighton](https://en.wikipedia.org/wiki/F._Thomson_Leighton) was the advisor of both [Daniel Lewin](https://en.wikipedia.org/wiki/Daniel_Lewin) (founder of Akamai, featured in that post) and Peter Shor (featured in this post).
 
 ## Appendix
 

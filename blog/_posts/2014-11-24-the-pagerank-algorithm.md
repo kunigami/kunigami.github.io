@@ -79,7 +79,7 @@ If a Markov chain has a finite set of states (i.e. the vertices of the graph) an
 
 With these properties, we&#039;re ready to throw in the **Fundamental theorem of Markov Chains** [5]:
 
-For any irreducible, aperiodic, positive-recurrent Markov chain, there's a unique stationary distribution $$\pi$$ such that
+> For any irreducible, aperiodic, positive-recurrent Markov chain, there's a unique stationary distribution $$\pi$$ such that
 
 $$\pi^{(t + 1)} = \pi^{(t)}$$
 
@@ -99,4 +99,4 @@ I've been watching the Mining Massive Data Sets course in Coursera. It hasn't fi
 * [[2](http://en.wikipedia.org/wiki/Perron%E2%80%93Frobenius_theorem)] Wikipedia: Perron Frobenius Theorem
 * [[3](http://en.wikipedia.org/wiki/Irreducibility_%28mathematics%29)] Wikipedia: Irreducibility (mathematics)
 * [[4](http://math.stackexchange.com/questions/297278/irreducible-finite-markov-chains-are-positive-recurrent)] Mathematics Stack Exchange: Irreducible, finite Markov chains are positive recurrent
-* [[5](http://www.math.uchicago.edu/~may/VIGRE/VIGRE2008/REUPapers/Plavnick.pdf)] The Fundamental Theorem of Markov Chains: Aaron Plavnick 
+* [[5](http://www.math.uchicago.edu/~may/VIGRE/VIGRE2008/REUPapers/Plavnick.pdf)] The Fundamental Theorem of Markov Chains: Aaron Plavnick
