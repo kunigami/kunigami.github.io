@@ -104,7 +104,7 @@ Our definition of Hermitian decomposition and the two properties above can be tr
 
 ## Fourier Transform is Hermitian
 
-We'll now show that the [DTFT]({{blog}}/2021/07/31/discrete-fourier-transform.html) is Hermitian if it's applied to $\vec{x} \in \mathbb{R}^N$ is:
+We'll now show that the [DTFT]({{blog}}/2021/07/31/discrete-fourier-transform.html) is Hermitian if it's applied to $\vec{x} \in \mathbb{R}^N$. Recall that the DTFT can be defined as:
 
 $$(2) \quad \lambda(\omega) = \sum_{t = 0}^{N-1} x_t e^{-i \omega t} \quad -\pi \le \omega \le \pi$$
 
