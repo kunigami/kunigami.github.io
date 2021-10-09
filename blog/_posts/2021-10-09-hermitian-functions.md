@@ -15,7 +15,7 @@ excerpt_separator: <!--more-->
 
 In this post we’ll study even and odd functions, the even-odd function decomposition, Hermitian functions and prove some results for Fourier transforms.
 
-Hermitian functions are named after the 19th century French mathematician [Charles Hermite](https://en.wikipedia.org/wiki/Charles_Hermite). Hermitian matrices are also named after hin. Charles was the advisor of Henri Poincaré.
+Hermitian functions are named after the 19th century French mathematician [Charles Hermite](https://en.wikipedia.org/wiki/Charles_Hermite). Hermitian matrices are also named after him. Charles was the advisor of Henri Poincaré.
 
 <!--more-->
 
