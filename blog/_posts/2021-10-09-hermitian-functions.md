@@ -188,5 +188,5 @@ In either case, we reach a contradiction if we assume there exists a different w
 
 ## References
 
-* [[1](https://en.wikipedia.org/wiki/Even_and_odd_functions)] Even and odd functions
-* [[2](https://en.wikipedia.org/wiki/Hermitian_function)] Hermitian function
+* [[1](https://en.wikipedia.org/wiki/Even_and_odd_functions)] Wikipedia: Even and odd functions
+* [[2](https://en.wikipedia.org/wiki/Hermitian_function)] Wikipedia: Hermitian function
