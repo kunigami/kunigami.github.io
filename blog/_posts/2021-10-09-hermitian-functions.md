@@ -122,6 +122,42 @@ $$\lambda(\omega) = \overline{\lambda(-\omega)}$$
 
 Which shows the Fourier transform, $\lambda: \mathbb{R} \rightarrow \mathbb{C}$ is a symmetric Hermitian function.
 
+### Polar Form
+
+We can express a complex number $c = Re\curly{c} + i Im\curly{c}$ in polar form as $\abs{c} e^{i \varphi}$, where $\abs{c} = \sqrt{Re\curly{c}^2 + Im\curly{c}^2}$ is the modulus and $\varphi = \arctan2(Im\curly{c}, Re\curly{c})$ the phase.
+
+In this definition, $\abs{c}$ is non-negative and $\varphi \in [-\frac{\pi}{2}, \frac{\pi}{2}]$.
+
+Since the Fourier transform $\lambda: \mathbb{R} \rightarrow \mathbb{C}$ is a symmetric Hermitian function, we know that the real part is even $Re\curly{\lambda(\omega)} = Re\curly{\lambda(-\omega)}$ and the imaginary part is odd $Im\curly{\lambda(\omega)} = -Im\curly{\lambda(-\omega)}$.
+
+We can compute the modulus of the Fourier transform $\abs{\lambda(\omega)}$ as
+
+$$\abs{\lambda(\omega)}^2 = Re\curly{\lambda(\omega)}^2 + Im\curly{\lambda(\omega)}^2$$
+
+Since $Im\curly{\lambda(\omega)}$ is squared, the negative sign is gone and thus we get:
+
+$$\abs{\lambda(\omega)} = \abs{\lambda(-\omega)}$$
+
+which means the modulus of a Fourier transform is an even function.
+
+An alternative way of computing $\varphi$, assuming $\abs{c} > 0$ is [3]:
+
+$$
+\begin{equation}
+  \varphi = \left\{
+  \begin{array}{@{}ll@{}}
+    \arccos (\frac{Re\curly{c}}{\abs{c}}), & \text{if}\ Im\curly{c} \ge 0 \\
+    - \arccos (\frac{Re\curly{c}}{\abs{c}}), & \text{if}\ Im\curly{c} < 0 \\
+  \end{array}\right.
+\end{equation}
+$$
+
+Let $\varphi(\omega)$ be the phase of $\lambda(\omega)$ computed as above. We have both $Re\curly{\lambda(\omega)}$ and $\abs{\lambda(\omega)}$ as even functions and $Im\curly{\lambda(\omega)}$ as an odd function.
+
+Assume $Im\curly{\lambda(\omega)} > 0$ for now. Then $\varphi(\omega) = \arccos (\frac{Re\curly{\lambda(\omega)}}{\abs{\lambda(\omega)}})$. Since $Im\curly{\lambda(-\omega)} = -Im\curly{\lambda(\omega)} < 0$, $\varphi(-\omega) = -\arccos (\frac{Re\curly{\lambda(-\omega)}}{\abs{\lambda(-\omega)}}) = -\arccos (\frac{Re\curly{\lambda(\omega)}}{\abs{\lambda(\omega)}}) = -\varphi(-\omega)$.
+
+We can obtain the same result for $Im\curly{\lambda(\omega)} < 0$ and $Im\curly{\lambda(\omega)} = 0$, concluding that the phase of a Fourier transform is an odd function.
+
 ## Conclusion
 
 I found the even-odd decomposition counter-intuitive at first, but making analogies to how a complex number can be uniquely decomposed into a sum of a purely real and purely imaginary parts makes it a bit intuitive.
@@ -190,3 +226,4 @@ In either case, we reach a contradiction if we assume there exists a different w
 
 * [[1](https://en.wikipedia.org/wiki/Even_and_odd_functions)] Wikipedia: Even and odd functions
 * [[2](https://en.wikipedia.org/wiki/Hermitian_function)] Wikipedia: Hermitian function
+* [[3](https://en.wikipedia.org/wiki/Polar_coordinate_system)] Wikipedia: Polar coordinate system
