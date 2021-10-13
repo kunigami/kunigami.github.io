@@ -3,7 +3,7 @@ layout: doc
 title: "C++ Cheatsheet"
 ---
 
-Syntax for common tasks I run into often. Assumes C++17, and `using namespace std` for brevity.
+Syntax for common tasks I run into often. Assumes C++17.
 
 # Index
 {:.no_toc}
@@ -19,7 +19,7 @@ Syntax for common tasks I run into often. Assumes C++17, and `using namespace st
 
 {% highlight c++ %}
 #include <string>
-string = to_string(10);
+std::string = to_string(10);
 {% endhighlight %}
 
 # Collections
@@ -39,13 +39,13 @@ In C++ `unordered_map` implements a hash map. Search, insertion, and removal of 
 Empty map:
 
 {% highlight c++ %}
-unordered_map<string, int> h;
+std::unordered_map<std::string, int> h;
 {% endhighlight %}
 
 ### Access
 
 {% highlight c++ %}
-cout << h["key"] << endl;
+std::cout << h["key"] << std::endl;
 {% endhighlight %}
 
 ### Insert
@@ -60,7 +60,7 @@ h["key"] = 100;
 
 {% highlight c++ %}
 for (auto x:h) {
-    cout << x.first << ", " << x.second << endl;
+    std::cout << x.first << ", " << x.second << std::endl;
 }
 {% endhighlight %}
 
@@ -75,14 +75,14 @@ bool has_key = h.find("key") != h.end();
 ### Initialization
 
 {% highlight c++ %}
-vector<int> vec = {10, 20, 30};
+std::vector<int> vec = {10, 20, 30};
 {% endhighlight %}
 
 ### Iterate
 
 {% highlight c++ %}
 for(auto e:vec) {
-    cout << e << endl;
+    std::cout << e << std::endl;
 }
 {% endhighlight %}
 
@@ -129,6 +129,52 @@ Point point(10, 20);
 
 // Only destroyed when called w/ delete
 Point point = new Point(10, 20);
+{% endhighlight %}
+
+# Files
+
+## Check if file exists
+
+Works for directories too.
+
+{% highlight c++ %}
+#include <filesystem>
+namespace fs = std::filesystem;
+
+bool file_exists = fs::exists("path");
+{% endhighlight %}
+
+## Create directory
+
+{% highlight c++ %}
+#include <filesystem>
+namespace fs = std::filesystem;
+
+fs::create_directory("path");
+{% endhighlight %}
+
+## Read from file
+
+{% highlight c++ %}
+#include <fstream>
+
+std::ifstream my_file("filename");
+if (my_file.is_open()) {
+    while (getline(my_file, line)) {
+        std::cout << line << std::end;
+    }
+}
+{% endhighlight %}
+
+## Write to file
+
+{% highlight c++ %}
+#include <fstream>
+
+std::ofstream my_file("filename");
+if (my_file.is_open()) {
+    my_file << "a line" << std::end;
+}
 {% endhighlight %}
 
 # Functional
