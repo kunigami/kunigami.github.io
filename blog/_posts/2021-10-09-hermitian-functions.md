@@ -45,6 +45,22 @@ I find this terminology confusing, since $f(x) = \abs{x}$ is also even. Perhaps 
 
 By calling functions this way also gives the idea that all functions are either even and odd, which is not true. Some functions are neither.
 
+### Even-Odd Decomposition
+
+The even-odd decomposition states that for any given function $f: \mathbb{R} \rightarrow \mathbb{R}$ there exists:
+
+$$f_e(x) = \frac{f(x) + \overline{f(-x)}}{2}$$
+
+and
+
+$$f_o(x) = \frac{f(x) - \overline{f(-x)}}{2}$$
+
+and that $f_e$ is an even function $f_o$ and an odd function. Since,
+
+$$f(x) = f_e(x) + f_o(x)$$
+
+we're saying that any function can be decomposed into an even and odd function. Furthermore such decomposition is unique. We'll prove a more general version of this decomposition in the next sections.
+
 ## Hermitian Functions
 
 Hermitian functions are in a way a generalization of Even and Odd functions, in which we allow complex numbers as the image. The analogous of *even function* is the **(symmetric) Hermitian function** as:
@@ -69,7 +85,7 @@ $$f(\vec{x}) = \overline{f(-\vec{x})}$$
 
 Where $\vec{x} = x_0, \cdots, x_{n-1}$ and $-\vec{x} = -x_0, \cdots, -x_{n-1}$.
 
-## Hermitian Decomposition
+### Hermitian Decomposition
 
 Let $f: \mathbb{R} \rightarrow \mathbb{C}$ be a function, $f_s$ a symmetric Hermitian function and $f_a$ an antisymmetric Hermitian. If $f$ can be written as a sum of $f_s$ and $f_a$, that is:
 
