@@ -29,6 +29,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 ## Linear Algebra
 
 * [Matrices]({{ site.url }}/docs/math/matrix.html)
+* [Trigonometry]({{ site.url }}/docs/math/trigonometry.html)
 
 ## Misc
 
