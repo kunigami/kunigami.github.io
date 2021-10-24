@@ -158,6 +158,14 @@ const markers = [
     photographer: "me",
     visited: true,
   },
+  // -- Florida
+  {
+    name: "Everglades National Park",
+    description:
+      "Everglades is made up of coastal mangroves, sawgrass marshes and pine flatwoods that are home to hundreds of animal species.",
+    lat: 25.396406439434976,
+    lng: -80.58298255104243,
+  },
   // -- Hawaii
   {
     name: "Kalalau Valley",
@@ -193,6 +201,13 @@ const markers = [
     visited: true,
   },
   // -- New York
+    {
+    name: "Adirondack Mountains",
+    description:
+      "Beautiful scenery to be seen in the Fall.",
+    lat: 44.14176770197113,
+    lng: -73.86779255887143,
+  },
   {
     name: "American Museum of Natural History",
     description:
@@ -717,6 +732,12 @@ const markers = [
   },
 
   // Iran
+  {
+    name: "Ancient Windmills of Nashtifan",
+    description: "1,000 old windmills.",
+    lat: 34.43280424454187,
+    lng: 60.175524191400186,
+  },
   {
     name: "Bam Citadel",
     description: "The Arg-e Bam is the largest adobe building in the world.",
