@@ -479,12 +479,6 @@ const markers = [
     lng: 120.62878325062533,
   },
   {
-    name: "Shilin Stone Forest in Yunnan",
-    description: "Rocky, karst parkland featuring a forest of tall limestone formations & green trees.",
-    lat: 24.82363552976476,
-    lng: 103.32756741435762,
-  },
-  {
     name: "Terracota Warriors",
     description: "Lifelike sculptures of terra-cotta warriors built around the 3rd century BC.",
     lat: 34.3842746367123,
@@ -706,7 +700,16 @@ const markers = [
     lat: 9.920519070884145,
     lng: 78.119663666074,
   },
-
+  {
+    name: "Venkateswara Temple",
+    description: "Venkateswara Temple is a Hindu temple in Tirumala and dedicated to Venkateswara, a form of Vishnu. It's believed to have been constructed starting in 300 AD. It is the richest temple in the world in terms of donations received and wealth. It was a very unique experience to join the crowds through the temple. Photos not allowed inside.",
+    lat: 13.68325,
+    lng: 79.347194,
+    img_name: "tirumala.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51630073462",
+    visited: true,
+  },
 
   // Indonesia
   {
@@ -811,12 +814,22 @@ const markers = [
   // Japan
   {
     name: "Fushimi Inari Shrine",
-    description: "Known for its numerous Torii gates",
+    description: "Known for the vast number of orange Torii gates",
     lat: 34.967340614218074,
     lng: 135.77263945495233,
     img_name: "fushimi_inari.jpg",
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50807076678/",
+    visited: true,
+  },
+  {
+    name: "Hiroshima",
+    description: "One of the two sites of the atomic bomb during WWII. The Atomic Bomb Dome is one of the few that survived partially.",
+    lat: 34.39638540365954,
+    lng: 132.45345523952764,
+    img_name: "hiroshima.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/51630088552/",
     visited: true,
   },
   {
