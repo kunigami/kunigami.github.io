@@ -508,6 +508,12 @@ const markers = [
 
   // Egypt
   {
+    name: "Abu Simbel Temples",
+    description: "Huge 3,000-year-old monument to Ramesses II.",
+    lat: 22.337916596915377,
+    lng: 31.62672169795875,
+  },
+  {
     name: "Giza Necropolis",
     description: "Includes the Pyramid of Giza, the only remaining of the Seven Wonders of the Ancient World.",
     lat: 29.97747274226785,
@@ -567,6 +573,12 @@ const markers = [
     photographer: "Alexander Savin",
     img_link:
       "https://en.wikipedia.org/wiki/Danakil_Depression#/media/File:ET_Afar_asv2018-01_img46_Dallol.jpg",
+  },
+  {
+    name: "Rock-Hewn Churches of Lalibela",
+    description: "The Rock-hewn Churches of Lalibela are monolithic churches located in the Western Ethiopian Highlands named after King Gebre Mesqel Lalibela, who commissioned the massive building project to recreate the holy city of Jerusalem in his own kingdom.",
+    lat: 12.034181950563003,
+    lng: 39.04353530422944,
   },
 
   // France
@@ -776,6 +788,28 @@ const markers = [
     lng: -9.430060029427306,
   },
 
+  // Israel
+  {
+    name: "Dead Sea",
+    description: "Dead sea is one of the world's saltiest bodies of water, which makes swimming similar to floating. Its shores are the lowest land-based elevation on Earth.",
+    lat: 31.456842637032324,
+    lng:35.40082030259397,
+     img_name: "dead_sea.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/50807076678/",
+    visited: true,
+  },
+  {
+    name: "Old Jerusalem",
+    description: "So much history packed here. Old Jerusalem includes the Armenian, Christian, Jewish and Muslim quarters, and it's a sacred place to all these western religions. It's a UNESCO World Heritage Site.",
+    lat: 31.77723810641537,
+    lng:35.23517136655842,
+    img_name: "old_jerusalem.jpg",
+    photographer: "me",
+    img_link: "https://www.flickr.com/photos/kunigami/50807076678/",
+    visited: true,
+  },
+
   // Italy
   {
     name: "Cinque Terre",
@@ -883,6 +917,15 @@ const markers = [
     lng: 78.46588932854154,
   },
 
+  // Lybia
+  {
+    name: "Old Town of Ghadamès",
+    description:
+      "Ghadames is an oasis Berber town, known for its architecture",
+    lat: 30.132452278898395,
+    lng: 9.49724608232273,
+  },
+
   // Madagascar
   {
     name: "Avenue of the Baobabs",
@@ -906,6 +949,22 @@ const markers = [
       "Limestone caves at the top of steep steps housing Hindu temples & shrines, plus a huge deity statue.",
     lat: 3.2602148,
     lng: 101.5868289,
+  },
+
+  // Mali
+  {
+    name: "Bandiagara Escarpment",
+    description:
+      "First inhabited by the Telem people between the 11th and 16th centuries, it has since then been inhabited by the Dogon people.",
+    lat: 14.434378914414124,
+    lng:  -3.3268840475372663,
+  },
+  {
+    name: "Timbuktu",
+    description:
+      "Timbuktu started out as a seasonal settlement and became a permanent settlement early in the 12th century. Known for its ",
+    lat: 16.77212235879037,
+    lng: -3.010168226183718,
   },
 
   // Mexico
@@ -969,6 +1028,12 @@ const markers = [
   },
 
   // Morocco
+  {
+    name: "Aït Benhaddou",
+    description: "Aït Benhaddou is a historic ighrem or ksar along the former caravan route between the Sahara and Marrakech in present-day Morocco.",
+    lat: 31.047051258288825,
+    lng:  -7.131931145052519,
+  },
   {
     name: "Chefchaouen",
     description: "Blue City in Morocco.",
@@ -1057,6 +1122,15 @@ const markers = [
     lng: 124.16906501364669,
   },
 
+  // Saudi Arabi
+  {
+    name: "Kaaba",
+    description:
+      "The Kaaba a building at the center of Islam's most important mosque, the Masjid al-Haram. It is the most sacred site in Islam",
+    lat: 21.42263769517834,
+    lng: 39.82619172029739,
+  },
+
   // Scotland
   {
     name: "Fingal's Cave",
@@ -1071,7 +1145,22 @@ const markers = [
     lng: -6.1972455,
   },
 
+  // Seychelles
+  {
+    name: "Vallée de Mai National Park",
+    description: "Lush, 19.5-hectare preserve with an ancient forest of Coco de Mer palm trees & many endemic animals.",
+    lat: -4.327765594023093,
+    lng: 55.74042821862747,
+  },
+
+
   // Spain
+  {
+    name: "Sagrada Família",
+    description: "Roman Catholic Church, designed by the Spanish architect Antoni Gaudí",
+    lat: 41.403773864564776,
+    lng: 2.1743782194785273,
+  },
   {
     name: "Ronda",
     description: "Beautiful city atop of a mountain.",
@@ -1084,6 +1173,15 @@ const markers = [
       "The Mosque–Cathedral of Córdoba, officially known by its ecclesiastical name, the Cathedral of Our Lady of the Assumption is the cathedral of the Roman Catholic Diocese of Córdoba dedicated to the Assumption of Mary and located in the Spanish region of Andalusia.",
     lat: 37.8789,
     lng: -4.77938,
+  },
+
+  // Sudan
+  {
+    name: "Pyramids of Meroë",
+    description:
+      "Meroë was an ancient city, the capital of the Kingdom of Kush for several centuries from around 590 BC.",
+    lat: 16.93380345385708,
+    lng: 33.728611796002646,
   },
 
   // Sweden
@@ -1104,11 +1202,36 @@ const markers = [
 
   // Tanzania
   {
+    name: "Mount Kilimanjaro",
+    description:
+      "It's a dormant volcano and the highest mountain in Africa.",
+    lat: -3.066666958726656,
+    lng: 37.35533880304339,
+  },
+  {
     name: "Serengeti National Park",
     description:
       "Vast nature reserve best known for its annual wildebeest migration, with lions, elephants & rhino.",
     lat: -2.333880200584234,
     lng: 34.83305583000156,
+  },
+
+  // Togo
+  {
+    name: "Koutammakou",
+    description:
+      "The area features traditional mud tower-houses which remain the preferred style of living. The traditional mud houses are known as a national symbol of Togo.",
+    lat: 10.0681449455914,
+    lng: 1.1354395959874588,
+  },
+
+  // Tunisia
+  {
+    name: "Carthage Ruins",
+    description:
+      "Carthage was one of the most afluent cities of the classical world and the capital of the Punic empire. It has been destroyed many times over but some of its ruins remains.",
+    lat: 36.85378309256145,
+    lng: 10.324563704538333,
   },
 
   // Turkey
