@@ -79,6 +79,7 @@ const tagsHierarchy = {
         'd3.js',
         'emacs',
         'git',
+        'macos',
         'observable',
     ],
 }
