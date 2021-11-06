@@ -13,6 +13,14 @@ Syntax for common tasks I run into often. Assumes C++17.
 
 # Basic Types
 
+## Constants
+
+Constant string:
+
+{% highlight c++ %}
+constexpr char s[] = "some_constant";
+{% endhighlight %}
+
 ## Conversions
 
 ### int to string
@@ -176,6 +184,18 @@ if (my_file.is_open()) {
     my_file << "a line" << std::end;
 }
 {% endhighlight %}
+
+# Modules
+
+## Header Files
+
+Avoid importing the same file multiple times:
+
+{% highlight c++ %}
+#pragma once
+{% endhighlight %}
+
+Cleaner and less error-prone than using the triad `#ifndef/#define/#endif`.
 
 # Functional
 
