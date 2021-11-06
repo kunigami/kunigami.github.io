@@ -3,6 +3,8 @@ layout: doc
 title: "Python Cheatsheet"
 ---
 
+{% include blog_vars.html %}
+
 Syntax for common tasks I run into often. Assumes Python 3.
 
 # Index
@@ -136,6 +138,22 @@ x = MyClass()
 isinstance(x, MyClass)
 {% endhighlight %}
 
+## Class Methods
+
+Methods where the bound variable is an instance to the class.
+
+{% highlight python %}
+class C:
+    @classmethod
+    def class_method(cls):
+        print(cls) # __main__.C
+
+    def method(self):
+        print(self) # <__main__.C instance at 0x12345>;
+{% endhighlight %}
+
+See also: Class Methods in [Revisiting Python: Object Oriented Programming]({{blog}}/2015/03/08/revisiting-python-object-oriented-programming.html)
+
 ## Dataclasses
 
 Lightweight syntax for creating classes / records.
@@ -167,6 +185,7 @@ class Polygon:
 pol = Polygon([p, q])
 print(pol.pts) # [Point(x=10, y=20), Point(x=20, y=10)]
 {% endhighlight %}
+
 
 # Files
 
