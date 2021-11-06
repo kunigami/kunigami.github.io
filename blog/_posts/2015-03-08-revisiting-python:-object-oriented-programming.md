@@ -14,28 +14,30 @@ We’ll talk about [classes](https://docs.python.org/2/tutorial/classes.html) in
 
 We'll first cover basic concepts like classes and inheritance. Later we'll discuss some more advanced features from the Python language that allows us extending the set of built-in patterns provided by the language.
 
-### Classes
+This post has been revisited in 2021/11/06 to update the examples for Python 3.7.
+
+## Classes
 
 Classes are the building blocks of object oriented programming. Python classes look similar to those in languages like C++ and Java, but there are some important differences, which we'll comment on this section.
 
-**Classes are objects.** When writing a class definition the code is executed and an class object is created and assigned to a name corresponding to the class name. For example, in the code below, an object representing the class is assigned to a variable in the current scope `MyClass`.
+**Classes are also objects.** When writing a class definition the code is executed and a class object is created and assigned to a name corresponding to the class name. For example, in the code below, an object representing the class is assigned to a variable in the current scope `MyClass`.
 
 {% highlight python %}
 
 class MyClass:
-    print 'hi'
+    print('hi')
 
-print MyClass # __main__.MyClass
+print(MyClass) # __main__.MyClass
 x = MyClass
-print x       # __main__.MyClass
+print(x)       # __main__.MyClass
 
 {% endhighlight %}
 
-If we run the code above it will print 'hi'. We can manipulate MyClass as a regular variable, assigning it to other variables, passing it as parameter to functions, etc.
+If we run the code above it will print 'hi'. We can manipulate `MyClass` as a regular variable, assigning it to other variables, passing it as parameter to functions, etc.
 
 **Instantiating.** We can create an instance of a given class by using a function call notation, that is, `MyClass()`.
 
-This will also call the method `__init()__` which can be used to initialize the instance, like a constructor. Functions defined within a class become methods to the instances. Methods can be called using the syntax `instance.method()`. For example:
+This will also call the method `__init()__` which can be used to initialize the instance, much like a constructor. Functions defined within a class become methods to the class instances. Methods can be called using the syntax `instance.method()`. For example:
 
 {% highlight python %}
 
@@ -45,7 +47,7 @@ class MyClass:
 
 instance = MyClass()
 
-instance.myMethod() # Prints &amp;lt;__main__.MyClass instance at 0x10891f290&amp;gt;
+instance.myMethod() # Prints <__main__.MyClass instance at 0x10891f290>;
 
 {% endhighlight %}
 
@@ -61,7 +63,7 @@ class MyClass:
 inst = MyClass()
 inst.x = 20
 inst2 = MyClass()
-print inst2.x # 20
+print(inst2.x) # 20
 
 {% endhighlight %}
 
@@ -76,7 +78,7 @@ class MyClass:
 inst = MyClass()
 inst.x = 20
 inst2 = MyClass()
-print inst2.x
+print(inst2.x) # 10
 
 {% endhighlight %}
 
@@ -89,12 +91,14 @@ class MyClass:
     def f():
         pass
 
-print MyClass.__dict__
+print(MyClass.__dict__)
 # 'x': 1, '__module__': '__main__', '__doc__': None, 'f': &amp;lt;function f at 0x109f32d70&amp;gt;}
 
 {% endhighlight %}
 
-**Methods.** In Python, methods are "static", but by default it requires an instance of the class to be bound to the first parameter. As we saw above, this happens automatically when we use the `instance.method()` syntax. Alternatively, we could explicitly pass the instance to the static method, using the `SomeClass.method(instance)` syntax. To illustrate that, imagine we have a method in our class a method `printX()`. We can invoke it either by a method from the instance object or from the class object passing the instance:
+**Methods.** In Python, methods are "static", but by default it requires an instance of the class to be bound to the first parameter. As we saw above, this happens automatically when we use the `instance.method()` syntax. Alternatively, we could explicitly pass the instance to the static method, using the `SomeClass.method(instance)` syntax.
+
+To illustrate that, imagine we have a method in our class a method `printX()`. We can invoke it either by a method from the instance object or from the class object passing the instance:
 
 {% highlight python %}
 
@@ -103,27 +107,28 @@ class MyClass:
         self.x = 10
 
     def printX(self):
-        print self.x
+        print(self.x)
 
 inst = MyClass()
 
 # Both are equivalent:
-inst.printX()
-MyClass.printX(inst)
+inst.printX() # 10
+MyClass.printX(inst) # 10
 
 {% endhighlight %}
 
-Methods are essentially functions assigned to class member variables. To make the point clear, we can rewrite the previous snippet replacing the inline definition of `printX()` by an external function:
+Methods are essentially functions assigned to class member variables. To make the point clear, we can rewrite the previous snippet replacing the inline definition of `printX()` with an external function:
 
 {% highlight python %}
 
 def externalPrintX(self):
-    print self.x
+    print(self.x)
 
 class MyClass:
     def __init__(self):
         self.x = 10
 
+    # Assigning external definition to a member variable
     printX = externalPrint
 
 {% endhighlight %}
@@ -135,18 +140,19 @@ Given that all methods are public and data variables take precedence over static
 {% highlight python %}
 
 def externalPrintX():
-    print 'external hello world'
+    print('external')
 
 class MyClass:
     def __init__(self):
         self.x = 10
+        # This is overridden during instantiation
         self.printX = externalPrintX
 
     def printX(self):
-        print 'hello world'
+        print('internal')
 
 inst = MyClass()
-inst.printX()
+inst.printX() # external
 
 {% endhighlight %}
 
@@ -167,23 +173,25 @@ x.staticMethod(10) # This is not bound to any instance: 10
 
 {% endhighlight %}
 
-**Class Methods.** are different from regular methods because they always receive the class object instead of the instance object as the first argument. More specifically, when calling from a class object, it is bound automatically as the first parameter and when called from the instance object, its corresponding class object is bound instead. For example,
+**Class Methods.** are different from regular methods because they always receive the *class object* instead of the *instance object* as the first argument. More specifically, when calling from a class object, it is bound automatically as the first parameter and when called from the instance object, its corresponding class object is bound instead. For example,
 
 {% highlight python %}
-
 class ClassWithClassMethod():
     def regularMethod(type):
-        print type
-    classMethod = ClassMethod(regularMethod)
+        print(type)
 
-ClassWithClassMethod.classMethod()
+    classMethod = classmethod(regularMethod)
 
-x = ClassWithClassMethod() # ClassWithClassMethod
-x.classMethod()            # ClassWithClassMethod
+
+ClassWithClassMethod.classMethod() # __main__.ClassWithClassMethod
+
+# binds to the class object even when called via an instance object
+x = ClassWithClassMethod()
+x.classMethod() # __main__.ClassWithClassMethod
 
 {% endhighlight %}
 
-### Inheritance
+## Inheritance
 
 The syntax for inheritance is `class Derived(Base)`. Methods defined in the base classes can be overridden by derived classes. If a name (variable or method) is referenced from an instance, it's searched from the current class, going up on the inheritance chain, until the definition is first found.
 
@@ -201,8 +209,8 @@ class Dog(Animal):
         return Animal.eat(self) + ' meat'
 
 dog = Dog()
-print dog.breath()  # breathing air
-print dog.eat()     # eating meat
+print(dog.breath())  # breathing air
+print(dog.eat())     # eating meat
 
 {% endhighlight %}
 
@@ -244,7 +252,7 @@ class C(B, A):
 class D(A, C): pass
 
 d = D()
-print d.composed_name()
+print(d.composed_name())
 
 {% endhighlight %}
 
@@ -260,19 +268,19 @@ In new-style classes, the diamond pattern exists by default when multiple inheri
 
 class A(object):
     def method(self):
-        print 'calling method from a'
+        print('calling method from a')
 
 class B(object):
     def method(self):
-        print 'calling method from b'
+        print('calling method from b')
     def anotherMethod(self):
-        print 'calling another method from b'
+        print('calling another method from b')
 
 class C(A, B):
    def method(self):
-        print 'calling method from c'
+        print('calling method from c')
     def anotherMethod(self):
-        print 'calling another method from c'
+        print('calling another method from c')
 
     def run(self):
         proxy = super(C, self)
@@ -285,7 +293,7 @@ C().run()
 
 In this example, `super()` returned an object, proxy, which can resolve `method()` and `anotherMethod()` properly. Since `C` derives from `A` first, it resolves it to `A.method()`. On the other hand, since `anotherMethod()` is only defined in `B`, it will resolve to `B.anotherMethod()`.
 
-### Descriptors
+## Descriptors
 
 So far, we discussed the basic components of object oriented programming. Now we'll describe some advanced concepts that will help us better understand how some functions like `staticmethod()` work.
 
@@ -297,11 +305,11 @@ If another class contains **class members** that are descriptors, the `__get__()
 
 class Descriptor(object):
     def __get__(self, obj, objtype):
-        print 'getting x'
+        print('getting x')
         return self.x
 
     def __set__(self, obj, val):
-        print 'setting x to ' + str(val)
+        print('setting x to ' + str(val))
         self.x = val
 
 {% endhighlight %}
@@ -329,8 +337,9 @@ class ClassWithDescriptors(object):
 
 x = ClassWithDescriptors()
 
-x.instance_member = 20   # This is just overriding instance_member with an integer
-print x.instance_member
+# This is just overriding instance_member with an integer
+x.instance_member = 20 # Prints setting x to 20
+print(x.instance_member) # Prints getting x and then 20
 
 {% endhighlight %}
 
@@ -358,7 +367,7 @@ class ClassMethod(object):
 
 {% endhighlight %}
 
-### Functors
+## Functor
 
 Python has the concept of function objects or functors. It's an object that can be invoked as a function so long its class defines the `__call__()` method. A simple example is:
 
@@ -372,8 +381,8 @@ class Multiplier:
 
 double = Multiplier(2)
 triple = Multiplier(3)
-print double(5) # Prints 10
-print triple(7) # Prints 21
+print(double(5)) # Prints 10
+print(triple(7)) # Prints 21
 
 {% endhighlight %}
 
@@ -405,9 +414,9 @@ def validate(f):
 
 validated_add = validate(add)
 
-print validated_add(5, 2, 3)
+print(validated_add(5, 2, 3))
 # Throws an exception
-print validated_add(5, 2, 3.0)
+print(validated_add(5, 2, 3.0))
 
 {% endhighlight %}
 
@@ -461,7 +470,7 @@ def rep(s, n):
 
 {% endhighlight %}
 
-Decorators can also be function objects, so we can define a class to do a similar work the validate() function does:
+Decorators can also be function objects, so we can define a class to do a similar work the `validate()` function does:
 
 {% highlight python %}
 
