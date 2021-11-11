@@ -4,6 +4,24 @@ const markers = [
   // United States
   // -- Arizona
   {
+    name: "Biosphere 2",
+    description: "Its initial goal was to simulate a close environment where a \
+     group of 6 humans should survive for 2 years without any exchange with \
+     the exterior. They had different biomes, including a rain forest, an \
+     ocean to a desert.</br></br > \
+     The plan didn’t go well because they had missed interaction of the plants \
+     in one of the seasons, which causes the level of oxygen to fall under the \
+     accepted level, so they had to get extern supply. The mission did last 2 \
+     years, but was not a perfect closed environment.</br ></br > \
+     Today it's a museum open to public.",
+    lat: 32.57911585980931,
+    lng:  -110.85138782115112,
+    img_name: "biosphere.jpeg",
+    photographer: "Johndedios",
+    img_link: "https://commons.wikimedia.org/wiki/File:Wiki_bio2_sunset_001.jpg",
+    visited: true,
+  },
+  {
     name: "Cactus Forest",
     description: "Cacti from the Saguaro National Park",
     lat: 32.23041339658249,

@@ -149,6 +149,12 @@ function Popup({
     );
   }
 
+  let description_node;
+  if (description) {
+    description_node = <div dangerouslySetInnerHTML={{ __html: description }} />;
+  }
+
+
   return (
     <div
       style={{ alignItems: "center", display: "flex", flexDirection: "column" }}
@@ -157,7 +163,8 @@ function Popup({
         <b>{name}</b>
       </p>
       <p>
-        {description ? description + " " : ""}
+        {description_node}
+        {description_node ? " " : ""}
         <GoogleMapsLink lat={lat} lng={lng}>
           (Google maps)
         </GoogleMapsLink>
