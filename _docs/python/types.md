@@ -3,6 +3,16 @@ layout: doc
 title: "Python Type Hints Cheatsheet"
 ---
 
+{% include blog_vars.html %}
+
+Assumes Python 3.
+
+# Index
+{:.no_toc}
+
+1. TOC
+{:toc}
+
 # Types
 
 Common types.
@@ -45,6 +55,11 @@ from typing import TypeVar, Union
 ID = Union[str, int]
 {% endhighlight %}
 
+## Type Alias
+
+{% highlight python %}
+MyNewType = Tuple[int, str]
+{% endhighlight %}
 
 # Annotation Syntax
 
@@ -60,6 +75,13 @@ s: str = 'abc'
 
 {% highlight python %}
 pseudo_int: int = 'a'  # type: ignore
+{% endhighlight %}
+
+## Function Arguments with Default Value
+
+{% highlight python %}
+def inc(value: int, amount: int = 1) -> int:
+    return value + amount
 {% endhighlight %}
 
 ## Classes
