@@ -15,6 +15,20 @@ Discard the most recent local commit:
 git reset --hard HEAD~1
 {% endhighlight %}
 
+Revert all local changes:
+
+{% highlight text %}
+git checkout .
+{% endhighlight %}
+
+Remove uncommitted files:
+
+{% highlight text %}
+# (optional) first, see what files will be purged
+git clean -n
+# purge
+git clean -fd
+{% endhighlight %}
 
 ## Branch
 
@@ -67,4 +81,3 @@ git push origin test
 {% highlight text %}
 git switch my_remote_branch
 {% endhighlight %}
-
