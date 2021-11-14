@@ -26,7 +26,7 @@ Let's discuss the `CFRunLoop` before continuing. According to [1], the `CFRunLoo
 
 One of the sources that can be monitored is `CFRunLoopSource` which is associated with an input source (like keyboard or mouse event).
 
-There is exactly one run loop per thread. The function `CFRunLoopRun()`
+There is exactly one run loop per thread. The function `CFRunLoopRun()`.
 
 ### Listener
 
