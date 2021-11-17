@@ -233,9 +233,9 @@ We write to a separate file to avoid read-locking the existing file while updati
 
 ## Daemon
 
-We want to make sure our binary run all times, including when the computer is restarted. We can use [launchd](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html) for this.
+We want to make sure our binary runs all times, including when the computer is restarted. We can use [launchd](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html) for this.
 
-First we need to register it via a configuration file. The configuration will have an ID, for example `com.joe.keylogger`, which is also going to be the same of the file, with extension `.plist`. We'll add this file in under our user folder, `/Users/joe/Library/LaunchAgents/com.joe.keylogger.plist`:
+First we need to register it via a configuration file. The configuration will have an ID, for example `com.joe.keylogger`, which is also going to be the name of the file, with extension `.plist`. We'll add this file in under our user folder, `/Users/joe/Library/LaunchAgents/com.joe.keylogger.plist`:
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -303,7 +303,7 @@ I opted to use [Electron](https://www.electronjs.org/) because I plan to use it 
 
 The overall pattern is very similar to how we would do a webpage: we have a `index.html` with some divs with specific IDs which we'll access in JavaScript.
 
-We then execute the JavaScript code using Node.js once the DOM content has loaded. He have access to the DOM elements from the page just like in a web application. The major difference is that we have access to the local filesystem since this process is not running in a sandboxed environment.
+We then execute the JavaScript code using Node.js once the DOM content has loaded. He have access to the DOM elements from the page just like in a web application. The major difference is that we have access to the local filesystem since this process is not running in a sandboxed environment like in the browser.
 
 So we read the data, transform and use Plotly to display the results, as in Figure 1.
 
@@ -316,7 +316,7 @@ We then use `setTimeout()` to re-execute the code every few minutes.
 
 ## Conclusion
 
-This was a fun project to work on. It's the first time I write a MacOS application and used Electron.
+This was a fun project to work on. It's the first time I write a MacOS application and use Electron.
 
 Apple's documentation was not very helpful, especially for API documentation. One example was trying to figure out which constant in `CGEventType` mapped to 14, which was an unhandled value I was seeing in runtime. Neither the web nor XCode's documentation helped me and after some reverse engineering it turned out 14 is not part of `CGEventType`.
 
