@@ -1,6 +1,23 @@
 ---
-layout: default
+layout: empty
 title: MOO
 ---
+
+<head>
+{% include common.html %}
 <script type="text/javascript" src="../resources/bulls_and_cows.json"></script>
 <script type="text/babel" src="../js/bulls_and_cows/app.js"></script>
+</head>
+
+<body>
+
+<div id="page">
+    <div class="inner">
+        {% include nav.html %}
+
+        <div id="app"></div>
+
+    </div>
+    {% include bottom.html %}
+</div>
+</body>

@@ -3,9 +3,7 @@ layout: page
 title: Gratitude
 ---
 
-<p>
-  <a href="{{ site.url }}">kuniga.me</a> > <a href="{{ site.url }}/gratitute">Gratitude</a>
-</p>
+{% include nav.html %}
 
 I'm very lucky to not need additional sources of income, but if you feel like the contents from my pages were helpful and want to "pay it forward", consider donating to one of the charities on my choice below (via [GoFundMe](https://www.gofundme.com/)).
 

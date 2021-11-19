@@ -36,7 +36,7 @@ class BullsAndCows extends React.Component {
     }
 
     return (
-      <Page>
+      <div>
         <Header title={"A Bulls and Cows Solver"}>
           <p>
             If you are not familiar with this game, check this{" "}
@@ -74,7 +74,7 @@ class BullsAndCows extends React.Component {
             </button>
           </div>
         </Body>
-      </Page>
+      </div>
     );
   }
 
