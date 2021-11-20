@@ -6,7 +6,7 @@ tags: [computer security]
 
 In this post we'll talk about some popular security measures to protect user accounts on the web via two-factor authentication. The term refers to the requirement of two methods of authentication for logging in into a given account. The first method is mostly always a password, and the second is one of the methods we'll describe in this post.
 
-### Why do we need an additional form of authentication?
+## Why do we need an additional form of authentication?
 
 In an ideal world, people would have strong ([long, not complex](https://xkcd.com/936/)) passwords, which would never get stolen and people would never forget them. In the real world, applications have to deal with two scenarios: 1) someone else knows your password or 2) you forgot your password.
 
@@ -22,7 +22,7 @@ They can then employ a secondary method of authentication to verify that you are
 **Scenario 2: I'm who I claim to be**
 
 
-To address the problem of a user losing a password, some websites offers a recovery mechanism, usually by sending a secure email with a link to re-set the password or, in case of email applications like GMail, allowing the secondary authentication method as an alternative to inputing your password.
+To address the problem of a user losing a password, some websites offers a recovery mechanism, usually by sending a secure email with a link to re-set the password or, in case of email applications like GMail, allowing the secondary authentication method as an alternative to inputting your password.
 
 Websites such as GMail and Github also have a set of auto-generated "master passwords" that you can print and store in a safe place. After used, these passwords become invalid. This is one of the safest options, but it also requires more effort from the user (printing and making sure they can find the printed document when needed).
 
@@ -32,7 +32,7 @@ Scenario 1 deals with security, and Scenario 2 deals with usability (recovering 
 
 We'll now cover three popular secondary authentication mechanisms: SMS (text messages), third-party app authentication and hardware authentication.
 
-### SMS
+## SMS
 
 <figure class="image_float_left">
     <a href="https://pixabay.com/en/text-mobile-chat-sms-980031/"><img src="{{site.url}}/resources/blog/2018-10-01-two-factor-authentication/2018_09_sms1.jpg" alt="sms" /></a>
@@ -49,7 +49,7 @@ The real danger of the SMS method is a bad agent being able to intercept the SMS
 
 This system has a vulnerability because a hacked carrier could be used to intercept the text messages by pretending it's doing so on behalf of a user. The carriers might not do any checks to verify the authenticity of the request. Hence, if an attacker knows your email, phone number and has access to a hacked carrier, they could technically hack into your account.
 
-### App Authentication
+## App Authentication
 
 <figure class="image_float_left">
     <img src="{{site.url}}/resources/blog/2018-10-01-two-factor-authentication/2018_09_google_auth.png" alt="google_auth" />
@@ -61,7 +61,7 @@ Whenever the client needs to authenticate itself, it uses the current timestamp 
 
 The precision of the timestamp defines on how much time the user has to copy and send the code to the server. For example, the server can define the timestamp granularity to be 30 seconds. This also defines how long the server is vulnerable, since the code is usually short and hence easier to crack via brute force, so it cannot be too long.
 
-### Hardware Authentication
+## Hardware Authentication
 
 <figure class="image_float_left">
     <a href="https://www.yubico.com/product/yubikey-4-series/"><img src="{{site.url}}/resources/blog/2018-10-01-two-factor-authentication/2018_09_yubikey.png" alt="yubikey" /></a>
@@ -92,13 +92,13 @@ To prevent that, the site origin can be stored in the Key Handle as well. Before
 
 **Vendor reliability.** Another component of the security is the trust in the manufacturer of the device. It could have malicious intent or flawed implementation. To address that concern, the U2F should also contain an extra pair of **attestation** public-private pair of keys. The attestation is to prove the identity of the manufacturer/vendor. During the enrollment, the public key that is generated is encrypted with the private attestation key. The public attestation key is made available by some trusted organization for the server to consult. If it's able to decode the generated public key, then it can trust the U2F vendor.
 
-### Conclusion
+## Conclusion
 
 In this post we covered 3 methods of extra protection to the online identity. We saw that SMS has serious vulnerability while third-party and hardware authentication are much safer, which is no surprise since SMS were not initially designed to serve as a secure channel for authentication. No method is 100% secure but recent authentication mechanisms go to great lengths to reduce the vulnerable surface area to a minimum.
 
 Note how all these methods assume the possession of a physical device separate from the computer where we're trying to log into. Physical devices are much harder to steal compared to piece of information like passwords.
 
-### References
+## References
 
 * [[1](https://security.stackexchange.com/questions/35157/how-does-google-authenticator-work)] Information Security - How does Google Authenticator work?
 * [[2](https://en.wikipedia.org/wiki/HMAC-based_One-time_Password_algorithm)] Wikipedia - HMAC-based One-time Password algorithm
