@@ -3,16 +3,42 @@ const PUBLIC_TOKEN =
 const ATTRIBUTION =
   'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
 
-const green_icon = new L.Icon({
-  iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
-  shadowUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
+// const green_icon = new L.Icon({
+//   iconUrl:
+//     "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
+//   shadowUrl:
+//     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+//   iconSize: [25, 41],
+//   iconAnchor: [12, 41],
+//   popupAnchor: [1, -34],
+//   shadowSize: [41, 41],
+// });
+
+const categories_to_icon = {
+  'church': 'church',
+  'fort': 'fort-awesome',
+  'monastery': 'place-of-worship',
+  'monument': 'monument',
+  'museum': 'university',
+  'nature': 'tree',
+}
+
+function makeIcon(params) {
+  const icon_name = categories_to_icon[params.category] || 'map-marker';
+  const html = `<i class="fas fa-${icon_name} fa-2x"></i>`;
+
+  let className = 'markerIcon';
+  if (params.is_visited) {
+    className += ' visited';
+  }
+
+  return L.divIcon({
+    html,
+    iconSize: [20, 20],
+    className,
+  });
+}
+
 
 class Wanderlust extends React.Component {
   componentDidMount() {
@@ -38,6 +64,14 @@ class Wanderlust extends React.Component {
           I have more opportunities to explore) and natural places (personal preference). If
           you have other places on your wanderlust list, please let me know!
         </p>
+
+        <div className="markerIcon visited">
+          <i className="fas fa-tree"></i>
+          <i className="fas fa-university"></i>
+          <i className="fas fa-monument"></i>
+          <i className="fas fa-place-of-worship"></i>
+          </div>
+
 
         <p>NOTE: This page is better viewed on desktop.</p>
 
@@ -86,10 +120,9 @@ function renderMap() {
       return popop_div_root;
     };
 
-    let opt = {};
-    if (marker_data.visited) {
-      opt = { icon: green_icon };
-    }
+    const opt = {
+      icon: makeIcon({category: marker_data.category, is_visited: marker_data.visited})
+    };
 
     const marker = L.marker(
       [marker_data.lat, marker_data.lng],

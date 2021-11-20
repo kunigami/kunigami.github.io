@@ -8,6 +8,10 @@ title: Wanderlust
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
 
+
+<link href="../resources/wanderlust/markers/css/all.css" rel="stylesheet">
+
+
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""
 ></script>
 
@@ -15,5 +19,16 @@ title: Wanderlust
 
 <script type="text/javascript" src="../js/wanderlust/markers.js"></script>
 <script type="text/babel" src="../js/wanderlust/app.js"></script>
+
+<style>
+.markerIcon {
+    text-align: center; /* Horizontally center the text (icon) */
+    line-height: 20px; /* Vertically center the text (icon) */
+}
+
+.visited {
+    color: green;
+}
+</style>
 
 <div id="app" />

@@ -30,6 +30,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50803431808/",
     visited: true,
+    category: "nature",
   },
   {
     name: "Chiricahua National Monument",
@@ -40,6 +41,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50788433627/",
     visited: true,
+    category: "nature",
   },
   {
     name: "Antelope Canyon",
@@ -47,6 +49,7 @@ const markers = [
       "Antelope Canyon is a slot canyon in the American Southwest, on Navajo land east of Page, Arizona.",
     lat: 36.86470241618197,
     lng: -111.37357693817302,
+    category: "nature",
   },
   {
     name: "Grand Canyon",
@@ -58,6 +61,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51334389876/",
     visited: true,
+    category: "nature",
   },
   {
     name: "Havasu Falls",
@@ -65,6 +69,7 @@ const markers = [
       "Havasu Falls is a waterfall of Havasu Creek, located in the Grand Canyon, Arizona, United States. It is within Havasupai tribal lands.",
     lat: 36.25549664057389,
     lng: -112.6978814550031,
+    category: "nature",
   },
   {
     name: "Horseshoe Bend",
@@ -72,6 +77,7 @@ const markers = [
       "Horseshoe Bend is a horseshoe-shaped incised meander of the Colorado River located near the town of Page, Arizona, United States.",
     lat: 36.88032695559509,
     lng: -111.51014454598656,
+    category: "nature",
   },
   {
     name: "Monument Valley",
@@ -79,6 +85,7 @@ const markers = [
       "Famous natural area on the Navajo Nation Reservation features towering red sandstone buttes.",
     lat: 36.99818269582502,
     lng: -110.09847885332755,
+    category: "nature",
   },
   // -- California
   {
@@ -90,6 +97,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50812863502/",
     visited: true,
+    category: "nature",
   },
   {
     name: "Cholla Garden",
@@ -100,6 +108,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51033477057",
     visited: true,
+    category: "nature",
   },
   {
     name: "Cinder Cone at Lassen National Park",
@@ -111,6 +120,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51068149218/",
     visited: true,
+    category: "nature",
   },
   {
     name: "Forty-Nine Palm Oasis",
@@ -121,6 +131,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51068149408",
     visited: true,
+    category: "nature",
   },
   {
     name: "Red Rock Canyon State Park",
@@ -131,6 +142,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50787619163/",
     visited: true,
+    category: "nature",
   },
   {
     name: "Redwoods National Park",
@@ -141,6 +153,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51033477057",
     visited: true,
+    category: "nature",
   },
   // -- Colorado
   {
@@ -153,6 +166,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51385114594/",
     visited: true,
+    category: "nature",
   },
   {
     name: "Great Sand Dunes National Park",
@@ -164,6 +178,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51384369581/",
     visited: true,
+    category: "nature",
   },
   // -- DC
   {
@@ -175,6 +190,7 @@ const markers = [
     img_name: "smithsonian.jpg",
     photographer: "me",
     visited: true,
+    category: "museum",
   },
   // -- Florida
   {
@@ -183,6 +199,7 @@ const markers = [
       "Everglades is made up of coastal mangroves, sawgrass marshes and pine flatwoods that are home to hundreds of animal species.",
     lat: 25.396406439434976,
     lng: -80.58298255104243,
+    category: "nature",
   },
   // -- Hawaii
   {
@@ -191,6 +208,7 @@ const markers = [
       "The Kalalau Valley is located on the northwest side of the island of Kauaʻi in the state of Hawaii.",
     lat: 22.1799987,
     lng: -159.6711207,
+    category: "nature",
   },
   // -- New Mexico
   {
@@ -199,6 +217,7 @@ const markers = [
       "Ruins from Puebloan people.",
     lat: 36.05536703154945,
     lng: -107.95712276204746,
+    category: "nature",
   },
   {
     name: "Rock Formations of San Juan County",
@@ -206,6 +225,7 @@ const markers = [
       "Famous ones include King of Wings and The Alien Chair.",
     lat: 36.1730792611538,
     lng: -107.97276445191888,
+    category: "nature",
   },
   {
     name: "White Sands National Park",
@@ -217,6 +237,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51334597028/",
     visited: true,
+    category: "nature",
   },
   // -- New York
     {
@@ -225,6 +246,7 @@ const markers = [
       "Beautiful scenery to be seen in the Fall.",
     lat: 44.14176770197113,
     lng: -73.86779255887143,
+    category: "nature",
   },
   {
     name: "American Museum of Natural History",
@@ -235,6 +257,7 @@ const markers = [
     img_name: "amnh.jpg",
     photographer: "me",
     visited: true,
+    category: "museum",
   },
   {
     name: "Niagara Falls",
@@ -242,6 +265,7 @@ const markers = [
       "The most famous waterfalls in the US.",
     lat: 43.08406371690949,
     lng: -79.06502726278184,
+    category: "nature",
   },
 
 
@@ -255,6 +279,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51335412760/",
     visited: true,
+    category: "nature",
   },
   // -- Utah
   {
@@ -267,6 +292,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51385410020/",
     visited: true,
+    category: "nature",
   },
   {
     name: "Bryce Canyon National Park",
@@ -278,6 +304,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50807912907/",
     visited: true,
+    category: "nature",
   },
     {
     name: "Canyonlands National Park",
@@ -289,12 +316,14 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51384650588/",
     visited: true,
+    category: "nature",
   },
   {
     name: "The Wave",
     description: "Unique Rock Formation in Southern Utah",
     lat: 36.99593,
     lng: -112.00625,
+    category: "nature",
   },
   // -- Washington
   {
@@ -306,6 +335,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50804258467/",
     visited: true,
+    category: "nature",
   },
   // -- Wyoming
   {
@@ -317,6 +347,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50788723171/",
     visited: true,
+    category: "nature",
   },
 
   // Algeria
@@ -325,6 +356,7 @@ const markers = [
     description: "Timgad was a Roman city in the Aurès Mountains of Algeria. It was founded by the Roman Emperor Trajan around CE 100.",
     lat: 35.49726639943841,
     lng: 6.469364172911276,
+    category: "monument",
   },
 
   // Australia
@@ -333,12 +365,14 @@ const markers = [
     description: "Stumpy’s Bay to Bay of Fires Lodge.",
     lat: -40.93777,
     lng: 148.25361,
+    category: "nature",
   },
   {
     name: "Great Barrier Reef",
     description: "The Great Barrier Reef is the world's largest coral reef.",
     lat: -17.998522961701028,
     lng: 146.83370745678155,
+    category: "nature",
   },
 
   // Bolivia
@@ -348,6 +382,7 @@ const markers = [
       "Salar de Uyuni, amid the Andes in southwest Bolivia, is the world’s largest salt flat.",
     lat: -20.16324964478777,
     lng: -67.6317594936942,
+    category: "nature",
   },
 
   // Botswana
@@ -357,6 +392,7 @@ const markers = [
       "The Okavango Delta is a vast inland river delta in northern Botswana. It's known for its sprawling grassy plains, which flood seasonally, becoming a lush animal habitat.",
     lat: -19.628682151586847,
     lng: 22.900244790130884,
+    category: "nature",
   },
 
   // Brazil
@@ -369,6 +405,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51396869852",
     visited: true,
+    category: "nature",
   },
   {
     name: "Chapada Diamantina",
@@ -376,6 +413,7 @@ const markers = [
       "Rugged, rocky & biodiverse nature preserve known for its waterfalls, caves & former diamond mines.",
     lat: -12.54622966371189,
     lng: -41.69042884729987,
+    category: "nature",
   },
   {
     name: "Chapada dos Guimarães",
@@ -383,6 +421,7 @@ const markers = [
       "A viewing deck overlooks this tall, scenic waterfall in Chapada dos Guimarães National Park.",
     lat: -15.405106632100686,
     lng: -55.83118054906799,
+    category: "nature",
   },
   {
     name: "Fernando de Noronha",
@@ -390,6 +429,7 @@ const markers = [
       "Fernando de Noronha is a volcanic archipelago about 350 kilometers off Brazil's northeast coast.",
     lat: -3.8554112845505024,
     lng: -32.427750322234026,
+    category: "nature",
   },
   {
     name: "Parque Nacional dos Lençóis Maranhenses",
@@ -397,6 +437,7 @@ const markers = [
       "It’s known for its vast desert landscape of tall, white sand dunes and seasonal rainwater lagoons.",
     lat: -2.486253606843343,
     lng: -43.128595120333074,
+    category: "nature",
   },
 
   // Austria
@@ -413,6 +454,7 @@ const markers = [
     description: "Sacred mountainside monastery with ornately designed temples & art, plus legendary meditation caves.",
     lat: 27.492567586337824,
     lng: 89.36211710089127,
+    category: "monastery",
   },
 
   {
@@ -420,6 +462,7 @@ const markers = [
     description: "Imposing palace & fortress dating to the 17th century in a serene setting overlooking the river.",
     lat: 27.604243734505143,
     lng: 89.86823615050018,
+    category: "fort",
   },
 
   // Cambodia
@@ -429,6 +472,7 @@ const markers = [
       "Temple complex surrounded by a wide moat and intricate carvings.",
     lat: 13.4124693,
     lng: 103.8669857,
+    category: "monastery",
   },
 
   // Canada
@@ -438,6 +482,7 @@ const markers = [
       "Unique glacier-fed waterway in a valley known for its bright turquoise water & scenic beauty.",
     lat: 51.77835376750945,
     lng: -116.53237765205041,
+    category: "nature",
   },
 
   // Chile
@@ -446,6 +491,7 @@ const markers = [
     description: "National Park in Patagonia.",
     lat: -50.8604868,
     lng: -73.284805,
+    category: "nature",
   },
 
   // China
@@ -489,6 +535,7 @@ const markers = [
     description: "Rocky, karst parkland featuring a forest of tall limestone formations & green trees.",
     lat: 24.82363552976476,
     lng: 103.32756741435762,
+    category: "nature",
   },
   {
     name: "Classical Gardens of Suzhou",
@@ -513,6 +560,7 @@ const markers = [
     description: "Tall boulders (seen on Avatar).",
     lat: 29.315305,
     lng: 110.434767,
+    category: "nature",
   },
 
   // Croatia
@@ -522,6 +570,7 @@ const markers = [
       "It's known for a chain of 16 terraced lakes, joined by waterfalls, that extend into a limestone canyon.",
     lat: 44.8653966,
     lng: 15.5820119,
+    category: "nature",
   },
 
   // Egypt
@@ -530,6 +579,7 @@ const markers = [
     description: "Huge 3,000-year-old monument to Ramesses II.",
     lat: 22.337916596915377,
     lng: 31.62672169795875,
+    category: "monument",
   },
   {
     name: "Giza Necropolis",
@@ -540,6 +590,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51226844608",
     visited: true,
+    category: "monument",
   },
   {
     name: "Luxor Temple",
@@ -550,6 +601,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50787740683",
     visited: true,
+    category: "monument",
   },
 
   // England
@@ -562,6 +614,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51334653908",
     visited: true,
+    category: "museum",
   },
   {
     name: "White Cliffs of Dover",
@@ -572,6 +625,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/51333705027",
     visited: true,
+    category: "nature",
   },
   // Equador
   {
@@ -579,6 +633,7 @@ const markers = [
     description: "Darwin.",
     lat: -0.82927,
     lng: -90.98206,
+    category: "nature",
   },
 
   // Ethiopia
@@ -591,6 +646,7 @@ const markers = [
     photographer: "Alexander Savin",
     img_link:
       "https://en.wikipedia.org/wiki/Danakil_Depression#/media/File:ET_Afar_asv2018-01_img46_Dallol.jpg",
+    category: "nature",
   },
   {
     name: "Rock-Hewn Churches of Lalibela",
@@ -612,6 +668,7 @@ const markers = [
       "The Louvre, or the Louvre Museum, is the world's second-largest art museum.",
     lat: 48.861327592885104,
     lng:  2.3376365452761454,
+    category: "museum",
   },
 
   // Germany
@@ -620,6 +677,7 @@ const markers = [
     description: "Turreted, 19th-century, hilltop castle built for King Ludwig II.",
     lat: 47.55815322752,
     lng: 10.749821857890307,
+    category: "fort",
   },
 
   // Greece
@@ -633,12 +691,14 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50788014528/",
     visited: true,
+    category: "monastery",
   },
   {
     name: "Navagio Beach",
     description: "Iconic pebble beach between towering cliffs with a shipwreck & turquoise water, reached by boat.",
     lat: 37.85949040887617,
     lng: 20.624864375003003,
+    category: "nature",
   },
   {
     name: "Santorini",
@@ -657,6 +717,7 @@ const markers = [
     description: "Tikal is an ancient Mayan citadel.",
     lat: 17.22489,
     lng: -89.61103,
+    category: "monument",
   },
 
   // Iceland
@@ -665,6 +726,7 @@ const markers = [
     description: "Waterfall and basalt rocks in Skaftafell National Park.",
     lat: 64.0234109,
     lng: -16.9841541,
+    category: "nature",
   },
 
   // India
@@ -685,6 +747,7 @@ const markers = [
     description: "The Chittor Fort or Chittorgarh is one of the largest fort in India. It is a UNESCO World Heritage Site.",
     lat: 27.007379920230612,
     lng: 76.60643437687226,
+    category: "fort",
   },
   {
     name: "Elephanta Caves",
@@ -707,6 +770,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50787720548",
     visited: true,
+    category: "monument",
   },
   {
     name: "Taj Mahal",
@@ -717,6 +781,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50788945632",
     visited: true,
+    category: "monument",
   },
   {
     name: "Kolukkumalai Tea Estate",
@@ -762,6 +827,7 @@ const markers = [
       "The waterfall is overshadowed by Semeru, an active volcano and the highest mountain in Java.",
     lat: -8.230778637200986,
     lng: 112.91777188048432,
+    category: "nature",
   },
 
   // Iran
@@ -770,24 +836,28 @@ const markers = [
     description: "1,000 old windmills.",
     lat: 34.43280424454187,
     lng: 60.175524191400186,
+    category: "monument",
   },
   {
     name: "Bam Citadel",
     description: "The Arg-e Bam is the largest adobe building in the world.",
     lat: 29.115176273815155,
     lng: 58.369317332187286,
+    category: "monument",
   },
   {
     name: "Persepolis",
     description: "Ruins of a 518 BC Achaemenid empire capital.",
     lat: 29.933267569582167,
     lng: 52.886444738853385,
+    category: "monument",
   },
   {
     name: "Shushtar Historical Hydraulic System",
     description: "Complex irrigation system & UNESCO site with water mills, dams, tunnels & canals.",
     lat: 32.044218764946585,
     lng: 48.85846733320769,
+    category: "monument",
   },
 
   // Iraq
@@ -796,6 +866,7 @@ const markers = [
     description: "Monumental place of worship built for a Bronze Age Sumerian king, often restored over 4,000 years.",
     lat: 30.96649516884495,
     lng: 46.10404623212625,
+    category: "monument",
   },
 
   // Ireland
@@ -804,6 +875,7 @@ const markers = [
     description: "Cliffs in Ireland.",
     lat: 52.97278178463433,
     lng: -9.430060029427306,
+    category: "nature",
   },
 
   // Israel
@@ -816,6 +888,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50807076678/",
     visited: true,
+    category: "nature",
   },
   {
     name: "Old Jerusalem",
@@ -848,6 +921,7 @@ const markers = [
       "Largest ancient amphitheatre ever built, and is still the largest standing amphitheater in the world today.",
     lat: 41.8902102,
     lng: 12.4900422,
+    category: "monument",
   },
   {
     name: "Venice",
@@ -911,6 +985,7 @@ const markers = [
     visited: true,
     img_name: "tokyo_museum.jpg",
     photographer: "me",
+    category: "museum",
   },
 
   // Jordan
@@ -924,6 +999,7 @@ const markers = [
     photographer: "me",
     img_link: "https://www.flickr.com/photos/kunigami/50787982268",
     visited: true,
+    category: "monument",
   },
 
   // Kazakhstan
@@ -933,6 +1009,7 @@ const markers = [
       "Lake Kaindy is a 400-meter-long lake located in Kazakhstan.",
     lat: 42.98478876084527,
     lng: 78.46588932854154,
+    category: "nature",
   },
 
   // Lybia
@@ -942,6 +1019,7 @@ const markers = [
       "Ghadames is an oasis Berber town, known for its architecture",
     lat: 30.132452278898395,
     lng: 9.49724608232273,
+    category: "monument",
   },
 
   // Madagascar
@@ -951,6 +1029,7 @@ const markers = [
       "Famed group of towering baobab trees lining the dirt road from Morondava to Belon'i Tsiribihina.",
     lat: -20.2560794,
     lng: 44.1756571,
+    category: "nature",
   },
   {
     name: "Tsingy de Bemaraha Strict Nature Reserve",
@@ -958,6 +1037,7 @@ const markers = [
       "A UNESCO World Heritage Site, this park is known for its dramatic limestone geological formations.",
     lat: -18.4368781,
     lng: 44.7381432,
+    category: "nature",
   },
 
   // Malaysia
@@ -992,6 +1072,7 @@ const markers = [
       "One of multiple cenotes (underground sinkholes) in the Yucatan Peninsula.",
     lat: 20.246823368379435,
     lng: -87.46415808600378,
+    category: "nature",
   },
   {
     name: "Chichén-Itzá",
@@ -999,6 +1080,7 @@ const markers = [
       "Archaeological site with excavated ruins of the large Maya city.",
     lat: 20.680334,
     lng: -88.5707365,
+    category: "monument",
   },
   {
     name: "El Tajin",
@@ -1006,6 +1088,7 @@ const markers = [
       "Hosts the Pyramid of the Niches, a masterpiece of ancient Mexican and American architecture.",
     lat: 20.443268954486545,
     lng: -97.37813941920652,
+    category: "monument",
   },
   {
     name: "Guachimontones",
@@ -1013,6 +1096,7 @@ const markers = [
       "Large circular pyramids are the highlight of this unique archaeological site dating to 300 BCE.",
     lat: 20.69785233998074,
     lng: -103.83396882679372,
+    category: "monument",
   },
   {
     name: "Hierve el Agua",
@@ -1020,6 +1104,7 @@ const markers = [
       "Ancient geological site featuring towering, waterfall-like rock formations, pools & springs.",
     lat: 16.865753242292385,
     lng: -96.27599567087927,
+    category: "nature",
   },
   {
     name: "Museo Nacional de Antropología",
@@ -1027,6 +1112,7 @@ const markers = [
       "Anthropology museum showcasing artifacts from as far back as the ancient Maya civilization.",
     lat: 19.426594088199124,
     lng: -99.18626292196433,
+    category: "museum",
   },
   {
     name: "Palenque National Park",
@@ -1034,6 +1120,7 @@ const markers = [
       "Palenque, also anciently known as Lakamha, was a Maya city state in southern Mexico that flourished in the 7th century.",
     lat: 17.485512166526405,
     lng: -92.04572560297886,
+    category: "monument",
   },
 
   // Myanmar
@@ -1043,6 +1130,7 @@ const markers = [
       "Bagan is an ancient city and a UNESCO World Heritage Site in the Mandalay Region of Myanmar",
     lat: 21.171739824825504,
     lng: 94.85881533957875,
+    category: "monument",
   },
 
   // Morocco
@@ -1051,6 +1139,7 @@ const markers = [
     description: "Aït Benhaddou is a historic ighrem or ksar along the former caravan route between the Sahara and Marrakech in present-day Morocco.",
     lat: 31.047051258288825,
     lng:  -7.131931145052519,
+    category: "monument",
   },
   {
     name: "Chefchaouen",
@@ -1066,6 +1155,7 @@ const markers = [
       "Deadvlei is a white clay pan located near the more famous salt pan of Sossusvlei, inside the Namib-Naukluft Park in Namibia.",
     lat: -24.7592732,
     lng: 15.2923894,
+    category: "nature",
   },
 
   // Nepal
@@ -1074,6 +1164,7 @@ const markers = [
     description: "n/a",
     lat: 27.9343193,
     lng: 86.7818523,
+    category: "nature",
   },
 
   // Netherlands
@@ -1092,6 +1183,7 @@ const markers = [
       "Milford Sound is a fiord in the southwest of New Zealand’s South Island. It’s known for towering Mitre Peak, plus rainforests and waterfalls like Stirling and Bowen falls, which plummet down its sheer sides.",
     lat: -44.63507813222853,
     lng: 167.89796460430344,
+    category: "nature",
   },
   {
     name: "Punakaiki Pancake Rocks  ",
@@ -1099,6 +1191,7 @@ const markers = [
       "Pancake Rocks are a heavily eroded limestone area where the sea bursts through a number of vertical blowholes during high tides.",
     lat:-42.114105127032076,
     lng: 171.32627617034458,
+    category: "nature",
   },
 
   // Norway
@@ -1108,6 +1201,7 @@ const markers = [
       "Iconic fjord offering snowy mountain peaks, lush plant life, cascading falls & spectacular views.",
     lat: 62.10331827445209,
     lng: 7.095297294161887,
+    category: "nature",
   },
   {
     name: "Preikestolen",
@@ -1115,6 +1209,7 @@ const markers = [
       "Popular mountainous hike to a famed 604-metre cliff with a flat top, offering panoramic views.",
     lat: 58.9868234,
     lng: 6.186655,
+    category: "nature",
   },
 
   // Peru
@@ -1123,12 +1218,14 @@ const markers = [
     description: "Ancient Inca Site.",
     lat: -13.1631412,
     lng: -72.5471516,
+    category: "monument",
   },
   {
     name: "Titicaca",
     description: "Largest lake in South America between Bolivia and Peru.",
     lat: -15.4885423,
     lng: -69.3133206,
+    category: "nature",
   },
 
   // Philippines
@@ -1138,6 +1235,7 @@ const markers = [
       "Popular observation area known for its panoramic views of its hilly, tree-filled surrounds.",
     lat: 9.80489371215848,
     lng: 124.16906501364669,
+    category: "nature",
   },
 
   // Saudi Arabi
@@ -1155,12 +1253,14 @@ const markers = [
     description: "Cave known for its resounding acoustics & abstract rock formations.",
     lat: 56.43145163449158,
     lng: -6.341378939035621,
+    category: "nature",
   },
   {
     name: "The Storr",
     description: "Rock formation in Northern Scotland.",
     lat: 57.4959496,
     lng: -6.1972455,
+    category: "nature",
   },
 
   // Seychelles
@@ -1169,6 +1269,7 @@ const markers = [
     description: "Lush, 19.5-hectare preserve with an ancient forest of Coco de Mer palm trees & many endemic animals.",
     lat: -4.327765594023093,
     lng: 55.74042821862747,
+    category: "nature",
   },
 
 
@@ -1178,6 +1279,7 @@ const markers = [
     description: "Roman Catholic Church, designed by the Spanish architect Antoni Gaudí",
     lat: 41.403773864564776,
     lng: 2.1743782194785273,
+    category: "church",
   },
   {
     name: "Ronda",
@@ -1200,6 +1302,7 @@ const markers = [
       "Meroë was an ancient city, the capital of the Kingdom of Kush for several centuries from around 590 BC.",
     lat: 16.93380345385708,
     lng: 33.728611796002646,
+    category: "monument",
   },
 
   // Sweden
@@ -1209,6 +1312,7 @@ const markers = [
       "Kungsleden is a hiking trail in northern Sweden, approximately 440 kilometres long, between Abisko in the north and Hemavan in the south. It passes through, near the southern end, the Vindelfjällen Nature Reserve, one of the largest protected areas in Europe.",
     lat: 68.36168,
     lng: 18.7234,
+    category: "nature",
   },
   {
     name: "Laitaure Delta",
@@ -1216,6 +1320,7 @@ const markers = [
       "The Rapa delta is considered to be the most beautiful river delta in Scandinavia. It can be seen from above from the Skierfeklippan peak",
     lat: 67.16749163371166,
     lng: 18.212099916970978,
+    category: "nature",
   },
 
   // Tanzania
@@ -1225,6 +1330,7 @@ const markers = [
       "It's a dormant volcano and the highest mountain in Africa.",
     lat: -3.066666958726656,
     lng: 37.35533880304339,
+    category: "nature",
   },
   {
     name: "Serengeti National Park",
@@ -1232,6 +1338,7 @@ const markers = [
       "Vast nature reserve best known for its annual wildebeest migration, with lions, elephants & rhino.",
     lat: -2.333880200584234,
     lng: 34.83305583000156,
+    category: "nature",
   },
 
   // Togo
@@ -1250,6 +1357,7 @@ const markers = [
       "Carthage was one of the most afluent cities of the classical world and the capital of the Punic empire. It has been destroyed many times over but some of its ruins remains.",
     lat: 36.85378309256145,
     lng: 10.324563704538333,
+    category: "monument",
   },
 
   // Turkey
@@ -1259,6 +1367,7 @@ const markers = [
       "Museum showing Turkey's rich archaeological heritage",
     lat: 41.01045960031307,
     lng: 28.983437611651677,
+    category: "museum",
   },
   {
     name: "Cappadocia",
@@ -1266,6 +1375,7 @@ const markers = [
       "Known for its distinctive “fairy chimneys,” tall, cone-shaped rock formations clustered in Monks Valley, Göreme and elsewhere",
     lat: 38.649597784097764,
     lng: 34.83383186504822,
+    category: "nature",
   },
   {
     name: "Derinkuyu Underground City",
@@ -1279,6 +1389,7 @@ const markers = [
     description: "Cotton Castle (Turkish). Thermal Springs",
     lat: 37.92337084547643,
     lng: 29.131354362511228,
+    category: "nature",
   },
 
   // Turkmenistan
@@ -1288,6 +1399,7 @@ const markers = [
       "Natural gas field with a collapsed crater thought to have been burning continuously since 1971.",
     lat: 40.2526031,
     lng: 58.4397004,
+    category: "nature",
   },
 
   // UAE
@@ -1314,6 +1426,7 @@ const markers = [
       "Mount Roraima is the highest of the Pakaraima chain of tepuis or plateaux in South America.",
     lat: 5.14333,
     lng: -60.7625,
+    category: "nature",
   },
 
   // Vietnam
@@ -1322,6 +1435,7 @@ const markers = [
     description: "Multiple tree-covered limestone islands.",
     lat: 20.9361865,
     lng: 107.1593762,
+    category: "nature",
   },
   {
     name: "Mù Cang Chải",
@@ -1337,5 +1451,6 @@ const markers = [
     description: "Island with the unique dragon's blood tree.",
     lat: 12.511573363989033,
     lng: 53.83185149889994,
+    category: "nature",
   },
 ];
