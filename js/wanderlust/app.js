@@ -3,17 +3,6 @@ const PUBLIC_TOKEN =
 const ATTRIBUTION =
   'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
 
-// const green_icon = new L.Icon({
-//   iconUrl:
-//     "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
-//   shadowUrl:
-//     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-//   iconSize: [25, 41],
-//   iconAnchor: [12, 41],
-//   popupAnchor: [1, -34],
-//   shadowSize: [41, 41],
-// });
-
 const categories_to_icon = {
   'church': 'church',
   'fort': 'fort-awesome',
@@ -64,14 +53,6 @@ class Wanderlust extends React.Component {
           I have more opportunities to explore) and natural places (personal preference). If
           you have other places on your wanderlust list, please let me know!
         </p>
-
-        <div className="markerIcon visited">
-          <i className="fas fa-tree"></i>
-          <i className="fas fa-university"></i>
-          <i className="fas fa-monument"></i>
-          <i className="fas fa-place-of-worship"></i>
-          </div>
-
 
         <p>NOTE: This page is better viewed on desktop.</p>
 
