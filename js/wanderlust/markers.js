@@ -511,18 +511,21 @@ const markers = [
     description: "Extensive complex of ancient carved caves known for Buddhist murals in a variety of styles.",
     lat: 41.78927440243314,
     lng: 82.50799992086527,
+    category: "buddhism",
   },
   {
     name: "Longmen Grottoes",
     description: "Vast, UNESCO–listed site with thousands of statues of Buddha carved in caves excavated from cliffs.",
     lat: 34.5983596843618,
     lng: 112.47349736240065,
+    category: "buddhism",
   },
   {
     name: "Mogao Caves",
     description: "Complex featuring 492 cave temples with Buddhist artwork, believed to span from 4th-14th centuries.",
     lat: 40.11597653917494,
     lng: 94.83222718539928,
+    category: "buddhism",
   },
   {
     name: "Potala Palace",
@@ -773,6 +776,13 @@ const markers = [
     category: "monument",
   },
   {
+    name: "Sri Harmandir Sahib",
+    description: "Central worship place for Sikhs around the world, built from white marble overlaid with gold leaf.",
+    lat: 31.624759568265535,
+    lng: 74.87700819402811,
+    category: "sikhism",
+  },
+  {
     name: "Taj Mahal",
     description: "Beautiful palace of Mughal architecture in Agra, India.",
     lat: 27.1737721,
@@ -813,6 +823,7 @@ const markers = [
       "Dating to the 9th century, this site is renowned as the largest Buddhist temple in the world.",
     lat: -7.607342627039068,
     lng: 110.2037284446244,
+    category: "buddhism",
   },
   {
     name: "Ratenggaro Village",
@@ -1067,6 +1078,22 @@ const markers = [
 
   // Mexico
   {
+    name: "Basaltic Prisms of Santa María Regla",
+    description:
+      "Tall columnar joints of basalt rock with a waterfall.",
+    lat: 20.2359047716646,
+    lng: -98.56230648263956,
+    category: "nature",
+  },
+  {
+    name: "Cascadas de Agua Azul",
+    description:
+      "Series of waterfalls found on the Xanil River.",
+    lat: 17.258004335468748,
+    lng: -92.11505243778028,
+    category: "nature",
+  },
+  {
     name: "Gran Cenote",
     description:
       "One of multiple cenotes (underground sinkholes) in the Yucatan Peninsula.",
@@ -1274,6 +1301,14 @@ const markers = [
 
 
   // Spain
+  {
+    name: "Castillo de Coca",
+    description:
+      "The castle was constructed in the 15th century and has been considered to be one of the best examples of Spanish Mudejar brickwork which incorporates Moorish Muslim design and construction with Gothic architecture.",
+    lat: 41.21592421806536,
+    lng: -4.5254420841882705,
+    category: "fort",
+  },
   {
     name: "Sagrada Família",
     description: "Roman Catholic Church, designed by the Spanish architect Antoni Gaudí",

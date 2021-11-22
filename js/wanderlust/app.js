@@ -4,12 +4,14 @@ const ATTRIBUTION =
   'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
 
 const categories_to_icon = {
+  'buddhism': 'vihara',
   'church': 'church',
-  'fort': 'fort-awesome',
+  'fort': 'chess-rook',
   'monastery': 'place-of-worship',
   'monument': 'monument',
   'museum': 'university',
   'nature': 'tree',
+  'sikhism': 'khanda',
 }
 
 function makeIcon(params) {
