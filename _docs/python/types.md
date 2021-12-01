@@ -97,3 +97,28 @@ class C:
     def inc(self) -> None:
         self._n += 1
 {% endhighlight %}
+
+### Parametrized class
+
+{% highlight python %}
+T = TypeVar('T')
+
+class Stack(Generic[T]):
+    def __init__(self) -> None:
+        # Create an empty list with items of type T
+        self.items: List[T] = []
+
+    def push(self, item: T) -> None:
+        self.items.append(item)
+{% endhighlight %}
+
+### Self
+
+We can't use the class type until the class definition is over but we can use forward references (type in quotes):
+
+{% highlight python %}
+class C:
+    @staticmethod
+    def create() -> 'C':
+        return C()
+{% endhighlight %}

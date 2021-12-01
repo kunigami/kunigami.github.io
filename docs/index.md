@@ -22,6 +22,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 ## Python
 
 * [General]({{ site.url }}/docs/python/)
+* [Matplotlib]({{ site.url }}/docs/python/matplotlib.html)
 * [NumPy]({{ site.url }}/docs/python/numpy.html)
 * [Pandas]({{ site.url }}/docs/python/pandas.html)
 * [Type Hints]({{ site.url }}/docs/python/types.html)
@@ -30,7 +31,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [General]({{ site.url }}/docs/rust/)
 
-## Linear Algebra
+## Math
 
 * [Matrices]({{ site.url }}/docs/math/matrix.html)
 * [Trigonometry]({{ site.url }}/docs/math/trigonometry.html)

@@ -33,6 +33,12 @@ df = pd.DataFrame(
 )
 {% endhighlight %}
 
+From CSV file:
+
+{% highlight python %}
+df = pd.read_csv('file.csv')
+{% endhighlight %}
+
 ## Filter rows
 
 Filter rows where a given column satisfies a predicate:
