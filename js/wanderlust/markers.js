@@ -673,6 +673,20 @@ const markers = [
     lng:  2.3376365452761454,
     category: "museum",
   },
+  {
+    name: "Mont Saint-Michel",
+    description: "Small, inhabited island with 11th-century, Romanesque abbey & the highest tides in Europe.",
+    lat: 48.63619093905395,
+    lng: -1.5110638484552334,
+    category: "fort",
+  },
+  {
+    name: "Palace of Versailles",
+    description: "Immense, 18th-century palace with gilded apartments, chandeliered Hall of Mirrors & fountain show.",
+    lat: 48.80500618371313,
+    lng: 2.1203768639217992,
+    category: "fort",
+  },
 
   // Germany
   {
@@ -680,6 +694,13 @@ const markers = [
     description: "Turreted, 19th-century, hilltop castle built for King Ludwig II.",
     lat: 47.55815322752,
     lng: 10.749821857890307,
+    category: "fort",
+  },
+  {
+    name: "Sanssouci Palace",
+    description: "Palace built by Frederick the Great with a huge garden (Weinbergterrassen).",
+    lat: 52.404261678443625,
+    lng: 13.038508133102255,
     category: "fort",
   },
 
@@ -932,6 +953,14 @@ const markers = [
       "Largest ancient amphitheatre ever built, and is still the largest standing amphitheater in the world today.",
     lat: 41.8902102,
     lng: 12.4900422,
+    category: "monument",
+  },
+  {
+    name: "Tower of Pisa",
+    description:
+      "Elaborately adorned 14th-century tower (56 meters at its tallest point) with a world-famous lean.",
+    lat: 43.72307237401429,
+    lng: 10.396613548653278,
     category: "monument",
   },
   {
@@ -1265,6 +1294,16 @@ const markers = [
     category: "nature",
   },
 
+  // Russia
+  {
+    name: "St. Basil's Cathedral",
+    description:
+      "Multicolored domes top this 16th-century former cathedral that now contains a museum of the church.",
+    lat: 55.752740264051184,
+    lng: 37.62297951594253,
+    category: "church",
+  },
+
   // Saudi Arabi
   {
     name: "Kaaba",
@@ -1315,6 +1354,12 @@ const markers = [
     lat: 41.403773864564776,
     lng: 2.1743782194785273,
     category: "church",
+  },
+  {
+    name: "Parc Güell",
+    description: "Mosaic-covered buildings, steps & sculptures in verdant park with the Gaudi museum.",
+    lat: 41.41432102633736,
+    lng: 2.152587851575814,
   },
   {
     name: "Ronda",
