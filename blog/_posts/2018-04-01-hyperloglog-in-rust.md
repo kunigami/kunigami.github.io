@@ -46,9 +46,7 @@ We can see that we can increase the number of groups to reduce errors but the tr
 
 The *HyperLogLog* algorithm uses a different combination of the powers of two to obtain a better estimate than using averages: the harmonic mean [1]. To recall, the [harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean) consists in averaging the reverse of the elements and then reversing the result. For example, the harmonic mean of 1, 4 and 4 is
 
-<figure class="center_children">
-    <img src="{{site.url}}/resources/blog/2018-04-01-hyperloglog-in-rust/2018_03_screen-shot-2018-03-30-at-8-57-13-pm.png" alt="Screen Shot 2018-03-30 at 8.57.13 PM" />
-</figure>
+$$\left( \frac{1^{-1} + 4^{-1} + 4^{-1}}{3} \right)^{-1} = \frac{3}{\frac{1}{1} + \frac{1}{4} + \frac{1}{4}} = 2$$
 
 The bulk of the HyperLogLog paper [1] is actually proving that this metric yields an estimate with smaller errors than a simple average.
 
@@ -72,15 +70,19 @@ Finally, estimate the number of distinct values based on a harmonic mean of the 
 
 The expectation of the number of distinct values is given by [1]:
 
-<figure class="center_children">
-    <img src="{{site.url}}/resources/blog/2018-04-01-hyperloglog-in-rust/2018_03_screen-shot-2018-03-31-at-10-23-11-am.png" alt="Screen Shot 2018-03-31 at 10.23.11 AM" />
-</figure>
+$$E = \frac{\alpha_m m^2}{\sum_{j=1}^{m} 2^{-M^{(j)}}}, \qquad \mbox{with} \quad \alpha_m = \left( m \int_{0}^{\infty} \left(\log_2 \left(\frac{2+u}{1+u}\right)\right)^m du \right)^{-1}$$
+
 
 `E` is equivalent to the harmonic mean times $$\alpha_m m$$, and the constant $$\alpha_m$$ is a constant to correct some bias. For implementation purposes, the authors provide approximations to this constant:
 
-<figure class="center_children">
-    <img src="{{site.url}}/resources/blog/2018-04-01-hyperloglog-in-rust/2018_03_codecogseqn-3.png" alt="CodeCogsEqn (3).png" />
-</figure>
+$$
+\begin{align}
+\alpha_{16} &= 0.673 \\
+\alpha_{32} &= 0.697 \\
+\alpha_{64} &= 0.709 \\
+\alpha_{m} &= 0.7213/(1 + 1.079/m) \mbox{ for } m \ge 128
+\end{align}
+$$
 
 **Small and Big Range Corrections**
 
@@ -88,15 +90,11 @@ When the estimated number of distinct elements is relatively small compared to t
 
 Let $$V$$ be the number of groups to which no element was assigned to. If $$V > 0$$, then experiments show that for $$E \le \frac{5}{2} m$$, we can change the estimate to
 
-<figure class="center_children">
-    <img src="{{site.url}}/resources/blog/2018-04-01-hyperloglog-in-rust/2018_03_codecogseqn-4.png" alt="CodeCogsEqn (4)" />
-</figure>
+$$E = m \log(m/V)$$
 
 Conversely, if the number of distinct elements is very high, closer to 2^32, then the probability of hash collision are very high. The correction accounts for that:
 
-<figure class="center_children">
-    <img src="{{site.url}}/resources/blog/2018-04-01-hyperloglog-in-rust/2018_03_codecogseqn-6.png" alt="CodeCogsEqn (6)" />
-</figure>
+$$E^{*} = 2^{32} \log(E/2^{32} - 1)$$
 
 **Implementation in Rust**
 
