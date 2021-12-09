@@ -424,6 +424,10 @@ figcaption {
   vertical-align: top;
 }
 
+.charities-table td.text {
+  vertical-align: middle;
+}
+
 .giscus {
   margin-top: 10px;
 }
