@@ -45,6 +45,7 @@ const tagsHierarchy = {
         'linear algebra',
         'number theory',
         'probability',
+        'statistics',
         'topology',
     ],
     'personal': [
