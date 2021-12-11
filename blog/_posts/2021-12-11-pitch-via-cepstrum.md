@@ -215,7 +215,7 @@ The fourth example is my own voice, recorded using my earphone's microphone in l
     <figcaption>Figure 6: My own results. Scatter plot for the estimated peak for each window.</figcaption>
 </figure>
 
-The only explanation is that I recorded it in a noisy environment which is messing with the results.
+The only explanation I can think of is that I recorded it in a noisy environment which is messing with the results.
 
 ### Source
 
