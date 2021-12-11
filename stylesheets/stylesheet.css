@@ -444,6 +444,12 @@ ol ol > li:before {
   content: counters(item, ".") ". ";
 }
 
+li > .language-plaintext,
+p > .language-plaintext {
+  box-shadow: none;
+  margin: auto;
+}
+
 /* ----------------------------------------------------------------------------
  * Small Device Styles
  * ----------------------------------------------------------------------------
