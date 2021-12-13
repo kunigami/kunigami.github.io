@@ -186,6 +186,50 @@ pol = Polygon([p, q])
 print(pol.pts) # [Point(x=10, y=20), Point(x=20, y=10)]
 {% endhighlight %}
 
+# Flow Control
+
+## Exceptions
+
+Basic syntax:
+
+{% highlight python %}
+try:
+    raise Exception('hello')
+except Exception as ex:
+    print('caught', str(ex))
+{% endhighlight %}
+
+Custom exception:
+
+{% highlight python %}
+class MyException(Exception):
+    pass
+
+try:
+    raise MyException('hello')
+except MyException as ex:
+    print('caught specific', str(ex))
+{% endhighlight %}
+
+Re-raise exception
+
+{% highlight python %}
+try:
+    raise Exception('hello')
+except Exception as ex:
+    print('caught specific', str(ex))
+    raise
+{% endhighlight %}
+
+Raise new exception but preserve original stack trace:
+
+{% highlight python %}
+try:
+    raise Exception('hello')
+except Exception as ex:
+    raise Exception('new title') from ex
+{% endhighlight %}
+
 
 # Files
 
