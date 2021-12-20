@@ -206,7 +206,7 @@ The third example is another male voice [6] also speaking in Catalan. It estimat
     <figcaption>Figure 5: Male voice results. Top: amplitude of the recording, bottom: scatter plot for the estimated peak for each window.</figcaption>
 </figure>
 
-Also relatively uniform like the first example, but with fewer peaks detected.
+This one is not as clear cut as the first example and we detected fewer peaks.
 
 The fourth example is my own voice, recorded using my earphone's microphone in lossless format via QuickTime. It returned an estimate of 242Hz! This is likely inaccurate though, which we can see from looking at the pitch value distribution:
 
@@ -227,7 +227,7 @@ The cepstrum method seems to work fine but is very sensitive to background noise
 
 As always, having to implement a theory showed I haven't understood many details, for example the interpretation of the scales of the output of `fft()` and `ifft()`, or how to detect peaks.
 
-I found the response format of `fft()` a bit strange since the entries are not sorted by frequency. I wonder if it's due to specific implementation details or if it's a conscious API design, maybe because in most cases people only want the first half of the array? I want to study the implementation of the Cooley-Tukey FFT in the future which my shed some light on this.
+I found the response format of `fft()` a bit strange since the entries are not sorted by frequency. I wonder if it's due to specific implementation details or if it's a conscious API design, maybe because in most cases people only want the first half of the array? I want to study the implementation of the Cooley-Tukey FFT in the future which might shed some light on this.
 
 ## Related Posts
 
