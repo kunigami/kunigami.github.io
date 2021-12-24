@@ -10,7 +10,7 @@ This is the third post in the series on revisiting Python. In the [previous post
     <a href="https://kunigami.files.wordpress.com/2016/02/python-logo.png"><img src="{{site.url}}/resources/blog/2015-03-08-revisiting-python:-object-oriented-programming/2016_02_python-logo.png" alt="python-logo" /></a>
 </figure>
 
-We’ll talk about [classes](https://docs.python.org/2/tutorial/classes.html) in Python 2.7. Following the premisses of previous posts, this is not intended to be an introduction to Object Oriented Programming, but rather how we can use this paradigm in Python.
+We’ll talk about [classes](https://docs.python.org/2/tutorial/classes.html) in Python 3.7. Following the premisses of previous posts, this is not intended to be an introduction to Object Oriented Programming, but rather how we can use this paradigm in Python.
 
 We'll first cover basic concepts like classes and inheritance. Later we'll discuss some more advanced features from the Python language that allows us extending the set of built-in patterns provided by the language.
 
