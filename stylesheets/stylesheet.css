@@ -424,6 +424,10 @@ figcaption {
   vertical-align: top;
 }
 
+.books-table th.thumbnail {
+  width: 15%
+}
+
 .charities-table td.text {
   vertical-align: middle;
 }
