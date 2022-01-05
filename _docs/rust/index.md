@@ -3,6 +3,11 @@ layout: doc
 title: "Rust Cheatsheet"
 ---
 
+# Index
+{:.no_toc}
+
+1. TOC
+{:toc}
 
 # Basic types
 

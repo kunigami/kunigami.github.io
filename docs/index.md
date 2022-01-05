@@ -30,6 +30,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 ## Rust
 
 * [General]({{ site.url }}/docs/rust/)
+* [Cargo]({{ site.url }}/docs/rust/cargo.html)
 
 ## Math
 
