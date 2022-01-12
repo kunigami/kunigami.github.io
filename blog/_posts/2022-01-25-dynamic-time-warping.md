@@ -160,7 +160,7 @@ def compute_cost_from_path(xs, ys, path):
 
 ### Windowing
 
-The rationale behind windowing is that it's very unlikely that points from the beginning of one time series will end up being matched with the ones at the other. They're likely to be around the same neighborhood, or window.
+The rationale behind windowing is that it's very unlikely that points from the beginning of one time series will end up being matched with the ones at the end of the other. They're likely to be around the same neighborhood, or window.
 
 Let $w$ be the length of the window. Then we only need to look at $O(w)$ points for each $i$, for example $(i - w, i + w)$, leading to a $O(nw)$ complexity. If $w$ is constant or at least much smaller than $m$ it can speed things up.
 
@@ -334,7 +334,7 @@ def get_search_window(path, n, m, radius):
 
 Note that the same `i` may appear multiple times in `path`, so we need to update the existing range.
 
-**Lowering resolution.** Getting the low-res version of a series is the easiest part, we just need to make sure to handle sequences with odd-length!
+**Lowering resolution.** Getting the low-res version of a series is the easiest part, we just need to make sure to handle sequences with odd length!
 
 {% highlight python %}
 def halve(xs):
@@ -422,7 +422,7 @@ We ran `dtw()`, `fast_dtw()` (radius of 30) and `windowed_dtw()` (fixed window s
 
 We can see that `fast_dtw()` and `windowed_dtw()` are much faster than `dtw()` for $N = 1000$, and that it grows linearly: when we use a 10x bigger input, it takes about 10x the time.
 
-### Precision
+### Accuracy
 
 Here we compare the difference in the values of the solutions returned by `dtw()` (ground truth), `fast_dtw()` (radius of 30) and `windowed_dtw()` (fixed window size of 100), for series (`sample_a_1k, sample_b_1k)` and (`sample_a_10k, sample_b_10k`).
 
@@ -455,13 +455,13 @@ Here we compare the difference in the values of the solutions returned by `dtw()
 </table>
 </div>
 
-In terms of precision `fast_dtw()` does much better than `windowed_dtw()`. The latter could do especially bad if the series are similar but are very shifted in relation to each other.
+In terms of accuracy `fast_dtw()` does much better than `windowed_dtw()`. The latter could do especially bad if the series are similar but are very shifted in relation to each other.
 
 ### Differentiation
 
 One important property of distance metrics is that it is small for things that are similar and big for things that are not.
 
-We compare the costs of between the similar (`sample_a_1k, sample_b_1k`) and different (`sample_a_1k, samples_c_1k`).
+We compare the costs of between the similar (`sample_a_1k, sample_b_1k`) and different (`sample_a_1k, samples_c_1k`) series.
 
 <div class="center_children">
 <table>
@@ -508,8 +508,6 @@ The recurrence for DTW reminds me of the one for computing the edit distance bet
 
 ## References
 
-[[1](https://databricks.com/blog/2019/04/30/understanding-dynamic-time-warping.html)]  Databricks: Understanding Dynamic Time Warping
-
-[[2](https://en.wikipedia.org/wiki/Dynamic_time_warping)] Wikipedia: Dynamic time warping
-
-[[3](https://cs.fit.edu/~pkc/papers/tdm04.pdf)] FastDTW: Toward Accurate Dynamic Time Warping in Linear Time and Space - Salvador S., Chan P.
+* [[1](https://databricks.com/blog/2019/04/30/understanding-dynamic-time-warping.html)]  Databricks: Understanding Dynamic Time Warping
+* [[2](https://en.wikipedia.org/wiki/Dynamic_time_warping)] Wikipedia: Dynamic time warping
+* [[3](https://cs.fit.edu/~pkc/papers/tdm04.pdf)] FastDTW: Toward Accurate Dynamic Time Warping in Linear Time and Space - Salvador S., Chan P.
