@@ -9,7 +9,7 @@ vanity: "2022-01-25-dynamic-time-warping"
 
 Suppose we are given two discrete signals corresponding to the speech resulting from pronouncing a given sentence. They might have been pronounced by different people and in different intonations and speed, and we would like determine the similarity between these signals.
 
-In this post we'll discuss *dynamic time warping*, a technique that can be used to compare the similarity between time series allowing for small variances in the time scales.
+In this post we'll discuss *dynamic time warping*, a technique that can be used to compare the similarity between time series allowing for small variances in the time scales. We'll provide Python implementations of an exact algorithm $O(N^2)$ based on dynamic programming and an approximated one that runs in $O(N)$.
 
 <figure class="center_children">
     <img src="{{resources_path}}/matching.png" alt="Two curves with connecting lines between them"/>
@@ -84,7 +84,7 @@ There are few cases to consider:
 
 **Case 2:** $y_{j-1}$ is already paired up with one or more elements in $\vec{x}$, and we'll add $x_{i-1}$ to the match, which also adds $\abs{x_{i-1} - y_{j-1}}$ to the total, and we can extend from $D_{i-1,j}$.
 
-There's a hypothetical case here to point out: it could be the case that both $y_{j-2}$ and $y_{j-1}$ are already matched to $x_{i - 2}$ and by pairing $y_{j-1}$ with $x_{i - 1}$ would create a "zig-zag" match ($y_{j-2} \rightarrow x_{i - 2} \rightarrow y_{j-1} \rightarrow x_{i-1}$), which is undesirable. In this case though, we could "un-match" $y_{j-1}$ and $x_{i - 2}$, which would discount $\abs{x_{i-1} - y_{j-1}}$ from the total distance and then we could have chosen *Case 1* with a cost that is no greater than *Case 2*.
+There's a hypothetical case here to point out: it could be the case that both $y_{j-2}$ and $y_{j-1}$ are already matched to $x_{i - 2}$ and by pairing $y_{j-1}$ with $x_{i - 1}$ would create a "zig-zag" match ($y_{j-2} \rightarrow x_{i - 2} \rightarrow y_{j-1} \rightarrow x_{i-1}$), which is undesirable. In this case though, we could "un-match" $y_{j-1}$ and $x_{i - 2}$, which would discount $\abs{x_{i-2} - y_{j-1}}$ from the total distance and then we could have chosen *Case 1* with a cost that is no greater than *Case 2*.
 
 So as long as we break ties by picking *Case 1* first we'll avoid this case.
 
@@ -248,9 +248,6 @@ def windowed_dtw(xs, ys, wrange = None):
             if i == 1 and abs_j == 0:
                 opt[i][j] = abs(xs[i - 1] - ys[abs_j])
             else:
-                prev_j = get_relative_j(i - 1, abs_j, wrange)
-
-                # valid adjacent cells
                 neighbors = get_neighbors(i, abs_j, opt, wrange)
 
                 min_value = min(
