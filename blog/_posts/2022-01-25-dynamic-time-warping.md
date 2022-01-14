@@ -5,6 +5,8 @@ tags: [python, combinatorial optimization, dynamic programming, signal processin
 excerpt_separator: <!--more-->
 vanity: "2022-01-25-dynamic-time-warping"
 main_image: "matching.png"
+tweet: "Dynamic time warping can be used to compare the similarity between time series allowing for small variances in the time scales."
+
 ---
 {% include blog_vars.html %}
 
