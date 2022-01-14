@@ -4,6 +4,7 @@ title: "Dynamic Time Warping"
 tags: [python, combinatorial optimization, dynamic programming, signal processing]
 excerpt_separator: <!--more-->
 vanity: "2022-01-25-dynamic-time-warping"
+main_image: "matching.png"
 ---
 {% include blog_vars.html %}
 
