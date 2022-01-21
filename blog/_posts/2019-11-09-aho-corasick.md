@@ -12,29 +12,53 @@ Unfortunately, I couldn't find much information about Margareth J. Corasick, exc
 
 ## Multiple-string search
 
-We have studied before the problem of finding a string in a text, for which the [Knuth-Morris-Prat algorithm]({{site.url}}/blog/2016/03/13/tree-ring-matching-using-the-kmp-algorithm.html) is well-known.
+The problem we're trying to solve is, given a text $H = [a_1, a_2, \cdots, a_n$ and a set of strings $S$, find all the occurrences of $s \in S$ as substrings in $H$. For example, if $H = ABAAAAB$ and $S = \curly{AB, AAA}$, we should output:
 
-Aho and Corasick studied the problem of finding a set of strings in a text. More precisely, given a body of text H and a set of search terms S, we want to find all occurrences of each term of S in H.
+$$[AB (1), AAA (3), AAA (4), AB (6)]$$
 
-They came up with the Aho-Corasick algorithm which is able to solve this problem in linear time on the size of H and the size of the output (i.e. the total number of characters that need to be printed when a match is reported).
+For clarity, we add the index of the start of the match (in parenthesis).
 
-It consists in pre-computing a look-up structure from S and then scanning the text using it. Whenever it detects a match was found, it prints the corresponding matches. Let's see first how to construct the structure.
+## Trying Tries
 
-## The look-up structure
+How would we solve this problem using a trie? We can construct the trie from all the entries in $S$ and then for search for matching prefixes of $H$, which can be done in $O(m)$, with $m$ being the size of the longest string in $S$, that is, the height of the trie.
 
-The look-up structure is constructed in two phases, each to construct two sets of edges: goto and fail edges.
+The problem is that we're interested in all substrings, not only prefixes, so we'd need to repeat this prefix search for each starting index in $H$, which would leave us with a complexity of $O(\abs{H} m)$.
 
-The **goto** edges are essentially the edges of a trie containing the entries in $S$. The trie can be seen as a state machine where each node represents a prefix of one of the entries in $S$ and the transition function tells us to which prefix to go next given an input character. These edges are thus called **goto** arrows. We denote by $g(s, a)$ the node we navigate to if we're at node s and receive input a.
+We'll now analyze how to do it faster using the Aho-Corasick tree.
 
-Given a text $H = [a_1,a_2, \cdots ,a_n]$, we can start at the root and follow the edges labeled $a_1$, $a_2$ and so on. If we land on a node representing an entry in $S$ we print it.
+<!-- A trie can be seen as a state machine where each node represents a prefix of one of the entries in $S$ and the transition function tells us to which prefix to go next given an input character. The transition $g(s, a)$ tells us the node we navigate to if we're at node $s$ and receive input $a$.
 
-Eventually though, we may reach a node $s$ such that the next character $a_j$ doesn't have a corresponding edge $g(s, a_j)$. We know that $s$ is a suffix of $[a_1,a_2,\cdots,a_{j-1}]$, say $s = [a_k,\cdots,a_{j-1}]$. We also know there's no other unreported entry in $S$ that starts at $k$ but there might be one that starts at $a_{k+1}$. We could restart the search at $k+1$ and at the root of the tree, but can we do better?
+Given a text $H = [a_1, a_2, \cdots , a_n]$, we can determine whether a prefix of $H$ exists in $S$ by traversing the trie constructed from $S$. We start at the root and follow the edges labeled $a_1$, $a_2$ and so on. If we land on a node representing an entry in $S$ we found such a prefix.
 
-Because $S$ is fixed, no matter what text $H$ we have, by the time we encounter a dead end at a node $r$, we know that the last characters seen are $[a_k,\cdots,a_{j-1}] = r$. Now suppose $s = [a_{k+1},\cdots,a_{j-1}, a_j]$ happens to be in the trie. Then we can continue our search from $s$, without having to backtrack. If $k+1$ doesn't work, we can try $k+2$, $k+3$, and so forth. More generally, say that we eventually found the smallest index $k^\* > k$ such that $s^\* = [a_k^\*,\cdots,a_{j-1}, a_j]$ is in the trie. In other words $s^\*$ is the longest proper suffix of $s$ in the trie. When we fail to find $s = r + a_j$ in the trie, we can resume at $s^\*$. This suggests we could have a **fail** edge from $s$ to $s^\*$ in our trie to quickly resume the search without backtrack.
+If we want -->
 
-Technically, $s$ doesn't exist in the trie, so we can't add an edge there. However, we can still add the failure edge in $r$, and denote it as $f(r, a_j) = s$ for all labels $a_j$ not in a goto edge.
+## The Aho-Corasick tree
+
+The Aho-Corasick algorithm can be used to solve the multiple-string search problem in linear time in $O(\abs{H})$ plus the size of the output (i.e. the total number of characters that need to be printed when a match is reported).
+
+Like with tries, it consists in pre-computing a tree structure $T$ from $S$ and then iterating over $H$ following its edges. Whenever it detects a match was found, it prints the corresponding matches.
+
+The look-up structure is like a trie or prefix tree but with extra edges which we can use when we find a mismatch. These extra edges allow us to go back up in the tree but are smart to use the information from the prefix we are at so we don't have to start from scratch. The "trie edges" are called **goto** edges, while the back up edges are called **fail** edges.
+
+
+### Goto Edges
+
+As we mentioned, goto edges are the trie edges. We'll denote them by $g(r, a) \rightarrow s$, which represents the node $s$ we'll go to if we are at node $r$ and encounter a character $a$ while iterating over $H$.
+
+### Fail Edges
+
+Suppose we are doing the trie search starting at position $k$. We'll eventually reach a node $r$ such that the next character $a_j$ in $H$ doesn't have a corresponding edge $g(r, a_j)$. This means $r = [a_k,\cdots,a_{j-1}]$.
+
+We would then restart the search at position $k + 1$. Suppose $s = [a_{k+1}, \cdots, a_{j-1}, a_j]$ is in $T$. We could add a short-cut edge from $r$ to $s$ via $a_j$. The rationale is that we already analyzed $[a_{k + 1},\cdots,a_{j-1}]$ to get to $r$, so it's wasteful to go over them again.
+
+It might be that $[a_{k+1}, \cdots, a_{j-1}, a_j]$ is not in $T$, but perhaps $[a_{k+2}, \cdots, a_{j-1}, a_j]$ is? If not, then we try $a_{k+3}$, $a_{k+4}$ and so on, until we find the smallest index $k^\* > k$ such that $s^\* = [a_k^\*,\cdots,a_{j-1}, a_j]$ is in $T$. We then add an edge from $r$ to $s^\*$ via $a_j$, which is the fail edge $f(r, a_j) \rightarrow s^\*$.
+
+
+### Traversal
 
 Given the goto and fail edges, we have a proper state machine which we can use to find matches in $H$. Let's combine them into a single set of edges $e(s, a)$ (that is $e(s, a) = g(s, a)$ if it exists, otherwise $f(s, a)$).
+
+Then the pseudo-code for the traversal is trivial:
 
 {% highlight text %}
 s = root
@@ -42,7 +66,15 @@ for a in H:
     s = e(s, a)
 {% endhighlight %}
 
-We are still missing printing out the matches. Because of the shortcuts we take via the fail edges, *we never explicitly visit a suffix of a state s*. For this reason, when visiting a state $s$, we need to print all its suffixes that belong to S.
+### Reporting Matches
+
+Suppose that we are at node $r = [a_k, \cdots, a_{j-1}]$ with no available goto edge for $a_j$. Suppose that $[a_{k+1}, \cdots, a_{j-1}, a_j]$ is not in $S$ but $s_2 = [a_{k+2}, \cdots, a_{j-1}, a_j]$ is. Then there will be a fail edge $f(r, a_j) \rightarrow s_2$ and we'll follow that edge.
+
+This means we are implicitly skipping searching for any prefixes starting at $a_{k+1}$! Suppose there is some substring $[a_{k+1}, \cdots, a_{\ell-1}, a_\ell]$ in $S$.
+
+It must be that $\ell$ is less than $j$ otherwise there would be a node corresponding to $[a_{k+1}, \cdots, a_{j-1}, a_j]$ in $T$ which we assumed was not the case.
+
+So when do we report $[a_{k+1}, \cdots, a_{\ell-1}, a_\ell]$? Because $\ell < j$, we know that the node $[a_{k}, \cdots, a_{\ell-1}, a_\ell]$ is in the tree (it's a parent of $r$), so as long as we report all the *suffixes* of a node in $S$ when visiting it, we should cover our bases. These suffixes are encoded in `output()` in the pseudo-code below.
 
 {% highlight text %}
 s = root
@@ -113,7 +145,7 @@ else:
 
 {% endhighlight %}
 
-When printing output(s) we just need to traverse the list,:
+When printing output(s) we just need to traverse the list:
 
 {% highlight python %}
 def get_matches(self):
@@ -134,8 +166,11 @@ Like the KMP, I've known this algorithm before but never took the time to fully 
 
 My initial implementation was in Rust, but I got stuck when modeling the nodes because of self-reference. This led me to this [Stackoverflow answer](https://stackoverflow.com/questions/32300132/why-cant-i-store-a-value-and-a-reference-to-that-value-in-the-same-struct) which I haven't time to study, but seems like a good idea for a post.
 
-### Appendix
+## Related Posts
 
+[Knuth-Morris-Prat algorithm]({{site.url}}/blog/2016/03/13/tree-ring-matching-using-the-kmp-algorithm.html) is an algorithm for solving the case where $\abs{S} = 1$.
+
+## Appendix
 
 **Correctness**
 
