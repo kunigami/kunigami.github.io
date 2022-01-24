@@ -403,6 +403,11 @@ form {
   margin-right: 20px;
 }
 
+.image_float_right {
+  float: right;
+  margin-left: 20px;
+}
+
 figcaption {
   color: #6b6b6b;
   font-size: 13px;
