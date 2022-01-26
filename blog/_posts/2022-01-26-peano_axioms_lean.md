@@ -3,7 +3,7 @@ layout: post
 title: "Peano's Axioms in Lean"
 tags: [lean]
 excerpt_separator: <!--more-->
-vanity: "2022-01-22-peano_axioms_lean"
+vanity: "2022-01-26-peano_axioms_lean"
 
 ---
 {% include blog_vars.html %}
