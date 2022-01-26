@@ -19,7 +19,7 @@ Giuseppe Peano was a Italian mathematician who also studied [historical linguist
 
 In this post we'll explore some of Giuseppe Peano's axioms and derive lemmas from them. The goal of this post is to provide a practical introduction to Lean without getting too specific on the details.
 
-This post borrows heavily on Kevin Buzzard's Natural Number Game [2] which I highly recommend! It has been tested on Lean 3.38 (community fork). One of the easiest ways to play with Lean is using the [online editor](https://leanprover-community.github.io/lean-web-editor), to which you can paste the code from the post as we go along.
+This post borrows heavily on Kevin Buzzard's Natural Number Game [1] which I highly recommend! It has been tested on Lean 3.38 (community fork). One of the easiest ways to play with Lean is using the [online editor](https://leanprover-community.github.io/lean-web-editor), to which you can paste the code from the post as we go along.
 
 <!--more-->
 
@@ -39,7 +39,7 @@ open Nat
 end sandbox
 {% endhighlight %}
 
-In Lean the syntax `inductive Nat` describe a **inductive type**, and according to [1]:
+In Lean the syntax `inductive Nat` describe a **inductive type**, and according to [5]:
 
 > Intuitively, an inductive type is built up from a specified list of constructors
 
@@ -307,9 +307,14 @@ I decided to try *The Natural Number Game* [4] which is a much more friendly int
 
 Overall I was very happy to finally write some proofs using a theorem prover. I had tried Agda before but I ended up dropping the ball for some reason. I keep hearing about Lean and the Xena project and that encourage me to try theorem provers again. I'm really hoping to stick with learning more about it this time.
 
+## Related Posts
+
+[An Introduction to Agda]({{blog}}/2013/10/30/an-introduction-to-agda.html) was my previous attempt at getting started with theorem proving. At first glance Agda and Lean look similar in syntax and both are functional languages based on dependent types. Lean seems to have a more thriving community, better tooling and interestingly a big company (Microsoft) doing active development on it.
+
 ## References
 
-* [[1](https://leanprover.github.io/theorem_proving_in_lean/inductive_types.html)] Theorem Proving in Lean - 7. Inductive Types
+* [[1](https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/)] The Natural Number Game - Kevin Buzzard and Mohammad Pedramfar
 * [[2](https://en.wikipedia.org/wiki/Peano_axioms#Arithmetic)] Wikipedia: Peano axioms
 * [[3](https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/has_zero/)] Zulip Lean Discussion
 * [[4](https://leanprover.github.io/theorem_proving_in_lean/tactics.html)] Theorem Proving in Lean - 5. Tactics
+* [[5](https://leanprover.github.io/theorem_proving_in_lean/inductive_types.html)] Theorem Proving in Lean - 7. Inductive Types
