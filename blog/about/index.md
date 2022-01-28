@@ -7,7 +7,7 @@ title: Blog
 
 # About
 
-Most posts are in my blog are about Programming, Computer Science and Math. I’m terrible for names, but NP-Incompletness sounded reasonable. It’s a word play with the concept of NP-Completeness and Gödel’s incompleteness theorems.
+Most posts in my blog are about Programming, Computer Science and Math. I’m terrible for names, but NP-Incompletness sounded reasonable. It’s a word play with the concept of NP-Completeness and Gödel’s incompleteness theorems.
 
 Why blogging? Because I like to write down notes from things I’ve studied to help organizing my thoughts and also to detect gaps in understanding. It may be also useful for future reference.
 

@@ -301,7 +301,7 @@ In this post we covered basic aspects of the Lean language and revisited the Pea
 
 My initial plan was to write this in Lean 4, which is in active development by Microsoft. I started reading the [tutorial](https://leanprover.github.io/theorem_proving_in_lean4/propositions_and_proofs.html) but got lost quickly and wasn't finding the abstract examples intuitive.
 
-I decided to try *The Natural Number Game* [4] which is a much more friendly introduction and suitable for people who are not familiar with formal methods. There are a couple of quirks from the language that the game hides from us to make it easier, and I only ran into them while trying to write a standalone version.
+I decided to try *The Natural Number Game* [1] which is a much more friendly introduction and suitable for people who are not familiar with formal methods. There are a couple of quirks from the language that the game hides from us to make it easier, and I only ran into them while trying to write a standalone version.
 
 *The Natural Number Game* uses Lean 3.38 which is incompatible with Lean 4 as I quickly learned. It seems like the community fork is much more active and there are a lot more resources so I'll stick with it for now.
 
