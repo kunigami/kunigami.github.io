@@ -11,4 +11,25 @@ Most posts in my blog are about Programming, Computer Science and Math. I’m te
 
 Why blogging? Because I like to write down notes from things I’ve studied to help organizing my thoughts and also to detect gaps in understanding. It may be also useful for future reference.
 
-*Disclaimer: the views and opinions expressed in this blog are of my entire responsibility and do not necessarily represent those of my employer.*
+## Interests
+
+I've been interested in many topics over time, some come and go, others go and come. Here's a list of topics I was interested at some point, roughly in reverse chronological order:
+
+* Automated reasoning
+* Signal Processing
+* Natural Language Processing
+* Quantum Computing
+* Computational Biology
+* Distributed Systems
+* Functional Programming
+* Information Visualization
+* Frontend Web Development
+* Combinatorial Optimization
+* Computational Geometry
+* Programming Puzzles / Competitions
+
+If you're interested in any of these and want to collaborate somehow, please reach out!
+
+## Disclaimer
+
+The views and opinions expressed in this blog are of my entire responsibility and do not necessarily represent those of my employer.
