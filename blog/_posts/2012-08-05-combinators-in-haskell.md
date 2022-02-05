@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Combinators in Haskell"
-tags: [lean]
+tags: [haskell]
 excerpt_separator: <!--more-->
 vanity: "2012-08-05-combinators-in-haskell"
 

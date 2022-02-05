@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Boyer–Moore Majority Vote Algorithm"
-tags: [online optimization, puzzles]
+tags: [online optimization, puzzle]
 vanity: "2021-03-06-boyer-moore-vote-algorithm"
 excerpt_separator: <!--more-->
 ---
