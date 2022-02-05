@@ -165,7 +165,7 @@ Recall that if we have an implication $P \implies Q$, for it to be valid either 
 
 The axioms up to *Axiom 8* only described things that *are* naturals numbers but did not say anything about things that *are not*.
 
-For example, if we take the set of numbers $\mathbb{N} = \curly{0, 1, \cdots}$ and union with the set $\curly{0.5, 1.5, 2.5, \cdots}$, we'll see that they satisfy all the axioms above, including *Axiom 6*, for which we can think of two lines of succession, one starting from 0 and one starting from 0.5 and both satisfy .
+For example, if we take the set of numbers $\mathbb{N} = \curly{0, 1, \cdots}$ and union with the set $\curly{0.5, 1.5, 2.5, \cdots}$, we'll see that they satisfy all the axioms above, including *Axiom 6*, for which we can think of two lines of succession, one starting from 0 and one starting from 0.5.
 
 If we include *Axiom 9* however, we'll see that $\mathbb{N}$ is a possible candidate for $K$, and thus $\mathbb{N}$ contains all natural numbers, meaning that $\curly{0.5, 1.5, 2.5, \cdots}$ are not in it.
 
