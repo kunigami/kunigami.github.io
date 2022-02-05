@@ -26,6 +26,12 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [Matrices]({{ site.url }}/docs/math/matrix.html)
 
+
+## MacOS
+
+* [Core Audio]({{ site.url }}/docs/macos/core_audio.html)
+* [Core Foundation]({{ site.url }}/docs/macos/core_foundation.html)
+
 ## Misc
 
 * [Bash]({{ site.url }}/docs/bash/bash.html)
