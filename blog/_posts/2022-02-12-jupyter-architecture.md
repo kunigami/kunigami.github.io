@@ -75,7 +75,7 @@ When we run this it displays the URL with an authentication token:
 http://<ip>:<port>/?token=<token>
 {% endhighlight %}
 
-The binder tool provides a serverless version, where they automatically reserve and setup a machine, which seems to be closer to the [Google Colab](https://colab.research.google.com/) model.
+[Binder](https://mybinder.org/) is a tool that provides a serverless option for Jupyter notebooks, where they automatically reserve and setup a machine behind the scenes for you, which seems to be closer to the [Google Colab](https://colab.research.google.com/) model.
 
 Let's now do a deep dive on the communication aspect.
 
