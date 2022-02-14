@@ -164,10 +164,11 @@ class Point {
 Point::~Point(void) {
     // Clean up allocated memory
 }
-
 {% endhighlight %}
 
 ### Instantiate
+
+When to use `new`:
 
 {% highlight c++ %}
 // Automatically destroyed when leaving scope
