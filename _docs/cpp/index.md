@@ -94,6 +94,26 @@ for(auto e:vec) {
 }
 {% endhighlight %}
 
+### Size
+
+{% highlight c++ %}
+v.size();
+{% endhighlight %}
+
+### Slice
+
+Getting a subset of a vector for index `a` to index `b`:
+
+{% highlight c++ %}
+std::vector<int>(v.begin() + a, v.begin() + b + 1);
+{% endhighlight %}
+
+If `b = v.size() -1`:
+
+{% highlight c++ %}
+std::vector<int>(v.begin() + a, v.end());
+{% endhighlight %}
+
 # Object-Oriented
 
 ## Class
@@ -103,14 +123,16 @@ for(auto e:vec) {
 Defining constructor outside class definition:
 
 {% highlight c++ %}
+// Point.hpp
 class Point {
     private:
         int x;
         int y;
     public:
-        Line();
+        Point();
 };
 
+// Point.cpp
 Point::Point(void) {
     x = 0;
     y = 0;
@@ -128,6 +150,22 @@ Explicit initialization:
 Point::Point(int x, int y): x(x), y(y)  {}
 {% endhighlight %}
 
+### Destructor
+
+{% highlight c++ %}
+// Point.hpp
+class Point {
+    ...
+    public:
+        ~Point();
+};
+
+// Point.cpp
+Point::~Point(void) {
+    // Clean up allocated memory
+}
+
+{% endhighlight %}
 
 ### Instantiate
 
