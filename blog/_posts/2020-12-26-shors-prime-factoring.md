@@ -177,6 +177,7 @@ Is mind-blowing. It's as if a bunch of eigenvectors are "hiding" inside $\ket{1}
 
 ## Related Posts
 
+* [Pell Equation]({{blog}}/2012/02/12/pell-equation.html) - in finding solutions to Pell's equations we also leverage continued fractions.
 * [Consistent Hashing]({{site.url}}/blog/2019/04/12/consistent-hashing.html) - this is a trivia rather than real relatedness, but I found out that [Tom Leighton](https://en.wikipedia.org/wiki/F._Thomson_Leighton) was the advisor of both [Daniel Lewin](https://en.wikipedia.org/wiki/Daniel_Lewin) (founder of Akamai, featured in that post) and Peter Shor (featured in this post).
 
 ## Appendix
