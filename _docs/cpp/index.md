@@ -178,6 +178,26 @@ Point point(10, 20);
 Point point = new Point(10, 20);
 {% endhighlight %}
 
+## Inheritance
+
+{% highlight c++ %}
+class Base {
+};
+
+// public|protected|private here makes all
+// methods from Base at most that visibility
+class Child : public Base {
+
+}
+
+// Parent constructor needs to be called
+// first thing. If processing is need before
+// that, can call a function that returns an
+// argument to Base()
+Child::Child(void) : Base() {
+}
+{% endhighlight %}
+
 # Files
 
 ## Check if file exists
