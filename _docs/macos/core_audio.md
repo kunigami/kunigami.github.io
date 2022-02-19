@@ -3,19 +3,57 @@ layout: doc
 title: "Core Audio"
 ---
 
+# Index
+{:.no_toc}
+
+1. TOC
+{:toc}
+
+
 ## High-Level Concepts
+
+Alphabetical order.
+
+### Audio Format
+
+Corresponds to how samples are structured in memory/disk. Examples include FLAC, MP3 and PCM.
+
+* **Lossiness**: lossy formats might simplify data in order to save space, e.g. MP3 vs. FLAC (lossless)
+* **Compression**: compressed formats might group frames together to save space, e.g. FLAC vs. PCM (noncompressed)
+
+### Audio Queue
+
+Responsible for getting buffers from an **Buffer Queue** and supplying it to a registered callback.
+
+### Buffer
+
+Includes a segment of memory holding audio data and metadata about this segment.
+
+### Buffer Queue
+
+Literally a queue (FIFO) of **Buffer**s.
 
 ### Channel
 
 Analogous to channel in images (RGB), digital audio can have channels for the left and right speakers, while more advanced 5.1 surround-sound formats might have 6.
 
-### Audio Queue
+### Frame
 
-TODO
+Analogous to a pixel in image. It contains the amplitudes of each **Channel** of a **Sample**.
+
+### Packets
+
+Compressed formats might groups several **Frame**s together in a packet. Different packets might have different number of frames.
+
+For uncompressed formats it's assume the number of frame per packet is 1.
+
+### Sample
+
+At a high-level, sample corresponds to a discrete snapshot of a signal at a specific point in time. More concretely we can see it as the signal's amplitude(s) + the timestamp.
 
 ### Sample Rate
 
-Frequency in which samples are obtained from analog signal (given in Hz).
+Frequency in which **Sample**s are obtained from analog signal (given in Hz).
 
 ## Code Conventions
 
