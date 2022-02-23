@@ -30,6 +30,12 @@ constexpr char s[] = "some_constant";
 std::string = to_string(10);
 {% endhighlight %}
 
+## Enum
+
+{% highlight c++ %}
+enum class MyBoolean { kYes, kNo };
+{% endhighlight %}
+
 # Collections
 
 ## Hash Map
@@ -77,6 +83,26 @@ for (auto x:h) {
 {% highlight c++ %}
 bool has_key = h.find("key") != h.end();
 {% endhighlight %}
+
+## Set
+
+
+### Initialization
+
+From literals:
+
+{% highlight c++ %}
+std::set<int> s = {4, 16, 9, 25};
+{% endhighlight %}
+
+### Remove
+
+Remove entry (in-place):
+
+{% highlight c++ %}
+s.erase(value);
+{% endhighlight %}
+
 
 ## Vector
 
@@ -219,6 +245,13 @@ namespace fs = std::filesystem;
 
 fs::create_directory("path");
 {% endhighlight %}
+
+## Create temporary file name
+
+{% highlight c++ %}
+std::string filename = std::tmpnam(nullptr);
+{% endhighlight %}
+
 
 ## Read from file
 
