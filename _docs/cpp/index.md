@@ -36,6 +36,15 @@ std::string = to_string(10);
 enum class MyBoolean { kYes, kNo };
 {% endhighlight %}
 
+## String View
+
+[C++17] Optimization for read-only strings which does not make copies on assignment.
+
+{% highlight c++ %}
+std::string_view str1{"my_string"};
+std::string_view str2{ str2 }; // No copy
+{% endhighlight %}
+
 # Collections
 
 ## Hash Map
@@ -138,6 +147,25 @@ If `b = v.size() -1`:
 
 {% highlight c++ %}
 std::vector<int>(v.begin() + a, v.end());
+{% endhighlight %}
+
+# Flow Control
+
+## Exceptions
+
+{% highlight c++ %}
+class CustomException: public std::exception
+{
+  virtual const char* what() const throw() {
+    return "My exception";
+  }
+} custom_exception;
+
+try {
+    throw custom_exception;
+} catch (const std::exception& e) {
+    std::cout << e.what() << "\n";
+}
 {% endhighlight %}
 
 # Object-Oriented

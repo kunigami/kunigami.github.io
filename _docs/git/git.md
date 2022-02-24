@@ -3,6 +3,8 @@ layout: doc
 title: "Git Cheatsheet"
 ---
 
+## Local Change management
+
 Revert changes to uncommitted file
 
 {% highlight text %}
@@ -30,7 +32,20 @@ git clean -n
 git clean -fd
 {% endhighlight %}
 
-## Branch
+Stash / Shelve single file:
+
+{% highlight text %}
+git stash -- <file>
+{% endhighlight %}
+
+Un-stash:
+
+{% highlight text %}
+git stash pop
+{% endhighlight %}
+
+
+## (Local) Branch
 
 Creates new branch `foo`:
 
