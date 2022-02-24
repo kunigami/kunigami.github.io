@@ -45,6 +45,22 @@ std::string_view str1{"my_string"};
 std::string_view str2{ str2 }; // No copy
 {% endhighlight %}
 
+## Struct
+
+{% highlight c++ %}
+struct MyStruct {
+    int x;
+    double z;
+}
+{% endhighlight %}
+
+Initialization:
+
+{% highlight c++ %}
+MyStruct my_struct = {.x = 1, .z = 0.5};
+{% endhighlight %}
+
+
 # Collections
 
 ## Hash Map
