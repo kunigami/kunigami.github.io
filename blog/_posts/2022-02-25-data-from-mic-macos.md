@@ -336,7 +336,7 @@ wavfile.write("samples.wav", sample_rate, samples)
 
 ## Code
 
-The C++ code requires linking to some MacOS frameworks so I recommend getting the XCode project from my [Github]({{github}}/) and building in XCode.
+The full C++ code is available on [Github]({{github}}/) and can be build using `make build` (you probably need the MacOS SDK that ships with XCode).
 
 ## Conclusion
 
