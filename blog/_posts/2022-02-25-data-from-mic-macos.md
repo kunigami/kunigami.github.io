@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Audio Data from Microphone in MacOS"
-tags: [lean]
+tags: [c++, macos]
 excerpt_separator: <!--more-->
 vanity: "2022-02-25-data-from-mic-macos"
 

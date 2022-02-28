@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Simple Key Logger for MacOS"
-tags: [c++]
+tags: [c++, macos]
 vanity: "2021-11-16-a-simple-key-logger"
 excerpt_separator: <!--more-->
 ---
