@@ -254,8 +254,6 @@ Point point = new Point(10, 20);
 class Base {
 };
 
-// public|protected|private here makes all
-// methods from Base at most that visibility
 class Child : public Base {
 
 }
@@ -267,6 +265,98 @@ class Child : public Base {
 Child::Child(void) : Base() {
 }
 {% endhighlight %}
+
+### Visibility
+
+One of `public|protected|private` (default is `private`). Makes all methods from `Base` the most restrictive between the inheritance visibility and the original method visibility.
+
+{% highlight c++ %}
+class Base {
+protected:
+    void f() {};
+};
+
+// ChildPrivate::f() is private
+class ChildPrivate : Base {}
+// ChildPublic::f() is protected
+class ChildPublic : public Base {}
+{% endhighlight %}
+
+For `struct` the inheritance mode is `public` by default.
+
+{% highlight c++ %}
+class Base {
+  public:
+  void f() {};
+};
+
+// ChildStruct::f() is public
+struct ChildStruct : Base {};
+{% endhighlight %}
+
+### Abstract methods
+
+If you're coming from Java, C++ version of abstract methods are pure virtual methods.
+
+{% highlight c++ %}
+class Base {
+    virtual void abstract() = 0;
+};
+{% endhighlight %}
+
+### Interface
+
+If you're coming from Java, C++ doesn't have syntax for interfaces but it can be modeles as class with all pure virtual methods.
+
+### Override methods
+
+By default C++ binds the methods to the type, even if it was re-implemented in the derived class. Example:
+
+{% highlight c++ %}
+struct Base {
+  void f() { printf("base\n"); };
+};
+
+struct Child : Base {
+  void f() { printf("child\n"); };
+};
+
+void g(Base *x) { x->f(); }
+auto x = new Child();
+g(x); // prints "base"
+{% endhighlight %}
+
+In `g()`, `f()` is bound to `Base` (type) not to `Child` (instance). To change this behavior, `f()` must be `virtual` in `Base`:
+
+{% highlight c++ %}
+struct Base {
+  virtual void fv() { printf("base\n"); };
+};
+
+struct Child : Base {
+  void fv() { printf("child\n"); };
+};
+
+void g(Base *x) { x->f(); }
+auto x = new Child();
+g(x); // prints "child"
+{% endhighlight %}
+
+It's a good practice to add `override` so that the compiler catches this subtlety:
+
+{% highlight c++ %}
+struct Base {
+  void f() {};
+  virtual void fv() {};
+};
+
+struct Child : Base {
+  // Error: Base::f() is not virtual
+  void f() override {};
+  void fv() override {}
+};
+{% endhighlight %}
+
 
 # Files
 
