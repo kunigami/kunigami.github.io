@@ -3,7 +3,7 @@ layout: post
 title: "Move Semantics in C++"
 tags: [c++]
 excerpt_separator: <!--more-->
-vanity: "2022-02-26-moving-semantics-cpp"
+vanity: "2022-03-01-moving-semantics-cpp"
 
 ---
 {% include blog_vars.html %}
