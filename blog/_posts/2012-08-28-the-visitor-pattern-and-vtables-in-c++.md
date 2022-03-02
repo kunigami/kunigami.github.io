@@ -264,11 +264,11 @@ Here, the `animal's` pointer points to `Dog`'s and not `Animal`'s. Thus, when we
 
 {% highlight cpp %}
 
-animal->emitirSom();
+animal->emitSound();
 
 {% endhighlight %}
 
-the corresponding table is looked up to find exactly which `emitSound()` to call. Note that virtual methods requires an extra indirection that may affect performance. Because of this dynamic dispatch is not performed by default unless some class defines a virtual method. On the other hand, in Java this is done by default.
+the corresponding table is looked up to find exactly which `emitSound()` to call. Note that virtual methods requires an extra indirection that may affect performance. In C++ dynamic dispatch is not performed by default unless some class defines a virtual method. On the other hand, in Java this is done by default.
 
 Let's see a final example,
 
@@ -321,11 +321,11 @@ primary-for B (0xb7141618)
 
 {% endhighlight %}
 
-Here we can see that function `A::foo` and `A::bar` appear in `A`'s vtable, but `A::baz` don't, since it was not declared virtual. On `B`'s vtable we have `A::foo`, because it was not overridden in `B`. We also have `B::bar`, although it has not been declared virtual in `B`, this property was inherited from `A::bar`. Finally, `B::baz` appears on the vtable because it was declared virtual in `B`.
+Here we can see that function `A::foo` and `A::bar` appear in `A`'s vtable, but `A::baz` doesn't, since it was not declared virtual. On `B`'s vtable we have `A::foo`, because it was not overridden in `B`. We also have `B::bar`, although it has not been declared virtual in `B`, this property was inherited from `A::bar`. Finally, `B::baz` appears on the vtable because it was declared virtual in `B`.
 
 We can also see the value that the instances of such classes will have: `vptr=((& A::_ZTV1A) + 8u)` and `vptr=((& B::_ZTV1B) + 8u)`, which is the offset to the functions' pointers on the respective tables. A nice reference for a understanding of vtables can be seen in [2].
 
 ### Referências
 
-[1] [The typeid operator](http://publib.boulder.ibm.com/infocenter/comphelp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8a.doc%2Flanguage%2Fref%2Fthe_typeid_operator.htm) (C++ only)
-[2] [LearnCpp.com – The Virtual Table](http://www.learncpp.com/cpp-tutorial/125-the-virtual-table/)
+* [1] [The typeid operator](http://publib.boulder.ibm.com/infocenter/comphelp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8a.doc%2Flanguage%2Fref%2Fthe_typeid_operator.htm) (C++ only)
+* [2] [LearnCpp.com – The Virtual Table](http://www.learncpp.com/cpp-tutorial/125-the-virtual-table/)

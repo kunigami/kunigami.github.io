@@ -308,6 +308,16 @@ class Base {
 
 If you're coming from Java, C++ doesn't have syntax for interfaces but it can be modeled as class with all pure virtual methods.
 
+{% highlight c++ %}
+class Interface {
+    virtual void foo() = 0;
+    virtual int bar() = 0;
+    virtual ~Interface() {};
+};
+{% endhighlight %}
+
+Note that we need to define the virtual destructor in this case.
+
 ### Override methods
 
 By default C++ binds the methods to the type, even if it was re-implemented in the derived class. Example:
