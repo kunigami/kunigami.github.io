@@ -129,7 +129,6 @@ In C++ we don’t have `instanceof`, but we can use the `typeid()` operator inst
 
 // Listing 4
 struct Animal {
-    virtual void foo(){};
 };
 struct Dog : public Animal {
     void bark(){
@@ -257,7 +256,7 @@ As an example, if we were to instantiate a `Dog` from **Listing 5**:
 
 {% highlight cpp %}
 
-Animal *animal = new Cachorro();
+Animal *animal = new Dog();
 
 {% endhighlight %}
 
