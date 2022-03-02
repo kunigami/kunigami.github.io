@@ -306,7 +306,7 @@ class Base {
 
 ### Interface
 
-If you're coming from Java, C++ doesn't have syntax for interfaces but it can be modeles as class with all pure virtual methods.
+If you're coming from Java, C++ doesn't have syntax for interfaces but it can be modeled as class with all pure virtual methods.
 
 ### Override methods
 
@@ -357,6 +357,7 @@ struct Child : Base {
 };
 {% endhighlight %}
 
+You can also add override when implementing pure virtual methods.
 
 # Files
 
