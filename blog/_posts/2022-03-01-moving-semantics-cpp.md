@@ -213,7 +213,7 @@ Since move semantics is not something the compiler understands, this "assume lva
 {% highlight c++ %}
 Block x;
 Block y = std::move(x);
-// we lied to the compiler about x g-> seg. fault
+// we lied to the compiler about x -> seg. fault
 std::cout << x.mem_[0] << std::endl;
 {% endhighlight %}
 
@@ -241,7 +241,7 @@ It's possible to turn off this behavior by compiling with the `-fno-elide-constr
 
 ## Conclusion
 
-In this post we learned about rvalue references and move semantics and how they're connected. Thomas Becker's *C++ Rvalue References Explained* [1] is an excellent resource that goes into this depth while being very accessible by doing a step-by-step progression.
+In this post we learned about rvalue references and move semantics and how they're connected. Thomas Becker's *C++ Rvalue References Explained* [1] is an excellent resource that goes into details while being very accessible through step-by-step progression.
 
 One key observation that made me internalize why rvalue references are useful for move semantics is that *rvalues cannot be read from*. This constraint enables more efficient operations such as moving data instead of copying. I haven't seen it explicitly called out in the articles about move semantics I read.
 
