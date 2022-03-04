@@ -79,6 +79,8 @@ Empty map:
 
 {% highlight c++ %}
 std::unordered_map<std::string, int> h;
+
+std::unordered_map<std::string, int> m = {{'a', 1}, {'b', 2}};
 {% endhighlight %}
 
 ### Access
