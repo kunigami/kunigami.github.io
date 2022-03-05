@@ -22,9 +22,11 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 ## Python
 
 * [General]({{ site.url }}/docs/python/)
+* [Audio]({{ site.url }}/docs/python/audio.html)
 * [Matplotlib]({{ site.url }}/docs/python/matplotlib.html)
 * [NumPy]({{ site.url }}/docs/python/numpy.html)
 * [Pandas]({{ site.url }}/docs/python/pandas.html)
+* [Pip]({{ site.url }}/docs/python/pip.html)
 * [Type Hints]({{ site.url }}/docs/python/types.html)
 
 ## Rust
