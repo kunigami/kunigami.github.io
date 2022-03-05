@@ -371,6 +371,33 @@ struct Child : Base {
 
 You can also add override when implementing pure virtual methods.
 
+# Template
+
+## Function
+
+{% highlight c++ %}
+template <typename T>
+T id(T x) {
+   return x;
+}
+{% endhighlight %}
+
+## Class
+
+{% highlight c++ %}
+template <typename T>
+struct Wrapper {
+    T v_;
+public:
+    Wrapper(T v) {
+      v_ = v;
+    }
+    T get() {
+      return v_;
+    }
+};
+{% endhighlight %}
+
 # Files
 
 ## Check if file exists
