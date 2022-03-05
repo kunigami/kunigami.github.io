@@ -70,13 +70,13 @@ Removing a constraint is akin to relaxing the problem and we want to minimize th
 
 ### NP-Completeness
 
-We'll prove that LRLP is NP-Complete by reducing a known NP-Complete to it. Our choice is the *0-1 Integer Linear Program Feasibility* [1]. Consider an Integer Linear Program (ILP) defined by the set of constraints
+We'll prove that LRLP is NP-Complete by reducing a known NP-Complete to it, which will be the *0-1 Integer Linear Program Feasibility* (ILPF) [1] in our case. It's defined as follow: Consider an Integer Linear Program defined by the set of constraints
 
 $$(1) \quad A\vec{x} \le b$$
 
 where $A$ is a $n \times m$ coefficient matrix of real values, $b$ is a vector $\mathbb{R}^n$ and $\vec{x}$ is a $m$-vector of 0 or 1, i.e. $\vec{x} \in \curly{0, 1}^m$. The problem consists of deciding whether there exists any $\vec{x}$ satisfying these constraints.
 
-We can solve this problem by reducing to LRLP. We include the original constraints (1) but relax the 0-1 integrality constraints by having $\vec{x} \in\mathbb{R}^m$. We then add $2m$ new constraints:
+We can solve this problem by reducing to LRLP. We include the original constraints (1) but relax the 0-1 integrality constraints to $\vec{x} \in\mathbb{R}^m$. We then add $2m$ new constraints:
 
 $$(2) \quad x_j = 1 \quad j = 1, \cdots, m$$
 
@@ -84,11 +84,11 @@ $$(3) \quad x_j = 0 \quad j = 1, \cdots, m$$
 
 Recall that an equality constraint can be implemented by 2 inequalities.
 
-Now, if the original ILP has a feasible integer solution, then it's a candidate solution to the target LRLP, satisfying all $n$ of the (1) constraints plus exactly $m$ of the constraints between (2) and (3).
+Now, if the ILPF has a feasible integer solution, then it's a candidate solution to the target LRLP, satisfying all $n$ of the (1) constraints plus exactly $m$ of the constraints between (2) and (3).
 
 Conversely, if the target LRLP can satisfy $n + m$ constraints (note this is an upper bound), it's easy to construct a feasible integer solution to the original ILP.
 
-Hence, the original ILP has a feasible solution if and only if LRLP satisfies $n + m$ constraints.
+Hence, ILPF has a feasible solution if and only if LRLP satisfies $n + m$ constraints.
 
 ## Related Posts
 
