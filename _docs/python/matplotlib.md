@@ -13,6 +13,12 @@ Syntax for common tasks I run into often. Assumes Python 3.
 1. TOC
 {:toc}
 
+# Import
+
+{% highlight python %}
+import matplotlib.pyplot as plt
+{% endhighlight %}
+
 # Templates
 
 ## Single plot
@@ -27,6 +33,14 @@ One row, two columns:
 
 {% highlight python %}
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 5))
+{% endhighlight %}
+
+# Chart Types
+
+## Line
+
+{% highlight python %}
+ax.plot(xs, ys)
 {% endhighlight %}
 
 # Properties
