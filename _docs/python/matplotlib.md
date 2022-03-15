@@ -43,6 +43,12 @@ fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 5))
 ax.plot(xs, ys)
 {% endhighlight %}
 
+## Vertical Line
+
+{% highlight python %}
+ax.plot(x, color='red')
+{% endhighlight %}
+
 # Properties
 
 ## Dimensions
