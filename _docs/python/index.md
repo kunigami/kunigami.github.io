@@ -186,6 +186,15 @@ pol = Polygon([p, q])
 print(pol.pts) # [Point(x=10, y=20), Point(x=20, y=10)]
 {% endhighlight %}
 
+### Cloning
+
+`dataclasses.replace`:
+
+{% highlight python %}
+p = Point(1, 2)
+p_copy = dataclasses.replace(p)
+{% endhighlight %}
+
 # Flow Control
 
 ## Exceptions

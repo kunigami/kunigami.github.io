@@ -398,6 +398,35 @@ public:
 };
 {% endhighlight %}
 
+## Inner Type
+
+It's possible to access the type of a template:
+
+{% highlight c++ %}
+template <typename T>
+struct Wrapper {
+    T v_;
+    using TInner = T;
+};
+
+struct WrapperInt : Wrapper<int> {
+  int get() {
+    return 0;
+  }
+};
+struct WrapperStr : Wrapper<std::string> {
+  std::string get() {
+    std::string s = "str";
+    return s;
+  }
+};
+
+template <typename T, typename TType = typename T::TInner>
+TType getter(T val) {
+  return val.get();
+}
+{% endhighlight %}
+
 # Files
 
 ## Check if file exists
