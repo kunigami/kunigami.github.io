@@ -249,6 +249,30 @@ with open(filename, "r") as file:
     print(file.readlines())
 {% endhighlight %}
 
+# Functions
+
+## Decorators
+
+A decorator is basically a function transformer. Basic template:
+
+{% highlight python %}
+import functools
+def my_decorator(f):
+    @functools.wraps(f)
+    def wrapper(*args, **kwargs):
+        # pre-process
+        ...
+        r = f(*args, **kwargs)
+        # post-process
+        ...
+        return r
+    return wrapper
+
+@my_decorator
+def my_func():
+    pass
+{% endhighlight %}
+
 # Other Data Structures
 
 ## Queue
