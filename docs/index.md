@@ -19,6 +19,10 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [NPM]({{ site.url }}/docs/javascript/npm.html)
 
+## Lean
+
+* [General]({{ site.url }}/docs/lean/)
+
 ## Python
 
 * [General]({{ site.url }}/docs/python/)
