@@ -19,6 +19,14 @@ title: "Lean Cheatsheet"
 * It will try to find the first expression that matches `expr1`
 * It will replace that expression everywhere in the current state.
 
+Syntax:
+
+{% highlight lean %}
+axiom foo : a = b
+...
+rw foo -- replaces a with b
+{% endhighlight %}
+
 Example:
 
 {% highlight lean %}
@@ -35,6 +43,18 @@ begin
   -- ...
 
 end
+{% endhighlight %}
+
+### Reverse
+
+Replace `expr2` with `expr1` instead:
+
+Syntax:
+
+{% highlight lean %}
+axiom foo : a = b
+...
+rw ←foo -- replaces b with a
 {% endhighlight %}
 
 # Syntax

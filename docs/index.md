@@ -22,6 +22,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 ## Lean
 
 * [General]({{ site.url }}/docs/lean/)
+* [Proofs]({{ site.url }}/docs/lean/proofs.html)
 
 ## Python
 
