@@ -13,13 +13,25 @@ Syntax for common tasks I run into often. Assumes C++17.
 
 # Basic Types
 
-## Constants
+## Array
 
-Constant string:
+Literal initialization:
 
 {% highlight c++ %}
-constexpr char s[] = "some_constant";
+int int_array[5] = { 1, 2, 3, 4, 5 };
 {% endhighlight %}
+
+Array of objects, initialize later:
+
+{% highlight c++ %}
+MyClass class_array[3];
+MyClass c;
+class_array[1] = c;
+{% endhighlight %}
+
+### Array vs std::array
+
+`std::array()` has friendlier semantics ([discussion](https://stackoverflow.com/questions/30263303/stdarray-vs-array-performance)).
 
 ## Conversions
 
@@ -36,7 +48,18 @@ std::string = to_string(10);
 enum class MyBoolean { kYes, kNo };
 {% endhighlight %}
 
-## String View
+## Strings
+
+### Literal
+
+> The constexpr specifier declares that it is possible to evaluate the value of the function or variable at compile time.
+
+{% highlight c++ %}
+constexpr char s[] = "some_constant";
+{% endhighlight %}
+
+
+### View
 
 [C++17] Optimization for read-only strings which does not make copies on assignment.
 
@@ -165,6 +188,27 @@ If `b = v.size() -1`:
 
 {% highlight c++ %}
 std::vector<int>(v.begin() + a, v.end());
+{% endhighlight %}
+
+# Memory
+
+## Shared Pointers
+
+Creating pointers:
+
+{% highlight c++ %}
+struct C {
+  C(int i) : i(i) {}
+  int i;
+}
+auto pt = std::make_shared<C>(1); // overload (1)
+{% endhighlight %}
+
+De-referencing is the same as a regular pointer:
+
+{% highlight c++ %}
+std::shared_ptr<int> pt (new int);
+std::cout << *pt << std::endl;
 {% endhighlight %}
 
 # Flow Control
@@ -522,4 +566,24 @@ auto dec = [&target]() {
 };
 dec();
 target; // 4
+{% endhighlight %}
+
+By default the reference binding is `const`. To change it use `mutable`:
+
+## Passing Function As Parameter
+
+`std::function<>`:
+
+{% highlight c++ %}
+std::vector<int> map(std::vector<int> v, std::function<int(int)> f) {
+  std::vector<int> v2;
+  for(auto e:v) {
+    v2.push_back(f(e));
+  }
+  return v2;
+}
+
+std::vector<int> vec = {1, 2, 3};
+auto f = [](int x) { return 2 * x; };
+auto v2 = map(vec, f); // v2 = {2, 4, 6}
 {% endhighlight %}
