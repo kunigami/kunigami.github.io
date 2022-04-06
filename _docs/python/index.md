@@ -195,6 +195,40 @@ p = Point(1, 2)
 p_copy = dataclasses.replace(p)
 {% endhighlight %}
 
+### Immutable
+
+Prevents fields from being changed:
+
+{% highlight python %}
+@dataclass(frozen=True)
+class Wrapper:
+    v: str = 'abc'
+
+    def __init__(self):
+        self.v = 'cde' # error
+
+w = Wrapper()
+w.v = 'cde' # error
+{% endhighlight %}
+
+It's possible to bypass though:
+
+
+{% highlight python %}
+@dataclass(frozen=True)
+class Wrapper:
+    v: str = 'abc'
+
+    def __init__(self):
+        # internal backdoor
+        object.__setattr__(self, "v", "backdoor")
+
+w = Wrapper()
+# external backdoor
+object.__setattr__(w, "foo", 'backdoor')
+{% endhighlight %}
+
+
 # Flow Control
 
 ## Exceptions
