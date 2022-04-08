@@ -27,10 +27,8 @@ For $$C \ge 3$$, the game is shown to be NP-hard even if one is allowed to start
 
 There are two greedy approaches one might try:
 
-> 1. Pick the color that maximizes the number of cells covered.
->
-> 2. The most frequent color in the perimeter of the current region.
->
+1. Pick the color that maximizes the number of cells covered.
+2. The most frequent color in the perimeter of the current region.
 
 
 In Figure 2, we have an instance where this strategies can be arbitrarily bad [1]. They use $$n$$ colors while the optimal solution is 3.
@@ -42,12 +40,7 @@ In Figure 2, we have an instance where this strategies can be arbitrarily bad [1
 
 ### Approximation algorithms
 
-Surprisingly, the following naïve strategy:
-
-> Cycle through all colors until the board is colored.
-
-
-gives a solution with a value within a factor of the optimal value.
+Surprisingly, the naive strategy of cycling through all colors until the board is colored gives a solution with a value within a factor of the optimal value.
 
 More specifically, if $$L$$ is the optimal number of movements and $$C$$ the number of available colors, then this algorithm solves the problem with no more than $$C L$$ movements. To see why, let $$\{c_1, c_2, \cdots, c_L \}$$ be the color sequence of the optimal solution. In the worst case, each cycle covers at least one color in the sequence. Thus, this algorithm is $$C$$ approximated.
 
@@ -61,13 +54,11 @@ They also give a lower bound, proving that if the number of colors is arbitrary,
 
 An upper bound for the number of movements required for solving any $$n \times n$$ is given by the following theorem:
 
-> Theorem 1: There exists a polynomial time algorithm for Flood-It which can flood any n x n board with C colors in at most $$2n + (\sqrt{2C})n + C$$ moves.
-
+**Theorem 1.** *There exists a polynomial time algorithm for Flood-It which can flood any n x n board with C colors in at most $$2n + (\sqrt{2C})n + C$$ moves.*
 
 Conversely, we can set an lower bound for a $$n \times n$$ board:
 
-> Theorem 2: For $$2 \le C \le n^2$$, there exists an $$n \times n$$ board with (up to) $$c$$ colors which requires at least $$(\sqrt{C - 1})n/2 - C/2$$ moves to flood.
-
+**Theorem 2.** *For $$2 \le C \le n^2$$, there exists an $$n \times n$$ board with (up to) $$c$$ colors which requires at least $$(\sqrt{C - 1})n/2 - C/2$$ moves to flood.*
 
 That is, we can't expect an algorithm to perform much better than the one from Theorem 1 for arbitrary boards.
 
@@ -154,16 +145,19 @@ The second trick is based on the assumption that in general, the optimal number 
 
 Even with these changes, we were not able to solve the instance in Figure 3. The 5x5 instance obtained from the first rows and cols of the matrix is solved in 2 minutes using 9 colors.
 
-`0 0 1 2 2
+{% highlight text %}
+0 0 1 2 2
 3 4 0 0 1
 0 0 0 2 4
 1 3 3 3 4
 3 0 4 0 2
-`
+{% endhighlight %}
 
 Solution:
 
-`1 2 0 1 3 0 3 4 2 `
+{% highlight text %}
+1 2 0 1 3 0 3 4 2
+{% endhighlight %}
 
 For the 6x6 instance obtained the same way, the solver does not find the optimal solution in an hour.
 
