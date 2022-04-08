@@ -22,7 +22,7 @@ A lot of these will boil down to personal taste, so keep the salt shaker handy.
 
 ## Pass by Value vs by Reference
 
-In high-level languages like JavaScript and Python, variables containing primitive types are passed by value while other types are passed by reference. In C++ variables are always passed by value unless we pass pointers or references:
+In high-level languages like JavaScript and Python, variables containing primitive types are passed by value while other types are passed by reference. In C++ variables are always passed by value unless we use pointers or references:
 
 {% highlight c++ %}
 struct C {}
@@ -38,12 +38,12 @@ void by_pointer(C* x) {}
 by_pointer(&c);
 {% endhighlight %}
 
-Implicit in the pass-by-value is a call to the copy constructor. We can see it being called by defining `C(const C&)`:
+Implicit in the pass-by-value is a call to the copy constructor. We can see it being called by printing a message the copy constructor `C(const C&)`:
 
 {% highlight c++ %}
 struct C {
   C(const C&c) {
-    cout << "Making a copy" << endl;
+    std::cout << "Making a copy" << std::endl;
   }
 }
 
@@ -175,7 +175,7 @@ With the caveat of potential boilerplate and some care to avoid copying when mod
 
 ## Smart Pointers vs. Raw Pointers
 
-One other scenario where we can't use references is when returning a object on the heap (created via `new`), and we have to return a pointer (Item 21 [1]). The problem with returning a pointer is that someone needs to `delete` the object in the heap, otherwise we incur in memory leak.
+One other scenario where we can't use references is when returning an object on the heap (created via `new`), so we have to return a pointer (Item 21 in [1]). The problem with returning a raw pointer is that someone needs to `delete` the object in the heap, otherwise we incur in memory leak.
 
 {% highlight c++ %}
 C* get_ptr() {
@@ -254,7 +254,7 @@ auto c3 = c2;
 
 One potential pitfall of `unique_ptr` over `shared_ptr` is that the former doesn't keep information about the type used to create it. This means when the pointer gets out of scope, the *current* type's destructor is used [7].
 
-For example, suppose we have class `D` deriving from `C`, when when we create a smart pointer we return it as a pointer to `C`:
+For example, suppose we have class `D` deriving from `C`, and that when we create a smart pointer we return it as a pointer to `C`:
 
 {% highlight c++ %}
 struct C {
@@ -289,16 +289,10 @@ struct D : C {
   ~D() { std::cout << "destroy D" << std::endl; }
 };
 
-std::shared_ptr<C> get_shared_d() {
-  return std::make_shared<D>();
-}
 std::unique_ptr<C> get_unique_d() {
   return std::make_unique<D>();
 }
 
-{
-  auto d1 = get_shared_d();
-} // calls D + C destructors
 {
   auto d2 = get_unique_d();
 } // calls D + C destructors
@@ -316,7 +310,7 @@ In this post we came up with 4 heuristics to help deciding between different mem
 
 The idea is that these heuristics are very general with small exceptions, so they can be remembered more easily. The problem with them is that they leave out a lot of nuance and can be overly prescriptive.
 
-As we gain more experience with C++ we get a better "feel" for when to use what. As with a lot of subjective recommendation I value consistency more than strong opinions so I'd rather stick to existing patterns than follow my own heuristics.
+As we gain more experience with C++ we get a better "feel" for when to use what. As with a lot of subjective recommendation I value consistency more than strong opinions so I'd rather stick to existing patterns in a codebase than push my own heuristics.
 
 ## References
 
@@ -324,6 +318,6 @@ As we gain more experience with C++ we get a better "feel" for when to use what.
 * [[2](https://stackoverflow.com/questions/7058339/when-to-use-references-vs-pointers )] StackOverflow: When to use references vs. pointers
 * [[3](https://stackoverflow.com/questions/45264601/does-an-stdoptional-parameter-create-a-copy)] StackOverflow: Does an std::optional parameter create a copy?
 * [[4](https://www.fluentcpp.com/2018/10/05/pros-cons-optional-references/)] Fluent C++: Why Optional References Didn’t Make It In C++17
-* [[5](https://stackoverflow.com/questions/6675651/when-should-i-use-raw-pointers-over-smart-pointers)] When should I use raw pointers over smart pointers?
+* [[5](https://stackoverflow.com/questions/6675651/when-should-i-use-raw-pointers-over-smart-pointers)] StackOverflow: When should I use raw pointers over smart pointers?
 * [[6]({{blog}}/2022/03/01/moving-semantics-cpp.html)] NP-Incompleteness: Move Semantics in C++
-* [[7](https://stackoverflow.com/questions/6876751/differences-between-unique-ptr-and-shared-ptr)] Differences between unique_ptr and shared_ptr [duplicate]
+* [[7](https://stackoverflow.com/questions/6876751/differences-between-unique-ptr-and-shared-ptr)] StackOverflow: Differences between unique_ptr and shared_ptr
