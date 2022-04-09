@@ -6,7 +6,7 @@ title: Guilherme Kunigami
 # Guilherme Kunigami
 
 I'm a Software Engineer based in the San Francisco Bay Area,
-currently working with [web development](https://www.linkedin.com/in/kunigami). I
+currently working with [Stream Processing](https://www.linkedin.com/in/kunigami). I
 like to learn and build things.
 
 ## Pages
