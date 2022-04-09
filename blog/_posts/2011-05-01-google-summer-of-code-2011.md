@@ -61,3 +61,7 @@ The project itself is quite challenging as until a month ago I had never heard o
 I am very excited about this project especially as it involves the study of ray tracing, which I have a great interest in. Ideally I would like to finish this project and get involved with other BRL-CAD projects (or other organizations like Yafaray) involving ray tracers.
 
 I will focus the blog posts on this project, taking the opportunity to write about its progress. I hope it will be all right!
+
+## Notes
+
+This is a review and translation done in 2022 of my original post in Portuguese: [Google Summer of Code 2011](https://kuniga.wordpress.com/2011/05/01/google-summer-of-code-2011/).
