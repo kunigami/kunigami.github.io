@@ -17,6 +17,7 @@ const tagsHierarchy = {
         'computational complexity',
         'computational geometry',
         'computer architecture',
+        'computer graphics',
         'computer network',
         'computer security',
         'data structures',
