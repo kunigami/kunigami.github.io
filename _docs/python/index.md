@@ -283,6 +283,21 @@ with open(filename, "r") as file:
     print(file.readlines())
 {% endhighlight %}
 
+## Write file
+
+Temporary file:
+
+{% highlight python %}
+# Note: file gets deleted once it exits the scope
+tempfile.NamedTemporaryFile() as file:
+    file.write("Hello World\n")
+
+    # make sure to flush if something will read from it
+    file.flush()
+    read_my_file(file.name)
+{% endhighlight %}
+
+
 # Functions
 
 ## Decorators
@@ -305,6 +320,30 @@ def my_decorator(f):
 @my_decorator
 def my_func():
     pass
+{% endhighlight %}
+
+# Date and Time
+
+Current time:
+
+{% highlight python %}
+datetime.now()
+{% endhighlight %}
+
+Adding/subtracting time:
+
+{% highlight python %}
+datetime.now() + datetime.timedelta(days=1)
+{% endhighlight %}
+
+## Elapsed time
+
+Wall-clock time in seconds:
+
+{% highlight python %}
+start = time.time()
+call()
+elapsed_secs = time.time() - start
 {% endhighlight %}
 
 # Other Data Structures
