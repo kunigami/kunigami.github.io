@@ -55,7 +55,11 @@ def dvd (a b : Nat) : Prop :=
 
 instance : has_dvd Nat := ⟨dvd⟩
 
-
+lemma one_dvd_n (n : Nat) : 1 ∣ n :=
+begin
+use n,
+rw one_mul,
+end
 
 def is_gcd (a b g: Nat) : Prop :=
   (g ∣ a) ∧ (g ∣ b) ∧ (∀ x: Nat, (x ∣ a) ∧ (x ∣ b) -> (x ∣ g))
@@ -63,65 +67,70 @@ def is_gcd (a b g: Nat) : Prop :=
 
 
 
-lemma is_gcd_for_euclid (a b d q: Nat): is_gcd b (a - q * b) d -> is_gcd a b d :=
+lemma is_gcd_for_euclid (a b q g: Nat):
+  is_gcd b (a - q * b) g -> is_gcd a b g :=
 begin
--- lhs
-rw is_gcd,
--- rhs
-rw is_gcd,
-intro h1,
-cases h1 with h1b hrest,
-cases hrest with h1a h1g,
+-- (1) replace by definition
+repeat {rw is_gcd},
 
+-- (2) add to hypothesis
+intro H,
+cases H with H1 hrest,
+cases hrest with H2 H3,
+
+-- (3) break goal into 3
 repeat {apply and.intro},
 
 -- Goal 1: d | a
-cases h1a with k1 eq1,
-cases h1b with k2 eq2,
-use k1 + k2 * q,
-rw mul_dist_add,
-rw← eq1,
-rw mul_assoc,
-rw← eq2,
-rw mul_comm,
-rw sub_assoc,
-rw sub_eq,
-rw sub_zero,
+  cases H2 with k1 eq1,
+  cases H1 with k2 eq2,
+  use k1 + k2 * q,
+  rw mul_dist_add,
+  rw← eq1,
+  rw mul_assoc,
+  rw← eq2,
+  rw mul_comm,
+  rw sub_assoc,
+  rw sub_eq,
+  rw sub_zero,
 
 -- Goal 2: d | b
-exact h1b,
+  exact H1,
 
 -- Goal 3: ∀ (x : Nat), (x ∣ a) ∧ (x ∣ b) → (x ∣ d)
-intro x2,
-intro h2, -- assume (x ∣ a) ∧ (x ∣ b)
-cases h2 with h2a h2b,
+  intro x1,
+  -- (4) assume (x1 ∣ a) ∧ (x1 ∣ b)
+  intro G3H,
+  cases G3H with G3H1 G3H2,
 
--- wolo means x2 | (a - q * b)
---have wolo := x2 * (k2 - q * k1) = a - q * b,
+  -- (5) use x1 in
+  -- ∀ (x : Nat), x ∣ b ∧ x ∣ a - q * b → x ∣ g,
+  specialize H3 x1,
 
+  -- (6) turn (x1 ∣ g) into (x1 ∣ b) ∧ (x1 ∣ a - q * b)
+  apply H3,
+  repeat {apply and.intro},
 
-specialize h1g x2,
--- use h1g with [h2a] + [wolo] to arrive at x2 | d
-apply h1g,
-repeat {apply and.intro},
-exact h2b,
+    -- Goal 3.1: (x1 ∣ b)
+    exact G3H2,
 
-
-
-cases h2a with k1 eq3,
-cases h2b with k2 eq4,
-use k1 - q * k2,
-rw mul_dist_sub,
-rw← eq3,
-rw mul_comm q k2,
-rw mul_assoc,
-rw← eq4,
-rw mul_comm,
-
-
+    -- Goal 3.2: (x1 ∣ a - q * b)
+    cases G3H1 with k3 eq3,
+    cases G3H2 with k4 eq4,
+    use k3 - q * k4,
+    rw mul_dist_sub,
+    rw← eq3,
+    rw mul_comm q k4,
+    rw mul_assoc,
+    rw← eq4,
+    rw mul_comm,
 end
 
-def euclid : Nat → Nat → Nat
-  |
-
 end sb
+
+open nat
+
+def gcd : nat → nat → nat
+| 0        a := a
+| (succ b) a := have a % succ b < succ b, from mod_lt a (succ_pos b),
+                gcd (a % succ b) (succ b)
