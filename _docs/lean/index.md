@@ -11,7 +11,80 @@ title: "Lean Cheatsheet"
 1. TOC
 {:toc}
 
+# Syntax
+
+## Inductive Type
+
+{% highlight lean %}
+inductive Nat
+| zero : Nat
+| succ (n : Nat) : Nat
+{% endhighlight %}
+
+## Function
+
+{% highlight lean %}
+def inc (x: nat): nat := x + 1
+{% endhighlight %}
+
+Alternative: pattern matching.
+
+{% highlight lean %}
+def add : nat → nat → nat
+| m 0 := m
+| m (succ n) := succ (add m n)
+{% endhighlight %}
+
+### Function Composition
+
+{% highlight lean %}
+def inc (x: nat): nat := x + 1
+def dbl (x: nat): nat := 2 * x
+def f := dbl ∘ inc
+#eval f 3 -- prints 8
+{% endhighlight %}
+
+## Inference
+
+Typing an underscore in an expression asks Lean to infer a suitable value for the expression and fill it in automatically.
+
+
 # Tactics
+
+## apply
+
+Given goal `b` and hypothesis `h: a -> b`, `apply h` turns goal `b` into `a`.
+
+## assumption
+
+The assumption tactic looks through the assumptions in context of the current goal, and if there is one matching the conclusion, it applies it.
+
+{% highlight lean %}
+variables x y z w : ℕ
+
+example (h₁ : x = y) (h₂ : y = z) (h₃ : z = w) : x = w :=
+begin
+  apply eq.trans h₁, -- y = w
+  apply eq.trans h₂, -- z = w
+  assumption         -- applied h₃
+end
+{% endhighlight %}
+
+## cases
+
+Split a hyposesis of the form a ^ b into two hypothesis a and b.
+
+## have
+
+have q := f p,
+https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/?world=6&level=7
+## intro
+
+If the current goal is `a → b`, `intro h` assumes `a` is true (adding as hypothesis `h`) and the goal becomes `b`.
+
+## revert
+
+If there's a hypothesis `h: a → b` and the current goal is `b`, `revert h`, turns the goal into `a → b`.
 
 ## rewrite (rw)
 
@@ -45,7 +118,7 @@ begin
 end
 {% endhighlight %}
 
-### Reverse
+### reversed rewrite
 
 Replace `expr2` with `expr1` instead:
 
@@ -57,20 +130,22 @@ axiom foo : a = b
 rw ←foo -- replaces b with a
 {% endhighlight %}
 
-# Syntax
+## split
 
-## Inductive Type
+If the current goal is `a ∧ b`, `split` generates 2 goals `a` and `b`. (Same as `apply and.intro`)
 
-{% highlight lean %}
-inductive Nat
-| zero : Nat
-| succ (n : Nat) : Nat
-{% endhighlight %}
+# Tactic Combinators
 
-## Function
+## repeat
+
+Executes a tactic while it's applicable. Example:
 
 {% highlight lean %}
-def add : Nat → Nat → Nat
-| m 0 := m
-| m (succ n) := succ (m + n)
+repeat {rw h}
 {% endhighlight %}
+
+## References
+
+* https://leanprover.github.io/theorem_proving_in_lean/tactics.html
+* https://leanprover.github.io/reference/tactics.html
+* https://leanprover-community.github.io//img/lean-tactics.pdf

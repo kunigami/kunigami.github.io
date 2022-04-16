@@ -85,6 +85,18 @@ rw hk,
 end
 {% endhighlight %}
 
+# Subtraction
+
+Truncated subtraction: if $n < m$ we assume $n = m = 0$.
+
+{% highlight lean %}
+def sub : Nat → Nat → Nat
+  | (succ n) (succ m) := sub n m
+  | n m := n
+
+instance : has_sub Nat := ⟨sub⟩
+{% endhighlight %}
+
 # Multiplication
 
 {% highlight lean %}
