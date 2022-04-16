@@ -218,7 +218,7 @@ In (1) we first replace both instances of `gcd` with their definition, which are
 * `G2 = (g ∣ b)`
 * `G3 = ∀ x: Nat, (x ∣ a) ∧ (x ∣ b) → (x ∣ g)`
 
-At (2) we assume the left side of the implication is true and make that our hypothesis `h1 = H1 ∧ H2 ∧ H3`. We want to show that if `h1` is true, `G1 ∧ G2 ∧ G3` is true too. We further split `h1` into each a hypothesis for each operand, `h1b = H1`, `h1a = H2` and `h1g = H3`. We can do this because if `H1 ∧ H2 ∧ H3` is true, then `H1`, `H2` and `H3` must be true.
+At (2) we assume the left side of the implication is true and make that our hypothesis `H = H1 ∧ H2 ∧ H3`. We want to show that if `H` is true, `G1 ∧ G2 ∧ G3` is true too. We further split `H` into each a hypothesis for each operand. We can do this because if `H1 ∧ H2 ∧ H3` is true, then `H1`, `H2` and `H3` must be true.
 
 In (3) we break the current goal `G1 ∧ G2 ∧ G3` into 3 goals, `G1`, `G2` and `G3`. If we prove each of them is true separately, we can conclude `G1 ∧ G2 ∧ G3` is also true.
 
