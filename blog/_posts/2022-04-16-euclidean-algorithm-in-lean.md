@@ -17,9 +17,9 @@ vanity: "2022-04-16-euclidean-algorithm-in-lean"
 
 Euclid of Alexandria was a Greek mathematician and is considered the father of Geometry. He is thought to have lived in Alexandria, Egypt, during the Ptolemaic reign [1].
 
-His book *Elements* contains a collection of definitions, theorems and proofs and known for its mathematical rigour. Among them is an algorithm for computing the greatest common divisor (GCD) of two natural numbers, simply known as the *Euclidean algorithm*.
+His book *Elements* contains a collection of definitions, theorems and proofs and is known for its mathematical rigour. In the book is also an algorithm for computing the greatest common divisor (GCD) of two natural numbers, now known simply as the *Euclidean algorithm*.
 
-In this post we'll use Lean to prove a property of GCD and is the basis of the Euclidean algorithm. We'll provide a proof using our own version of the natural numbers for educational purposes, extending the work started in [Peano's Axioms]({{blog}}/2022/01/26/peano_axioms_lean.html).
+In this post we'll use Lean to prove a property of GCD and which is the basis for the Euclidean algorithm. We'll write a proof using our own version of the natural numbers for educational purposes, extending the work started in [Peano's Axioms]({{blog}}/2022/01/26/peano_axioms_lean.html).
 
 <!--more-->
 
