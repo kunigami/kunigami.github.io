@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Log Structured Merge Trees"
-tags: [data structures]
+tags: [data structures, databases]
 ---
 
 In this post we'll discuss a data structure called Log Structured Merge Trees or LSM Trees for short. It provides a good alternative to structures like B+ Trees when the use case is more write-intensive.
 
 According to [1], hardware advances are doing more for read performance than they are for writes. Thus it makes sense to select a write-optimised file structure.
 
-### B+ Trees and Append Logs
+## B+ Trees and Append Logs
 
 B+ Trees add structure to data in such a way that the read operation is efficient. It organizes the data in a tree structure and performs regular rebalancing to keep the tree height small so that we never need to look up too many entries to find a record.
 
@@ -20,7 +20,7 @@ The LSM Tree aims to combine the best of both worlds to achieve better write thr
 
 First we'll describe the original version of LSM Trees and then an improved version with better performance for real world applications and used by databases like LevelDB [4].
 
-### LSM Trees
+## LSM Trees
 
 Let's study LSM Trees applies to the implementation of a key-value database. Writes are initially done to an in-memory structure called **memtable, **where the keys are kept sorted (random access of RAM is not expensive). Once the table "fills up", it's persisted in disk as an immutable (read-only) file.
 
@@ -47,7 +47,7 @@ The main disadvantage of this method is that once the files get past a certain s
 
 This resembles the discussion of [amortized analysis]({{site.url}}/blog/2017/07/09/eliminating-amortization.html) for data structures [5]. We saw that while amortized complexity may yield efficient average performance of a data structure, there are situations where we cannot afford the worst case scenario, even if it happens very rarely.
 
-### LSM with Level Compaction
+## LSM with Level Compaction
 
 An alternative approach to work around expensive worst case scenarios is to keep the file sizes small (under 2MB) and divide them into levels. Excluding the first level which is special, the set of keys each two files at a given level contain must be disjoint, that is, a given **key cannot appear in more than one file at the same level**. Each level can contain multiple files, but the total size of the files should be under a limit. Each level is k times larger than the previous one. In LevelDB [4], level `L` has a (`10^L`) MB size limit (that is, 10MB for level 1, 100MB for level 2, etc).
 
@@ -58,8 +58,7 @@ An alternative approach to work around expensive worst case scenarios is to keep
     <figcaption> Figure 4: Promotion from Level 0 to Level 1</figcaption>
 </figure>
 
-**Details**
-
+### Details
 
 When merging, to detect which files contain a given key, we can use [Bloom filters]({{site.url}}/blog/2015/01/29/bloom-filters.html) for each file. Recall that a bloom filter allows us to check whether a given key belongs to a set with low memory usage. If it says the key is not in the set, we know it's correct, while if it says it is in the set, then there's a chance it is wrong. So we can quickly check whether a given key belongs to a file with low memory footprint.
 
@@ -69,21 +68,19 @@ To select which file to be merged with the next level we use a [round-robin](htt
 
 When outputting files from the merge operation, we might output files with less than 2MB in case we detect the current file would overlap with too many files (in LevelDB it's 10) in the next level. This is to *avoid having to merge too many files when this file gets promoted* in the future.
 
-**Cost Analysis**
-
+### Cost Analysis
 
 Since the files sizes are bounded to 2MB, merging files is a relatively cheap operation. We saw above that we can limit the file to not contain too many duplicate keys with the files at the next level, so we'll only have to merge around 11 files, for a total of 11MB of data, so we can easily do the merge sort in memory.
 
 The promotion might also cascade through the next levels since once we promote a file from level `t` to `t+1`, it might overflow level `t+1`, which will require another promotion as well. This in fact will be common because merging only moves off 2MB worth of data to the next level, so it will require a promotion the next time it receives a new file from the level below (ignoring the fact that keys get overwritten during the merge). Fortunately the number of levels `L` grows `O(log n)` the size of the data. So for LevelDB, where the first level size limit is 100MB, even for a disk with 100TB capacity, we would still need only about 8 levels.
 
-**Reads**
-
+### Reads
 
 The fact that each key belongs to at most one file at each level allows us to keep an index (e.g. a hash table in disk) of keys to files for each level. (This of course excludes the first level, but it has a small number of files, so linear search is not expensive).
 
 One interesting property is that each level acts as some sort of write-through cache. Whenever a key gets updated, it's inserted at a file at lower levels. It will take many promotions for it to be placed at a higher level with other files. This means that searching for a key that has been recently updated will require scanning very few levels or smaller indexes since it will be found at lower levels.
 
-### References
+## References
 
 * [[1](http://www.benstopford.com/2015/02/14/log-structured-merge-trees/)] ben stopford - Log Structured Merge Trees
 * [[2](https://www.datastax.com/dev/blog/leveled-compaction-in-apache-cassandra)] Datastax - Leveled Compaction in Apache Cassandra
