@@ -88,6 +88,22 @@ xs = sorted(d.items(), key=lambda x: x[1])
 s = {1, 2, 3}
 {% endhighlight %}
 
+Empty:
+
+{% highlight python %}
+s = set()
+{% endhighlight %}
+
+Note that `s = {}` creates an empty dictionary.
+
+### Insert
+
+Add/insert
+
+{% highlight python %}
+s.add(4)
+{% endhighlight %}
+
 ### Difference
 
 {% highlight python %}

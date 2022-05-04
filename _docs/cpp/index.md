@@ -572,7 +572,7 @@ By default the reference binding is `const`. To change it use `mutable`:
 
 ## Passing Function As Parameter
 
-`std::function<>`:
+Lambda:
 
 {% highlight c++ %}
 std::vector<int> map(std::vector<int> v, std::function<int(int)> f) {
@@ -586,4 +586,29 @@ std::vector<int> map(std::vector<int> v, std::function<int(int)> f) {
 std::vector<int> vec = {1, 2, 3};
 auto f = [](int x) { return 2 * x; };
 auto v2 = map(vec, f); // v2 = {2, 4, 6}
+{% endhighlight %}
+
+Class method:
+
+{% highlight c++ %}
+struct Caller {
+  std::function<int(int)> cb_;
+  Caller(std::function<int(int)> cb) : cb_(cb) {}
+
+  int call(int x) {
+    return cb_(x);
+  }
+};
+
+struct K {
+  Caller c_;
+  K() : c_(std::bind(&K::f, this, std::placeholders::_1)) {}
+
+  int f(int x) {
+    return x + 1;
+  }
+};
+
+auto obj = K();
+cout << obj.c_.call(3) << endl;
 {% endhighlight %}
