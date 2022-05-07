@@ -15,7 +15,7 @@ const categories_to_icon = {
 }
 
 function makeIcon(params) {
-  const icon_name = categories_to_icon[params.category] || 'map-marker';
+  const icon_name = 'map-marker';
   const html = `<i class="fas fa-${icon_name} fa-2x"></i>`;
 
   let className = 'markerIcon';
