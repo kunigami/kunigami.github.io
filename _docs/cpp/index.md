@@ -294,6 +294,19 @@ Point point(10, 20);
 Point point = new Point(10, 20);
 {% endhighlight %}
 
+### Methods
+
+**Read-only method.** Add const after function signature.
+
+{% highlight c++ %}
+struct C {
+  void my_method() const {
+    // Cannot modify x ()
+  }
+  int x;
+};
+{% endhighlight %}
+
 ## Inheritance
 
 {% highlight c++ %}
