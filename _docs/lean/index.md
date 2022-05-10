@@ -144,6 +144,66 @@ Executes a tactic while it's applicable. Example:
 repeat {rw h}
 {% endhighlight %}
 
+## How To?
+
+### Assume the left-hand side of an implication in the goal
+
+If the goal is of the form `⊢ x → y` we add `x` to our hypothesis and prove `y`:
+
+{% highlight lean %}
+-- ⊢ x → y
+intro h
+-- h: x
+-- ⊢ y
+{% endhighlight %}
+
+
+### Bind a value to ∀ in the goal
+
+If the goal is of the form `⊢ ∀ x, f(x)` we can bind `x` to some specific variable `y` and prove the goal for it:
+
+{% highlight lean %}
+-- ⊢ ∀ x, f(x)
+intro y
+-- y
+-- ⊢ f(y)
+{% endhighlight %}
+
+
+### Bind a value to ∃ in the goal
+
+If the goal is of the form `⊢ ∃ x, f(x)` we can replace with a specific instance via `existsi`:
+
+{% highlight lean %}
+-- ⊢ ∃ x, f(x)
+existsi y
+-- ⊢ y, f(y)
+{% endhighlight %}
+
+
+### Bind a value to ∀ in a hypothesis
+
+If we have a hypothesis `H: ∀ x, f(x)`, we can create a new hypothesis binding `x` with some instance via `have Hy := H y`:
+
+
+{% highlight lean %}
+-- : H: ∀ x, f(x)
+have H2 := H y
+-- Hy: y, f(y)
+{% endhighlight %}
+
+### Bind a value to ∃ in a hypothesis
+
+If we have a hypothesis `H: ∃ x, f(x)`, we can introduce some `y` and create a new hypothesis that is `H` applied to `y`:
+
+
+{% highlight lean %}
+-- : H: ∃ x, f(x)
+cases H with y Hy,
+-- Hy: y, f(y)
+-- y
+{% endhighlight %}
+
 ## References
 
 * https://leanprover.github.io/theorem_proving_in_lean/tactics.html
