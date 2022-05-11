@@ -484,6 +484,166 @@ TType getter(T val) {
 }
 {% endhighlight %}
 
+## Specialization
+
+### Type alias
+
+{% highlight c++ %}
+template <typename T>
+struct Generic {
+  T v_;
+};
+
+using Int = Generic<int>;
+{% endhighlight %}
+
+### Implementation
+
+In this setup the generic class acts almost like a interface.
+
+{% highlight c++ %}
+template <typename T>
+struct Cast {
+  static T cast(void *ptr);
+};
+
+template <>
+struct Cast<bool> {
+  static bool cast(void *ptr) {
+    bool b = (bool*)ptr;
+    return b;
+  }
+};
+
+template <>
+struct Cast<int> {
+  static int cast(void *ptr) {
+    int* b = (int*)ptr;
+    return *b;
+  }
+};
+
+template <typename T>
+T factory(void *ptr) {
+  return Cast<T>::cast(ptr);
+}
+
+bool b = true;
+void *ptr = &b;
+
+auto c = factory<bool>(ptr);
+auto d = factory<int>(ptr);
+// Linker error:
+// Undefined symbols for architecture
+auto e = factory<float>(ptr);
+{% endhighlight %}
+
+### Variadic
+
+The generic class can use `typename ...T` to allow specialization by any number of types:
+
+{% highlight c++ %}
+template <typename ...T>
+struct C {};
+
+template <>
+struct C<bool> {};
+
+template <>
+struct C<int, int> {};
+
+C<int, int> pair_int;
+C<bool> boolean;
+{% endhighlight %}
+
+# Compile Time
+
+## Static Assert
+
+Syntax:
+
+{% highlight c++ %}
+static_assert(<expr>, "message");
+{% endhighlight %}
+
+Where `<expr>` must be a constant expression.
+
+## Constant Expressions
+
+### Syntax
+
+Function:
+
+{% highlight c++ %}
+constexpr int factorial(int n) {
+    return n <= 1 ? 1 : (n * factorial(n - 1));
+}
+{% endhighlight %}
+
+Class member:
+
+{% highlight c++ %}
+struct C {
+  static constexpr int my_expr = 3 + 4;
+};
+{% endhighlight %}
+
+## Type Traits
+
+The working unit of a type trait is the type trait `std::integral_constant`, which wraps a constant and its type. Example:
+
+{% highlight c++ %}
+typedef std::integral_constant<int, 2> two_t;
+{% endhighlight %}
+
+Access the value:
+
+{% highlight c++ %}
+std::cout << two_t::value << std::endl;
+{% endhighlight %}
+
+A boolean type trait is so common it has its own alias:
+
+{% highlight c++ %}
+template <bool B>
+using bool_constant = integral_constant<bool, B>;
+{% endhighlight %}
+
+### Type Equality (=)
+
+Done via `std::is_same()`:
+
+{% highlight c++ %}
+template <typename T>
+void is_int() {
+   if (std::is_same<T, std::int32_t>::value) {
+     std::cout << "is int" << std::endl;
+   } else {
+     std::cout << "isn't" << std::endl;
+   }
+}
+factory<int>(); // is int
+factory<double>(); // isn't
+{% endhighlight %}
+
+### Conjunction (&&)
+
+Check multiple types: `std::conjunction()`. It expects one or more `std::bool_constant` types:
+
+{% highlight c++ %}
+template<typename T, typename... Ts>
+void f() {
+  if (std::conjunction<std::is_same<T, Ts>...>::value) {
+    std::cout << "all types are the same\n" << std::endl;
+  } else {
+    std::cout << "not all types are the same" << std::endl;
+  }
+}
+
+f<int, int>(); // same
+f<int, bool>(); // not
+{% endhighlight %}
+
 # Files
 
 ## Check if file exists
