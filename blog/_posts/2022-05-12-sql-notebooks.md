@@ -32,7 +32,7 @@ One of the things I liked the most about Observable is the "spread-sheet semanti
 
 **[Linear Predictive Coding in Python](https://www.kuniga.me/blog/2021/05/13/lpc-in-python.html) (2021).** The content of this post is not relevant here on itself but it was the first post in which I used a Jupyter notebook and I have used it for many other posts since.
 
-In that post I translated a Matlab code to Python. It's interesting that Matlab and Mathematica hav had notebooks for a long time but they are relatively niche languages for scientific computing and not free.
+In that post I translated a Matlab code to Python. It's interesting that Matlab and Mathematica have had notebooks for a long time but they are relatively niche languages for scientific computing and not free.
 
 Python started as a general purpose language and later an open-source notebook was introduced. Its popularity was helped by the adoption of data science and machine learning communities in the past decade.
 
