@@ -13,7 +13,36 @@ Syntax for common tasks I run into often. Assumes Python 3.
 1. TOC
 {:toc}
 
-# Collections
+# Data Structures
+
+## Enum
+
+{% highlight python %}
+from enum import Enum
+
+class MyEnum(Enum):
+  A = 'a'
+  B = 'b'
+{% endhighlight %}
+
+### From primitive
+
+{% highlight python %}
+print(MyEnum('a')) # MyEnum.A
+{% endhighlight %}
+
+It does validation:
+
+{% highlight python %}
+print(MyEnum('c'))
+{% endhighlight %}
+
+### To primitive
+
+{% highlight python %}
+print(MyEnum.A.value) # 'a'
+{% endhighlight %}
+
 
 ## List
 
