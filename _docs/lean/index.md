@@ -5,15 +5,15 @@ title: "Lean Cheatsheet"
 
 {% include blog_vars.html %}
 
-# Index
+## Index
 {:.no_toc}
 
 1. TOC
 {:toc}
 
-# Syntax
+## Syntax
 
-## Inductive Type
+### Inductive Type
 
 {% highlight lean %}
 inductive Nat
@@ -21,7 +21,7 @@ inductive Nat
 | succ (n : Nat) : Nat
 {% endhighlight %}
 
-## Function
+### Function
 
 {% highlight lean %}
 def inc (x: nat): nat := x + 1
@@ -35,7 +35,7 @@ def add : nat → nat → nat
 | m (succ n) := succ (add m n)
 {% endhighlight %}
 
-### Function Composition
+**Function Composition.**
 
 {% highlight lean %}
 def inc (x: nat): nat := x + 1
@@ -48,14 +48,13 @@ def f := dbl ∘ inc
 
 Typing an underscore in an expression asks Lean to infer a suitable value for the expression and fill it in automatically.
 
+## Tactics
 
-# Tactics
-
-## apply
+### apply
 
 Given goal `b` and hypothesis `h: a -> b`, `apply h` turns goal `b` into `a`.
 
-## assumption
+### assumption
 
 The assumption tactic looks through the assumptions in context of the current goal, and if there is one matching the conclusion, it applies it.
 
@@ -70,23 +69,23 @@ begin
 end
 {% endhighlight %}
 
-## cases
+### cases
 
 Split a hyposesis of the form a ^ b into two hypothesis a and b.
 
-## have
+### have
 
 have q := f p,
 https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/?world=6&level=7
-## intro
+### intro
 
 If the current goal is `a → b`, `intro h` assumes `a` is true (adding as hypothesis `h`) and the goal becomes `b`.
 
-## revert
+### revert
 
 If there's a hypothesis `h: a → b` and the current goal is `b`, `revert h`, turns the goal into `a → b`.
 
-## rewrite (rw)
+### rewrite (rw)
 
 * You give an axiom/lemma that states an equality of the form `expr1 = expr2`.
 * It will try to find the first expression that matches `expr1`
@@ -118,7 +117,7 @@ begin
 end
 {% endhighlight %}
 
-### reversed rewrite
+**reversed rewrite.**
 
 Replace `expr2` with `expr1` instead:
 
@@ -134,9 +133,9 @@ rw ←foo -- replaces b with a
 
 If the current goal is `a ∧ b`, `split` generates 2 goals `a` and `b`. (Same as `apply and.intro`)
 
-# Tactic Combinators
+## Tactic Combinators
 
-## repeat
+### repeat
 
 Executes a tactic while it's applicable. Example:
 
@@ -203,6 +202,18 @@ cases H with y Hy,
 -- Hy: y, f(y)
 -- y
 {% endhighlight %}
+
+### Split a hypothesis in the form H1 ∧ H2 into two hypothesis
+
+If we have a hypothesis `H: H1 ∧ H2`, we can get two hypothesis `H1` and `H2`:
+
+{% highlight lean %}
+-- : H: H1 ∧ H2
+cases H with H1 H2,
+-- H1
+-- H2
+{% endhighlight %}
+
 
 ## References
 
