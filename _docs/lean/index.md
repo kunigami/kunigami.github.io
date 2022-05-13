@@ -48,6 +48,16 @@ def f := dbl ∘ inc
 
 Typing an underscore in an expression asks Lean to infer a suitable value for the expression and fill it in automatically.
 
+## Symbols
+
+For copy and pasting:
+
+{% highlight lean %}
+Subscripts: ₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉
+Left-arrow: ←
+{% endhighlight %}
+
+
 ## Tactics
 
 ### apply
