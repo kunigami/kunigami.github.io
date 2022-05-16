@@ -5,11 +5,21 @@ title: "Lean Cheatsheet"
 
 {% include blog_vars.html %}
 
+NOTE: This refers to the community fork of Lean (test with v3.42).
+
 ## Index
 {:.no_toc}
 
 1. TOC
 {:toc}
+
+## Setup
+
+If you already have an existing folder, run this inside the folder.
+
+{% highlight text %}
+leanproject new
+{% endhighlight %}
 
 ## Syntax
 
@@ -52,11 +62,23 @@ Typing an underscore in an expression asks Lean to infer a suitable value for th
 
 For copy and pasting:
 
+### Subscripts
+
 {% highlight lean %}
-Subscripts: ₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉
-Left-arrow: ←
+₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉
 {% endhighlight %}
 
+### Arrows
+
+{% highlight lean %}
+←
+{% endhighlight %}
+
+### Operators
+
+{% highlight lean %}
+∧ -- and
+{% endhighlight %}
 
 ## Tactics
 
@@ -137,6 +159,14 @@ Syntax:
 axiom foo : a = b
 ...
 rw ←foo -- replaces b with a
+{% endhighlight %}
+
+**rewrite only the n-th match.**
+
+Syntax:
+
+{% highlight lean %}
+nth_rewrite 0 [hypothesis],
 {% endhighlight %}
 
 ## split
@@ -223,6 +253,18 @@ cases H with H1 H2,
 -- H1
 -- H2
 {% endhighlight %}
+
+### Introduce new hypothesis within a proof
+
+We can choose to prove an intermediate result within a proof for better readability/organization.
+
+{% highlight lean %}
+let H: <Prop>
+{% endhighlight %}
+
+This adds a new hypothesis `H` and a new goal to prove that hypothesis. If this proof is long, it might be worth to define an actual lemma.
+
+
 
 
 ## References
