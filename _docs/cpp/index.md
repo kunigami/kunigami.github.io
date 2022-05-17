@@ -68,6 +68,22 @@ std::string_view str1{"my_string"};
 std::string_view str2{ str2 }; // No copy
 {% endhighlight %}
 
+## Sstream
+
+### Osstream
+
+Construct streams using the `<<` syntax.
+
+{% highlight c++ %}
+#include <sstream>
+#include <iostream>
+
+std::ostringstream ss;
+ss << "hello";
+ss << " world";
+std::cout << ss.str() << std::endl;
+{% endhighlight %}
+
 ## Struct
 
 {% highlight c++ %}
@@ -159,7 +175,7 @@ s.erase(value);
 ### Initialization
 
 {% highlight c++ %}
-std::vector<int> vec = {10, 20, 30};
+std::vector<int> vec{10, 20, 30};
 {% endhighlight %}
 
 ### Iterate
@@ -169,6 +185,13 @@ for(auto e:vec) {
     std::cout << e << std::endl;
 }
 {% endhighlight %}
+
+### Empty
+
+{% highlight c++ %}
+vec.empty();
+{% endhighlight %}
+
 
 ### Size
 
