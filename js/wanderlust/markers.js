@@ -232,6 +232,18 @@ const markers = [
     category: "nature",
   },
   {
+    name: "Taos Pueblo",
+    description:
+      "Ancient pueblo belonging to a Taos-speaking (Tiwa) Native American tribe of Puebloan people.",
+    lat: 36.43944823586406,
+    lng: -105.5456227355632,
+    img_name: "taos.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/GPRJLFJBfcRdmyUA9",
+    visited: true,
+    category: "nature",
+  },
+  {
     name: "White Sands National Park",
     description:
       "Landscape filled with gypsum sand dunes.",
@@ -500,6 +512,17 @@ const markers = [
 
   // China
   {
+    name: "Forbidden City",
+    description:
+      "Completed in 1420, this palace complex with 980 buildings features a museum with art & artifacts.",
+    lat: 39.91645906880579,
+    lng: 116.39718479734073,
+    img_name: "forbidden_city.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/nkrASFRac9RWN785A",
+    visited: true,
+  },
+  {
     name: "Harbin Ice Festival",
     description:
       "Ice Festival featuring giant colorful sculptures and buildings made of ice.",
@@ -624,6 +647,17 @@ const markers = [
     category: "museum",
   },
   {
+    name: "Roman Baths",
+    description: "Constructed between 60-70AD in the first few decades of Roman Britain.",
+    lat: 51.38146954984217,
+    lng: -2.3595445070296472,
+    img_name: "roman_baths.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/Z3Z9yvaZ655PFCxm6",
+    visited: true,
+    category: "museum",
+  },
+  {
     name: "White Cliffs of Dover",
     description: "White chalk cliffs rise 350 feet from the sea.",
     lat: 51.13473906458341,
@@ -710,6 +744,18 @@ const markers = [
 
   // Greece
   {
+    name: "Acropolis of Athens",
+    description:
+      "Restored, landmark temple ruins on archaeological site.",
+    lat: 37.97156418752821,
+    lng: 23.72574013780217,
+    img_name: "acropolis.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/j2wXLuJsSnCnckGx6",
+    visited: true,
+    category: "monument",
+  },
+  {
     name: "Monasteries of Meteora",
     description:
       "Monasteries built in the 12-13th century on top of tall rock pillars",
@@ -773,8 +819,8 @@ const markers = [
   {
     name: "Chittorgarh Fort",
     description: "The Chittor Fort or Chittorgarh is one of the largest fort in India. It is a UNESCO World Heritage Site.",
-    lat: 27.007379920230612,
-    lng: 76.60643437687226,
+    lat: 24.897619063948884,
+    lng: 74.64477114501925,
     category: "fort",
   },
   {
@@ -990,6 +1036,16 @@ const markers = [
     img_name: "fushimi_inari.jpg",
     photographer: "me",
     img_link: "https://photos.app.goo.gl/LbEBtaP3iwwwPyK88",
+    visited: true,
+  },
+  {
+    name: "Himeji Castle",
+    description: "Iconic circa-1613 castle known for a white facade, plus towers, moats, passageways & cherry trees.",
+    lat: 34.83963388102556,
+    lng: 134.69393689130462,
+    img_name: "himeji.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/GPRJLFJBfcRdmyUA9",
     visited: true,
   },
   {
@@ -1346,6 +1402,14 @@ const markers = [
 
   // Spain
   {
+    name: "Alhambra",
+    description:
+      "One of the most famous monuments of Islamic architecture and one of the best-preserved palaces of the historic Islamic world.",
+    lat: 37.176773008467656,
+    lng: -3.5897565660552555,
+    category: "fort",
+  },
+  {
     name: "Castillo de Coca",
     description:
       "The castle was constructed in the 15th century and has been considered to be one of the best examples of Spanish Mudejar brickwork which incorporates Moorish Muslim design and construction with Gothic architecture.",
@@ -1463,6 +1527,13 @@ const markers = [
     category: "nature",
   },
   {
+    name: "Ephesus",
+    description:
+      "Ancient Greek city which includes the Library of Celsus and the site of the Temple of Artemis ruins.",
+    lat: 37.939620566766585,
+    lng: 27.340722058573096,
+  },
+  {
     name: "Derinkuyu Underground City",
     description:
       "The Derinkuyu underground city is an ancient multi-level underground city.",
@@ -1531,6 +1602,12 @@ const markers = [
   },
 
   // Yemen
+  {
+    name: "Shibam",
+    description: "Manhattan of the Desert.",
+    lat: 15.92152364651126,
+    lng: 48.63633519304204,
+  },
   {
     name: "Socotra Island",
     description: "Island with the unique dragon's blood tree.",
