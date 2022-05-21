@@ -62,6 +62,23 @@ ys = [x for x in xs if x % 2 == 0]
 
 NOTE: filter and map can be combined into one.
 
+### Any / All
+
+Find if any (all) element satisfy a predicate:
+
+{% highlight python %}
+xs = [1, 2, 3]
+ys = any(predicate(x) for x in xs)
+{% endhighlight %}
+
+NOTE: this is a generator, so it will short-circuit once if finds an element satisfying the predicate. The version below creates a list first, so no short-circuit happens.
+
+{% highlight python %}
+xs = [1, 2, 3]
+ys = [any(predicate(x) for x in xs)]
+{% endhighlight %}
+
+
 ### Sort list
 
 Using default sorting:
@@ -93,6 +110,12 @@ sorted([3, 2, 1], key=functools.cmp_to_key(cmp))
 {% endhighlight %}
 
 ## Dictionaries
+
+### Remove entry
+
+{% highlight python %}
+del dict[key]
+{% endhighlight %}
 
 ### Map over dictionary
 
