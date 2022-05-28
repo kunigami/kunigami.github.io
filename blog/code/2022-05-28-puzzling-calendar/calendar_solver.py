@@ -72,13 +72,10 @@ class Board:
     return i >= 0 and i < n and j >= 0 and j < m
 
   def at(self, at):
-    return self.mat[at[0]][at[1]]
-
-  def set_at(self, at, value):
-    self.mat[at[0]][at[1]] = value
+    return self.mat[pair(at)]
 
   def is_set(self, p):
-    return self.mat[p[0]][p[1]] != 0
+    return self.at(p) != 0
 
   def is_valid(self, p):
     return self.is_inside(p) and not self.is_set(p)
