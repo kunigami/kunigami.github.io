@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 
 I got a puzzle as gift recently called [A-Puzzle-A-Day](https://www.dragonfjord.com/product/a-puzzle-a-day/) by [Dragon Fjord Puzzles](https://www.dragonfjord.com/). It's a wooden board with 43 cells, one for each month and 31 for days, plus 8 pieces of different shapes. The goal is to place the pieces covering all cells except those for the current month and day.
 
-Here's a possible solution for today:
+Here's a possible solution for today ({{ "today" | date: "%b %d, %Y" }}):
 
 <script type="text/javascript" src="{{resources_path}}/sol.json"></script>
 <script type="text/babel" src="{{resources_path}}/calendar.js"></script>
