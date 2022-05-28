@@ -341,6 +341,17 @@ except Exception as ex:
     raise Exception('new title') from ex
 {% endhighlight %}
 
+# Stdin/Stdout
+
+## Capture stdout
+
+{% highlight python %}
+out = io.StringIO()
+with redirect_stdout:
+    # call code which prints to stdout
+    execute()
+stdout_str = out.getValue()
+{% endhighlight %}
 
 # Files
 
