@@ -102,13 +102,13 @@ class Board:
   def has_piece(self, piece_id):
     return piece_id in self.pieces_map
 
-  def place_pice(self, piece, at):
+  def place_piece(self, piece, at):
     coords = piece.relative_coords
     for coord in coords:
       self.set_at(coord + at, piece.id)
     self.pieces_map[piece.id] = [piece, at]
 
-  def remove_pice(self, piece, at):
+  def remove_piece(self, piece, at):
     coords = piece.relative_coords
     for coord in coords:
       self.clear_at(coord + at)
@@ -222,9 +222,9 @@ class Solver:
         if not b.fits_at(form, coord):
           continue
 
-        b.place_pice(form, coord)
+        b.place_piece(form, coord)
         r = self.backtrack(idx + 1)
-        b.remove_pice(form, coord)
+        b.remove_piece(form, coord)
 
         if r:
           return True

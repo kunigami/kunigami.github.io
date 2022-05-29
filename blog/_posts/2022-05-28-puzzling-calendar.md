@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 
 I got a puzzle as gift recently called [A-Puzzle-A-Day](https://www.dragonfjord.com/product/a-puzzle-a-day/) by [Dragon Fjord Puzzles](https://www.dragonfjord.com/). It's a wooden board with 43 cells, one for each month and 31 for days, plus 8 pieces of different shapes. The goal is to place the pieces covering all cells except those for the current month and day.
 
-Here's a possible solution for today ({{ "today" | date: "%b %d, %Y" }}):
+Here's a possible solution for today:
 
 <script type="text/javascript" src="{{resources_path}}/sol.json"></script>
 <script type="text/babel" src="{{resources_path}}/calendar.js"></script>
@@ -55,7 +55,7 @@ My hunch is that approach 1 would be less efficient. Suppose the first piece we 
 ...
 {% endhighlight %}
 
-Approach 1 would go maybe 5 levels further in the search before realizing this is infeasible while approach would go maybe 2-3 levels before determining the second row first column cannot be covered and with a smaller branching factor. So I opted to go with approach 2.
+Approach 1 would go maybe 5 levels further in the search before realizing this is infeasible while approach 2 would go maybe 2-3 levels before determining the second row first column cannot be covered and with a smaller branching factor. So I opted to go with approach 2.
 
 ### Python Code
 
@@ -88,9 +88,9 @@ class Solver:
         if not b.fits_at(form, coord):
           continue
 
-        b.place_pice(form, coord)
+        b.place_piece(form, coord)
         r = self.backtrack(idx + 1)
-        b.remove_pice(form, coord)
+        b.remove_piece(form, coord)
 
         if r:
           return True
@@ -98,7 +98,7 @@ class Solver:
     return False
 {% endhighlight %}
 
-The other interesting method is `Board.place_pice()`. We define the primary coordinate as the one with the lowest i-index (vertical), breaking ties with the lowest j-index (horizontal). For example, in the L shape below, the primary coordinate is `(0, 2)`:
+The other interesting method is `Board.place_piece()`. We define the primary coordinate as the one with the lowest i-index (vertical), breaking ties with the lowest j-index (horizontal). For example, in the L shape below, the primary coordinate is `(0, 2)`:
 
 {% highlight text %}
 ..#
