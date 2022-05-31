@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Puzzling Calendar"
-tags: []
+tags: [puzzle, python, javascript]
 vanity: "2022-05-28-puzzling-calendar"
 excerpt_separator: <!--more-->
 ---
