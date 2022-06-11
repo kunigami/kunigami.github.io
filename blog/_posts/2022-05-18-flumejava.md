@@ -98,7 +98,7 @@ I see an analogy here between MapReducer + FlumeJava and assembly + high-level l
 
 The first part of interfacing with FlumeJava is to construct a graph by providing the functions to be computed and their dependencies.
 
-Let's consider a basic example. First we invoke a function `readTextFileCollection()` that reads strings from a file, stored in a distributed system (GFS). Note that this is not executing the actual reading, just building the graph.
+Let's consider a basic example. First we invoke a function `readTextFileCollection()` that reads strings from a file, stored in a distributed system (GFS). Note that this is not executing the actual reading, just building the graph. The `P` prefix stands for parallel.
 
 {% highlight java %}
 PCollection<String> lines = readTextFileCollection(
