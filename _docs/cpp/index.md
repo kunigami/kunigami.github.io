@@ -48,6 +48,34 @@ std::string = to_string(10);
 enum class MyBoolean { kYes, kNo };
 {% endhighlight %}
 
+## Optional
+
+Create:
+
+{% highlight c++ %}
+// None
+std::optional<std::string> x = std::nullopt;
+// Value
+std::optional<std::string> y("hello");
+{% endhighlight %}
+
+Access:
+
+{% highlight c++ %}
+std::cout << *y << std::endl;
+{% endhighlight %}
+
+Check:
+
+{% highlight c++ %}
+std::optional<int> y = 0;
+if (!y) {
+  std::cout << "none" << std::endl;
+} else {
+  std::cout << *y << std::endl;
+}
+{% endhighlight %}
+
 ## Strings
 
 ### Literal
@@ -98,7 +126,6 @@ Initialization:
 {% highlight c++ %}
 MyStruct my_struct = {.x = 1, .z = 0.5};
 {% endhighlight %}
-
 
 # Collections
 
