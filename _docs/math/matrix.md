@@ -89,7 +89,7 @@ for i in range(m):
 
 See *Matrix Multiplication*.
 
-The inverse of a square matrix $M$, denoted by $M^{-1}$ is a matrix which when pre-multiplied by $M$ is equal to the inverse: $M M^{-1} = I$
+The inverse of a square matrix $M$, denoted by $M^{-1}$ is a matrix which when pre-multiplied by $M$ is equal to the identity: $M M^{-1} = I$
 
 ### Matrix 'Division'
 
