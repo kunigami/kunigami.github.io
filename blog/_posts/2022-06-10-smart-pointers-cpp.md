@@ -52,8 +52,7 @@ We implement the move constructor which enables transferring ownership. Since `t
 
 {% highlight c++ %}
 unique_ptr(unique_ptr<T> &&ptr) {
-  raw_ptr_ = ptr.raw_ptr_;
-  ptr.raw_ptr_ = nullptr;
+  std::swap(ptr.raw_ptr_, raw_ptr_);
 }
 {% endhighlight %}
 
@@ -156,11 +155,10 @@ unique_ptr<C> p1(c);
 {
   unique_ptr<C> p2(c);
 }
-// malloc: *** error for object 0x600003c34040:
-// pointer being freed was not allocated
+cout << p1.x << endl;
 {% endhighlight %}
 
-The unique pointer `p1` thinks it's the only reference to `c` and so does `p2`, so when `p2` fall out of scope, it will free `c`. When `p1` falls out of scope, we'll have a "double free".
+The unique pointer `p1` thinks it's the only reference to `c` and so does `p2`, so when `p2` fall out of scope, it will free `c`. When `p1` tries to access its internal raw pointer, it will have a null pointer.
 
 One way to avoid this is to let `unique_ptr` handle the entire lifecycle of the pointer. We can change the constructor to take vararg set of params and forward to a `new` call internally:
 
