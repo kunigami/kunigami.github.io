@@ -897,6 +897,13 @@ const markers = [
     category: "buddhism",
   },
   {
+    name: "Komodo National Parl",
+    description:
+      "Expansive national park that aims to protect endangered Komodo dragons & other wildlife.",
+    lat: -8.527647033553302,
+    lng: 119.48323933372177,
+  },
+  {
     name: "Ratenggaro Village",
     description:
       "Traditional Village with iconic high roofs.",
@@ -1592,6 +1599,13 @@ const markers = [
     lat: 20.9361865,
     lng: 107.1593762,
     category: "nature",
+  },
+  {
+    name: "Huế",
+    description:
+      "Huế is a city in central Vietnam that was the seat of Nguyen Dynasty emperors and the national capital from 1802 to 1945.",
+    lat: 16.46800192863555,
+    lng: 107.57920881748073,
   },
   {
     name: "Mù Cang Chải",
