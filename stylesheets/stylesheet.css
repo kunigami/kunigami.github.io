@@ -487,6 +487,12 @@ p > .language-plaintext {
     font-size: 24px;
   }
 
+  #page figcaption {
+    color: #888888;
+    font-size: 18px;
+    width: 100%;
+  }
+
   #page .center_children img {
     max-width: none;
     width: 100%;
