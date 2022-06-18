@@ -472,15 +472,24 @@ p > .language-plaintext {
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   h2 {
-    font-size: 26px;
+    font-size: 32px;
   }
 
   h3 {
     font-size: 24px;
+  }
+
+  pre, code {
+    font-size: 24px;
+  }
+
+  #page .center_children img {
+    max-width: none;
+    width: 100%;
   }
 
   .inner {
