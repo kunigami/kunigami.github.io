@@ -100,13 +100,13 @@ $$P(X = x, Y = y) (\sum_{x' \in D_X} P(X = x', Y = y))^{-1} = \frac{P(X = x, Y =
 
 By the *Law of Total Probability* $\sum_{x' \in D_X} P(X = x', Y = y) = P(Y = y)$, so:
 
-$$(5) P(X = x \mid Y = y) = \frac{P(X = x, Y = y)}{P(Y = y)}$$
+$$(5) \quad P(X = x \mid Y = y) = \frac{P(X = x, Y = y)}{P(Y = y)}$$
 
 ### Bayes' Theorem
 
 The Bayes' Theorem states that:
 
-$$P(X \mid Y) = \frac{P(Y \mid X) P(X)}{P(2)}$$
+$$P(X \mid Y) = \frac{P(Y \mid X) P(X)}{P(Y)}$$
 
 It's easy to prove this by using the conditional probability identity. First we use (5):
 
@@ -124,11 +124,94 @@ Replacing in (6):
 
 $$P(X \mid Y) = \frac{P(Y \mid X) P(X)}{P(Y)}$$
 
-## Limitations of Approach
+## Probability and Relational Algebra
+
+The idea of counting events reminds me of relational algebra. We can draw some parallels between probability and relational algebra by using SQL queries. For example suppose we have a table for all events associated with a random variable, with columns `id` and `value`.
+
+For example, for a dice we could have have a table [dice.csv]({{code}}/dice.csv):
+
+{% highlight text %}
+| id | value |
+| -- | ----- |
+| 1  | 1     |
+| 2  | 2     |
+| 3  | 3     |
+| 4  | 4     |
+| 5  | 5     |
+| 6  | 6     |
+{% endhighlight %}
+
+In this case `id` and `value` coincide, but if we take a urn with 6 red balls and 4 blue balls, we would have 10 rows with distinct ids but only 2 distinct values. Now, to determine the probability of the dice landing on face 4 we can do, using `sqlite3` (tested with v3.37):
+
+{% highlight sql %}
+SELECT
+  1.0*COUNT(*)/(SELECT COUNT(*) FROM dice)
+FROM dice
+WHERE value = 4
+{% endhighlight %}
+
+We can actually run this [query]({{code}}/query1.sh) against a CSV file [3], via
+
+{% highlight text %}
+sqlite3 :memory: -cmd '.mode csv' -cmd '.import <file>.csv <table name>' '<query>`
+{% endhighlight %}
+
+For joint probability we can do a `JOIN` between two event tables. For example, for independent dice throws, let's compute the probability of getting faces 4 and 2 respectively. First we compute the joint table when we perform the [query]({{code}}/query2.sh):
+
+{% highlight sql %}
+WITH dices AS (
+  SELECT d1.id, d2.id, d1.value as v1, d2.value as v2
+  FROM dice d1, dice d2
+)
+SELECT
+  1.0*COUNT(*)/(SELECT COUNT(*) FROM dices)
+FROM dices
+WHERE v1=4 and v2=2
+{% endhighlight %}
+
+Which returns $1/36$.
+
+If the event tables are not independent we need to account for it in the `ON` clause of the join. For example, if we have a table `height` and `weight` and the event `id` identifies a specific human, to generate the joint table we would do:
+
+{% highlight sql %}
+SELECT h.id, h.value as hv, w.value as wv
+FROM height h JOIN weight w ON h.id = w.id
+{% endhighlight %}
+
+For conditional probability, we can add a where clause when creating the joint table. Suppose we want to determine the probability of selecting a person with weight 80Kg given we know their height is 180cm.
+
+Assume we have tables [height.csv]({{code}}/height.csv) and [weight.csv]({{code}}/weight.csv) with rows:
+
+{% highlight text %}
+height            weight
+| id | value |    | id | value |
+| -- | ----- |    | -- | ----- |
+| 1  | 150   |    | 1  | 60    |
+| 2  | 150   |    | 2  | 70    |
+| 3  | 180   |    | 3  | 70    |
+| 4  | 180   |    | 4  | 80    |
+{% endhighlight %}
+
+We can add `WHERE h.value=180` to the `human` table and then the final query is the same as a normal random variable. The complete [query]({{code}}/query3.sh) is given by:
+
+{% highlight sql %}
+WITH human AS (
+  SELECT h.id, h.value as hv, w.value as wv
+  FROM height h JOIN weight w ON h.id = w.id
+  WHERE h.value=180
+)
+SELECT
+  1.0*COUNT(*)/(SELECT COUNT(*) FROM human)
+FROM human
+WHERE wv=80
+{% endhighlight %}
+
+
+## Limitations
 
 As we mentioned earlier, we assume the probability $P(X = x)$ is a rational number so we can make analogies with counting events. If the probability is given by, say $P(X = x) = \pi$, then we could in practice approximate it by a ratio of very large numbers but in theory it cannot be done.
 
-Thus, the arguments we provided above are not rigorous proofs for the general case. There's a branch of mathematics called [measure theory](https://en.wikipedia.org/wiki/Measure_(mathematics)) of which I know nothing about, but it seems to generalize the idea of count or probabilities associated with events to general scalars (metrics) satisfying some basic constraints.
+Thus, the arguments we provided above are not rigorous proofs for the general case. There's a branch of mathematics called [measure theory](https://en.wikipedia.org/wiki/Measure_(mathematics)) of which I know nothing about, but it seems to generalize the idea of counts or probabilities associated with events to general scalars (metrics) satisfying some basic constraints.
 
 ## Conclusion
 
@@ -140,3 +223,4 @@ This post is my attempt to make sense of them.
 
 * [[1](https://en.wikipedia.org/wiki/Conditional_probability)] Wikipedia - Conditional probability
 * [[2](https://en.wikipedia.org/wiki/Law_of_total_probability)] Wikipedia - Law of total probability
+* [[3](https://til.simonwillison.net/sqlite/one-line-csv-operations)] Simon Willison's TILs - One-liner for running queries against CSV files with SQLite
