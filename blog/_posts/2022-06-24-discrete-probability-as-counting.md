@@ -3,7 +3,7 @@ layout: post
 title: "Discrete Probability As Counting"
 tags: [probability]
 excerpt_separator: <!--more-->
-vanity: "2022-06-21-discrete-probability-as-counting"
+vanity: "2022-06-24-discrete-probability-as-counting"
 ---
 {% include blog_vars.html %}
 
@@ -128,7 +128,7 @@ $$P(X \mid Y) = \frac{P(Y \mid X) P(X)}{P(Y)}$$
 
 The idea of counting events reminds me of relational algebra. We can draw some parallels between probability and relational algebra by using SQL queries. For example suppose we have a table for all events associated with a random variable, with columns `id` and `value`.
 
-For example, for a dice we could have have a table [dice.csv]({{code}}/dice.csv):
+For example, for a dice we could have have a table [dice.csv]({{github}}/dice.csv):
 
 {% highlight text %}
 | id | value |
@@ -150,13 +150,13 @@ FROM dice
 WHERE value = 4
 {% endhighlight %}
 
-We can actually run this [query]({{code}}/query1.sh) against a CSV file [3], via
+We can actually run this [query]({{github}}/query1.sh) against a CSV file [3], via
 
 {% highlight text %}
 sqlite3 :memory: -cmd '.mode csv' -cmd '.import <file>.csv <table name>' '<query>`
 {% endhighlight %}
 
-For joint probability we can do a `JOIN` between two event tables. For example, for independent dice throws, let's compute the probability of getting faces 4 and 2 respectively. First we compute the joint table, `dices`, then we perform the [query]({{code}}/query2.sh):
+For joint probability we can do a `JOIN` between two event tables. For example, for independent dice throws, let's compute the probability of getting faces 4 and 2 respectively. First we compute the joint table, `dices`, then we perform the [query]({{github}}/query2.sh):
 
 {% highlight sql %}
 WITH dices AS (
@@ -180,7 +180,7 @@ FROM height h JOIN weight w ON h.id = w.id
 
 For conditional probability, we can add a where clause when creating the joint table. Suppose we want to determine the probability of selecting a person with weight 80Kg given we know their height is 180cm.
 
-Assume we have tables [height.csv]({{code}}/height.csv) and [weight.csv]({{code}}/weight.csv) with rows:
+Assume we have tables [height.csv]({{github}}/height.csv) and [weight.csv]({{github}}/weight.csv) with rows:
 
 {% highlight text %}
 height            weight
@@ -192,7 +192,7 @@ height            weight
 | 4  | 180   |    | 4  | 80    |
 {% endhighlight %}
 
-We can add `WHERE h.value=180` to the `human` table and then the final query is the same as a normal random variable. The complete [query]({{code}}/query3.sh) is given by:
+We can add `WHERE h.value=180` to the `human` table and then the final query is the same as a normal random variable. The complete [query]({{github}}/query3.sh) is given by:
 
 {% highlight sql %}
 WITH human AS (
