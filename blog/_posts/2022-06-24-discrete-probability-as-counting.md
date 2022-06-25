@@ -156,7 +156,7 @@ We can actually run this [query]({{code}}/query1.sh) against a CSV file [3], via
 sqlite3 :memory: -cmd '.mode csv' -cmd '.import <file>.csv <table name>' '<query>`
 {% endhighlight %}
 
-For joint probability we can do a `JOIN` between two event tables. For example, for independent dice throws, let's compute the probability of getting faces 4 and 2 respectively. First we compute the joint table when we perform the [query]({{code}}/query2.sh):
+For joint probability we can do a `JOIN` between two event tables. For example, for independent dice throws, let's compute the probability of getting faces 4 and 2 respectively. First we compute the joint table, `dices`, then we perform the [query]({{code}}/query2.sh):
 
 {% highlight sql %}
 WITH dices AS (
