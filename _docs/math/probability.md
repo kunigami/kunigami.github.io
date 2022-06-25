@@ -17,6 +17,28 @@ A discrete random variable is a variable that can be a value of a countable doma
 
 The probability distribution for a discrete random variable $X$ is a value associated to each value of $X$. For example, for a dice throw the probability distribution is $1/6$ for each side.
 
+## Joint Probability
+
+### Discrete
+
+The joint probability distribution of two random variables $X$ and $Y$ is denoted by $P(X, Y)$. The probability of $X = x$ and $Y = y$ is denoted by $P(X = x, Y = y)$.
+
+### Law of Total Probability
+
+The law of total probability states that:
+
+$$P(X = x) = \sum_{y \in D_Y} P(X = x, Y = y)$$
+
+Which holds even when $X$ and $Y$ are not independent.
+
+## Conditional Probability
+
+### Discrete
+
+The conditional probability distribution of a random variable $X$ on random variable $Y$ is denoted by $P(X \mid Y)$. It assumes the value of $Y$ is determined a priori. It can be defined as a function of joint probabilities:
+
+$$P(X \mid Y) = \frac{P(X, Y)}{P(Y)}$$
+
 ## Expectation
 
 ### Discrete
