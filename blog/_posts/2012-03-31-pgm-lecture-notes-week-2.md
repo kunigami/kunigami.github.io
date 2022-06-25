@@ -90,3 +90,93 @@ If a given variable $Y$ depends on a continuous variable $X$, it is impossible t
 An example is to use the Gaussian distribution for $Y$, with the mean being the observed value of $X$, say $x$, and a fixed variance, i.e. $Y \sim \mathcal{N}(x, \sigma^2)$.
 
 If $Y$ depends on multiple continuous variables, we can for example use some kind of function of the observed values to define the mean. If $Y$ also depends on a discrete variable, we can have a mixed CPD, where the discrete variables define the rows of the table and in each row there is a distribution with different parameters.
+
+----
+
+
+# Markov networks
+
+Markov networks are represented by an undirected graph.
+
+## Pairwise Markov Networks
+
+**Pairwise Markov networks** are a special case of Markov networks, where the relationships between variables are always pairwise and therefore we can represent them through an undirected graph.
+
+Instead of defining factors on vertices as in the case of Bayesian networks, we define factors on edges. In this context, these factors are called **compatibility functions** or **affine functions**.
+
+The inputs of a factor between two variables $X_i, X_j$, which we denote by $\phi(X_i, X_j)$, are the possible combinations of the values of the variables involved.
+
+Taking the product of the factors of the graph, we get
+
+$$\tilde P(X_1, \cdots, X_k) = \prod_{(X_i, X_j) \in E} \phi(X_i, X_j)$$
+
+which is a non-normalized measure. Let $Z$ be the **normalization constant** (also known as *partition function*, a term inherited from statistical physics), then we can define the probability distribution function:
+
+$$P(X_1, \cdots, X_k) = \tilde P(X_1, \cdots, X_k)/Z$$
+
+One observation is that there is no intuitive correspondence between the factors and the probability distribution $P$ for Markov networks as opposed to Bayesian networks.
+
+This model is not very expressive. To get an idea, consider a set of $n$ random variables with $d$ possible values each. Even if we have a complete graph, with $O(n^2)$ edges and each having $O(d^2)$ entries, the distribution function will have $O(n^2d^2)$ entries, whereas it's possible for a distribution function to have $O(d^n)$ entries.
+
+## General Gibbs distribution
+
+The weakness of the previous model lies in the restriction of factors to only two variables. To remedy this, we can use the **general Gibbs distribution**, which is a generalization of pairwise Markov networks. In this case, edges can be incident to more than two vertices, as in a [hypergraph](https://en.wikipedia.org/wiki/Hypergraph).
+
+More formally, we have a set of factors $\Phi = \curly{\phi_1(D_1), \cdots, \phi_k(D_k)}$ where each $D_i$ is the set of random variables included in the factor $\phi_i$, and is called the **domain**. Taking the product of the factors of the graph, we get
+
+$$\tilde P_{\Phi}(X_1, \cdots, X_k) = \prod_{i = 1}^{k} \phi(D_i)$$
+
+The partition function is the sum over the product for all possible combination of $X_1, \cdots, X_k$:
+
+$$Z_{\Phi}(X_1, \cdots, X_k) = \sum_{X_1, \cdots, X_k} \tilde P_{\Phi}(X_1, \cdots, X_k)$$
+
+The general Gibbs distribution is then the probability distribution
+
+$$P_{\Phi}(X_1, \cdots, X_k) = \frac{1}{Z_{\Phi}(X_1, \cdots, X_k)} \prod_{i = 1}^{k} \phi(D_i)$$
+
+**Induced Markov network.** denoted by $H_{\Phi}$, is a pairwise Markov network with a set of vertices corresponding to the union of the factor domains in $\Phi$ and there is an edge between two variables $X_i$ and $X_j$ if $X_i, X_j \in D_i$ for some $\phi_i \in \Phi$.
+
+With this, we can present the definition of factorization for Markov networks.
+
+**Factorization.** A probability distribution $P$ factors a Markov network $H$ if there is a set of factors $\Phi = \curly{\phi_1(D_1), \cdots, \phi(D_k)}$ such that
+
+* (1) $P = P_{\Phi}$
+* (2) $H = H_\Phi$
+
+Note that information is lost when we represent the factors by an induced Markov network and therefore we cannot recover $\Phi$ from $H_\Phi$.
+
+However, the influence relationship between variables for a Gibbs distribution can be represented by $H_\Phi$. For this, we define the **active path** as a path in this graph without any observed variables. Thus, we say that one random variable influences the other if there is some active path between them in the graph $H_\Phi$.
+
+## Conditional Random Fields
+
+**Conditional Random Fields** or CRFs are similar to a Gibbs distribution, except that normalization is done differently. In this case, we calculate the normalization constant by accounting only for the random variables that have the observed value. The distribution obtained after normalization is *conditioned* by the value of the observed variables $X$.
+
+More formally, the normalization constant for a given set of observed random variables $X$, and a set of unobserved random variables $Y$ is equal to
+
+$$Z_{\Phi}(X) = \sum_{Y} \tilde P_{\Phi}(X, Y)$$
+
+So we have a conditional distribution:
+
+$$P_{\Phi}(Y \mid X) = \dfrac{\tilde P_{\Phi}(X, Y)}{Z_{\Phi}(X)}$$
+
+**Logistic model.** is a particular case of CRF, where we have a variable $Y$ connected to a set of variables $X = X_1, \cdots, X_k$ and where the factor of each $(Y, X_i)$ is given by
+
+$$\phi_i(X_i, Y) = \exp(w_i 1\curly{X_i = 1, Y = 1})$$
+
+where $1\curly{X_i = 1, Y = 1}$ is an indicator function, which returns 1 if the variables have the indicated values or 0 otherwise. Thus, for $Y = 1$, $\phi_i(X_i, Y = 1) = \exp(w_i X_i)$ and for $Y = 0$, $\phi_i(X_i, Y = 0) = \exp(0) = 1$.
+
+In this case, the product of the factors is:
+
+$$(1) \quad \tilde P(X, Y = 1) = \prod_{i = 1}^{k} \phi_i(D_i) = \exp(\sum_i (w_i X_i))$$
+
+And
+
+$$(2) \quad \tilde P(X, Y = 0) = 1$$
+
+The probability distribution of $Y = 1$ given $X$ is given by
+
+$$P(Y = 1 \mid X) = \dfrac{\tilde P(Y = 1, X)}{\tilde P(Y = 1, X) + \tilde P(Y = 0, X)}$$
+
+Replacing the values of (1) and (2) we get:
+
+$$P(Y = 1 \mid X) = \dfrac{\exp(\sum_i (w_i X_i))}{1+ \exp(\sum_i (w_i X_i))}$$
