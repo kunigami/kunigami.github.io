@@ -452,3 +452,16 @@ len(q)
 # Is empty?
 q.empty()
 {% endhighlight %}
+
+
+# Regex
+
+## Extract
+
+{% highlight python %}
+text = "the number is 12345"
+result = re.search('is ([0-9]+)', text, re.IGNORECASE)
+
+if result:
+    print(result.group(1)) # 12345
+{% endhighlight %}

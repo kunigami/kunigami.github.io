@@ -69,3 +69,41 @@ def test_my_method(self, mock_func):
   mock_func.side_effect = [1, 2, 3]
   g() # prints 1 2 3
 {% endhighlight %}
+
+## Mock Implementation
+
+Assign a function to `side_effect`:
+
+{% highlight python %}
+def f(i):
+  return i
+
+def g(i):
+  print(f(i))
+{% endhighlight %}
+
+{% highlight python %}
+from my.module.program import g
+...
+
+@patch('my.module.program.f')
+def test_my_method(self, mock_func):
+  def mock_func_impl(i):
+    return i*2
+  mock_func.side_effect = mock_func_impl
+  g(3) # prints 6
+{% endhighlight %}
+
+## Mock Throwing Exception
+
+Assign a function to `side_effect`:
+
+{% highlight python %}
+from my.module.program import g
+...
+
+@patch('my.module.program.f')
+def test_my_method(self, mock_func):
+  mock_func.side_effect = RuntimeError()
+  g(3) # throws
+{% endhighlight %}
