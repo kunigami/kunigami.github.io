@@ -124,6 +124,28 @@ Replacing in (6):
 
 $$P(X \mid Y) = \frac{P(Y \mid X) P(X)}{P(Y)}$$
 
+## OR Probability
+
+The probability distribution of either one of two random variables $X$ or $Y$ is denoted by $P(X \cup Y)$. It can be defined in terms of joint probability:
+
+$$(7) \quad P(X \cup Y) = P(X) + P(Y) - P(X \cap Y)$$
+
+It's useful as we did in *Join Probability* to define a 2-dimensional random variable, say $Z$, with domain $D_{XY} =  D_X \times D_Y$. We want to compute the ratio of events where $Z = (x, y')$ for any $y' \in D_Y$ or $Z = (x', y)$ for any $x' \in D_X$, over the total ${\sum_{x' \in D_X} \sum_{y' \in D_Y} C_{x'y'}}$.
+
+The insight is that events where $Z = (x, y)$ will be counted twice, so we need to subtract them. We can compute such ratio as:
+
+$$P(X \cup Y) = \frac{ \sum_{y' \in D_Y} C_{xy'} + \sum_{x' \in D_X} C_{x'y}  - C_{xy} } {\sum_{x' \in D_X} \sum_{y' \in D_Y} C_{x'y'}}$$
+
+We can split into three individual sums:
+
+$$=
+\frac{ \sum_{y' \in D_Y} C_{xy'} } {\sum_{x' \in D_X} \sum_{y' \in D_Y} C_{x'y'}} +
+\frac{ \sum_{y' \in D_Y} C_{xy'} } {\sum_{x' \in D_X} \sum_{y' \in D_Y} C_{x'y'}} -
+\frac{ C_{xy} } {\sum_{x' \in D_X} \sum_{y' \in D_Y} C_{x'y'}}
+$$
+
+The first sum is $P(X = x)$ and the second sum is $P(Y = y)$ by the law of total probability. The third sum is the joint probability $P(X = x, Y = y)$ by (1), which leads to (7).
+
 ## Probability and Relational Algebra
 
 The idea of counting events reminds me of relational algebra. We can draw some parallels between probability and relational algebra by using SQL queries. For example suppose we have a table for all events associated with a random variable, with columns `id` and `value`.

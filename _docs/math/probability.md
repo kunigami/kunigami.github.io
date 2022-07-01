@@ -21,7 +21,7 @@ The probability distribution for a discrete random variable $X$ is a value assoc
 
 ### Discrete
 
-The joint probability distribution of two random variables $X$ and $Y$ is denoted by $P(X, Y)$. The probability of $X = x$ and $Y = y$ is denoted by $P(X = x, Y = y)$.
+The joint probability distribution of two random variables $X$ and $Y$ is denoted by $P(X, Y)$ or $P(X \cap Y)$. The probability of $X = x$ and $Y = y$ is denoted by $P(X = x, Y = y)$.
 
 ### Law of Total Probability
 
@@ -38,6 +38,14 @@ Which holds even when $X$ and $Y$ are not independent.
 The conditional probability distribution of a random variable $X$ on random variable $Y$ is denoted by $P(X \mid Y)$. It assumes the value of $Y$ is determined a priori. It can be defined as a function of joint probabilities:
 
 $$P(X \mid Y) = \frac{P(X, Y)}{P(Y)}$$
+
+## OR Probability
+
+### Discrete
+
+The probability distribution of either one of two random variables $X$ or $Y$ is denoted by $P(X \cup Y)$. It can be defined in terms of joint probability:
+
+$$P(X \cup Y) = P(X) + P(Y) - P(X \cap Y)$$
 
 ## Expectation
 
