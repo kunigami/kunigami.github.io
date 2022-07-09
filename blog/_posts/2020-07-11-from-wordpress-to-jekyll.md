@@ -8,13 +8,13 @@ I've recently [transitioned from writing on WordPress](https://kunigami.blog/202
 
 There were about a hundred posts and my old blog and I wanted to bring them all into my new site to keep everything in one place although I'm keeping the wordpress blog for historical purposes).
 
-In this meta post we'll describe some of the steps taken to convert WordPress posts into a mark down one and changes I needed to make to support features from WordPress.
+In this meta post we'll describe some of the steps taken to convert WordPress posts into a markdown one and changes I needed to make to support features from WordPress.
 
 I used Python for the processing.
 
 ## XML file
 
-Wordpress offers a way to download all the posts and their metadata as XML which is very convenient. Python on its turn has
+Wordpress offers a way to download all the posts and their metadata as XML which is very convenient. Python on its turn has a library to parse XML files:
 
 {% highlight python %}
 xml.etree.ElementTree
@@ -22,23 +22,25 @@ tree = ET.parse(filename)
 root = tree.getroot()
 {% endhighlight %}
 
-Root can be used to search elements within the XML tree. If you used JavaScript DOM APIs like nod.getElementById(), the idea is very similar:
+`root` can be used to search elements within the XML tree. If you used JavaScript DOM APIs like `node.getElementById()`, the idea is very similar:
 
 {% highlight python %}
 root.findall('./channel/item')
 {% endhighlight %}
 
-One difficulty I had was matching tags with namespaces such as:
+One difficulty I had was matching tags containing namespaces such as:
 
 {% highlight xml %}
 <wp:post_type>post</wp:post_type>
 {% endhighlight %}
 
+Where `wp` is the namespace. Running:
+
 {% highlight python %}
 node.find("wp:post_type")
 {% endhighlight %}
 
-Won’t do, you need to provide an additional parameter, the namespaces. They’re listed in the XML itself, in my case:
+Won’t do, you need to provide an additional parameter, a list of the namespaces. They’re listed in the XML itself (`xmlns` attributes), in my case:
 
 {% highlight xml %}
 <rss version="2.0"
@@ -151,7 +153,7 @@ I started using Gists in wordpress because the `[sourcecode][/sourcecode]` code 
 Github has a REST API to download Gists but the rate limit is very low (1 gist/min) if logged out, while logged in it’s ~100x higher. The github official documentation was not very friendly on explaining how to programmatically authenticate with your own user, but [this post](https://dev.to/gr2m/github-api-authentication-personal-access-tokens-53kd) was very helpful.
 
 
-We can then use the requests Python library to get the data:
+We can then use the `requests` Python library to get the data:
 
 {% highlight python %}
 import requests
@@ -202,4 +204,4 @@ The only downside was to lose all the comments from previous posts.
 
 ## Analytics
 
-I opted to use [Google Analytics](https://analytics.google.com/analytics/web/) funcionality. I just embed some script on top of every page template and it automatically gathers data which is helpful to determine the most popular posts.
+I opted to use [Google Analytics](https://analytics.google.com/analytics/web/) functionality. I just need to embed some script on top of every page template and it automatically gathers data which is helpful to determine the popularity of the posts.
