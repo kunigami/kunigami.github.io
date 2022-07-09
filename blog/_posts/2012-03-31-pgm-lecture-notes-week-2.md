@@ -180,3 +180,56 @@ $$P(Y = 1 \mid X) = \dfrac{\tilde P(Y = 1, X)}{\tilde P(Y = 1, X) + \tilde P(Y =
 Replacing the values of (1) and (2) we get:
 
 $$P(Y = 1 \mid X) = \dfrac{\exp(\sum_i (w_i X_i))}{1+ \exp(\sum_i (w_i X_i))}$$
+
+## Independence in Markov networks
+
+In the same way that we have the $d$-separation in Bayesian networks, we have the separation between two variables $X$ and $Y$ in a Markov network $H$ given $Z$, denoted by $\mbox{sep}_H(X, Y \mid Z)$, which occurs when there is no active path between them given $Z$.
+
+**Lemma 1.** *If $P$ factors a Markov network $H$ and $\mbox{sep}_H(X, Y \mid Z)$, then $P \models (X \perp Y \mid Z)$.*
+
+In the same way as for Bayesian networks, we can define the set of conditional independences on $H$ as
+
+$$I(H) = \{(X \perp Y \mid Z) : \mbox{sep}_H(X, Y \mid Z) \}$$
+
+If $P$ satisfies all conditional independences of $I(H)$, we say that $H $is an $I$-map (independence map) of $P$. Therefore, using *Lemma 1*, we have
+
+**Theorem.** *$P$ factors a Markov network $H$, so $H$ is an $I$-map of $P$.*
+
+Conversely, we have an almost symmetrical result:
+
+**Hammersley Clifford's Theorem.** *Given a positive distribution $P$, if $H$ is an $I$-map of $P$, then $P$ factors $H$.*
+
+## I-maps and perfect maps
+
+Note: this section applies to both Bayesian and Markov networks.
+
+We can define a set of conditional independences on $P$ (rather than a graph) as
+
+$$I(P) = \{(X \perp Y \mid Z) : P \models (X, Y \mid Z) \}$$
+
+Note that if $P$ factors a network $G$, then $I(G) \subseteq I(P)$, but the reverse is not true.
+
+A more sparse graph tends to contain more independence and therefore more accurately represents the independence of $P$. For this, we can remove redundant edges until obtaining a minimal $I$-map, that is, a graph for which there is no edge $(X,Y)$ such that $E(G) \setminus (X, Y)$ is an $I$-map.
+
+Ideally, we would like to find a graph such that $I(G) = I(P)$, characterizing a **perfect** $I$-map, but not every distribution admits such a map. We also have the case that a distribution admits a perfect $I$-map using Bayesian networks (directed graph), but not using Markov networks (undirected graph). A simple example is the $V$ structure.
+
+The opposite can also happen. It is not possible to capture exactly the independence of a Markov network like the one in *Figure 5*, in the case $(A \perp C \mid B, D)$ and $(B \perp D \mid A, C)$.
+
+<figure class="center_children">
+    <img src="{{resources_path}}/loop.png" alt="Bayesian network"/>
+    <figcaption>Figure 5: Loop</figcaption>
+</figure>
+
+One last definition: Two graphs $G_1$ and $G_2$ are said to be $I$-equivalent if $I(G_1) = I(G_2)$.
+
+## Log-Linear Models
+
+These models have the following form:
+
+$$\tilde P = \exp(-\sum_j w_j f_j(D_j))$$
+
+where $w_j$ are called **coefficients** and $f_j()$ **features**, with a domain $D_j$, which is a set of random variables.
+
+This model is quite expressive, so we can represent factors with it. If, for example, the factor $\phi$ has two random variables $X$ and $Y$ as its domain, such that $\phi(X = x_i, Y = y_j) = \sigma_{ij}$, we use an indicator function to define the characteristic function $f_{ij} = 1(X = x_i, Y = y_i)$ and coefficient $w_{ij} = \ln(\sigma_{ij})$.
+
+But the interesting thing is that we can only model values of variables that are related (using tables, we would have multiple entries with value 0), as in the case of natural language processing. We can define a characteristic function that returns 1 if and only if a word starts with a capital letter and the label is person. The corresponding coefficient captures the correlation between these two values.
