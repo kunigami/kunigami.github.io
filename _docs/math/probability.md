@@ -53,7 +53,17 @@ $$P(X \cup Y) = P(X) + P(Y) - P(X \cap Y)$$
 
 Let $X$ be a discrete random variable with possible values $x_1, \cdots, x_n$ with probability distribution $p_1, \cdots, p_n$. The expected value of $X$, denoted by $E[X]$ is defined as:
 
-$$E[X] = \sum_{i = 1}^{n} p_i x_i$$
+$$E[X] = \sum_{i = 1}^{n} P(X=x_i) x_i$$
+
+### Additivity
+
+$$E[X + Y] = E[X] + E[Y]$$
+
+### Law of the Unconscious Statistician
+
+This is useful to compute the expectation of $g(X)$ when we don't know the probability distribution of $g(X)$ but we do of $X$:
+
+$$E[g(X)] = \sum_{i = 1}^{n} P(X=x_i) g(x_i)$$
 
 ## Likelihood
 

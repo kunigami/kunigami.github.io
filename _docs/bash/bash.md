@@ -9,6 +9,13 @@ Bash can be very strict with the syntax (especially around new lines, spaces and
 
 See [shellcheck](https://github.com/koalaman/shellcheck) for this purpose.
 
+# Template
+
+{% highlight bash %}
+#!/bin/bash
+{% endhighlight %}
+
+
 # Assignment
 
 NOTES:
