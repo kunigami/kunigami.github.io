@@ -44,9 +44,34 @@ std::string = to_string(10);
 
 ## Enum
 
+Strong enumeration, scoped enumeration
+
 {% highlight c++ %}
 enum class MyBoolean { kYes, kNo };
 {% endhighlight %}
+
+Unscoped enumeration (without `class` modifier):
+
+{% highlight c++ %}
+enum MyBoolean { kYes, kNo };
+{% endhighlight %}
+
+### Assigning
+
+(scoped enum)
+
+{% highlight c++ %}
+MyBoolean b = MyBoolean::kYes;
+{% endhighlight %}
+
+### Getting value
+
+(scoped enum)
+{% highlight c++ %}
+MyBoolean b = MyBoolean::kYes;
+cout << static_cast<bool>(my_enum) << endl;
+{% endhighlight %}
+
 
 ## Optional
 
@@ -758,6 +783,42 @@ Avoid importing the same file multiple times:
 {% endhighlight %}
 
 Cleaner and less error-prone than using the triad `#ifndef/#define/#endif`.
+
+# Concurrency
+
+## Thread
+
+### Includes
+
+{% highlight c++ %}
+#include <thread>
+{% endhighlight %}
+
+### Creation
+
+Thread from lambda
+
+{% highlight c++ %}
+std::thread my_thread([](){
+  std::cout << "thread function\n";
+});
+{% endhighlight %}
+
+Assignment version
+
+{% highlight c++ %}
+my_thread_ = std::thread([](){
+  std::cout << "thread function\n";
+});
+{% endhighlight %}
+
+### Termination
+
+Block until thread ends
+
+{% highlight c++ %}
+my_thread.join();
+{% endhighlight %}
 
 # Functional
 
