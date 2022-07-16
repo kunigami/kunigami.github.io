@@ -30,6 +30,13 @@ Syntax:
   * Past composite - *tu t'es perdu*
   * `<verb>` agrees with gender and number: *elle s'est perdue*, *ils se sont perdus*
 
+## Conditional
+
+Syntax:
+
+* `If <indicative imperfect>, then <present conditional>`
+* `<present conditional> if <indicative imperfect>`
+
 # Pronouns
 
 ## Personal
