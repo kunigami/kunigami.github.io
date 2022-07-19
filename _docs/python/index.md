@@ -425,6 +425,45 @@ call()
 elapsed_secs = time.time() - start
 {% endhighlight %}
 
+# Context Manager
+
+{% highlight python %}
+class ContextManager:
+  def __enter__(self):
+    self.v = [1, 2, 3]
+    return self
+
+  def __exit__(self, exc_type, exc_value, traceback):
+    self.v = None
+    return self
+
+  def foo(self):
+    print(len(self.v))
+
+with ContextManager() as ctx:
+  ctx.foo()
+{% endhighlight %}
+
+## Async
+
+{% highlight python %}
+class ContextManager:
+  async def __aenter__(self):
+    self.v = [1, 2, 3]
+    return self
+
+  async def __aexit__(self, exc_type, exc_value, traceback):
+    self.v = None
+    return self
+
+  async def foo(self):
+    print(len(self.v))
+
+async with ContextManager() as ctx:
+  await ctx.foo()
+{% endhighlight %}
+
+
 # Other Data Structures
 
 ## Queue
