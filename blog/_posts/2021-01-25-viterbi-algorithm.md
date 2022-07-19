@@ -33,9 +33,9 @@ Associated with each node is a set of possible visible states, or observations, 
 
 Let's go into more details and introduce more formal notation.
 
-**States.** There are $N$ (hidden) states in the model, $S = \curly{s_1, s_2, \cdots, s_N}$.
+**States.** There are $N$ (hidden) states in the model, $S = \curly{s_1, s_2, \cdots, s_N}$. Each node correspond to one of these states.
 
-**Time**. As in a state machine, we have the concept of time. At any given instant $t$, we are in a state $q_t$. We start at $t = 0$ at any given state $q_0 = s_i$ with probability $\pi_i$ for $i \in \curly{1, 2, \cdots, N}$.
+**Time**. As in a state machine, we have the concept of time. At any given instant $t$, we are in a state (or node) $q_t$. We start at $t = 0$ at any given state $q_0 = s_i$ with probability $\pi_i$ for $i \in \curly{1, 2, \cdots, N}$.
 
 **Transition.** When going from instant $t$ to $t+1$, we make a state transition. The probability of going to state $s_j$ given we're at a state $s_i$ is given by the variable $a_{ij}$, where
 
@@ -49,11 +49,11 @@ The $N \times N$ matrix of $a_{ij}$ is denoted by $A$. The "Markov" in "Hidden M
 
 There are $M$ observable states in the model, $V = \curly{v_1, v_2, \cdots, v_M}$. The probability of observing $v_k$ given we're in state $s_i$, $p(v_k \mid s_i)$, is encoded in the variable $b_{ik}$. The $N \times M$ matrix of $b_{ik}$ is denoted by $B$.
 
-## Estimating the Hidden States
+## Estimating the Hidden States Sequence
 
 Suppose we have a sequence of observations $O = o_1, o_2, \cdots, o_T$, where $o_i \in \curly{v_1, \cdots v_M}$ and a model with all the variables $(S, V, A, B, \pi)$ defined. We want to estimate the sequence of hidden states most likely to have yielded such observations.
 
-More formally, let $Q = q_1, q_2, \cdots, q_T$ be a sequence of states where $q_i \in \curly{s_1, \cdots s_N}$. The probability of observing $O$ given $Q$, $p(O \mid Q)$ can be computed by multiplying the probabilities of the independent events. First we consider the probability we started on $q_1$, $\pi_{q_1}$. Secondly, the probability we measured each $o_i$ at state $q_i$, that is $b_{q_i,o_i}$. Thirdly, the probability we transitioned from $q_i$ to $q_{i+1}$, that is $a_{q_i,q_{i+1}}$. Putting it all together:
+More formally, let $Q = q_1, q_2, \cdots, q_T$ be a sequence of states where $q_i \in \curly{s_1, \cdots s_N}$. The probability of observing $O$ given $Q$, $p(O \mid Q)$ can be computed by multiplying the probabilities of the independent events. First we consider the probability $\pi_{q_1}$ we started on $q_1$. Secondly, the probability we measured each $o_i$ at state $q_i$, that is $b_{q_i,o_i}$. Thirdly, the probability we transitioned from $q_i$ to $q_{i+1}$, that is $a_{q_i,q_{i+1}}$. Putting it all together:
 
 $$p(O \mid Q) = \pi_{q_1} (\prod_{i = 1}^{t - 1} a_{q_i,q_{i+1}}) (\prod_{i = 1}^{t} b_{q_i,o_{i}}) $$
 
@@ -61,7 +61,7 @@ We want to find $Q$ such that $p(O \mid Q)$ is maximized.
 
 ## Viterbi Algorithm
 
-The Viterby Algorithm is a dynamic programming that solves the problem above.
+The Viterbi Algorithm is a dynamic programming that solves the problem above.
 
 We introduce a $T \times N$ memoization matrix $P^{\*} = \curly{p_{ij}}$, where $p_{ij}$ represents the maximum probability of the subproblem for $O' = o_1, o_2, \cdots, o_i$, corresponding to the optimal solution $\hat Q = \hat q_1, \hat q_2 \cdots, \hat q_i$ and assuming the last state is $s_j$, that is $\hat q_i = j$.
 
