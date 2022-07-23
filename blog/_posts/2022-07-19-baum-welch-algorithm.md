@@ -350,7 +350,7 @@ More simplistically, suppose we want to find $x$ that maximizes $f(x) = g(x) h(x
 * [[1](https://en.wikipedia.org/wiki/Leonard_E._Baum)] Wikipedia: Leonard E. Baum
 * [[2](https://en.wikipedia.org/wiki/Lloyd_R._Welch)] Wikipedia: Lloyd R. Welch
 * [[3](https://en.wikipedia.org/wiki/Baum%E2%80%93Welch_algorithm)] Wikipedia: Baum–Welch algorithm
-* [[4]({{site}}/docs/math/probability.html)] kuniga.me - Probability Cheat Sheet, Conditional probability
-* [[5]({{site}}/docs/math/probability.html)] kuniga.me - Probability Cheat Sheet, Law of Total Probability
-* [[6]({{site}}/docs/math/probability.html)] kuniga.me - Probability Cheat Sheet, Law of The Unconscious Statistician
+* [[4]({{docs}}/math/probability.html)] kuniga.me - Probability Cheat Sheet, Conditional probability
+* [[5]({{docs}}/math/probability.html)] kuniga.me - Probability Cheat Sheet, Law of Total Probability
+* [[6]({{docs}}/math/probability.html)] kuniga.me - Probability Cheat Sheet, Law of The Unconscious Statistician
 * [[7](https://stephentu.github.io/writeups/hmm-baum-welch-derivation.pdf)] Stephen Tu - Derivation of Baum-Welch Algorithm for Hidden Markov Models

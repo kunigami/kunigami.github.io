@@ -222,6 +222,24 @@ class C:
 
 See also: Class Methods in [Revisiting Python: Object Oriented Programming]({{blog}}/2015/03/08/revisiting-python-object-oriented-programming.html)
 
+## Inheritance
+
+Example template:
+
+{% highlight python %}
+class Base:
+  def __init__(self, f):
+    self.f = f
+
+class Child(Base):
+  def __init__(self, f, g):
+    super().__init__(f)
+    self.g = g
+
+c = Child(1, 2)
+print(c.f, c.g)
+{% endhighlight %}
+
 ## Dataclasses
 
 Lightweight syntax for creating classes / records.

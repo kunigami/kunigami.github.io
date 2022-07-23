@@ -214,6 +214,18 @@ const markers = [
     img_link: "https://photos.app.goo.gl/DMgwtGwckVr9BMY99",
     category: "nature",
   },
+  // -- Massachusetts
+  {
+    name: "Museum of Fine Arts, Boston",
+    description: "Neoclassical & modern wings house a vast collection from ancient Egyptian to contemporary American",
+    lat: 42.33966531054568,
+    lng: -71.09397264998303,
+    img_name: "washington.jpg",
+    visited: true,
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/NpxUNc9HDqBSTF5g8",
+  },
+
   // -- New Mexico
   {
     name: "Chaco Culture National Historical Park",
@@ -631,6 +643,13 @@ const markers = [
     photographer: "me",
     img_link: "https://photos.app.goo.gl/o2StDeK5YSPu8RqDA",
     visited: true,
+    category: "monument",
+  },
+  {
+    name: "Temple of Edfu",
+    description: "One of the best preserved temples in Egypt. From the Ptolemaic period",
+    lat: 24.97874299533867,
+    lng: 32.873243544663964,
     category: "monument",
   },
 
