@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Baum-Welch Algorithm"
-tags: [artificial intelligence]
+title: "Baum-Welch Algorithm: Theory"
+tags: [artificial intelligence, probability]
 excerpt_separator: <!--more-->
 vanity: "2022-07-19-baum-welch-algorithm"
 
@@ -16,7 +16,7 @@ Baum and Welch developed the Baum-Welch algorithm for determining unknown parame
 
 We'll start by reviewing Hidden Markov Models, its definitions and notation. Secondly we'll state the parameter estimation problem in details. Then we'll go over the theory behind the Baum-Welch algorithm and finally we'll present a high-level procedure describing the algorithm and its runtime complexity.
 
-We'll leave the actual implementation and experiments to a future post.
+We'll leave the actual implementation and experiments to a separate post: [Baum-Welch Algorithm: Python Implementation]({{blog}}/2022/07/23/baum-welch-algorithm-in-python.html)..
 
 <!--more-->
 
@@ -294,6 +294,10 @@ The denominator can be computed by applying the law of total probability twice [
 $$P_\theta(Y = O) = \sum_{i' = 1}^{N} \sum_{j' = 1}^{N} P_\theta(q_t = i', q_{t+1} = j', Y = O)$$
 
 Where each $P_\theta(q_t = i', q_{t+1} = j', Y = O)$ can be computed via (9). In this case $P_theta(Y = O)$ was also computed for $\gamma_i(t)$, so we can reuse.
+
+Finally $\xi$ can be computed as:
+
+$$\xi_{ij}(t) = \frac{\alpha_i(t) a_{ij} b_{j, o_{t+1}} \beta_j(t+1)}{\sum_{i' = 1}^{N} \sum_{j' = 1}^{N} P_\theta(q_t = i', q_{t+1} = j', Y = O)}$$
 
 ### Updates
 
