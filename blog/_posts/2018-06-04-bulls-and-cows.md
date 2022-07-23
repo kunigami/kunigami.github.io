@@ -12,26 +12,26 @@ The goal of the game is for player 2 to guess the secret with the least amount o
 
 <figure class="center_children">
     <img src="{{site.url}}/resources/blog/2018-06-04-bulls-and-cows/2018_06_dsc_0110.jpg" alt="DSC_0110" />
-    <figcaption> Bulls sculptures from Cyprus. Dated from sometime between 2000 and 1600 BC. Photo take at the National Archeology Museum in Athens.</figcaption>
+    <figcaption> Bulls sculptures from Cyprus. Dated from sometime between 2000 and 1600 BC. Photo taken at the National Archeology Museum in Athens.</figcaption>
 </figure>
 
 In this post we'll present computational experiments to solve a game of *Bulls and Cows* optimally.
 
-**Objective function**
+## Objective function
 
 
-We'll focus on a search strategy to minimize the maximum number of guesses one has to make, for any possible secret. Alternatively, John Francis's paper [1] proposes heuristics that minimize the **expected** number of guesses, that is, for the worst case these heuristics might not be optimal, but they perform better on average.
+We'll focus on a search strategy to minimize the maximum number of guesses one has to make, for any possible secret (see caveat in the next section). Alternatively, John Francis's paper [1] proposes heuristics that minimize the **expected** number of guesses, that is, for the worst case these heuristics might not be optimal, but they perform better on average.
 
 Because the game has turns, our solution is not a single list of guesses, but rather a decision tree where at each node we branch depending on the hint we get back. The metric we are trying to optimize is then the height of such tree.
 
 To break ties between trees of the same height, we consider the smallest tree (the one with least nodes).
 
-**Brute-force search**
+## Brute-force search
 
 
 Our search algorithm is recursive. At any given recursion level, we are given a set containing all possible numbers that could be secrets. We'll try all combinations of guesses and hints and see which ones yield the best solution.
 
-When we simulate a given guess and hint, we are restricting the possible numbers that can still be secret, so in the next level of recursion, the set of potential secrets will be smaller.
+When we simulate a given guess and hint, we are restricting the possible numbers that can still be secret, so in the next level of recursion, the set of potential secrets will be smaller. Caveat: as `@Innoble` points out in the comments, this restriction might lead to suboptimal solutions, so this brute-force search is solving a restricted version of the problem.
 
 For example, say that the possible secrets are any 4-digit number with no repeated digits. We then use one of them as a guess, say, `[0, 1, 2, 3]`. One possible hint we could receive is (3, 0). What are the possible secrets that would cause us to receive this hint? `[0, 1, 2, 4]`, `[0, 1, 2, 5]` and `[7, 1, 2, 3]` are a few of those. If we recurse for this guess and hint, the set of secrets in the next level will be restricted to those that would return a hint (3, 0) for `[0, 1, 2, 3]`.
 
@@ -53,7 +53,7 @@ def search(possible_secrets):
 
 We start with all possible secrets (4-digit number with no repeated digits) and the tree returned should be optimal in minimizing the number of guesses for the worst case.
 
-**Rust implementation**
+## Rust implementation
 
 
 I initially implemented the search in Python, but it was taking too long, even when artificially restricting the branching. I re-implemented it in Rust and saw some 20x speedups (caveat: I haven't really tried to optimize the Python version).
@@ -114,7 +114,7 @@ The function `group_possibilities_by_score()` above makes use of `compute_scor
 
 Turns out that the Rust implementation is still not efficient enough, so we'll need further optimizations.
 
-**Optimization - classes of equivalence**
+## Optimization - Classes of Equivalence
 
 
 What is a good first guess? It doesn't matter! We don't have any prior information about the secret and every valid number is equality probable. For example, if we guess `[0, 1, 2, 3]` or `[5, 1, 8, 7]`, the height of the decision tree will be the same. An intuitive way to see why this is the case is that we could relabel the digits such that `[5, 1, 8, 7]` would map to `[0, 1, 2, 3]`.
@@ -164,8 +164,7 @@ With this optimization the search algorithm runs in under 2 minutes. By inspecti
 The complete code is available on [Github](https://github.com/kunigami/blog-examples/blob/master/bulls-and-cows/src/main.rs).
 
 
-**Visualizing**
-
+## Visualizing
 
 The JSON output by the search algorithm is quite big (the smallest tree with height 7 has almost 7000 nodes). A more interesting way to inspect the data is to create a *Bulls and Cows* solver. We feed the JSON to this application and ask the user to select the outcome based on the secret they have in mind. We are basically traversing the edges of the decision tree.
 
@@ -176,7 +175,7 @@ The JSON output by the search algorithm is quite big (the smallest tree with hei
 I've uploaded the application to my [personal website](http://kuniga.me/bulls_and_cows/) and the source code is available on [Github](https://github.com/kunigami/kunigami.github.io/blob/master/js/bulls_and_cows/app.js).
 
 
-### Conclusion
+## Conclusion
 
 
 I learned about this game pretty recently and was curious to learn of good strategies to solve this problem. From what I've been reading, the heuristics that yield good solutions are very complicated for a human to perform. This leads to an question: is there are any solution which is simple to follow but that is reasonably good?
@@ -184,9 +183,6 @@ I learned about this game pretty recently and was curious to learn of good strat
 One natural extension for this problem is to use larger numbers of digits (`N` &gt; 4) and have each element be sourced from 0 to `D` - 1. An exhaustive search might be prohibitive, but maybe we can come up with heuristics with constant guarantees. What is a lower bound for the number of guesses for variants with arbitrary N and D?
 
 I struggled to implement this code in Rust, but I found the challenge worthwhile. I learned a bit more about its specifics, especially regarding memory management and data types.
-
-In [1], the author mentions that with optimizations the search took 45 minutes to run on their laptop (2GHz Intel Core 2 Duo). I ran mine on a Intel i7 2.2GHz and was surprised by the running time of 2 minutes. CPUs are not getting exponentially faster these days and my code runs on a single thread.
-
 
 ### References
 
