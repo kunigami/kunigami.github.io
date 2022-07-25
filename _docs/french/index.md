@@ -14,6 +14,11 @@ title: "French Cheatsheet"
 
 # Verbs
 
+## Definitions
+
+* `<verb>` represents some generic verb in its infinitive form.
+* `conj(<verb>)` means the verb is conjugated.
+
 ## Reflexive
 
 Common examples:
@@ -23,10 +28,10 @@ Common examples:
 
 Syntax:
 
-* `<pers. pronoun> <refl. pronoun> <conj. verb>`
+* `<pers. pronoun> <refl. pronoun> conj(<verb>)`
   * Present - *je me perds*
   * Imperfect - *je me perdais*
-* `<pers. pronoun> <refl. pronoun> <conj. etre> <verb>`
+* `<pers. pronoun> <refl. pronoun> conj(etre) <verb>`
   * Past composite - *tu t'es perdu*
   * `<verb>` agrees with gender and number: *elle s'est perdue*, *ils se sont perdus*
 
@@ -36,6 +41,14 @@ Syntax:
 
 * `If <indicative imperfect>, then <present conditional>`
 * `<present conditional> if <indicative imperfect>`
+
+## Passé Composé
+
+### avoir vs être
+
+We use `<conj. etre> <verb>` when `<verb>` denotes displacement and `<verb>` is used as indirect verb. For all other verbs we use `<conj. avoir>`.
+
+* When using `<conj. etre>`, `<verb>` agrees with person and number.
 
 # Pronouns
 
