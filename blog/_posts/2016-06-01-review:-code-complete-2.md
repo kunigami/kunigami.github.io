@@ -4,7 +4,7 @@ title: "Review: Code Complete 2"
 tags: [review, software engineering]
 ---
 
-<figure>
+<figure class="image_float_left">
     <img src="{{site.url}}/resources/blog/2016-06-01-review:-code-complete-2/2019_05_code-complete.jpg" alt="code-complete" />
 </figure>
 

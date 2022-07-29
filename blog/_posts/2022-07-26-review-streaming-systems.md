@@ -187,7 +187,7 @@ This chapter build on the SQL syntax to introduce Streaming joins, that is, join
 
 From the perspective of the stream-table theory, join is a grouping operation which turns streams into a table (puts data at rest).
 
-A common pattern is to join a two keys being equal and to define a time range (window) for the joins to happen, but in theory stream joins can be "unwindowed".
+A common pattern is to join on two keys being equal and to define a time range (window) for the joins to happen, but in theory stream joins can be "unwindowed".
 
 It has the same challenges as stream aggregations, namely dealing with out-of-order data. To work around that we also need to leverage watermarks and retractions.
 
