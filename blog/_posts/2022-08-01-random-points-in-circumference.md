@@ -78,11 +78,6 @@ The probability of a point falling inside the circle is $\frac{\pi}{4}$, so the 
 
 Amazingly, it's possible to use this technique to generate points with a normal distribution, as we'll see next!
 
-### Yet Another Method
-
-projection.
-
-
 ## Generating Normal Distribution
 
 If a random variable $X$ has a normal distribution ($\sigma = 1$, $\mu = 0$), its cumulative probability distribution (CDF) can be given by:
