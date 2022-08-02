@@ -51,7 +51,7 @@ Similarly for $Y' = \sin \Theta$:
 
 $$Y' = \sin \Theta = \frac{Y}{R} = \frac{Y}{\sqrt{X^2 + Y^2}}$$
 
-Computing the square root is not ideal, so the trick is to use $2\Theta$ which is uniformly sampled between $[0, 4 \pi[$, but since $\sin(x) = \sin(x + 2 \pi)$ and $\cos(x) = \cos(x + 2 \pi)$, so effectively $2\Theta$ has the same distribution as $\Theta$!
+Computing the square root is not ideal, so the trick is to use $2\Theta$ which is uniformly sampled between $[0, 4 \pi[$, but since trigonometric functions have period $2\pi$ (e.g. $\sin(x) = \sin(x + 2 \pi)$ and $\cos(x) = \cos(x + 2 \pi)$), effectively $2\Theta$ has the same distribution as $\Theta$!
 
 Assuming $X' = \cos(2\Theta)$ and using the identity $\cos(2\Theta) = \cos \Theta^2 - \sin \Theta^2$:
 
