@@ -896,3 +896,21 @@ struct K {
 auto obj = K();
 cout << obj.c_.call(3) << endl;
 {% endhighlight %}
+
+# Namespaces
+
+## Nested namespace
+
+{% highlight c++ %}
+namespace n1::n2::n3 {
+  int x;
+}
+{% endhighlight %}
+
+Which is equivalent to
+{% highlight c++ %}
+
+namespace n1 { namespace n2 { namespace n3 {
+  int x;
+}}}
+{% endhighlight %}
