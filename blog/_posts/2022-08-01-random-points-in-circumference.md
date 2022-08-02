@@ -3,7 +3,7 @@ layout: post
 title: "Random Points in Circumference"
 tags: [geometry, probability, puzzle]
 excerpt_separator: <!--more-->
-vanity: "2022-07-29-random-points-in-circumference"
+vanity: "2022-08-01-random-points-in-circumference"
 ---
 
 {% include blog_vars.html %}
