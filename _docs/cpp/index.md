@@ -899,6 +899,18 @@ cout << obj.c_.call(3) << endl;
 
 # Namespaces
 
+## Empty Namespace
+
+Keywords: anonymous, unnamed
+
+This makes `x` local to the file and doesn't risk being exposed if some other file includes it.
+
+{% highlight c++ %}
+namespace {
+  int x;
+}
+{% highlight c++ %}
+
 ## Nested namespace
 
 {% highlight c++ %}
@@ -913,4 +925,34 @@ Which is equivalent to
 namespace n1 { namespace n2 { namespace n3 {
   int x;
 }}}
+{% endhighlight %}
+
+## Re-opening namespace
+
+The contents inside a namespace can be defined separately:
+
+{% highlight c++ %}
+// file_a.cpp
+namespace n {
+  int x;
+}
+
+// file_b.cpp
+namespace n {
+  int y = x + 1;
+}
+{% endhighlight %}
+
+## Shared namespaces
+
+Effectively if 2 nested namespace blocks share the same "prefix", we don't have to include the whole prefix when referencing the other namespace:
+
+{% highlight c++ %}
+namespace n1::n2::n3 {
+    int x = 0;
+}
+
+namespace n1::n2::n4 {
+  int y = n3::x + 1;
+}
 {% endhighlight %}
