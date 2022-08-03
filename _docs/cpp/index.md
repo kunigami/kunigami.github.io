@@ -909,7 +909,7 @@ This makes `x` local to the file and doesn't risk being exposed if some other fi
 namespace {
   int x;
 }
-{% highlight c++ %}
+{% endhighlight %}
 
 ## Nested namespace
 
@@ -920,8 +920,8 @@ namespace n1::n2::n3 {
 {% endhighlight %}
 
 Which is equivalent to
-{% highlight c++ %}
 
+{% highlight c++ %}
 namespace n1 { namespace n2 { namespace n3 {
   int x;
 }}}

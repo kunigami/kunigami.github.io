@@ -11,6 +11,10 @@ title: Doc
 
 Cheat Sheets are different from posts in that they're a living document (posts are not constantly updated).
 
+## Computer Science
+
+* [Distributed Systems]({{ site.url }}/docs/cs/distributed.html)
+
 ## C++
 
 * [General]({{ site.url }}/docs/cpp/)
