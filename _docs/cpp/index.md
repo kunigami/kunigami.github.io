@@ -288,6 +288,16 @@ std::cout << *pt << std::endl;
 
 # Flow Control
 
+## Conditionals
+
+Initialize and evaluate inline:
+
+{% highlight c++ %}
+if (bool x = false; !c) {
+  cout << "prints" << endl;
+}
+{% endhighlight %}
+
 ## Exceptions
 
 {% highlight c++ %}
@@ -927,32 +937,22 @@ namespace n1 { namespace n2 { namespace n3 {
 }}}
 {% endhighlight %}
 
-## Re-opening namespace
+## Namespace resolution
 
-The contents inside a namespace can be defined separately:
+Suppose we're in namespace `a::b`, and inside it we refer to a variable `x` via `c::x`. What namespace does the compiler search in?
+
+* Search for the first namespace matching `a::b::c`.
+* If not found, search for a namespace matching `a::c`.
+* If not found, search for a namespace matching `c`.
+
+Once if has a namespace, use the `x` defined there. Report error if not. The key insight is that it binds to a namespace **before** searching for symbols there, so this case:
 
 {% highlight c++ %}
-// file_a.cpp
-namespace n {
-  int x;
-}
-
-// file_b.cpp
-namespace n {
-  int y = x + 1;
+namespace a::b::c { }
+namespace a::c { int x = 1; }
+namespace a::b {
+  int y = x;
 }
 {% endhighlight %}
 
-## Shared namespaces
-
-Effectively if 2 nested namespace blocks share the same "prefix", we don't have to include the whole prefix when referencing the other namespace:
-
-{% highlight c++ %}
-namespace n1::n2::n3 {
-    int x = 0;
-}
-
-namespace n1::n2::n4 {
-  int y = n3::x + 1;
-}
-{% endhighlight %}
+Will lead to a compilation error since it binds to `a::b::c` first, even though `x` *is* defined in `a::c`. If we comment the first line it works.
