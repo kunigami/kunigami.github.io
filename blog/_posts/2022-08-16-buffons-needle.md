@@ -67,11 +67,11 @@ $$\frac{\cos^{-1} (1 - z)}{2}$$
 
 but accounting for the $y$-axis symmetry, we multiply it by 2:
 
-$$\cos^{-1} (1 - z)$$
+$$(1) \quad \cos^{-1} (1 - z)$$
 
 A similar argument gives us the area of the sector when leaning backwards:
 
-$$\cos^{-1} (z)$$
+$$(2) \quad \cos^{-1} (z)$$
 
 The sector corresponding to samples "leaning forward" that crosses the line is shown in green in *Figure 2*, while the one corresponding to "leaning backward" is shown in red.
 
@@ -81,7 +81,7 @@ The sector corresponding to samples "leaning forward" that crosses the line is s
 </figure>
 
 
-If we wish to compute the volume of the points corresponding to a crossing, we thus need to integrate the area of these sectors over $z$. We note that (A) and (B) are the same if we flip the direction of integration from $z = 0 \rightarrow 1$ to $z = 1 \rightarrow 0$, so for the purpose of volume calculation we can do:
+If we wish to compute the volume of the points corresponding to a crossing, we thus need to integrate the area of these sectors over $z$. We note that (1) and (2) are the same if we flip the direction of integration from $z = 0 \rightarrow 1$ to $z = 1 \rightarrow 0$, so for the purpose of volume calculation we can do:
 
 $$2 \int_{z=0}^{1} \cos^{-1} (z) dz$$
 
@@ -99,17 +99,33 @@ Let's generalize a bit and suppose we are want to compute the expected number $E
 
 Suppose we split the segment into two equal parts. Since they're identical, independently they have the same probability of crossing a line and hence the same expected value, say $e'$.
 
-We can thus write the expected value $E_S$ as $E_S = 2 e'$. If we keep dividing into ever smaller parts and take this to the limit, $E_S = \ell \epsilon$, where $\epsilon$ is the expected value of a piece of infinitesimal size.
+We can thus write the expected value $E_S$ as $E_S = 2 e'$. If we keep dividing into ever smaller parts, say $N$ segments of length $\delta_\ell$ (where $\ell = \delta_\ell N$) and expected value $\epsilon$, then:
 
-The big leap is that this process works for any curve, not necessarily a segment and that's why this problem is called Buffon's *noodle*. One of such curves is the circle with diameter 1. Its circumference is $\pi$, so its expected number of crossing, say $E_C$, is given by $E_C = \pi \epsilon$. However, such a circle always crosses lines exactly twice so $E_C = 2$.
+$$E_S = \sum_{i = 1}^{N} \epsilon = N \epsilon = \ell \frac{\epsilon}{\delta_\ell}$$
 
-This allows us computing $\epsilon = \frac{2}{\pi}$. Since in our original problem $\ell = 1$, $E_S$ is also $\frac{2}{\pi}$ as we demonstated previously.
+Let $x$ be a point in the segment and $f(x)$ some scalar function of $x$. We can pretend $\epsilon$ is the difference between $f$ evaluated at $x$ and a point in the neighborhood $x + \delta_\ell$, that is: $\epsilon = f(x + \delta_\ell) - f(x)$. If we take the limit:
+
+$$\lim_{\delta_\ell \rightarrow 0} \frac{f(x + \delta_\ell) - f(x)}{\delta_\ell}$$
+
+We end up with the derivative $\frac{df(x)}{d\ell}$ and
+
+$$E_S = \ell \frac{df(x)}{d\ell}$$
+
+Since for sub-segments of same lenght we have the same expected value, the derivative is the same no matter $x$, which formalizes our intuition that $E_S$ is proportional to $\ell$:
+
+$$E_S = k \ell$$
+
+So we just need to find the constant $k$.
+
+The big leap is that this process works for any differentiable curve, not necessarily a straight line and that's why this problem is called Buffon's *noodle*. One of such curves is the circle with diameter 1. Its circumference is $\pi$, so its expected number of crossing, say $E_C$, is given by $E_C = k \pi$. However, such a circle always crosses lines exactly twice so $E_C = 2$.
+
+This allows us computing $k = \frac{2}{\pi}$. Since in our original problem $\ell = 1$, $E_S$ is also $\frac{2}{\pi}$ as we demonstated previously.
 
 ## Conclusion
 
 In this post we assumed the needle length $\ell$ and the slat width $w$ are the same. However, much of the same arguments apply to the case where $\ell \le w$, but not if $\ell \gt w$. The key difference is that when $\ell \le w$, a segment can only cross slats at most once, so the expectated value is equal to the probability.
 
-For $\ell \gt w$ we can still determine the expected value which is what the *Buffon's Noodle* problem solves.
+For $\ell \gt w$ we can still determine the *expected value* which is what the Buffon's Noodle problem solves.
 
 The Buffon's needle problem led me to ponder about generating points on the circumference and write a preliminary post [4].
 
