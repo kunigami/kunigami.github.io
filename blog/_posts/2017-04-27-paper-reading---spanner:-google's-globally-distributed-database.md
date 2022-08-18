@@ -134,4 +134,4 @@ A converse approach is the **wait-die** mechanism. The comparison of these metho
 * [[3](http://radar.oreilly.com/2012/10/google-spanner-relational-database.html)] Radar - Google’s Spanner is all about time
 * [[4](http://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf)] Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial
 * [[5](http://dl.acm.org/citation.cfm?id=320260)] System level concurrency control for distributed database systems
-* [[6]({{site/docs/cs/distributed.md}})] Distributed Systems Cheat Sheet
+* [[6]({{site}}/docs/cs/distributed.html)] Distributed Systems Cheat Sheet

@@ -22,7 +22,7 @@ First we'll describe the original version of LSM Trees and then an improved vers
 
 ## LSM Trees
 
-Let's study LSM Trees applies to the implementation of a key-value database. Writes are initially done to an in-memory structure called **memtable, **where the keys are kept sorted (random access of RAM is not expensive). Once the table "fills up", it's persisted in disk as an immutable (read-only) file.
+Let's study LSM Trees applies to the implementation of a key-value database. Writes are initially done to an in-memory structure called **memtable**, where the keys are kept sorted (random access of RAM is not expensive). Once the table "fills up", it's persisted in disk as an immutable (read-only) file.
 
 <figure class="center_children">
     <img src="{{site.url}}/resources/blog/2018-07-20-log-structured-merge-trees/2018_07_lsm-insert-mem2.png" alt="lsm-insert-mem" />
@@ -49,7 +49,7 @@ This resembles the discussion of [amortized analysis]({{site.url}}/blog/2017/07/
 
 ## LSM with Level Compaction
 
-An alternative approach to work around expensive worst case scenarios is to keep the file sizes small (under 2MB) and divide them into levels. Excluding the first level which is special, the set of keys each two files at a given level contain must be disjoint, that is, a given **key cannot appear in more than one file at the same level**. Each level can contain multiple files, but the total size of the files should be under a limit. Each level is k times larger than the previous one. In LevelDB [4], level `L` has a (`10^L`) MB size limit (that is, 10MB for level 1, 100MB for level 2, etc).
+An alternative approach to work around expensive worst case scenarios is to keep the file sizes small (under 2MB) and divide them into levels. Excluding the first level which is special, the set of keys each two files at a given level contain must be disjoint, that is, a given key cannot appear in more than one file at the same level. Each level can contain multiple files, but the total size of the files should be under a limit. Each level is k times larger than the previous one. In LevelDB [4], level `L` has a (`10^L`) MB size limit (that is, 10MB for level 1, 100MB for level 2, etc).
 
 **Promotion.** Whenever a given level reaches its size limit, one of the files at that level is selected to be merged with the next level or *promoted*. To keep the property of disjoint keys satisfied, we first identify which files in the next level have duplicated keys with the file being merged and then merge all these files together. Instead of outputting a single combined file like in the tiered compaction, we output many files of size up to 2MB. During the merge, if we find collisions, the key from the lower level is more recent, so we can just discard the key from the high level.
 
