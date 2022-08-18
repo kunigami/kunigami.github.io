@@ -265,6 +265,11 @@ pre code {
   box-shadow: none;
 }
 
+figure pre {
+  /* add margin when code is inside a figure so there's space from the figcaption */
+  margin-bottom: 8px;
+}
+
 blockquote {
   color: #777;
   margin-bottom: 20px;
