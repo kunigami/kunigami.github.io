@@ -109,7 +109,7 @@ class Wordhex extends React.Component {
         style.outline = "2px solid blue";
       }
 
-      boxes.push(<span style={style}>{word[i]}</span>);
+      boxes.push(<span key={i} style={style}>{word[i]}</span>);
     }
     return <div>{boxes}</div>;
   }
@@ -129,7 +129,10 @@ class Wordhex extends React.Component {
           ...BOX_STYLE,
           backgroundColor: color,
         };
-        boxes.push(<span style={style} onClick={() => this.onCharEntered(KEYS[i].charAt(j))}>{KEYS[i].charAt(j)}</span>);
+        boxes.push(<span key={chr} style={style} onMouseDown={(evt) => {
+          this.onCharEntered(KEYS[i].charAt(j));
+          evt.stopPropagation();
+        }}>{KEYS[i].charAt(j)}</span>);
       }
       rows.push([<div>{boxes}</div>]);
     }
@@ -145,6 +148,7 @@ class Wordhex extends React.Component {
   }
 
   onCharEntered = (chr) => {
+    console.log('onChartEntered');
     if (!this.state.isActive) {
       return;
     }
@@ -181,8 +185,12 @@ class Wordhex extends React.Component {
   }
 
   submit() {
-    const {currentGuess, keyMap} = this.state;
+    const {currentGuess, inputPosition, keyMap} = this.state;
     const matches = this.getMatches(currentGuess);
+
+    if (inputPosition < WORD_LEN) {
+      return;
+    }
 
     if (currentGuess == this.props.word) {
       this.setState({
