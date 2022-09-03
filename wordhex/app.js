@@ -95,7 +95,6 @@ class Wordhex extends React.Component {
     if (chr == 'Enter' || chr == '⏎') {
       this.submit();
     }
-    console.log(chr, chr == '⌫');
     if (chr == 'Backspace' || chr == '⌫') {
       if (inputPosition > 0) {
         this.setState({
@@ -104,7 +103,8 @@ class Wordhex extends React.Component {
         });
       }
     }
-    if (chr >= 'A' && chr <= 'Z' && inputPosition < this.props.word.length) {
+    const isAlphabet = chr >= 'A' && chr <= 'Z' && chr.length == 1;
+    if (isAlphabet && inputPosition < this.props.word.length) {
       this.setState({
         currGuess: setCharAt(currGuess, chr.toUpperCase(), inputPosition),
         inputPosition: Math.min(inputPosition + 1, this.props.word.length),
