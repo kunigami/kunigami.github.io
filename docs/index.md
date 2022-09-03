@@ -53,6 +53,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [Matrices]({{ site.url }}/docs/math/matrix.html)
 * [Probability]({{ site.url }}/docs/math/probability.html)
+* [Topology]({{ site.url }}/docs/math/topology.html)
 * [Trigonometry]({{ site.url }}/docs/math/trigonometry.html)
 
 
