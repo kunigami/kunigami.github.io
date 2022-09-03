@@ -3,21 +3,13 @@ const INCEPTION = '2022/09/02';
 const PAGE_WIDTH = document.querySelector("#app").offsetWidth;
 const BOX_SIZE = PAGE_WIDTH / 11 - 11;
 const BOX_STYLE = {
-  alignItems: "center",
   outline: "1px solid",
   width: BOX_SIZE,
   height: BOX_SIZE,
-  display: "inline-flex",
-  justifyContent: "center",
   margin: BOX_SIZE / 10,
-  padding: 0,
-  textAlign: "center",
-  verticalAlign: "top",
 }
 const KEYS = ["QWERTYUIOP", "ASDFGHJKL", "⏎ZXCVBNM⌫"];
-const GREEN = '#a6ccaa';
-const YELLOW = '#fffdcb';
-const GRAY = '#cccccc'
+const [GREEN, YELLOW, GRAY] = ['#a6ccaa', '#fffdcb', '#cccccc'];
 
 function toUTC(date) {
   date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
@@ -50,23 +42,10 @@ class Wordhex extends React.Component {
   }
 
   render() {
-    const outerStyle = {
-      fontFamily: "Inconsolata",
-      display: "flex",
-      justifyContent: "center",
-    };
-    const innerStyle = {
-      display: "flex",
-      alignItems: "center",
-      flexDirection: "column",
-    };
-
-    return <div style={outerStyle}>
-      <div style={innerStyle}>
+    return <div className="root">
       {this.state.guesses.map((word, i) => this.renderWord({key: i, word}))}
       {this.renderWord({word: this.state.currGuess, isInput: true})}
       {this.renderKeyboard()}
-      </div>
     </div>;
   }
 
@@ -83,7 +62,7 @@ class Wordhex extends React.Component {
           "2px solid blue" :
           (isValid ? BOX_STYLE.outline : "2px solid red"),
       };
-      return <span key={i} style={style}>{chr}</span>;
+      return <span key={i} className="box" style={style}>{chr}</span>;
     })}</div>;
   }
 
@@ -97,11 +76,13 @@ class Wordhex extends React.Component {
             'none' :
             [GRAY, YELLOW, GREEN][keyStatus],
         };
-        return (<span key={chr} style={style} onClick={(evt) => {
-          this.onChar(chr);
-          evt.preventDefault();
-          evt.stopPropagation();
-        }}>{chr}</span>);
+        return (
+          <span key={chr} className="box" style={style} onClick={(evt) => {
+            this.onChar(chr);
+            evt.preventDefault();
+            evt.stopPropagation();
+          }}>{chr}</span>
+        );
       })}</div>;
     });
   }

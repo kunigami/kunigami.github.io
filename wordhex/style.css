@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  font-family: Lora;
+  flex-direction: column;
+  align-items: center;
+}
+.box {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+  vertical-align: top;
+}
