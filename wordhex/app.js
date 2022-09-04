@@ -103,10 +103,11 @@ class Wordhex extends React.Component {
         });
       }
     }
+    chr = chr.toUpperCase();
     const isAlphabet = chr >= 'A' && chr <= 'Z' && chr.length == 1;
     if (isAlphabet && inputPosition < this.props.word.length) {
       this.setState({
-        currGuess: setCharAt(currGuess, chr.toUpperCase(), inputPosition),
+        currGuess: setCharAt(currGuess, chr, inputPosition),
         inputPosition: Math.min(inputPosition + 1, this.props.word.length),
       });
     }
