@@ -107,12 +107,38 @@ Note that if distincts $a, b \in X$ could have $f(a) = f(b) \in Y$. This leads t
 
 **Lemma.** $A \subseteq f^{-1}(f(A))$.
 
+A function $f:X \rightarrow Y$ is *surjective* or *onto* if $Y = f(X)$, or that for every $y \in Y$ there is $x \in X$ such that $f(x) = y$.
+
 ## Continuity
 
 A function $f:(X, \tau) \rightarrow (Y, \tau')$ is said to be *continuous at point* $a \in X$ if for every neighborhood of $N$ of $f(a)$, $f^{-1}(N)$ is a neighborhood of $a$. $f$ is *continuous* if it's continuous for all points in $X$.
+
+An equivalent definition: $f:(X, \tau) \rightarrow (Y, \tau')$ is continuous if and only if for every $U$ that is an open set in $U$, $f^{-1}(U)$ is an open set in $X$.
 
 ## Homeomorphism
 
 Topological spaces $(X, \tau)$ and $(Y, \tau')$ are called *homeomorphic* if there exist *inverse* functions $f:X \rightarrow Y$ and $g:Y \rightarrow X$ and $f$ and $g$ are continuous.
 
 Functions $f$ and $g$ are called *homeomorphisms* and they define a *homeomorphism between* $(X, \tau)$ and $(Y, \tau')$.
+
+# Product
+
+The product of two sets $A$ and $B$, denoted by $A \times B$ is the set of pairs corresponding to all combinations of elements from $A$ and $B$, that is $\forall a \in A, b \in B : (a, b) \in A \times B$.
+
+The product of multiple sets $X_i$, $1 \le i le n$ can be denoted as $X = \prod_{i=1}^{n} X_i$. Every element $a \in X$ can be written as $a = (a_1, \cdots, a_n)$, where $a_i \in X_i$.
+
+Let $(X_i, \tau_i)$, $1 \le i le n$ be topological spaces. Let $X = \prod_{i=1}^{n} X_i$. Let $O = \prod_{i=1}^{n} O_i$ where $O_i$ is some open set in $X_i$.
+
+Let $\tau$ be the collection of subsets of $X$ that are unions of sets in the form of $O$ above. It's possible to show $\tau$ is a topology, and the topological space $(X, \tau)$ is defined as the *product* of the topological spaces $(X_i, \tau_i)$, $1 \le i le n$.
+
+## Projection
+
+Let $X_i$, $1 \le i \le n$ be sets and $X = \prod_{i=1}^{n} X_i$. Let $a = (a_1, \cdots, a_n) \in X$.
+
+The function $p_i:X \rightarrow X_i$ called the $i$-th *projection* is defined as $p_i(a) = a_i$. If each $a_i$ are sets, then we can defined $p^{-1}_i(a_i) = X_1 \times \cdots \times a_i \times \cdots \times X_n$, that is, we're "fixing" the $i$-th coordinate to be $a_i$ but leaving the others unrestricted.
+
+# Identification Topologies
+
+Let $(X, \tau)$ and $(Y, \tau')$ topological spaces. An *identification* is a continuous function $f:X \rightarrow Y$ if for each subset $U$ of $Y$, $f^{-1}(U) \in X$ being open in $X$ implies $U$ being open in $Y$.
+
+Continuity only implies: if $U$ open set then $f^{-1}(U)$ open set. Identification adds the converse: if $f^{-1}(U)$ open set then $U$ open set.
