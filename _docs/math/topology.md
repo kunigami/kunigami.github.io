@@ -43,7 +43,7 @@ Let $X$ be a non-empty set and $\tau$ a collection of subsets of $X$. These subs
 * $O3$. The union of finite or infinite members of $\tau$ is in $\tau$
 * $O4$. The intersection of finite members of $\tau$ is in $\tau$
 
-Then $(X, \tau)$ is a *topological space*. $\tau$ is called the *topology* on set $X$. Members of $\tau$ are called *open sets*.
+Then $(X, \tau)$ is a *topological space*. $\tau$ is called the *topology* of set $X$. Members of $\tau$ are called *open sets*.
 
 ## Neighborhood
 
@@ -113,13 +113,17 @@ A function $f:X \rightarrow Y$ is *surjective* or *onto* if $Y = f(X)$, or that 
 
 A function $f:(X, \tau) \rightarrow (Y, \tau')$ is said to be *continuous at point* $a \in X$ if for every neighborhood of $N$ of $f(a)$, $f^{-1}(N)$ is a neighborhood of $a$. $f$ is *continuous* if it's continuous for all points in $X$.
 
-An equivalent definition: $f:(X, \tau) \rightarrow (Y, \tau')$ is continuous if and only if for every $U$ that is an open set in $U$, $f^{-1}(U)$ is an open set in $X$.
+An equivalent definition: $f:(X, \tau) \rightarrow (Y, \tau')$ is continuous if and only if for every $U$ that is an open set in $Y$, $f^{-1}(U)$ is an open set in $X$.
 
 ## Homeomorphism
 
 Topological spaces $(X, \tau)$ and $(Y, \tau')$ are called *homeomorphic* if there exist *inverse* functions $f:X \rightarrow Y$ and $g:Y \rightarrow X$ and $f$ and $g$ are continuous.
 
 Functions $f$ and $g$ are called *homeomorphisms* and they define a *homeomorphism between* $(X, \tau)$ and $(Y, \tau')$.
+
+# Subspaces
+
+Let $\tau_1$ and $\tau_2$ be topologies on a given set $X$. $\tau_1$ is said to be *weaker* than $\tau_2$ if $\tau_1 \subset \tau_2$.
 
 # Product
 
@@ -142,3 +146,7 @@ The function $p_i:X \rightarrow X_i$ called the $i$-th *projection* is defined a
 Let $(X, \tau)$ and $(Y, \tau')$ topological spaces. An *identification* is a continuous function $f:X \rightarrow Y$ if for each subset $U$ of $Y$, $f^{-1}(U) \in X$ being open in $X$ implies $U$ being open in $Y$.
 
 Continuity only implies: if $U$ open set then $f^{-1}(U)$ open set. Identification adds the converse: if $f^{-1}(U)$ open set then $U$ open set.
+
+Let $f: X \rightarrow Y$ be a surjective function. Define $\tau'$ as the set of subsets $U \in Y$ such that $f^{-1}(U)$ is open in $X$. It's possible to show $\tau'$ is a topology of $Y$. This in turn proves that $f$ is continuous since if $U \in \tau'$ by construction it was added there because $f^{-1}(U)$ is an open set.
+
+It's also that case that for every $U \in Y$ if $f^{-1}(U)$ is open, then by construction $U \in \tau'$, so this function is an identification. We say that $\tau'$ is an *identification topology on* $Y$ *determined by* $f$.
