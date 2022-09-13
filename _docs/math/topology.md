@@ -107,7 +107,11 @@ Note that if distincts $a, b \in X$ could have $f(a) = f(b) \in Y$. This leads t
 
 **Lemma.** $A \subseteq f^{-1}(f(A))$.
 
-A function $f:X \rightarrow Y$ is *surjective* or *onto* if $Y = f(X)$, or that for every $y \in Y$ there is $x \in X$ such that $f(x) = y$.
+A function $f:X \rightarrow Y$ is *surjective* or *onto* if $Y = f(X)$, or that for every $y \in Y$ there is $x \in X$ such that $f(x) = y$. Note that the opposite, that for every $x \in X$ there is $f(x) \in Y$, is implicit in the definition of a function.
+
+A function $f:X \rightarrow Y$ is *injective* or *one-to-one* if for every $f(a) = f(b) \in Y$, then $a = b \in X$. In other words, no two distinct elements in $X$ map to the same element in $Y$.
+
+A function $f:X \rightarrow Y$ is *bijective* or *one-to-one correspondence* if it's surjective and injective.
 
 ## Continuity
 
@@ -120,6 +124,8 @@ An equivalent definition: $f:(X, \tau) \rightarrow (Y, \tau')$ is continuous if 
 Topological spaces $(X, \tau)$ and $(Y, \tau')$ are called *homeomorphic* if there exist *inverse* functions $f:X \rightarrow Y$ and $g:Y \rightarrow X$ and $f$ and $g$ are continuous.
 
 Functions $f$ and $g$ are called *homeomorphisms* and they define a *homeomorphism between* $(X, \tau)$ and $(Y, \tau')$.
+
+Another characterization: $(X, \tau)$ and $(Y, \tau')$ are homeomorphic if there exists a bijective function $f:X \rightarrow Y$ such that for every open set $O$ in $X$, $f(O)$ is open in $Y$.
 
 # Subspaces
 
