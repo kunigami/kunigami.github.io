@@ -121,6 +121,8 @@ std::string_view str1{"my_string"};
 std::string_view str2{ str2 }; // No copy
 {% endhighlight %}
 
+* `string_view::substr()` does not copy either.
+
 ## Sstream
 
 ### Osstream
@@ -780,6 +782,22 @@ std::ofstream my_file("filename");
 if (my_file.is_open()) {
     my_file << "a line" << std::end;
 }
+{% endhighlight %}
+
+# Date and Time
+
+## Time
+
+### Current timestamp
+
+Unix timestamp.
+
+{% highlight c++ %}
+#include <chrono>
+auto timestamp = std::chrono::system_clock::now();
+auto unixtime = std::chrono::duration_cast<std::chrono::seconds>(
+  timestamp.time_since_epoch()
+).count()
 {% endhighlight %}
 
 # Modules
