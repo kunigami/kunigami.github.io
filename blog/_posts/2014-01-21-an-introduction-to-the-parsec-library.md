@@ -397,7 +397,7 @@ And that's it! We can now run an example with a valid expression:
 {% highlight haskell %}
 
 > test expressionParser "(123+(324-456))"
-Right (JNode (JTerminal 123) JAdd (JNode (JTerminal 324) JSubtract (JTerminal 456)))
+Right (TNode (TTerminal 123) TAdd (TNode (TTerminal 324) TSubtract (TTerminal 456)))
 
 {% endhighlight %}
 
