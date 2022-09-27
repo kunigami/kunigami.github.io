@@ -139,11 +139,11 @@ Here, we'll only provide an overview of some of the main applicative operators. 
 
 **Operators Cheat Sheet.** We can use the `Maybe` typeclass to illustrate the main applicative operators, since it implements an applicative functor.
 
-`()` Unwrap the contents of both sides, combine them and wrap again
+`(<*>)` Unwrap the contents of both sides, combine them and wrap again
 
 {% highlight haskell %}
 
-> Just (+3)  Just 9
+> Just (+3) <*> Just 9
 Just 12
 
 {% endhighlight %}
@@ -168,11 +168,11 @@ Just 7
 
 {% endhighlight %}
 
-`()` Unwrap the contents of the right, combine the left and right arguments and return
+`(<$>)` Unwrap the contents of the right, combine the left and right arguments and return
 
 {% highlight haskell %}
 
-> (+3)  Just 9
+> (+3) <$> Just 9
 Just 12
 
 {% endhighlight %}
@@ -228,12 +228,12 @@ and now we can test:
 
 **Parsing two words**
 
-We can also return both tokens if we use the operator `()` and then combine them into a list:
+We can also return both tokens if we use the operator `(<*>)` and then combine them into a list:
 
 {% highlight haskell %}
 
 twoWordsParser:: Parsec String st [String]
-twoWordsParser = listfy  wordParser  ((char ' ') *> wordParser)
+twoWordsParser = listfy <$> wordParser <*> ((char ' ') *> wordParser)
                    where listfy a b = [a, b]
 
 {% endhighlight %}
@@ -245,7 +245,7 @@ Generalizing, we can parse multiple words with the aid of the `many` combinator:
 {% highlight haskell %}
 
 wordsParser:: Parsec String st [String]
-wordsParser = (:)  wordParser  many ((char ' ') *> wordParser)
+wordsParser = (:) <$> wordParser <*> many ((char ' ') *> wordParser)
 
 {% endhighlight %}
 
@@ -277,12 +277,12 @@ Recall that in Context Free Grammars, we can have production rules of the type:
 
 $$S \rightarrow A \mid B$$
 
-which means that S can be generated either from $$A$$ or $$B$$. In Parsec, we can express this option using the `()` operator. Let's write a simple parser that parses either the `"cat"` or `"dog"` strings:
+which means that S can be generated either from $$A$$ or $$B$$. In Parsec, we can express this option using the `(<|>)` operator. Let's write a simple parser that parses either the `"cat"` or `"dog"` strings:
 
 {% highlight haskell %}
 
 dogCatParser:: Parsec String st String
-dogCatParser = (string "dog")  (string "cat")
+dogCatParser = (string "dog") <|> (string "cat")
 
 {% endhighlight %}
 
@@ -306,7 +306,7 @@ Let's write another example with different animal names:
 {% highlight haskell %}
 
 camelCatParser:: Parsec String st String
-camelCatParser = (string "camel")  (string "cat")
+camelCatParser = (string "camel") <|> (string "cat")
 
 {% endhighlight %}
 
@@ -330,7 +330,7 @@ To avoid this, problem, there's the `try` combinator, which will make a parser t
 {% highlight haskell %}
 
 camelCatTryParser:: Parsec String st String
-camelCatTryParser = try (string "camel")  (string "cat")
+camelCatTryParser = try (string "camel") <|> (string "cat")
 
 {% endhighlight %}
 
@@ -370,10 +370,10 @@ From what we've seen so far, it's not very complicated to write parsers for `TNu
 {% highlight haskell %}
 
 numberParser:: Parsec String st TNumber
-numberParser = read  (many $ oneOf "0123456789")
+numberParser = read <$> (many $ oneOf "0123456789")
 
 operatorParser:: Parsec String st TOperator
-operatorParser = chooseOp  (oneOf "+-")
+operatorParser = chooseOp <$> (oneOf "+-")
                    where chooseOp '+' = TAdd
                          chooseOp '-' = TSubtract
 
@@ -384,11 +384,11 @@ For the expression we have two choices. Either we parse another expression enclo
 {% highlight haskell %}
 
 expressionParser:: Parsec String st TExpression
-expressionParser = (between (char '(') (char ')') binaryExpressionParser)
-                   (TTerminal  numberParser)
+expressionParser = (between (char '(') (char ')') binaryExpressionParser) <|>
+                   (TTerminal <$> numberParser)
 
 binaryExpressionParser:: Parsec String st TExpression
-binaryExpressionParser = TNode  expressionParser  operatorParser  expressionParser
+binaryExpressionParser = TNode <$> expressionParser <*> operatorParser <*> expressionParser
 
 {% endhighlight %}
 
@@ -397,7 +397,7 @@ And that's it! We can now run an example with a valid expression:
 {% highlight haskell %}
 
 > test expressionParser "(123+(324-456))"
-Right (JNode (JTerminal 123) JAdd (JNode (JTerminal 324) JSubtract (JTerminal 456)))
+Right (TNode (TTerminal 123) TAdd (TNode (TTerminal 324) TSubtract (TTerminal 456)))
 
 {% endhighlight %}
 
