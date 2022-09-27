@@ -101,6 +101,33 @@ if (!y) {
 }
 {% endhighlight %}
 
+## Pair
+
+Create:
+
+{% highlight c++ %}
+#include <utility>
+auto p = std::make_pair(10, true);
+{% endhighlight %}
+
+Destructuring assigment:
+
+{% highlight c++ %}
+std::pair<int, std::string> getPair();
+
+int first;
+std::string second;
+std::tie(first, second) = getPair();
+{% endhighlight %}
+
+NOTE: Works with tuples too.
+
+Ignoring one of the members in the pair:
+
+{% highlight c++ %}
+std::tie(std::ignore, second) = getPair();
+{% endhighlight %}
+
 ## Strings
 
 ### Literal
@@ -152,6 +179,12 @@ Initialization:
 
 {% highlight c++ %}
 MyStruct my_struct = {.x = 1, .z = 0.5};
+{% endhighlight %}
+
+## Type Alias
+
+{% highlight c++ %}
+using MyNewType = std::vector<std::string>;
 {% endhighlight %}
 
 # Collections
@@ -880,7 +913,26 @@ dec();
 target; // 4
 {% endhighlight %}
 
-By default the reference binding is `const`. To change it use `mutable`:
+When values are captured via copy they're `const`. To change it use `mutable`:
+
+{% highlight c++ %}
+int target = 5;
+auto dec = [target]() mutable {
+    target--;
+    std::cout << target << std::endl;
+};
+dec();
+{% endhighlight %}
+
+Return types are inferred but they can be provided explicitly:
+
+{% highlight c++ %}
+int target = 5;
+auto dec = [target]() -> int {
+    return target - 1;
+};
+std::cout << dec() << std::endl;
+{% endhighlight %}
 
 ## Passing Function As Parameter
 
