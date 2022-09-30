@@ -335,6 +335,18 @@ if (bool x = false; !c) {
 
 ## Exceptions
 
+Basic try/catch:
+
+{% highlight c++ %}
+try {
+  throw std::runtime_error("Error");
+} catch (const std::exception& e) {
+    std::cout << e.what() << "\n";
+}
+{% endhighlight %}
+
+Custom exception:
+
 {% highlight c++ %}
 class CustomException: public std::exception
 {
@@ -343,11 +355,7 @@ class CustomException: public std::exception
   }
 } custom_exception;
 
-try {
-    throw custom_exception;
-} catch (const std::exception& e) {
-    std::cout << e.what() << "\n";
-}
+throw custom_exception;
 {% endhighlight %}
 
 # Object-Oriented
