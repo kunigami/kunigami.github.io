@@ -156,3 +156,31 @@ Continuity only implies: if $U$ open set then $f^{-1}(U)$ open set. Identificati
 Let $f: X \rightarrow Y$ be a surjective function. Define $\tau'$ as the set of subsets $U \in Y$ such that $f^{-1}(U)$ is open in $X$. It's possible to show $\tau'$ is a topology of $Y$. This in turn proves that $f$ is continuous since if $U \in \tau'$ by construction it was added there because $f^{-1}(U)$ is an open set.
 
 It's also that case that for every $U \in Y$ if $f^{-1}(U)$ is open, then by construction $U \in \tau'$, so this function is an identification. We say that $\tau'$ is an *identification topology on* $Y$ *determined by* $f$.
+
+# Connectedness
+
+A topological space $X$ is *connected* if the only subsets that are both open and closed are $X$ and $\emptyset$.
+
+A different characterization: $X$ is not connected (i.e. *disconnected*) if and only if there exist open subsets $P$ and $Q$ of $X$ such that:
+
+$$A \subseteq P \cup Q$$
+
+$$P \cap Q \subseteq C(A)$$
+
+And $P \cap A \neq \emptyset$, $Q \cap A \neq \emptyset$.
+
+## Component
+
+A *component* of $a \in X$, denoted by $\mbox{Cmp}(a)$, is a maximal subset of $X$ that contains $a$ and is connected.
+
+## Local Connectedness
+
+A topological space $X$ is *locally connected at point* $a$ if every neighborhood of $N$ of $a$ contains a neighborhood of $a$ that is connected.
+
+A topological space $X$ is *locally connected* if it's *locally connected at each of its points.
+
+## Path Connectedness
+
+Let $X$ be a topological space. A continuous function $f:[0, 1] \rightarrow X$ is called a *path* in $X$. $f(0)$ is called the *initial point* and $f(1)$ is called the *terminal point*. $f$ is said to *connect* points $f(0)$ and $f(1)$.
+
+$X$ is *path-connected* if for every pair of points $a, b \in X$, there is a path that connects $a$ and $b$.
