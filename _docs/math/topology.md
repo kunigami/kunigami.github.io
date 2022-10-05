@@ -127,6 +127,12 @@ Functions $f$ and $g$ are called *homeomorphisms* and they define a *homeomorphi
 
 Another characterization: $(X, \tau)$ and $(Y, \tau')$ are homeomorphic if there exists a bijective function $f:X \rightarrow Y$ such that for every open set $O$ in $X$, $f(O)$ is open in $Y$.
 
+### Topological Property
+
+Let $X$ and $Y$ be homeomorphic topological spaces. If $X$ having a property implies $Y$ having that property and vice-versa, such property is called a *topological property*.
+
+Examples include connectedness and path-connectedness.
+
 # Subspaces
 
 Let $\tau_1$ and $\tau_2$ be topologies on a given set $X$. $\tau_1$ is said to be *weaker* than $\tau_2$ if $\tau_1 \subset \tau_2$.
