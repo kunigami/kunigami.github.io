@@ -397,6 +397,16 @@ tempfile.NamedTemporaryFile() as file:
 
 # Functions
 
+## Force named arguments in call
+
+{% highlight python %}
+def f(*, a, b):
+    pass
+
+f(a=1, b=2) # ok
+f(1, 2) # error
+{% endhighlight %}
+
 ## Decorators
 
 A decorator is basically a function transformer. Basic template:
