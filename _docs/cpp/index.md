@@ -141,7 +141,7 @@ constexpr char s[] = "some_constant";
 
 ### View
 
-[C++17] Optimization for read-only strings which does not make copies on assignment.
+Optimization for read-only strings which does not make copies on assignment.
 
 {% highlight c++ %}
 std::string_view str1{"my_string"};
@@ -226,8 +226,8 @@ h["key"] = 100;
 `x` is a pair `(key, value)`.
 
 {% highlight c++ %}
-for (auto x:h) {
-    std::cout << x.first << ", " << x.second << std::endl;
+for (auto [key, value]:h) {
+    std::cout << key << ", " << value << std::endl;
 }
 {% endhighlight %}
 
