@@ -256,6 +256,62 @@ Remove entry (in-place):
 s.erase(value);
 {% endhighlight %}
 
+## Tuples
+
+Include:
+
+{% highlight c++ %}
+#include <tuple>
+{% endhighlight %}
+
+### Initialization
+
+{% highlight c++ %}
+std::tuple<int, std::string> t = std::make_tuple(1, "hello");
+{% endhighlight %}
+
+or:
+
+{% highlight c++ %}
+auto t = std::make_tuple<int, std::string>(1, "hello");
+{% endhighlight %}
+
+### Access
+
+`std::get<n>`. Example:
+
+{% highlight c++ %}
+std::cout << std::get<0>(t); // 1
+std::cout << std::get<1>(t); // "hello"
+{% endhighlight %}
+
+### Concatenate
+
+`std::tuple_cat`. Example:
+
+{% highlight c++ %}
+auto t = std::make_tuple<int, std::string>(1, "a");
+
+auto u1 = std::make_tuple<int>(1);
+auto u2 = std::make_tuple<std::string>("a");
+auto u = std::tuple_cat(u1, u2);
+
+assert (t == u);
+{% endhighlight %}
+
+### Variadic
+
+Using `std::apply`, lambdas and variadic. Example: handle tuple in a generic fashion:
+
+{% highlight c++ %}
+// Let t be any generic tuple. t1 is a copy of t
+auto t1 = std::apply(
+  [](auto... args) {
+    return std::make_tuple(desc...);
+  },
+  t
+);
+{% endhighlight %}
 
 ## Vector
 
