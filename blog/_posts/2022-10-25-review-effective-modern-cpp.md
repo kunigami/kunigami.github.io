@@ -1244,7 +1244,7 @@ v.emplace_back(1);
 
 I really liked reading this book cover-to-cover and learned a lot! The book is rather verbose but it has a very fluid narrative and thus is smooth to read.
 
-Despite the verbosity, the book has a lot of content and I had trouble summarizing, even leaving out the rationale for the recommendation. The markdown for post has over 1k lines (usually it's fewer than 200).
+Despite the verbosity, the book has a lot of content and I had trouble summarizing, even leaving out the rationale for the recommendation. The markdown text for the post has over 1k lines (usually it's fewer than 200).
 
 The book also manages to make the content accessible but also detailed and technically precise. One downside is that at times the author spends a lot of time discussing what it seems like an extreme corner case, for example, in *Item 27* (on avoiding overloaded universal references), the section called "Constraining templates that take universal references".
 
@@ -1252,8 +1252,8 @@ The book also manages to make the content accessible but also detailed and techn
 {:.no_toc}
 
 * [Namespace Jailing]({{blog}}/2021/07/02/namespace-jail.html) - In that post we used thread syncrhonization using pipes, which could is another alternative for *Item 39*.
-* [Move Semantics in C++]({{blog}}/2022/03/01/moving-semantics-cpp.html) - As discussed in above, that post overlaps in content with *Item 23*.
-* [Smart Pointers in C++]({{blog}}/2022/06/10/smart-pointers-cpp.html) - As discussed in above, that post overlaps in content with *Item 18*, *Item 19* and *Item 21*.
+* [Move Semantics in C++]({{blog}}/2022/03/01/moving-semantics-cpp.html) - As discussed above, that post overlaps in content with *Item 23*.
+* [Smart Pointers in C++]({{blog}}/2022/06/10/smart-pointers-cpp.html) - As discussed above, that post overlaps in content with *Item 18*, *Item 19* and *Item 21*.
 
 ## References
 {:.no_toc}
