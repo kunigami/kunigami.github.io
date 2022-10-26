@@ -8,7 +8,7 @@ Syntax for common tasks I run into often. Assumes C++17.
 # Index
 {:.no_toc}
 
-1. TOC
+- TOC
 {:toc}
 
 # Basic Types
