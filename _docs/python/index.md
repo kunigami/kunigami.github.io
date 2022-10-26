@@ -491,6 +491,43 @@ async with ContextManager() as ctx:
   await ctx.foo()
 {% endhighlight %}
 
+# Operating System
+
+## Path
+
+{% highlight python %}
+from pathlib import Path
+{% endhighlight %}
+
+Create:
+
+{% highlight python %}
+p = Path('/etc')
+{% endhighlight %}
+
+Append path (overloaded `/`):
+
+{% highlight python %}
+p = p / 'dir'
+{% endhighlight %}
+
+Parent:
+
+{% highlight python %}
+p = Path('/dev/null').parent # Path('dev/')
+{% endhighlight %}
+
+Resolve:
+
+{% highlight python %}
+p = Path('.').resolve() # absolute path
+{% endhighlight %}
+
+To String:
+
+{% highlight python %}
+print(str(Path('/dev/null'))) # dev/null
+{% endhighlight %}
 
 # Other Data Structures
 
