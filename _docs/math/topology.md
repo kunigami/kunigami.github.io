@@ -190,3 +190,7 @@ A topological space $X$ is *locally connected* if it's *locally connected at eac
 Let $X$ be a topological space. A continuous function $f:[0, 1] \rightarrow X$ is called a *path* in $X$. $f(0)$ is called the *initial point* and $f(1)$ is called the *terminal point*. $f$ is said to *connect* points $f(0)$ and $f(1)$.
 
 $X$ is *path-connected* if for every pair of points $a, b \in X$, there is a path that connects $a$ and $b$.
+
+# Compacteness
+
+Let $X$ be a topological space, $B$ a subset of $X$ and $\curly{A_\alpha}_{\alpha \in I}$ an indexed family of subsets of $X$ (See Set Theory). $\curly{A_\alpha}_{\alpha \in I}$ is called a **covering**
