@@ -193,4 +193,16 @@ $X$ is *path-connected* if for every pair of points $a, b \in X$, there is a pat
 
 # Compacteness
 
-Let $X$ be a topological space, $B$ a subset of $X$ and $\curly{A_\alpha}_{\alpha \in I}$ an indexed family of subsets of $X$ (See Set Theory). $\curly{A_\alpha}_{\alpha \in I}$ is called a **covering**
+## Covering, subcovering and open covering
+
+Let $X$ be a topological space, $Y$ a subset of $X$ and $\curly{A_\alpha}\_{\alpha \in I}$ an indexed family of subsets of $X$ (See [Set Theory]({{site}}/docs/math/set.html)). $\curly{A_\alpha}\_{\alpha \in I}$ is called a **covering** of $Y$ if every element of $Y$ belongs to one of the $A_\alpha$, in other words: $Y \subseteq \cup_{\alpha \in I} A_\alpha$. If $I$ is finite, $\curly{A_\alpha}\_{\alpha \in I}$ is called a **finite covering** of $Y$.
+
+Let $\curly{A_\alpha}\_{\alpha \in I}$ and $\curly{B_\beta}\_{\beta \in J}$ be coverings of $Y$. If for every $A_\alpha$ there is $\beta \in J$ such that $A_\alpha = B_\beta$, then $\curly{A_\alpha}\_{\alpha \in I}$ is a **subcovering** of $\curly{B_\beta}\_{\beta \in J}$.
+
+Note that we can't define subcovering as $I \subseteq J$ because $A_\alpha$ and $B_\beta$ might be indexed differently (e.g. $A_\gamma \neq B_\gamma$ even if $\gamma \in I$, $\gamma \in J$).
+
+Let $\curly{A_\alpha}\_{\alpha \in I}$ be a covering of $Y$. If every $A_\alpha$ is an open subset of $X$ then $\curly{A_\alpha}\_{\alpha \in I}$ is a **open covering** of $Y$.
+
+## Compact Topological Space
+
+Let $X$ be a topological space. It's said to be **compact** if for *every* open covering  $\curly{A_\alpha}\_{\alpha \in I}$ of $X$, there exists a *finite* covering subcovering $\curly{A_\beta}\_{\beta \in J}$ of $X$.
