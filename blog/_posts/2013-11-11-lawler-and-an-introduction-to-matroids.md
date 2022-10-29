@@ -32,7 +32,7 @@ Let $$E$$ be a set of elements and $$\cal I$$ a family of subsets of $$E$$ (fami
 
 1) $$\emptyset \in \cal I$$ and if a subset $$I \in \cal I$$, then all subsets of $$I$$ belong to $$\cal I$$ as well.
 
-2) If $$I_p \in {\cal I}$$ with $$\mid I_p \mid = p$$ and $$I_{p+1} \in {\cal I}$$ with $$\mid I_{p+1}\mid = p+1$$, then there is an element $$e \in I_{p+1} \setminus I_{p}$$ such that for all $I \in {\cal I}$, $$I + e \in {\cal I}$$. (*Henceforth, by abuse of notation, when we say $$I + e$$ we mean $$I \cup \{e\}$$*).
+2) If $$I_p \in {\cal I}$$ with $$\mid I_p \mid = p$$ and $$I_{p+1} \in {\cal I}$$ with $$\mid I_{p+1}\mid = p+1$$, then there is an element $$e \in I_{p+1} \setminus I_{p}$$ such that $I_p + e \in {\cal I}$. (*Henceforth, by abuse of notation, when we say $$I + e$$ we mean $$I \cup \{e\}$$*).
 
 If $$M$$ satisfies both (1) and (2), we say that $$M$$ is a matroid.
 
@@ -54,13 +54,17 @@ The modelling process consists in defining the set $$E$$, the family $$\cal I$$ 
 
 A *matric matroid* is a matroid in the context of matrices. Given a matrix $$A$$ with the set of columns as $$E$$, if $$\cal I$$ is the family of sets containing only linear independent columns, then $$M = (E, {\cal I})$$ is a matric matroid.
 
-*Proof.* It's easy to see that any subset of a linear independent (LI) set of columns is also LI, so (1) is straightforward. For (2), we need to prove that given subsets $$I_{p+1}$$ and $$I_{p}$$ of $$p+1$$ and  $$p$$ LI columns, respectively, then there must be a column $$c$$ from $$I_{p+1} \setminus I_{p}$$ such that $$I_{p} + c$$ is still LI. Well, if it's not the case, it means that each column in $$I_{p+1}$$ can be written as linear combination of the $$p$$ LI columns from $$I_{p}$$, which contradicts the fact that $$I_{p+1}$$ is LI.
+*Proof.* It's easy to see that any subset of a linear independent (LI) set of columns is also LI, so (1) is straightforward. For (2), we need to prove that given subsets $$I_{p+1}$$ and $$I_{p}$$ of $$p+1$$ and  $$p$$ LI columns, respectively, then there must be a column $$c$$ from $$I_{p+1} \setminus I_{p}$$ such that $$I_{p} + c$$ is still LI. If it's not the case, we claim that every column in $I_{p+1}$ can be written as a linear combination of the $I_{p}$.
+
+To see why, we must have either $c \in I_{p+1} \setminus I_{p}$ or $c \in I_{p+1} \cap I_{p}$. In the first case, since we're assuming $I_{p} + c$ is not LI, $c$ can be written as a linear combination of $I_{p}$. In the second case, since $c \in I_{p}$, it's a trivial linear combination of $I_{p}$.
+
+This claim contradicts the fact that $$I_{p+1}$$ is LI.
 
 ### Graphic Matroid
 
 A *graphic matroid* is a matroid in the context of graphs. Given a graph $$G = (V, E)$$, if $$\cal I$$ is the family of arcs that do not form a cycle, then $$M = (E, {\cal I})$$ is a graphic matroid.
 
-*Proof.* It's possible to show that subsets of edges that are cycle free, correspond to LI columns in the incidence matrix of $$G$$, so in this case we can also view $$M$$ as a matric matroid of the incidence matrix of $$G$$.
+*Idea of the proof.* It's possible to show that subsets of edges that are cycle free, correspond to LI columns in the incidence matrix of $$G$$, so in this case we can also view $$M$$ as a matric matroid of the incidence matrix of $$G$$.
 
 ### Matching Matroid
 
@@ -90,23 +94,27 @@ The following Theorem from Rado and Edmonds states an important property of weig
 >
 > 3) For any negative weight function on $$E$$, a lexicographically maximum set in $$\cal I$$ is also the set with the maximum weight.
 >
-> Conversely, given $$E$$ and $$\cal I$$, if (1) and (3) are satisfied, $$M = (E, {\cal I})$$ is a matroid.
+> Alternatively, given $$E$$ and $$\cal I$$, if (1) and (3) are satisfied, $$M = (E, {\cal I})$$ is a matroid.
 >
 
-We say that a set $$B \in {\cal I}$$ is *Gale optimal* if all its components are not less than the corresponding components of any other set $$I \in {\cal I}$$ when these components are listed in non-increasing order. More formally, there exists a one-to-one mapping $$h:I \rightarrow B$$ such that $$w(e) \le w(h(e))$$ for all $$e \in I$$.
+### Gale Optimality
 
-Note that a Gale optimal set is clearly a lexicographically maximum and thus has optimal weight.
+We say that a set $$B \in {\cal I}$$ is *Gale optimal* if all of its elements are not less than the corresponding elements of any other set $$I \in {\cal I}$$ when these elements are listed in non-increasing order. More formally, there exists a one-to-one mapping $$h:I \rightarrow B$$ such that $$w(e) \le w(h(e))$$ for all $$e \in I$$.
 
-Given that, Gale's theorem provides another a stronger result than Theorem 1 regarding weighted matroids:
+Note that a Gale optimal set is clearly a lexicographically maximum and, by *Theorem 1*, has optimal weight.
+
+Given that, Gale's theorem provides a stronger result than *Theorem 1* regarding weighted matroids:
 
 > **Theorem 2.** Let $$M = (E, {\cal I})$$ be a matroid. Then
 >
 > 4) For any weight function of elements on $$E$$, there exists a Gale optimal set $$B \in {\cal I}$$.
 >
-> Conversely, given $$E$$ and $$\cal I$$, if (1) and (4) are satisfied, $$M = (E, {\cal I})$$ is a matroid.
+> Alternatively, given $$E$$ and $$\cal I$$, if (1) and (4) are satisfied, $$M = (E, {\cal I})$$ is a matroid.
 >
 
-**Weighted Matroid Greedy Algorithm.** Property (4) allows to use a simple greedy algorithm to find the set of the largest weight in $$\cal I$$.
+### Weighted Matroid Greedy Algorithm
+
+Property (4) allows to use a simple greedy algorithm to construct the Gale optimal set in $$\cal I$$.
 
 In the first step, we look for the single-element set $$I = \{e_0\}$$ in $$\cal I$$ with the largest weight. By property (2) and (4), we can show that the Gale optimal set contains $$e_0$$. Next, we look for the largest element $$e_1$$ such that $$\{e_0, e_1\} \in {\cal I}$$. Again, we can show that such elements are contained in the Gale optimal set. We repeat this until we get a maximum independent set, which is also the Gale optimal set.
 
@@ -114,13 +122,15 @@ More generically, we have the following algorithm:
 
 Let $$S$$ be our current solution, which starts as the empty set. At each step, we look for the element $$e$$ with maximum weight not in $$S$$ such that $$S + e$$ belongs to $$\cal I$$.
 
-**The Maximum Spanning Tree problem and the Kruskal Algorithm.**
+### The Maximum Spanning Tree problem
 
-In the maximum spanning tree problem we are given a connected, undirected graph $$G = (V,E)$$ with non-negative weights $$w$$ on $$V$$ and we want to find a spanning tree (subset of $$E$$ that forms a tree) with the lowest cost.
+In the maximum spanning tree problem we are given a connected, undirected graph $$G = (V,E)$$ with non-negative weights $$w$$ on $$V$$ and we want to find a spanning tree (subset of $$E$$ that forms a tree) with the maximum cost.
 
-Recall that a tree is a connected graph without cycles. The graphic matroid represents cycle-free subsets of arcs (or a forest) and thus the maximum independent set of a connected graph is a tree. If we assign non-negative weights to arcs, we can find the optimal Gale independent set which corresponds to the maximum spanning tree.
+Note that the minimum spanning tree, a more common form of the problem, can be reduced to the maximum version. This is only possible because every spanning tree has the same number of edges (this reduction cannot be made for example between the shortest and longest path problems).
 
-The Kruskal algorithm is then basically an application of the weighted matroid greedy algorithm for graphic matroids: It first sorts the edges by non-increasing order of weight and then adds an edge to the current solution if it doesn't form a cycle.
+Recall that a tree is a connected graph without cycles. The independent sets in a graphic matroid represent cycle-free subsets of arcs (aka forest) and thus the maximum independent set of a connected graph is a tree. If we assign non-negative weights to arcs, the optimal Gale independent set which corresponds to the maximum spanning tree.
+
+The weighted matroid greedy algorithm for graphic matroids is also known as [Kruskal's algorithm](https://en.wikipedia.org/wiki/Kruskal%27s_algorithm): It first sorts the edges by non-increasing order of weight and then adds an edge to the current solution if it doesn't form a cycle.
 
 ## Conclusion
 
