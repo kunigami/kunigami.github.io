@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Lawler and an Introduction to Matroids"
+title: "An Introduction to Matroids"
 tags: [combinatorial optimization, combinatorics, integer programming, linear algebra]
 ---
 
@@ -18,7 +18,7 @@ This is the first post in our series of Matroids in Combinatorial Optimization c
 
 
 
-### Introduction
+## Introduction
 
 Hassler Whitney developed Matroids in 1935 in the context of algebraic theory and it was further applied by Jack Edmonds in the context of combinatorial optimization.
 
@@ -26,39 +26,43 @@ Matroids are a structure that allows us to solve problems by always taking local
 
 First we'll define Matroids and then give some examples of problems to modeled as matroids. Next, we'll introduce weighted matroids and describe a generic algorithm to solve them and how such algorithm applied to matroids in graphs is actually the famous Kruskal algorithm.
 
-### Definition
+## Definition
 
 Let $$E$$ be a set of elements and $$\cal I$$ a family of subsets of $$E$$ (family here has the meaning of a set of elements that share some properties and it's also clearer than using 'set of subsets'). Let $$M = (E, \cal I)$$ and consider the following properties:
 
 1) $$\emptyset \in \cal I$$ and if a subset $$I \in \cal I$$, then all subsets of $$I$$ belong to $$\cal I$$ as well.
 
-2) If $$I_p \in {\cal I}$$ with $$\mid I_p \mid = p$$ and $$I_{p+1} \in {\cal I}$$ with $$\mid I_{p+1}\mid = p+1$$, then there is an element $$e \in I_{p+1} \setminus I_{p}$$ such that $$I + e \in {\cal I}$$. (*Henceforth, by abuse of notation, when we say $$I + e$$ we mean $$I \cup \{e\}$$*).
+2) If $$I_p \in {\cal I}$$ with $$\mid I_p \mid = p$$ and $$I_{p+1} \in {\cal I}$$ with $$\mid I_{p+1}\mid = p+1$$, then there is an element $$e \in I_{p+1} \setminus I_{p}$$ such that for all $I \in {\cal I}$, $$I + e \in {\cal I}$$. (*Henceforth, by abuse of notation, when we say $$I + e$$ we mean $$I \cup \{e\}$$*).
 
 If $$M$$ satisfies both (1) and (2), we say that $$M$$ is a matroid.
 
-**Terminology.** An *independent set* is any set $$I$$ belonging to the family $$\cal I$$. If there's no other set containing $$I$$ in $$\cal I$$ we say it's a *maximal independent set*. Note that by property (2), all maximal independent sets have the same size.
+Each element in $$\cal I$$ is called an **independent set**. A subset of $E$ not in $\cal I$ is called a dependent set.
 
-The *rank* of a set $$E$$, denoted by $$r(E)$$ is the largest independent subset of $$E$$. A minimal dependent set is called *circuit*.
+If there's no other set containing $$I$$ in $$\cal I$$ we say it's a *maximal independent set*.
 
-### Special types of matroids
+We claim that all maximal independent sets have the same size. To see why, suppose there are two maximal independent sets $I, J$ of different sizes, $\abs{I} = n < m = \abs{J}$. By (1), there exist a subset $J'$ of $J$ of size $n + 1$. Now by property (2), there exists $e \in J\' \setminus I$ and that $I^{*} = I + e$ exists in ${\cal I}$, which clearly contains $I$ and contradicts the fact $I$ is maximal.
+
+The **rank** of a set $$E$$, denoted by $$r(E)$$ is the maximal independent subset in $$E$$. A minimal dependent set is called *circuit*.
+
+## Special types of matroids
 
 We can model some structures as matroids and take advantage of matroids properties to find solutions to problems involving these structures. In this section we'll present a few examples of such modelings.
 
 The modelling process consists in defining the set $$E$$, the family $$\cal I$$ (usually by defining the property that the subsets of $$E$$ must have to be in there) and then proving that $$\cal I$$ satisfies (1) and (2).
 
-**Matric Matroid.**
+### Matric Matroid
 
 A *matric matroid* is a matroid in the context of matrices. Given a matrix $$A$$ with the set of columns as $$E$$, if $$\cal I$$ is the family of sets containing only linear independent columns, then $$M = (E, {\cal I})$$ is a matric matroid.
 
 *Proof.* It's easy to see that any subset of a linear independent (LI) set of columns is also LI, so (1) is straightforward. For (2), we need to prove that given subsets $$I_{p+1}$$ and $$I_{p}$$ of $$p+1$$ and  $$p$$ LI columns, respectively, then there must be a column $$c$$ from $$I_{p+1} \setminus I_{p}$$ such that $$I_{p} + c$$ is still LI. Well, if it's not the case, it means that each column in $$I_{p+1}$$ can be written as linear combination of the $$p$$ LI columns from $$I_{p}$$, which contradicts the fact that $$I_{p+1}$$ is LI.
 
-**Graphic Matroid.**
+### Graphic Matroid
 
 A *graphic matroid* is a matroid in the context of graphs. Given a graph $$G = (V, E)$$, if $$\cal I$$ is the family of arcs that do not form a cycle, then $$M = (E, {\cal I})$$ is a graphic matroid.
 
 *Proof.* It's possible to show that subsets of edges that are cycle free, correspond to LI columns in the incidence matrix of $$G$$, so in this case we can also view $$M$$ as a matric matroid of the incidence matrix of $$G$$.
 
-**Matching Matroid.**
+### Matching Matroid
 
 A *matching matroid* is a matroid in the context of matchings in graphs.
 
@@ -66,7 +70,7 @@ Let $$G = (V, E)$$ be an undirected graph and let $$\cal I$$ be the family of su
 
 *Sketch of the Proof.* It's easy to verify that $$\cal I$$ satisfies (1). The proof of why it satisfies (2) consists in getting the symmetric difference between  matchings covering $$p+1$$ and $$p$$ vertices respectively and showing that in that difference there will be at least one alternating path such that if we change the alternation will increase the number of matched vertices.
 
-### Weighted Matroids
+## Weighted Matroids
 
 Let $$M = (E, {\cal I})$$ be a matroid and $$w$$ a weight function for elements in $$E$$. The problem we want to solve is to find the independent set $$I \in {\cal I}$$ that has maximum weight, where the weight of a set is the sum of the weight of its elements.
 
@@ -83,11 +87,11 @@ A set that is not lexicographically less than any other set is said to be *lexic
 The following Theorem from Rado and Edmonds states an important property of weighted matroids:
 
 > **Theorem 1.** Let $$M = (E, {\cal I})$$ be a matroid. Then
-> 
+>
 > 3) For any negative weight function on $$E$$, a lexicographically maximum set in $$\cal I$$ is also the set with the maximum weight.
-> 
+>
 > Conversely, given $$E$$ and $$\cal I$$, if (1) and (3) are satisfied, $$M = (E, {\cal I})$$ is a matroid.
-> 
+>
 
 We say that a set $$B \in {\cal I}$$ is *Gale optimal* if all its components are not less than the corresponding components of any other set $$I \in {\cal I}$$ when these components are listed in non-increasing order. More formally, there exists a one-to-one mapping $$h:I \rightarrow B$$ such that $$w(e) \le w(h(e))$$ for all $$e \in I$$.
 
@@ -96,11 +100,11 @@ Note that a Gale optimal set is clearly a lexicographically maximum and thus has
 Given that, Gale's theorem provides another a stronger result than Theorem 1 regarding weighted matroids:
 
 > **Theorem 2.** Let $$M = (E, {\cal I})$$ be a matroid. Then
-> 
+>
 > 4) For any weight function of elements on $$E$$, there exists a Gale optimal set $$B \in {\cal I}$$.
-> 
+>
 > Conversely, given $$E$$ and $$\cal I$$, if (1) and (4) are satisfied, $$M = (E, {\cal I})$$ is a matroid.
-> 
+>
 
 **Weighted Matroid Greedy Algorithm.** Property (4) allows to use a simple greedy algorithm to find the set of the largest weight in $$\cal I$$.
 
@@ -118,11 +122,11 @@ Recall that a tree is a connected graph without cycles. The graphic matroid repr
 
 The Kruskal algorithm is then basically an application of the weighted matroid greedy algorithm for graphic matroids: It first sorts the edges by non-increasing order of weight and then adds an edge to the current solution if it doesn't form a cycle.
 
-### Conclusion
+## Conclusion
 
 In this post we learned the basics of matroids and weighted matroids. In future posts we'll study Matroid Intersection, Matroid Partition and other types of matroids like Oriented Matroids.
 
-### References
+## References
 
 * [[1]("http://en.wikipedia.org/wiki/Eugene_Lawler")] Wikipedia - Eugene Lawler
 * [[2]("http://www.amazon.com/Combinatorial-Optimization-Networks-Matroids-Mathematics/dp/0486414531")]  Combinatorial Optimization – Networks and Matroids, Eugene Lawler - Chapter: Matroids and the Greedy Algorithm
