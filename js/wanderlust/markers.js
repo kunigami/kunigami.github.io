@@ -49,6 +49,10 @@ const markers = [
       "Antelope Canyon is a slot canyon in the American Southwest, on Navajo land east of Page, Arizona.",
     lat: 36.86470241618197,
     lng: -111.37357693817302,
+    img_name: "antelope_canyon.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/dapDGNR45KABBqk77",
+    visited: true,
     category: "nature",
   },
   {
@@ -77,6 +81,10 @@ const markers = [
       "Horseshoe Bend is a horseshoe-shaped incised meander of the Colorado River located near the town of Page, Arizona, United States.",
     lat: 36.88032695559509,
     lng: -111.51014454598656,
+    img_name: "horseshoe_bend.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/4HVTnDDqfNaLEcxN6",
+    visited: true,
     category: "nature",
   },
   {
@@ -85,6 +93,10 @@ const markers = [
       "Famous natural area on the Navajo Nation Reservation features towering red sandstone buttes.",
     lat: 36.99818269582502,
     lng: -110.09847885332755,
+    photographer: "me",
+    img_name: "monument_valley.jpg",
+    visited: true,
+    img_link: "https://photos.app.goo.gl/MGip7ujWszfviikH8",
     category: "nature",
   },
   // -- California
@@ -351,6 +363,9 @@ const markers = [
     description: "Unique Rock Formation in Southern Utah",
     lat: 36.99593,
     lng: -112.00625,
+    img_name: "the_wave.jpg",
+    img_link: "https://photos.app.goo.gl/aS75Weo77a6bFmTn6",
+    visited: true,
     category: "nature",
   },
   // -- Washington
@@ -510,6 +525,10 @@ const markers = [
       "Unique glacier-fed waterway in a valley known for its bright turquoise water & scenic beauty.",
     lat: 51.77835376750945,
     lng: -116.53237765205041,
+    img_name: "peyto_lake.jpg",
+    img_link: "https://photos.app.goo.gl/pqNaYakB8pw1iSht9",
+    photographer: "me",
+    visited: true,
     category: "nature",
   },
 
