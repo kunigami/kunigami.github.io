@@ -529,6 +529,28 @@ To String:
 print(str(Path('/dev/null'))) # dev/null
 {% endhighlight %}
 
+## Subprocess
+
+{% highlight python %}
+import subprocess
+{% endhighlight %}
+
+Run command, get stdout:
+
+{% highlight python %}
+command = ['ls', '-l']
+res = subprocess.run(command, close_fds=True, stdout=subprocess.PIPE)
+output = res.stdout.decode()
+{% endhighlight %}
+
+Check return code:
+
+{% highlight python %}
+res = subprocess.run(command, close_fds=True, stdout=subprocess.PIPE)
+print(res.returncode)
+{% endhighlight %}
+
+
 # Other Data Structures
 
 ## Queue
