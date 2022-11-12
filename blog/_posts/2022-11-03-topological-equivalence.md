@@ -225,11 +225,15 @@ $$\norm{x - o} \lt r$$
 
 For example, in 2D, we have the open circle $x^2 + y^2 \lt 0.5$ centered at the origin and $(x - 0.1)^2 + (y = 0.2)^2 \lt 0.3$ centered at point $(0.1, 0.2)$.
 
-The base we'll define is composed of the open balls at the origin plus the open arcs of circumferences of the form:
+Consider now a circumference at the origin, i.e. the set of points satisfying:
 
-$$\norm{x} \lt r$$
+$$C_r = \curly{x : \norm{x} = r}$$
 
-We claim that open balls that are not centered at the origin are the union of the open arcs above. We won't provide a proof but we can visualize it in 2D in *Figure 2* to get an intuition.
+If we consider the open arcs of this circumference they're not open sets in $\mathbb{R}^2$ because, being one dimensional, it's not possible to find an open ball around points in this circumference. However if we add some "width", they'll become open sets:
+
+$$\curly{k x : x \in C_r, a \lt k \lt b}$$
+
+The base we'll define is composed of the open balls at the origin plus these thick open arcs. We claim that open balls that are not centered at the origin are the union of the thick open arcs above. We won't provide a proof but we can visualize it in 2D in *Figure 2* to get an intuition.
 
 <figure class="center_children">
   <img src="{{resources_path}}/coverage1.png" alt="See caption." />
@@ -276,20 +280,18 @@ $$f^{-1}(v) = \frac{v}{d(v)}$$
 
 To show open sets correspond to open sets when transformed by either function, we'll define a new base as we did in *Example 3*. We'll divide our base into two sets.
 
-For an open ball that does not contain the origin, it's the union of the open segments of $R_c$ for all $c \in C$, corresponding to the intersection of the ray and the open ball, which is an open segment, as depicted in *Figure 3* for 2 dimensions. So these open segments go into our base.
+For an open ball that does not contain the origin, it's the union of the open segments of $R_c$ for all $c \in C$, corresponding to the intersection of the ray and the open ball, which is an open segment, as depicted in *Figure 3* for 2 dimensions. As in *Example 3*, a single segment is one dimensional and not an open set. We can add some width to them by bundling adjacent segments together and add them to our base.
 
 <figure class="center_children">
   <img src="{{resources_path}}/coverage2.png" alt="See caption." />
   <figcaption>Figure 3: Example in 2 dimensions depicting how a circle (green) can be obtained as the union of open segments from rays starting at the origin. Note that because the circle is open, any non-empty intersection with a ray will have at least 2 points, which is needed for the segment to be open.</figcaption>
 </figure>
 
-For an open ball that *contains* the origin, we cannot cover with it with rays because rays do not contain the origin. We can't simply add $\curly{0}$ to be base because it's not an open set. We need a different type of element.
-
-Let $\overline{R_c}$ be the extension of $R_c$ (or $R_{-c}$) across the origin, more precisely for $c \in C$, $\overline{R_c} = \curly{c\lambda, \lambda \in \mathbb{R}}$. Note that $\overline{R_c} = R_c \cup R_{-c} \cup \curly{0}$. In other words, $\overline{R_c}$ is the line that passes through the origin and $c$ (and $-c$). Thus for an open ball that contains the origin with radius $r$, it is the union of the open segments of $\overline{R_c}$, more specifically $\curly{x \in \overline{R_c} \mid 0 \le \norm{x} \lt r}$ for all $c \in C$.
+For an open ball that *contains* the origin, we cannot cover with it only with rays because rays do not contain the origin. However, we if can include open balls centered at the origin it can be unioned with the thick rays to "plug" the hole at the origin.
 
 For a given ray $R_c$, applying it over $f$ or $f^{-1}$ corresponds to scaling it by a fixed constant $d(c)$, so the result is an open segment, reasoning much like we did for open intervals in *Example 1*.
 
-It requires more work to see what happens with an open segment of the extended ray $\overline{R_c}$ because it is scaled by either $d(c)$ or $d(-c)$ depending on which "side" a point is relation to the origin, but we should be able to reason much like we did for the ray to see it is mapped to an open segment as well. QED.
+For a ball at the origin with radius $r$, when we apply $f$ to it, we'll obtain the open convex polytope $P$ scaled by $r$. If we apply $f^{-1}$ to it, we'll have an open bounded polytope that is however not convex, but is nevertheless open. QED.
 
 In [7] Stefan Geschke proves the more general case where the open convex polytope need not be bounded.
 
