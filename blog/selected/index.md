@@ -1,15 +1,15 @@
 ---
 layout: page
-title: Selected Posts
+title: Posts by topics
 ---
 
 {% include blog_vars.html %}
 
-<a href="{{ site.url }}">kuniga.me</a> > <a href="{{ site.url }}/blog">NP-Incompleteness</a> > Selected
+<a href="{{ site.url }}">kuniga.me</a> > <a href="{{ site.url }}/blog">NP-Incompleteness</a> > Topics
 
-# Selected Posts
+# Posts by topics
 
-Selected posts organized by theme. Most of them are primers (introductory) and intended to be looked up for reference. If a post happens to describe two or more concepts, there will be multiple entries here linking to the same post. Within each theme topics are sorted alphabetically.
+Selected posts organized by topics. Most of them are primers (introductory) and intended to be looked up for reference. If a post happens to describe two or more concepts, there will be multiple entries here linking to the same post. Within each theme topics are sorted alphabetically.
 
 ## Algorithms and Data Structures
 
@@ -22,6 +22,7 @@ Selected posts organized by theme. Most of them are primers (introductory) and i
 * KMP (Knuth Morris and Pratt) ([post]({{blog}}/2016/03/13/tree-ring-matching-using-the-kmp-algorithm.html))
 * LSM (Log Structured Merge) Trees ([post]({{blog}}/2018/07/20/log-structured-merge-trees.html))
 * Skip Lists ([post]({{blog}}/2012/09/25/skip-lists-in-python.html))
+* T-Digest ([post]({{blog}}/2021/11/29/t-digest.html))
 
 ## Bioinformatics and Biology
 
@@ -56,8 +57,10 @@ Selected posts organized by theme. Most of them are primers (introductory) and i
 ### Real World Systems
 
 * Google’s F1 Database ([post]({{blog}}/2018/02/10/paper-reading-f1-a-distributed-sql-database-that-scales.html))
+* Google’s FlumeJava ([post]({{blog}}/2022/05/18/flumejava.html))
 * Google’s Spanner Database ([post]({{blog}}/2017/04/27/paper-reading-spanner-google's-globally-distributed-database.html))
-* PageRank ([post]({{blog}}/2014/11/24/the-pagerank-algorithm.html))
+* Google's PageRank ([post]({{blog}}/2014/11/24/the-pagerank-algorithm.html))
+* Google's Photon ([post]({{blog}}/2022/09/27/photon.html))
 * Ray ([post]({{blog}}/2021/08/04/ray.html))
 * Zookeeper ([post]({{blog}}/2015/08/07/notes-on-zookeeper.html))
 
@@ -67,24 +70,33 @@ Selected posts organized by theme. Most of them are primers (introductory) and i
 
 ## Math
 
-### Functional Analysis
-
-* Hilbert Spaces ([post]({{blog}}/2021/06/26/hilbert-spaces.html))
-
-### Linear Algebra
+### Algebra
 
 * Levinson Recursion ([post]({{blog}}/2021/02/20/levinson-recursion.html))
 
+### Calculus and analysis
+
+* Hermitian Functions ([post]({{blog}}/2021/10/09/hermitian-functions.html))
+* Hilbert Spaces ([post]({{blog}}/2021/06/26/hilbert-spaces.html))
+
 ### Number Theory
 
+* Euclidean Algorithm ([post]({{blog}}/2022/04/16/euclidean-algorithm-in-lean.html))
 * Order-Finding ([post]({{blog}}/2020/12/11/factorization-from-order.html))
 * Pell Equation ([post]({{blog}}/2012/02/12/pell-equation.html))
+
+### Topology
+
+* Topological Equivalence ([post]({{blog}}/2022/11/03/topological-equivalence.html))
 
 ## Electrical Engineering
 
 ### Signal Processing
 
+* Baum-Welch Algorithm ([post]({{blog}}/2022/07/19/baum-welch-algorithm.html))
+* Cepstrum ([post]({{blog}}/2021/10/23/cepstrum.html))
 * Discrete Fourier Transforms ([post]({{blog}}/2021/07/31/discrete-fourier-transform.html))
 * Discrete Time Filters ([post]({{blog}}/2021/08/31/discrete-time-filters.html))
+* Dynamic Time Warping ([post]({{blog}}/2022/01/25/dynamic-time-warping.html))
 * Linear Predictive Coding (LPC) ([post]({{blog}}/2021/05/13/lpc-in-python.html))
 * Z-Transform ([post]({{blog}}/2021/09/10/z-transform.html))
