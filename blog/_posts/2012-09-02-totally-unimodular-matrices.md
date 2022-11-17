@@ -6,7 +6,7 @@ tags: [combinatorics, integer programming, linear algebra]
 
 An **unimodular matrix** is a square matrix with integer entries such that its determinant is either -1, 0 or 1. A matrix is said **totally unimodular** (TU for short) if all its square submatrices are unimodular.
 
-[Sometime ago](http://kuniga.wordpress.com/2010/08/13/dijkstra-e-o-caminho-maximo-2/), we said that problems such as the minimum path, maximum flow and minimum cost max flow can be modeled using linear programming with the interesting property that the optimal solutions are always integer.
+[Sometime ago]({{blog}}/2010/08/13/dijkstra-and-the-longest-path.html), we said that problems such as the minimum path, maximum flow and minimum cost max flow can be modeled using linear programming with the interesting property that the optimal solutions are always integer.
 
 In that post, we also said that it was because the coefficient matrix of the constraints of the formulations are totally unimodular. More formally, we have the following theorem:
 

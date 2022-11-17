@@ -12,17 +12,15 @@ vanity: "2010-08-13-dijkstra-and-the-longest-path"
   <img src="{{resources_path}}/dijkstra.png" alt="Thumbnail of Dijkstra" />
 </figure>
 
-The shortest path problem is one of the most well-known problems in computing. In this post, I will comment a little about the shortest path problem and also the maximum path problem, presenting PLI models for both. For simplicity, I will only consider instances where the graph is directed and the edge weights are positive.
+The shortest path problem is one of the most well-known problems in computer science. In this post, we'll talk briefly about this problem and also the longest path problem, presenting linear programming models for both. For simplicity, we'll assume the graph is directed and the edge weights are positive.
 
 <!--more-->
 
-The shortest path problem can be modeled as a network flow. More specifically, it can be reduced to the minimum cost flow problem. So there is naturally a polynomial algorithm to solve it. However, in the same way that there are combinatorial algorithms for the maximum flow and the minimum cost flow, the Dijkstra's algorithm solves the shortest path problem very efficiently.
+The Dijkstra algorithm can be used to solve the shortest path problem and was developed by Edsger Dijkstra in 1956 over coffee in a bar. The author said in a interview that it took 20 minutes to develop it!
 
-The algorithm was developed by Edsger Dijkstra in 1956 over coffee in a bar. The author said in a interview that it took 20 minutes to develop one of the most famous algorithms in computer science.
+The shortest path problem can also be modeled as a network flow. More specifically, it can be reduced to the minimum cost max flow problem where the flow out of the source is limited to 1. Working with network flow is more interesting because it's simpler to model it as a integer linear programming as we shall see.
 
-Clearly, an algorithm that solves the shortest path problem through linear programming will not be able to beat the efficiency of Dijkstra's algorithm. But for modeling purposes, we will present the ILP model of this problem.
-
-The idea is to model it as the minimum cost maximum flow problem where the maximum flow equal to 1. Let $G(V, A)$ be a directed graph with special vertices $s$ and $t$ representing the source and sink of the graph. Let $x_{ij}$ the amount of flow going through an arc $(i, j) \in A$.
+Let $G(V, A)$ be a directed graph with special vertices $s$ and $t$ representing the source and sink of the graph. Let $x_{ij}$ be a variable representing the amount of flow going through an arc $(i, j) \in A$.
 
 For each node in the graph that is not the source nor sink we need the conservation of the flow:
 
@@ -36,17 +34,19 @@ Arcs can have a maximum capacity associated to it, but we can ignore it for our 
 
 $$\sum_{(s, j) \in A} x_{sj} = 1$$
 
-If arcs have an associated distance $c_{ij}$ to them, we can optimize the following objective function:
+If arcs have an associated distance $w_{ij}$ to them, we can optimize the following objective function:
 
-$$\min \sum_{(i, j) \in A} x_{ij} c_{ij}$$
+$$\min \sum_{(i, j) \in A} x_{ij} w_{ij}$$
 
-It's possible to show that there's an optimal solution for this objective function where $x_{ij}$ is integral, in this case, $\curly{0, 1}$. This solution then represents a path from $s$ to $t$ in $G(V, A)$ and is thus a shortest path.
+It's possible to show that there's an optimal solution for this objective function where $x_{ij}$ is integral, in this case, $\curly{0, 1}$. This is a fortunate instance where the optimal value of the linear programming and the *integer* linear programming coincide.
+
+It's not hard to see that a $\curly{0,1}$ solution represents a path from $s$ to $t$ (the sequence of edges having flow equal to 1) in $G(V, A)$ and is thus a shortest path.
 
 ## The Longest Path
 
 A similar problem to the shortest path is the [longest path problem](https://en.wikipedia.org/wiki/Longest_path_problem). A possible application for this problem is to do a critical path analysis (CPA). It consists of building a directed graph with vertices corresponding to the activities and arcs representing the dependencies between them. That is, if there is an arc $(a, b)$, then b can only be executed after finishing $a$.
 
-Each activity is associated with a cost, its execution time. Note that here, the cost is associated with a vertex, not an arc. This can be reduced to the one with weights on edges as follows: for each vertex $v$ and cost $c_v$, replace it with vertex $v'$ and $v''$, then adding an edge $(v',v'')$ with cost $c_v$. For every arc $(v, u)$, we add arcs $(v'', u')$ and $(u'', v')$. See *Figure 1* for an example.
+Each activity is associated with a cost, its execution time. Note that here, the cost is associated with a vertex, not an arc. This can be reduced to the one with weights on edges as follows: for each vertex $v$ and cost $w_v$, replace it with vertex $v'$ and $v''$, then adding an edge $(v',v'')$ with cost $w_v$. For every arc $(v, u)$, we add arcs $(v'', u')$ and $(u'', v')$. See *Figure 1* for an example.
 
 <figure class="center_children">
   <img src="{{resources_path}}/vertexsplit32.png" alt="See caption." />
