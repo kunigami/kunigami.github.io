@@ -191,7 +191,7 @@ using MyNewType = std::vector<std::string>;
 
 ## Hash Map
 
-In C++ `unordered_map` implements a hash map. Search, insertion, and removal of elements have average constant-time complexity.
+In C++ `unordered_map` implements a hash map. Search, insertion, and removal of elements have average constant-time complexity. Keys don't have any particular order. `map` keeps the keys sorted.
 
 ### Import
 
@@ -214,6 +214,16 @@ std::unordered_map<std::string, int> m = { {'a', 1}, {'b', 2} };
 {% highlight c++ %}
 std::cout << h["key"] << std::endl;
 {% endhighlight %}
+
+### Emplace
+
+{% highlight c++ %}
+h.emplace("key", 100);
+{% endhighlight %}
+
+Can be used to avoid the creation of temporary objects.
+
+Warning: only adds to map if the corresponding key does not exist.
 
 ### Insert
 
@@ -355,6 +365,20 @@ If `b = v.size() -1`:
 {% highlight c++ %}
 std::vector<int>(v.begin() + a, v.end());
 {% endhighlight %}
+
+### Passing as parameter
+
+{% highlight c++ %}
+void f(std::vector<int> v) {}
+
+// Type deduction
+f({1, 2});
+
+// Explicit type
+f(std::vector<int> {1, 2});
+
+{% endhighlight %}
+
 
 # Memory
 
@@ -612,7 +636,7 @@ struct Child : Base {
 
 You can also add override when implementing pure virtual methods.
 
-# Template
+# Templates
 
 ## Function
 
