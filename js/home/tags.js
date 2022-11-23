@@ -54,6 +54,7 @@ const tagsHierarchy = {
     ],
     'personal': [
         'conference',
+        'memoir',
         'project',
         'retrospective',
         'travel',

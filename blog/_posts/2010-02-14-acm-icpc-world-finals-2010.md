@@ -2,7 +2,7 @@
 layout: post
 title: "ACM ICPC World Finals 2010"
 vanity: "2010-02-14-acm-icpc-world-finals-2010"
-tags: [conference, travel]
+tags: [conference, memoir, travel]
 excerpt_separator: <!--more-->
 ---
 
