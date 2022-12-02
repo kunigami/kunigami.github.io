@@ -5,6 +5,26 @@ title: "LaTeX"
 
 Syntax for LaTeX I often use for my writings.
 
+## Set of Equations
+
+**Source:**
+
+{% highlight latex %}
+\begin{align}
+a &= b \\
+c + 1 &= d \\
+\end{align}
+{% endhighlight %}
+
+**Rendered:**
+
+$$
+\begin{align}
+a &= b \\
+c + 1 &= d \\
+\end{align}
+$$
+
 ## Conditional
 
 **Keywords:** *if*
