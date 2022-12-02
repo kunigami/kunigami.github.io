@@ -499,31 +499,49 @@ async with ContextManager() as ctx:
 from pathlib import Path
 {% endhighlight %}
 
-Create:
+### Create
 
 {% highlight python %}
 p = Path('/etc')
 {% endhighlight %}
 
-Append path (overloaded `/`):
+### Append path
 
 {% highlight python %}
-p = p / 'dir'
+p = p / 'dir' # Path('/etc/dir')
 {% endhighlight %}
 
-Parent:
+Note the overloaded operator `/`. Works with files too:
+
+{% highlight python %}
+p = p / 'file.txt' # Path('/etc/file.txt')
+{% endhighlight %}
+
+### Get filename
+
+{% highlight python %}
+Path('/home/file.txt').name # 'file.txt'
+{% endhighlight %}
+
+Note: this also returns the leaf directory:
+
+{% highlight python %}
+Path('/home/me/').name # 'me'
+{% endhighlight %}
+
+### Navigate to parent
 
 {% highlight python %}
 p = Path('/dev/null').parent # Path('dev/')
 {% endhighlight %}
 
-Resolve:
+### Resolve
 
 {% highlight python %}
 p = Path('.').resolve() # absolute path
 {% endhighlight %}
 
-To String:
+### To String
 
 {% highlight python %}
 print(str(Path('/dev/null'))) # dev/null
