@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Type Traits in C++"
-tags: [topology]
+tags: [c++]
 vanity: "2022-12-08-type-traits-in-cpp"
 excerpt_separator: <!--more-->
 ---
