@@ -390,7 +390,7 @@ It then calls the `expand_matching()` function `n` times. Each `expand_matching(
 
 After the loop, since `u` and `v` are optimal, we can use the objective function of the dual ILP which is a bit simpler to compute than adding the weights of the edges in the matching.
 
-The full [Python]({{code}}/hungarian.py) implementation as well as a [C++ implementation]({{code}}/hungarian.cpp) one are available on Github.
+The full [Python]({{github}}/hungarian.py) implementation as well as a [C++ implementation]({{github}}/hungarian.cpp) one are available on Github.
 
 ### Runtime complexity
 
