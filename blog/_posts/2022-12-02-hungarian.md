@@ -402,7 +402,7 @@ We only reset the BFS once we do `augment()` but we only do it $O(n)$ times thro
 
 I was studying the Hungarian method from Lawler's *Combinatorial Optimization: Networks and Matroids* [3] and it was incredibly hard to convert the provided pseudo-code into a working implementation.
 
-I missed several details like the fact that the graph has to be complete (if it's not, the algorithm is unable to find augmenting paths correctly) and the partitions of the same size. There's vagueness about in which order to visit vertices or terms like unscanned.
+I missed several details like the fact that the graph has to be complete and the partitions of the same size (without these conditions, the algorithm is unable to find augmenting paths correctly) . There's vagueness about in which order to visit vertices and terminology.
 
 What ultimately helped me understand the algorithm in detail was Topcoder's article [4] and Wikipedia [2].
 
