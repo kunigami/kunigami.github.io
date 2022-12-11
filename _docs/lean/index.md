@@ -166,8 +166,17 @@ rw ←foo -- replaces b with a
 Syntax:
 
 {% highlight lean %}
-nth_rewrite 0 [hypothesis],
+nth_rewrite 0 H1,
 {% endhighlight %}
+
+**rewrite multiple hypothesis**
+
+Syntax:
+
+{% highlight lean %}
+rewrite 0 [H1, H2, H1, H3],
+{% endhighlight %}
+
 
 ## split
 
