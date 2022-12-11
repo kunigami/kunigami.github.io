@@ -11,11 +11,15 @@ Let $X$ be a non-empty set and $d:X \times X \rightarrow \mathbb{R}$ a [metric f
 
 ## Open Ball
 
-Given a metric space $(X, d)$, a point $a \in X$ and a scalar $\delta \gt 0$, an *open ball*, denoted by $B(a, \delta)$ is a set of points $x \in X$ satisfying $d(a, x) \lt \delta$.
+Given a metric space $(X, d)$, a point $a \in X$ and a scalar $\delta \gt 0$, an *open ball about * $a$, denoted by $B(a, \delta)$ is a set of points $x \in X$ satisfying $d(a, x) \lt \delta$.
 
 ## Neighborhood
 
 Given a metric space $(X, d)$, a subset $N$ of $X$ is a *neighborhood of point* $a \in X$ if there exists some $\delta \gt 0$ and $N$ contains $B(a, \delta)$.
+
+## Limit Point
+
+Given a metric space $(X, d)$ and a subset $A \subseteq X$, a point $x \in X$ is **limit point** if every neighborhood of $x$ contains a point of $A$ different than $x$. Note that $x$ doesn't need to be in $A$, nor that every point in $A$ is a limit point (e.g. in the set $\mathbb{N}$ no element is a limit point).
 
 ## Open Set
 
