@@ -35,10 +35,13 @@ Selected posts organized by topics. Most of them are primers (introductory) and 
 ## Combinatorial Optimization and Graph Theory
 
 * De Bruijn Graphs ([post]({{blog}}/2018/12/26/de-bruijn-graphs-and-sequences.html))
+* Dijkstra Algorithm (shortest-path problem) ([post]({{blog}}/2010/08/13/dijkstra-and-the-longest-path.html))
 * Eulerian Circuits ([post]({{blog}}/2018/11/26/eulerian-circuits.html))
 * Lagrangian Relaxation - Theory ([post]({{blog}}/2012/02/05/lagrangean-relaxation-theory.html))
-* Matroids ([post]({{blog}}/2013/11/11/lawler-and-an-introduction-to-matroids.html))
+* Longest Path Problem ([post]({{blog}}/2010/08/13/dijkstra-and-the-longest-path.html))
+* Matroids ([part I]({{blog}}/2013/11/11/lawler-and-an-introduction-to-matroids.html)), ([part II]({{blog}}/2022/12/12/partition-matroid.html))
 * Trees from a Distance Matrix ([post]({{blog}}/2019/05/10/constructing-trees-from-a-distance-matrix.html))
+
 
 ## Theory of Computing
 
