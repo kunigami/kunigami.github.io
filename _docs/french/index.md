@@ -61,3 +61,15 @@ We use `<conj. etre> <verb>` when `<verb>` denotes displacement and `<verb>` is 
 | je | tu | il/elle/on | nous | vous | ils/elles |
 | -- | -- | --         | --   | --   | --  |
 | me | te | se         | nous | vous | se  |
+
+# Confusing
+
+Terms that are very similar and which can be confusing when to use.
+
+## ce qui vs. ce que
+
+Rule of thumb: *ce qui* should be used when it precedes a verb (including reflexive forms), else *ce que*.
+
+* *Je sais ce que je fais*
+* *Je sais ce qui s'est passé*
+* *Je sais ce qui est bien*
