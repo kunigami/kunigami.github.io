@@ -249,13 +249,22 @@ bool has_key = h.find("key") != h.end();
 
 ## Set
 
+Prefer `std::unordered_set` over `std::set`.
 
 ### Initialization
 
 From literals:
 
 {% highlight c++ %}
-std::set<int> s = {4, 16, 9, 25};
+std::unordered_set<int> s = {4, 16, 9, 25};
+{% endhighlight %}
+
+### Membership
+
+Returns 1 if `element` exists, 0 otherwise. Faster than `.find()`.
+
+{% highlight c++ %}
+s.count(element);
 {% endhighlight %}
 
 ### Remove
@@ -909,9 +918,82 @@ if (my_file.is_open()) {
 
 ## Time
 
-### Current timestamp
+### Duration
 
-Unix timestamp.
+Structure: `std::chrono::duration<Rep, Period>`. `Rep` is the underlying type, e.g. `double` or `int`. `Period` is a rational number (`std::ratio`) indicating the relative scale factor to 1 second and is only relevant when converting between units.
+
+*Examples*
+
+{% highlight c++ %}
+// 1 tick = 1 second
+std::chrono::duration<int, std::ratio<1> sec(1);
+
+// 1 tick = 60 seconds
+std::chrono::duration<int, std::ratio<60>> min1(1);
+// 60 ticks = 60 seconds
+std::chrono::duration<int, std::ratio<1>> min2(60);
+// comparison handles different periods
+assert (min1 == min2);
+
+// 30 ticks = 30 ms
+std::chrono::duration<int, std::ratio<1, 1000>> ms(30);
+{% endhighlight %}
+
+*Helper duration types*
+
+The actual underlying `Rep` for these types is open for compilers to determine but the [spec](https://en.cppreference.com/w/cpp/chrono/duration) dictates signed integers of a minimum size (shown in parenthesis below, in bits).
+
+| Type | Bits |
+| ---- | ---- |
+| `std::chrono::nanoseconds` | 64 |
+| `std::chrono::microseconds` | 55 |
+| `std::chrono::milliseconds` | 45 |
+| `std::chrono::seconds` | 35 |
+| `std::chrono::minutes` | 29 |
+| `std::chrono::hours` | 23 |
+
+
+*Get value from duration*
+
+It always returns the value in the scale defined by `Period`, so basically the value we passed when constructing it:
+
+{% highlight c++ %}
+std::chrono::duration<double, std::ratio<1, 30>> hz30(3.5)
+cout << hz30.count() << endl; // 3.5
+{% endhighlight %}
+
+*Convert between units*
+
+Syntax: `std::chrono::duration_cast<duration_type>(duration)`
+
+Example: converts 1 tick of 60 seconds to 60 ticks of 1 second.
+
+{% highlight c++ %}
+std::chrono::minutes min1(1);
+cout << min1.count() << endl; // 1
+auto sec60 = std::chrono::duration_cast<std::chrono::seconds>(min1);
+cout << sec60.count() << endl; // 60
+{% endhighlight %}
+
+*Negative durations*
+
+Durations can be negative. There's a `abs()` overload, so a negative duration can be convert either as is or when getting `.count()`:
+
+{% highlight c++ %}
+std::chrono::minutes min1(-1);
+cout << min1.count() << endl; // -1
+cout << abs(min1).count() << endl; // 1
+cout << abs(min1.count()) << endl; // 1
+{% endhighlight %}
+
+
+### Time Point
+
+Structure: `std::chrono::time_point<Clock>`. `Clock` is the underlying mechanism for measuring time, most of times we use `std::chrono::system_clock`.
+
+A duration can be obtaining by the different between two time points.
+
+*Get current Unix timestamp*
 
 {% highlight c++ %}
 #include <chrono>
