@@ -529,6 +529,14 @@ Note: this also returns the leaf directory:
 Path('/home/me/').name # 'me'
 {% endhighlight %}
 
+### File extension
+
+It includes the `.`.
+
+{% highlight python %}
+Path('/home/me/file.txt').suffix # '.txt'
+{% endhighlight %}
+
 ### Navigate to parent
 
 {% highlight python %}

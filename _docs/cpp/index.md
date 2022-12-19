@@ -952,6 +952,15 @@ The actual underlying `Rep` for these types is open for compilers to determine b
 | `std::chrono::minutes` | 29 |
 | `std::chrono::hours` | 23 |
 
+Some of the examples from above simplified:
+
+{% highlight c++ %}
+// 1 tick = 1 second
+std::chrono::seconds sec(1);
+
+// 1 tick = 60 seconds
+std::chrono::minutes min1(1);
+{% endhighlight %}
 
 *Get value from duration*
 
