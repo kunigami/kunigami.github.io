@@ -608,6 +608,16 @@ q.empty()
 
 # Regex
 
+Keywords: regular expression
+
+## Check if it matches
+
+{% highlight python %}
+text = "the number is 12345"
+if re.match('is ([0-9]+)', text):
+    print("matches")
+{% endhighlight %}
+
 ## Extract
 
 {% highlight python %}
