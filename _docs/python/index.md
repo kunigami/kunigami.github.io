@@ -272,6 +272,19 @@ pol = Polygon([p, q])
 print(pol.pts) # [Point(x=10, y=20), Point(x=20, y=10)]
 {% endhighlight %}
 
+### Default Value
+
+@dataclass
+class Point:
+     x: int
+     y: int
+     z: int = 0
+
+p = Point(x=10, y=20)
+print(p.z) # 0
+{% endhighlight %}
+
+
 ### Cloning
 
 `dataclasses.replace`:
