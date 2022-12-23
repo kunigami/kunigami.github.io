@@ -274,6 +274,7 @@ print(pol.pts) # [Point(x=10, y=20), Point(x=20, y=10)]
 
 ### Default Value
 
+{% highlight python %}
 @dataclass
 class Point:
      x: int
