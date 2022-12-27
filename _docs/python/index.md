@@ -240,6 +240,29 @@ c = Child(1, 2)
 print(c.f, c.g)
 {% endhighlight %}
 
+## Abstract classes
+
+{% highlight python %}
+from abc import ABC, abstractmethod
+
+class MyAbstractClass(ABC):
+  @abstractmethod
+  def my_abstract_method(self, arg1, arg2):
+    """Describe this method. No need to have body"""
+
+class MyConcreteClass(MyAbstractClass):
+  def my_abstract_method(self, arg1, arg2):
+    return arg1 + arg2
+
+c = MyConcreteClass()
+# TypeError: Can't instantiate abstract class MyNonConcreteClass
+# with abstract method my_abstract_method
+d = MyNonConcreteClass()
+
+{% endhighlight %}
+
+
+
 ## Dataclasses
 
 Lightweight syntax for creating classes / records.
