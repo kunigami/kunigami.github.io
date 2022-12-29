@@ -40,11 +40,11 @@ Completeness: with unbounded data, events can be arbitrarily late (e.g. event lo
 
 ### Chapter 2 - The What, Where, When and How of Data Processing
 
-This chapter introduce specific terminology and features from the Beam model including transformations, windows, triggers and accumulation. The Beam model concept is discussed in Chapter 10. This chapter is [freely available online](https://www.oreilly.com/radar/the-world-beyond-batch-streaming-102).
+This chapter introduces specific terminology and features from the Beam model including transformations, windows, triggers and accumulation. The Beam model concept is discussed in Chapter 10. This chapter is [freely available online](https://www.oreilly.com/radar/the-world-beyond-batch-streaming-102).
 
 Transformations can be element-wise like a mapper, or change the data cardinality via aggregations such as group-by or widowing.
 
-Watermarks is a timestamp aiming to provide a boundary to unbounded data. It can be read as "I've already processed all events with timestamp less than the watermark". This is important when events can be arbitrarily late because it provides a different criteria for moving on instead of waiting for all events to arrive. More details are covered in Chapter 3. *Figure 1* shows the watermark lines as dashed/dotted line.
+**Watermark** is a timestamp aiming to provide a boundary to unbounded data. It can be read as "I've already processed all events with timestamp less than the watermark". This is important when events can be arbitrarily late because it provides a different criteria for moving on instead of waiting for all events to arrive. More details are covered in Chapter 3. *Figure 1* shows the watermark lines as dashed/dotted line.
 
 <figure class="center_children">
   <img src="{{resources_path}}/time_graph.png" alt="See caption" />
