@@ -636,7 +636,9 @@ first = q.get()
 first = q[0]
 
 # Size
-len(q)
+# Queue doesn't expose len()
+# since it can lead to incorrect
+# usage in multi-threaded applications
 
 # Is empty?
 q.empty()

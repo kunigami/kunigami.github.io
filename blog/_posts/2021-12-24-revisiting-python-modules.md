@@ -534,7 +534,7 @@ How do we know which modules to lazy load? We'll see next.
 
 ### Detecting Expensive Modules
 
-We can determine which module is taking the most time to import by running our binary with thw `-X importtime` flag. As an experiment, I tried profiling a recent project I worked with [t-digest](https://github.com/CamDavidsonPilon/tdigest):
+We can determine which module is taking the most time to import by running our binary with the `-X importtime` flag. As an experiment, I tried profiling a recent project I worked with [t-digest](https://github.com/CamDavidsonPilon/tdigest):
 
 
 {% highlight text %}
