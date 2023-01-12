@@ -180,6 +180,21 @@ ys = {f(x) for x in xs}
 {% endhighlight %}
 
 
+## Strings
+
+To bytes. Depends on the desired encoding.
+
+{% highlight python %}
+bytes = str.encode("utf-8") # utf-8 is the default
+{% endhighlight %}
+
+From bytes:
+
+{% highlight python %}
+str = bytes.decode()
+{% endhighlight %}
+
+
 # Object Oriented
 
 Basic Syntax:
@@ -425,12 +440,16 @@ Temporary file:
 # Note: file gets deleted once it exits the scope
 tempfile.NamedTemporaryFile() as file:
     file.write("Hello World\n")
+    print(f"writing to filename = {file.name}")
 
     # make sure to flush if something will read from it
     file.flush()
-    read_my_file(file.name)
+
+    # read as bytes
+    file.read()
 {% endhighlight %}
 
+Note: default mode is `w+b` (write and bytes). If you'll be reading strings, make sure to change to `mode=w+`.
 
 # Functions
 
