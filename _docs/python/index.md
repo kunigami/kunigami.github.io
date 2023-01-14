@@ -636,7 +636,8 @@ first = q.get()
 first = q[0]
 
 # Size
-len(q)
+# the number of elements in the queue is not exposed,
+# so len(q) doesn't work
 
 # Is empty?
 q.empty()
