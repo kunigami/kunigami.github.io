@@ -655,6 +655,7 @@ first = q.get()
 first = q[0]
 
 # Size
+
 # Queue doesn't expose len()
 # since it can lead to incorrect
 # usage in multi-threaded applications
