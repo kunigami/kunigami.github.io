@@ -46,6 +46,7 @@ const tagsHierarchy = {
         'calculus',
         'combinatorics',
         'functional analysis',
+        'geometry',
         'linear algebra',
         'number theory',
         'probability',
@@ -55,6 +56,7 @@ const tagsHierarchy = {
     'personal': [
         'conference',
         'memoir',
+        'opinion',
         'project',
         'retrospective',
         'travel',
