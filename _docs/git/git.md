@@ -96,3 +96,11 @@ git push origin test
 {% highlight text %}
 git switch my_remote_branch
 {% endhighlight %}
+
+## Resolving Conflicts
+
+Mark file as resolved:
+
+{% highlight text %}
+git add <filemame>
+{% endhighlight %}
