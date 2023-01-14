@@ -2,7 +2,7 @@
 layout: post
 title: "Matroid Intersection"
 tags: [combinatorial optimization, graph theory]
-vanity: "2022-12-29-matroid-intersection"
+vanity: "2023-01-13-matroid-intersection"
 excerpt_separator: <!--more-->
 ---
 
@@ -403,7 +403,7 @@ def bipartite_matching(edges):
     return result.get_elements()
 {% endhighlight %}
 
-The code for the bipartite matching using matroid intersection is available on [Python]({{github}}/intersection.py).
+The code for the bipartite matching using matroid intersection is available on [Github]({{github}}/intersection.py).
 
 ### Complexity
 
