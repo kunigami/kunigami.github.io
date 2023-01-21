@@ -485,6 +485,21 @@ def my_func():
     pass
 {% endhighlight %}
 
+## Pass primitive values by reference
+
+Primitives like `bool`, `int`, `str`, etc. are not implicitly bound to functions in the same scope like `list`s are. Declaring it `nonlocal` binds it explicitly.
+
+{% highlight python %}
+def f():
+    x = 0
+    def inc():
+        nonlocal x
+        x += 1
+
+    inc()
+    print(x) # 1
+{% endhighlight %}
+
 # Date and Time
 
 Current time:
