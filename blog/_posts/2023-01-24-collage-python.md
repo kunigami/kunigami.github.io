@@ -210,7 +210,7 @@ I thought the savings from this automation would be marginal since I'd only use 
 
 I could automate this process further. One idea is that instead of setting up the photos in a local folder I could simply add the URL to the corresponding Google Photos plus some description. The script would download them, make the collage and then generate the markdown snippet with the caption and links.
 
-One extension is to instead of cropping, we pad the images to adjust the aspect ratio. I don't think it would look good on photos but is probably more desirable for charts, where cropping could end up removing axis for exa,ple.
+One extension is to instead of cropping, we pad the images to adjust the aspect ratio. I don't think it would look good on photos but is probably more desirable for charts, where cropping could end up removing axis for example.
 
 ## Conclusion
 

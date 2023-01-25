@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Reading - Watermaks in Stream Processing"
+title: "Paper Reading - Watermarks in Stream Processing"
 tags: [distributed systems, paper reading]
 excerpt_separator: <!--more-->
 vanity: "2022-12-29-watermarks"
@@ -8,7 +8,7 @@ vanity: "2022-12-29-watermarks"
 
 {% include blog_vars.html %}
 
-In this post we'll discuss the paper *Watermaks in Stream Processing: Semantics and Comparative Analysis of Apache Flink and Google Cloud Dataflow* by Akidau et al. [1].
+In this post we'll discuss the paper *Watermarks in Stream Processing: Semantics and Comparative Analysis of Apache Flink and Google Cloud Dataflow* by Akidau et al. [1].
 
 In this paper the authors describe the concept of watermarks, the problem they aim to solve, other alternative mechanisms to watermarks, different implementations by Flink and Dataflow and finally provide experimental results to compare them.
 
@@ -32,7 +32,7 @@ To see why, consider an example with events $x_1$ and $x_2$, where $p(x_1) = 5$,
 
 Thus, the watermark function has to know in advance (i.e. be an oracle) when processing $x_1$ that later it will get $x_2$ with a lower event time so it can't "advance" the watermark greedly. In  generally, so heuristics to approximate are used.
 
-I don't understand what the *liveness* property is trying to say. The paper later says that $t - w(t)$ is unbounded (i.e. the watermak can be arbitrarily behind the current processing time), but by default functions are already unbounded, so both these conditions seem redundant.
+I don't understand what the *liveness* property is trying to say. The paper later says that $t - w(t)$ is unbounded (i.e. the watermark can be arbitrarily behind the current processing time), but by default functions are already unbounded, so both these conditions seem redundant.
 
 ### Readiness and Obsolescence
 
@@ -48,7 +48,7 @@ If we treat the watermark as the "judge" or source of truth we can work with an 
 
 The paper describes two alternatives to watermarks which are more general: **timestamp frontiers** and **punctuations**. Timestamp frontiers is a concept introduced by Timely but this paper doesn't provide much detail besides it working with multiple time domains as opposed to one. I'll have to read more about Timely to understand better.
 
-Punctuations are a further generalization in that they work with predicates instead of a value. A punctuation is a invariant each operator has that none of the events it will produce will match a given predicate. To implement watermaks via punctuations we could have a predicate saying `event_time > watermark`, meaning this operator will not produce events with event time higher than its watermark.
+Punctuations are a further generalization in that they work with predicates instead of a value. A punctuation is a invariant each operator has that none of the events it will produce will match a given predicate. To implement watermarks via punctuations we could have a predicate saying `event_time > watermark`, meaning this operator will not produce events with event time higher than its watermark.
 
 The paper claims that both these generalization while more expressive make the system harder to reason about as well as to implement custom user logic, and watermarks are the right balance between simplicity and expressiveness.
 
@@ -151,5 +151,5 @@ On the experiment itself, it seems like the watermark latency is not being affec
 
 ## References
 
-* [[1](https://vldb.org/pvldb/vol14/p3135-begoli.pdf)] Watermaks in Stream Processing: Semantics and Comparative Analysis of Apache Flink and Google Cloud Dataflow, Akidau et al.
+* [[1](https://vldb.org/pvldb/vol14/p3135-begoli.pdf)] Watermarks in Stream Processing: Semantics and Comparative Analysis of Apache Flink and Google Cloud Dataflow, Akidau et al.
 * [[2]({{blog}}/2022/08/18/state-management-flink.html)] NP-Incompleteness: Paper Reading - State Management In Apache Flink
