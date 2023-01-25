@@ -20,6 +20,7 @@ title: Blog
 ## Sub-pages
 
 * [About]({{ site.url }}/blog/about/)
+* [Subscribe]({{ site.url }}/feed.xml) - RSS feed
 * [Index]({{ site.url }}/blog/selected/) - Posts by topics
 * [Tags]({{ site.url }}/blog/tags/) - Posts by tags
 
