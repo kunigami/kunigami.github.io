@@ -30,7 +30,7 @@ I thought of using [scikit-image](https://scikit-image.org/) for this, since it 
 
 The process of finding the right tool for the job is a bit frustrating but also interesting. You start with some Google searches, e.g. "Image processing Python library", but that takes you to a sub-optimal direction, suggesting scikit-image and then by asking more specific questions such as "How to extract image metadata in scikit-image" you often find Stack Overflow answers mentioning this other library Pillow.
 
-I tend to avoid high level libraries for narrow use cases and prefer to stick with lower level ones in hopes they cover a bigger range of use cases so that learning them is more useful long term (this worked well with Matplotlib for example). The struggle with scikit-image APIs tilted the balance and make me pick Pillow.
+I tend to avoid high level libraries for narrow use cases and prefer to stick with lower level ones in hopes they cover a bigger range of use cases so that learning them is more useful long term (this worked well with Matplotlib for example). The struggle with scikit-image APIs tilted the balance and made me pick Pillow.
 
 ### Size normalization
 
@@ -163,7 +163,7 @@ fig, axs = plt.subplots(
 
 ### Issue 3: Inconsistent Return Shape
 
-If either `nrows` or `ncols` is 1, `plt.subplots()` will return a scalar instead of a list with one element. That means this code:
+If either `nrows` or `ncols` is 1, `plt.subplots()` will return a scalar instead of a matrix with one element. That means this code:
 
 {% highlight python %}
 plt.subplots(nrows=1, ncols=1)
@@ -199,6 +199,8 @@ for r in range(nrows):
         ax.imshow(thumb_images[r*ncols + c])
         ax.axis('off')
 {% endhighlight %}
+
+The notebook is available on [Github]({{github}}/collage.ipynb).
 
 ## Results
 
