@@ -410,6 +410,19 @@ std::shared_ptr<int> pt (new int);
 std::cout << *pt << std::endl;
 {% endhighlight %}
 
+## Placement New
+
+Allows pre-allocating into a larger chunk of memory into a buffer and then `new`ing objects into that memory.
+
+{% highlight c++ %}
+char *buf = new char[10000];
+C *p1 = new (buf) C(1);
+C *p2 = new (buf + sizeof(*p1)) C(2);
+delete [] buf;
+{% endhighlight %}
+
+Note that deletion is not performed for the placement new, only for the original buffer.
+
 # Flow Control
 
 ## Conditionals
