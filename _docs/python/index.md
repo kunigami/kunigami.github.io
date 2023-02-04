@@ -25,6 +25,16 @@ class MyEnum(Enum):
   B = 'b'
 {% endhighlight %}
 
+### No value
+
+{% highlight python %}
+from enum import Enum, auto
+
+class MyEnum(Enum):
+  A = auto()
+  B = auto()
+{% endhighlight %}
+
 ### From primitive
 
 {% highlight python %}
@@ -253,6 +263,13 @@ class Child(Base):
 
 c = Child(1, 2)
 print(c.f, c.g)
+{% endhighlight %}
+
+### Instance check
+
+{% highlight python %}
+if isinstance(obj, MyClass):
+    print("is of type MyClass")
 {% endhighlight %}
 
 ## Abstract classes
