@@ -1463,6 +1463,14 @@ const markers = [
     category: "fort",
   },
   {
+    name: "El Caminito Del Rey",
+    description:
+      "El Caminito del Rey is a walkway pinned along the steep walls of a narrow gorge in El Chorro.",
+    lat: 36.93270958448457,
+    lng: -4.789922155261637,
+    category: "fort",
+  },
+  {
     name: "Sagrada Família",
     description: "Roman Catholic Church, designed by the Spanish architect Antoni Gaudí",
     lat: 41.403773864564776,
