@@ -110,3 +110,7 @@ The gains were practically linear, and for 4 processors the parallelization meas
 I talked to my mentor about developing that incremental view, but he didn't seem to like the idea very much. This would require quite a big change in the system, as the BRL-CAD renderer was designed for ray-tracing and not path-tracing.
 
 For now I'm studying ways to adapt the OSL code to support ray-tracing, but I don't know if this is feasible. By the way, I still get the terms ray-tracing, path-tracing, photon mapping and all these lighting algorithms mixed up and I intend to write a post covering these topics pretty well soon.
+
+## Notes
+
+This is a review and translation done in 2023 of my original post in Portuguese: [Shader OSL Multithread](https://kuniga.wordpress.com/2011/07/24/shader-osl-multithread/).
