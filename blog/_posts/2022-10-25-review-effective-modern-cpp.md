@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Effecive Modern C++"
+title: "Review: Effective Modern C++"
 tags: [review, c++]
 excerpt_separator: <!--more-->
 vanity: "2022-10-25-review-effective-modern-cpp"
