@@ -885,6 +885,12 @@ const markers = [
     category: "monument",
   },
   {
+    name: "Kashmir Valley",
+    description: "Valley surrounded by the Himalayas",
+    lat: 34.08365175624528,
+    lng: 74.79720342932576,
+  },
+  {
     name: "Sri Harmandir Sahib",
     description: "Central worship place for Sikhs around the world, built from white marble overlaid with gold leaf.",
     lat: 31.624759568265535,
