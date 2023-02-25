@@ -5,25 +5,33 @@ title: "Git Cheatsheet"
 
 ## Local Change management
 
-Revert changes to uncommitted file
+### Revert changes to uncommitted file
 
 {% highlight text %}
 git checkout -- <file>
 {% endhighlight %}
 
-Discard the most recent local commit:
+### Discard the most recent local commit
 
 {% highlight text %}
 git reset --hard HEAD~1
 {% endhighlight %}
 
-Revert all local changes:
+### Revert all local changes
+
+NOTE: this doesn't remove untracked files
 
 {% highlight text %}
 git checkout .
 {% endhighlight %}
 
-Remove uncommitted files:
+### Revert all untracked files and directories
+
+{% highlight text %}
+git clean -fd
+{% endhighlight %}
+
+### Remove uncommitted files
 
 {% highlight text %}
 # (optional) first, see what files will be purged
@@ -32,13 +40,13 @@ git clean -n
 git clean -fd
 {% endhighlight %}
 
-Stash / Shelve single file:
+### Stash / Shelve single file
 
 {% highlight text %}
 git stash -- <file>
 {% endhighlight %}
 
-Un-stash:
+### Un-stash
 
 {% highlight text %}
 git stash pop
