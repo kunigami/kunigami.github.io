@@ -1,5 +1,6 @@
 Source code for: http://kuniga.me/
 
+# Operational
 
 ## Details
 
@@ -50,3 +51,35 @@ Setup:
 ## References
 
 * https://jekyllrb.com/docs/installation/macos/
+
+
+# Architecture
+
+## Blog
+
+The blog uses Jekyll's structure.
+
+Posts:
+
+* Located under `blog/_posts`
+* File named `YYYY-MM-DD-short-name.md`
+
+
+## Other pages
+
+`/docs/` are setup by
+
+* Listing `.md` pages under `docs_/`
+* Registering in `_config.yml`:
+
+```
+collections:
+  docs:
+    output: true
+```
+
+Same for `/amuseum/`.
+
+## Plugins
+
+* RSS Feed: `jekyll-feed`

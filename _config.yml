@@ -2,6 +2,8 @@ emptyArray: []
 collections:
   docs:
     output: true
+  amuseum:
+    output: true
 plugins:
   - jekyll-feed
 title: NP-Incompleteness
