@@ -7,8 +7,7 @@ title: Amuseum
   <a href="{{ site.url }}">kuniga.me</a> > <a href="{{ site.url }}/amuseum">Amuseum</a>
 </p>
 
-{% assign root = site.url | append: "/amuseum/" %}
-
+{% assign root = site.url | append: "/amuseum" %}
 
 # Amuseum
 
@@ -19,3 +18,7 @@ Think of it as my personal virtual museum 😉.
 ## Egypt 🇪🇬
 
 * [Animal Mummies]({{ root }}/animal-mummies.html)
+
+## Japan 🇯🇵
+
+* [Dogū]({{ root }}/dogu.html)
