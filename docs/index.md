@@ -19,6 +19,10 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [General]({{ site.url }}/docs/cpp/)
 
+## Java
+
+* [General]({{ site.url }}/docs/java/)
+
 ## JavaScript
 
 * [General]({{ site.url }}/docs/javascript/)
