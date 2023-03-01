@@ -27,3 +27,19 @@ try {
     e.printStackTrace();
 }
 {% endhighlight %}
+
+# Object-Oriented
+
+## Inheritance
+
+{% highlight java %}
+class Base {
+}
+
+class Child extends Base {
+}
+
+class Child implements Interface {
+
+}
+{% endhighlight %}
