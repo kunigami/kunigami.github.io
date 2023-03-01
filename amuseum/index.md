@@ -18,6 +18,7 @@ Think of it as my personal virtual museum 😉.
 ## Egypt 🇪🇬
 
 * [Animal Mummies]({{ root }}/animal-mummies.html)
+* [Rosetta Stone]({{ root }}/rosetta-stone.html)
 
 ## Japan 🇯🇵
 
