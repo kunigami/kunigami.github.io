@@ -121,6 +121,16 @@ sorted([3, 2, 1], key=functools.cmp_to_key(cmp))
 
 ## Dictionaries
 
+### Default entries
+
+{% highlight python %}
+from collections import defaultdict
+dict = defaultdict(list)
+dict['key'].append(1) # {'key': [1]}
+{% endhighlight %}
+
+Note: `defaultdict` takes a callback to be called when a new entry is added. `list` is equivalent to `lambda _ : []`.
+
 ### Remove entry
 
 {% highlight python %}
