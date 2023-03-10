@@ -226,6 +226,14 @@ const markers = [
     img_link: "https://photos.app.goo.gl/DMgwtGwckVr9BMY99",
     category: "nature",
   },
+  // -- Illinois
+  {
+    name: "Field Museum",
+    description:
+      "Museum of Natural History in Chicago. Most artifacts from Hopewell Culture located here.",
+    lat: 41.867044001846594,
+    lng: -87.61689466825753,
+  },
   // -- Massachusetts
   {
     name: "Museum of Fine Arts, Boston",
