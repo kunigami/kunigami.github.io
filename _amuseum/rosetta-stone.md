@@ -21,4 +21,4 @@ The British defeated the French in 1801 and took the stone with them, which is n
 
 ## References
 
-* [[1](https://en.wikipedia.org/wiki/Rosetta_Stone)] - Wikipedia: Rosetta Stone
+* [[1](https://en.wikipedia.org/wiki/Rosetta_Stone)] Wikipedia: Rosetta Stone

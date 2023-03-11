@@ -20,6 +20,10 @@ Think of it as my personal virtual museum 😉.
 * [Animal Mummies]({{ root }}/animal-mummies.html)
 * [Rosetta Stone]({{ root }}/rosetta-stone.html)
 
+## Iraq 🇮🇶
+
+* [Lamassu]({{ root }}/lamassu.html)
+
 ## Japan 🇯🇵
 
 * [Dogū]({{ root }}/dogu.html)

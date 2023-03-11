@@ -26,4 +26,4 @@ I was personally drawn to this figurine because when I was little one of my favo
 
 ## References
 
-* [[1](https://en.wikipedia.org/wiki/Dog%C5%AB)] - Wikipedia: Dogū
+* [[1](https://en.wikipedia.org/wiki/Dog%C5%AB)] Wikipedia: Dogū

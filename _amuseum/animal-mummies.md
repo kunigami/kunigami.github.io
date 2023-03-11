@@ -22,4 +22,4 @@ The ancient Egyptians mummified not only people but also animals. Reasons includ
 
 ## References
 
-* [[1](https://en.wikipedia.org/wiki/Animal_mummy)] - Wikipedia: Animal mummy
+* [[1](https://en.wikipedia.org/wiki/Animal_mummy)] Wikipedia: Animal mummy
