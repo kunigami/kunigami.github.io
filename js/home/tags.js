@@ -43,6 +43,7 @@ const tagsHierarchy = {
         'phonetics',
     ],
     'math': [
+        'analysis',
         'calculus',
         'combinatorics',
         'functional analysis',
