@@ -181,7 +181,7 @@ $$\begin{equation}
 
 The term $\exp(\sum_{i=1}^{n} \frac{x^i}{i})$ is the $n$-th order Taylor series expansion for $-\log(1 - x)$. Note that $E_n(x): \mathbb{C} \rightarrow \mathbb{C}$. It's possible to show that if $\abs{x} \le \abs{z_n}$, then [7]:
 
-$$(5) \quad \abs{E_{n}(\frac{x}{z_n})} \le 1 + \left(\frac{\abs{x}}{\abs{z_n}}\right)^{n + 1}$$
+$$(5) \quad \left\lvert E_{n}(\frac{x}{z_n}) \right\rvert \le 1 + \left(\frac{\abs{x}}{\abs{z_n}}\right)^{n + 1}$$
 
 We then use that $\prod (1 + a_n)$ converges iff $\sum a_n$ converges, where $a_n \ge 0$, so if
 
@@ -309,6 +309,13 @@ $$\lim_{n \rightarrow \infty} \abs{a_n}^{\frac{1}{n}} = 0$$
 
 In [Cepstrum]({{blog}}/2021/10/23/cepstrum.html) we also used the Taylor series expansion for $\log(1 - x)$.
 
+## Recap
+
+* *What is the definition of entire functions?* A function that is differentiable at every point of the complex space.
+* *What is the definition of the maximum modulus function?* It's the real-valued function $M_f(r)$ corresponding to the maximum norm of a complex-valued function $f(z)$ among all $\abs{z} = r$.
+* *Why do we need maximum modulus functions?* So we can work with reals instead of complex numbers.
+* *What is the definition of order for entire functions?* $\rho$ such that $f(r) < e^{r^\rho}$ for all $r > R_0$.
+* *What is the Weierstrass Factorization theorem for polynomials?* It's the fundamental theorem of algebra.
 
 ## Appendix
 
