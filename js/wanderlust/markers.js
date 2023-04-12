@@ -562,6 +562,17 @@ const markers = [
     visited: true,
   },
   {
+    name: "Great Wall of China",
+    description:
+      "Series of fortifications built to defent agains nomadic groups from the North. This section was built during the Ming Dynasty.",
+    lat: 40.44092265997028,
+    lng: 116.56548453733048,
+    img_name: "great_wall_of_china.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/psHkREotYjhmKGos5",
+    visited: true,
+  },
+  {
     name: "Harbin Ice Festival",
     description:
       "Ice Festival featuring giant colorful sculptures and buildings made of ice.",
@@ -607,10 +618,32 @@ const markers = [
     category: "nature",
   },
   {
+    name: "Summer Palace",
+    description:
+      "It was an imperial garden in the Qing dynasty.",
+    lat: 40.00014663368477,
+    lng: 116.27548206298917,
+    img_name: "summer_palace.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/v1ZnCx7qfmyFDg1H7",
+    visited: true,
+  },
+  {
     name: "Classical Gardens of Suzhou",
     description: "Built over 1000 years, from the 11th-19th centuries, these gardens define the Chinese style.",
     lat: 31.33455547912024,
     lng: 120.62878325062533,
+  },
+  {
+    name: "Temple of Heaven",
+    description:
+      "Complex of religious buildings visited by the Emperors of the Ming and Qing dynasties for annual ceremonies of prayer to Heaven for a good harvest.",
+    lat: 39.88231198659993,
+    lng: 116.40655195975519,
+    img_name: "temple_of_heaven.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/DKK5kUFXLCfgoZH3A",
+    visited: true,
   },
   {
     name: "Terracota Warriors",
@@ -1537,6 +1570,20 @@ const markers = [
     lat: 67.16749163371166,
     lng: 18.212099916970978,
     category: "nature",
+  },
+
+  // Taiwan
+  {
+    name: "Fo Guang Shan Buddha Museum",
+    description:
+      "Huge museum complex with one of the 10 tallest Buddha statue in the world.",
+    lat: 22.75736361287764,
+    lng: 120.44030743786956,
+    img_name: "fo_guang_shan.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/fAUHGvfEoqPAuYzV6",
+    category: "nature",
+    visited: true,
   },
 
   // Tanzania
