@@ -459,13 +459,21 @@ with open(filename, "r") as file:
     print(file.readlines())
 {% endhighlight %}
 
+Read all the contents into one string:
+
+{% highlight python %}
+with open(filename, "r") as file:
+    print(file.read())
+{% endhighlight %}
+
+
 ## Write file
 
 Temporary file:
 
 {% highlight python %}
 # Note: file gets deleted once it exits the scope
-tempfile.NamedTemporaryFile() as file:
+with tempfile.NamedTemporaryFile() as file:
     file.write("Hello World\n")
     print(f"writing to filename = {file.name}")
 
