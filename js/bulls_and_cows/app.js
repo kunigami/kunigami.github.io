@@ -131,14 +131,14 @@ class BullsAndCows extends React.Component {
 
 function Item({ children }) {
   const style = {
-    fontFamily: "Inconsolata"
+    fontFamily: "Monaco"
   };
   return <li style={style}>{children}</li>;
 }
 
 function Message({ children }) {
   const style = {
-    fontFamily: "Inconsolata"
+    fontFamily: "Monaco"
   };
   return <div style={style}>{children}</div>;
 }
