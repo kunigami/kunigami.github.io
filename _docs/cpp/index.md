@@ -1073,6 +1073,35 @@ Block until thread ends
 my_thread.join();
 {% endhighlight %}
 
+## Locks
+
+RAII lock
+
+{% highlight c++ %}
+std::mutex m;
+{
+  std::lock_guard<std::mutex> lock(m);
+  // locked region
+}
+{% endhighlight %}
+
+## Condition variables
+
+Have thread 2 block until thread 1 signals it.
+
+{% highlight c++ %}
+std::condition_variable cv;
+
+// thread 1
+ready = true;
+cv.notify_one();
+
+// thread 2
+std::unique_lock lk(m);
+cv.wait(lk, []{return ready;});
+
+{% endhighlight %}
+
 # Functional
 
 ## Lambda

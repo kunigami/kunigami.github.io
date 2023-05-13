@@ -9,7 +9,7 @@ vanity: "2022-10-25-review-effective-modern-cpp"
 {% include blog_vars.html %}
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/book_cover.jpg" alt="Streaming Systems book cover" />
+  <img src="{{resources_path}}/book_cover.jpg" alt="Effective Modern C++ book cover" />
 </figure>
 
 
@@ -1051,7 +1051,7 @@ Note this behavior is different from when a raw `std::thread` is destroyed (*Ite
 
 ### Item 39 - Consider void futures for one-shot event communication
 
-This item discusses a scenario where we have 2 threads, `t1` and `t2` and we'd like `t2` to wait for `t1` until it signals it. One way to do this is using `std::conditional_variable` + `std::unique_lock` + `std::mutex`:
+This item discusses a scenario where we have 2 threads, `t1` and `t2` and we'd like `t2` to wait for `t1` until it signals it. One way to do this is using `std::condition_variable` + `std::unique_lock` + `std::mutex`:
 
 {% highlight c++ %}
 #include <condition_variable>
