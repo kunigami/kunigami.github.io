@@ -114,11 +114,12 @@ class Stack(Generic[T]):
 
 ### Self
 
-We can't use the class type until the class definition is over but we can use forward references (type in quotes):
+To use the class type within itself, we must include `__future__.annotations`:
 
 {% highlight python %}
+from __future__ import annotations
 class C:
     @staticmethod
-    def create() -> 'C':
+    def create() -> C:
         return C()
 {% endhighlight %}
