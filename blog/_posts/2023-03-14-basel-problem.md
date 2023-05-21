@@ -16,9 +16,7 @@ excerpt_separator: <!--more-->
 
 Pietro Mengoli was an Italian mathematician and clergyman from Bologna, teaching at the University of Bologna [1]. He worked on infinite series and limits of geometric figures.
 
-In 1650 he posed the following problem: What does the following summation converge to?
-
-$$\sum_{n=1}^{\infty} \frac{1}{n^2}$$
+In 1650 he posed the following problem: What does the following summation converge to? $\sum_{n=1}^{\infty} \frac{1}{n^2}$
 
 It took almost 100 years for it to be solved. Euler provided a solution in 1735 which was correct but his proof lacked some formalism.
 

@@ -9,13 +9,12 @@ title: Blog
 
 # NP-Incompleteness
 
-<p class="top_margin">Most recent post:</p>
-
-{% assign first_post = site.posts | first %}
-<h2><a href="{{ first_post.url }}">{{ first_post.title }}</a></h2>
-{{ first_post.date | date_to_string }}
-{{ first_post.excerpt }}
-<p class="right"><a href="{{ first_post.url }}">Continue reading...</a></p>
+{% for post in site.posts limit:5 %}
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  {{ post.date | date_to_string }}
+  {{ post.excerpt }}
+  <p class="right"><a href="{{ post.url }}">Continue reading...</a></p>
+{% endfor %}
 
 ## Sub-pages
 
