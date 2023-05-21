@@ -8,6 +8,11 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
+<figure class="image_float_left">
+  <img src="{{resources_path}}/documentation.png" alt="Painting showing a book with magic balls emanating from it." />
+</figure>
+
+
 Recently I got recognized at work for driving improvements to our team's documentation. I have some of thoughts on documentation which I'd like to share in this post.
 
 <!--more-->
