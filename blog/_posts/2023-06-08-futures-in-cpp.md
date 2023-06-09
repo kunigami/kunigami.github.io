@@ -376,7 +376,7 @@ then<std::string>(std::move(fut), [](std::string s) {
 });
 {% endhighlight %}
 
-In summary, the major difference between C++ and JavaScript promises is that C++ splits promises into `std::promise` (write side) and `std::future` (read side). In JavaScript promise is the read side, while the write side happens implicit during creation.
+In summary, the major difference between C++ and JavaScript promises is that C++ splits promises into `std::promise` (write side) and `std::future` (read side). In JavaScript promise is the read side, while the write side happens via the callback `resolve()` provided during the construction of the promise.
 
 A hypothetical API to make them more similar could be:
 
