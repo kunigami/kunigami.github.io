@@ -37,9 +37,26 @@ class Wanderlust extends React.Component {
   }
 
   render() {
+    const total_markers = markers.length;
     // TODO: make this more responsive on the width
     return (
-      <div id="mapid" style={{ height: 1200 }} />
+      <div>
+        <h1>Wanderlust</h1>
+        <p>
+            The world is full of amazing places to visit. In this page I share
+            some of the spots I'd like to visit one day or that I've visited
+            already (green marker). There are currently {total_markers} places in
+            the map.
+        </p>
+        <p>
+            You'll note this map is heavily skewed towards Western USA (since that's where
+            I have more opportunities to explore) and natural places (personal preference). If
+            you have other places on your wanderlust list, please let me know!
+        </p>
+
+        <p>NOTE: This page is better viewed on desktop.</p>
+        <div id="mapid" style={{ height: 1200 }} />
+      </div>
     );
   }
 }
