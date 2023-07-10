@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
   <img src="{{resources_path}}/lifetime.png" alt="AI Generated image depicting Lifetime" />
 </figure>
 
-There were several topics I ran into recently around the theme of *Lifetime* in different contexts. I myself had thoughts on this regarding this blog, so this post is a collection of commentaries on these topics.
+There were several topics I ran into recently around the theme of *Lifetime* but in different contexts. I myself had thoughts on this regarding this blog, so this post is a collection of commentaries on these topics.
 
 <!--more-->
 
@@ -66,7 +66,7 @@ I wonder what caused these languages to start ahead in the first place. It might
 
 ## The Lifetime of this Blog
 
-When I first started writing web pages back in college, I had this plan of writing interactive apps for algorithms. Computational Geometry algorithm are very suitable for this purpose since they're discrete and often in 2D, so I did it for *Ear clipping* polygon triangulation algorithm and *Jarvis march* convex hull algorithm.
+When I first started writing web pages back in college, I had this plan of writing interactive apps for algorithms. Computational Geometry algorithm are very suitable for this purpose since they're discrete and often in 2D, so I did it for the *Ear clipping* polygon triangulation algorithm and the *Jarvis march* convex hull algorithm.
 
 I wrote them in Java Applets, which is now a defunct technology, so these applets are no longer accessible. I have a strong preference for building things that last, so I'm now very deliberate about choosing technologies that I think have a good chance to last a long time.
 
