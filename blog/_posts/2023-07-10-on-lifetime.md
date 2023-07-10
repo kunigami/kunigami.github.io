@@ -123,6 +123,9 @@ And yet, in face of the apparent pointlessness of all this, I still find myself 
 
 ## Conclusion
 
+In this post we started reflecting on the lifetime of technologies and then applied it to the context of this very blog. The third part is quite gloomy but I hope my own perspective on the last paragraph offers some solace.
+
+While studying science and learning about things such as the end Universe, I remember being disappointed about the fact that nothing lasts forever. It didn't affect me negatively much more than that though and introspecting on my own reactions, I was surprised about it. I think our lizard brains aren't equipped to process timescales larger than a couple of generations and cannot comprehend or accept these facts.
 
 ## References
 
