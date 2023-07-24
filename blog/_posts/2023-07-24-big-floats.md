@@ -235,13 +235,13 @@ To see why, notice that for $n \lt 2^{24}$, its exponent will be $i \le 23$. Con
 
 For $i \lt 23$, the gap is $\le 2^{-1}$, so an integer is stored as a decimal number in the range $(n - 0.5, n + 0.5)$ and when it gets rounded back to integer, it goes back to $n$.
 
-For $i = 24$, there are truncation, but powers of 2 are represented losslessly, because they're disible by the gap size, so $n = 2^{24}$ is also preserved.
+For $i = 24$, there will be truncation, but since powers of 2 are represented losslessly (because they're the left side of the sub-interval), the number $n = 2^{24}$ is also represented correctly.
 
-Let's estimate the magnitude of gap for powers of $10$. He have that the gap is $2^{i - 23}$. Our number is given as $n = 10^k$. which we can convert to a power of 2 as $10^k = 2^{(\log_{2} 10) k}$, so the gap is $2^{(\log_{2} 10) k - 23}$.
+Let's estimate the magnitude of the gap for powers of $10$. He have that the gap is $2^{i - 23}$. Our number is given as $n = 10^k$. which we can convert to a power of 2 as $10^k = 2^{(\log_{2} 10) k}$, so the gap is $2^{(\log_{2} 10) k - 23}$.
 
 To compute the number of digits in this number we apply $log_{10}$, giving us:
 
-$$log_{10}(2) * ((\log_{2} 10) k - 23) = k - 23 log_{10}(2) \approx k - 7$$
+$$log_{10}(2) ((\log_{2} 10) k - 23) = k - 23 \cdot log_{10}(2) \approx k - 7$$
 
 So an integer with $k$ digits will have a gap of about $k - 7$. For example, consider the number $1,073,631,824$ with $10$ digits. We'd expect some error around $3$ digits, so giving a safe margin, we should expect this number to be within $1,073,631,824 \pm 1000$.
 
