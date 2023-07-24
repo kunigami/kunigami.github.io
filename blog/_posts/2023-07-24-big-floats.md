@@ -241,9 +241,9 @@ Let's estimate the magnitude of gap for powers of $10$. He have that the gap is 
 
 To compute the number of digits in this number we apply $log_{10}$, giving us:
 
-$$log_{10}(2) * (\log_{2} 10) k - 23) = k - 23 log_{10}(2) \approx k - 7$$
+$$log_{10}(2) * ((\log_{2} 10) k - 23) = k - 23 log_{10}(2) \approx k - 7$$
 
-So an integer with $k$ digits will have a gap of about $k - 7$. For example, consider the number $1073631824$ with $10$ digits. We'd expect some error around $3$ digits, so giving a safe margin, we should expect this number to be within $1073631824 \pm 1000$.
+So an integer with $k$ digits will have a gap of about $k - 7$. For example, consider the number $1,073,631,824$ with $10$ digits. We'd expect some error around $3$ digits, so giving a safe margin, we should expect this number to be within $1,073,631,824 \pm 1000$.
 
 Putting it more simply, only the first 6 most significant digits of a large integer are guaranteed to be preserved.
 
