@@ -20,13 +20,13 @@ There were several topics I ran into recently around the theme of *Lifetime* but
 
 Recently, Matt Watson's *My 20 Year Career is Technical Debt or Deprecated* [1] was featured in the front page of HackerNews. In the post, Matt makes the case that everything will be eventually technical debt and cites several examples of technologies that fell out of fashion, including Visual Basic, Fortran and Perl.
 
-I spent some time thinking why some languages and technologies last longer than others and came up with some traits that might have an influence.
+I spent some time thinking about why some languages and technologies last longer than others and came up with some traits that might have an influence.
 
 ### Frameworks
 
 This includes frameworks that were mentioned in his post such as Java Applets, Angular JS, Ruby on Rails and Flash, but also currently popular ones like Django and React.
 
-Frameworks solve a narrower use case than general purpose programming language, which means that the use case can outgrow the scope of the framework or even cease to exist. In a similar vein, frameworks are also less evolvable, because they make a lot more assumptions about the world.
+Frameworks solve a narrower use case than general purpose programming languages, which means that the use case can outgrow the scope of the framework or even cease to exist. In a similar vein, frameworks are also less evolvable, because they make a lot more assumptions about the world.
 
 Finally frameworks also bring a lot of baggage and the lack of flexibility to optimize them, could make them less scalable and force big players to ditch them.
 
@@ -34,7 +34,7 @@ Finally frameworks also bring a lot of baggage and the lack of flexibility to op
 
 In the book *Algorithms to Live By* [2], the authors suggest that a good guess for the lifespan of something we have no information about is twice its current age. This is also the idea behind *exponential backoff*.
 
-A lot of the deprecated technologies mentioned in the article are web technologies which are relatively new. Contrast that with older technologies like C++ (1985), Java (1995) and Python (1991) which are still going strong.
+A lot of the deprecated technologies mentioned in the article are web technologies which are relatively new. Contrast that with older ones like C++ (1985), Java (1995) and Python (1991) which are still going strong.
 
 Mobile technologies are even newer, so we could expect many of existing ones to disappear in the near future.
 
@@ -66,7 +66,7 @@ I wonder what caused these languages to start ahead in the first place. It might
 
 ## The Lifetime of this Blog
 
-When I first started writing web pages back in college, I had this plan of writing interactive apps for algorithms. Computational Geometry algorithm are very suitable for this purpose since they're discrete and often in 2D, so I did it for the *Ear clipping* polygon triangulation algorithm and the *Jarvis march* convex hull algorithm.
+When I first started writing web pages back in college, I had this plan of writing interactive apps for algorithms. Computational Geometry algorithms are very suitable for this purpose since they're discrete and often in 2D, so I did it for the *Ear clipping* polygon triangulation algorithm and the *Jarvis march* convex hull algorithm.
 
 I wrote them in Java Applets, which is now a defunct technology, so these applets are no longer accessible. I have a strong preference for building things that last, so I'm now very deliberate about choosing technologies that I think have a good chance to last a long time.
 
@@ -81,7 +81,7 @@ Doing some analysis on my blog, these are the following dependencies in rough or
 * Image formats
 * Markdown
 
-**External links** are most likely to be broken since people change domains, restructure their URL or simply delete the page without any putting any migration in place. I mostly use external links as reference and they should not impact the content of the post, since they are in theory self-sufficient. We can think of dead links as reference to books that went out of print.
+**External links** are most likely to be broken since people change domains, restructure their URL or simply delete the page without putting any migration in place. I mostly use external links as reference and they should not impact the content of the post, since they are in theory self-sufficient. We can think of dead links as reference to books that went out of print.
 
 **GitHub Pages** hosts my site and integrates with *Jekyll* by running it on markdown sources in my repository. Even if GitHub itself lasts a long time, it could decide to shut down pages at any moment. My hope is that porting static pages to a self-hosted environment wouldn't be too hard, but it would sure make deployment more cumbersome.
 
