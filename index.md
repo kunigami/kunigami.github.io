@@ -37,4 +37,4 @@ like to learn and build things.
 * [Contact]({{ site.url }}/contact/)
 * [Github](https://github.com/kunigami)
 * [Papers](http://www.informatik.uni-trier.de/~ley/pers/hd/k/Kunigami:Guilherme)
-* [Twitter](https://twitter.com/kunigami/)
+* [Threads](https://www.threads.net/@kuni.gami)
