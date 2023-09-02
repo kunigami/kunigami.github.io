@@ -15,6 +15,10 @@ Amuseum is a collection of different types of things I find interesting. It's an
 
 Think of it as my personal virtual museum 😉.
 
+## China 🇨🇳
+
+* [Chinese Ritual Bronzes]({{ root }}/chinese-ritual-bronzes.html)
+
 ## Egypt 🇪🇬
 
 * [Animal Mummies]({{ root }}/animal-mummies.html)
