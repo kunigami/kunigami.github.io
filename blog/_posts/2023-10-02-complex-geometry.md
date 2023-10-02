@@ -12,7 +12,7 @@ vanity: "2023-10-02-complex-geometry"
   <img src="{{resources_path}}/madelbrot-thumbnail.png" alt="Mandelbrot fractal. This is a small scale version (different color scheme) of Figure 3." />
 </figure>
 
-In this post we'll study some connections between complex numbers and geometry. We'll cover the complex plane and look at complex numbers are 2-dimensional vectors with a special multiplication. We'll provide an implementation of the Mandelbrot fractal and finally introduce the Riemann sphere.
+In this post we'll study some connections between complex numbers and geometry. We'll cover the complex plane and look at complex numbers as 2-dimensional vectors with a special multiplication. We'll provide an implementation of the Mandelbrot fractal and finally introduce the Riemann sphere.
 
 <!--more-->
 
