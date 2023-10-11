@@ -1228,6 +1228,12 @@ namespace n1 { namespace n2 { namespace n3 {
 }}}
 {% endhighlight %}
 
+## Namespace aliasing
+
+{% highlight c++ %}
+namespace my_alias = some::other_namespace;
+{% endhighlight %}
+
 ## Namespace resolution
 
 Suppose we're in namespace `a::b`, and inside it we refer to a variable `x` via `c::x`. What namespace does the compiler search in?
