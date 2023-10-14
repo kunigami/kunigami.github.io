@@ -50,7 +50,7 @@ We'll cover this idea in more detail on the next section.
 
 ### Encoding Floats To Binary
 
-The standard encodes a floating point number into bits with 3 parts: the **sign**, the **exponent** and the **significand**. For a 32-bit float point number we use 1 bit for the sign, 8 bits for the exponent and 23 bits for the offset.
+The standard encodes a floating point number into bits with 3 parts: the **sign**, the **exponent** and the **significand**. For a 32-bit float point number we use 1 bit for the sign, 8 bits for the exponent and 23 bits for the significand.
 
 **Sign.** The sign is the easiet part to determine. It corresponds to the flag mentioned in the previous section: If the float number is positive, the sign bit is 0, otherwise it's 1.
 
