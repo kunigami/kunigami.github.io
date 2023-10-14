@@ -261,6 +261,36 @@ Let's visualize 4 scenarios:
 
 The set $\mathbb{C} \cup \infty$ is called the **extended complex numbers** and the sphere is known as the **Riemann sphere** [5].
 
+The actual mapping can be given as follows. Let $(x_1, x_2, x_3)$ be a point on the surface of the sphere and $z$ a complex number. Then,
+
+$$(1) \quad z = \frac{x_1 + ix_2}{1 - x_3}$$
+
+To obtain the reverse mapping, we first observe that:
+
+$$\abs{z}^2 = \frac{x_1^2 + x_2^2}{(1 - x_3)^2}$$
+
+Since the point is on the surface of the unit sphere, we have $x_1^2 + x_2^2 + x_3^2 = 1$, so $x_1^2 + x_2^2 = 1 - x_3^2 = (1 + x_3)(1 - x_3)$,
+
+$$\abs{z}^2 = \frac{1 + x_3}{1 - x_3}$$
+
+Isolating $x_3$ gives us
+
+$$(2) \quad x_3 = \frac{\abs{z}^2 - 1}{\abs{z}^2 + 1}$$
+
+Since $x_1, x_2, x_3 \in \mathbb{R}$, $\Re(z) = \frac{x_1}{1 - x_3}$. Using the identity $\Re(z) = \frac{z  + \bar{z}}{2}$, 
+
+$$x_1 = \frac{(1 - x_3)(z + \bar{z}}{2}$$
+
+By (2), we have that $1 - x_3 = \frac{2}{\abs{z}^2 + 1}$, so
+
+$$x_1 = \frac{z + \bar{z}}{\abs{z}^2 + 1}$$
+
+Similarly for $x_2$, we have that $\Im(z) = \frac{x_2}{1 - x_3}$. Using the identity $\Im(z) = \frac{z  - \bar{z}}{2i}$, 
+
+$$x_2 = \frac{(1 - x_3)(z  - \bar{z})}{2i} = \frac{z  - \bar{z}}{i(\abs{z}^2 + 1)}$$
+
+Note that (1) is not defined for the north pole $(0, 0, 1)$, in which case we explicitly map is to $z = \infty$.
+
 ## Conclusion
 
 This post is a complement to my studies of the book *Complex Analysis* by Lars V. Ahlfors. I was already relatively familiar with the complex plane and polar coordinates, but I don't recall ever looking into the implementation of the Mandelbrot fractal. It does feel like something I'd have to implement in college, so maybe I'm just forgetting?
