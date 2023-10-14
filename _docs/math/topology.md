@@ -11,7 +11,7 @@ Let $X$ be a non-empty set and $d:X \times X \rightarrow \mathbb{R}$ a [metric f
 
 ## Open Ball
 
-Given a metric space $(X, d)$, a point $a \in X$ and a scalar $\delta \gt 0$, an *open ball about * $a$, denoted by $B(a, \delta)$ is a set of points $x \in X$ satisfying $d(a, x) \lt \delta$.
+Given a metric space $(X, d)$, a point $a \in X$ and a scalar $\delta \gt 0$, an *open ball about* $a$, denoted by $B(a, \delta)$ is a set of points $x \in X$ satisfying $d(a, x) \lt \delta$.
 
 ## Neighborhood
 
@@ -60,6 +60,8 @@ Given a topological space $(X, \tau)$ and a subset $F$ of $X$, the *complement* 
 ## Closed Set
 
 Given a topological space $(X, \tau)$ and a subset $F$ of $X$, is *closed* if the complement of $F$, $C(F)$ is open.
+
+Note that some sets are neither open or closed. For example, in $\mathbb{R}$, the semi-open interval $[a, b)$ is neither open nor close.
 
 ## Hausforff Space
 
@@ -195,7 +197,7 @@ A *component* of $a \in X$, denoted by $\mbox{Cmp}(a)$, is a maximal subset of $
 
 A topological space $X$ is *locally connected at point* $a$ if every neighborhood of $N$ of $a$ contains a neighborhood of $a$ that is connected.
 
-A topological space $X$ is *locally connected* if it's *locally connected at each of its points.
+A topological space $X$ is *locally connected* if it's locally connected at each of its points.
 
 ## Path Connectedness
 
