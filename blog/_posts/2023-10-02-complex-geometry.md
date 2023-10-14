@@ -279,7 +279,7 @@ $$(2) \quad x_3 = \frac{\abs{z}^2 - 1}{\abs{z}^2 + 1}$$
 
 Since $x_1, x_2, x_3 \in \mathbb{R}$, $\Re(z) = \frac{x_1}{1 - x_3}$. Using the identity $\Re(z) = \frac{z  + \bar{z}}{2}$, 
 
-$$x_1 = \frac{(1 - x_3)(z + \bar{z}}{2}$$
+$$x_1 = \frac{(1 - x_3)(z + \bar{z})}{2}$$
 
 By (2), we have that $1 - x_3 = \frac{2}{\abs{z}^2 + 1}$, so
 
