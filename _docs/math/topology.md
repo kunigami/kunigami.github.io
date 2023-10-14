@@ -99,6 +99,14 @@ A more intuitive definition is that of the difference between the closure and th
 
 $$\mbox{Bd}(A) = \overline{A} \setminus \mbox{Int}(A)$$
 
+## Isolated Point
+
+Given a topological space $(X, \tau)$ and a subset $S$ of $X$, $x \in S$ is a **isolated point** if there exists a neighborhood of $x$ that contains no other points of $S$.
+
+## Limit Point
+
+The definition is equivalent to the one for Metric Spaces (see *Metric Spaces > Limit Point*). Given a topological space $(X, \tau)$ and a subset $S$ of $X$, $x \in S$ is a **limit point** or **accumulation point** if every neighborhood of $x$ contains a point in $S$ other than $x$.
+
 # Functions
 
 A function maps one topological space $(X, \tau)$ into another $(Y, \tau')$. If $a \in X$, then $f(a) \in Y$. If $A$ is a subset of $X$, then $f(A)$ is a subset of $Y$.
