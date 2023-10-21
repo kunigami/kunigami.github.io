@@ -232,15 +232,15 @@ If we assign colors based on the number of iterations it took each pixel to cros
 
 ## Stereographic projections
 
-Imagine the unit 3D sphere with its center at the origin, that is,
+Imagine the surface of the unit 3D sphere with its center at the origin, that is,
 
 $$x^2 + y^2 + z^2 = 1$$
 
-Now consider the intersection with the 2D plane $z = 0$. The result is the unit circle:
+Now consider the intersection with the 2D plane $z = 0$. The result is the circumference of the unit circle:
 
 $$x^2 + y^2 = 1$$
 
-We'll assume the plane in this case is the complex plane and we'll map each point $p$ on the sphere to a point $p'$ in the complex plane.
+We'll assume the plane in this case is the complex plane and we'll map each point $p$ on the surface of the sphere to a point $p'$ in the complex plane.
 
 Borrowing some cartographic terminology, we'll call the highest point in the sphere, i.e. $(0, 0, 0.5)$, the **north pole**. Now consider the line going through that north pole and $p$, which we denote by $\ell_p$. Point $p'$ will be the point where this line intersects the complex plane.
 
@@ -251,7 +251,7 @@ Borrowing some cartographic terminology, we'll call the highest point in the sph
 
 Let's visualize 4 scenarios:
 
-1) When $p$ has $z = 0$: then it lies on the equator of the sphere and that's also where the line $\ell_p$ intersects the complex plane, so $p' = p$.
+1) When $p$ has $z = 0$: then it lies on the equator of the surface of the sphere and that's also where the line $\ell_p$ intersects the complex plane, so $p' = p$.
 
 2) When $p$ is below the equator: then the line $\ell_p$ intersects the complex plane inside the unit circle. In particular, if we take $p$ as the south pole, i.e. $p = (0, 0, -0.5)$, then $p' = (0, 0)$.
 
@@ -259,7 +259,7 @@ Let's visualize 4 scenarios:
 
 4) Is the degenerate case where $p$ coincides with the north pole itself. There's no unique line that passes through them so the mapping is undefined. We can treat this case specially by adding an extra element to the set of complex numbers $\mathbb{C}$, which is denoted as $\infty$ as an allusion to the fact that the norm of $p'$ tends to infinity as $p$ tends to the north pole.
 
-The set $\mathbb{C} \cup \infty$ is called the **extended complex numbers** and the sphere is known as the **Riemann sphere** [5].
+The set $\mathbb{C} \cup \infty$ is called the **extended complex numbers** and the surface of the sphere is known as the **Riemann sphere** [5] (I'm not sure why it's called just sphere given it only includes the surface).
 
 The actual mapping can be given as follows. Let $(x_1, x_2, x_3)$ be a point on the surface of the sphere and $z$ a complex number. Then,
 
@@ -299,7 +299,7 @@ I had only heard of the *Riemann sphere* in passing but never stopped to learn a
 
 ## Related Posts
 
-[The Cardinality of Complex Numbers]({{blog}}/2023/09/16/cardinality-of-complex.html). In that post we showed there is a 1:1 mapping between $\mathbb{R}$ and $\mathbb{R}^2$. This result also gives us a 1:1 mapping between $\mathbb{R}^3$ and $\mathbb{R}^2$ and hence $\mathbb{C}$. Now, the unit sphere is definitely contained in $\mathbb{R}^3$ but the stereographic projection says there's one point (the north pole) in the sphere that doesn't have a correspondent in $\mathbb{C}$! This is an example of how counter-intuitive mappings involving set of infinite sizes are.
+[The Cardinality of Complex Numbers]({{blog}}/2023/09/16/cardinality-of-complex.html). In that post we showed there is a 1:1 mapping between $\mathbb{R}$ and $\mathbb{R}^2$. This result also gives us a 1:1 mapping between $\mathbb{R}^3$ and $\mathbb{R}^2$ and hence $\mathbb{C}$. Now, the surface of the unit sphere is definitely contained in $\mathbb{R}^3$ but the stereographic projection says there's one point (the north pole) in that surface that doesn't have a correspondent in $\mathbb{C}$! This is an example of how counter-intuitive mappings involving set of infinite sizes are.
 
 [Random Points in Circumference]({{blog}}/2022/08/01/random-points-in-circumference.html). Let's recap that post: to generate random points in a circumference, we first generate a pair of floating numbers $(X, Y)$ such that $0 \lt X^2 + Y^2 \le 1$. This can be done by generating $X$ and $Y$ uniformily and independently and discarding pairs not satisfying that constraint.
 
