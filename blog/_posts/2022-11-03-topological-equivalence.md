@@ -254,7 +254,7 @@ We'll see next that the open square is also homeomorphic to $\mathbb{R}^2$ or mo
 
 ### Example 4: The $n$-dimensional bounded open convex polytope and open balls
 
-A $n$-dimensional polytope is a general version of a polygon. A convex polytope is one that can be formed by the intersection of semi-planes, which can be succintly represents as:
+A $n$-dimensional polytope is a general version of a polygon. A convex polytope is one that can be formed by the intersection of semi-planes, which can be succintly represented as:
 
 $$Ax \le b$$
 

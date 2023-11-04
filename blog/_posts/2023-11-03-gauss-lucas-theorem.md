@@ -28,7 +28,7 @@ Let $P$ be a polynomial of degree $n$, of the form $P(x) = \sum_{k = 0}^n a_k z^
 
 Consider its derivative $P'(z) = \sum_{k = 0}^{n-1} (k + 1) a_{k + 1} z^{k}$ and its corresponding roots $r'_j$ for which $P'(r'_j) = 0$, $j = 0, \dots, n - 1$.
 
-Now, if we plot $r_i$ and $r'_j$ on the complex plane, the Lucas-Gauss theorem claims that $z'_j$ lies in the [convex hull](https://en.wikipedia.org/wiki/Convex_hull) defined by $r_i$.
+Now, if we plot $r_i$ and $r'_j$ on the complex plane, the Lucas-Gauss theorem claims that $r'_j$ lies in the [convex hull](https://en.wikipedia.org/wiki/Convex_hull) defined by $r_i$.
 
 ## Proof
 
@@ -44,7 +44,7 @@ Now consider the fraction:
 
 $$\frac{P'(z)}{P(z)}$$
 
-If a root $r$ belongs to both $P'(z)$ and $P(z)$, then the theorem is trivially true because the points defining the convex hull are considered to lie within it. In any case, their factors $(z - r)$ will cancel out in the fraction above, so we can assume that $P'(z)$ and $P(z)$ have no common roots.
+If a root $r$ belongs to both $P'(z)$ and $P(z)$, then the theorem is trivially true because by definition the convex hull contains all roots of $P(z)$. In any case, their factors $(z - r)$ will cancel out in the fraction above, so we can assume that $P'(z)$ and $P(z)$ have no common roots.
 
 This fraction is known as the logarithmic derivative because:
 
