@@ -18,7 +18,9 @@ In this post we'll define the theorem more formally, present a proof and do some
 
 <!--more-->
 
-<img src="{{resources_path}}/convex-rec.png" alt="Several convex polygons nested within each other." />
+<figure class="center_children">
+  <img src="{{resources_path}}/convex-rec.png" alt="Several convex polygons nested within each other." />
+</figure>
 
 ## Theorem
 
