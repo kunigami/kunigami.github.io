@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Amuseum
+title: History
 ---
 
 <p>
@@ -18,6 +18,13 @@ I'm not entired settled on how to organize the notes, but chronologically seems 
 
 I plan to use bullet points as opposed to prose, to keep things concise. I'll link to books where I learned about them when applicable.
 
+* 431-404BC: Peloponnesian War [3], the war between Athens and an alliance of states in the Peloponnese, centered around Sparta.
+* 1171–1260: Ayyubid dynasty [4]
+  * 1174–1193: Saladin was the founder of the Ayyubid dynasty.
+* 1169–1254: Ayyubid–Crusader conflicts
+  * 1187: Battle of Hattin [4], took place in near the village of Hittin (today Tiberias). Saladin defeated the Crusaders, re-captured Jerusalem and other cities held by Christians in the Levant. This prompted the third Crusade.
+  * 1191: Battle of Arsuf [4], a battle between the Crusaders (third Crusade), led by  Richard I of England, and Ayyubid Sultanate, led by Saladin, with the victory of the former.
+  * 1192: Battle of Jaffa [4], followed the Battle of Arsuf. Ended with a truce between the Crusaders and Saladin (treaty of Jaffa).
 * 1526-1857: Mughal Empire [1]
   * 1526–1530: Babur was the founder of the empire and descendant of Timur (father's side) and Genghis Khan (mother's side). Originally from Central Asia, he invaded India through the Khyber pass in Afghanistan.
   * 1530–1556: Humayun was Babur's son. Lived in exile in Persia and forged alliances with the Safavid dynasty, which established Persian cultural influence in Mughal India. Humayun's Tomb built in 1570 is a UNESCO World Heritage Site in New Delhi.
@@ -39,3 +46,5 @@ I plan to use bullet points as opposed to prose, to keep things concise. I'll li
 
 * [1] India in the Persianate Age, Richard M. Eaton
 * [2] The Last Mughal: The Fall of a Dynasty, Delhi 1857, William Dalrymple
+* [3] The History of the Peloponnesian War, Thucydides
+* [4] Saladin: The Sultan Who Vanquished the Crusaders and Built an Islamic Empire, John Man
