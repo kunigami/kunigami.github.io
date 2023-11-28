@@ -1387,20 +1387,39 @@ const markers = [
 
   // New Zealand
   {
+    name: "Mt Cook / Aoraki National Park",
+    description: "Hikes with views of Mt Cook / Aoraki",
+    img_name: "aoraki.jpg",
+    photographer: "me",
+    lat: -43.72031701302545,
+    lng: 170.06440888992094,
+    category: "nature",
+    img_link: "https://photos.app.goo.gl/AVszNeXVdj59mUhp8",
+    visited: true,
+  },
+  {
     name: "Piopiotahi",
     description:
       "Milford Sound is a fiord in the southwest of New Zealand’s South Island. It’s known for towering Mitre Peak, plus rainforests and waterfalls like Stirling and Bowen falls, which plummet down its sheer sides.",
+    img_name: "milford.jpg",
+    photographer: "me",
     lat: -44.63507813222853,
     lng: 167.89796460430344,
     category: "nature",
+    img_link: "https://photos.app.goo.gl/5WGQieugPzLBpMRv8",
+    visited: true,
   },
   {
-    name: "Punakaiki Pancake Rocks  ",
+    name: "Punakaiki Pancake Rocks",
     description:
       "Pancake Rocks are a heavily eroded limestone area where the sea bursts through a number of vertical blowholes during high tides.",
+    img_name: "punakaiki.jpg",
+    photographer: "me",
     lat:-42.114105127032076,
     lng: 171.32627617034458,
     category: "nature",
+    img_link: "https://photos.app.goo.gl/DHepHFJd8v4SeRmj8",
+    visited: true,
   },
 
   // Norway
