@@ -243,6 +243,14 @@ for (auto [key, value]:h) {
 
 ### Search
 
+C++20 and after:
+
+{% highlight c++ %}
+bool has_key = h.contains("key");
+{% endhighlight %}
+
+Before:
+
 {% highlight c++ %}
 bool has_key = h.find("key") != h.end();
 {% endhighlight %}
