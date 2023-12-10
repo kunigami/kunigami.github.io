@@ -22,6 +22,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 ## Java
 
 * [General]({{ site.url }}/docs/java/)
+* [Maven]({{ site.url }}/docs/java/maven.html)
 
 ## JavaScript
 
