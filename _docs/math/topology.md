@@ -111,6 +111,12 @@ Given a topological space $(X, \tau)$ and a subset $S$ of $X$, $x \in S$ is a **
 
 The definition is equivalent to the one for Metric Spaces (see *Metric Spaces > Limit Point*). Given a topological space $(X, \tau)$ and a subset $S$ of $X$, $x \in S$ is a **limit point** or **accumulation point** if every neighborhood of $x$ contains a point in $S$ other than $x$.
 
+## Dense Set
+
+Given a topological space $(X, \tau)$ and a subset $S$ of $X$, $S$ is a **dense set** for every $x \in X$, it's either in $S$ or arbitrarily close to a member of $A$.
+
+*Example.* The set of rationals are dense in the reals, since for any $x \in \mathbb{R}$ either $x$ is rational or for any $\delta > 0$, there exists a rational $q$ such that $\abs{x - q} < \delta$.
+
 # Functions
 
 A function maps one topological space $(X, \tau)$ into another $(Y, \tau')$. If $a \in X$, then $f(a) \in Y$. If $A$ is a subset of $X$, then $f(A)$ is a subset of $Y$.
