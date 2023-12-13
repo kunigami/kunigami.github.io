@@ -21,6 +21,8 @@ Given a metric space $(X, d)$, a subset $N$ of $X$ is a *neighborhood of point* 
 
 Given a metric space $(X, d)$ and a subset $A \subseteq X$, a point $x \in X$ is **limit point** if every neighborhood of $x$ contains a point of $A$ different than $x$. Note that $x$ doesn't need to be in $A$, nor that every point in $A$ is a limit point (e.g. in the set $\mathbb{N}$ no element is a limit point).
 
+*Example.* If $A = \curly{1/x : x \in \mathbb{R}}$, then $0$ is a limit point of $A$ even though it's not in $A$, since for any ball $B(0, \delta)$ contains $\delta > 0$ and $\delta \in A$.
+
 ## Open Set
 
 Given a metric space $(X, d)$, a subset $O$ of $X$ is an *open set* if it's a neighborhood of its points. That is, for every $a \in O$, there exists some $\delta$ such that $B(a, \delta)  \subseteq O$.
