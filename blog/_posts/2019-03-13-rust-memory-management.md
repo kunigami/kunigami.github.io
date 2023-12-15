@@ -22,6 +22,7 @@ Rust has the following basic rules around ownership:
 * Each value in Rust has a variable that’s called its owner
 * There can only be one owner at a time
 * When the owner goes out of scope, the value will be dropped
+
 They're very basic but have deep implications in how we think about programs. Let's analyze some of them.
 
 ### Assignment transfers ownership
@@ -84,17 +85,16 @@ let mut vec1 = vec![1, 2, 3];
 // Transferring ownership to the function
 vec1 = mutate_vec(vec1);
 println!("{}", vec1.len());
-
 {% endhighlight %}
 
 ### References &amp; Borrowing
 
-To avoid transferring data to a variable on assignment, we can use references. In the example below, `vec2` "borrows" the data from `vec1` but there's no ownership transfer. We have read access to the data via `vec2`, which we can do by dereferencing `vec2` with &amp;`vec2`.
+To avoid transferring data to a variable on assignment, we can use references. In the example below, `vec2` "borrows" the data from `vec1` but there's no ownership transfer. We have read access to the data via `vec2`, which we can do by dereferencing `vec2` with `&vec2`.
 
 {% highlight rust %}
 let vec1 = vec![1, 2, 3];
 {
-    // & indicates a reference, so we are not transferring 
+    // & indicates a reference, so we are not transferring
     // ownership, just borrowing
     let vec2 = &vec1;
     println!("{}", &vec2);
@@ -105,7 +105,7 @@ println!("{}", vec1.len());
 
 {% endhighlight %}
 
-If we want write access, we need to make `vec1` mutable and also obtain a mutable reference to `vec1` via the &amp;mut operator, like in the example below:
+If we want write access, we need to make `vec1` mutable and also obtain a mutable reference to `vec1` via the `&mut` operator, like in the example below:
 
 {% highlight rust %}
 let mut vec1 = vec![1, 2, 3];
@@ -127,7 +127,7 @@ let mut vec1 = vec![1, 2, 3];
     let vec2 = &mut vec1;
     // We can mutate s1's data via a mutable reference!
     vec2.push(4);
-    // Error: cannot access data when a mutable 
+    // Error: cannot access data when a mutable
     // reference is in place
     println!("{}", vec1.len());
 }
@@ -160,7 +160,6 @@ let mut vec1 = vec![1, 2, 3];
     let vec4 = &mut vec1;
 }
 println!("{}", vec1.len());
-
 {% endhighlight %}
 
 **Read and write locks.** Rust enforces these constraints to prevent race condition bugs in multi-thread applications. In fact the borrowing mechanism via references is very similar to *read locks* and *write locks*.
@@ -176,10 +175,9 @@ fn dangle() -> &Vec<i32> {
     let v = vec![1, 2, 3];
     &v
 }
-
 {% endhighlight %}
 
-Luckily, the compiler will prevent this case by making a compile error. It's now always the case that we cannot return a reference. If the reference we're returning was sent as argument, it's still a valid one, for example:
+Luckily, the compiler will prevent this case by making a compile error. There are cases where we're allowed to return a reference. For example, if the reference we're returning was sent as argument, it's still a valid one:
 
 {% highlight rust %}
 fn no_dangle(v: &Vec<i32>) -> &Vec<i32> {
@@ -200,7 +198,7 @@ fn get_largest(v1: &Vec<i32>, v2: &Vec<i32>) -> &Vec<i32> {
 
 {% endhighlight %}
 
-To see why it's not possible to guarantee this memory-safe, we can consider the following code calling get_largest:
+To see why it's not possible to guarantee this memory-safe, we can consider the following code calling `get_largest()`:
 
 {% highlight rust %}
 let vec1 = vec![1, 2, 3];
@@ -215,7 +213,7 @@ println!("{}", result.len());
 
 Here we're sending references for both `vec1` and `vec2`, and returning back either of them. If `vec2` happened to be larger, we'd return it to result and try to access the data after `vec2` went out of scope.
 
-However, if result is used while both `vec1` and `vec2` are in scope, it should be theoretically safe to allow calling get_largest:
+However, if result is used while both `vec1` and `vec2` are in scope, it should be theoretically safe to allow calling `get_largest()`:
 
 {% highlight rust %}
 let vec1 = vec![1, 2, 3];
@@ -230,7 +228,7 @@ In fact, it's possible and we'll see how next, but we'll need to introduce a new
 
 ### Lifetimes
 
-The lifetime of a variable represents the duration in which the variable is valid. In the example below, the lifetime of variable a is from line 2 to line 7. The lifetimes for b is from 4 to 5, for c is line 5 and for d is line 7. Note that a's lifetime contains all other lifetimes and b's lifetime contains c's lifetime.
+The lifetime of a variable represents the duration in which the variable is valid. In the example below, the lifetime of variable `a` is from line 2 to line 7. The lifetime for `b` is from 4 to 5, for `c` is line 5 and for `d` is line 7. Note that `a`'s lifetime contains all other lifetimes and `b`'s lifetime contains `c`'s lifetime.
 
 {% highlight rust %}
 {
@@ -248,7 +246,7 @@ We can annotate a function using a syntax similar to generics to parametrize the
 
 {% highlight rust %}
 fn get_largest_with_lifetime<'a>(
-    v1: &'a Vec<i32>, 
+    v1: &'a Vec<i32>,
     v2: &'a Vec<i32>
 ) -> &'a Vec<i32> {
     if (v1.len() > v2.len()) {
@@ -258,9 +256,9 @@ fn get_largest_with_lifetime<'a>(
 }
 {% endhighlight %}
 
-This is essentially binding the each variable to the lifetime specified by `'a`. Note it's forcing that both variables have the same lifetime and that the return type has the same lifetime as the input parameters.
+This is essentially binding each variable to the lifetime specified by `'a`. Note it's forcing that both variables have the same lifetime and that the return type has the same lifetime as the input parameters.
 
-Now, if we replace `get_largest()` with `get_largest_with_lifetime()`, we won't get compiler errors. In the example below, result has the same lifetime was the common lifetimes of `vec1` and `vec2`, which is `vec2`'s lifetime. This means we're fine using result with the inner block.
+Now, if we replace `get_largest()` with `get_largest_with_lifetime()`, we won't get compiler errors. In the example below, `result` has the same lifetime was the common lifetimes of `vec1` and `vec2`, which is `vec2`'s lifetime. This means we're fine using result with the inner block.
 
 {% highlight rust %}
 let vec1 = vec![1, 2, 3];
@@ -275,7 +273,7 @@ let vec1 = vec![1, 2, 3];
 
 Rust documentation is very detailed and well written. All the concepts presented in this post are explained in length there. In here I'm presenting them in my own words and different examples (`vec` instead of `string`).
 
-I also tried to group topics around memory management, which is different from the documentation. In there "lifetimes" are not covered under ownership and I skipped the generics discussion.
+I also tried to group topics around memory management, which is different from the documentation. In there, "lifetimes" are not covered under ownership and I skipped the generics discussion.
 
 ### References
 
