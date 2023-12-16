@@ -69,26 +69,68 @@ my_option.is_some()
 my_option.is_none()
 {% endhighlight %}
 
-## String ##
+## String
 
-### Types ###
+### Types
 
 * `String` - string object
 * `&str` - string [slice](https://doc.rust-lang.org/book/ch04-03-slices.html)
 * `&'static str` - string literal
 
-### Concatenation ###
+### String (variable length)
+
+{% highlight rust %}
+// Empty string
+let mut my_str: String = "".to_owned();
+
+// Other form
+let mut my_str = String::from("Hello");
+
+// Length
+my_str.len();
+
+// Iterate over its characters
+for c in my_str.chars() {
+    // do something with c
+}
+{% endhighlight %}
+
+### Operations
 
 {% highlight rust %}
 let concatenated = format!("{}{}", a, b);
 {% endhighlight %}
 
-or
+From literal strings:
 
 {% highlight rust %}
-let s = "hello".to_owned();
-let t = " world".to_owned();
-s. push_str(&t);
+let s: String = "hello".to_owned();
+{% endhighlight %}
+
+Convert to int:
+
+{% highlight rust %}
+let i = s.parse::<i32>().expect("Should be numeric");
+{% endhighlight %}
+
+Convert from int:
+
+{% highlight rust %}
+let i: i32 = 10;
+let s = i.to_string();
+{% endhighlight %}
+
+
+Split:
+
+{% highlight rust %}
+let parts: Vec<&str> = s.split(',').collect();
+{% endhighlight %}
+
+Trim:
+
+{% highlight rust %}
+let trimmed = s.trim();
 {% endhighlight %}
 
 ## Struct ##
@@ -123,7 +165,7 @@ impl Rectangle {
 }
 {% endhighlight %}
 
-## Tuple ##
+## Tuple
 
 {% highlight rust %}
 let tup: (i32, String) = (64, "hello")
@@ -132,7 +174,7 @@ tup.0 // 64
 tup.1 // "hello"
 {% endhighlight %}
 
-## Functions ##
+## Functions
 
 {% highlight rust %}
 fn myFun(arg1: i32, arg2: i32) -> i32 {
@@ -141,7 +183,7 @@ fn myFun(arg1: i32, arg2: i32) -> i32 {
 
 Rust doesn't support default arguments
 
-## Closure ##
+## Closure
 
 keywords: lambda
 
@@ -149,7 +191,7 @@ keywords: lambda
     let plus_one = |x: i32| x + 1;
 {% endhighlight %}
 
-### Multi-line ###
+### Multi-line
 
 {% highlight rust %}
 let multi_line = |x: i32| {
@@ -247,7 +289,14 @@ use std::collections::HashMap;
 HashMap<String, String>;
 
 // Create New
-my_map = HashMap::new()
+let my_map = HashMap::new()
+
+// Create New Initialized
+let my_map = HashMap::from([
+    ("blue", 1),
+    ("green", 2),
+    ("red", 3),
+]);
 
 // Insert
 my_map.insert(
@@ -261,30 +310,17 @@ match my_map.get("key_a") {
     None => println!("not found")
 }
 
+// Update
+if let Some(value) = my_map.get_mut(key) {
+    *curr_value = 1;
+}
+
 // All values
 for value in my_map.values() {
 }
 
 // All keys
 for key in my_map.keys() {
-}
-{% endhighlight %}
-
-## String - variable length characters ##
-
-{% highlight rust %}
-// Empty string
-let mut my_str: String = "".to_owned();
-
-// Other form
-let mut my_str = String::from("Hello");
-
-// Length
-my_str.len();
-
-// Iterate over its characters
-for c in my_str.chars() {
-    // do something with c
 }
 {% endhighlight %}
 
@@ -313,4 +349,25 @@ impl MyClass {
         self.my_field = value;
     }
 }
+{% endhighlight %}
+
+# I/O
+
+## Read from stdin
+
+{% highlight rust %}
+use std::io::{self, Read};
+
+let mut input = String::new();
+io::stdin().read_to_string(&mut input)
+    .expect("Failed to read input");
+{% endhighlight %}
+
+## Read CLI arguments
+
+{% highlight rust %}
+use std::env;
+
+// Skip program name
+let args: Vec<String> = env::args().skip(1).collect();
 {% endhighlight %}
