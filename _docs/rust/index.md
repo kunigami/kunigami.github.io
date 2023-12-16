@@ -13,17 +13,14 @@ title: "Rust Cheatsheet"
 
 ## Type names
 
-* `bool`
 * `char`
-* `i8`, `i16`, `i32`, `i64` - signed int
-* `u8`, `u16`, `u32`, `u64` - unsigned int
 * `f32`, `f64` - float point type
 
-## Arrays ##
+## Arrays
 
 Arrays are of fixed size. For variable size, see `Vec`.
 
-### Initialize ###
+### Initialize
 
 {% highlight rust %}
 // Initialize array
@@ -31,7 +28,7 @@ let arr: [i32; 3] = [1, 2, 3];
 let arr: [i32; 10] = [0; 10];
 {% endhighlight %}
 
-### Iterate ###
+### Iterate
 
 {% highlight rust %}
 let arr: [i32; 3] = [1, 2, 3];
@@ -40,13 +37,29 @@ for x in &arr {
 }
 {% endhighlight %}
 
-## Bool ##
+## Bool
 
 * Type: `bool`
 * Examples: `true`, `false`
 
+## Integers
 
-## Optional ##
+* Types: `i8`, `i16`, `i32`, `i64`, `u8`, `u16`, `u32`, `u64`
+
+Exponentiation / power:
+
+{% highlight rust %}
+let b: i32 = 10;
+let p10: i32 = b.pow(2 as u32);
+{% endhighlight %}
+
+Note that the exponent has to be positive, since a negative one could change the type of the base to floating point.
+
+### Bit operations
+
+<code>!</code> is the Rust version of <code>~</code>
+
+## Optional
 
 * Type: `optional<T>`
 {% highlight rust %}
@@ -68,6 +81,10 @@ my_option.is_some()
 // Test if none
 my_option.is_none()
 {% endhighlight %}
+
+## Pair
+
+Done via tuples. See *Tuple*.
 
 ## String
 
@@ -136,6 +153,7 @@ let trimmed = s.trim();
 ## Struct ##
 
 keywords: record / object / shape
+
 {% highlight rust %}
 struct Tree {
     guess: Vec<i32>,
@@ -167,14 +185,30 @@ impl Rectangle {
 
 ## Tuple
 
+Type: `(T1, T2)`, e.g. `(i32, bool)`
+
+Create:
+
 {% highlight rust %}
 let tup: (i32, String) = (64, "hello")
-// Can be accessed in the . notation
+{% endhighlight %}
+
+Access:
+
+{% highlight rust %}
 tup.0 // 64
 tup.1 // "hello"
 {% endhighlight %}
 
-## Functions
+or via destructuring:
+
+{% highlight rust %}
+let (n, s) = &tup;
+{% endhighlight %}
+
+
+
+# Functions
 
 {% highlight rust %}
 fn myFun(arg1: i32, arg2: i32) -> i32 {
@@ -201,7 +235,9 @@ let multi_line = |x: i32| {
 }
 {% endhighlight %}
 
-## Conditional ##
+# Flow Control
+
+## Conditional
 
 {% highlight rust %}
 if n < 0 {
@@ -213,7 +249,7 @@ if n < 0 {
 }
 {% endhighlight %}
 
-## Loops ##
+## Loops
 
 {% highlight rust %}
 for i in 0..3 {
@@ -223,19 +259,24 @@ for i in 0..3 {
 
 See also "Iterating" on different data structures.
 
-## Bit operations ##
-
-<code>!</code> is the Rust version of <code>~</code>
-
 # Data structures
 
-## Vec - dynamic sized list ##
+## Vec
+
+Dynamic sized list
 
 ### Initialize ###
 
 {% highlight rust %}
 let mut vec = Vec::new();
 {% endhighlight %}
+
+Fixed size, same value:
+
+{% highlight rust %}
+let mut vec = vec![0; 100];
+{% endhighlight %}
+
 
 ###  Inserting ###
 
@@ -322,6 +363,22 @@ for value in my_map.values() {
 // All keys
 for key in my_map.keys() {
 }
+{% endhighlight %}
+
+## HashSet ##
+
+From vector:
+
+{% highlight rust %}
+let v = vec![1, 2, 3];
+// cloned needed if borrowing v
+let s: HashSet<_> = v.iter().cloned().collect();
+{% endhighlight %}
+
+Set intersection:
+
+{% highlight rust %}
+let i: HashSet<_> = s1.intersection(&s2).cloned().collect();
 {% endhighlight %}
 
 # Object Oriented
