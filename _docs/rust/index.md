@@ -46,15 +46,6 @@ for x in &arr {
 
 * Types: `i8`, `i16`, `i32`, `i64`, `u8`, `u16`, `u32`, `u64`
 
-Exponentiation / power:
-
-{% highlight rust %}
-let b: i32 = 10;
-let p10: i32 = b.pow(2 as u32);
-{% endhighlight %}
-
-Note that the exponent has to be positive, since a negative one could change the type of the base to floating point.
-
 ### Bit operations
 
 <code>!</code> is the Rust version of <code>~</code>
@@ -137,6 +128,11 @@ let i: i32 = 10;
 let s = i.to_string();
 {% endhighlight %}
 
+Convert to `Vec<char>`:
+
+{% highlight rust %}
+let cs: Vec<char> = s.chars().collect();
+{% endhighlight %}
 
 Split:
 
@@ -261,9 +257,7 @@ See also "Iterating" on different data structures.
 
 # Data structures
 
-## Vec
-
-Dynamic sized list
+## Vector
 
 ### Initialize ###
 
@@ -313,10 +307,26 @@ let mut u = vec![1, 2, 3];
 u.retain(f);
 {% endhighlight %}
 
-### Length ###
+### Length
 
 {% highlight rust %}
 vec.len()
+{% endhighlight %}
+
+### Sorting
+
+{% highlight rust %}
+vec.sort_by(|a, b| a.cmp(b))
+{% endhighlight %}
+
+### Destructured assignment
+
+Like in Python, we can do destructured assignment by assuming a fixed length of a vector, but we have to handle the other cases:
+
+{% highlight rust %}
+let [a, b] = vec.as_slice() else {
+    panic!();
+}
 {% endhighlight %}
 
 ## HashMap ##
@@ -330,7 +340,7 @@ use std::collections::HashMap;
 HashMap<String, String>;
 
 // Create New
-let my_map = HashMap::new()
+let mut my_map = HashMap::new()
 
 // Create New Initialized
 let my_map = HashMap::from([
@@ -427,4 +437,49 @@ use std::env;
 
 // Skip program name
 let args: Vec<String> = env::args().skip(1).collect();
+{% endhighlight %}
+
+## Printing to stdout
+
+Vector:
+
+{% highlight rust %}
+let vec = vec![1, 2, 3, 4, 5];
+println!("Vector:\n{:#?}", vec);
+{% endhighlight %}
+
+# Math
+
+A lot of the math operations are methods on the numerical types.
+
+## Exponentiation
+
+{% highlight rust %}
+let b: i32 = 10;
+let p10: i32 = b.pow(2 as u32);
+{% endhighlight %}
+
+Note that the exponent has to be positive, since a negative one could change the type of the base to floating point.
+
+## Square root
+
+{% highlight rust %}
+let x: f64 = 10.0;
+let y: f64 = x.sqrt();
+{% endhighlight %}
+
+Not defined for integer types.
+
+# Mutability
+
+Variable doesn't need to be mutable if it's initialized only once:
+
+{% highlight rust %}
+let x: i32;
+
+if check() {
+    x = 1;
+} else {
+    x = 2;
+}
 {% endhighlight %}
