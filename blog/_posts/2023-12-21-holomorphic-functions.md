@@ -34,13 +34,17 @@ Note that $h$ is a complex number, so $\abs{h}$ corresponds to its magnitude. If
 
 A question I asked myself while learning this: why does this have anything to do with complex numbers? Can't we just define this for $\mathbb{R}^2$? One important factor is that we have a division between two complex numbers inside the limit. Recall that division is defined based on complex multiplication and complex multiplication is not the same as vector multiplication [3].
 
-### Analytic vs. Holomorphic
+### Holomorphic vs. Analytic
 
 In [1], Ahlfors calls holomorphic functions analytic. A analytic function is defined as an infinitely differentiable function and locally equal to its own Taylor series. It's possible to show they're equivalent but have different definitions.
 
 ### Holomorphic vs. Entire
 
 [Entire functions](https://en.wikipedia.org/wiki/Entire_function) are a special case of holomorphic functions in which the domain is the **entire** complex plane, that is, $\Omega = \mathbb{C}$. This also gives us the origin for the name holomorphic, which comes from the Greek *hólos* (whole) and *morphḗ* (form), alluding to the fact that holomorphic functions look like (i.e. have the "form") of entire functions when restricted to the domain $\Omega$.
+
+### Holomorphic vs. Meromorphic
+
+Meromorphic functions are functions that are holomorphic on a $\Omega$ *except* for a set of isolated points which are poles ($z$ such that $1/f(z) = 0$). Mero comes from the Greek *meros* (part).
 
 ## Cauchy-Riemann Equations
 
