@@ -4,19 +4,7 @@ layout: default
 
 {% include blog_vars.html %}
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@kunigami" />
-<meta name="twitter:creator" content="@kunigami" />
 <meta property="og:title" content="{{ page.title }}" />
-
-{% if page.tweet %}
-<meta name="twitter:description" content="{{page.tweet}}">
-{% endif %}
-
-{% if page.main_image %}
-<meta name="twitter:image" content="{{resources_path}}/{{page.main_image}}">
-{% endif %}
-
 <div id="page">
     <div class="inner">
         <p>
