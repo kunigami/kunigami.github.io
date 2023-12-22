@@ -22,15 +22,15 @@ In this post we'll define the theorem more formally, present a proof and do some
   <img src="{{resources_path}}/convex-rec.png" alt="Several convex polygons nested within each other." />
 </figure>
 
-## Theorem
+## Formal statement
 
-Let $P$ be a polynomial of degree $n$, of the form $P(x) = \sum_{k = 0}^n a_k z^k$, where $z, a_k \in \mathbb{C}$ and $a_n \neq 0$. Let $r_i$ be the zeros (or roots) of $P(z)$, that is $P(r_i) = 0$, for $i = 0, \dots, n$.
+**Theorem.** Let $P$ be a polynomial of degree $n$, of the form $P(x) = \sum_{k = 0}^n a_k z^k$, where $z, a_k \in \mathbb{C}$ and $a_n \neq 0$. Let $r_i$ be the zeros (or roots) of $P(z)$, that is $P(r_i) = 0$, for $i = 0, \dots, n$.
 
 Consider its derivative $P'(z) = \sum_{k = 0}^{n-1} (k + 1) a_{k + 1} z^{k}$ and its corresponding roots $r'_j$ for which $P'(r'_j) = 0$, $j = 0, \dots, n - 1$.
 
 Now, if we plot $r_i$ and $r'_j$ on the complex plane, the Lucas-Gauss theorem claims that $r'_j$ lies in the [convex hull](https://en.wikipedia.org/wiki/Convex_hull) defined by $r_i$.
 
-## Proof
+<proof>
 
 First we use the fundamental theorem of algebra, which allows us writing $P(z)$ as the product:
 
@@ -123,7 +123,7 @@ which should give us back:
 
 $$r'_j = \sum_{i = 0}^{n} \alpha_{ij} r_i$$
 
-QED.
+</proof>
 
 
 ## Experimentation
@@ -142,7 +142,7 @@ $$P'(z) = \sum_{k = 0}^{n - 1} a_{k+1} (k + 1)  x^{k}$$
 
 Where $a_{k}$ is the coefficient of $i$-th degree of $P(z)$.
 
-**Step 4. (Roots)** Find the roots of $P'(z)$, $r'$. We can use one of the numeric algorithms to estimate the roots such as the [Weierstrass method](https://en.wikipedia.org/wiki/Durand%E2%80%93Kerner_method). 
+**Step 4. (Roots)** Find the roots of $P'(z)$, $r'$. We can use one of the numeric algorithms to estimate the roots such as the [Weierstrass method](https://en.wikipedia.org/wiki/Durand%E2%80%93Kerner_method).
 
 **Step 5. (Convex Hull)** Compute the convex hull of $r$ by assuming they're 2D points. This can be done via some of convex hull algorithm such as [Graham scan](https://en.wikipedia.org/wiki/Graham_scan) which runs in $O(n \log n)$.
 
@@ -160,7 +160,7 @@ N = 10
 rs = []
 for i in range(N):
     a = random.uniform(-5, 5)
-    b = random.uniform(-5, 5) 
+    b = random.uniform(-5, 5)
     rs.append(a + b * 1j)
 {% endhighlight %}
 
@@ -185,13 +185,13 @@ p0 = Polynomial(polyfromroots(rs))
 **Step 3. (Derive)** The `Polynomial` class also supports computing its derivative via `derive()`:
 
 {% highlight python %}
-p1 = p0.deriv() 
+p1 = p0.deriv()
 {% endhighlight %}
 
 **Step 4. (Roots)** The `Polynomial` class supports finding its roots via `roots()`:
 
 {% highlight python %}
-r1 = p1.roots() 
+r1 = p1.roots()
 {% endhighlight %}
 
 The documentation says the algorithm used for this is via enginevalues of the [companion matrix](https://en.wikipedia.org/wiki/Companion_matrix). I have no idea how it works, but could be an interesting algorithm to explore in the future.
@@ -227,9 +227,9 @@ And then draw a polygon corresponding to the convex hull vertices `hpts`:
 {% highlight python %}
 import matplotlib.patches as patches
 polygon = patches.Polygon(
-    hpts, 
-    closed=True, 
-    edgecolor='black', 
+    hpts,
+    closed=True,
+    edgecolor='black',
     facecolor='none'
 )
 ax.add_patch(polygon)
@@ -257,4 +257,4 @@ The proof from this post is based on Wikipedia [1] but I found non-trivial to un
 ## References
 
 * [[1](https://en.wikipedia.org/wiki/Gauss%E2%80%93Lucas_theorem)] Wikipedia: Gauss-Lucas Theorem
-* [[2](https://chat.openai.com/)] ChatGPT4 
+* [[2](https://chat.openai.com/)] ChatGPT4
