@@ -36,7 +36,7 @@ A question I asked myself while learning this: why does this have anything to do
 
 ### Holomorphic vs. Analytic
 
-In [1], Ahlfors calls holomorphic functions analytic. A analytic function is defined as an infinitely differentiable function and locally equal to its own Taylor series. It's possible to show they're equivalent but have different definitions.
+In [1], Ahlfors calls holomorphic functions analytic. A analytic function is defined as an infinitely differentiable function and locally equal to its own Taylor series. So while it's possible to show they're equivalent, they have different definitions. So for clarity we'll adopt the more common terminology and call them holomorphic here.
 
 ### Holomorphic vs. Entire
 
