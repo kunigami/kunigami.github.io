@@ -123,6 +123,14 @@ It's possible to show the converse is also true: that if we have functions $u, v
 
 </proof>
 
+## Conclusion
+
+In this post we learned about holomorphic functions. Despire the scary name, their definition is relatively simple: functions that are differentiable everywhere in their domain.
+
+The similarity between complex differential with the ordinary differential hides an important difference, which has to do on how the "delta" approximates the limit. For the complex one, the limit must exist no matter how the delta $h$ tends to 0.
+
+We also saw an equivalence between functions that satisfy the Cauchy-Riemann equations and holomorphic functions. In a way this lets us define complex differentiation in terms of ordinary partial differentiation.
+
 ## Related Posts
 
 [The Basel Problem]({{blog}}/2023/03/14/basel-problem.html). In that post we relied on the fact that $\sin x$ is an entire functions (a special type of holomorphic functions) to prove that:
