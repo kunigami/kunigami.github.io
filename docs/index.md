@@ -57,7 +57,9 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 ## Math
 
-* [Complex Numbers]({{ site.url }}/docs/math/complex.html)
+* Real Analysis
+* Complex Analysis
+  * [Complex Numbers]({{ site.url }}/docs/math/complex.html)
 * [Matrices]({{ site.url }}/docs/math/matrix.html)
 * [Probability]({{ site.url }}/docs/math/probability.html)
 * [Set Theory]({{ site.url }}/docs/math/set.html)
