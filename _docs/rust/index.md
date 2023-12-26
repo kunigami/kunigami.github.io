@@ -31,10 +31,8 @@ let arr: [i32; 10] = [0; 10];
 ### Iterate
 
 {% highlight rust %}
-let arr: [i32; 3] = [1, 2, 3];
-for x in &arr {
-    print!("{} ", x);
-}
+let it:
+let v: Option<Self::Item> = it.next()
 {% endhighlight %}
 
 ## Bool
@@ -50,6 +48,21 @@ for x in &arr {
 
 <code>!</code> is the Rust version of <code>~</code>
 
+## Iterator
+
+Note that `Iterator` is not a class but rather a trait that classes implement.
+
+Get the next element:
+
+{% highlight rust %}
+// returns Split class which implements Iterator
+let mut parts = s.split(',');
+let e: Optional<&str> = parts.next();
+{% endhighlight %}
+
+NOTE: `next()` is not idempotent.
+
+
 ## Optional
 
 * Type: `optional<T>`
@@ -59,17 +72,29 @@ match my_option {
     Some(value) => value,
     None => 1, // handle null value
 }
+{% endhighlight %}
 
-// Create Some
+Create `Some`:
+
+{% highlight rust %}
 Some(1)
+{% endhighlight %}
 
-// Throw if None
+Throw if `None`:
+
+{% highlight rust %}
 my_option.unwrap()
+{% endhighlight %}
 
-// Test if some
+Test if some:
+
+{% highlight rust %}
 my_option.is_some()
+{% endhighlight %}
 
-// Test if none
+Test if none:
+
+{% highlight rust %}
 my_option.is_none()
 {% endhighlight %}
 
@@ -139,6 +164,19 @@ Split:
 {% highlight rust %}
 let parts: Vec<&str> = s.split(',').collect();
 {% endhighlight %}
+
+**Split into multiple lines.** There's a shortcut for splitting by the character `\n`:
+
+{% highlight rust %}
+let parts: Vec<&str> = s.lines().collect();
+{% endhighlight %}
+
+Substring:
+
+{% highlight rust %}
+s.contains(p);
+{% endhighlight %}
+
 
 Trim:
 
