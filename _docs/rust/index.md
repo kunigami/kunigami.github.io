@@ -40,6 +40,17 @@ let v: Option<Self::Item> = it.next()
 * Type: `bool`
 * Examples: `true`, `false`
 
+## Enum
+
+{% highlight rust %}
+enum Direction {
+    N,
+    E,
+    S,
+    W,
+}
+{% endhighlight %}
+
 ## Integers
 
 * Types: `i8`, `i16`, `i32`, `i64`, `u8`, `u16`, `u32`, `u64`
@@ -184,7 +195,7 @@ Trim:
 let trimmed = s.trim();
 {% endhighlight %}
 
-## Struct ##
+## Struct
 
 keywords: record / object / shape
 
@@ -413,7 +424,20 @@ for key in my_map.keys() {
 }
 {% endhighlight %}
 
-## HashSet ##
+## Set
+
+Use:
+
+{% highlight rust %}
+use std::collections::HashSet;
+{% endhighlight %}
+
+Create:
+
+{% highlight rust %}
+let s = HashSet::new();
+{% endhighlight %}
+
 
 From vector:
 
@@ -427,6 +451,28 @@ Set intersection:
 
 {% highlight rust %}
 let i: HashSet<_> = s1.intersection(&s2).cloned().collect();
+{% endhighlight %}
+
+## Queue
+
+{% highlight rust %}
+use std::collections::VecDeque;
+
+// Create
+let mut queue = VecDeque::new();
+
+// Enqueue
+queue.push_back("a");
+
+// Dequeue
+if let Some(x) = queue.pop_front() {
+    // use x
+}
+
+// Is empty?
+if !queue.is_empty() {
+    // use queue
+}
 {% endhighlight %}
 
 # Object Oriented
