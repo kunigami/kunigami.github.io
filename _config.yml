@@ -4,6 +4,8 @@ collections:
     output: true
   amuseum:
     output: true
+  books:
+    output: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
