@@ -11,6 +11,12 @@ title: Books
 
 Summary of some of the books I read. Book are grouped by theme and within each theme sorted by title.
 
+## History
+
+### South Asia
+
+* [India in the Persianate Age]({{site.url}}/books/india-in-the-persianate-age.html), Richard M. Eaton
+
 ## Philosophy
 
-* [Letters from a Stoic]({{blog}}/books/letters-from-a-stoic.html), Seneca
+* [Letters from a Stoic]({{site.url}}/books/letters-from-a-stoic.html), Seneca
