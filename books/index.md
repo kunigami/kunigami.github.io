@@ -13,6 +13,10 @@ Summary of some of the books I read. Book are grouped by theme and within each t
 
 ## History
 
+### East Asia
+
+* [A New Illustrated History of Taiwan]({{site.url}}/books/a-new-illustrated-history-of-taiwan), Wan-yao Chou
+
 ### South Asia
 
 * [India in the Persianate Age]({{site.url}}/books/india-in-the-persianate-age.html), Richard M. Eaton
