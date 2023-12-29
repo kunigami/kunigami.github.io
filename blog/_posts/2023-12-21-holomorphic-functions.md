@@ -131,6 +131,52 @@ The similarity between complex differential with the ordinary differential hides
 
 We also saw an equivalence between functions that satisfy the Cauchy-Riemann equations and holomorphic functions. In a way this lets us define complex differentiation in terms of ordinary partial differentiation.
 
+## Harmonic Functions
+
+Let $f$ be a twice differentiable function of two variables. The **Laplace operator** is defined as
+
+$$\Delta f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}$$
+
+The **Laplace's equation** is defined as:
+
+$$\Delta f = 0$$
+
+A function is called **harmonic** if it satisfies Laplace's equation. If a pair of harmonic functions $u$ and $v$ satisfy the Cauchy-Riemann equations $(2)$, then they're said to be **conjugate harmonic** of each other.
+
+It's possible to show some equivalence between holomorphic functions and harmonic functions. More precisely:
+
+<theorem>
+<p>
+<b>Theorem 2.</b> A function $f(x, y) = u(x, y) + i v(x, y)$ is holomorphic if and only if $u$ and $v$ form a pair of harmonic conjugates.
+</p>
+</theorem>
+
+<proof>
+
+We can leverage <i>Theorem 1</i> for this. If $f$ is holomorphic, then it $u$ and $v$ satisfy the Cauchy-Riemann equations $(2)$. We can first differentiate the first with respect to $x$ and obtain:
+
+$$\frac{\partial^2 u}{\partial x^2} = \frac{\partial^2 v}{\partial y \partial x}$$
+
+and the second by $y$:
+
+$$\frac{\partial^2 u}{\partial y^2} = - \frac{\partial^2 v}{\partial x \partial y}$$
+
+The right-hand side of both are now the same so we obtain:
+
+$$\frac{\partial^2 u}{\partial x^2} = -\frac{\partial^2 u}{\partial y^2}$$
+
+or
+
+$$\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0$$
+
+So $u$ is harmonic, and by an analogous procedure so is $v$. Since they satisfy the Cauchy-Riemann equations, they form a pair of harmonic conjugates.
+
+Conversely, if they form a pair of harmonic conjugates, by definition they satisfy the Cauchy-Riemann equations and by <i>Theorem 1</i>, the corresponding $f(x, y) = u(x, y) + i v(x, y)$ is holomorphic.
+
+</proof>
+
+
+
 ## Related Posts
 
 [The Basel Problem]({{blog}}/2023/03/14/basel-problem.html). In that post we relied on the fact that $\sin x$ is an entire functions (a special type of holomorphic functions) to prove that:
