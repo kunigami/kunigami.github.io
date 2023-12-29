@@ -161,7 +161,7 @@ and the second by $y$:
 
 $$\frac{\partial^2 u}{\partial y^2} = - \frac{\partial^2 v}{\partial x \partial y}$$
 
-The right-hand side of both are now the same so we obtain:
+Assuming that $\frac{\partial^2 v}{\partial y \partial x}$ and  $\frac{\partial^2 v}{\partial x \partial y}$ are continuous, it's possible to show they're equal (<i>Schwarz's theorem</i>). So we obtain:
 
 $$\frac{\partial^2 u}{\partial x^2} = -\frac{\partial^2 u}{\partial y^2}$$
 
