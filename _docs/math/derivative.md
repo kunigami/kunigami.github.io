@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "Complex Numbers Cheat Sheet"
+title: "Derivatives Cheat Sheet"
 ---
 
 ## Partial Derivative
