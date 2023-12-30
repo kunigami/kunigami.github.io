@@ -468,6 +468,11 @@ p > .language-plaintext {
   margin: auto;
 }
 
+theorem {
+  display: block;
+  margin-bottom: 10px;
+}
+
 proof {
   display: none;
 }
