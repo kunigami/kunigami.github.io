@@ -24,7 +24,7 @@ Even before that though, let's simplify things a bit: a complex function can be 
 
 In particular, let $\Omega$ be an [open subset](https://www.kuniga.me/docs/math/topology.html) of $\mathbb{C}$ and a function $f: \Omega \rightarrow \mathbb{C}$. We define the **complex derivative** of $f(z)$, denoted by $f'(z)$ as:
 
-$$(1) \quad f'(z) =  lim_{h \rightarrow 0} \frac{f(z + h) - f(z)}{h}$$
+$$(1) \quad f'(z) =  \lim_{h \rightarrow 0} \frac{f(z + h) - f(z)}{h}$$
 
 Where $z \in \Omega$ and $z + h \in \Omega$. For the derivative to exist at a point $z$, that limit must exist. In other words, from the definition of limits, for every $\epsilon \gt 0$ there should exist $\delta \gt 0$ such that for $0 \lt \abs{h} \lt \delta$, we have $\abs{f'(z) - \frac{f(z + h) - f(z)}{h}} \lt \epsilon$.
 
@@ -85,7 +85,7 @@ We'll only prove one direction, that is, that if a function is holomorphic then 
 
 Let $f(z)$ be a holomorphic function. We want to compute $f'(z_0)$, so we can use $(1)$:
 
-$$f'(z_0) =  lim_{h \rightarrow 0} \frac{f(z_0 + h) - f(z_0)}{h}$$
+$$f'(z_0) =  \lim_{h \rightarrow 0} \frac{f(z_0 + h) - f(z_0)}{h}$$
 
 We mentioned that if $f$ is holomorphic, then the limit exists no matter how $h$ approaches $0$. Let's first consider the special case where $h$ approaches $0$ along a horizontal line in the complex plane, in other words, $h$ is real. Let's decompose $f$ into its real and imaginary parts:
 
@@ -93,7 +93,7 @@ $$f'(z_0)$$
 
 $$= f'(x_0, y_0)$$
 
-$$= lim_{h \rightarrow 0} \frac{u(x_0 + h, y_0) - u(x_0, y_0)}{h} + i \lim_{h \rightarrow 0} \frac{v(x_0 + h, y_0) - v(x_0, y_0)}{h}$$
+$$= \lim_{h \rightarrow 0} \frac{u(x_0 + h, y_0) - u(x_0, y_0)}{h} + i \lim_{h \rightarrow 0} \frac{v(x_0 + h, y_0) - v(x_0, y_0)}{h}$$
 
 The first limit is the partial derivative of $u$ with respect to the $x$ axis and the second is the partial derivative of $v$ with respect to the $x$:
 
@@ -103,15 +103,15 @@ Because $f$ is holomorphic, the limit $f'(z_0)$ exists and so does the partial d
 
 Now, if we consider the case where $h$ approaches $0$ along a vertical line in the complex plane, that is, $h$ is the imaginary $ik$, we have:
 
-$$f'(z_0) = lim_{k \rightarrow 0} \frac{f(z_0 + ik) - f(z_0)}{ik}$$
+$$f'(z_0) = \lim_{k \rightarrow 0} \frac{f(z_0 + ik) - f(z_0)}{ik}$$
 
 Multiplying both numerator and denominator by $i$
 
-$$ = lim_{k \rightarrow 0} \left(\frac{f(z_0 + ik) - f(z_0)}{k}\right) i$$
+$$ = \lim_{k \rightarrow 0} \left(\frac{f(z_0 + ik) - f(z_0)}{k}\right) i$$
 
 Decomposing $f$:
 
-$$= lim_{h \rightarrow 0} \left(\frac{u(x_0 + h, y_0) - u(x_0, y_0)}{k} \right) i - \lim_{h \rightarrow 0} \frac{v(x_0 + h, y_0) - v(x_0, y_0)}{k}$$
+$$= \lim_{h \rightarrow 0} \left(\frac{u(x_0 + h, y_0) - u(x_0, y_0)}{k} \right) i - \lim_{h \rightarrow 0} \frac{v(x_0 + h, y_0) - v(x_0, y_0)}{k}$$
 
 Note how $u$ generates the imaginary part and $v$ the real part in this case. Some arithmetic will lead us to:
 

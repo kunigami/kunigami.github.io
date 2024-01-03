@@ -24,85 +24,105 @@ In this post we'll discuss conformal maps, in particular understand its definiti
 
 A function $f: U \rightarrow V$ is called **conformal** (or **angle-preserving**) at a point $z \in V$ if it preserves angles between two directed curves through $z$ [4].
 
-Let's try to gain some intuition by considering an example in 2D. Let $\gamma$ and $\gamma'$ be two arbitrary curves that pass through a point $z$. Consider the tangents of the curves at $z$. Since the curves are directed, we can use that to direct their tangents and find the angle between, which we'll call $\theta$. *Figure 1* (left) depicts an example.
+Let's try to gain some intuition by considering an example in 2D. Let $\gamma_1$ and $\gamma_2$ be two arbitrary curves that pass through a point $z$. Consider the tangents of the curves at $z$. Since the curves are directed, we can use that to direct their tangents and find the angle between, which we'll call $\theta$. *Figure 1* (left) depicts an example.
 
 <figure class="center_children">
   <img src="{{resources_path}}/conformal-example.png" alt="See caption." />
   <figcaption>Figure 1: (left) Two curves intersecting at point $p$ with their tangents having an angle $\theta$. (right) The same curves after applying some function $f$. Since their tangents still have an angle at $p' = f(p)$, $f$ is conformal at $p$. Source: hand-made</figcaption>
 </figure>
 
-We can apply a function $f$ to $\gamma$ and $\xi$. Let's denoted the resulting curves by $\xi$ and $\xi'$ respectively. Since $z \in \gamma$ and $z \in \xi$, we have that $w = f(z)$ belongs to $\gamma'$ and $\xi'$. Now consider the tangents of $\gamma'$ and $\xi'$ at $w$. If the angle between them is also $\theta$, then this function is conformal at $z$. *Figure 1* (right) shows an example.
+We can apply a function $f$ to $\gamma_1$ and $\gamma_2$. Let's denoted the resulting curves by $\xi_1$ and $\xi_2$ respectively. Since $z \in \gamma_1$ and $z \in \gamma_2$, we have that $w = f(z)$ belongs to $\xi_1$ and $\xi_2$. Now consider the tangents of $\xi_1$ and $\xi_2$ at $w$. If the angle between them is also $\theta$, then this function is conformal at $z$. *Figure 1* (right) shows an example.
 
-## Holomorphic Functions
+### Parametric curves
 
-In *Theorem 1* we show that conformal maps are holomorphic functions at points in which the derivative is non-zero.
+A continuous curve in the complex plane can be thought as a function $\gamma(t): [a, b] \rightarrow \mathbb{C}$ where $t$ is from a real-number $a \le t \le b$. One intuitive way to see this is $\gamma$ being the path taken by a point from timestamp $a$ to $b$. This is called a **parametric curve**.
+
+### Tangent
+
+Now that $\gamma$ is a function, it's possible to calculate precisely the direction of the tangent at a given point $z_0 = \gamma(t_0)$, as we state in *Lemma 1*.
+
+**Lemma 1** Let $\gamma(t): [a, b] \rightarrow \mathbb{C}$ be a parametric curve. The direction of the tangent at point $z_0 = \gamma(t_0)$ is given by the *argument* of the complex number $z'$:
+
+$$z' = \frac{d\gamma}{dt}(t_0)$$
+
+<proof>
+
+Let $t_0$ be such that $z_0 = \gamma(t_0)$. The idea is to consider a $t_1$ close enough to $t_0$ so the direction of vector formed by $\gamma(t_1) - \gamma(t_0)$ matches that of the tangent.
+<br /><br />
+We need to choose $t_1$ as close as possible to $t_0$, so we account for any possible tiny local curvature around $t_0$, meaning that at that neighborhood the path from $\gamma(t_0)$ to $ \gamma(t_1)$ looks like a straight line. We can thus compute:
+
+$$\lim_{t_1 \rightarrow t_0} \frac{\gamma(t_1) - \gamma(t_0)}{t_1 - t_0}$$
+
+which is the definition of $\frac{d\gamma}{dt}(t_0)$. As we see in the Figure above, this complex number represents a vector with the same direction as the tangent. We can compute the angle a complex number $z$ forms with positive x-axis via $\arg{(z)}$.
+
+</proof>
+
+### Curve Mapping
+
+What happens when we apply a function $f$ over $\gamma$? We'll obtain another curve $\xi$ which we can also see as a function of $t$ or as a composition of $f$ and $\gamma$:
+
+$$\xi(t) = (f \circ \gamma)(t)$$
+
+Let $w_0 = f(z_0)$. What can we say about the tangent $w'$ of $\xi$ at $w_0$? Again suppose $z'$ is the tangent of $\gamma$ at $z_0$ and its angle with the origin is $\theta$, then *Lemma 2* states that the angle of the tangent $w'$ with the origin is $\theta + \arg{(f'(z_0))}$.
+
+**Lemma 2** Let $\gamma(t): [a, b] \rightarrow \mathbb{C}$ be a parametric curve with tangent $z'$ at point $z_0$. Consider a function $f: \mathbb{C} \rightarrow \mathbb{C}$ which is holomorphic and with a non-zero derivative at $z_0$ and apply it over $\gamma$, obtaining the parametric curve $\xi(t) = (f \circ \gamma)(t)$.
+
+Let $w_0 = f(z_0)$ and $w'$ be the tangent of $\xi$ at point $w_0$. The argument of $w'$ is given by
+
+$$\arg{(w')} = \arg{(z')} + \arg{\left(\frac{df}{dz} (z_0) \right)}$$
+
+<proof>
+
+Since $\xi$ is also a parametric curve of $t, we can use <i>Lemma 1</i> to compute $w'$:
+
+$$w' = \frac{d\xi}{dt}(t_0)$$
+
+Since $\xi$ is a composite of $f$ and $\gamma$, we can use the chain rule to get:
+
+$$\frac{d\xi}{dt}(t_0) = \frac{df}{dz}(\gamma(t_0)) \cdot \frac{d\gamma}{dt}(t_0)$$
+
+The second term on the right hand side is, from <i>Lemma 1</i>, the tangent of $\gamma$ at $z_0 = \gamma(t_0)$. The first term is the complex derivative of $f$ at $z_0$ and it's a complex number. So we have a product of two complex numbers.
+
+The argument of $w'$ is thus:
+
+$$\arg{(w')} = \arg{\left(\frac{df}{dz}(\gamma(t_0)) \cdot \frac{d\gamma}{dt}(t_0)\right)}$$
+
+Here's where we need the hypothesis of $f'(z_0) \ne 0$, because otherwise $\arg (0)$ isn't defined.
+
+Since the argument of the product is the sum of the arguments:
+
+$$\arg{(w')} = \arg{\left(\frac{df}{dz}(\gamma(t_0)) \right)} + \arg{\left(\frac{d\gamma}{dt}(t_0)\right)} = \arg{(z')} + \arg{\left(\frac{df}{dz} (z_0) \right)}$$
+
+</proof>
+
+
+### Holomorphic Functions
+
+One way to interpret this *Lemma 2* is that applying a function $f$ over a curve, cause its tangent at a point $z_0$ to rotate by some amount $f'(z_0)$ that only depends on the point $z_0$ but not on the curve itself.
+
+This means that if two curves $\gamma_1$ and $\gamma_2$ intersect at $z_0$ at an angle $\theta$, applying the same function over them to obtain $\xi_1$ and $\xi_2$, both their tangents have been "rotated" by the same amount, so the angle between them is still the same.
+
+This idea is formalized in *Theorem 3*.
 
 <theorem>
-<b>Theorem 1.</b> A function $f$ is a conformal in an open set $\Omega$ if and only if it's holomorphic in $\Omega$ and its derivative is non-zero anywhere in $\Omega$.
+<b>Theorem 3.</b> If a function $f$ is holomorphic in $\Omega$ and its derivative is non-zero anywhere in $\Omega$ then it is conformal.
 </theorem>
 
 <proof>
-Let's first prove that if a function is holomorphic in $\Omega$ and its derivative is non-zero anywhere in $\Omega$ then it is conformal.
 
-Consider a parametric curve $\gamma_1$ contained in $\Omega$, that is, the points in $\gamma_1$ can be described via a function $z_1(_1)$, $z_1 : \mathbb{R} \rightarrow \mathbb{C}$, for $\alpha \le t \le \beta$. And assume that $\gamma_1$ is differentiable for all $t$.
+Let two curves $\gamma_1$ and $\gamma_2$ intersect at $z_0$ at an angle $\theta$. By <i>Lemma 1</i>, their tangents are complex numbers $z'_1$ and $z'_2$ and the angle between them is given by:
 
-If we apply $f$ on $\gamma_1$ we'll obtain another curve $\gamma'_1$, where its points are defined by $w_1(t) = f(z_1(t))$ for $\alpha \le t \le \beta$. Now consider the derivative of $w_1(t)$ with respect to $t$. By the chain rule of calculus we have:
+$$\theta = \arg{(z'_1)} - \arg{(z'_2)}$$
 
-$$\frac{d}{dt}w_1(t) = \frac{d}{dz_1}f(z_1(t)) \frac{d}{dt}z_1(t)$$
+Now we apply the function $f$ over them to obtain $\xi_1$ and $\xi_2$. Let $w'_1$ and $w'_2$ be the respective tangents at $w_0 = f(z_0)$. The angle $\theta'$ between them is:
 
-or with a more compact syntax:
+$$\theta' = \arg{(w'_1)} - \arg{(w'_2)}$$
 
-$$(1) \qquad w'_1(t) = f'(z_1(t)) z'_1(t)$$
+Since $f$ is holomorphic and with a non-zero derivative at $z_0$, we can apply <i>Lemma 2</i>:
 
-Since $f$ is holomorphic, $f'(z_1(t))$ exists, $z'_1(t)$ is the tangent of the curve $\gamma$ at the point $z_1(t)$ and $w'(t)$ is the tangent of $\gamma'$ at the point $w(t)$.
+$$\theta' = (\arg{(f'(z_0))} + \arg{(z_1')}) - (\arg{f'(z_0)} + \arg{(z_2')})$$
 
-All these terms are complex numbers, so we can compute their angles in the complex plane via their argument. Recall that a complex number can be written in polar form, $z = r \cos \theta + i \sin \theta$, where $\theta$ is called the argument of $z$, or $arg(z)$.
-
-It's possible to show that the argument of the products of two complex numbers is the sum of their arguments, that is: $\mbox{arg}(z w) = \mbox{arg}(z) + \mbox{arg}(w)$. Applying this to (1) gives us:
-
-$$(2) \quad \mbox{arg} (w_1'(t)) = \mbox{arg} (f'(z_1(t))) + \mbox{arg} (z_1'(t))$$
-
-Here's where we need the hypothesis of $f'(z) \ne 0$ for $z \in A$, because otherwise $\mbox{arg} (0)$ isn't defined.
-
-Consider another parametric curve $\gamma_2$ contained in $\Omega$ whose points can be described via a function $z_2(t)$, $z_2 : \mathbb{R} \rightarrow \mathbb{C}$, for $\alpha \le t \le \beta$.
-
-Suppose curves $\gamma_1$ and $\gamma_2$ intersect at point $p = z_1(t_1) = z_2(t_2)$. We have that $z_1'(t_1)$ is the tangent of $\gamma_1$ at $p$ and $z_2'(t_2)$ the tangent of $\gamma_2$ at $p$. The angle $\theta$ between them can be found via:
-
-$$\theta = \mbox{arg} (z_1'(t_1)) - \mbox{arg} (z_2'(t_2))$$
-
-Now consider the curves corresponding to applying $f$ to $\gamma_1$ and $\gamma_2$, denoted by $\gamma_1'$ and $\gamma_2'$. These curves contain the point $p' = f(p)$ and the tangents for $\gamma_1'$ and $\gamma_2'$ at $p'$ are $w_1'(t_1)$ and $w_2'(t_2)$, respectively.
-
-The angle $\theta'$ between these two tangents is given by:
-
-$$\theta' = \mbox{arg} (w_1'(t_1)) - \mbox{arg} (w_2'(t_2))$$
-
-We can use (2) for both curves and replace in the equation above:
-
-$$\theta' = (\mbox{arg} (f'(z_1(t_1))) + \mbox{arg} (z_1'(t_1))) - (f'(z_2(t_2))) + \mbox{arg} (z_2'(t_2))$$
-
-Since $z_1(t_1) = z_2(t_2)$, the first term cancels out and we're left with:
-
-$$\theta' = \mbox{arg} (z_1'(t_1)) - \mbox{arg} (z_2'(t_2)) = \theta$$
-
-Which is the definition of a conformal map at $p$. Note we didn't add any restriction other than $p \in A$. Let's prove the other direction, i.e., we're given a conformal function $f$ at any $p \in A$ and we wish to show that $f$ is holomorphic and that $f'(p) \ne 0$.
-
-Using the same setup from the other direction, we have two curves $\gamma_1$ and $\gamma_2$ intersecting at $p$. The implicit assumption is that the tangents at $p$ and $f(p)$ exist for both $\gamma_1$ and $\gamma_2$ so $\mbox{arg} (z_1'(t_1))$, $\mbox{arg} (z_2'(t_2))$, $\mbox{arg} (w_1'(t_1))$ and $\mbox{arg} (w_2'(t_2))$ are all defined.
-
-Plugging them in (2):
-
-$$\mbox{arg} (f'(z_1(t))) = \mbox{arg} (w_1'(t)) - \mbox{arg} (z_1'(t))$$
-
-and
-
-$$\mbox{arg} (f'(z_2(t))) = \mbox{arg} (w_2'(t)) - \mbox{arg} (z_2'(t))$$
-
-so $\mbox{arg} (f'(z_1(t)))$ and $\mbox{arg} (f'(z_2(t)))$ are defined. These are necessary for $f'(z_1(t))$ and $f'(z_2(t))$ to exist, but not sufficient. Since $z_1(t) = z_2(t) = p$, and $f'$ is defined as a limit, we can't have the limit converge to different values, so we must have that $f'(z_1(t)) = f'(z_2(t))$.
-
-This is why we need the hypothesis that
-
-$$\mbox{arg} (z_1'(t_1)) - \mbox{arg} (z_2'(t_2)) = \mbox{arg} (w_1'(t_1)) - \mbox{arg} (w_2'(t_2))$$
-
-Because that implies $f'(z_1(t)) = f'(z_2(t))$ and that they exist. They must be non-zero because $\mbox{arg} (f'(z_1(t)))$ is defined. Since this holds for any $p = z_1(t) \in A$, we conclude $f$ is holomorphic and $f'(p) = 0$.
+We conclude that $\theta' = \theta$ and that $f$ is a conformal map.
 
 </proof>
 
