@@ -126,6 +126,26 @@ We conclude that $\theta' = \theta$ and that $f$ is a conformal map.
 
 </proof>
 
+### Cauchy-Riemann Equations
+
+At *Theorem 4* states, it's possible to show that conformal maps satisfy the Cauchy-Riemann equations [4], in which case we can use *Theorem 1* from [4] to conclude that conformal maps are holomorphic functions.
+
+<theorem>
+<b>Theorem 4.</b> Let $f$ be conformal at $z_0$. Then $f$ satisfies the Cauchy-Riemann equations
+
+$$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \qquad
+\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$$
+
+</theorem>
+
+<proof>
+
+Let $\gamma$ be a parametric curve on $t$ and $\xi(t) = (f \circ \gamma)(t)$ the parametric curve resulting from applying $f$ to $\gamma$.
+
+
+
+</proof>
+
 ## Examples
 
 One of the simplest conformal mapping is the function $f(z) = z + w$ for a constant $w \in \mathbb{C}$. If we interpret it in the complex plane, the function corresponds to a translation of each point on its domain. It's not hard to believe that the angles are preserved on translation. In fact, we have $f'(z) = 1$, so it's never zero and it's conformal everywhere.
@@ -151,3 +171,4 @@ We can see that at the intersection points on the domain, the blue and red lines
 * [1] Complex Analysis - Lars V. Ahlfors
 * [[2](https://en.wikipedia.org/wiki/Conformal_map Wikipedia)] Conformal Map
 * [[3](https://www-users.cse.umn.edu/~olver/ln_/cml.pdf)] Complex Analysis and Conformal Mapping, Peter J. Olver.
+* [4] NP-Incompleteness - Holomorphic Functions
