@@ -286,4 +286,5 @@ We can see that at the intersection points on the domain, the blue and red lines
 * [[2](https://en.wikipedia.org/wiki/Conformal_map Wikipedia)] Conformal Map
 * [[3](https://www-users.cse.umn.edu/~olver/ln_/cml.pdf)] Complex Analysis and Conformal Mapping, Peter J. Olver.
 * [[4]({{blog}}/2023/12/21/holomorphic-functions.html)] NP-Incompleteness - Holomorphic Functions
-* [5]({{site.url}}/docs/math/derivative.html)] NP-Incompleteness - Derivatives Cheat Sheet
+* [[5]({{site.url}}/docs/math/derivative.html)] NP-Incompleteness - Derivatives Cheat Sheet
+* [[6](https://math.stackexchange.com/questions/706321/question-for-ahlfors-experts-re-conformal-mappings)] Mathematics - Question for Ahlfors experts (re: conformal mappings)
