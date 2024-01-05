@@ -19,7 +19,7 @@ Let $z = a + ib$ for $a, b \in \mathbb{R}$. The conjugate, denoted by $\overline
 
 ### Identities
 
-Real and imaginary parts:
+Real (LaTex `\Re`) and imaginary (LaTeX `\Im`) parts:
 
 $$\Re(z) = \frac{z + \overline{z}}{2}, \qquad \Im(z) = \frac{z - \overline{z}}{2i}$$
 

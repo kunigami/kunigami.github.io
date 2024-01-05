@@ -128,21 +128,135 @@ We conclude that $\theta' = \theta$ and that $f$ is a conformal map.
 
 ### Cauchy-Riemann Equations
 
-At *Theorem 4* states, it's possible to show that conformal maps satisfy the Cauchy-Riemann equations [4], in which case we can use *Theorem 1* from [4] to conclude that conformal maps are holomorphic functions.
+As *Theorem 4* states, it's possible to show that conformal maps satisfy the Cauchy-Riemann equations [4], in which case we can use *Theorem 1* from [4] to conclude that conformal maps are holomorphic functions.
 
 <theorem>
-<b>Theorem 4.</b> Let $f$ be conformal at $z_0$. Then $f$ satisfies the Cauchy-Riemann equations
+<b>Theorem 4.</b> Let $f$ be a function that is conformal at $z_0$. Then $f$ satisfies the Cauchy-Riemann equations at $z_0$, that is:
 
-$$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \qquad
-\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$$
-
+$$\frac{\partial u}{\partial x}(z_0) = \frac{\partial v}{\partial y}(z_0), \qquad
+\frac{\partial u}{\partial y}(z_0) = -\frac{\partial v}{\partial x}(z_0)$$
 </theorem>
 
 <proof>
+Let $\gamma$ be a parametric curve on $t$ and $\xi(t) = (f \circ \gamma)(t)$ the parametric curve resulting from applying $f$ to $\gamma$. Let $z'$ and $w'$ be the tangents of $\gamma$ and $\xi$ at a given point $z_0 = \gamma(t_0)$ and $w_0 = \xi(t_0)$ respectively.
+<br /><br />
+The proof is quite long, so we'll first discuss the high level idea behind it. We'll basically show that $w'/z'$ is a complex number in the circumference of a circle, when we consider all possible curves $\gamma$ going through $z_0$. But because $f$ is conformal, we'll also show that $\arg{(w'/z')}$ is the same for all curves $\gamma$. The only way these two things can happen at the same time is if the circle has radius 0, because then all points in the circumference coincide and thus can have the same argument.
+<br /><br />
+Now to the detailed proof. Since the image of $\gamma$ is a complex number, we can split it into two functions corresponding to the real and imaginary part, so
 
-Let $\gamma$ be a parametric curve on $t$ and $\xi(t) = (f \circ \gamma)(t)$ the parametric curve resulting from applying $f$ to $\gamma$.
+$$(4.1) \quad \gamma(t) = x(t) + i y(t)$$
 
+Where $x, y: [a, b] \rightarrow \mathbb{R}$. We can compute $z'$ via the derivative of $\gamma$ at $t_0$:
 
+$$z' = \frac{d\gamma}{dt}(t_0) = \frac{dx}{dt}(t_0) + i \frac{dy}{dt}(t_0)$$
+
+We can also assume that $f$ now takes 2 variables $x, y$ instead of a complex number, $f(x, y)$, remembering that $x$ and $y$ are functions of $t$.
+<br /><br />
+We can determine $w'$ by computing the derivative of $\xi = (f \circ \gamma)$ at a point $t_0$. For that we can use the chain rule of partial derivatives [5]:
+
+$$\frac{d\xi}{dt} = \frac{d(f \circ \gamma)}{dt} = \frac{\partial f}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial f}{\partial y} \cdot \frac{dy}{dt}$$
+
+Being super explicit with the function parameters (for clarity):
+
+$$\quad w' = \frac{d\xi}{dt}(t_0) = \frac{\partial f}{\partial x}(x(t_0), y(t_0)) \cdot \frac{dx}{dt}(t_0) + \frac{\partial f}{\partial y}(x(t_0), y(t_0)) \cdot \frac{dy}{dt}(t_0)$$
+
+Recall that $z_0 = z(t_0) = x(t_0) + i y(t_0)$, so to simplify the notation, we'll denote the verbose $(x(t_0), y(t_0))$ by $(z_0)$, so:
+
+$$(4.2) \quad w' = \frac{d\xi}{dt}(t_0) = \frac{\partial f}{\partial x}(z_0) \cdot \frac{dx}{dt}(t_0) + \frac{\partial f}{\partial y}(z_0) \cdot \frac{dy}{dt}(t_0)$$
+
+Notice that $\partial f / \partial x$ is independent of $\gamma$ when we consider it at a fixed point $z_0$. For example, if $f(x, y) = x^2 + i xy$, then $\partial f / \partial x = 2x + i y$. Evaluating at $z_0$ gives us $2 x_0 + i y_0$, so it only depends on $z_0$, not on $\gamma$. The same applies to $\partial f / \partial y$. Let's define:
+
+$$(4.3) \qquad z'_x = \frac{\partial f}{\partial x}(z_0), \qquad z'_y = \frac{\partial f}{\partial y}(z_0)$$
+
+We can replace these in $(4.2)$:
+
+$$(4.4) \quad w' = \frac{d\xi}{dt}(t_0) = z'_x \cdot \frac{dx}{dt}(t_0) + z'_y \cdot \frac{dy}{dt}(t_0)$$
+
+Let's do some algebraic manipulation to find $dx/dt$ and $dy/dt$. First, consider the conjugate of $\gamma(t)$,
+
+$$\overline{\gamma(t)} = x(t) - i y(t)$$
+
+If we differentiate with respect to $t$ and evaluate at $t_0$ we get:
+
+$$\frac{d\overline{\gamma}}{dt}(t_0) = \frac{dx}{dt}(t_0) - i \frac{dy}{dt}(t_0)$$
+
+Which is the conjugate of $z'$, denoted by $\overline{z'}$. We can combine with $(4.1)$ and solve for $dx/dt (t_0)$ and $dy/dt (t_0)$:
+
+$$\frac{dx}{dt}(t_0) = \frac{z' + \overline{z}'}{2}, \qquad \frac{dy}{dt}(t_0) = \frac{z' - \overline{z'}}{2i}$$
+
+Replacing in $(4.4)$:
+
+$$w' = z'_x \left(\frac{z' + \overline{z}'}{2}\right) + z'_y \cdot \left(\frac{z' - \overline{z'}}{2i}\right)$$
+
+Multiplying the second term by $i/i$:
+
+$$w' = z'_x \left(\frac{z' + \overline{z}'}{2}\right) - i z'_y \cdot \left(\frac{z' - \overline{z'}}{2}\right)$$
+
+We can re-arrange to isolate $z'$ and $\overline{z'}$:
+
+$$w' = \frac{(z'_x - i z'_y)}{2} z' + \frac{(z'_x + i z'_y)}{2} \overline{z'}$$
+
+Dividing by $z'$:
+
+$$\frac{w'}{z'} = \frac{1}{2} (z'_x - i z'_y) + \frac{1}{2} (z'_x + i z'_y) \frac{\overline{z'}}{z'}$$
+
+Since $z'_x$ and $z'_y$ are independent of $\gamma$, we can assume $(z'_x  - i z'_y)/2$ and $(z'_x + i z'_y)/2$ are constant complex numbers $\alpha$ and $\beta$ and we get:
+
+$$(4.5) \quad \frac{w'}{z'} = \alpha + \beta \frac{\overline{z'}}{z'}$$
+
+Now consider $z'$ in polar form, $z' = \abs{z'} e^{i\phi}$ and $\overline{z'} = \abs{\overline{z'}} e^{i \overline{\phi}}$. Since they're conjugate, they both have the same modulus:
+
+$$\abs{z} = \abs{\overline{z'}} = \sqrt{\left(\frac{dx}{dt}(t_0)\right)^2 - \left(\frac{dy}{dt}(t_0)\right)^2}$$
+
+And opposite arguments:
+
+$$\phi = -\overline{\phi}$$
+
+Thus $\overline{z'} / z' = e^{i(-2\phi)}$ and
+
+$$\beta \frac{\overline{z'}}{z'} = \abs{\beta} e^{\arg({\beta}) - 2\phi}$$
+
+$(4.5)$ can be rewritten as:
+
+$$(4.6) \quad \frac{w'}{z'} = \alpha + \abs{\beta} e^{\arg({\beta}) - 2\phi}$$
+
+Now we note that $z'$ is dependent of $\gamma$ because it represents its tangent at $z_0$. If we consider all possible curves that pass through $z_0$, we shall see all values of $\phi$ and thus $w'/z'$ will form a circle centered at $\alpha$ with radius $\beta$.
+
+Now let's compute the argument of $w'/z'$:
+
+$$\arg{\left(\frac{w'}{z'}\right)} = \arg{(w')} - \arg{(z')}$$
+
+Since this is a conformal mapping, we can use <i>Lemma 2</i> to claim that the difference of angles between $w'$ and $z'$ is only dependent of $f$ and $z_0$. Since we're assuming these are fixed, we find that $\arg(w'/z')$ is constant.
+<br /><br />
+However, we just claimed above that $w'/z'$ are points in a circle. So the only way their argument can be constant is if the circle has radius 0, that is $\abs{\beta} = 0$ (and so is $\beta = 0$):
+
+$$\beta = \frac{z'_x + i z'_y}{2} = 0$$
+
+Substituting $z'_x$ and $z'_y$ from $(4.3)$ we get:
+
+$$(4.7) \quad \frac{df}{dx}(z_0) + i \frac{df}{dy}(z_0) = 0$$
+
+If we split $f$ into two functions corresponding to the real and imaginary parts, $f(x, y) = u(x, y) + i v(x, y)$, then
+
+$$\frac{df}{dx} = \frac{du}{dx} + i \frac{dv}{dx}$$
+
+and
+
+$$\frac{df}{dy} = \frac{du}{dy} + i \frac{dv}{dy}$$
+
+Replacing in $(4.7)$:
+
+$$\frac{du}{dx}(z_0) + i \frac{dv}{dx}(z_0) + i  \left(\frac{du}{dy}(z_0) + i \frac{dv}{dy}(z_0)\right) = 0$$
+
+Separating the real and imaginary parts:
+
+$$\left(\frac{du}{dx}(z_0) - \frac{dv}{dy}(z_0)\right) + i \left(\frac{dv}{dx}(z_0) + \frac{du}{dy}(z_0)\right) = 0$$
+
+From this we can obtain 2 equations, one for the real part and one for the imaginary:
+
+$$\frac{du}{dx}(z_0) = \frac{dv}{dy}(z_0), \qquad \frac{dv}{dx}(z_0) = -\frac{du}{dy}(z_0)$$
+
+Which are the Cauchy-Riemann equations! QED.
 
 </proof>
 
@@ -171,4 +285,5 @@ We can see that at the intersection points on the domain, the blue and red lines
 * [1] Complex Analysis - Lars V. Ahlfors
 * [[2](https://en.wikipedia.org/wiki/Conformal_map Wikipedia)] Conformal Map
 * [[3](https://www-users.cse.umn.edu/~olver/ln_/cml.pdf)] Complex Analysis and Conformal Mapping, Peter J. Olver.
-* [4] NP-Incompleteness - Holomorphic Functions
+* [[4]({{blog}}/2023/12/21/holomorphic-functions.html)] NP-Incompleteness - Holomorphic Functions
+* [5]({{site.url}}/docs/math/derivative.html)] NP-Incompleteness - Derivatives Cheat Sheet
