@@ -73,7 +73,7 @@ $$\arg{(w')} = \arg{(z')} + \arg{\left(\frac{df}{dz} (z_0) \right)}$$
 
 <proof>
 
-Since $\xi$ is also a parametric curve of $t, we can use <i>Lemma 1</i> to compute $w'$:
+Since $\xi$ is also a parametric curve of $t$, we can use <i>Lemma 1</i> to compute $w'$:
 
 $$w' = \frac{d\xi}{dt}(t_0)$$
 
@@ -98,7 +98,7 @@ $$\arg{(w')} = \arg{\left(\frac{df}{dz}(\gamma(t_0)) \right)} + \arg{\left(\frac
 
 ### Holomorphic Functions
 
-One way to interpret this *Lemma 2* is that applying a function $f$ over a curve, cause its tangent at a point $z_0$ to rotate by some amount $f'(z_0)$ that only depends on the point $z_0$ but not on the curve itself.
+One way to interpret this *Lemma 2* is that applying a function $f$ over a curve, cause its tangent at a point $z_0$ to rotate by the amount $\arg{(f'(z_0))}$, that only depends on the point $z_0$ but not on the curve itself.
 
 This means that if two curves $\gamma_1$ and $\gamma_2$ intersect at $z_0$ at an angle $\theta$, applying the same function over them to obtain $\xi_1$ and $\xi_2$, both their tangents have been "rotated" by the same amount, so the angle between them is still the same.
 
