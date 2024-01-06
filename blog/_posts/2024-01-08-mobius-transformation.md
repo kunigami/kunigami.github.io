@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Möbius Transform"
+title: "Möbius Transformation"
 tags: [analysis]
 excerpt_separator: <!--more-->
-vanity: "2024-01-08-mobius-transform"
+vanity: "2024-01-08-mobius-transformation"
 ---
 
 {% include blog_vars.html %}
