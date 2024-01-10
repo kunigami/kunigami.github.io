@@ -27,7 +27,7 @@ In this post we'll discuss the Möbius transform, which is relatively simple but
 
 We define a **Möbius transformation** as a function $S: \mathbb{C} \rightarrow \mathbb{C}$ as:
 
-$$(C) \qquad w = S(z) = \frac{az + b}{cz + d}$$
+$$(1) \qquad w = S(z) = \frac{az + b}{cz + d}$$
 
 For $a, b, c, d \in \mathbb{C}$ and with $ad - bc \ne 0$. Wikipedia [3] suggests that *Möbius transform* refers to a [different concept](https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula), so we must be careful in not treating *transformation* and *transform* as synonyms.
 
@@ -62,7 +62,7 @@ $$= \frac{z(ad - bc)}{ad - bc} = z$$
 
 To show $S^{-1}(w)$ is a Möbius transformation of the form
 
-$$(D) \qquad w = S'(z) = \frac{a'z + b'}{c'z + d'}$$
+$$(2) \qquad w = S'(z) = \frac{a'z + b'}{c'z + d'}$$
 
 We need that $a'd' - b'c' = 0$. For $S^{-1}$ we have $a' = d, b' = -d, c' = -c$ and $d' = a$, which gives us $da - (-b)(-c) = ad - bc$. Which is non-zero assuming the original $S$ is a Möbius transformation.
 
@@ -150,7 +150,7 @@ At we mentioned in the beginning:
 
 The idea is to show that a Möbius transformation is a holomorphic function with a non-zero derivative and then use <i>Theorem 3</i> in [2] to show it's a conformal map.
 <br /><br />
-First we consider the derivative of $(C)$. If we define the intermediary functions $g(z) = az + b$ and $h(z) = cz + d$, we can use the <i>quotient rule</i> for derivatives:
+First we consider the derivative of $(1)$. If we define the intermediary functions $g(z) = az + b$ and $h(z) = cz + d$, we can use the <i>quotient rule</i> for derivatives:
 
 $$f'(z) = \frac{g'(z)h(z) - g(z)h'(z)}{h(z)^2} = \frac{(acz + ad) - (acz + bc)}{(cz + d)^2} = \frac{ad - bc}{(cz + d)^2}$$
 
@@ -163,13 +163,13 @@ By definition of Möbius transformation $ad - bc \ne 0$. If $z \ne -d/c$, $f'(z)
 
 We can represent a Möbius transformation $S$ in matricial form. First, let's define $z_1, z_2, w_1, w_2$ as:
 
-$$(D) \quad  \begin{align}
+$$(3) \quad  \begin{align}
 w_1 &= a z_1 + b z_2 \\
 w_2 &= c z_1 + d z_2 \\
 \end{align}
 $$
 
-And $a, b, c$ and $d$ from $S$ $(C)$. We can define a Möbius from these two equations, as stated by *Lemma 4*:
+And $a, b, c$ and $d$ from $S$ $(1)$. We can define a Möbius from these two equations, as stated by *Lemma 4*:
 
 **Lemma 4.** If $z = z_1 / z_2$ then $S(z) = w_1 / w_2$.
 
@@ -182,10 +182,10 @@ Replacing $z_1 = z z_2$,
 
 $$= \frac{w_1}{w_2} = \frac{a z z_2 + b z_2}{c z z_2 + d z_2}$$
 
-If we cancel out the common $z_2$ factor we obtain (C). We can represent the equations as a matrix multiplication:
+If we cancel out the common $z_2$ factor we obtain $(1)$. We can represent the equations as a matrix multiplication:
 </proof>
 
-Equations (D) can be written in matricial form:
+Equations $(3)$ can be written in matricial form:
 
 $$\begin{pmatrix}
 w_1 \\
@@ -255,9 +255,9 @@ Turn out all we need are these 4 types of matrix to compose any Möbius transfor
 
 <proof>
 
-Let's conside 2 cases: <i>Case 1</i> where $c \ne 0$, then we can rewrite (C) as:
+Let's conside 2 cases: <i>Case 1</i> where $c \ne 0$, then we can rewrite $(1)$ as:
 
-$$(E) \quad \frac{az + b}{cz + d} = \frac{bc - ad}{c^2 (z + d/c)} + \frac{a}{c}$$
+$$(5.1) \quad \frac{az + b}{cz + d} = \frac{bc - ad}{c^2 (z + d/c)} + \frac{a}{c}$$
 
 We can achieve any Möbius transformation by first translating with $\alpha = d/c$:
 
@@ -271,7 +271,7 @@ we can then use a homothety followed by a rotation to multiply by $k = (bc - ad)
 
 $$\frac{bc - ad}{c^2 (z + d/c)}$$
 
-Finally we do another translation with $\alpha = a/c$ to obtain (E).
+Finally we do another translation with $\alpha = a/c$ to obtain $(5.1)$.
 
 <i>Case 2</i>: If $c = 0$, then we do a translation with $\alpha = b/a$ then a homothety + a rotation for $k = a/d$ to obtain:
 
@@ -365,11 +365,15 @@ $$\frac{r^2}{\rho^2} = \frac{\overline{z_0}\overline{w}}{\rho} + \frac{z_0w}{\rh
 
 The right hand side can be refactored as:
 
-$$\frac{r^2}{\rho^2} = \left(w + \frac{\overline{z_0}}{\rho}\right) \left(\overline{w} + \frac{z_0}{\rho}\right) = \left(w + \frac{\overline{z_0}}{\rho}\right) \left(\overline{w + \frac{\overline{z_0}}{\rho}}\right) = \left\lvert w + \frac{\overline{z_0}}{\rho} \right\rvert$$
+$$\frac{r^2}{\rho^2} = \left(w + \frac{\overline{z_0}}{\rho}\right) \left(\overline{w} + \frac{z_0}{\rho}\right) = \left(w + \frac{\overline{z_0}}{\rho}\right) \left(\overline{w + \frac{\overline{z_0}}{\rho}}\right) = \left\lvert w + \frac{\overline{z_0}}{\rho} \right\rvert^2$$
+
+Which is the equation of a circle:
+
+$$\left\lvert w + \frac{\overline{z_0}}{\rho} \right\rvert = \left\lvert \frac{r}{\rho} \right\rvert$$
 
 Replacing back $\rho$, we have a circle with radius
 
-$$r' = \frac{r}{r^2 -  \abs{z_0}^2}$$
+$$r' = \left\lvert \frac{r}{r^2 -  \abs{z_0}^2} \right\rvert$$
 
 and center
 
@@ -389,7 +393,7 @@ $$= x_0w_x -i x_0w_y - i y_0w_x - y_0w_y + x_0w_x + i x_0w_y + i y_0w_x - y_0w_y
 
 Cancelling factors:
 
-$$(8.3) 2x_0w_x -2 y_0w_y = 1$$
+$$(8.3) \quad 2x_0w_x -2 y_0w_y = 1$$
 
 Since $(x_0, y_0)$ is constant, the above satisfies $\alpha w_x + \beta w_y = 1$ for fixed reals $\alpha$ and $\beta$, which is the equation of a line. Thus $w$ defines a line in the complex plane.
 <br /><br />
@@ -402,6 +406,12 @@ The inverse of $w = f(z) = 1/z$ is $f^{-1}(w) = 1/w$, which is also an inversion
 Since any Möbius transformation is a "composition chain" of the basic transforms we've discussed, putting all these lemmas together we get the corollary:
 
 **Corollary 9**: A Möbius transformation maps cicles/lines into circles/lines.
+
+<figure class="center_children">
+  <img src="{{resources_path}}/circles.png" alt="See caption." />
+  <figcaption>Figure 1: (left) A circle of radius $r=2$ centered at $(1,0)$ transformed into a circle of radius $r=2/3$ at $(-1/3, 0)$. (right) A circle of radius $r=2$ centered at $(\sqrt{2}, \sqrt{2})$. Since we have $x_0^2 + y^2 = r^2$, the image degenerates to a line. Source: <a href="https://observablehq.com/d/f1f734bd5d667074">Observable</a></figcaption>
+</figure>
+
 
 ## Conclusion
 
