@@ -504,7 +504,6 @@ By <i>Corollary 9</i> again, we conclude that the image of $f^{-1}(w)$ lies on a
 </proof>
 
 
-
 ## Conclusion
 
 In this post we learned about a special type of conformal map, known as the Möbius transformation. In [1] Ahlfors calls them linear (fractional) transformations, since it's a quotient of two linear functions.
