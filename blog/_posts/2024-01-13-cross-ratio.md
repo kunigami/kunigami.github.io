@@ -12,17 +12,17 @@ vanity: "2024-01-13-cross-ratio"
   <img src="{{resources_path}}/thumbnail.png" alt="a bunch of lines and circles abstract art" />
 </figure>
 
+In this post we'll discuss the concept of the cross-ratio which has its origins in geometry, but we'll mainly consider it in the context of complex analysis.
+
+<!--more-->
+
+<br /><br /><br />
+
 This is the 4rd post in the series of my study notes on complex analysis. I recommend first checking the previous posts:
 
 1. [Holomorphic Functions]({{blog}}/2023/12/21/holomorphic-functions.html)
 2. [Conformal Maps]({{blog}}/2023/12/30/conformal-maps.html)
 3. [Möbius Transformation]({{blog}}/2024/01/08/mobius-transformation.html)
-
-<br />
-
-In this post we'll discuss the concept of the cross-ratio which has its origins in geometry, but we'll mainly consider it in the context of complex analysis.
-
-<!--more-->
 
 ## Definition
 

@@ -12,13 +12,15 @@ vanity: "2023-12-30-conformal-maps"
   <img src="{{resources_path}}/thumbnail.png" alt="Mandelbrot fractal. This is a small scale version (different color scheme) of Figure 3." />
 </figure>
 
-This is part of the series on complex analysis. I recommend first checking the previous post:
-
-* [Holomorphic Functions]({{blog}}/2023/12/21/holomorphic-functions.html).
-
 In this post we'll discuss conformal maps, in particular understand its definition, provide examples and also make a connection with holomorphic functions.
 
 <!--more-->
+
+<br /><br /><br />
+
+This is part of the series on complex analysis. I recommend first checking the previous post:
+
+* [Holomorphic Functions]({{blog}}/2023/12/21/holomorphic-functions.html).
 
 ## Definition
 
