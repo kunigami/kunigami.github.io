@@ -23,7 +23,7 @@ Notes on some of the books I read, usually from those I liked and learned a lot 
 
 ### Oceania
 
-* [The Penguin History of Aotearoa]({{site.url}}/books/the-penguin-history-of-aotearoa.html), Michaek King
+* [The Penguin History of Aotearoa]({{site.url}}/books/the-penguin-history-of-aotearoa.html), Michael King
 
 ## Philosophy
 
