@@ -9,7 +9,7 @@ title: Books
 
 {% assign root = site.url | append: "/books" %}
 
-Summary of some of the books I read. Book are grouped by theme and within each theme sorted by title.
+Notes on some of the books I read, usually from those I liked and learned a lot from. Book are grouped by theme and within each theme sorted by title.
 
 ## History
 
@@ -20,6 +20,10 @@ Summary of some of the books I read. Book are grouped by theme and within each t
 ### South Asia
 
 * [India in the Persianate Age]({{site.url}}/books/india-in-the-persianate-age.html), Richard M. Eaton
+
+### Oceania
+
+* [The Penguin History of Aotearoa]({{site.url}}/books/the-penguin-history-of-aotearoa.html), Michaek King
 
 ## Philosophy
 

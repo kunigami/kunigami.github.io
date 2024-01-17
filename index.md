@@ -22,6 +22,10 @@ like to learn and build things.
             <td><img src="{{ site.url }}/resources/home/cheat_sheets.jpg" alt="Photo of a notebook" title="Source: https://unsplash.com/photos/5bYxXawHOQg" /></td>
         </tr>
         <tr>
+            <td><a href="{{ site.url }}/books/">Books</a> - Notes on some of the books I've read</td>
+            <td><img src="{{ site.url }}/resources/home/bookshelf.jpg" alt="Photo of two rows of my bookshelf"/></td>
+        </tr>
+        <tr>
             <td><a href="{{ site.url }}/wanderlust/">Wanderlust</a> - World Map with places I'd like to visit or have visited. (2020 - present)</td>
             <td><img src="{{ site.url }}/resources/home/wanderlust.png" alt="Screenshot of the Wanderlust page"/></td>
         </tr>
