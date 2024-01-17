@@ -102,16 +102,16 @@ Focuses on the increase care about the environment, focusing in particular on th
 
 Lyndon B Johnson was the first president in office to visit New Zealand. England joined the European Community (which eventually became the EU) in 1973. This required New Zealand to diversify its trading outside of Europe.
 
-# Chapter 28 - Return of Mana Maori
+## Chapter 28 - Return of Mana Maori
 
 Rapid Māori urbanization due to farming not being able to sustain a growing population. Clash of cultures in urban centers (before these two populations had largely lived separated).
 
-# Chapter 29 - A Revolution Confirmed
+## Chapter 29 - A Revolution Confirmed
 
 Reagan insisted New Zealand to be left out of ANZUS (Australia, New Zealand and United States Security Treaty), because of their refusal to let nuclear vessels in.
 
 Treaty of Waitangi was reinterpreted to benefit Māori, for example by allow them to win settlements.
 
-# Chapter 30 - Configurations old and new
+## Chapter 30 - Configurations old and new
 
 Mentions that European descendants in New Zealand (known as Pākehās) want some form of recognition of their own culture as distinct from that of Europe, in face of the Māori cultural renaissance.
