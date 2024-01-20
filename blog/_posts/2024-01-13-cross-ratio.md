@@ -41,9 +41,9 @@ So the cross ratio is a function taking 4 numbers in $\mathbb{R}^2$ and returnin
 
 For example, in *Figure 1*, assuming the line containing $A, B, C$ and $D$ was transformed into the one $A', B', C'$ and $D'$ using linear fractional transformations, then we have
 
-$$(A, B; C, D) = (A', B', C', D')$$
+$$(A, B, C, D) = (A', B', C', D')$$
 
-This might be useful for example when we know points $A, B, C$ and $D$ and between $A', B'$ and $C'$ and we want to find $D'$. One example is calculating actual distances from projections: suppose we have a photograph from a given perspective (a projection) from which we ca measure the distance of 4 collinear points. We also have the actual coordinates for 3 reference points.
+This might be useful for example when we know points $A, B, C$ and $D$ and between $A', B'$ and $C'$ and we want to find $D'$. One example is calculating actual distances from projections: suppose we have a photograph from a given perspective (a projection) from which we can measure the distance of 4 collinear points. We also have the actual coordinates for 3 reference points.
 
 We can find the 4th via the cross-ratio. Federico Ardila provides a very interesting example in a [Numberphile video](https://www.youtube.com/watch?v=ffvojZONF_A) [3].
 
