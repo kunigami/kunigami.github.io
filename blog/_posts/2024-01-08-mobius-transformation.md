@@ -12,7 +12,7 @@ vanity: "2024-01-08-mobius-transformation"
   <img src="{{resources_path}}/thumbnail.png" alt="a bunch of lines and circles abstract art" />
 </figure>
 
-In this post we'll discuss the Möbius transform, which is relatively simple but which is versatile enough that a lot of useful transformations can be done through it.
+In this post we'll discuss the Möbius transformation, which is relatively simple but which is versatile enough that a lot of useful transformations can be done through it.
 
 <!--more-->
 
@@ -279,6 +279,66 @@ $$\left(z + \frac{b}{a}\right)\frac{a}{d} = \frac{az  + b}{d}$$
 
 </proof>
 
+## Fixed Points and Normal Form
+
+For a given Möbius transformation, a fixed point is a value $z$ such that $z = S(z)$, that is, a point for which $S$ transforms it into itself. Replacing in $(1)$ gives us
+
+$$(4) \quad z = \frac{az + b}{cz + d}$$
+
+If $c = 0$, then we have a linear equation and the fixed point is
+
+$$z = \frac{b}{d - a}$$
+
+We also have that $z = \infty$ is a fixed point in the extended complex plan since:
+
+$$\lim_{z \rightarrow \infty} z = \lim_{z \rightarrow \infty} \frac{az + b}{d}$$
+
+If $c \ne 0$, then we can write $(4)$ in the polynomial form:
+
+$$\quad cz^2 + (d - a)z - b = 0$$
+
+and we can find the fixed points $\gamma_1$ and $\gamma_2$ via the quadratic formula. It's possible that $\gamma_1 = \gamma_2$ in which case the transformation has only one fixed point.
+
+Let $f(z)$ be any Möbius transformation with two distinct fixed points $\gamma_1 \neq \gamma_2$. Let's consider the function $g(z)$:
+
+$$
+g(z) = \frac{z - \gamma_1}{z - \gamma_2}
+$$
+
+Which is a Möbius transformation with $a=1, b=-\gamma_1, c=1$ and $d=-\gamma_2$.
+
+We have that $g(\gamma_1) = 0$ and $g(\gamma_2) = \infty$. Conversely, since Möbius transformations have an inverse (*Theorem 1*), we have $g^{-1}(0) = \gamma_1$ and $g^{-1}(\infty) = \gamma_2$.
+
+Now consider the composite function $g(f(g^{-1}(w)))$ or in simpler notation $gfg^{-1}(w)$. By *Theorem 2* we know this is also a Möbius transformation. Let's evaluate this function for $0$ and $\infty$.
+
+We have that $g^{-1}(0) = \gamma_1$ and thus $fg^{-1}(0) = \gamma_1$ (since $\gamma_1$ is a fixed point of $f$), and finally $gfg^{-1}(0) = 0$. Throught a similar process we can reach the conclusion that $gfg^{-1}(\infty) = \infty$. We conlude that $0$ and $\infty$ are fixed points of $gfg^{-1}(w)$.
+
+Let us denote $U = gfg^{-1}$. What does it look like? We can plug $U(0) = 0$ in $(1)$ to get $0 = b/d$ and conclude that $b = 0$. So we now have:
+
+$$U(w) = \frac{aw}{cw + d}$$
+
+For $z \ne 0$, we can divide both numerator by $w$:
+
+$$U(w) = \frac{a}{c + d/w}$$
+
+And consider the inverse of $U(w)$:
+
+$$\frac{1}{U(w)} = \frac{c + d/w}{a}$$
+
+Using the fact that $U(\infty) = \infty$, we obtain $0 = c / a$, so it must be that $c = 0$. Thus, $U(w)$ has the form:
+
+$$U(w) = \frac{a}{d} w$$
+
+Given that $a/d$ is a complex number, we can consider its polar form, say $r e^{i\theta}$, so that $U(w) = r e^{i\theta} w$. In other words, $U(w)$ is a simple transformation involving only a homothety by $r$ and rotation by $\theta$ on the transformed space $w$.
+
+So we have: $g(f(g^{-1}(w))) = r e^{i\theta} w$. Let $z = g^{-1}(w)$, so that $w = g(z)$. We can write the previous equation as $g(f(z)) = r e^{i\theta} g(z)$, so we don't need to work with the inverse of $g$. Replacing the definition of $g(z)$ we get:
+
+$$\frac{f(z) - \gamma_1}{f(z) - \gamma_2} = r e^{i\theta} \frac{z - \gamma_1}{z - \gamma_2}$$
+
+This is known as the *normal form* of a Möbius transformation. The term "normal" refers to the normalization that happens when we transform the original domain and image of $f(z)$ through $g(z)$ so that the equivalent Möbius transformation becames much simpler.
+
+A similar analysis can be done for a single fixed point (i.e. when $\gamma_1 = \gamma_2$) but we'll not cover them here.
+
 ## Transforming Circles and Lines
 
 Let's consider what happens when we apply a Möbius transformation $S$ to a line and a circle (in the complex plane). Let's start with the line and skip inversion for now. Intuitively translating a line, rotating it and scaling it should preserve its form. That's what *Lemma 6* shows more formally.
@@ -424,3 +484,4 @@ In this post we learned about a special type of conformal map, known as the Möb
 * [[4]({{site.url}}/docs/math/complex.html)] NP-Incompleteness - Complex Numbers
 * [[5](https://www.johndcook.com/blog/2022/06/25/reciprocal-of-a-circle/)] John D. Cook - Reciprocal of a circle
 * [[6](https://math.stackexchange.com/questions/460548/a-m%C3%B6bius-transformation-maps-circles-and-lines-to-circles-and-lines-what-exactl)] Mathematics - A Möbius transformation maps circles and lines to circles and lines. What exactly does that mean?
+* [[7](https://math.libretexts.org/Bookshelves/Geometry/Geometry_with_an_Introduction_to_Cosmic_Topology_(Hitchman)/03%3A_Transformations/3.05%3A_Mobius_Transformations%3A_A_Closer_Look)] Geometry with an Introduction to Cosmic Topology (Hitchman) - 3.5: Möbius Transformations: A Closer Look

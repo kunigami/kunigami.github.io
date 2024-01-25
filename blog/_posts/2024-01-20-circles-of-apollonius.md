@@ -155,7 +155,7 @@ The idea is that we can turn the rectangle triangle into a rectangle by creating
   <figcaption>Figure 3.1: (left) Rectangle triangle. (right) Turned into a rectangle. Note that $\alpha + \beta = 90^{\circ}$.</figcaption>
 </figure>
 
-For a rectangle, the diagonals $AC$ and $BD$ have equal length and meet at their midpoints $M$. Thus points $A$, $B$, $C$ and $D$ are equidistant to $M$ and lie on a circle centered at it. See <i>Figure 3.B</i>.
+For a rectangle, the diagonals $AC$ and $BD$ have equal length and meet at their midpoints $M$. Thus points $A$, $B$, $C$ and $D$ are equidistant to $M$ and lie on a circle centered at it. See <i>Figure 3.2</i>.
 
 <figure class="center_children">
   <img src="{{resources_path}}/rectangle-circle.png" alt="See caption." />
