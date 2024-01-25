@@ -317,7 +317,7 @@ Let us denote $U = gfg^{-1}$. What does it look like? We can plug $U(0) = 0$ in 
 
 $$U(w) = \frac{aw}{cw + d}$$
 
-For $z \ne 0$, we can divide both numerator by $w$:
+For $w \ne 0$, we can divide both numerator by $w$:
 
 $$U(w) = \frac{a}{c + d/w}$$
 
