@@ -29,10 +29,13 @@ $$\abs{z}^2 = z \overline{z}$$
 
 ### Properties
 
-Inverse of conjugate is the conjugate of the inverse:
+Conjugate is invariant with the arithmetic operations of addition, subtraction, multiplication and division:
 
-$$\overline{\left(\frac{1}{z}\right)} = \frac{1}{\overline{z}} = \frac{z}{\abs{z}^2}$$
-
-Product of conjugates is the conjugate of the product:
-
-$$\overline{z \cdot w} = \overline{z} \cdot \overline{w}$$
+$$
+\begin{align}
+\overline{a + b} &= \overline{a} + \overline{b} \\
+\overline{a - b} &= \overline{a} - \overline{b} \\
+\overline{a * b} &= \overline{a} * \overline{b} \\
+\overline{a / b} &= \overline{a} / \overline{b}
+\end{align}
+$$
