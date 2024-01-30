@@ -147,7 +147,7 @@ Taking the conjugate of a complex number is not a Möbius transformation, howeve
 $$\overline{(z_1, z_2, z_3, z_4)} = (\overline{z_1}, \overline{z_2}, \overline{z_3}, \overline{z_4})$$
 
 <proof>
-We can provde this by simple arithmetic identities for conjugate numbers. We have:
+We can prove this by simple arithmetic identities for conjugate numbers. We have:
 
 $$\overline{\left(\frac{z_1 - z_3}{z_1 - z_4} \cdot \frac{z_2 - z_4}{z_2 - z_3}\right)}$$
 
