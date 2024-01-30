@@ -140,6 +140,24 @@ By <i>Corollary 9</i> in [2] again, we conclude that the image of $f^{-1}(w)$ li
 
 </proof>
 
+Taking the conjugate of a complex number is not a Möbius transformation, however, we can show that the cross ratio is invariant with the conjugate operation as well:
+
+**Theorem 4.** Let $(z_1, z_2, z_3, z_4)$ be a cross ratio. Then
+
+$$\overline{(z_1, z_2, z_3, z_4)} = (\overline{z_1}, \overline{z_2}, \overline{z_3}, \overline{z_4})$$
+
+<proof>
+We can provde this by simple arithmetic identities for conjugate numbers. We have:
+
+$$\overline{\left(\frac{z_1 - z_3}{z_1 - z_4} \cdot \frac{z_2 - z_4}{z_2 - z_3}\right)}$$
+
+Since conjugate is invariant with subtration, multiplication and division, we'll get
+
+$$\frac{(\overline{z_1} - \overline{z_3})}{(\overline{z_1} - \overline{z_4})} \cdot \frac{(\overline{z_2} - \overline{z_4})}{(\overline{z_2} - \overline{z_3})}$$
+
+Which is the definition of $(\overline{z_1}, \overline{z_2}, \overline{z_3}, \overline{z_4})$.
+
+</proof>
 
 ## Conclusion
 
