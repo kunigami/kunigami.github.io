@@ -300,11 +300,11 @@ Belongs to the unit circle.
 
 We want to compute
 
-$$(7.A) \quad (A, B, P_1, P_2) = \frac{(A - P_1)}{(A - P_2)} \cdot \frac{(B - P_2)}{(B - P_1)}$$
+$$(7.1) \quad (A, B, P_1, P_2) = \frac{(A - P_1)}{(A - P_2)} \cdot \frac{(B - P_2)}{(B - P_1)}$$
 
 We can write $A - P_1$ as a complex number in polar coordinates $\abs{A - P_1}e^{i\alpha_1}$ and also $B - P_1$ as $\abs{B - P_1}e^{i\beta_1}$. Similarly we have $A - P_2 = \abs{A - P_2}e^{i\alpha_2}$ and $B - P_2 = \abs{B - P_2}e^{i\beta_2}$
 
-Replacing these in $(7.A)$:
+Replacing these in $(7.1)$:
 
 $$(A, B, P_1, P_2) = \frac{\abs{A - P_1}e^{i\alpha_1}}{\abs{A - P_2}e^{i\alpha_2}} \cdot \frac{\abs{B - P_2}e^{i\beta_2}}{\abs{B - P_1}e^{i\beta_1}}$$
 
