@@ -22,7 +22,7 @@ This is the last post of the series based on holomorphic functions, which corres
 2. [Conformal Maps]({{blog}}/2023/12/30/conformal-maps.html)
 3. [Möbius Transformation]({{blog}}/2024/01/08/mobius-transformation.html)
 4. [Cross-Ratio]({{blog}}/2024/01/13/cross-ratio.html)
-5. [Circles of Apollonius]({{blog}}/2024/01/13/cross-ratio.html)
+5. [Circles of Apollonius]({{blog}}/2024/01/20/circles-of-apollonius.html)
 6. [Symmetry Points of a Circle]({{blog}}/2024/02/03/circles-symmetry.html)
 
 In particular, we'll need the circles of Apollonius, symmetry points of a circle and, of course, the Möbius transformation.
