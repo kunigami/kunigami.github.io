@@ -26,7 +26,7 @@ No prior context is needed for the geometric part. For the *Complex Plane* secti
 ## Definition
 
 
-Let $a$ and $b$ be two points on the plane. The **circle of Apollonius** is the set of points $p$ such that the distance to $a$ and $b$ has a constant ratio $r$.
+Let $a$ and $b$ be two points on the plane. The **circle of Apollonius** induced by $a$ and $b$, is the set of points $p$ such that the distance to $a$ and $b$ has a constant ratio $r$.
 
 More formally, let $d(p, q)$ represent the Euclidean distance between points $p$ and $q$. The circle of Apollonius is the set of $p$ satisfying:
 
@@ -266,11 +266,16 @@ Since these four angles add up to a straight line, we have $2\alpha + 2\beta = 1
 
 *Lemma 5* lets us apply *Theorem 3* to conlude that $P$ lies on the circle with diameter $\overline{CD}$. Since we didn't specify $P$ except that it's not $C$ or $D$, this leads us to:
 
-**Corollary 6** The set of points satisfying $(1)$ defines a circle.
+**Corollary 6.** The set of points satisfying $(1)$ defines a circle.
 
 Since $\overline{CD}$ is the diameter, we can find the center $O$ and radius $r$ of the circle:
 
 $$O = \frac{D - C}{2}, \qquad r = \frac{\abs{CD}}{2}$$
+
+We can also conclude from $\overline{CD}$ being the diameter that:
+
+**Corollary 7.** The center of the Apollonious circle induced by $A$ and $B$ is collinear with them.
+
 
 ## Complex Plane
 
@@ -290,7 +295,7 @@ $$(z_1, z_2, z_3, z_4) = \frac{(z_1 - z_3)}{(z_1 - z_4)} \cdot \frac{(z_2 - z_4)
 
 If we set $z_1 = A$, $z_2 = B$, $z_3 = P_1$ and $z_4 = P_2$ where $P_1$ and $P_2$ satisfy $(1)$, what do we get?
 
-**Theorem 7** The cross-ratio $(A, B, P_1, P_2)$ where
+**Theorem 8** The cross-ratio $(A, B, P_1, P_2)$ where
 
 $$\frac{\abs{P_1 - A}}{\abs{P_1 - B}} = \frac{\abs{P_2 - A}}{\abs{P_2 - B}} = r$$
 
@@ -300,11 +305,11 @@ Belongs to the unit circle.
 
 We want to compute
 
-$$(7.1) \quad (A, B, P_1, P_2) = \frac{(A - P_1)}{(A - P_2)} \cdot \frac{(B - P_2)}{(B - P_1)}$$
+$$(8.1) \quad (A, B, P_1, P_2) = \frac{(A - P_1)}{(A - P_2)} \cdot \frac{(B - P_2)}{(B - P_1)}$$
 
 We can write $A - P_1$ as a complex number in polar coordinates $\abs{A - P_1}e^{i\alpha_1}$ and also $B - P_1$ as $\abs{B - P_1}e^{i\beta_1}$. Similarly we have $A - P_2 = \abs{A - P_2}e^{i\alpha_2}$ and $B - P_2 = \abs{B - P_2}e^{i\beta_2}$
 
-Replacing these in $(7.1)$:
+Replacing these in $(8.1)$:
 
 $$(A, B, P_1, P_2) = \frac{\abs{A - P_1}e^{i\alpha_1}}{\abs{A - P_2}e^{i\alpha_2}} \cdot \frac{\abs{B - P_2}e^{i\beta_2}}{\abs{B - P_1}e^{i\beta_1}}$$
 

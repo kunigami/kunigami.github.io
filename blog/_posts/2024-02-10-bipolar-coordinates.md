@@ -56,7 +56,7 @@ First we connect the bipolar system, in particular the circle of Apollonius, wit
 
 <proof>
 
-We know that the center of $C$ lies on the line formed by $a$ and $b$ and that if we assume, without loss of generality, that $q \gt 1$, then $b$ is inside $C$. This means that the line $ab$ bisects $C$ and the corresponding intersection points, say $u$ and $v$ form a diameter of $C$. Since $a$ and $b$ are on opposite sides of $C$, one of $u$ and $v$ belongs to the segmeng $ab$. Let it be $u$. Also let $p$ be any other point in $C$.
+From <i>Corollary 7</i> in [6] know that the center of $C$ lies on the line formed by $a$ and $b$ and that if we assume, without loss of generality, that $q \gt 1$, then $b$ is inside $C$ (<i>Lemma 4</i> in [6]). This means that the line $ab$ bisects $C$ and the corresponding intersection points, say $u$ and $v$ form a diameter of $C$. Since $a$ and $b$ are on opposite sides of $C$, one of $u$ and $v$ belongs to the segmeng $ab$. Let it be $u$. Also let $p$ be any other point in $C$.
 <br /><br />
 We want to show that the identity of cross-ratios $(a, f, u, v) = \overline{(b, f, u, v)}$ holds, and then <i>Theorem 2</i> in [2] would show that $a$ and $b$ are symmetric with respect to $C$.
 <br /><br />
@@ -237,3 +237,4 @@ After reading the corresponding chapter on this in [1], I didn't fully grasp how
 * [[3](({{blog}}/2024/01/08/mobius-transformation.html))] NP-Incompleteness - Möbius Transformation
 * [[4](https://math.libretexts.org/Bookshelves/Geometry/Geometry_with_an_Introduction_to_Cosmic_Topology_(Hitchman)/03%3A_Transformations/3.05%3A_Mobius_Transformations%3A_A_Closer_Look)] Geometry with an Introduction to Cosmic Topology - 3.5: Möbius Transformations: A Closer Look.
 * [[5](https://quantum.lvc.edu/lyons/algeom_text/algeom_text_files/section-11.html)] Introduction to Groups and Geometries - David W. Lyons
+* [[6](({{blog}}/2024/01/20/circles-of-apollonius.html))] NP-Incompleteness - Circles of Apollonius
