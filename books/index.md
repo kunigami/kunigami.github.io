@@ -9,7 +9,7 @@ title: Books
 
 {% assign root = site.url | append: "/books" %}
 
-Notes on some of the books I read, usually from those I liked and learned a lot from. Book are grouped by theme and within each theme sorted by title.
+Notes on some of the books I read, usually from those I liked and learned a lot from. Books are grouped by theme and within each theme sorted by title.
 
 ## History
 

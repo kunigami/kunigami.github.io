@@ -1047,68 +1047,7 @@ Cleaner and less error-prone than using the triad `#ifndef/#define/#endif`.
 
 # Concurrency
 
-## Thread
-
-### Includes
-
-{% highlight c++ %}
-#include <thread>
-{% endhighlight %}
-
-### Creation
-
-Thread from lambda
-
-{% highlight c++ %}
-std::thread my_thread([](){
-  std::cout << "thread function\n";
-});
-{% endhighlight %}
-
-Assignment version
-
-{% highlight c++ %}
-my_thread_ = std::thread([](){
-  std::cout << "thread function\n";
-});
-{% endhighlight %}
-
-### Termination
-
-Block until thread ends
-
-{% highlight c++ %}
-my_thread.join();
-{% endhighlight %}
-
-## Locks
-
-RAII lock
-
-{% highlight c++ %}
-std::mutex m;
-{
-  std::lock_guard<std::mutex> lock(m);
-  // locked region
-}
-{% endhighlight %}
-
-## Condition variables
-
-Have thread 2 block until thread 1 signals it.
-
-{% highlight c++ %}
-std::condition_variable cv;
-
-// thread 1
-ready = true;
-cv.notify_one();
-
-// thread 2
-std::unique_lock lk(m);
-cv.wait(lk, []{return ready;});
-
-{% endhighlight %}
+See [Concurrency]({{ site.url }}/docs/cpp/concurrency.html).
 
 # Functional
 

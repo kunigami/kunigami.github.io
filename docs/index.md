@@ -18,6 +18,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 ## C++
 
 * [General]({{ site.url }}/docs/cpp/)
+* [Concurrency]({{ site.url }}/docs/cpp/concurrency.html)
 
 ## Java
 

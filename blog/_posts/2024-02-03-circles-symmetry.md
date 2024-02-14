@@ -190,7 +190,7 @@ Let $C$ be a circle of radius $R$ and center $a$, and $w$ and $w^{\*}$ symmetric
 
 **Corollary 4**. The points $w$ and $w^{\*}$ are collinear with point $a$.
 
-**Corollary 5**. The distance $w$ and $w^{\*}$ from $a$, $r_1$ and $r_2 respectively, are inversely proportional, in particular:
+**Corollary 5**. The distance $w$ and $w^{\*}$ from $a$, $r_1$ and $r_2$ respectively, are inversely proportional, in particular:
 
 $$(2) \quad r_1 = \frac{R^2}{r_2}$$
 
