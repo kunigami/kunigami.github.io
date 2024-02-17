@@ -32,3 +32,11 @@ brew update
 {% endhighlight %}
 
 ## Commands
+
+Check where a library is installed:
+
+Example, `boost` library:
+
+{% highlight text %}
+brew --prefix boost
+{% endhighlight %}
