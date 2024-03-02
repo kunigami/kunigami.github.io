@@ -145,12 +145,10 @@ It defines a `Futex` class, which is essentially an atomic unsigned 32-int varia
 FutexResult result = futexWait(&futex, expectedValue);
 {% endhighlight %}
 
-It will block the thread until:
+It will block the thread:
 
-* **Case 1.** The value in `futex` is not `expectedValue`, in which case `FutexResult::VALUE_CHANGED` is returned.
-* **Case 2.** Some other thread calls `futexWake()` (see next), in which case `FutexResult::AWOKEN` is returned.
-
-Note that *Case 1* can happen if the value is not the expected when calling `futexWait()`, in which case it returns immediately.
+* **Case 1.** If the value in `futex` is not `expectedValue`, in which case `FutexResult::VALUE_CHANGED` is returned immediately.
+* **Case 2.** When another thread calls `futexWake()` (see next), in which case `FutexResult::AWOKEN` is returned.
 
 The API for `futexWake()` is:
 
@@ -175,7 +173,7 @@ void call_once(once_flag& flag, Callable&& f, Args&&... args) {
         // If stage contains 0 (unlocked), set it to 1
         // Otherwise keep the value
         //
-        // Set the old value of fut into expected
+        // Set the old value of flag into expected
         std::uint32_t expected = 0;
         std::atomic_compare_exchange_strong(&flag, &expected, 1);
         if (expected == 0) { // it enters an exclusive region
@@ -200,7 +198,7 @@ void call_once(once_flag& flag, Callable&& f, Args&&... args) {
                 case folly::detail::FutexResult::AWOKEN:
                     // Awoken by the thread that was performing
                     // the computation. We have to loop again
-                    // because if might have failed.
+                    // because it might have failed.
                     continue;
                 case folly::detail::FutexResult::TIMEDOUT:
                     throw std::runtime_error("timeout");
@@ -212,7 +210,7 @@ void call_once(once_flag& flag, Callable&& f, Args&&... args) {
 }
 {% endhighlight %}
 
-Notice that the `once_flag` is now a simple alias to the `Futex` (that is, a atomic integer), with the additional need to explicitly initialize it to 0:
+Notice that the `once_flag` is now a simple alias to the `Futex` (which in turn is an alias to an atomic integer), with the additional need to explicitly initialize it to 0:
 
 {% highlight c++ %}
 once_flag flag{0};
@@ -234,7 +232,7 @@ t2.join();
 std::cout << result << "\n";
 {% endhighlight %}
 
-We can do a small optimization: instead of always calling `std::atomic_compare_exchange_strong()`, we can do a simple read from the flag first, because once the function is computed, it will always return true:
+We can do a small optimization: instead of always calling `std::atomic_compare_exchange_strong()`, we can read from the flag first, because once the function is computed, it will always return true:
 
 {% highlight c++ %}
 while (true) {
@@ -247,7 +245,7 @@ while (true) {
 }
 {% endhighlight %}
 
-I also tried using `__builtin_expect` on that call and more relaxed memory models (`std::memory_relaxed`) but didn't see significant performance gains on the benchmark (see next).
+I also tried using `__builtin_expect` on that call and more relaxed memory models (e.g. `std::memory_relaxed`) but didn't see significant performance gains on the benchmark (see next).
 
 ## Benchmark
 
@@ -273,11 +271,11 @@ void bm_impl(CallOnceFunc&& fn, size_t iters) {
 
 I was wondering if the sequential creation of threads might stagger the execution of `fn()` above and reduce contention. I tried adding a barrier ([`std::latch`](https://en.cppreference.com/w/cpp/thread/latch)) right before the inner `for`-loop to exarcebate the concurrent access to the exclusive region but it didn't seem to have a visible effect.
 
-I also tried sleeping for 1 second in the function wrapped in `call_once` to make sure it's not finished computing too soon. The *relative* performance results didn't seem to change.
+I also tried sleeping for 1 second in the function wrapped in `call_once` to make sure the first thread is not done computing before others attempt it. The *relative* performance results didn't seem to change.
 
 ### Results and Analysis
 
-On MacOS, I pull the head of Folly's repo as of 2024/02/16 (commit `65fb952918572592fa7dd2478f3b582b26e66b3f`) and compiled with Clang 15 (`-O3`), running on a MacBook M1 Pro. I used 100,000,000 iterations and 32 threads. The results are as follows:
+On MacOS, I pulled the head of Folly's repo as of 2024/02/16 (commit `65fb952918572592fa7dd2478f3b582b26e66b3f`) and compiled with Clang 15 (`-O3`), running on a MacBook M1 Pro. I used 100,000,000 iterations and 32 threads. The results are as follows:
 
 | Implementation        | Time / Iter  | Iter / Sec |
 | --------------------- | ------------ | ---------- |
