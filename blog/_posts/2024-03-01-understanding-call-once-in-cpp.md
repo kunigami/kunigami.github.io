@@ -133,7 +133,7 @@ The GCC libstdc++-v3 uses a [single global mutex](https://github.com/gcc-mirror/
 
 ## Implementation with Futexes
 
-In a private forum I saw someone mentioned `std::call_once()` is a good application for futexes. What is a futex? Eli Bendersky's blog provides a very good introduction [5], but essentially futex stands for *Fast userspace mutex* and it's a lower level API that the STL uses to implement things such as `std::mutex`.
+In a private forum I saw someone mentioned `std::call_once()` is a good application for futexes. What is a futex? [Eli Bendersky's blog](https://eli.thegreenplace.net/2018/basics-of-futexes/) provides a very good introduction [5], but essentially futex stands for *Fast userspace mutex* and it's a lower level API that the STL uses to implement things such as `std::mutex`.
 
 The key behavior which makes it good for `std::call_once()` is that all threads are awoken at once by the kernel, so they can all do the flag check without having to acquire locks sequentially. This helps with the worst case scenario mentioned above in *Efficiency*.
 
