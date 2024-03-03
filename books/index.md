@@ -16,6 +16,7 @@ Notes on some of the books I read, usually from those I liked and learned a lot 
 ### East Asia
 
 * [A New Illustrated History of Taiwan]({{site.url}}/books/a-new-illustrated-history-of-taiwan), Wan-yao Chou
+* [Imperial China]({{site.url}}/books/imperial-china), F. W. Mote
 
 ### South Asia
 
