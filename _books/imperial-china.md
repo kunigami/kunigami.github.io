@@ -15,38 +15,47 @@ Book by F. W. Mote. As this book title suggests it covers the history of China f
 
 It provides many facts and details about the lives of the Imperial family and also about the people from the steppe of Central Asia (not just the Mongols) which I learned from this book had a very intertwined relationship with China.
 
-The author also provides analysis on demographics, culture and philosophy. He often rejects commonly held assumptions, for example that there was a population explosion during Qing times. His analysis on philosophy feels pretty academic, revolving around Neo-Confucianism which I found pretty repetitive and uninteresting. I feel like the book could be 10% shorter without these analysis.
+The author also provides analysis on demographics, culture and philosophy. He often rejects commonly held assumptions, for example that there was a population explosion during Qing times. His analysis on philosophy feels pretty academic, revolving around Neo-Confucianism which I found repetitive and uninteresting. I feel like the book could be 10% shorter without these analysis.
 
-Next are my detailed notes for selected chapter.
+Next are my detailed notes for selected chapters. My favorite chapters were 17, 18, 22, 27, 30 and 31.
 
 ## 1 - The five dynasties
 
-After the fall of the Tang, there was a period without any dominating dynasty. In the North there were five more or less concurrent dynasties. In the South there were instead 10 states.
+After the fall of the Tang, there was a period without any dominating dynasty. In the North there were five more or less competing dynasties. In the South there were instead 10 states. This chapter describes a bit about each of these.
 
-Xi'an was the cradle of Chinese civilization and the capital of the Tang dynasty (together with Luoyang) but they moved East because it could not sustain its large population.
+Interesting bits:
+
+* Xi'an was the cradle of Chinese civilization and the capital of the Tang dynasty (together with Luoyang) but they moved East because it could not sustain its large population.
 
 ## 2 - Abaoji
 
 Abaoji was a member of the Khitan tribe from the steppes north of China. He was the founder of the Liao dynasty which extended as far south as Beijing, the Southernmost of this five capitals (he was not the founder of Beijing though).
 
-The Uighurs used to live around that area, but were driven West by the Kirghz people. They converted to Maniqueism (Persian) after the relocation.
+Interesting bits:
 
-This chapter also mentions the Silla and Bohai people, the precursors to Korean kingdom. Lake Baikal seems to be the birthplace of the Altaic Languages which include Turkic, Mongol and Tungusic (Jurchen and Manchu, Bohai, Korean!!! Possibly Japanese).
+* The Uighurs used to live around that area, but were driven West by the Kirghz people. They converted to Maniqueism (Persian) after the relocation.
+* This chapter also mentions the Silla and Bohai people, the precursors to Korean kingdom. Lake Baikal seems to be the birthplace of the Altaic Languages which include Turkic, Mongol and Tungusic (Jurchen and Manchu, Bohai, Korean!!! Possibly Japanese).
 
 
 ## 3 - Building the Liao empire
 
-The name Cathay cames from Khitai, another pronunciation of Khitan, and was the name by which China was known from early contact with Europeans.
-
-The kingdom of Koryo started unifying Korea around the same time the Liao empire started.
+Discusses the Liao empire under successive leaders. Steppe people didn't have an established norm succession so it often led to struggle of power between contenders. The Kithans struggled between governing nomadic people and the sedentary Chinese under their domain. They created a dual governing system.
 
 One of the five dynastics (from Chapter 1) was the Later Zhou. Zhao Kuangyin was a general for those rulers and usurped the throne to found the Song dynasty. Relations between Song and Kithan was mostly the former paying tributes to the latter, but otherwise pacific.
+
+Interesting bits:
+
+* The name Cathay cames from Khitai, another pronunciation of Khitan, and was the name by which China was known from early contact with Europeans.
+* The kingdom of Koryo started unifying Korea around the same time the Liao empire started.
+
 
 ## 5 - Creating the Song dynasty
 
 Being a general Zhao Kuangyin was aware of the power of the military, so one of the goals of his reign was to subject it to the civil government. He was able to conquer most of the 10 states in the South.
 
 The Song co-existed with the Liao dynasty in the North, often signing peace treaties (e.g. Shanyuan treaty) which involves paying hefty tributes which for China was probably more economically favorable than waging war.
+
+The Song established their capital at Kaifeng.
 
 ## 7 - Dimensions of the Northern Song Life
 
@@ -66,17 +75,19 @@ The formed a new dynasty called the Da Xia or Xi (west) Xia and also co-existed 
 
 The Jurchens were nomad people from the Northeast, around Manchuria. In fact the Manchus (founders of the Qing dynasty centuries later) were ethnic kin to the Jurchen.
 
-The Jurchens defeated the Liao empire. The Kithans fled west and formed the Kara Khitai dynasty. Led by Aguda, who founded the Jin (gold) dynasty. looted Beijing before handing back to the Song
+The Jurchens defeated the Liao empire and the Kithans fled west and formed the Kara Khitai dynasty. The Jurchens were led by Aguda, who founded the Jin (gold) dynasty. He looted Beijing before handing back to the Song.
 
-Jin decided to conquer Song. Took emperor Huizong (who had abdicated) and his son Qinzong captives. Qinzong's younger brother Zhao Gou (Emperor Gaozong) fled Kaifeng to Hangzhou and started the Southern Song dynasty. The previous Song dynasty is also known as the Northern Song since it held control mostly over the north.
+The Jin eventually decided to conquer Song. They took the Song emperor Huizong (who had abdicated) and his son Qinzong captives. Qinzong's younger brother Zhao Gou (Emperor Gaozong) fled Kaifeng to Hangzhou and started the Southern Song dynasty. The previous Song dynasty is also known as the Northern Song since it held control mostly over the north.
 
 The Jin co-existed with the Xi Xia State. Both were destroyed by the Mongols later.
 
 ## 13 - The southern Song
 
-Zhao Ji (Emperor Huizong, last emperor of the Northern Song) had 65 children! 20 of which died young. He also adopted son named Zhao Bozong, who became the successor of the Gaozong emperor, known as emperor Xiaozong, and was the high point of Southern Song dynasty. He abdicated after the death of his step father. Southern Song went downhill after his reign until the Mongol conquest.
+Zhao Ji (Emperor Huizong, last emperor of the Northern Song) had 65 children (!) 20 of which died young. He also adopted a son named Zhao Bozong, who became the successor of the Gaozong emperor, known as emperor Xiaozong, and was the high point of Southern Song dynasty. He abdicated after the death of his step father. Southern Song went downhill after his reign until the Mongol conquest.
 
-The author makes an interesting suggestion that the move south that was richer empowered the elite and weakened the monarchy.
+Interesting bits:
+
+* The author makes an interesting suggestion that the move south that was richer empowered the elite and weakened the monarchy.
 
 ## 14 - Chinese Civilization and the Song Achievement
 
@@ -86,32 +97,37 @@ In China and in Renaissance Europe, medicine became the profession of barbers. I
 
 ## 16 - A mid-13th century overview
 
-It discusses some interesting theories about the Chinese writing system, suggesting that Chinese civilization never adopted phonetic alphabet because of specifics of their spoke language (for example, tones being hard to capture).
+It discusses some interesting theories about the Chinese writing system, suggesting that Chinese civilization never adopted a phonetic alphabet because of specifics of their spoken language (for example, tones being hard to capture).
 
 It also mentioned that the Xia and Liao had contact with alphabetic writing systems (via the Tibetan and Uighur) but still opted to develop a writing system based on Chinese, possibly in deference to their culture.
 
-Buddhism was not officially supported in China and was seen by steppe people as a religion outside of Chinese cultural influence (being of Indian origin), so that might have influence on their adoption of it. However, the Buddhism they adopted had the Chinese form, so it served as a transport channel for Chinese culture to the steppe people.
+Buddhism was not officially supported in China and was seen by steppe people as a religion outside of Chinese cultural influence (being of Indian origin), so that might have had influence on their adoption of it. However, the Buddhism they adopted had the Chinese form, so it served as a transport channel for Chinese culture to the steppe people.
 
 
 ## 17- The Career of the Great Khan Chinggis
 
-The Mongols were not mentioned in Chinese records until the Jin period. It suggests they were not very powerful. They might have come from the Manchurian forests. There were subgroups of the Mongol people such as the Merkits and Kerait. Like the Uyghurs, the Merkits and Kerait were also Nestorian Christians.
+Chinggis childhood was pretty interesting (if true). Chinggs' dad was poisoned and his mother raised him and his siblings by herself after being ostracized from her tribe. Before dying his father he was promised a bride at 11 and his father-in-law honored the union even though Chinggs prospects looked bleak as a fatherless boy. This helped him ascent into power.
 
 The chapter claims that there's no evidence he was a military genius, but a leader who commanded loyalty and discipline, including from absorbed tribes. Uighurs and Ongüts submitted and were leveraged because they were a more advanced civilization, having learned some governing from the Chinese. Their Turkic writing system was adopted in official documents.
 
+Interesting bits:
+
+* The Mongols were not mentioned in Chinese records until the Jin period. It suggests they were not very powerful. They might have come from the Manchurian forests.
+* There were subgroups of the Mongol people such as the Merkits and Kerait. Like the Uyghurs, the Merkits and Kerait were also Nestorian Christians.
+
 ## 18 - Forging the Mongol World
 
-One of the most interesting chapters to me, since I'm particularly fascinated by the Mongol conquests.
+One of the most interesting chapters to me, since I'm particularly fascinated by the Mongol conquests, in particular the 3 western campaigns.
 
-The first western Mongolian campaign: 1220-1223, destroyed Bukhara, Samarkand. Reached the Indus River, but stopped there. Generals and son push further west all the way to Russia, at the sea of Azov.
+The first western Mongolian campaign was led by Genghis Khan and last from 1220 to 1223, where they destroyed Bukhara and Samarkand. He reached the Indus River, but stopped there. Generals Jebe and Subutai and his son Jochi pushed further West all the way to Russia, at the sea of Azov.
 
-Korea submitted to Mongols in 1259.
+The second western campaign was led by Subutai and Jochi's son Batu then Khan of the Golden Horde. In 1238 Moscow was captured, Kiev fell in 1240. They reached all the way to Poland and Hungary in the second campaign but Ogodei died in Karakorum and they were asked back.
 
-The second western campaign: In 1238 Moscow was captured, Kiev fell in 1240. Reached all the way to Poland and Hungary in the second campaign but Ogodei died in Karakorum and they were asked back.
+The third Western campaign was led by Hulegu: He defeated the assassins order [5] and took over Persia. He ended the Abbasid caliphate in Baghdad. In the levant he seems to have had some alliance with the Christians of the Seventh Crusade and only attacked Muslim bastions, taking Aleppo and then Damascus around 1260. They lost in Southern Palestine to the Mamluks which cut short their plans to invade Egypt. Hulegu withdrew from the Levant and stayed in Persia.
 
-The 3rd Western campaign: Defeated the assassins order [5], Ended the Abbasid caliphate in Baghdad, captured Syria but lost in Southern Palestine to the Mamluks.
+The great Khan Mongke ordered his brother Khubilai Khan to attack the Southern Song via Yunnan, where he defeated the Dali Kingdom and brought it under the Mongol empire.
 
-The four khanates: Golden Horde in Russia, Khanate of Chagatai in Centra Asia, Il-Khanate in Persia (Hulegu) and the Khanate of Mongolia, which also controlled the Khanate of China.
+At its highest point there were four khanates in the Mongol empire: the Golden Horde in Russia, the Khanate of Chagatai in Centra Asia, the Il-Khanate in Persia (headed by Hulegu) and the Khanate of Mongolia, which also controlled the Khanate of China.
 
 The golden horde known as Kipchak, became more Turkic in culture, converted to Islam. Idea that existing culture is very strong, tends to be assimilated by outsiders [6].
 
@@ -121,7 +137,7 @@ The author says: For a century, Mongol history was fully merged with Chinese his
 
 ## 19 - Khubilai Khan becomes emperor of China
 
-Khubilai Khan was the son of Tolui, himself the youngest of Chinggs Khan with his main consort Börte. He was assigned the governorship of China under Mogol rule and later founded the Yuan dynasty. The explorer Marco Polo stayed with Khubilai from 1275 to 1291. The Mongol invasion decimated ⅔ of the North China population.
+Khubilai Khan was the son of Tolui, himself the youngest son of Chinggs Khan with his main consort Börte. He was assigned the governorship of China under Mogol rule and later founded the Yuan dynasty. The explorer Marco Polo stayed with Khubilai from 1275 to 1291. The Mongol invasion decimated ⅔ of the North China population.
 
 Kubilai understood the importance of restoring economy in China for his own benefit. He moved his Mongol capital from Karakorum to 200 miles north of Beijing and called it Supreme Capital, or Shangdu, or Xanadu.
 
@@ -138,7 +154,6 @@ Mongol and Manchu alphabets were based on Uighur script. Kubilai requested the T
 Mongols used consultation and consensus to make decisions - a similar observation was made by Michael King on the Maoris in [2].
 
 Buddhism in the Yuan: Chan (Zen) was more common but the Mongol emperor adopted the Lama (Tiben origin). It later influenced Mongolia to convert to Buddhism. It had interesting repercursions on the relation between China and Tibet.
-
 
 ## 22 - Zhu Yuanzhang Builds his Ming dynasty
 
