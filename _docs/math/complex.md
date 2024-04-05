@@ -39,3 +39,15 @@ $$
 \overline{a / b} &= \overline{a} / \overline{b}
 \end{align}
 $$
+
+## Modulus
+
+### Properties
+
+Triangle inequality:
+
+$$\abs{a + b} \le \abs{a} + \abs{b}$$
+
+Multiplication:
+
+$$\abs{a \dot b} = \abs{a} \dot \abs{b}$$
