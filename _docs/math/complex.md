@@ -50,4 +50,4 @@ $$\abs{a + b} \le \abs{a} + \abs{b}$$
 
 Multiplication:
 
-$$\abs{a \dot b} = \abs{a} \dot \abs{b}$$
+$$\abs{a \cdot b} = \abs{a} \cdot \abs{b}$$
