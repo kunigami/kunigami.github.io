@@ -167,6 +167,17 @@ const markers = [
     visited: true,
     category: "nature",
   },
+  {
+    name: "Sequoia National Park",
+    description: "Home of the giant sequoias, the most massive tree on earth",
+    lat: 36.58188237927149,
+    lng: -118.75141758773634,
+    img_name: "sequoia.jpg",
+    photographer: "me",
+    img_link: "https://photos.app.goo.gl/djZfMp6qSffVyJDe8",
+    visited: true,
+    category: "nature",
+  },
   // -- Colorado
   {
     name: "Cliff Palace in Mesa Verde National Park",
@@ -1466,6 +1477,34 @@ const markers = [
     category: "nature",
   },
 
+  // Portugal
+  {
+    name: "Seven Hanging Valleys in the Algarve",
+    description:
+      "Trail along the Mediterranean coast in the Algarve. View of interesting limestone rocks formations including the Benagil cave.",
+    img_name: "algarve.jpg",
+    photographer: "me",
+    lat: 37.09085349876126,
+    lng: -8.414169190725532,
+    category: "nature",
+    img_link: "https://photos.app.goo.gl/tnMzteSDQuAZNVtm9",
+    visited: true,
+  },
+
+  {
+    name: "National Tile Museum",
+    description:
+      "Museum showcasing azulejos from Portugal.",
+    img_name: "azulejo.jpg",
+    photographer: "me",
+    lat: 38.72519799051279,
+    lng: -9.113517533079035,
+    category: "museum",
+    img_link: "https://photos.app.goo.gl/Jp5w1jJhvhJHBq2JA",
+    visited: true,
+  },
+
+
   // Russia
   {
     name: "St. Basil's Cathedral",
@@ -1519,6 +1558,10 @@ const markers = [
     lat: 37.176773008467656,
     lng: -3.5897565660552555,
     category: "fort",
+    photographer: "me",
+    img_name: "alhambra.jpg",
+    img_link: "https://photos.app.goo.gl/44fKATY2ht2q5W8Q7",
+    visited: true,
   },
   {
     name: "Castillo de Coca",
@@ -1535,6 +1578,10 @@ const markers = [
     lat: 36.93270958448457,
     lng: -4.789922155261637,
     category: "fort",
+    img_name: "el_caminito.jpg",
+    img_link: "https://photos.app.goo.gl/W4ZkUN4QsTgxc4yu9",
+    photographer: "me",
+    visited: true,
   },
   {
     name: "Sagrada Família",
@@ -1554,13 +1601,32 @@ const markers = [
     description: "Beautiful city atop of a mountain.",
     lat: 36.7462,
     lng: -5.16122,
+    img_name: "ronda.jpg",
+    img_link: "https://photos.app.goo.gl/vdYdN18SW34byv8bA",
+    photographer: "me",
+    visited: true,
   },
   {
-    name: "Mosque–Cathedral of Córdoba",
+    name: "Mosque-Cathedral of Córdoba",
     description:
       "The Mosque–Cathedral of Córdoba, officially known by its ecclesiastical name, the Cathedral of Our Lady of the Assumption is the cathedral of the Roman Catholic Diocese of Córdoba dedicated to the Assumption of Mary and located in the Spanish region of Andalusia.",
     lat: 37.8789,
     lng: -4.77938,
+    img_name: "mosque_cathedral.jpg",
+    img_link: "https://photos.app.goo.gl/nkaeBrpXny6D7sMN6",
+    photographer: "me",
+    visited: true,
+  },
+  {
+    name: "Setenil de las Bodeguitas",
+    description:
+      "A small town where many buildings were constructed under giant boulders.",
+    lat: 36.86212982542259,
+    lng: -5.1791164384202455,
+    img_name: "setenil.jpg",
+    img_link: "https://photos.app.goo.gl/LeF67uEs8rSCvHna6",
+    photographer: "me",
+    visited: true,
   },
 
   // Sudan
