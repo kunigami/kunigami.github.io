@@ -18,6 +18,10 @@ Notes on some of the books I read, usually from those I liked and learned a lot 
 * [A New Illustrated History of Taiwan]({{site.url}}/books/a-new-illustrated-history-of-taiwan), Wan-yao Chou
 * [Imperial China]({{site.url}}/books/imperial-china), F. W. Mote
 
+### Europe
+
+* [Moorish Spain]({{site.url}}/books/moorish-spain), Richard Fletcher
+
 ### South Asia
 
 * [India in the Persianate Age]({{site.url}}/books/india-in-the-persianate-age.html), Richard M. Eaton
