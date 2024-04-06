@@ -36,9 +36,21 @@ like to learn and build things.
     </tbody>
 </table>
 
-## Links
+<div class="icons_container">
+    <a href="{{ site.url }}/contact/" target="_blank" class="icon_container" title="Contact">
+        <img src="{{site.url}}/resources/home/gmail.svg" width=50 alt="gmail icon" />
+    </a>
 
-* [Contact]({{ site.url }}/contact/)
-* [Github](https://github.com/kunigami)
-* [Papers](http://www.informatik.uni-trier.de/~ley/pers/hd/k/Kunigami:Guilherme)
-* [Threads](https://www.threads.net/@kuni.gami)
+    <a href="https://github.com/kunigami" target="_blank" class="icon_container" title="Github">
+        <img src="{{site.url}}/resources/home/github.svg" width=50 alt="github icon" />
+    </a>
+
+    <a href="https://dblp.org/pid/93/9765.html" target="_blank" class="icon_container" title="Papers in DBLP">
+        <img src="{{site.url}}/resources/home/dblp.svg" width=50 alt="dblp icon" />
+    </a>
+
+    <a href="https://www.threads.net/@kuni.gami" target="_blank" class="icon_container" title="Threads (Social Network)">
+        <img src="{{site.url}}/resources/home/threads.svg" width=50 alt="threads icon" />
+    </a>
+
+</div>

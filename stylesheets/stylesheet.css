@@ -481,6 +481,19 @@ proof_body {
   display: none;
 }
 
+.icons_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.icon_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 5px;
+}
+
 /* ----------------------------------------------------------------------------
  * Small Device Styles
  * ----------------------------------------------------------------------------
