@@ -43,7 +43,7 @@ Under Islamic rule, only non-Muslims didn't have to pay taxes, so authorities ha
 
 One interesting way to estimate the conversion of the population was to look at the name registry, and see having more Muslim names.
 
-# The Caliphate of Córdoba
+## Chapter 4 - The Caliphate of Córdoba
 
 Chapter focuses on the 10th century, a period of relative peace and economic growth, and thus the peak of Moorish rule under the Caliphate of Córdoba.
 
@@ -57,7 +57,7 @@ Abd al-Rahman's son al-Hakem II continued the patronage of science and arts. One
 
 After the death of al-Hakem II, an official, Almanzor, took over power (the son of al-Hakem II,  Hisham II was a Caliph but held no de-facto power) and won many battles against Christians. Under his command, they didn't expand their territory, but just plundered for the money to keep up with expenses (in part due to military expansion). His son Abd al-Malik continued his legacy but died early in 1008.
 
-## Chapter 4 - The Party Kings
+## Chapter 5 - The Party Kings
 
 This chapter focuses on the desintegration of the Cordoba caliphate into independent kingdoms (taifas), in the 11th century.
 
@@ -74,7 +74,7 @@ The taifa kingdoms continued the support for religious or scientific learning se
   <figcaption>Statue of Ibn Hazm in Cordoba.</figcaption>
 </figure>
 
-## Chapter 5 - The Moroccan Fundamentalists
+## Chapter 6 - The Moroccan Fundamentalists
 
 This chapter describes the Almoravids and Almohads from Southern Morocco who eventually conquered Andalucia and were later defeated by Christian rulers who conquered most of Andalucia (except Granada) around 1250.
 
@@ -124,7 +124,7 @@ A very interesting parallel exists between the Moroccan Berbers conquering the I
 Not only that, there was a cycle of conquerors settling down and adopting the sedentary culture and then being conquered by a new wave of nomads from the region they came from. In Spain this happened with Berber + Arabs, then Almoravids and then Almohads, until the original culture claimed it back. In China it was the Khithans, the Jurchens, Mongols and Manchus [1].
 
 
-## Chapter 6 - Convivencia
+## Chapter 7 - Convivencia
 
 This chapter talks about the Muslims and other religions living along Christians after the reconquista.
 
@@ -144,7 +144,7 @@ Knowdge from Greek also came to Europe from Norman Sicily, but in this case with
 
 Contrary to intellectual knowledge (which mostly flowed one way), there was little exchange between Christians and Muslim in terms of religion.
 
-## Chapter 7 - Nasrid Granada
+## Chapter 8 - Nasrid Granada
 
 This chapter focuses on the last presence of Muslim power in the Iberian peninsula, the Emirate of Granada (as a province not just the city, so it included other cities such as Malaga and Almeria). It also describes the end of "Convivencia" period, with the expulsion of the Muslim population from Spain.
 
