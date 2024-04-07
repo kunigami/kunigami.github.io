@@ -63,9 +63,9 @@ This chapter focuses on the desintegration of the Cordoba caliphate into indepen
 
 After the death of Abd al-Malik there was a struggle for power, which led to the weaking of the Caliphate and the creation of party kings or taifa, including Zawi ibn Ziri of Granada, Abu al-Qasim Muhammad ibn Abbad of Seville Sabur al-Saqlabi of Badajoz (including Lisbon); and Mujahid al-Amiri of Denia (including the Balearic Islands). This desatabilization was known as the first fitna.
 
-Seville was the most powerful one (Abbadid dynasty) and conquered the other taifas including Cordoba itself.
+Seville was the most powerful one (Abbadid dynasty) and conquered some of the other taifas including Cordoba itself.
 
-During this period, taifas often fought with each other and hired Christian kingdoms as mercenaries for help. A famous mercenary of the time was Rodrigo Díaz, from Castille, and better known as El Cid. He nitially worked for Alfonso VI (king of Castille-Leon) but later became a rich independent mercenary fighting against both Christians and Muslims and eventually settled as ruler of Valencia.
+During this period, taifas often fought with each other and hired Christian kingdoms as mercenaries for help. A famous mercenary of the time was Rodrigo Díaz, from Castille, and better known as El Cid. He initially worked for Alfonso VI (king of Castille-Leon) but later became a rich independent mercenary fighting against both Christians and Muslims and eventually settled as ruler of Valencia.
 
 The taifa kingdoms continued the support for religious or scientific learning seen in the Cordoba caliphate. A prominent scholar was Ibn Hazm. He was not patronized by any taifa leader because he had allegiance to the fallen Umayyads, but nevertheless published influential works such as *The Ring of the Dove* (a treatise on love) and the *Book of Sects*, a book described as comparative religion but which the author says is misleading since its goal is to assert the rightness of Islam over other religions.
 
@@ -92,9 +92,9 @@ The son of Henry of Portugal, Afonso, conquered Lisboa and asked pope to recogni
 
 ### Almohads
 
-Ibn Tumart was a Muslim Berber religious scholar and founded a movement as a reaction to a flailing Almoravids. His followers were known as al-Muwwahidun, from which Almohad is named. One of this followers, Adb al-Mu’min, founded the Almohad dynasty and started by defeating the Almoravids in Morocco.
+Ibn Tumart was a Muslim Berber religious scholar and founded a movement as a reaction to a flailing Almoravids. His followers were known as al-Muwwahidun (people who believe in one god), from which Almohad is named. One of this followers, Adb al-Mu’min, founded the Almohad dynasty and started by defeating the Almoravids in Morocco.
 
-The Almohads transferred the capital from Córdoba to Seville and they built a mosque there in 1198. The Seville's cathedral was eventually built into its place but the minaret still stands as the Giralda tower.
+The Almohads transferred the capital from Córdoba to Seville and built a mosque there in 1198. The Seville's cathedral was eventually built in its place but the minaret still stands as the Giralda tower.
 
 <figure class="center_children">
   <img src="{{resources_path_books}}/giralda.jpg" alt="See caption" />
@@ -176,7 +176,7 @@ Due to fears of association with Tunisians and Turks (following the Ottoman empi
 
 ## Epilogue
 
-The author dismisses the romantic narrative that Moorish Spain was all good and Christians destroyed it. He provides some possibilities:
+The author dismisses the romantic narrative that Moorish Spain was all good and Christians destroyed it. He provides some possibilities for this narrative:
 
 * Colonizer's guilt from the Enlightenment. This is perhaps from the generalization of the colonization of the new world by Europeans.
 * There are surviving texts of Muslims mourning their lost lands.
