@@ -161,7 +161,7 @@ The Nasrids built the Alhambra Palace and was built on top of from fortification
   <figcaption>Court of the Lions inside the Nasrid palace in Alhambra, Granada.</figcaption>
 </figure>
 
-Eventually Fernando of Aragon and Isabel from Castilled married (los reyes Católicos) in 1469 and unified their quarelling reigns. This enabled them to focus on conquering Granada for once.
+Eventually Fernando of Aragon and Isabel from Castille married (los reyes Católicos or the Catholic kings) in 1469 and unified their quarelling reigns. This enabled them to focus on conquering Granada for once.
 
 
 <figure class="center_children">
