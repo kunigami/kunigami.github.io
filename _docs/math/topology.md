@@ -224,6 +224,14 @@ Let $X$ be a topological space. A continuous function $f:[0, 1] \rightarrow X$ i
 
 $X$ is *path-connected* if for every pair of points $a, b \in X$, there is a path that connects $a$ and $b$.
 
+## Simple Connectedness
+
+A *simply connected* space is a path-connected space where every path between two points can be continuously transformed into any other such path while preserving those points.
+
+Intuitively a simply connected space is a connected space that has no holes, because if we consider two paths on different sides of the hole, they cannot be transformed into another continuously.
+
+A *loop* is a *path* whose endpoints coincide. In a simply connected space, every loop can be contracted (transformed continuously) into a point. Again, in the presence of holes, a loop surrounding such hole cannot be turned into a point.
+
 # Compacteness
 
 ## Covering, subcovering and open covering
