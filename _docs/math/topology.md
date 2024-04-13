@@ -3,6 +3,12 @@ layout: doc
 title: "Topology Cheat Sheet"
 ---
 
+# Index
+{:.no_toc}
+
+1. TOC
+{:toc}
+
 # Metric Spaces
 
 We need to revisit metric spaces since some definitions on topological spaces depend on it.
@@ -63,7 +69,9 @@ Given a topological space $(X, \tau)$ and a subset $F$ of $X$, the *complement* 
 
 Given a topological space $(X, \tau)$ and a subset $F$ of $X$, is *closed* if the complement of $F$, $C(F)$ is open.
 
-Note that some sets are neither open or closed. For example, in $\mathbb{R}$, the semi-open interval $[a, b)$ is neither open nor close.
+Some sets are neither open or closed. For example, in $\mathbb{R}$, the semi-open interval $[a, b)$ is neither open nor close.
+
+Some sets are both open and closed. For example, in the subspace of $\mathbb{R}$ with $X = (x \lt 0) \cup (x \gt 0)$, we have that $x \gt 0$ is open and its complement in $X$ is $x \lt 0$ is open, so $x \gt 0$ is also closed!
 
 ## Hausforff Space
 
@@ -187,15 +195,18 @@ It's also that case that for every $U \in Y$ if $f^{-1}(U)$ is open, then by con
 
 # Connectedness
 
-A topological space $X$ is *connected* if the only subsets that are both open and closed are $X$ and $\emptyset$.
+A topological space is **connected** if it cannot be defined as the union of two disjoint non-empty open sets. If it can, then it's disconnected.
 
-A different characterization: $X$ is not connected (i.e. *disconnected*) if and only if there exist open subsets $P$ and $Q$ of $X$ such that:
+An example of a disconnected space in $\mathbb{R}$: $x \lt 0 \cup x \gt 0$, since this set is the literal union of two disjoint non-empty open sets. On the other hand, the set $x \gt 0$ is connected. We can express it as the union of the disjoint sets $0 \lt x \le a$ and $x \ge a$ but the second set is not open.
 
-$$A \subseteq P \cup Q$$
+Formally, let $(X, \tau)$ be a topological space. Then it is connected if no sets $A$ and $B$ exist such that:
 
-$$P \cap Q \subseteq C(A)$$
+* $A \cup B = X$
+* $A \cap B = \emptyset$ (disjoint)
+* $A, B \in \tau$ (open sets)
+* $A, B \neq \emptyset$
 
-And $P \cap A \neq \emptyset$, $Q \cap A \neq \emptyset$.
+If an open set $Y \in \tau$ also satisfies the above conditions, it's called a connected open set. If $Y \neq \emptyset$ it's also known as a **region** or **domain**.
 
 ## Component
 

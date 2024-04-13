@@ -76,7 +76,7 @@ As the name suggests a path-independent integral is an integral that only depend
 
 *Theorem 1* provides a sufficient and necessary condition for an integral to be path-independent.
 
-**Theorem 1.** The line integral $\int_\gamma pdx + qdy$, defined in $\Omega$, depends only on the endpoints of $\gamma$ if and only if there exists $U(x, y): \Omega \rightarrow \mathbb{R}$ such that $\partial U / \partial x = p, \partial U / \partial y = q$.
+**Theorem 1.** The line integral $\int_\gamma pdx + qdy$, defined in a [region](https://www.kuniga.me/docs/math/topology.html) $\Omega$, depends only on the endpoints of $\gamma$ if and only if there exists $U(x, y): \Omega \rightarrow \mathbb{R}$ such that $\partial U / \partial x = p, \partial U / \partial y = q$.
 
 <proof>
 
