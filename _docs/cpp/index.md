@@ -931,8 +931,9 @@ if (my_file.is_open()) {
 
 std::ofstream my_file("filename");
 if (my_file.is_open()) {
-    my_file << "a line" << std::end;
+    my_file << "a line" << std::endl;
 }
+my_file.close();
 {% endhighlight %}
 
 # Date and Time

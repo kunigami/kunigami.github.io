@@ -153,7 +153,7 @@ Since $dz$ is a complex number, we can consider its real and imaginary part $dz 
 
 $$= \int_\gamma f(z)dx + if(z)dy$$
 
-As usual, we can think of $f(z)$ as a function of two real variables and also define $p(x, y) = f(z)$ and $q(x, y) = if(x, y)$ and we get a differential form of $(1)$. The major difference is that the domain of these functions is not $\mathbb{R}$ but $\mathbb{C}$.
+As usual, we can think of $f(z)$ as a function of two real variables and also define $p(x, y) = f(z)$ and $q(x, y) = if(x, y)$ and we get a differential form of $(1)$. The major difference is that the image of these functions is not $\mathbb{R}$ but $\mathbb{C}$.
 
 We can still use *Theorem 1* since it doesn't depend on the type of the image of the integral. We'll denote $U(x, y)$ from the theorem as $F(z)$, so if
 
