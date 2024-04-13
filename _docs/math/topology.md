@@ -71,7 +71,7 @@ Given a topological space $(X, \tau)$ and a subset $F$ of $X$, is *closed* if th
 
 Some sets are neither open or closed. For example, in $\mathbb{R}$, the semi-open interval $[a, b)$ is neither open nor close.
 
-Some sets are both open and closed. For example, in the subspace of $\mathbb{R}$ with $X = (x \lt 0) \cup (x \gt 0)$, we have that $x \gt 0$ is open and its complement in $X$ is $x \lt 0$ is open, so $x \gt 0$ is also closed!
+Some sets are both open and closed. For example, in the subspace of $\mathbb{R}$ with $X = (x \lt 0) \cup (x \gt 0)$, we have that $(x \gt 0)$ is open and since its complement in $X$ is $(x \lt 0)$ is open, $(x \gt 0)$ is also closed!
 
 ## Hausforff Space
 
