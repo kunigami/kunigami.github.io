@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="740.2635 181.77438 353 353" width="353" height="353">
+  <defs/>
+  <g id="Canvas_1" stroke="none" stroke-dasharray="none" fill-opacity="1" fill="none" stroke-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Line_12">
+        <path d="M 904.9085 474.81793 C 891.5632 463.1246 836.6774 412.09085 849.2 374 C 863.4292 330.71825 941.4056 363.0934 958 324.5 C 972.4547 290.88284 923.6191 250.02815 910.7851 240.05143" stroke="#00fdff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_11">
+        <path d="M 908.5244 478.0244 C 908.5244 478.0244 870.4494 459.0942 878.8 415.6 C 887.1506 372.10577 929.5789 374.6664 938 324.5 C 946.4211 274.3336 908.5244 238.52438 908.5244 238.52438" stroke="#00fb92" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_10">
+        <path d="M 908.5244 478.0244 C 908.5244 478.0244 1007.1941 438.86455 995.6 397.2 C 984.0059 355.53545 892.4814 376.1244 867.6 330.9583 C 845.9594 291.6752 892.353 250.2348 904.8058 240.1059" stroke="#fffc00" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_9">
+        <path d="M 908.5244 478.0244 C 908.5244 478.0244 977.2294 469.9942 958.6094 426.5 C 939.9893 383.00577 857.2018 377.9669 842.8 324.5 C 830.2139 277.774 889.2501 246.48186 904.3363 239.3342" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_8">
+        <path d="M 908.5244 478.0244 C 908.5244 478.0244 816.4364 442.2942 838.8 398.8 C 861.1636 355.30577 967.9217 370.11936 987.4625 324.5 C 1004.8039 284.0152 928.6066 247.08473 911.2346 239.2844" stroke="#9437ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_7">
+        <path d="M 908.5244 478.0244 C 908.5244 478.0244 1000.62 465.4433 982 410.8 C 963.38 356.1567 863.8285 334.16537 842.8 285.14634 C 824.4452 242.35994 887.6347 238.17463 904.0001 237.80203" stroke="#ff2600" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_6">
+        <path d="M 909.2744 478.7744 C 909.2744 478.7744 932.8083 481.1212 931.314 432.4 C 929.8197 383.6788 910.2439 361.51345 904 306.8 C 897.7561 252.08655 909.2744 239.27438 909.2744 239.27438" stroke="#8efa00" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_5">
+        <path d="M 910.0244 479.5244 C 910.0244 479.5244 879.5294 446.9448 904 411.6 C 928.4706 376.2552 994.6933 403.37386 996.4 354.76562 C 998.1067 306.1574 910.0244 240.02438 910.0244 240.02438" stroke="#ff2f92" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Graphic_4">
+        <circle cx="907.7744" cy="477.2744" r="3.7743895731932" fill="black"/>
+        <circle cx="907.7744" cy="477.2744" r="3.7743895731932" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_3">
+        <circle cx="907.7744" cy="237.77438" r="3.7743895731932" fill="black"/>
+        <circle cx="907.7744" cy="237.77438" r="3.7743895731932" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+    <g id="Canvas_1_Layer_2">
+      <title>Layer 2</title>
+      <g id="Graphic_2">
+        <rect x="740.7635" y="182.27438" width="352" height="352" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

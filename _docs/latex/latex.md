@@ -55,6 +55,17 @@ $$
 
 ## Symbols
 
-* Exists ($\exists$): `$\exists$`
-* Union ($\cup$): `$\cup$` or `$\bigcup$`
-* Intersection ($\cap$): `$\cap$` or `$\bigcap$`
+### Set theory
+
+| Name | Rendered | LaTeX |
+| - | - | - |
+| Exists | $\exists$ | `$\exists$` |
+| Union  | $\cup$ | `$\cup$` or `$\bigcup$` |
+| Intersection | $\cap$ | `$\cap$` or `$\bigcap$` |
+
+### Calculus
+
+| Name | Rendered | LaTeX |
+| - | - | - |
+| Partial derivative | $\partial$ | `$\partial$` |
+| Vector             | $\overrightarrow{v}$ | `$\overrightarrow{v}$` |

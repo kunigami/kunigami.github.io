@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="47.76802 284.64634 475.5684 302.6074" width="475.5684" height="302.6074">
+  <defs/>
+  <g id="Canvas_1" stroke="none" stroke-dasharray="none" fill-opacity="1" fill="none" stroke-opacity="1">
+    <title>Canvas 1</title>
+    <rect fill="white" x="47.76802" y="284.64634" width="475.5684" height="302.6074"/>
+    <g id="Canvas_1_boundary">
+      <title>boundary</title>
+      <g id="Line_4">
+        <path d="M 52.22552 339.7626 C 44.889736 385.2231 45.136815 441.10846 76.04158 465.4057 C 106.94635 489.70295 196.1201 457.2074 236.04158 477.4057 C 275.96306 497.604 267.93254 590.94054 315.59444 586.60764 C 363.25633 582.27474 535.954 495.5693 522.0416 451.4057 C 508.12914 407.2421 286.0606 397.57576 258.78788 379.39394 C 231.51515 361.2121 247.01493 331.7164 184.93138 304.10448 C 122.84784 276.49254 101.24617 284.67926 84.32836 293.6567 C 67.41055 302.63417 58.955224 308.5821 52.1119 340.73354" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+    <g id="Canvas_1_Layer_2">
+      <title>Layer 2</title>
+      <g id="Line_10">
+        <path d="M 343.5 510 L 343.5 430.60156 L 107.85938 430.60156 L 107.85938 354.76562" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_11">
+        <circle cx="107.85938" cy="357.0407" r="3.77438957319321" fill="black"/>
+        <circle cx="107.85938" cy="357.0407" r="3.77438957319321" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_12">
+        <circle cx="343.5" cy="508.2165" r="3.77438957319321" fill="black"/>
+        <circle cx="343.5" cy="508.2165" r="3.77438957319321" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_13">
+        <circle cx="171.27438" cy="357.0407" r="3.77438957319322" fill="black"/>
+        <circle cx="171.27438" cy="357.0407" r="3.77438957319322" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_14">
+        <text transform="translate(162.61738 335.9583)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="0" y="10" xml:space="preserve">x, y</tspan>
+        </text>
+      </g>
+      <g id="Graphic_15">
+        <text transform="translate(352.2744 489.5)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="0" y="10" xml:space="preserve">x0, y0</tspan>
+        </text>
+      </g>
+      <g id="Graphic_16">
+        <text transform="translate(71.5 340)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="14566126e-20" y="10" xml:space="preserve">x1, y</tspan>
+        </text>
+      </g>
+      <g id="Line_17">
+        <line x1="111.63376" y1="357.0407" x2="167.5" y2="357.0407" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,4.0" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
