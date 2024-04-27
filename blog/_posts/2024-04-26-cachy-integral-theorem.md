@@ -353,7 +353,7 @@ $$\int_{\gamma} f(z) dz = 0$$
 for any closed curve $\gamma$ in $\Delta'$.
 
 <proof>
-As in the proof of <i>Theorem 3</i>, we can use two segments connecting the center $(x_0, y_0)$ to a point $(x', y')$ as long as the segments don't contain any of the $\xi_j$. In this case we use the exact same arguments, except that the rectangle might contains $\xi_j$ inside it and we have to use <i>Theorem 2</i> instead of <i>Theorem 1</i> to conclude:
+As in the proof of <i>Theorem 3</i>, we can use two segments connecting the center $(x_0, y_0)$ to a point $(x', y')$ as long as the segments don't contain any of the $\xi_j$. In this case we use the exact same arguments, except that the rectangle might contain $\xi_j$ inside it and we have to use <i>Theorem 2</i> instead of <i>Theorem 1</i> to conclude:
 
 $$\int_{\sigma} f(z) dz + \int_{\overline{\sigma}} f(z) dz = 0$$
 
@@ -389,7 +389,7 @@ $$(4.1) \quad F(x', y') = \int_{\sigma} f(z) dz = \int_{-\overline{\sigma}} f(z)
 
 Because the 2 rectangles cancel out.
 
-Computing $\partial F/\partial x (x', y')$ is trickier however. That's because when we consider the point $(x' \pm h, y')$, the curve utilized is the 2-segment one because the path to $(x' \pm h, y')$ doesn't contains a $\xi_j$. This is illustrated in <i>Figure 4.2</i> (note that we inverted the directions due to $(4.1)$).
+Computing $\partial F/\partial x (x', y')$ is trickier however. That's because when we consider the point $(x' \pm h, y')$, the curve utilized is the 2-segment one because the path to $(x' \pm h, y')$ doesn't contain a $\xi_j$. This is illustrated in <i>Figure 4.2</i> (note that we inverted the directions due to $(4.1)$).
 
 <figure class="center_children">
   <img src="{{resources_path}}/holes2.svg" alt="See caption."  style="width: 300px;" />
@@ -435,7 +435,7 @@ The conclusion from this exercise is that even when infinitesimal changes cause 
 
 ## Conclusion
 
-It took me a long time to figure out the proof of *Theorem 4*. In [1], Ahlfors provides almost no details besides *Figure 4.1* include in the proof of *Theorem 4*.
+It took me a long time to figure out the proof of *Theorem 4*. In [1], Ahlfors provides almost no details besides *Figure 4.1* included in the proof of *Theorem 4*.
 
 On my first read of the book I thought I had understood the proof but once I tried to plug it into the definition of derivative as a limit, I realized I didn't understand it properly.
 
