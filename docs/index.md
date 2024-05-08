@@ -51,6 +51,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Pip]({{ site.url }}/docs/python/pip.html)
 * [Type Hints]({{ site.url }}/docs/python/types.html)
 * [Unit Test]({{ site.url }}/docs/python/unittest.html)
+* [Virtual Environment]({{ site.url }}/docs/python/venv.html)
 
 ## Rust
 
