@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-3 -3 1170 399" width="1170" height="399">
+  <defs/>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke-dasharray="none" fill="none" stroke="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="-3" y="-3" width="1170" height="399"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_3">
+        <title>layer1</title>
+        <g id="Graphic_7">
+          <title>path2322</title>
+          <path d="M 312 156 C 312 73.10534 240.4497 0 156 0 C 71.55027 0 0 73.10534 0 156 M 264 156 C 264 99.67599 213.9331 48 156 48 C 98.06686 48 48 99.67599 48 156 M 264 156 C 264 232.1572 203.15487 300 132 300 C 60.84512 300 0 232.1572 0 156 M 312 156 C 312 225.67795 251.22572 288 180 288 C 108.77432 288 48 225.67795 48 156" stroke="#bc1e47" stroke-linecap="square" stroke-linejoin="round" stroke-width="5.999924"/>
+        </g>
+        <g id="Graphic_6">
+          <title>path11083</title>
+          <path d="M 162.00658 145.62858 C 167.58325 148.85085 169.61875 155.89833 166.61792 161.59438 C 163.6171 167.29044 156.65078 169.60248 150.83597 166.83223 C 145.02116 164.06198 142.43283 157.19798 144.9722 151.28209 C 147.51158 145.3662 154.2725 142.50944 160.28882 144.81022" fill="black"/>
+        </g>
+        <g id="Graphic_5">
+          <title>path12058</title>
+          <path d="M 298 145 L 311.9 169.5 L 325.7 145" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+        <g id="Graphic_4">
+          <title>path15936</title>
+          <path d="M 250 145 L 263.9 169.5 L 277.7 145" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+      </g>
+      <g id="Group_15">
+        <title>layer1</title>
+        <g id="Graphic_20">
+          <title>path11076</title>
+          <path d="M 721 156 C 721 73.0674 649.5223 0 565 0 C 480.4777 0 409 73.0674 409 156 M 673 156 C 673 99.6959 622.96 48 565 48 C 507.04 48 457 99.6959 457 156 M 625 156 C 625 126.1914 596.4644 96 565 96 C 533.5356 96 505 126.1914 505 156 M 673 156 C 673 195.6283 633.577 240 589 240 C 544.4229 240 505 195.6283 505 156 M 721 156 C 721 226.4168 660.6416 288 589 288 C 517.3585 288 457 226.4168 457 156 M 625 156 C 625 226.7161 575.6218 288 517 288 C 458.3784 288 409 226.7161 409 156" stroke="#bc1e47" stroke-linecap="square" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+        <g id="Graphic_19">
+          <title>path34388</title>
+          <path d="M 571.00654 145.62858 C 576.5832 148.85086 578.6187 155.89833 575.6179 161.59439 C 572.61706 167.29044 565.65074 169.60248 559.8359 166.83223 C 554.0211 164.06198 551.4328 157.19799 553.97216 151.28209 C 556.51154 145.3662 563.27245 142.50944 569.2888 144.81022" fill="black"/>
+        </g>
+        <g id="Graphic_18">
+          <title>path35368</title>
+          <path d="M 611 169.5 L 624.9 145 L 638.7 169.5" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+        <g id="Graphic_17">
+          <title>path35370</title>
+          <path d="M 659 169.5 L 672.9 145 L 686.7 169.5" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+        <g id="Graphic_16">
+          <title>path35372</title>
+          <path d="M 707 169.5 L 720.9 145 L 734.7 169.5" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+      </g>
+      <g id="Group_21">
+        <title>layer1</title>
+        <g id="Graphic_24">
+          <title>path34391</title>
+          <path d="M 1149.502 154.5042 C 1150.036 212.91333 1099.6595 261.96805 1041.502 262.5042 C 983.3446 263.04033 934.0357 212.91334 933.502 154.5042 C 932.968 96.09505 983.3446 47.04033 1041.502 46.50419 C 1099.3574 45.97082 1148.4991 96.40471 1149.502 154.5042" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+        <g id="Graphic_23">
+          <title>path35362</title>
+          <path d="M 1135.502 168.0042 L 1149.402 143.5042 L 1163.202 168.0042" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+        <g id="Graphic_22">
+          <title>path35364</title>
+          <path d="M 879.5086 144.12398 C 885.0853 147.34626 887.1208 154.39373 884.12 160.08979 C 881.1191 165.78584 874.1528 168.09788 868.338 165.32763 C 862.5232 162.55738 859.9349 155.69339 862.4742 149.7775 C 865.0136 143.8616 871.7745 141.00485 877.7908 143.30563" fill="black"/>
+        </g>
+      </g>
+      <g id="Graphic_25">
+        <text transform="translate(135.5 354.5)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="30" fill="black" x="0" y="29" xml:space="preserve">-2</tspan>
+        </text>
+      </g>
+      <g id="Graphic_26">
+        <text transform="translate(563.51 354.5)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="30" fill="black" x="14566126e-20" y="29" xml:space="preserve">3</tspan>
+        </text>
+      </g>
+      <g id="Graphic_27">
+        <text transform="translate(979.85 354.5)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="30" fill="black" x="14566126e-20" y="29" xml:space="preserve">0</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="337 168 419 393" width="419" height="393">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -6 14 12" markerWidth="14" markerHeight="12" color="black">
+      <g>
+        <path d="M 12 0 L 0 -4.5 L 0 4.5 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke-dasharray="none" fill="none" stroke="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="337" y="168" width="419" height="393"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Line_2">
+        <line x1="338" y1="361.3125" x2="722.6" y2="361.3125" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_3">
+        <line x1="530" y1="554.625" x2="530" y2="182.9" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_4">
+        <title>path11083</title>
+        <path d="M 532.6295 357.046 C 535.0707 358.45656 535.96176 361.5416 534.64815 364.03504 C 533.33454 366.5285 530.285 367.5406 527.7396 366.3279 C 525.19416 365.11523 524.0611 362.1105 525.17273 359.52083 C 526.28434 356.93115 529.24393 355.6806 531.8776 356.68778" fill="black"/>
+      </g>
+      <g id="Line_5">
+        <path d="M 465.41603 275.9542 C 501.14504 253.05344 520.229 177.48092 555.3435 220.99237 C 590.458 264.50382 681.6844 217.86856 708.5586 224.77477 C 735.43275 231.681 747.597 293.095 741.8919 312.16216 C 736.1868 331.22932 679.0747 319.3966 674.3243 339.1892 C 669.5739 358.9818 725.82755 415.64113 713.3867 430.9297 C 700.9459 446.21824 618.62245 416.55287 599.6719 430.9297 C 580.7213 445.3065 609.4979 533.8938 567.15554 529.3893" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+      </g>
+      <g id="Graphic_8">
+        <text transform="translate(447.26 244.5)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" fill="black" x="14566126e-20" y="15" xml:space="preserve">z</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <text transform="translate(455.5 253.4242)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="6545875e-19" y="10" xml:space="preserve">1</tspan>
+        </text>
+      </g>
+      <g id="Line_12">
+        <path d="M 461.05417 278.87977 C 422.20144 304.00785 359.9499 321.83832 380.53435 361.3125 C 401.9084 402.3009 426.76954 341.60305 474.86115 385.87786 C 522.95275 430.15267 432.44275 404.96183 453.05344 444.6565 C 473.6641 484.35115 427.8626 481.2977 449.23664 509.542 C 470.6107 537.78626 540.8397 531.6794 567.15554 529.3893" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+      </g>
+      <g id="Graphic_13">
+        <title>path15936</title>
+        <path d="M 752.8986 282.8561 L 738.0997 269.79455 L 734.5457 289.1755" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+      </g>
+      <g id="Graphic_14">
+        <title>path15936</title>
+        <path d="M 466.54396 390.7042 L 485.37604 396.6173 L 480.7398 377.4664" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+      </g>
+      <g id="Graphic_7">
+        <title>path11083</title>
+        <path d="M 468.04556 271.41037 C 470.48675 272.82092 471.3778 275.90595 470.0642 278.3994 C 468.75057 280.89284 465.70106 281.90494 463.1556 280.69226 C 460.6102 279.4796 459.47715 276.47487 460.58876 273.8852 C 461.7004 271.2955 464.65997 270.04496 467.2936 271.05213" fill="black"/>
+      </g>
+      <g id="Graphic_6">
+        <title>path11083</title>
+        <path d="M 569.7851 524.8455 C 572.22626 526.25603 573.1173 529.34106 571.8037 531.8345 C 570.4901 534.32796 567.4406 535.34005 564.89513 534.1274 C 562.3497 532.9147 561.21666 529.91 562.3283 527.3203 C 563.4399 524.7306 566.3995 523.4801 569.0331 524.48724" fill="black"/>
+      </g>
+      <g id="Graphic_16">
+        <text transform="translate(566.9018 534.55524)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" fill="black" x="14566126e-20" y="15" xml:space="preserve">z</tspan>
+        </text>
+      </g>
+      <g id="Graphic_15">
+        <text transform="translate(575.1418 543.47943)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="6545875e-19" y="10" xml:space="preserve">2</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
