@@ -37,3 +37,9 @@ In this case we have:
 $$\frac{df}{dt}(t) = (2x(t) + y(t)) 2t + (2y(t) + x(t)) 3t^2$$
 
 Here we explicitly included the arguments of the functions.
+
+## Useful derivatives
+
+Logarithm derivative:
+
+$$\frac{d}{dx} \ln f(x) = \frac{1}{f(x)} \frac{d f(x)}{dx}$$

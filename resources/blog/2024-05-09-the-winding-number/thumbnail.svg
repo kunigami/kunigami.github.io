@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="406 -3 332 294" width="332" height="294">
+  <defs/>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke-dasharray="none" fill="none" stroke="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="406" y="-3" width="332" height="294"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_2">
+        <title>layer1</title>
+        <g id="Graphic_7">
+          <title>path11076</title>
+          <path d="M 721 156 C 721 73.0674 649.5223 0 565 0 C 480.4777 0 409 73.0674 409 156 M 673 156 C 673 99.6959 622.96 48 565 48 C 507.04 48 457 99.6959 457 156 M 625 156 C 625 126.1914 596.4644 96 565 96 C 533.5356 96 505 126.1914 505 156 M 673 156 C 673 195.6283 633.577 240 589 240 C 544.4229 240 505 195.6283 505 156 M 721 156 C 721 226.4168 660.6416 288 589 288 C 517.3585 288 457 226.4168 457 156 M 625 156 C 625 226.7161 575.6218 288 517 288 C 458.3784 288 409 226.7161 409 156" stroke="#bc1e47" stroke-linecap="square" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+        <g id="Graphic_6">
+          <title>path34388</title>
+          <path d="M 571.00654 145.62858 C 576.5832 148.85086 578.6187 155.89833 575.6179 161.59439 C 572.61706 167.29044 565.65074 169.60248 559.8359 166.83223 C 554.0211 164.06198 551.4328 157.19799 553.97216 151.28209 C 556.51154 145.3662 563.27245 142.50944 569.2888 144.81022" fill="black"/>
+        </g>
+        <g id="Graphic_5">
+          <title>path35368</title>
+          <path d="M 611 169.5 L 624.9 145 L 638.7 169.5" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+        <g id="Graphic_4">
+          <title>path35370</title>
+          <path d="M 659 169.5 L 672.9 145 L 686.7 169.5" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+        <g id="Graphic_3">
+          <title>path35372</title>
+          <path d="M 707 169.5 L 720.9 145 L 734.7 169.5" stroke="#bc1e47" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
