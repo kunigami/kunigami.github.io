@@ -36,7 +36,7 @@ if $\gamma$ is contained in a disk $\Delta$ and that $f(z)$ is holomorphic in $\
 
 $$(1) \quad \lim_{z \rightarrow \xi} (z - \xi) f(z) = 0$$
 
-Now let's look at a specific function, $f(z) = 1/(z - a)$. Assuming the point $a$ is in the disk $\Delta$, then $f(z)$ is not holomorphic at $a$, but maybe it satisfies $(1)$. We can find that out by replacing $a$ in $(1)$:
+Now let's look at a specific function, $f(z) = 1/(z - a)$. Assuming the point $a$ is in the disk $\Delta$, then $f(z)$ is not holomorphic at $a$, but maybe it satisfies $(1)$? We can find if that's the case by replacing $a$ in $(1)$:
 
 $$\lim_{z \rightarrow a} (z - a) \frac{1}{z - a} = 1$$
 
@@ -44,11 +44,11 @@ So no, we can't use *Theorem 4* from [4] to conclude
 
 $$\int_{\gamma} \frac{1}{z - a} dz$$
 
-equals 0. Still, it's worth exploring this integral further. What does its value represent? This is what we'll focus on this post.
+equals 0. Still, it's worth exploring this integral further. What does its value represent? In which case it is 0? This is what we'll focus on this post.
 
 ## Definition
 
-Let $\gamma$ be a piecewise differentiable closed curve and $a$ a point not on the curve. We define **the winding number** of $a$ with respect to $\gamma$ as:
+Let $\gamma$ be a piecewise differentiable closed curve and $a$ a point not on the curve. We define **the winding number** of $a$ with respect to $\gamma$, denoted by $n(\gamma, a)$ as:
 
 $$(2) \quad n(\gamma, a) = \frac{1}{2\pi i} \int_{\gamma} \frac{dz}{z - a}$$
 
@@ -262,7 +262,7 @@ So far we've been consider conditions that lead to $n(\gamma, a) = 0$. We now co
 
 ### Single revolution
 
-To simplify calculations, we'll assume $a$ is at the origin. If we take the geometric interpretation of winding number, we can see it's invariant with translation and in the equation $(2)$, the expression $z - a$ is essentially doing this normalization.
+To simplify calculations, we'll assume $a$ is at the origin. If we take the geometric interpretation of winding number, we can see it's invariant with translation. In fact, in the equation $(2)$, the expression $z - a$ is essentially doing this normalization.
 
 We also assume $a$ is surrounded by the curve $\gamma$, otherwise we already know its winding number is 0. Then, visualizing this on the complex plane, $\gamma$ has to exist in all four quadrants since it surrounds the origin, such as the curve in *Figure 4*.
 
