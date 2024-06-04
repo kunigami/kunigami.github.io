@@ -411,8 +411,11 @@ Both Marières and Lewis spend time discussing implementation details such as th
 
 In this post, I tried to focus more on the syntax and semantics of coroutines, and less how they're implemented in practice. The examples from this post did nothing useful, but for a future post I'd like to implement async operations using coroutines.
 
-## References
+## Related Posts
 
+[Python Coroutines]({{blog}}/2020/02/02/python-coroutines.html) and [Async Functions in JavaScript]({{blog}}/2019/07/01/async-functions-in-javascript.html) cover the same concept of suspendable functions, but in Python and Javascript this is implemented with event loops and is single threaded.
+
+## References
 
 * [[1](https://www.scs.stanford.edu/~dm/blog/c++-coroutines.pdf)] My tutorial and take on C++20 coroutines, David Mazières
 * [[2](https://lewissbaker.github.io/2017/09/25/coroutine-theory)] Asymmetric Transfer - Coroutine Theory
