@@ -8,7 +8,7 @@ Burton Howard Bloom is a MIT alumni, who, mwhile employed by the Computer Usage 
 
 In this post we'll talk about Bloom Filters. We'll give a description of the data structure and its operations. We'll then study the theory that explains the performance of this data structure. Next, we'll describe an implementation in Python, run some experiments and finally discuss applications.
 
-### Introduction
+## Introduction
 
 Bloom filter is a probabilist data structure that enables inserting elements in a set and test whether an element belongs this set, sacrificing accuracy for lower memory usage.
 
@@ -44,7 +44,7 @@ It's possible to prove (a proof is sketched in appendix B), that for fixed $$m$$
 
 $$k = ln(2)m/n$$
 
-### Python Implementation
+## Python Implementation
 
 In this experiment, we use the [bitarray](https://pypi.python.org/pypi/bitarray/) python module. It's a C implementation that represents a bit array efficiently. It has conveniently overloaded operators so most of the time it's like working with arrays.
 
@@ -62,7 +62,7 @@ bit.setall(False)
 
 {% endhighlight %}
 
-### The murmur algorithm
+## The murmur algorithm
 
 We need to pick a hash function to use with our Bloom filter. References such as [[3](http://spyced.blogspot.com/2009/01/all-you-ever-wanted-to-know-about.html)] suggest using an algorithm called [Murmur](http://en.wikipedia.org/wiki/MurmurHash). This [stack exchange thread](https://programmers.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed/145633#145633) has a nice survey about different hash functions.
 
@@ -95,7 +95,7 @@ hash_value = hasher(input)
 
 {% endhighlight %}
 
-### Families of hash functions
+## Families of hash functions
 
 In [Jonathan Ellis](http://spyced.blogspot.com/2009/01/all-you-ever-wanted-to-know-about.html)'s post, he mentions a strategy for generating a family of hash functions. He cites a paper from Kirsch and Mitzenmacher [[4](http://www.eecs.harvard.edu/~kirsch/pubs/bbbf/esa06.pdf)] which shows we can generate a set of $$k$$ hash functions from 2 independent hash functions in the following way:
 
@@ -121,7 +121,7 @@ hashes = map(
 
 All the code is available on [github](https://github.com/kunigami/blog-examples/tree/master/2015-01-25-bloom-filters).
 
-### Experiments
+## Experiments
 
 Before running experiments with our Bloom filter implementation, let's try to visualize the distribution of the Murmur hash functions. For this first experiment, we compute the hash function of keys ranging form 1 to 10k and module it 10k, so they're all in the same range of values. Then we plot the keys vs. their hashes in a scatter plot, by exporting this data as a CSV file and rendering in `R` (using `ggplot2`):
 
@@ -232,7 +232,7 @@ Bloom filters use little memory, so they are suitable for network transmission.
 
 Broder and Mitzenmacher discuss a lot more examples [[5](http://citeseer.ist.psu.edu/viewdoc/download;jsessionid=6CA79DD1A90B3EFD3D62ACE5523B99E7?doi=10.1.1.127.9672&amp;rep=rep1&amp;type=pdf)], especially network applications.
 
-### Conclusion
+## Conclusion
 
 In this post we learned about Bloom filters. The idea itself is quite simple, by studying the theory we are able to review some probability and calculus concepts.
 
@@ -241,7 +241,8 @@ The implementation made us aware of details which are usually not discussed in t
 We used two Python libraries, [pyhash](https://github.com/flier/pyfasthash) and [bitarray](https://pypi.python.org/pypi/bitarray/) and learned a little bit about the Python packaging system, [PyPI](https://pypi.python.org/pypi). We got some experience with the ggplot2 R library, which I plan to post about later.
 
 What we didn't cover was variants of Bloom filters, like the count version, which allows deletion. Chazelle et al., introduced the Bloomier Filters, which is a generalization of Bloom filters [[6](https://www.cs.princeton.edu/~chazelle/pubs/soda-rev04.pdf)].
-### References
+
+## References
 
 * [[1](http://www.quora.com/Where-can-one-find-a-photo-and-biographical-details-for-Burton-Howard-Bloom-inventor-of-the-Bloom-filter)] Quora - Where can one find a photo and biographical details for Burton Howard Bloom, inventor of the Bloom filter?
 * [[2](http://en.wikipedia.org/wiki/Bloom_filter)] Wikipedia - Bloom Filter
@@ -251,7 +252,7 @@ What we didn't cover was variants of Bloom filters, like the count version, whic
 * [[6](https://www.cs.princeton.edu/~chazelle/pubs/soda-rev04.pdf)] Bloomier Filters - B. Chazelle et al.
 * [[7](http://www.amazon.com/dp/0521835402)] Probability and Computing: Randomized Algorithms and Probabilistic Analysis - M. Mitzenmacher, E. Upfal
 
-### Appendix A: Probability of false positives
+## Appendix A: Probability of false positives
 
 Let's consider an array of m bits and the insertion operation. The probability of a given bit to be set by one of the hash functions is $$1/m$$. Conversely, the probability of a bit not being set is $$1 - 1/m$$. By the hypothesis of independent hash functions, the probability of a bit not being set by any of the $$k$$ hash functions is
 
