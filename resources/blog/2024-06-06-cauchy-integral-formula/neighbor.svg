@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="431 289 123 178" width="123" height="178">
+  <defs/>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke-dasharray="none" fill="none" stroke="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="431" y="289" width="123" height="178"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_9">
+        <path d="M 500.30106 351.69896 C 511.8997 363.2975 511.8997 382.1025 500.30106 393.70105 C 488.7025 405.2997 469.8975 405.2997 458.29896 393.70105 C 446.70034 382.1025 446.70034 363.2975 458.29896 351.69896 C 469.8975 340.10033 488.7025 340.10033 500.30106 351.69896" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Graphic_10">
+        <circle cx="478.71" cy="372.11" r="13.7121649015663" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_2">
+        <path d="M 464.9929 466.3434 C 486.9072 373.40206 405.33935 374.7472 440.7167 402.23397 C 476.09407 429.72076 526.88185 440.4 549.52336 398.10064 C 572.1649 355.80127 473.60944 338.0007 521.6932 290.4" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_3">
+        <title>path11083</title>
+        <path d="M 479.71173 370.379 C 480.6417 370.91637 480.98116 372.09162 480.48073 373.0415 C 479.9803 373.9914 478.8186 374.37696 477.8489 373.915 C 476.8792 373.453 476.4476 372.30836 476.87105 371.3218 C 477.2945 370.33526 478.422 369.85887 479.4253 370.24255" fill="black"/>
+      </g>
+      <g id="Line_12">
+        <line x1="477.77465" y1="373.87773" x2="464.7312" y2="398.52847" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_18">
+        <line x1="492.42215" y1="370.62615" x2="477.9837" y2="372.2836" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_20">
+        <line x1="507.82265" y1="368.78417" x2="493.38417" y2="370.44163" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_21">
+        <title>path11083</title>
+        <path d="M 481.8388 379.269 C 482.76876 379.80638 483.1082 380.98163 482.6078 381.9315 C 482.10736 382.8814 480.94564 383.26696 479.97595 382.805 C 479.00626 382.343 478.5746 381.19836 478.9981 380.2118 C 479.42157 379.22527 480.54903 378.74887 481.5523 379.13255" fill="black"/>
+      </g>
+      <g id="Graphic_25">
+        <title>path11083</title>
+        <path d="M 458.4917 396.16844 C 459.42167 396.7058 459.7611 397.88104 459.2607 398.83093 C 458.76027 399.7808 457.59855 400.16638 456.62886 399.7044 C 455.65917 399.24243 455.22753 398.09778 455.651 397.11123 C 456.0745 396.1247 457.20194 395.6483 458.20524 396.03197" fill="black"/>
+      </g>
+    </g>
+    <g id="Canvas_1_labels">
+      <title>labels</title>
+      <g id="Graphic_13">
+        <text transform="translate(461.93334 380.26667)" fill="black">
+          <tspan font-family="Times" font-size="10" fill="black" x="0" y="10" xml:space="preserve">δ</tspan>
+        </text>
+      </g>
+      <g id="Graphic_14">
+        <text transform="translate(473.4 357.26667)" fill="black">
+          <tspan font-family="Times" font-size="10" fill="black" x="0" y="10" xml:space="preserve">a</tspan>
+        </text>
+      </g>
+      <g id="Graphic_15">
+        <text transform="translate(477.9767 364.73334)" fill="black">
+          <tspan font-family="Times" font-size="4" fill="black" x="0" y="4" xml:space="preserve">0</tspan>
+        </text>
+      </g>
+      <g id="Graphic_19">
+        <text transform="translate(492.6 354.2836)" fill="black">
+          <tspan font-family="Times" font-size="10" fill="black" x="0" y="10" xml:space="preserve">δ/2</tspan>
+        </text>
+      </g>
+      <g id="Graphic_24">
+        <text transform="translate(483.83563 369.2)" fill="black">
+          <tspan font-family="Times" font-size="10" fill="black" x="0" y="10" xml:space="preserve">a</tspan>
+        </text>
+      </g>
+      <g id="Graphic_26">
+        <text transform="translate(449 393.2)" fill="black">
+          <tspan font-family="Times" font-size="10" fill="black" x="0" y="10" xml:space="preserve">z</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
