@@ -74,25 +74,19 @@ From the [source code](https://code.google.com/p/smhasher/source/browse/trunk/Mu
 
 The author mentions using [simulated annealing](http://en.wikipedia.org/wiki/Simulated_annealing) to find some of the constants of the final mix of algorithm. This final part is used to cause the [avalanche effect](http://en.wikipedia.org/wiki/Avalanche_effect), in which very similar inputs are hashed to very different values.
 
-There's is a Python library called [pyhash](https://github.com/flier/pyfasthash) that has an interface for several hash functions (implemented in C++).
+There's is a Python library called [mmh3](https://pypi.org/project/mmh3/) that has an interface for several hash functions (implemented in C++).
 
-To install it, we can use the easy_install command. Easy Install is a python module that is used to download packages. pyhash is particular is available in the default repository, [PyPI](https://pypi.python.org/pypi) (python package index), so all we need to do is:
+To install it, we can use `pip`:
 
-{% highlight r %}
-
-> sudo easy_install pyhash
-
+{% highlight text %}
+pip mmh3
 {% endhighlight %}
 
 To use it within a Python script:
 
-{% highlight r %}
-
-from pyhash import murmur3_x64_128
-
-hasher = murmur3_x64_128()
-hash_value = hasher(input)
-
+{% highlight python %}
+from mmh3 import hash128
+hash_value = hash128(input)
 {% endhighlight %}
 
 ## Families of hash functions
@@ -104,22 +98,19 @@ $$h_k(x) = h_A(x) + i \cdot h_B(x), \, i = 0, \cdots, k-1$$
 In practice, since `murmur3_x64_128()` generates 128-bit hashes, we can use the first 64-bits as the first hash function, and the last 64-bits as the second.
 
 {% highlight python %}
+from mmh3 import hash128
 
-from pyhash import murmur3_x64_128
-
-hasher = murmur3_x64_128()
-h128 = hasher(input)
-h64l = h128 & ((1L << 64) - 1)
+h128 = hash128(input)
+h64l = h128 & ((1 << 64) - 1)
 h64u = h128 >> 64
 
 hashes = map(
   lambda i: (h64l + i*h64u) % k,
   range(k)
 )
-
 {% endhighlight %}
 
-All the code is available on [github](https://github.com/kunigami/blog-examples/tree/master/2015-01-25-bloom-filters).
+All the code is available on [github](https://github.com/kunigami/blog-examples/tree/master/bloom-filters).
 
 ## Experiments
 
