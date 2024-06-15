@@ -182,7 +182,7 @@ The author dismisses the romantic narrative that Moorish Spain was all good and 
 * There are surviving texts of Muslims mourning their lost lands.
 * It comes from Protestant writers who were biased against Catholics.
 
-## Conclusion
+## My review
 
 I bought this book for my trip to Andalucia in Spain and the Algarve in Portugal and found it a really good source for historical context. It's particularly relevant for Cordoba, Seville and Granada.
 

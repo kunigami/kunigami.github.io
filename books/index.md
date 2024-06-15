@@ -20,6 +20,7 @@ Notes on some of the books I read, usually from those I liked and learned a lot 
 
 ### Europe
 
+* [The Anglo-Saxos]({{site.url}}/books/the-anglo-saxons), Marc Morris
 * [Moorish Spain]({{site.url}}/books/moorish-spain), Richard Fletcher
 
 ### South Asia
