@@ -40,7 +40,7 @@ There seemed to be a few outstanding kindoms during this time: East Anglia, Kent
 
 During this time Pope Gregory I sent Augustine of Canterbury to convert the pagan Anglo-Saxons to Christianism. Æthelberht was the first English kind to convert, and gave land in Canterbury for the construction of the St Augustine's Abbey.
 
-**East Anglia.** RÆdwald was the king of East Anglia and likely the one buried in the massive site of Sutton Hoo (included the helmet) with a ship that has now desintrgrated. Ship burials suggests connection to Sweeden.
+**East Anglia.** Rædwald was the king of East Anglia and likely the one buried in the massive site of Sutton Hoo (included the helmet) with a ship that has now desintrgrated. Ship burials suggests connection to Sweeden.
 
 <figure class="center_children">
   <img src="{{resources_path_books}}/sutton-hoo-helmet.jpg" alt="See caption" />
@@ -124,7 +124,7 @@ Alfred setup a chain of fortress cities, burhs (which became borough), as a defe
 
 ## Chapter 7 - Imperial overstretch (10th century)
 
-Edward the Elder was Alfred's son and became king of Wessex after his father's death in 899. With his older sister ÆthelflÆd they conquered Mercia, got submission from East Anglia and most of Northumbria from the Vikings. He died in 924.
+Edward the Elder was Alfred's son and became king of Wessex after his father's death in 899. With his older sister Æthelflæd they conquered Mercia, got submission from East Anglia and most of Northumbria from the Vikings. He died in 924.
 
 Upon his death, his son Æthelstan, became king of Mercia, while his half-brother Ælfweard became king of Wessex, but died (possibly assassinated) shortly after Edward. Æthelstan eventually became king of Wessex too. He took the throne of Northumbria and submission of Wales in 927 and submission from Scots in 934, and is regarded as the most powerful of all English kings before the Norman conquest.
 
