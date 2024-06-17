@@ -175,7 +175,7 @@ We'll cover some properties of holomorphic functions.
 
 <proof>
 
-We can work with the definitions. The hypothesis are that these exist:
+We can work with the definitions. The hypothesis are that these limits exist:
 
 $$
 f'(z) =  \lim_{h \rightarrow 0} \frac{f(z + h) - f(z)}{h} \\
