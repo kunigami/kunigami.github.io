@@ -123,14 +123,6 @@ It's possible to show the converse is also true: that if we have functions $u, v
 
 </proof>
 
-## Conclusion
-
-In this post we learned about holomorphic functions. Despire the scary name, their definition is relatively simple: functions that are differentiable everywhere in their domain.
-
-The similarity between complex differential with the ordinary differential hides an important difference, which has to do on how the "delta" approximates the limit. For the complex one, the limit must exist no matter how the delta $h$ tends to 0.
-
-We also saw an equivalence between functions that satisfy the Cauchy-Riemann equations and holomorphic functions. In a way this lets us define complex differentiation in terms of ordinary partial differentiation.
-
 ## Harmonic Functions
 
 Let $f$ be a twice differentiable function of two variables. The **Laplace operator** is defined as
@@ -175,6 +167,44 @@ Conversely, if they form a pair of harmonic conjugates, by definition they satis
 
 </proof>
 
+## Properties
+
+We'll cover some properties of holomorphic functions.
+
+**Theorem 3.** Let $f$ and $g$ be functions that are holomorphic at a point $z$. Then $f + g$, $f - g$, $fg$ are also holomorphic. If $g(z) \ne 0$, then $f/g$ is also holomorphic.
+
+<proof>
+
+We can work with the definitions. The hypothesis are that these exist:
+
+$$
+f'(z) =  \lim_{h \rightarrow 0} \frac{f(z + h) - f(z)}{h} \\
+g'(z) =  \lim_{h \rightarrow 0} \frac{g(z + h) - f(z)}{h}
+$$
+
+We need to show that the limit:
+
+$$\lim_{h \rightarrow 0} \frac{(f(z + h) + g(z + h)) - (f(z) + g(z))}{h}$$
+
+exists. Limits are invariant with arithmetic operations, except for division which requires the denominator to be non-zero, so we have that:
+
+$$ = \lim_{h \rightarrow 0} \frac{f(z + h) - f(z)}{h} + \lim_{h \rightarrow 0} \frac{g(z + h) - f(z)}{h} = f'(z) + g'(z)$$
+
+Which again, holds for the other arithmetic operations, including for division because of the hypothesis that $g(z) \ne 0$ for that case.
+
+</proof>
+
+
+
+
+
+## Conclusion
+
+In this post we learned about holomorphic functions. Despire the scary name, their definition is relatively simple: functions that are differentiable everywhere in their domain.
+
+The similarity between complex differential with the ordinary differential hides an important difference, which has to do on how the "delta" approximates the limit. For the complex one, the limit must exist no matter how the delta $h$ tends to 0.
+
+We also saw an equivalence between functions that satisfy the Cauchy-Riemann equations and holomorphic functions. In a way this lets us define complex differentiation in terms of ordinary partial differentiation.
 
 
 ## Related Posts
