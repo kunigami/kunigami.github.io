@@ -101,7 +101,7 @@ In [2], the probability of a false positive is claimed to be $1/2^{p + b}$. This
 
 Inserting and querying for a element are $O(1)$ operations. The space used by this structure is $O(2^l b)$ bits. In [2] Ilmari Karonen suggests $l = 16$ and $b = 128$, which corresponds to `1MB` of memory, with a false positive rate of $1/2^{128}$ which is for most practical purposes indistinguishable from 0. The false negative rate will depend on how many elements are inserted.
 
-This is a type of LRU cache, except that we don't store the value and the key size is bounded by $O(l + b)$ bits.
+This is a type of LRU cache, except that we don't store the value and the key size is bounded by $O(b)$ bits.
 
 ### Implementation
 
@@ -113,16 +113,14 @@ import hashlib
 class ApproxSet:
     def __init__(self, b=128, l=16):
         self.b = b
-        self.mask = 2**b - 1
-        self.size = 2**l
-        self.arr = [None] * self.size
+        self.arr = [None] * (2**l)
 
     def _get_hash_pair(self, value):
-        # hash in hexadecimal
+        # 256-bit hash in hexadecimal
         hash_hex = hashlib.sha256(str(value).encode()).hexdigest()
         hash_int = int(hash_hex, 16)
         # Use first l bits for index
-        index = (hash_int >> self.b) % self.size
+        index = (hash_int >> self.b) % len(self.arr)
         # Use last b bits for value
         value = hash_int & ((1 << self.b) - 1)
         return (index, value)
@@ -140,7 +138,7 @@ As we can see, the implementation is very simple, except for getting the index a
 
 ### Experimentation
 
-The setup is that we insert `N` random elements (sample from a domain of size `M`) into this data structure and when it reaches a multiple of 10 in percentage of occupancy, we query `N` elements to compute the probabilities.
+The setup is that we insert `N` random elements (sample from a domain of size `M`) into this data structure and when it reaches a multiple of 10 in percentage of occupancy, we query another `N` random elements to compute the probabilities.
 
 For `l = 16`, `b = 128`, `N = 1,000,000` and `M = 100,000`, we obtain the following result:
 
@@ -158,7 +156,7 @@ We can try to have some false positives by having `b` be very small, for example
   <figcaption>Figure 1: Probability of false negatives and false positives as a function of occupancy. The false positives (red line) is very high if we use $b = 1$.</figcaption>
 </figure>
 
-This result suggests that the probability of false positives is not $1/2^{p + b}$, because for this case we'd have a probability of $1/2^{17}$, whereas we saw $36\%$ of false positives, which is consistent with $1/2^b = 50\%$.
+This result suggests that the probability of false positives is not $1/2^{p + b}$, because for this case we'd have a probability of $1/2^{17}$, whereas for higher occupancy we observed $36\%$ of false positives. This is however consistent with $1/2^b = 50\%$ from *Proposition 2*.
 
 ## Conclusion
 
