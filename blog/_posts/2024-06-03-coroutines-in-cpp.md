@@ -401,9 +401,9 @@ Task f() {
 
 ## Conclusion
 
-In this post we covered the basic of C++ coroutines. I found it pretty hard to understand coroutines. I found I couldn't build on top of my understanding of coroutines in JavaScript or Python. The observation from Marières [1], on it being a more lower-level with no batteries included made me understand why.
+In this post we covered the basic of C++ coroutines. I found it pretty hard to understand them and that I couldn't build on top of my understanding of coroutines in JavaScript or Python. The observation from Marières [1], on it being a more lower-level with no batteries included, made me understand why.
 
-I read Lewis's blog posts [2, 3, 4] which are very detailed and technical, so I found it isn't a very good source for ramping up on coroutines. Marières provides a more digestible since the author provides a lot of insights from a first-learner perspective.
+I read Lewis's blog posts [2, 3, 4] which are very detailed and technical, so I found it isn't a very good source for ramping up on coroutines. Marières [1] provides a more digestible since the author provides a lot of insights from a first-learner perspective.
 
 In my post, I tried to do a more example-based exposition, and am happy with the result of starting with a digestable example and progressively build on top of it and introducing other concepts little by little.
 
