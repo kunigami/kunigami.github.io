@@ -166,7 +166,7 @@ The main takeway from the investigation is that negative Bloom filters don't exi
 
 In the end for our application the keys are 64-bit ids, so storing 128-bit for them wasn't worth it and using a off-the-shelf LRU cache turned out to be simpler.
 
-This cache solution also has builtin TTL support, which is very important for our use negative cache use case and its notably complicated to do with a Bloom filter. However the approximate set discussed above handles this nicely by replacing key on collision.
+This cache solution also has builtin TTL support, which is very important for our use negative cache use case and is notably complicated to do with a Bloom filter. However the approximate set discussed above handles this nicely by replacing keys on collision.
 
 ## References
 
