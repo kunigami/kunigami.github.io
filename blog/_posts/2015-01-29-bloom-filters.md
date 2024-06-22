@@ -34,15 +34,23 @@ If the test returns positive, there's a chance the element is there, but it coul
 
 **Probability of false positives.** The probability $$p$$ that the algorithm will return true when the element is not there (false positive), can be described in terms of $$m$$, $$k$$, $$n$$, through the following equation:
 
-$$p = (1 -e^{(kn/m)})^k$$
+$$(1) \quad p = \paren{1 -e^{-(kn/m)}}^k$$
 
-In the appendix A, we provide an approximated derivation of this result.
+In *Appendix A*, we provide an approximated derivation of this result.
 
 **Optimal number of hash functions.** For given values $$n$$ and $$m$$, we have a choice of how many hash functions to use, $$k$$. Intuitively, if we use too few hash functions, we may increase the chances of collision when querying for an element, whereas if we use too many, the array will be filled up earlier and thus the collisions will also increase.
 
 It's possible to prove (a proof is sketched in appendix B), that for fixed $$m$$, $$n$$, the value of $$k$$ that minimizes $$p$$ is given by:
 
-$$k = ln(2)m/n$$
+$$k = \ln(2)m/n$$
+
+Replacing in $(1)$ gives us:
+
+$$p = \paren{1 -e^{-(\ln(2))}}^k = \paren{\frac{1}{2}}^{\ln(2)m/n} = 2^{-\ln(2)m/n}$$
+
+With $2^{-\ln(2)} = 0.6185$, the optimal probability of false postives is thus:
+
+$$p = 0.6186^{m/n}$$
 
 ## Python Implementation
 
@@ -259,21 +267,21 @@ $$1 - \left(1 - \frac{1}{m}\right)^{kn}$$
 
 Now, the probability of a false positive $$p$$, is the probability $$k$$ positions being set for a element that was never inserted.
 
-$$p = \left(1 - \left(1 - \frac{1}{m}\right)^{kn}\right)^k$$
+$$(2) \quad p = \left(1 - \left(1 - \frac{1}{m}\right)^{kn}\right)^k$$
 
 According to [2] though, this derivation is not accurate, since assumes that the probability of each bit being set is independent from each other. The Wikipedia article sketches a more precise proof from Mitzenmacher and Upfal [[7](http://www.amazon.com/dp/0521835402)] which arrives at the same result.
 
-To simplify the equation, we'll use the following limit:
+To simplify the equation, we'll use the following identity:
 
-$$\lim_{x\to\infty} \left( 1 - 1/x \right) = 1/e$$
+$$\lim_{x\to\infty} \left( 1 - 1/x \right)^x = 1/e$$
 
-So, for large values of m, we can assume that
+So, for large values of $m$, we can assume that
 
-$$(1 - 1/m)^{kn} = (1 - 1/m)^{(mkn)/m} \approx (1/e)^{(kn/m)}$$
+$$(1 - 1/m)^{kn} = ((1 - 1/m)^m)^{(kn)/m} \approx (1/e)^{(kn/m)} = e^{-(kn/m)}$$
 
-Finally we have:
+Replacing it in $(2)$ we have:
 
-$$p = (1 -e^{(kn/m)})^k$$
+$$p = \paren{1 - e^{-(kn/m)}}^k$$
 
 ### Appendix B: Optimal number of hash functions
 
@@ -297,4 +305,4 @@ $$\ln(x) x = \ln(y) y$$
 
 Since $$\ln(n)$$ and $$n$$ are both monotonic functions, so is $$\ln(n)n$$. Then if () holds, we can conclude that $$x = y$$, because otherwise, if $$x > y$$, $$\ln(x) x > \ln(y) y$$ and if $$x < y$$, $$\ln(x) x < \ln(y) y$$.
 
-Replacing $$x$$ back, we find out that $$y = 1/2$$ and finally $$k = ln(2)m/n$$
+Replacing $$x$$ back, we find out that $$y = 1/2$$ and finally $$k = ln(2)m/n$$.
