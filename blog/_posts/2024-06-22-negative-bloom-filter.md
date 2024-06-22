@@ -8,6 +8,18 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
+<figure class="image_float_left">
+  <img src="{{resources_path}}/bloom.jpeg" alt="A still life painting of flowers in bloom" style="width: 100px;" />
+</figure>
+
+Recently at work we were trying to solve a performance bottleneck. A part of the system was making requests to a remote key-value store but we saw that the majority of the requests resulted in the key not existing in the store.
+
+An idea was to implement a negative cache: locally store the keys for which no value exist, to prevent unnecessary future requests. It should not use much memory and false negatives are fine (would result in redundancy), but false positives are not allowed (would result in incorrect results).
+
+<!--more-->
+
+This seems like a problem we can solve with a variant of the classic Bloom filter, but with different guarantees of false negatives and positives, so I did some investigation and summarized in this post.
+
 ## Recap: Bloom Filters
 
 A Bloom filter [1] is a data structure that implements a set. In the most basic form, it allows efficient insertion and membership query. It's also very space-efficient. The drawback however is that the membership query is not 100% accurate: If it says an element **is not** in the set, then it's definitely not there. However, if it says an element **is** in the set, there's some probability the element is actually not there.
@@ -148,7 +160,15 @@ We can try to have some false positives by having `b` be very small, for example
 
 This result suggests that the probability of false positives is not $1/2^{p + b}$, because for this case we'd have a probability of $1/2^{17}$, whereas we saw $36\%$ of false positives, which is consistent with $1/2^b = 50\%$.
 
+## Conclusion
+
+The main takeway from the investigation is that negative Bloom filters don't exist. In the process I did learn about an implementation of a LRU cache that is about 128 bigger than a Bloom filter but in practice it has the guarantees we needed for our problem.
+
+In the end for our application the keys are 64-bit ids, so storing 128-bit for them wasn't worth it and using a off-the-shelf LRU cache turned out to be simpler.
+
+This cache solution also has builtin TTL support, which is very important for our use negative cache use case and its notably complicated to do with a Bloom filter. However the approximate set discussed above handles this nicely by replacing key on collision.
+
 ## References
 
-* [1] http://localhost:4000/blog/2015/01/29/bloom-filters.html
-* [2] https://cs.stackexchange.com/questions/24118/is-there-an-anti-Bloom-filter
+* [[1]({{blog}}/2015/01/29/bloom-filters.html)] NP-Incompleteness: Bloom Filters
+* [[2](https://cs.stackexchange.com/questions/24118/is-there-an-anti-Bloom-filter)] Computer Science: Is there an anti-Bloom filter?
