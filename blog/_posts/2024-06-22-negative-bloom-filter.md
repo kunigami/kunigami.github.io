@@ -158,6 +158,8 @@ We can try to have some false positives by having `b` be very small, for example
 
 This result suggests that the probability of false positives is not $1/2^{p + b}$, because for this case we'd have a probability of $1/2^{17}$, whereas for higher occupancy we observed $36\%$ of false positives. This is however consistent with $1/2^b = 50\%$ from *Proposition 2*.
 
+The full implementation and experimentation code is available on [Github]({{github}}/nbloom.py).
+
 ## Conclusion
 
 The main takeway from the investigation is that negative Bloom filters don't exist. In the process I did learn about an implementation of a LRU cache that is about 128 bigger than a Bloom filter but in practice it has the guarantees we needed for our problem.
