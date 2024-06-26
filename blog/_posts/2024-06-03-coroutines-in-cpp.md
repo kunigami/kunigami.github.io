@@ -292,6 +292,17 @@ std::string Task::operator ()() {
 }
 {% endhighlight %}
 
+Function `f()` can now be written as:
+
+{% highlight c++ %}
+Task f() {
+    std::cout << "initializing" << std::endl;
+
+    co_await Awaitable {"hello"};
+    co_await Awaitable{"world"};
+}
+{% endhighlight %}
+
 We can then change the `main()` function:
 
 {% highlight c++ %}
