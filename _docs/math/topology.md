@@ -240,10 +240,24 @@ Let $X$ be a topological space, $Y$ a subset of $X$ and $\curly{A_\alpha}\_{\alp
 
 Let $\curly{A_\alpha}\_{\alpha \in I}$ and $\curly{B_\beta}\_{\beta \in J}$ be coverings of $Y$. If for every $A_\alpha$ there is $\beta \in J$ such that $A_\alpha = B_\beta$, then $\curly{A_\alpha}\_{\alpha \in I}$ is a **subcovering** of $\curly{B_\beta}\_{\beta \in J}$.
 
-Note that we can't define subcovering as $I \subseteq J$ because $A_\alpha$ and $B_\beta$ might be indexed differently (e.g. $A_\gamma \neq B_\gamma$ even if $\gamma \in I$, $\gamma \in J$).
+Note that we can't define subcovering as $I \subseteq J$ because $A_\alpha$ and $B_\beta$ might be indexed differently (e.g. $A_\gamma \neq B_\gamma$ even if $\gamma \in I$, $\gamma \in J$), but subcovering means loosely that one covering is a "subset" of the other.
 
 Let $\curly{A_\alpha}\_{\alpha \in I}$ be a covering of $Y$. If every $A_\alpha$ is an open subset of $X$ then $\curly{A_\alpha}\_{\alpha \in I}$ is a **open covering** of $Y$.
 
 ## Compact Topological Space
 
-Let $X$ be a topological space. It's said to be **compact** if for *every* open covering  $\curly{A_\alpha}\_{\alpha \in I}$ of $X$, there exists a *finite* covering subcovering $\curly{A_\beta}\_{\beta \in J}$ of $X$.
+Let $X$ be a topological space. It's said to be **compact** if for *every* open covering $\curly{A_\alpha}\_{\alpha \in I}$ of $X$, there exists a *finite* covering subcovering $\curly{A_\beta}\_{\beta \in J}$ of $X$.
+
+## Examples
+
+A inite set is compact, because for any open covering $\curly{A_\alpha}\_{\alpha \in I}$ of it, we can select exactly one open set for each element, so this subcovering is finite.
+
+The closed interval $[a, b]$ for finite $a$, $b$ is compact, while if any of the endpoints is not closed, then it's not compact.
+
+Similarly, in two dimensions the closed disk is compact, while the open disk is not.
+
+## Results
+
+**Heine–Borel Theorem.** Let $S$ be a subset of $\mathbb{R}^n$. Then $S$ is closed and bounded if and only if $S$ is compact.
+
+The continuous image of a compact set is compact. This means that if $f: U \rightarrow V$ is continuous and $U$ is compact, then $V$ is also compact. By *Heine–Borel*, $V$ is closed and bounded and hence $f$ is bounded.
