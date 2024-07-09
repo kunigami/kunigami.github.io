@@ -16,9 +16,9 @@ We'll then take a look at a Python module called asyncio which makes use of coro
 
 ## Generators
 
-Python generators are functions what allow return the execution back to the caller such that when called again it will resume its execution from the same place. It's the same concept of JavaScript generators, which we [talked about before]({{site.url}}/blog/2019/07/01/async-functions-in-javascript.html).
+Python generators are functions that allow suspension, i.e. returning the execution back to the caller midway and when called again resuming its execution from the same place. It's the same concept of JavaScript generators, which we've [talked about before]({{site.url}}/blog/2019/07/01/async-functions-in-javascript.html).
 
-The syntax for yielding the execution back is via the `yield` keyword. Here's an example of a custom implementation of `range()`:
+The syntax for returning the execution back is via the `yield` keyword. Here's an example of a custom implementation of `range()`:
 
 {% highlight python %}
 def range_gen(start, end, step):
@@ -31,7 +31,7 @@ for i in range_gen(1, 10, 2):
     print(i)
 {% endhighlight %}
 
-Because the execution can be yielded at any time in the code, we can use infinite loops:
+Because the execution of the function only proceeds until the next `yield` expression, we can use infinite loops and rely on the caller to stop execution:
 
 {% highlight python %}
 def naturals():
@@ -82,7 +82,7 @@ get_words_and_filter_and_print()
 
 Which is efficient but doesn't allow modularity.
 
-Combined with the fact that generators can be infinite loops, one can model functionality like tail and grep as generators (e.g. tail -f \| grep foo) which is the exact example Beazley provides in his presentation [1].
+Combined with the fact that generators can be infinite loops, one can model functionality like tail and grep as generators (e.g. `tail -f \| grep foo`) which is the exact example Beazley provides in his presentation [1].
 
 ## Coroutines
 
@@ -93,6 +93,8 @@ There are four main changes:
 * `send()` method which can be used to send value to the yield expression. `send()` is a general version of `next()`, which is equivalent to `.send(None)`.
 * `throw()` method which raises an exception at the place where the last yield was called.
 * `close()` method which raises a `GeneratorExit` at the place where the last yield was called. Effectively used to force terminating the generator.
+
+
 Here's a simple coroutine that just prints what it receives:
 
 {% highlight python %}
@@ -110,7 +112,10 @@ gen.send("world")
 {% endhighlight %}
 
 Notice that we have to call an empty `send()` to "initialize" the coroutine. According to *PEP 342*:
-> Because generator-iterators begin execution at the top of the generator's function body, there is no yield expression to receive a value when the generator has just been created. Therefore, calling send() with a non-None argument is prohibited when the generator iterator has just started (...). Thus, before you can communicate with a coroutine you must first call next() or send(None) to advance its execution to the first yield expression.
+
+> Because generator-iterators begin execution at the top of the generator's function body, there is no yield expression to receive a value when the generator has just been created. Therefore, calling `send()` with a non-None argument is prohibited when the generator iterator has just started (...). Thus, before you can communicate with a coroutine you must first call `next()` or `send(None)` to advance its execution to the first yield expression.
+
+
 In the example below we highlight how this flow can be confusing. The first `send()` receives the value from yield, but it is only able to send a value through a subsequent `send()`.
 
 {% highlight python %}
@@ -181,30 +186,55 @@ Yielding inside a task is like an OS interruption (trap).
 One of the interesting implementation of the multitasking system is system calls. The task/coroutine issues a system call by providing it as a value to the yield (e.g. `yield GetTid()`). This is received by the scheduler which can provide the necessary context to the specific system call implementation.
 
 {% highlight python %}
-# Excerpt from http://www.dabeaz.com/coroutines/pyos4.py
+# Stripped down version of http://www.dabeaz.com/coroutines/pyos4.py
 
 # coroutine that will be wrapped in a task
 def foo():
     mytid = yield GetTid()
     ...
 
-# A system call
+class Task():
+    taskid = 0
+    def __init__(self,target):
+        Task.taskid += 1
+        self.tid = Task.taskid
+        self.target = target
+        self.sendval = None
+
+    # Run a task until it hits the next yield statement
+    def run(self):
+        return self.target.send(self.sendval)
+
+# A fake system call to get the task ID
 class GetTid(SystemCall):
     def handle(self):
         # The scheduler "injects" task in the
-        # system call
+        # system call prior to calling handle()
         self.task.sendval = self.task.tid
 
-class Scheduler(object):
-    ...
+class Scheduler():
+    def __init__(self):
+        self.queue = Queue()
+
+    def new(self, func):
+        task = Task(func)
+        self.queue.put(task)
+
     def mainloop(self):
-       ...
-       # RHS of foo's yied
-       result = task.run()
-       if isinstance(result, SystemCall):
-           result.task  = task
-           result.sched = self
-           result.handle()
+        while self.queue:
+            task = self.queue.get()
+
+            # RHS of foo's yield
+            result = task.run()
+            if isinstance(result, SystemCall):
+                result.task  = task
+                result.handle()
+
+...
+sched = Scheduler()
+# Register the task
+sched.new(foo())
+sched.mainloop()
 {% endhighlight %}
 
 The tutorial then covers one of the most important parts of the multitasking system which is the ability to do asynchronous I/O operations (e.g. reading and writing to a file).
@@ -212,6 +242,8 @@ The tutorial then covers one of the most important parts of the multitasking sys
 The idea is to introduce a "system call" corresponding to performing I/O. When a task invokes that, it doesn't get rescheduled but put in a staging area (`self.read_waiting` in the code below). The scheduler has then a continuously run task that polls the OS to check if any of the file descriptors corresponding to the tasks in the staging area are ready, in which case the task is rescheduled.
 
 {% highlight python %}
+# Stripped down version of http://www.dabeaz.com/coroutines/pyos7.py
+
 class ReadWait(SystemCall):
     def __init__(self, file):
         self.file = file
@@ -229,14 +261,17 @@ class Scheduler(object):
 
     # select.select is an OS API to determine
     # when a file descriptor is "ready"
-    def iopoll(self,timeout):
-        if self.read_waiting or self.write_waiting:
+    def iopoll(self, timeout):
+        if self.read_waiting:
            read_fds, write_fds, _x = select.select(
-             self.read_waiting,
-             # ...
-           )
-           for fd in read_fds: self.schedule(self.read_waiting.pop(fd))
-           # ...
+                self.read_waiting,
+                # ...
+                timeout
+            )
+            # Once a file is ready to be read, we invoke
+            # a callback schedule().
+            for fd in read_fds:
+                self.schedule(self.read_waiting.pop(fd))
 
     # Models polling as a regular task - whenever
     # it gets run by the scheduler it counts as a
@@ -244,6 +279,8 @@ class Scheduler(object):
     def iotask(self):
         while True:
             if self.ready.empty():
+                # When the timeout argument is None the function blocks
+                # until at least one file descriptor is ready.
                 self.iopoll(None)
             else:
                 self.iopoll(0)
@@ -270,29 +307,33 @@ def server(port):
 
 One of the limitations of the scheduler that is developed up to this point is that the `yield` has to happen at the top-level of coroutine, that is, it cannot invoke other functions that yield, which limits refactoring and modularization.
 
-To overcome this limitation, the author proposes a technique called [trampolining](https://en.wikipedia.org/wiki/Trampoline_(computing)). Here's an example where the execution of `add()` is done by the top level code, not by `main()`:
+To overcome this limitation, the author proposes a technique called [trampolining](https://en.wikipedia.org/wiki/Trampoline_(computing)). Here's an example where the execution of `add()` is delegated to the `main()` function, and it not run by `f()`:
 
 {% highlight python %}
 def add(x, y):
     yield x + y
 
-def main():
+def f():
     result = yield add(2, 2)
     print(result)
     yield
 
-main_cr = main()
-# add() is not executed
-add_cr = main_cr.send(None)
-# it has to be explicitly executed
-result = add_cr.send(None)
-main_cr.send(result)
+def main():
+    f_coro = f()
+    # add() is not executed yet. we just get the
+    # coroutine.
+    add_coro = f_coro.send(None)
+    # it has to be explicitly executed
+    result = add_coro.send(None)
+    main_cr.send(result)
 {% endhighlight %}
 
 We can do a similar thing in the multitasking system. Because the coroutines can recursively call other coroutines, we need to keep a callstack. We can do it inside `Task` by keeping an explicit stack:
 
 {% highlight python %}
-class Task(object):
+# Stripped down version of https://www.dabeaz.com/coroutines/pyos8.py
+
+class Task():
     def run(self):
         while True:
             try:
@@ -306,20 +347,18 @@ class Task(object):
                     # put the caller on the stack
                     self.stack.append(self.target)
                     self.sendval = None
-                    self.target  = result
+                    self.target  = result # (2)
                 else:
                     if not self.stack:
                         return
                     self.sendval = result
                     # resume execution to caller
-                    self.target = self.stack.pop()
+                    self.target = self.stack.pop() # (3)
             # current coroutine finished
             except StopIteration:
-                # invalid state
-                if not self.stack:
-                    raise
                 self.sendval = None
                 self.target = self.stack.pop()
+
 
 # Example coroutine and sub-coroutine
 def Accept(sock):
@@ -330,24 +369,24 @@ def server(port):
     # ...
     while True:
         # coroutine that calls another
-        client, addr = yield Accept(sock)
+        client, addr = yield Accept(sock) # (1)
         yield NewTask(handle_client(client, addr))
 
 {% endhighlight %}
 
-In the example above, when a coroutine that is wrapped in `Task` makes another coroutine call, for example:
+In the example above, when a coroutine that is wrapped in `Task` makes another coroutine call, for example in `(1)`:
 
 `client, addr = yield Accept(sock)`
 
-Within `Task`, `result` will be a generator, so the current coroutine will be put on the stack and the execution will pass to that generator instead:
+Within `Task`, `result` will be a generator (`GeneratorType`), so the current coroutine will be put on the stack and the execution will pass to that generator instead `(2)`:
 
 `self.target = result`
 
-When that sub-coroutine yields the execution, the original caller is resumed
+When that sub-coroutine yields the execution, the original caller is resumed `(3)`:
 
 `self.target = self.stack.pop()`
 
-Note that this all happen transparently to the scheduler itself.
+Note that this all happen with `Task`, so it's transparent to the scheduler itself.
 
 This concludes the study of the multitask system from the ground up.
 
@@ -400,11 +439,11 @@ async def g_async():
 # <class 'coroutine'>
 print(type(g_async()))
 
-def g_coro():
+def g_gen():
     yield 10
 
 # <class 'generator'>
-print(type(g_async()))
+print(type(g_gen()))
 
 
 {% endhighlight %}
@@ -441,10 +480,12 @@ asyncio.run(main())
 
 This is not taking advantage of the non-blocking capabilities of asyncio. Why? Recall that await is equivalent to yield from and that causes the current coroutine to wait the call to finish until it continues. If we run this code we get:
 
-`will sleep:  1
+{% highlight text %}
+will sleep:  1
 slept:  1
 will sleep:  2
-slept:  2`
+slept:  2
+{% endhighlight %}
 
 What we want is to schedule both sub-coroutines at the same time, and asyncio allows that via the `gather()` method:
 
@@ -466,10 +507,12 @@ asyncio.run(main())
 
 If we run this code we get:
 
-`will sleep 1
+{% highlight text %}
+will sleep 1
 will sleep 2
 slept 1
-slept 2`
+slept 2
+{% endhighlight %}
 
 Which means that the first sleep executed but yielded the execution back to the scheduler after the `sleep()` call. The second `sleep()` got run, printing *"will sleep 2"*.
 
