@@ -99,7 +99,10 @@ struct Task {
         return Task(Handle::from_promise(promise));
     }
 
-    void operator ()() { _handle(); }
+    void operator ()() {
+        // resumes coroutine
+        _handle();
+    }
 
     Handle _handle;
 };
@@ -264,7 +267,7 @@ struct Awaitable {
 };
 {% endhighlight %}
 
-The key method is `await_suspect()`: when we get a handler we access the promise and set the string there. Of course we need to make sure the `Promise` object can store a string too:
+The key method is `await_suspend()`: when we get a handler we access the promise and set the string there. Of course we need to make sure the `Promise` object can store a string too:
 
 {% highlight c++ %}
 struct Promise {
@@ -336,9 +339,9 @@ And then use the special operators `co_yield` and `co_return`:
 {% highlight c++ %}
 Task f() {
     std::cout << "initializing" << std::endl;
-    // co_await promise.return_value("hello")
+    // co_await promise.yield_value("hello")
     co_yield "hello";
-    // promise.return_value("world)
+    // co_await promise.return_value("world)
     co_return "world";
 }
 {% endhighlight %}
