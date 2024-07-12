@@ -124,7 +124,10 @@ The most clever step on the proof is to expand the denominator $1/(z - w)$ into 
 
 $$f(w) = \frac{1}{2\pi i} \int_{C} \sum_{n = 0}^\infty \frac{f(z) (w - a)^n}{(z - a)^{n+1}} dz$$
 
-Except that the integral and sum are in a different order. Swaping sum and integrals are commutative when they're finite, but since we have an infinite sum, proving we can swap them is non-trivial, and is actually the most complicated part of the proof! But once we do, rearranging terms gives us what we want!
+Except that the integral and sum are in a different order. Sums and integrals are commutative when they're finite, but since we have an infinite sum, proving we can swap them is non-trivial, and is actually the most complicated part of the proof! But once we do, rearranging terms gives us what we want:
+
+$$f(w) = \sum_{n = 0}^\infty \paren{\frac{1}{2\pi i} \int_{C} \frac{f(z)}{(z - a)^{n+1}} dz} (w - a)^n$$
+
 
 <proof>
 
