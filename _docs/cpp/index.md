@@ -545,6 +545,19 @@ struct C {
 };
 {% endhighlight %}
 
+### Static Member Variables
+
+Shared across instances.
+
+{% highlight c++ %}
+struct C {
+  static int x;
+};
+
+// Definition and initialization must be done outside the class
+int C::x = 0;
+{% endhighlight %}
+
 ## Inheritance
 
 {% highlight c++ %}

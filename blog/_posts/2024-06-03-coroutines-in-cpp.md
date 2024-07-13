@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Coroutines in C++"
+title: "Coroutines in C++ - The API"
 tags: [cpp]
 vanity: "2024-06-03-coroutines-in-cpp"
 excerpt_separator: <!--more-->
@@ -118,7 +118,7 @@ int main() {
 }
 {% endhighlight %}
 
-Let's now cover the promise class, which goes hand-in-hand with a coroutine handler.
+A coroutine handle is a very thin layer on top of a promise, which contains the bulk of the logic. It's almost like a pointer. Let's then cover the promise class.
 
 ## Promise
 
@@ -222,10 +222,18 @@ inside `f()`. Further, the coroutine machinery uses `co_await` to call `.initial
 An awaitable is any class that implements the methods:
 
 * `bool await_ready()`
-* `void/bool await_suspend(std::coroutine_handle<>)`
+* `void await_suspend(std::coroutine_handle<>)`
 * `T await_resume()`
 
-An awaitable can be used with the operator `co_await`, which is implemented roughly as (I'm omitting a lot of the different branches, for the sake of simplicity. See [3] for a complete picture):
+An awaitable can be used on the right hand side of the operator `co_await`. When we do:
+
+{% highlight c++ %}
+// Recall that there's a Promise object in scope
+auto awaitable = <expr>;
+auto result = co_await awaitable;
+{% endhighlight %}
+
+This is implemented roughly as (I'm omitting a lot of the different branches, for the sake of simplicity. See [3] for a complete picture):
 
 {% highlight c++ %}
 template<typename T, typename P>
@@ -235,18 +243,23 @@ T co_await(P& promise, Awaitable& awaitable) {
     if (!awaitable.await_ready()) {
         <suspend-coroutine>
 
-        awaitable.await_suspend(handle_t::from_promise(promise));
+        awaitable.await_suspend(
+            handle_t::from_promise(promise)
+        );
         <return-to-caller>
 
         <resume-point>
     }
     return awaitable.await_resume();
 }
+
+auto awaitable = <expr>;
+auto result = co_await(promise, awaitable);
 {% endhighlight %}
 
-So a awaitable has different methods that are called at different points in the lifecycle of the suspension action. Note that the awaitable has the opportunity to act after the suspension of the coroutine happening but before the function returning control to the caller.
+The main method is `await_suspend()`. It gets a reference to the coroutine handle of the *current* function. If it returns true, it returns control to the caller, otherwise it resumes right away.
 
-We never return the awaitable object directly to the caller. If we want to send information back, we can piggyback on the promise object, which can be accessed through the coroutine handle, itself passed to the awaitable's `await_suspend()`.
+Note that we never return the awaitable object directly to the caller. If we want to send information back, we can piggyback on the promise object, which can be accessed through the coroutine handle, itself passed to the awaitable's `await_suspend()`.
 
 First we implement a new class that satisfies the awaitable constraints, `Awaitable`, and can hold a string:
 
@@ -360,7 +373,7 @@ async def f():
 
 async def g():
     x = await f()
-    return x + " world"
+    print(x) # hello
 {% endhighlight %}
 
 In C++, we can also "extract" the value from a coroutine handle using the `co_await` operator. The trick is to make the coroutine handle an awaitable too, by implementing the methods discussed in the *Awaitable* section.
@@ -398,7 +411,7 @@ and then in `f()` we extract that value and combine with another:
 {% highlight c++ %}
 Task f() {
     std::string v = co_await g();
-    co_return v + " world";
+    std::cout << v << std::endl;
 }
 {% endhighlight %}
 
@@ -408,9 +421,13 @@ For this to work like the Python example, we'll need to change `Promise::initial
 Task f() {
     auto h = g();
     std::string v = co_await h();
-    co_return v + " world";
+    std::cout << v << std::endl;
 }
 {% endhighlight %}
+
+It's worth clarifying that this code is only to demonstrate how to "extract" a value from a coroutine. It's not in the least a functional implementation that handles `co_await` correctly (for example, it doesn't handle calling multiple `co_await`).
+
+We'll cover an implementation that handles arbitrary `co_await`s in a future post.
 
 The full code for this example is available on [Github]({{github}}/coroutine.cpp).
 
