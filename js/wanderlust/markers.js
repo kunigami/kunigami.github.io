@@ -136,7 +136,7 @@ const markers = [
   },
   {
     name: "Forty-Nine Palm Oasis",
-    description: "Palm Oasis in the middle of the desert in Joshua Tree National Parl",
+    description: "Palm Oasis in the middle of the desert in Joshua Tree National Park",
     lat: 34.10556608298197,
     lng: -116.1047898389797,
     img_name: "palm_oasis.jpg",
@@ -437,6 +437,14 @@ const markers = [
     category: "nature",
   },
 
+  // Austria
+  {
+    name: "Hallstatt",
+    description: "Hallstatt is a village on Lake Hallstatt's western shore in Austria's mountainous Salzkammergut region.",
+    lat: 47.557600303976095,
+    lng: 13.64545911243289,
+  },
+
   // Bolivia
   {
     name: "Salar de Uyuni",
@@ -455,6 +463,10 @@ const markers = [
     lat: -19.628682151586847,
     lng: 22.900244790130884,
     category: "nature",
+    img_name: "okavango.jpg",
+    img_link: "https://photos.app.goo.gl/m9TapxzjSGvBbNvHA",
+    photographer: "me",
+    visited: true,
   },
 
   // Brazil
@@ -501,13 +513,12 @@ const markers = [
     lng: -43.128595120333074,
     category: "nature",
   },
-
-  // Austria
   {
-    name: "Hallstatt",
-    description: "Hallstatt is a village on Lake Hallstatt's western shore in Austria's mountainous Salzkammergut region.",
-    lat: 47.557600303976095,
-    lng: 13.64545911243289,
+    name: "Pantanal",
+    description: "Tropical wetlands home to jaguars, giant otters & native birds, popular for hiking & boat trips",
+    lat: -17.66167173401681,
+    lng: -57.42970055989979,
+    category: "nature",
   },
 
   // Bhutan
@@ -552,6 +563,14 @@ const markers = [
   },
 
   // Chile
+  {
+    name: "Easter Island",
+    description: "Remote island with some 900 massive stone monuments with giant human heads.",
+    lat: -27.08126583499401,
+    lng: -109.37133461604651,
+    category: "monument",
+  },
+
   {
     name: "Torres del Paine National Park",
     description: "National Park in Patagonia.",
@@ -993,7 +1012,7 @@ const markers = [
     category: "buddhism",
   },
   {
-    name: "Komodo National Parl",
+    name: "Komodo National Park",
     description:
       "Expansive national park that aims to protect endangered Komodo dragons & other wildlife.",
     lat: -8.527647033553302,
@@ -1376,6 +1395,23 @@ const markers = [
     lat: -24.7592732,
     lng: 15.2923894,
     category: "nature",
+    img_name: "deadvlei.jpg",
+    img_link: "https://photos.app.goo.gl/JKtCM9XcmAiU5DsE8",
+    photographer: "me",
+    visited: true,
+  },
+
+  {
+    name: "Etosha National Park",
+    description:
+      "Game reserve in Namibia. In here, it's possible to see many big mammals at waterholes such as elephants, giraffes and black rhinoceros. The waterhole in Okaukuejo is particularly good.",
+    lat: -19.167069330285752,
+    lng: 15.91759313453436,
+    category: "nature",
+    img_name: "etosha.jpg",
+    img_link: "https://photos.app.goo.gl/4xr7Bi5QPHKW19YJ6",
+    photographer: "me",
+    visited: true,
   },
 
   // Nepal
@@ -1549,6 +1585,18 @@ const markers = [
     category: "nature",
   },
 
+  // South Africa
+  {
+    name: "Kirstenbosch National Botanical Garden",
+    description: "Hillside garden & nature reserve with rare plant species, walking trails & mountain views",
+    lat: -33.987287536530026,
+    lng: 18.43306531479488,
+    category: "museum",
+    img_name: "kirstenbosch.jpg",
+    img_link: "https://photos.app.goo.gl/yeFEdj27JruZasqi6",
+    photographer: "me",
+    visited: true,
+  },
 
   // Spain
   {
@@ -1765,6 +1813,14 @@ const markers = [
     lng: 54.47371836430741,
   },
 
+  // Uganda
+  {
+    name: "Bwindi Impenetrable National Park",
+    description: "Park on mountainous, densely forested terrain, best known for viewing rare mountain gorillas.",
+    lat: -1.0352936376733395,
+    lng: 29.691351647005504,
+  },
+
   // Uzbekistan
   {
     name: "Registan",
@@ -1821,4 +1877,24 @@ const markers = [
     lng: 53.83185149889994,
     category: "nature",
   },
+
+  // Zimbabwe
+  {
+    name: "Great Zimbabwe",
+    description: "Great Zimbabwe is a medieval city in the south-eastern hills of the modern country of Zimbabwe.",
+    lat: -20.165199793009425,
+    lng: 30.914683760932235,
+    category: "monument",
+  },
+  {
+    name: "Victoria Falls",
+    description: "Waterfall on the Zambezi river, on the border of Zambia and Zimbabwe, is one of the world's largest waterfalls.",
+    lat: -17.92342592464889,
+    lng: 25.853602928640754,
+    category: "nature",
+    img_name: "vic_falls.jpg",
+    img_link: "https://photos.app.goo.gl/ozQuLk7VtP8FsaoaA",
+    photographer: "me",
+    visited: true,
+  }
 ];
