@@ -135,7 +135,7 @@ This [Stack Overflow answer](https://stackoverflow.com/questions/25356810/git-ho
 git checkout post-writing
 git reset $(git merge-base master $(git branch --show-current))
 git add -A
-git commit -m "new post: writing posts"
+git commit -m "new post: $(git rev-parse --abbrev-ref HEAD)$"
 {% endhighlight %}
 
 Let's analyze the second command:
