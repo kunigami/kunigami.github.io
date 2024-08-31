@@ -24,7 +24,7 @@ The previous posts from the series:
 1. [Path-Independent Line Integrals]({{blog}}/2024/04/13/path-independent-line-integrals.html)
 1. [Cauchy Integral Theorem]({{blog}}/2024/04/26/cachy-integral-theorem.html)
 1. [The Winding Number]({{blog}}/2024/05/09/the-winding-number.html)
-1. [Cauchy's Integral Formula]({{blog}}/2024-06-06-cauchy-integral-formula)
+1. [Cauchy's Integral Formula]({{blog}}/2024/06/06/cauchy-integral-formula.html)
 
 ## Analytic Functions
 
@@ -36,7 +36,9 @@ $$(1) \quad f(z) = \sum_{n = 0}^{\infty} {c_n} (z - a)^n$$
 
 where $c_n \in \mathbb{C}$. For $f(z)$ to be defined, $(1)$ must converge.
 
-**Definition 2.** Let $r$ be the radius of disk $D$, i.e. $D = \curly{x \in \Omega \mid \abs{z - a} < r}$. If $(1)$ converges when $\abs{z - a} < R$ and diverges when $\abs{z - a} > R$, we call $R$ the **radius of convergence**.
+Locally meaning
+
+**Definition 2.** Let $r$ be the radius of disk $D$, i.e. $D = \curly{x \in \Omega \mid \abs{z - a} < r}$. If a power series such as $(1)$ converges when $\abs{z - a} < R$ and diverges when $\abs{z - a} > R$, we call $R$ the **radius of convergence**.
 
 *Lemma 3* provides an explicit formula for the radius of convergence of $(1)$:
 
