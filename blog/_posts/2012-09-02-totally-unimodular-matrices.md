@@ -4,7 +4,7 @@ title: "Totally Unimodular Matrices"
 tags: [combinatorics, integer programming, linear algebra]
 ---
 
-An **unimodular matrix** is a square matrix with integer entries such that its determinant is either -1, 0 or 1. A matrix is said **totally unimodular** (TU for short) if all its square submatrices are unimodular.
+An **unimodular matrix** is a square matrix with integer entries such that its determinant is either $-1$, $0$ or $1$. A matrix is said **totally unimodular** (TU for short) if all its square submatrices are unimodular.
 
 [Sometime ago]({{blog}}/2010/08/13/dijkstra-and-the-longest-path.html), we said that problems such as the minimum path, maximum flow and minimum cost max flow can be modeled using linear programming with the interesting property that the optimal solutions are always integer.
 
@@ -14,33 +14,51 @@ In that post, we also said that it was because the coefficient matrix of the con
 
 In this post we'll present some properties of TU matrices and discuss about two simple examples.
 
-### Properties
+## Properties
 
-Let $$A$$ be a totally unimodular matrix. Then we have the following properties:
+Let $A$ be a totally unimodular matrix. Then we have the following properties:
 
-1. Its transpose, $$A^{T}$$, is TU.
-1. The matrix obtained by appending the identity matrix to $$A$$, that is $$[A, I]$$, is TU
-1. Any submatrix of $$A$$ is TU
-1. The matrix obtained by multiplying any row of $$A$$ by -1 is TU
-1. The matrix obtained by duplicating any row of $$A$$ is TU
+**Property 1.** All elements in $A$ are either $0$, $1$ or $-1$.
+
+<proof>
+This follows from the definition because a 1x1 matrix is a submatrix and its determinant is equal to itself.
+</proof>
+
+**Property 2.** Its transpose, $A^{T}$, is TU.
+
+<proof>
+Since we're only considering square submatrices, every submatrix of $A^{T}$ is the transpose of some submatrix of $A$. Since determinants are invariant with transposition, it follows that the submatrices of $A^{T}$ satisfy the determinant constraint and thus $A^{T}$ is TU.
+</proof>
+
+**Property 3.** The matrix obtained by appending the identity matrix to $$A$$, that is $$[A, I]$$, is TU
+
+**Property 4.** Any submatrix of $$A$$ is TU.
+
+<proof>
+The set of submatrices of $A$ includes all submatrices of any of its submatrices. Since $A$ is TU, all its submatrices satisfy the determinant constraints. For any submatrix $A'$ of $A$ its submatrices are a subset of those of $A$, so it follows that all its submatrices satisfy the determinant constraints and hence $A'$ is TU.
+</proof>
+
+**Property 5.** The matrix obtained by multiplying any row of $$A$$ by -1 is TU
+
+**Property 6.** The matrix obtained by duplicating any row of $$A$$ is TU
 
 Using this properties we can get some Corollaries from Theorem 1.
 
 Since $$[A, -I]$$ is TU, we have the following
 
-**Corollary 1.** The polytope $$P = \{x \mid Ax \le b; x \ge 0 \}$$ has integer vertices.
+**Corollary 2.** The polytope $$P = \{x \mid Ax \le b; x \ge 0 \}$$ has integer vertices.
 
 Also, since $$[A^T, -A^T, I, -I]$$ is TU,
 
-**Corollary 2.** The dual of $$P = \{c^Tx \mid Ax \le b; x \ge 0 \}$$, namely $$Q = \{b^Ty \mid A^Ty \ge c; y \ge 0\}$$ has also integer vertices.
+**Corollary 3.** The dual of $$P = \{c^Tx \mid Ax \le b; x \ge 0 \}$$, namely $$Q = \{b^Ty \mid A^Ty \ge c; y \ge 0\}$$ has also integer vertices.
 
-### Examples
+## Examples
 
-**1. Bipartite Graphs**
+### Bipartite Graphs
 
 Let $$G = (V, E)$$ be an undirected graph and $$M$$ the incidence matrix of $$G$$. That is, a binary matrix where each line corresponds to a vertex $$v$$ and each column to an edge $$e$$. We have $$M_{v,e} = 1$$ if $$v$$ is an endpoint of $$e$$ or $$M_{v,e} = 0$$ otherwise. Then, we have the following result:
 
-**Theorem 2.** The incidence matrix of a graph $$G$$ is totally unimodular if and only if, $$G$$ is bipartite.
+**Theorem 4.** The incidence matrix of a graph $$G$$ is totally unimodular if and only if, $$G$$ is bipartite.
 
 This result can be used to derive the [König-Egerváry](http://en.wikipedia.org/wiki/K%C3%B6nig's_theorem_(graph_theory)) theorem, stating that the maximum cardinality matching and the minimum vertex cover have the same value bipartite graphs.
 
@@ -72,11 +90,11 @@ It's not hard to see that if $$M$$ is the incidence matrix of the graph, then th
 
 If the graph is bipartite, we can use Theorem 2 and the [strong duality](http://en.wikipedia.org/wiki/Strong_duality) for linear programs to conclude that (1) = (2).
 
-**2. Directed Graphs**
+### Directed Graphs
 
 Let $$D = (V, A)$$ a directed graph, and $$M$$ be the incidence matrix of $$D$$. That is, a matrix where each line corresponds to a vertex and each column to an arc. For each arc $$e = (u, v)$$, we have $$M_{u, e} = -1$$ and $$M_{v, e} = 1$$ and 0 otherwise. For directed graphs, we have a even stronger result:
 
-**Theorem 3.** The incidence matrix of a directed graph $$D$$ is totally modular.
+**Theorem 5.** The incidence matrix of a directed graph $$D$$ is totally modular.
 
 Consider a network represented by $$D$$ and with capacities represented by $$c : A \rightarrow \mathbb{R}_{+}$$. For each directed edge $$(ij) \in A$$, let $$x_{ij}$$ be the flow in this edge.
 
@@ -103,7 +121,7 @@ $$
 
 We can see that the constraints matrix of the above formulation is a submatrix of the max circulation problem and by Property 3, it's also TU, which in turn means the corresponding polytope has integral vertices.
 
-### Conclusion
+## Conclusion
 
 In this post, we introduced the concept of total unimodular matrices and presented two simple examples: the incidence matrix of a bipartite graph and the incidence matrix of a directed graph.
 
@@ -115,7 +133,7 @@ Here's a cool chart of common polynomial time solvable problems organized by the
 
 In future posts, we'll keep exploring this subject by studying other examples and properties of TU matrices.
 
-### References
+## References
 
 * [[1](http://www.amazon.com/Theory-Integer-Programming-Alexander-Schrijver/dp/0471982326/)]
  Theory of Linear and Integer Programming - A. Schrijver
