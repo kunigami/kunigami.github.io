@@ -567,3 +567,68 @@ if check() {
     x = 2;
 }
 {% endhighlight %}
+
+# Attributes
+
+Attributes are in the form `#[foo]` and placed on top of functions and structs to add metadata to it, e.g.
+
+{% highlight rust %}
+#[test]
+fn test_invalid_argument() {
+    ...
+}
+{% endhighlight %}
+
+or
+
+{% highlight rust %}
+#[derive(Clone, Debug, Eq)]
+struct Tree {
+    ...
+}
+{% endhighlight %}
+
+# Modules
+
+* Modules add namespace to functions
+* Functions defined inside a module are private unless qualified with `pub`
+
+Declaration:
+
+{% highlight rust %}
+mod math {
+    fn add(a: i32, b: i32) -> i32 {
+        a + b
+    }
+
+    pub fn sub(a: i32, b: i32) -> i32 {
+        a - b
+    }
+}
+{% endhighlight %}
+
+Usage:
+
+{% highlight rust %}
+fn f() {
+    math::sub(1, 2);
+}
+{% endhighlight %}
+
+## Nested
+
+Modules can be nested but because of visibility being private by default, inner modules must be made explicitly public:
+
+{% highlight rust %}
+mod outer {
+    pub mod inner {
+        pub fn f() {
+            println!("Hello world");
+        }
+    }
+}
+
+fn f() {
+    outer::inner(1, 2);
+}
+{% endhighlight %}
