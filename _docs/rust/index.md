@@ -306,6 +306,39 @@ See also "Iterating" on different data structures.
 
 # Data structures
 
+## BTreeMap
+
+`BTreeMap` is another implementation of a efficient key-value (the other being `HashMap`). One analogy for C++ is that `BTreeMap` is `std::ordered_map` and `HashMap` is `std::unordered_map`.
+
+{% highlight rust %}
+use std::collections::BTreeMap;
+
+// Create empty
+let mut my_map = btreemap! {};
+
+// Create initialized
+let my_map = btreemap! {
+    "blue" => 1,
+    "green" => 2,
+    "red" => 3
+};
+{% endhighlight %}
+
+## BTreeSet
+
+There's an analogy between `BTreeSet` and `HashSet` with `BTreeMap` and `HashMap`.
+
+{% highlight rust %}
+// Create empty
+let mut my_map = btreeset![];
+
+// Create initialized
+let fruits = btreeset![
+    "apple",
+    "banana"
+]
+{% endhighlight %}
+
 ## Vector
 
 ### Initialize ###
@@ -378,7 +411,7 @@ let [a, b] = vec.as_slice() else {
 }
 {% endhighlight %}
 
-## HashMap ##
+## HashMap
 
 Reference: [HashMap](https://doc.rust-lang.org/std/collections/struct.HashMap.html)
 
@@ -388,10 +421,10 @@ use std::collections::HashMap;
 // Type definition
 HashMap<String, String>;
 
-// Create New
+// Create empty
 let mut my_map = HashMap::new()
 
-// Create New Initialized
+// Create initialized
 let my_map = HashMap::from([
     ("blue", 1),
     ("green", 2),
@@ -424,7 +457,7 @@ for key in my_map.keys() {
 }
 {% endhighlight %}
 
-## Set
+## HashSet
 
 Use:
 
@@ -570,7 +603,7 @@ if check() {
 
 # Attributes
 
-Attributes are in the form `#[foo]` and placed on top of functions and structs to add metadata to it, e.g.
+Attributes are in the form `#[foo]` and placed on top of functions, structs and modules to add metadata to it, e.g.
 
 {% highlight rust %}
 #[test]
