@@ -4,7 +4,7 @@ title: "Totally Unimodular Matrices"
 tags: [combinatorics, integer programming, linear algebra]
 ---
 
-An **unimodular matrix** is a square matrix with integer entries such that its determinant is either $-1$, $0$ or $1$. A matrix is said **totally unimodular** (TU for short) if all its square submatrices are unimodular.
+An **unimodular matrix** is a square matrix with integer entries such that its \determinant is either $-1$, $0$ or $1$. A matrix is said **totally unimodular** (TU for short) if all its square submatrices are unimodular. Note that a totally unimodular matrix is not necessarily square and hence not necessarily unimodular!
 
 [Sometime ago]({{blog}}/2010/08/13/dijkstra-and-the-longest-path.html), we said that problems such as the minimum path, maximum flow and minimum cost max flow can be modeled using linear programming with the interesting property that the optimal solutions are always integer.
 
@@ -16,29 +16,68 @@ In this post we'll present some properties of TU matrices and discuss about two 
 
 ## Properties
 
-Let $A$ be a totally unimodular matrix. Then we have the following properties:
+Let $A$ be a totally unimodular matrix with dimensions $n \times m$. Then we have the following properties:
 
 **Property 1.** All elements in $A$ are either $0$, $1$ or $-1$.
 
 <proof>
-This follows from the definition because a 1x1 matrix is a submatrix and its determinant is equal to itself.
+This follows from the definition because a $1 \times 1$ matrix is a submatrix and its \determinant is equal to itself.
 </proof>
 
 **Property 2.** Its transpose, $A^{T}$, is TU.
 
 <proof>
-Since we're only considering square submatrices, every submatrix of $A^{T}$ is the transpose of some submatrix of $A$. Since determinants are invariant with transposition, it follows that the submatrices of $A^{T}$ satisfy the determinant constraint and thus $A^{T}$ is TU.
+Since we're only considering square submatrices, every submatrix of $A^{T}$ is the transpose of some submatrix of $A$. Since \determinants are invariant with transposition, it follows that the square submatrices of $A^{T}$ are unimodular and thus $A^{T}$ is TU.
 </proof>
 
-**Property 3.** The matrix obtained by appending the identity matrix to $$A$$, that is $$[A, I]$$, is TU
-
-**Property 4.** Any submatrix of $$A$$ is TU.
+**Property 3.** Let $B$ obtained by appending a column vector ($n \times 1$) with at most 1 non-zero entry to $A$. Then $B$ is TU.
 
 <proof>
-The set of submatrices of $A$ includes all submatrices of any of its submatrices. Since $A$ is TU, all its submatrices satisfy the determinant constraints. For any submatrix $A'$ of $A$ its submatrices are a subset of those of $A$, so it follows that all its submatrices satisfy the determinant constraints and hence $A'$ is TU.
+Consider a square submatrix of $B$, say $B'$. If it's also a submatrix of $A$, then we know it's unimodular. Otherwise it must include a subset of entries from the added column vector. If all these entries of it are 0, the \determinant is zero.
+<br /><br />
+Otherwise there's exactly one entry equal to 1, say at row $k$. We can use Laplace's expansion along the last column of $B'$, $m + 1$. Then we can claim that:
+
+$$\det(B') = (-1)^{k + m + 1} \det(B'_{k,m+1}$$
+
+Where $B'_{k,m+1}$ is the matrix $B'$ without the last column and the row $k$. This (square) submatrix is definetely a submatrix of $A$ so its \determinant is in $\curly{-1, 0, 1}$, so we conclude $\det(B')$ is also in $\curly{-1, 0, 1}$ and thus $B'$ is unimodular.
+<br /><br />
+Since this applies to any square submatrix of $B$, $B$ is TU.
 </proof>
 
-**Property 5.** The matrix obtained by multiplying any row of $$A$$ by -1 is TU
+A corollary of this property is that appending the identity matrix $n \times n$ to the right of $A$ preserves TU.
+
+Another corollary is that appending *rows* with at most one non-zero entry also preserves TU by combinig *Property 3* and *Property 2* (transposition).
+
+**Property 4.** Any submatrix of $A$ is TU.
+
+<proof>
+Let $A'$ be a square submatrix of $A$. The set of square submatrices of $A$ includes all square submatrices of $A'$. Since $A$ is TU, all its square submatrices are unimodular. Thus all square submatrices of $A'$ are unimodular and hence $A'$ is TU.
+</proof>
+
+**Property 5.** The matrix obtained by multiplying any row of $A$ by $-1$ is TU.
+
+<proof>
+
+Suppose we multiple row $k$ of $A$ by $-1$. Let $A'$ be a square submatrix of $A$. If $A'$ doesn't contain (part of) row $k$, then we know it's unimodular. Otherwise, the effect of multiplying row $k$ of $A$ by $-1$ is multiplying some row $k'$ of $A'$ by $-1$. Let $B'$ be the result of the latter.
+<br /><br />
+We can use Laplace's expansion along such row $k'$ of $B'$:
+
+$$
+\det(B') = \sum_{j = 1}^m 1^{k' + j} b'_{k', j} \det(B'_{k', j})
+$$
+
+Where $b'_{k', j}$ is the entry at row $k'$ and column $j$ of $B'$ and $B'_{k', j}$ is the matrix $B'$ without row $k'$ and column $j$. Because $B'_{k', j}$ does not contain $k'$, it's the same as $A'_{k', j}$.
+<br /><br />
+Also $b'_{k',j} = - a'_{k',j}$, which gives us:
+
+$$
+\det(B') = - \sum_{j = 1}^m 1^{k' + j} a'_{k', j} \det(A'_{k', j}) = -\det(A')
+$$
+
+Since $\det(A') \in \curly{-1, 0, 1}$, so is $\det(B')$.
+</proof>
+
+By combining *Property 5* and *Property 2* (transposition) we get the corollary that multiplying any column of $A$ by $-1$ also preserves TU.
 
 **Property 6.** The matrix obtained by duplicating any row of $$A$$ is TU
 
