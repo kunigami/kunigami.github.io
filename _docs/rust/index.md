@@ -665,3 +665,21 @@ fn f() {
     outer::inner(1, 2);
 }
 {% endhighlight %}
+
+# Ownership
+
+In Rust we have 3 ways of passing data from one variable to another:
+
+* Copy (default C++ mode)
+* Borrow (default Python mode, C++ references)
+* Move (C++ std::move)
+
+There's a convention for classes to implement these different modes.
+
+| Mode / semantics | API |
+| ---------------- | --- |
+| Copy             | `to_` |
+| Borrow           | `as_` |
+| Move             | `into_` |
+
+Reference: [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/naming.html?#ad-hoc-conversions-follow-as_-to_-into_-conventions-c-conv)
