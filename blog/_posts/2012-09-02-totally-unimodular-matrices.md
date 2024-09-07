@@ -180,11 +180,11 @@ $$
 
 It's not hard to see that if $$M$$ is the incidence matrix of the graph, then the problems can be stated as
 
-(1) $$\max \{1y \mid My \le 1; y \mbox{ binary} \}$$ and
+$$(1) \quad \max \{1y \mid My \le 1; y \mbox{ binary} \}$$ and
 
-(2) $$\min \{x1 \mid xM \ge 1; x \mbox{ binary} \}$$
+$$(2) \quad \min \{x1 \mid xM \ge 1; x \mbox{ binary} \}$$
 
-If the graph is bipartite, we can use Theorem 2 and the [strong duality](http://en.wikipedia.org/wiki/Strong_duality) for linear programs to conclude that (1) = (2).
+If the graph is bipartite, we can use *Theorem 2* and the [strong duality](http://en.wikipedia.org/wiki/Strong_duality) for linear programs to conclude that $(1) = (2)$.
 
 ### Directed Graphs
 
@@ -197,9 +197,7 @@ Consider a network represented by $$D$$ and with capacities represented by $$c :
 If $$M$$ is the incidence matrix of $$D$$, then $$Mx = 0$$ corresponds to
 
 $$
-\begin{array}{llclr}
-(3) & \sum_{(iv) \in A} x_{iv} & = & \sum_{(vi) \in A} x_{vi} & \forall v \in V\\
-\end{array}$$
+(3) \quad \sum_{(iv) \in A} x_{iv} = \sum_{(vi) \in A} x_{vi} \qquad \forall v \in V$$
 
 which are the flow conservation constraints. Since $$M$$ is totally unimodular, then if $$c$$ is integer, it's possible to show that the polytope $$\{x \mid 0 \le x \le c; Mx = 0\}$$ has integral vertices. This polytope also represents the constraints of the max circulation problem.
 
