@@ -38,6 +38,7 @@ class Wanderlust extends React.Component {
 
   render() {
     const total_markers = markers.length;
+    const total_visited = markers.filter(m => m.visited).length;
     // TODO: make this more responsive on the width
     return (
       <div>
@@ -46,10 +47,10 @@ class Wanderlust extends React.Component {
             The world is full of amazing places to visit. In this page I share
             some of the spots I'd like to visit one day or that I've visited
             already (green marker). There are currently {total_markers} places in
-            the map.
+            the map. I've visited {total_visited} of them.
         </p>
         <p>
-            You'll note this map is heavily skewed towards Western USA (since that's where
+            You'll notice this map is heavily skewed towards Western USA (since that's where
             I have more opportunities to explore) and natural places (personal preference). If
             you have other places on your wanderlust list, please let me know!
         </p>
