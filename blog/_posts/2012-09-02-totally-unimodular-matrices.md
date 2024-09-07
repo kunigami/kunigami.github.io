@@ -4,15 +4,19 @@ title: "Totally Unimodular Matrices"
 tags: [combinatorics, integer programming, linear algebra]
 ---
 
-An **unimodular matrix** is a square matrix with integer entries such that its \determinant is either $-1$, $0$ or $1$. A matrix is said **totally unimodular** (TU for short) if all its square submatrices are unimodular. Note that a totally unimodular matrix is not necessarily square and hence not necessarily unimodular!
+An **unimodular matrix** is a square matrix with integer entries such that its determinant is either $-1$, $0$ or $1$. A matrix is said **totally unimodular** (TU for short) if all its square submatrices are unimodular. Note that a totally unimodular matrix is not necessarily square and hence not necessarily unimodular!
 
 [Sometime ago]({{blog}}/2010/08/13/dijkstra-and-the-longest-path.html), we said that problems such as the minimum path, maximum flow and minimum cost max flow can be modeled using linear programming with the interesting property that the optimal solutions are always integer.
 
 In that post, we also said that it was because the coefficient matrix of the constraints of the formulations are totally unimodular. More formally, we have the following theorem:
 
-**Theorem 1.** Let $$A$$ be a totally unimodular matrix and $$b$$ be an integer vector. Then, the polyhedra $$P = \{x \mid Ax \le b\}$$ has integer vertices.
+**Theorem 1.** Let $$A$$ be a totally unimodular matrix and $$b$$ be an integer vector. Then, the polyhedra
 
-In this post we'll present some properties of TU matrices and discuss about two simple examples.
+$$P = \{x \mid Ax \le b\}$$
+
+has integer vertices.
+
+In this post we'll present some properties of TU matrices and present two simple examples.
 
 ## Properties
 
@@ -21,25 +25,25 @@ Let $A$ be a totally unimodular matrix with dimensions $n \times m$. Then we hav
 **Property 1.** All elements in $A$ are either $0$, $1$ or $-1$.
 
 <proof>
-This follows from the definition because a $1 \times 1$ matrix is a submatrix and its \determinant is equal to itself.
+This follows from the definition because a $1 \times 1$ matrix is a submatrix and its determinant is equal to itself.
 </proof>
 
 **Property 2.** Its transpose, $A^{T}$, is TU.
 
 <proof>
-Since we're only considering square submatrices, every submatrix of $A^{T}$ is the transpose of some submatrix of $A$. Since \determinants are invariant with transposition, it follows that the square submatrices of $A^{T}$ are unimodular and thus $A^{T}$ is TU.
+Since we're only considering square submatrices, every submatrix of $A^{T}$ is the transpose of some submatrix of $A$. Since determinants are invariant with transposition, it follows that the square submatrices of $A^{T}$ are unimodular and thus $A^{T}$ is TU.
 </proof>
 
 **Property 3.** Let $B$ obtained by appending a column vector ($n \times 1$) with at most 1 non-zero entry to $A$. Then $B$ is TU.
 
 <proof>
-Consider a square submatrix of $B$, say $B'$. If it's also a submatrix of $A$, then we know it's unimodular. Otherwise it must include a subset of entries from the added column vector. If all these entries of it are 0, the \determinant is zero.
+Consider a square submatrix of $B$, say $B'$. If it's also a submatrix of $A$, then we know it's unimodular. Otherwise it must include a subset of entries from the added column vector. If all these entries of it are 0, the determinant is zero.
 <br /><br />
 Otherwise there's exactly one entry equal to 1, say at row $k$. We can use Laplace's expansion along the last column of $B'$, $m + 1$. Then we can claim that:
 
 $$\det(B') = (-1)^{k + m + 1} \det(B'_{k,m+1}$$
 
-Where $B'_{k,m+1}$ is the matrix $B'$ without the last column and the row $k$. This (square) submatrix is definetely a submatrix of $A$ so its \determinant is in $\curly{-1, 0, 1}$, so we conclude $\det(B')$ is also in $\curly{-1, 0, 1}$ and thus $B'$ is unimodular.
+Where $B'_{k,m+1}$ is the matrix $B'$ without the last column and the row $k$. This (square) submatrix is definetely a submatrix of $A$ so its determinant is in $\curly{-1, 0, 1}$, so we conclude $\det(B')$ is also in $\curly{-1, 0, 1}$ and thus $B'$ is unimodular.
 <br /><br />
 Since this applies to any square submatrix of $B$, $B$ is TU.
 </proof>
@@ -79,17 +83,70 @@ Since $\det(A') \in \curly{-1, 0, 1}$, so is $\det(B')$.
 
 By combining *Property 5* and *Property 2* (transposition) we get the corollary that multiplying any column of $A$ by $-1$ also preserves TU.
 
-**Property 6.** The matrix obtained by duplicating any row of $$A$$ is TU
+**Property 6.** The permutation of rows or column preserves TU.
 
-Using this properties we can get some Corollaries from Theorem 1.
+<proof>
+To show this, we just need to show that swaping the order of any two adjacent rows preserves TU. That's because we can apply such swaps multiple times and obtain any ordering we want (a la bubble sort). Further, by using transposition we can obtain the same result for columns.
+<br /><br />
+Let $1 \le i \le n - 1$ be a row of $A$ and $B$ the result of swapping rows $i$ and $i + 1$. Now consider a square submatrix $B'$ of $B$. If $B'$ doesn't intercept row $i$ nor $i + 1$, then it's not affected by the swap and it exists as a square submatrix of $A$ and is thus unimodular.
+<br /><br />
+If $B'$ intercepts only $i$ then it must be its first row. Let the set of rows of $B'$ be denoted as $r_1, r_2, \cdots, r_k$ with $r_1 = i$ and columns $c_1, c_2, \cdots, c_k$. There should be a square submatrix $A'$ of $A$ with rows $i, i + 1, r_2, \dots, r_k$ and columns equal to $B'$'s except for an extra column $c'$, i.e. $c_1, c_2, \cdots, c', \cdots, c_k$. Then the submatrix obtained by removing row $i + 1$ and column $c'$ is also a square submatrix of $A$ and is equal to $B'$ which is thus unimodular. A similar argument holds if $B'$ intercepts only $i + 1$.
+<br /><br />
+Otherwise $B'$ intercepts both $i$ and $i+1$ and they're also adjacent in it. Let $B'$ rows be denoted by $r_1, r_2, \cdots, r_{i'}, r_{i'+1} \cdots, r_k$, where $r_{i'} = i + 1$ and $r_{i' + 1} = i$. There's a square submatrix $A'$ of $A$ which is similar to $B'$ except that rows $i$ are swapped, that is, its columns are $r_1, r_2, \cdots, r_{i' + 1}, r_{i'} \cdots, r_k$. We can define $B'$'s determinant via Laplace's expansion along its row $i'$-th row:
 
-Since $$[A, -I]$$ is TU, we have the following
+$$
+\det(B') = \sum_{j = 1}^{k} (-1)^{i' + j} b'_{i',j} \det(B'_{i'j})
+$$
 
-**Corollary 2.** The polytope $$P = \{x \mid Ax \le b; x \ge 0 \}$$ has integer vertices.
+We define $A'$'s determinant along its $i'+1$-th row:
 
-Also, since $$[A^T, -A^T, I, -I]$$ is TU,
+$$
+\det(A') = \sum_{j = 1}^{k} (-1)^{i' + 1 + j} a'_{i'+1,j}\det(A'_{i' + 1,j})
+$$
 
-**Corollary 3.** The dual of $$P = \{c^Tx \mid Ax \le b; x \ge 0 \}$$, namely $$Q = \{b^Ty \mid A^Ty \ge c; y \ge 0\}$$ has also integer vertices.
+Now, because $A'$'s $i'+1$-th row is $B'$'s $i'$-th row, we have $a'_{i'+1,j} = b'_{i',j}$ and removing that row leads to the same submatrix, so $A'_{i' + 1,j} = B'_{i'j}$. Also $(-1)^{i' + 1 + j} = (-1)(-1)^{i' + j}$  thus we have:
+
+$$
+\det(A') = \sum_{j = 1}^{k} (-1)(-1)^{i' + j} b'_{i',j}\det(B'_{i' + 1,j}) = -\det(B')
+$$
+
+Since $\det(A') \in \curly{-1, 0, 1}$, so is $\det(B')$ and $B'$ is unimodular. We just showed that all square submatrices of $B$ are unimodular and thus $B$ is TU.
+
+</proof>
+
+Combining this property with *Property 3* enables us to insert a column or row with at most one non-zero entries anywhere in the matrix and preserve TU.
+
+**Property 7.** The matrix obtained by duplicating any row or column of $A$ is TU
+
+<proof>
+Let $i$ be any row of $A$ and we obtain a matrix $B$ by inserting a copy of $i$ at position $i + 1$. Now consider a square submatrix $B'$ of $B$. If $B'$ doesn't intercept $i$ or $i + 1$, it's also a submatrix of $A$ and hence unimodular. If it intercepts only one of $i$ and $i + 1$, then it also exists as a submatrix of $A$.
+<br /><br />
+When it intercepts both $i$ and $i + 1$, $B'$ has duplicate rows and it can be shown that its determinant must be $0$ because these are linearly depended rows. For duplicate rows in particular we can use Laplace's expansion to show that $\det(B') = -\det(B')$, which leds to the same conclusion. Anyway, $B'$ is also unimodular and hence $B$ is TU.
+<br /><br />
+By utilizing <i>Property 6</i> we can show that the duplicated row $i$ can be inserted anywhere, not just at position $i + 1$. Further by leveraging transposition, <i>Property 7</i>,
+</proof>
+
+## Polytopes and TU Matrices
+
+Using the properties from the previos section we can derive some corollaries from *Theorem 1*. Since $$[A, -I]$$ is TU, we have:
+
+**Corollary 2.** The polytope
+
+$$P = \{x \mid Ax \le b; x \ge 0 \}$$
+
+has integer vertices.
+
+Also, since $[A^T, -A^T, I, -I]$ is TU,
+
+**Corollary 3.** The dual of
+
+$$P = \{c^Tx \mid Ax \le b; x \ge 0 \}$$
+
+namely
+
+$$Q = \{b^Ty \mid A^Ty \ge c; y \ge 0\}$$
+
+also has integer vertices.
 
 ## Examples
 
