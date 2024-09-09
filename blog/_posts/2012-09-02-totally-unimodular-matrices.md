@@ -126,6 +126,69 @@ When it intercepts both $i$ and $i + 1$, $B'$ has duplicate rows and it can be s
 By utilizing <i>Property 6</i> we can show that the duplicated row $i$ can be inserted anywhere, not just at position $i + 1$. Further by leveraging transposition, <i>Property 7</i>,
 </proof>
 
+**Property 8.** Pivoting preserves TU.
+
+More specially, let $\xi$ be the first element in $A$, $\mathbf{b}$ a $(n - 1 \times 1)$ column vector, $\mathbf{c}$ a $(1 \times m - 1)$ row vector and $D$ a $(n - 1 \times m - 1)$ matrix, such that $A$ is:
+
+$$A = \left[ \begin{array}{cc}
+\xi & \mathbf{c}\\
+\mathbf{b} & D\\
+\end{array} \right]$$
+
+Then define the **pivot** operation the transformation into:
+
+$$B = \left[ \begin{array}{cc}
+-\xi & -\xi \mathbf{c}\\
+\xi \mathbf{b} & D - \xi \mathbf{b} \mathbf{c} \\
+\end{array} \right]$$
+
+Then $B$ is TU. Note that $\mathbf{b} \mathbf{c}$ is a $(n - 1 \times m - 1)$ matrix.
+
+### Operations on TUs
+
+Given TU matrices $A$ and $B$, the following operations preserve TU.
+
+**Property 9.** 1-sum:
+
+$$A \oplus_1 B := \left[ \begin{array}{rr}
+A & 0\\
+0 & B\\
+\end{array} \right]$$
+
+**Property 10.** 2-sum:
+
+$$
+\left[ \begin{array}{rr}
+A & a\\
+\end{array} \right] \oplus_2
+\left[ \begin{array}{r}
+b\\
+B\\
+\end{array} \right] :=
+\left[ \begin{array}{rr}
+A & ab\\
+0 & B\\
+\end{array} \right]$$
+
+**Property 11** 3-sum:
+
+$$
+\left[ \begin{array}{rrr}
+A & a & a\\
+c & 0 & 1\\
+\end{array} \right]
+\oplus_3
+\left[ \begin{array}{rrr}
+1 & 0 & b\\
+d & d & B\\
+\end{array} \right]
+:=
+\left[ \begin{array}{rr}
+A & ab\\
+dc & B\\
+\end{array} \right]$$
+
+
 ## Polytopes and TU Matrices
 
 Using the properties from the previos section we can derive some corollaries from *Theorem 1*. Since $$[A, -I]$$ is TU, we have:

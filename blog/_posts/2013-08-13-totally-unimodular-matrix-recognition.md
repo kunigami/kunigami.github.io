@@ -2,23 +2,28 @@
 layout: post
 title: "Totally Unimodular Matrix Recognition"
 tags: [integer programming, linear algebra]
+vanity: "2013-08-13-totally-unimodular-matrix-recognition"
 ---
 
+{% include blog_vars.html %}
+
 <figure class="image_float_left">
-    <a href="http://kunigami.files.wordpress.com/2111/08/seymour.png"><img src="{{site.url}}/resources/blog/2013-08-13-totally-unimodular-matrix-recognition/2111_08_seymour.png" alt="" /></a>
+    <a href="http://kunigami.files.wordpress.com/2111/08/seymour.png"><img src="{{resources_path}}/seymour.png" alt="" /></a>
 </figure>
 
 Paul Seymour is an english mathematician, graduated from Oxford. He is currently teaching at Princeton.
 
-His research area concentrates on discrete mathematics, where he obtained important results including in Regular Matroids, Totally Unimodular Matrices and the Four Color Theorem, being awarded the [Fulkerson Prize](http://en.wikipedia.org/wiki/Fulkerson_Prize) four times.
-
-<br /><br />
+His research area concentrates on discrete mathematics, where he obtained important results including in Regular Matroids, Totally Unimodular Matrices (TU) and the Four Color Theorem, being awarded the [Fulkerson Prize](http://en.wikipedia.org/wiki/Fulkerson_Prize) four times.
 
 In this post we'll present one of his results regarding decomposition of totally unimodular matrices, which are the key piece in deciding whether a given matrix is TU.
 
+<!--more-->
+
 This is the third post about Totally Unimodular (TU) matrices. We introduced them [here]({{site.url}}/blog/2012/09/02/totally-unimodular-matrices.html) and described a special case called Network matrices [here]({{site.url}}/blog/2013/06/30/network-matrices.html).
 
-Although it's not true that all TU matrices are network matrices, Seymour's theorem basically says that all TU matrices are some kind of combination of network matrices and the following matrices:
+To recap, a *unimodular matrix* is a square matrix with integer entries such that its determinant is either $-1$, $0$ or $1$. A *totally unimodular matrix* is a matrix such that all its square submatrices are unimodular.
+
+Seymour's theorem states that every TU matrix can be decomposed into network matrices or one of $(1)$ or $(2)$:
 
 $$
 (1) \quad \left[ \begin{array}{rrrrr}
@@ -38,90 +43,31 @@ $$
 1 & 1 & 0 & 0 & 1\\
 \end{array} \right]$$
 
-It's possible to show that TU matrices are closed under the following operations:
-
-* (i) permuting rows or columns
-* (ii) taking the transpose
-* (iii) multiplying a row or column by -1
-* (iv) pivoting, that is, transforming
-
-$$\left[ \begin{array}{cc}
-\xi & c\\
-b & D\\
-\end{array} \right]$$
-
-into
-
-$$\left[ \begin{array}{cc}
--\xi & -\xi c\\
-\xi b & D - \xi b c \\
-\end{array} \right]$$
-
-where $$\xi$$ is a scalar and $C$ and $B$ are a row and a column vector of the appropriate sizes, respecitvely.
-
-* (v) adding/removing a row or column with at most one non-zero entry
-* (vi) repeating a row or a column
-
-Also, given TU matrices A and B, the following operations preserve total unimodularity:
-
-
-* (vii) 1-sum:
-
-$$A \oplus_1 B := \left[ \begin{array}{rr}
-A & 0\\
-0 & B\\
-\end{array} \right]$$
-
-* (viii) 2-sum:
-
-$$
-\left[ \begin{array}{rr}
-A & a\\
-\end{array} \right] \oplus_2
-\left[ \begin{array}{r}
-b\\
-B\\
-\end{array} \right] :=
-\left[ \begin{array}{rr}
-A & ab\\
-0 & B\\
-\end{array} \right]$$
-
-* (ix) 3-sum:
-
-$$
-\left[ \begin{array}{rrr}
-A & a & a\\
-c & 0 & 1\\
-\end{array} \right]
-\oplus_3
-\left[ \begin{array}{rrr}
-1 & 0 & b\\
-d & d & B\\
-\end{array} \right]
-:=
-\left[ \begin{array}{rr}
-A & ab\\
-dc & B\\
-\end{array} \right]$$
-
-We can now state Seymour's theorem:
-
-**Theorem 1.** (Seymour's decomposition theorem for totally unimodular matrices). *A matrix $A$ is totally unimodular if and only if $A$ arises from network matrices and the matrices $(1)$ and $(2)$ by applying the operations (i) to (ix). Here, the operations (vii) to (ix) are only applied if for $A$ and $B$, the number of rows and columns added is at least 4.*
+The theorem also provides an algorithm to determine whether a matrix is TU. The overall idea is to use the properties we saw for total unimodular matrices in [4] to reduce them into a form that can then be decomposed into smaller ones, as we'll see next.
 
 ## Recognizing Total Unimodularity
 
 The algorithm for recognizing whether a given matrix $M$ is TU consists in finding whether it is a network matrix or one the matrix $(1)$ or $(2)$.
 
-1-) If any of the entries of M is not in $$\{-1, 0, 1\}$$, then $M$ is not TU.
+**Step 1.** If any of the entries of M is not in $\{-1, 0, 1\}$, then $M$ is not TU.
 
-2-) Remove all rows and columns with one or less non-zero entries (Property (v)).
+Justification: *Property 1* in [4] states all entries of a TU matrix must be in $\{-1, 0, 1\}$.
 
-3-) Remove repeated rows and columns (Property (vi)).
+**Step 2.** Remove all rows and columns with one or less non-zero entries.
 
-4-) Test if $M$ or its transpose $$M^T$$ is a network matrix or $(1)$ or $(2)$, possibly permuting and multiplying rows and columns by -1 (Properties (i), (ii) and (iii)). If yes, then the matrix is TU.
+Justification: Since *adding* a row or column with at most one non-zero entry preserves TU (*Property 3* in [4]), we can *remove* such rows and columns from $A$ to obtain $B$. If we prove that $B$ is TU, then $A$ is TU.
 
-Otherwise, we check whether $M$ can be decomposed as follows:
+**Step 3.** Remove repeated rows and columns.
+
+Justification: Since duplicating any row or column preserves TU (*Property 7* in [4]), we can remove duplicate rows and columns from $A$ to obtain $B$. If we prove that $B$ is TU, then $A$ is TU.
+
+**Step 4.** Test if $M$ or its transpose $M^T$ is a network matrix or $(1)$ or $(2)$, by leveraging permutation of rows or columns, multiplying rows or columns by $-1$.
+
+Justification: Transposition (*Property 2* in [4]), permutation of rows and columns (*Property 6* in [4]) and multiplication of rows or columns by $-1$ (*Property 5* in [4]) all preserve TU.
+
+If it passes the test, then we're done. If not, go to *Step 5*.
+
+**Step 5.** Test whether $M$ can be decomposed as follows:
 
 $$(3) \quad M = \left[ \begin{array}{rr}
 A & B\\
@@ -132,14 +78,9 @@ such that $$\mbox{rank}(B) + \mbox{rank}(C) \le 2$$ and for both $A$ and $D$, th
 
 Cunningham and Edmonds stated it's possible to find such a decomposition for a matrix $M$ or conclude no such decomposition exists in polynomial time using the matroid intersection algorithm.
 
-Going back to the algorithm:
+If $M$ has cannot be decomposed as $(3)$, then it's not TU and we're done. If it can, go to *Step 6.*.
 
-5-) If $M$ has cannot be decomposed as (3), then it's not TU.
-
-6-) If it can, then we break into cases depending on the values of $$\mbox{rank}(B)$$ and $$\mbox{rank}(C)$$. Given that $$\mbox{rank}(B) + \mbox{rank}(C) \le 2$$, we have the 6 possible combinations:
-
-
-
+**Step 6.** We split it into cases depending on the values of $$\mbox{rank}(B)$$ and $$\mbox{rank}(C)$$. Given that $$\mbox{rank}(B) + \mbox{rank}(C) \le 2$$, we have the 6 possibilities:
 
 $$\begin{array}{l\mid c\mid c}
 \mbox{Case} & \mbox{rank}(B) & \mbox{rank}(C)\\
@@ -151,7 +92,6 @@ $$\begin{array}{l\mid c\mid c}
 5 & 2 & 0 \\
 6 & 0 & 2 \\
 \end{array}$$
-
 
 
 *Case 1:*
@@ -280,3 +220,4 @@ The matroid intersection algorithm is used in one of the steps of the algorithm.
 * [2] A decomposition theory for matroids. V. Testing of matrix total unimodularity - K. Truemper
 * [[3](http://www.utdallas.edu/~klaus/TUtest/index.html)]
  Implementation of a Unimodularity Test - M. Walter and K. Truemper
+* [[4]]({{blog}}/2012/09/02/totally-unimodular-matrices.html) NP Incompleteness - Totally Unimodular Matrices
