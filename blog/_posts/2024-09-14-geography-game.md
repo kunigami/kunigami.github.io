@@ -29,7 +29,7 @@ Player 1 is the first to go and they can only move the token using an edge $(v, 
 
 The problem consists in determining which player will win (or equivalently which one will lose). We'll see how to solve this problem in the next section.
 
-Before that, let's define some useful terminology. A **matching** $M$ of a graph $G = (V, E)$ is a suset of $E$ such that no two edges are incident to the same vertex. The cardinality of a matching is simply the number of edges in it and denoted by $\abs{M}$.
+Before that, let's define some useful terminology. A **matching** $M$ of a graph $G = (V, E)$ is a subset of $E$ such that no two edges are incident to the same vertex. The cardinality of a matching is simply the number of edges in it and denoted by $\abs{M}$.
 
 A **maximum matching** of $G$ is a matching of the largest cardinality, in other words, if $M^\*$ is a maximum matching, no other matching $M$ of $G$ exists such that $\abs{M} \gt \abs{M^\*}$. Note that there may be multiple maximum matchings.
 
