@@ -16,7 +16,7 @@ I bought this book because I went on a trip to Namibia and wanted to learn more 
 
 Ironically, the Kaokoveld, in the North West of the country, was one of the places I didn’t visit, but Owen-Smith spends time in other parts of the country that I did visit, such was Swakopmund and Etosha National Park.
 
-The main theme of the memoir is Garth's conservationism efforts, using a radical (and often unpopular with the government and some NGOs) strategy to involve the local community in helping preserve the wildlife by stop poaching and illegal hunting.
+The main theme of the memoir is Garth's conservationism efforts, using a radical (and often unpopular with the government and some NGOs) strategy to involve the local community in helping preserve the wildlife by stopping poaching and illegal hunting.
 
 Helped by his efforts, Northwest Namibia went from almost being devoid of wildlife in the 70-80s to a thriving tourist destination (wildlife sightseeing and legal hunting) which contributes to the local economy.
 
