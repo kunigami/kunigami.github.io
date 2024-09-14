@@ -11,26 +11,34 @@ title: Books
 
 Notes on some of the books I read, usually from those I liked and learned a lot from. Books are grouped by theme and within each theme sorted by title.
 
-## History
+# History
+
+## Africa
+
+### South Africa
+
+* [An Arid Eden]({{site.url}}/books/an-arid-eden), Garth Owen-Smith
+
+## Asia
 
 ### East Asia
 
 * [A New Illustrated History of Taiwan]({{site.url}}/books/a-new-illustrated-history-of-taiwan), Wan-yao Chou
 * [Imperial China]({{site.url}}/books/imperial-china), F. W. Mote
 
-### Europe
-
-* [The Anglo-Saxos]({{site.url}}/books/the-anglo-saxons), Marc Morris
-* [Moorish Spain]({{site.url}}/books/moorish-spain), Richard Fletcher
-
 ### South Asia
 
 * [India in the Persianate Age]({{site.url}}/books/india-in-the-persianate-age.html), Richard M. Eaton
 
-### Oceania
+## Europe
+
+* [The Anglo-Saxons]({{site.url}}/books/the-anglo-saxons), Marc Morris
+* [Moorish Spain]({{site.url}}/books/moorish-spain), Richard Fletcher
+
+## Oceania
 
 * [The Penguin History of Aotearoa]({{site.url}}/books/the-penguin-history-of-aotearoa.html), Michael King
 
-## Philosophy
+# Philosophy
 
 * [Letters from a Stoic]({{site.url}}/books/letters-from-a-stoic.html), Seneca
