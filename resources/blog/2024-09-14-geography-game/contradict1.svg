@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="115 154 447 286" width="447" height="286">
+  <defs/>
+  <g id="Canvas_1" stroke="none" stroke-opacity="1" fill="none" stroke-dasharray="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <rect fill="white" x="115" y="154" width="447" height="286"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_5">
+        <circle cx="124.22656" cy="217.4375" r="8.00001278321519" fill="white"/>
+        <circle cx="124.22656" cy="217.4375" r="8.00001278321519" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_7">
+        <text transform="translate(121.22656 188.03125)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="0" y="10" xml:space="preserve">v</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <text transform="translate(236.01622 188.03125)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="9023893e-19" y="10" xml:space="preserve">u</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <text transform="translate(339.49838 188.03125)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="0" y="10" xml:space="preserve">w</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11">
+        <circle cx="448.39453" cy="217.4375" r="8.00001278321515" fill="white"/>
+        <circle cx="448.39453" cy="217.4375" r="8.00001278321515" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_12">
+        <text transform="translate(445.69653 188.03125)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="1603162e-19" y="10" xml:space="preserve">x</tspan>
+        </text>
+      </g>
+      <g id="Line_13">
+        <line x1="132.22657" y1="217.4375" x2="230.82421" y2="217.4375" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_14">
+        <line x1="246.82422" y1="217.4375" x2="335.60937" y2="217.4375" stroke="#ff2600" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_15">
+        <line x1="351.60938" y1="217.4375" x2="440.39453" y2="217.4375" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_4">
+        <circle cx="238.82422" cy="217.4375" r="8.00001278321518" fill="white"/>
+        <circle cx="238.82422" cy="217.4375" r="8.00001278321518" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_6">
+        <circle cx="343.60938" cy="217.4375" r="8.00001278321516" fill="white"/>
+        <circle cx="343.60938" cy="217.4375" r="8.00001278321516" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_16">
+        <circle cx="553.1797" cy="217.4375" r="8.0000127832152" fill="white"/>
+        <circle cx="553.1797" cy="217.4375" r="8.0000127832152" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_17">
+        <circle cx="517.03125" cy="275.79688" r="8.00001278321515" fill="white"/>
+        <circle cx="517.03125" cy="275.79688" r="8.00001278321515" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_18">
+        <circle cx="517.03125" cy="162.76563" r="8.00001278321519" fill="white"/>
+        <circle cx="517.03125" cy="162.76563" r="8.00001278321519" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_19">
+        <line x1="454.48956" y1="222.6199" x2="510.9362" y2="270.6145" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_20">
+        <line x1="456.39454" y1="217.4375" x2="545.1797" y2="217.4375" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_21">
+        <line x1="454.6526" y1="212.4527" x2="510.7732" y2="167.75042" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_37">
+        <text transform="translate(121.22656 343.4336)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="0" y="10" xml:space="preserve">v</tspan>
+        </text>
+      </g>
+      <g id="Graphic_36">
+        <text transform="translate(236.01622 343.4336)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="9023893e-19" y="10" xml:space="preserve">u</tspan>
+        </text>
+      </g>
+      <g id="Graphic_35">
+        <text transform="translate(339.49838 343.4336)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="0" y="10" xml:space="preserve">w</tspan>
+        </text>
+      </g>
+      <g id="Graphic_33">
+        <text transform="translate(445.69653 343.4336)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" fill="black" x="1603162e-19" y="10" xml:space="preserve">x</tspan>
+        </text>
+      </g>
+      <g id="Line_32">
+        <line x1="132.22657" y1="372.83984" x2="230.82421" y2="372.83984" stroke="red" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_31">
+        <line x1="246.82422" y1="372.83984" x2="335.60937" y2="372.83984" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_30">
+        <line x1="351.60938" y1="372.83984" x2="440.39453" y2="372.83984" stroke="red" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Graphic_29">
+        <circle cx="238.82422" cy="372.83984" r="8.00001278321515" fill="white"/>
+        <circle cx="238.82422" cy="372.83984" r="8.00001278321515" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_28">
+        <circle cx="343.60938" cy="372.83984" r="8.00001278321512" fill="white"/>
+        <circle cx="343.60938" cy="372.83984" r="8.00001278321512" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_27">
+        <circle cx="553.1797" cy="372.83984" r="8.00001278321517" fill="white"/>
+        <circle cx="553.1797" cy="372.83984" r="8.00001278321517" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_26">
+        <circle cx="517.03125" cy="431.1992" r="8.00001278321515" fill="white"/>
+        <circle cx="517.03125" cy="431.1992" r="8.00001278321515" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_25">
+        <circle cx="517.03125" cy="318.16797" r="8.00001278321515" fill="white"/>
+        <circle cx="517.03125" cy="318.16797" r="8.00001278321515" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_24">
+        <line x1="454.48956" y1="378.02223" x2="510.9362" y2="426.01683" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_23">
+        <line x1="456.39454" y1="372.83984" x2="545.1797" y2="372.83984" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_22">
+        <line x1="454.6526" y1="367.85505" x2="510.7732" y2="323.15276" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_38">
+        <circle cx="124.22656" cy="372.83984" r="8.00001278321515" fill="white"/>
+        <circle cx="124.22656" cy="372.83984" r="8.00001278321515" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_34">
+        <circle cx="448.39453" cy="372.83984" r="8.00001278321512" fill="white"/>
+        <circle cx="448.39453" cy="372.83984" r="8.00001278321512" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
