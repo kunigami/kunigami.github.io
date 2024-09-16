@@ -20,6 +20,11 @@ The main theme of the memoir is Garth's conservationism efforts, using a radical
 
 Helped by his efforts, Northwest Namibia went from almost being devoid of wildlife in the 70-80s to a thriving tourist destination (wildlife sightseeing and legal hunting) which contributes to the local economy.
 
+<figure class="center_children">
+  <img src="{{resources_path_books}}/etosha-pan.jpg" alt="See caption" />
+  <figcaption>Etosha Pan in the background. A huge dry lake after which Etosha National Park was named. Mentioned several times in the book.</figcaption>
+</figure>
+
 ## History
 
 
@@ -39,7 +44,20 @@ The book covers a wide range of Namibia’s history, including bits of the Germa
 
 From 1915 to 1990, it was part of South Africa and called South West Africa (SWA for short). Much of the author's life was during this regime. Towards the end he was directly affected by events such as the struggle for independence, when SWAPO guerilla members started clashing with South Africa's miliary (SADF) around the border with Angola where the author often visited.
 
+<figure class="center_children">
+  <img src="{{resources_path_books}}/swakopmund.jpg" alt="See caption" />
+  <figcaption>Swakopmund, a town in the Northwest coast of Namibia. Garth's family lived here for a while, when he was working at a nearby outpost. The Swalopmund Center of the Wildlife Society was mentioned many times as a helping organization to his efforts.</figcaption>
+</figure>
+
+
 In 1990 Namibia gained independence, and the SWAPO political party was elected democratically. This stabilized the country and had profound repercursion on the conservation efforts (for the better). Garth's liberal views often got him in trouble with officials from the conservatives of South Africa's National party.
+
+<figure class="center_children">
+  <img src="{{resources_path_books}}/okaukuejo.jpg" alt="See caption" />
+  <figcaption>A waterhole at Okaukuejo. Garth worked at this outpost of Etosha National Park for a while.</figcaption>
+</figure>
+
+
 
 ### Zimbabwe
 
@@ -53,11 +71,27 @@ This would be useful later during his life where he had to convince Namibian loc
 
 In here Garth also had first-hand experience with the struggle for independence. Several of his fellow ranch managers were killed in ambushes. In one of the most fascinating parts of the book, Garth himself was ambushed by a guerilla group and his life was spared because he was known to look after his black employees (differently from most of his fellow managers), and since the guerilla fighters were from the same village as his workers, his fame had spread.
 
+
+<figure class="center_children">
+  <img src="{{resources_path_books}}/vic_falls.jpg" alt="See caption" />
+  <figcaption>Victoria Falls, Zimbabwe. Garth visited the place a couple of times. Another place he visited that I didn't go to is the Great Zimbabwe ruins.</figcaption>
+</figure>
+
+
 ### Other Countries
 
 Garth briefly mentions the civil wars in Angola, which had devastating effect for the wildlife in the border with Namibia.
 
 During his youth, Garth tried to travel across Botswana by bike trying to find a job. He mentions the independence in 1966 and is told that since then it was now difficult for a white man to find a government job, since they lost priviledged access.
+
+He also retells the history of Herero. They were Bantu speaking agro-pastoralists that migrated to Southern Africa around the 16th century. Some settled near the Ruacana Falls and became the Ovambo Nation.
+
+Others migrated east to today's Botswana and were known as Mbanderu, where they clashed with the Tswana-speaking BaTawana, who had also recently migrated. The Mbanderu moved to the dry savannas west of Lake Ngami and the BaTawana along the southern edge of the Okavango Delta.
+
+<figure class="center_children">
+  <img src="{{resources_path_books}}/okavango_delta.jpg" alt="See caption" />
+  <figcaption>Okavango Delta, Botswana.</figcaption>
+</figure>
 
 ## Other Topics
 
