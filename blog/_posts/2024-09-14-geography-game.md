@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Geography Game"
-tags: [computation complexity, combinatorial optimization, graph theory]
+tags: [computational complexity, combinatorial optimization, graph theory]
 vanity: "2024-09-14-geography-game"
 excerpt_separator: <!--more-->
 ---
