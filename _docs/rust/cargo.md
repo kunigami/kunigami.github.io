@@ -3,6 +3,14 @@ layout: doc
 title: "Cargo Cheatsheet"
 ---
 
+## Install
+
+MacOS
+
+{% highlight text %}
+brew install rust
+{% endhighlight %}
+
 ## Initialize Project
 
 {% highlight text %}

@@ -251,7 +251,21 @@ or via destructuring:
 let (n, s) = &tup;
 {% endhighlight %}
 
+## Void
 
+"void" is an empty tuple an in rust is called the **unit** type. Example:
+
+{% highlight rust %}
+fn returns_void() -> () {
+    return ();
+}
+{% endhighlight %}
+
+`()` is also what gets returned if no return is provided:
+
+{% highlight rust %}
+fn returns_void() -> () {}
+{% endhighlight %}
 
 # Functions
 
@@ -303,6 +317,96 @@ for i in 0..3 {
 {% endhighlight %}
 
 See also "Iterating" on different data structures.
+
+## Result
+
+Keyword: Exceptions
+
+### API
+
+{% highlight rust %}
+let r: Result<()> = Ok(());
+if r.is_ok() {
+    println!("ok");
+}
+if r.is_err() {
+    println!("not ok: {}", r.unwrap_err());
+}
+{% endhighlight %}
+
+### Example
+
+Result has type `Result<T, E>` and is union of `Ok<T>` and `Err<E>`. Example of a function that returns a `Result`:
+
+{% highlight rust %}
+fn maybe(v: i32) -> Result<i32, String> {
+    if (v == 0) {
+        return Err("Cannot be 0".to_owned());
+    }
+    Ok(v)
+}
+{% endhighlight %}
+
+On the caller side:
+
+{% highlight rust %}
+let x = maybe(v);
+match x {
+    Ok(value) => println!("{}", value),
+    Err(error) => println!("{}", error),
+}
+{% endhighlight %}
+
+### Generic Error
+
+To avoid specifying the error type, one can use the `Result` from the crate `anyhow`. Importing create in `Cargo.toml`:
+
+{% highlight rust %}
+[dependencies]
+anyhow = "1.0"
+{% endhighlight %}
+
+Example from before:
+
+{% highlight rust %}
+use anyhow::{Result, anyhow};
+fn maybe(v: i32) -> Result<i32> {
+    if v == 0 {
+        return Err(anyhow!("Cannot be 0"));
+    }
+    Ok(v)
+}
+{% endhighlight %}
+
+The rest is the same. Noting that `anyhow::Result<T>` is an alias for `Result<T, anyhow::Error>`. The `anyhow:Error` is created using the macro `anyhow!`.
+
+### Propagation
+
+If a function calls functions returning `Result` it can propagate the results like so:
+
+{% highlight rust %}
+use anyhow::{Result, anyhow};
+...
+fn forward(v: i32) -> Result<i32> {
+    let r = maybe(v);
+    if r.is_err() {
+        return r;
+    }
+    let x = r.unwrap();
+    Ok(x + 1)
+}
+{% endhighlight %}
+
+There's a very convenient operator, `?`, to avoid this boilerplate:
+
+{% highlight rust %}
+use anyhow::{Result, anyhow};
+...
+fn propagate(v: i32) -> Result<i32> {
+    let x = maybe(v)?;
+    Ok(x + 1)
+}
+{% endhighlight %}
 
 # Data structures
 
