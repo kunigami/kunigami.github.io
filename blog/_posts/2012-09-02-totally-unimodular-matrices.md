@@ -149,7 +149,7 @@ Let $M = [A' \mid B']$ and $C$ any subset of columns of $M$. Let $C_A$ be the co
 <br ><br />
 Now we consider the partition of $C$ into $C_1 = C_{A_1} \cup C_{B_1}$ and $C_2 = C_{A_2} \cup C_{B_2}$. We claim that the sum of columns in $C_1$ minus those in $C_{2}$ have entries in $\curly{-1, 0, 1}$. Let $l$ be the sum of columns in $C_1$, $r$ be the sum of columns in $C_2$ and $v = l - r$.
 <br ><br />
-Consider an element in row $i$, $v_i$. If $i$ is a row intersecting $A$, then $l_i$ and $r_i$ only contains non-zero elements from $C_{A_1}$ and $C_{A_2}$, respectively and since $A'$ is TU, their difference must be in $\curly{-1, 0, 1}$. Same if $i$ intersects $B$. Thus $M$ satisfies $(iii)$ and is thus TU.
+Consider an element in row $i$, $v_i$. If $i$ is a row intersecting $A$, then $l_i$ and $r_i$ only contains non-zero elements from $C_{A_1}$ and $C_{A_2}$ (because the corresponding entries in $C_{B_1}$ and $C_{B_2}$ are from the 0 matrix), respectively and since $A'$ is TU, their difference must be in $\curly{-1, 0, 1}$. Same if $i$ intersects $B$. Thus $M$ satisfies $(iii)$ and is thus TU.
 </proof>
 
 
