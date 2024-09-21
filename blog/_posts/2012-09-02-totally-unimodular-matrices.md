@@ -126,24 +126,6 @@ When it intercepts both $i$ and $i + 1$, $B'$ has duplicate rows and it can be s
 By utilizing <i>Property 6</i> we can show that the duplicated row $i$ can be inserted anywhere, not just at position $i + 1$. Further by leveraging transposition, <i>Property 7</i>,
 </proof>
 
-**Property 8.** Pivoting preserves TU.
-
-More specially, let $\xi$ be the first element in $A$, $\mathbf{b}$ a $(n - 1 \times 1)$ column vector, $\mathbf{c}$ a $(1 \times m - 1)$ row vector and $D$ a $(n - 1 \times m - 1)$ matrix, such that $A$ is:
-
-$$A = \left[ \begin{array}{cc}
-\xi & \mathbf{c}\\
-\mathbf{b} & D\\
-\end{array} \right]$$
-
-Then define the **pivot** operation the transformation into:
-
-$$B = \left[ \begin{array}{cc}
--\xi & -\xi \mathbf{c}\\
-\xi \mathbf{b} & D - \xi \mathbf{b} \mathbf{c} \\
-\end{array} \right]$$
-
-Then $B$ is TU. Note that $\mathbf{b} \mathbf{c}$ is a $(n - 1 \times m - 1)$ matrix.
-
 ### Operations on TUs
 
 Given TU matrices $A$ and $B$, the following operations preserve TU.
@@ -154,6 +136,7 @@ $$A \oplus_1 B := \left[ \begin{array}{rr}
 A & 0\\
 0 & B\\
 \end{array} \right]$$
+
 
 **Property 10.** 2-sum:
 
