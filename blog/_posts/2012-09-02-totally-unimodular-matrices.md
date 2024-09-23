@@ -155,18 +155,51 @@ Consider an element in row $i$, $v_i$. If $i$ is a row intersecting $A$, then $l
 
 **Lemma 10.** 2-sum:
 
+Let
+
+$$A' = \left[ \begin{array}{rr} A & a \end{array} \right] \qquad B' = \left[ \begin{array}{c} b \\ B \end{array} \right]$$
+
+where $a$ is a column vector and $b$ a row vector. Then
+
 $$
-\left[ \begin{array}{rr}
-A & a\\
-\end{array} \right] \oplus_2
-\left[ \begin{array}{r}
-b\\
-B\\
-\end{array} \right] :=
+A' \oplus_2 B' :=
 \left[ \begin{array}{rr}
 A & ab\\
 0 & B\\
 \end{array} \right]$$
+
+is TU.
+
+<proof>
+
+Let $M' = A' \oplus_2 B'$. Like in <i>Lemma 9</i>, We shall prove that $M$ is TU by showing that for any subset of its columns $C$, there's a partition $C_1$ and $C_2$ such that the sum of the column vectors in $C_1$ minus those in $C_2$ yields a column vector $v$ with entries in $\curly{-1, 0, 1}$.
+<br /><br />
+
+Let's split $M'$ as $M' = [X \mid Y]$, where $X = \left[ \begin{array}{c} A \\0 \end{array} \right]$ and $Y = \left[ \begin{array}{c} ab \\ B \end{array} \right]$.
+<br /><br />
+Let $C_{1X}$, $C_{2X}$ be the set of columns of $C_1$, $C_2$ intersecting $X$ and $C_{1Y}$, $C_{2Y}$ be the set of columns of $C_1$, $C_2$ intersecting $Y$. Let $v_i$ be the $i$-th element of $v$ as defined above.
+<br /><br />
+<b>Case 1.</b> Row $i$ only intersects $B$. Then we're done, because $[0 \mid B]$ is TU.<br /><br />
+<b>Case 2.</b> Otherwise, we can express $v$ as:
+
+$$v_i = \sum_{j \in C_{1X}} a_{ij} - \sum_{j \in C_{2X}} a_{ij} + \sum_{j \in C_{1Y}} a_i b_j - \sum_{j \in C_{2Y}} a_i b_j$$
+
+Where $a_{ij}$ is an entry in $A$, $a_i$ in $a$, and $b_j$ in $b$. Moving $a_i$ out of the sums:
+
+$$= \sum_{j \in C_{1X}} a_{ij} - \sum_{j \in C_{2X}} a_{ij} + a_i(\sum_{j \in C_{1Y}}  b_j - \sum_{j \in C_{2Y}} b_j)$$
+
+Now, let $C' = C_{1Y} \cup C_{2Y}$. $C'$ is a subset of columns of $\left[ \begin{array}{c} b \\ B \end{array} \right]$. Since such matrix is TU, there's a partition $C_{1Y}$ and $C_{2Y}$ such that the sum $\sum_{j \in C_{1Y}}  b_j - \sum_{j \in C_{2Y}} b_j$ belongs to $\curly{-1, 0, 1}$. We thus choose $C_{1Y}$ and $C_{2Y}$ this way (which still keeps <i>Case 1</i> valid), which reduces our equation to:
+
+$$(10.1) = a_i \delta + \sum_{j \in C_{1X}} a_{ij} - \sum_{j \in C_{2X}} a_{ij}$$
+
+With $\delta \in \curly{-1, 0, 1}$. If $\delta = 0$, it is as if $C_{1Y}$ and $C_{2Y}$ were empty, which reduces to the case where $C$ only intersects $A$. Since $A$ is TU, we're done.
+<br /><br />
+Otherwise, consider the set of columns $C' = C_{1X} \cup C_{2X} \cup \curly{a}$. Since this is a subset of $[A \mid a]$, which is TU, there must be exist a partition of it, $C_{1A}$ and $C_{1B}$ such that the sum of column in $C_{1A}$ minus the ones in $C_{1B}$ yields $\curly{-1, 0, 1}$. If $a$ belongs to $C_{1A}$ and $\delta = 1$, we choose $C_{1X} = C_{1A} \setminus \curly{a}$ and $C_{2X} = C_{2A}$. If $a$ belongs to $C_{1B}$ and $\delta = -1$, we choose $C_{1X} = C_{1A}$ and $C_{2X} = C_{2A} \setminus \curly{a}$ and we get that $(10.1)$ is in $\curly{-1, 0, 1}$ and we're done.
+<br /><br />
+If $a$ belongs to $C_{2B}$ and $\delta = 1$ or $a$ belongs to $C_{2A}$ and $\delta = -1$, we can flip $C_{1Y}$ and $C_{2Y}$ which will cause the sign of $\delta$ to flip (note that this doesn't affect <i>Case 1</i> nor the case where $\delta = 0$) and gives us that $v_i$ is in $\curly{-1, 0, 1}$.
+<br /><br />
+A parting note is that our choice of partition cannot be coupled with any one specific row $i$, since the partition is applied across all rows, equally. QED.
+</proof>
 
 **Lemma 11** 3-sum:
 
