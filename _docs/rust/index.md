@@ -318,6 +318,34 @@ for i in 0..3 {
 
 See also "Iterating" on different data structures.
 
+### iter() vs into_iter()
+
+`iter()` borrows the collection, so it's still valid after the loop. However, each element is also a borrowed reference. There's a variant `iter_mut()`, in which the borrowed reference is mutable, so any changes are done inline on the collection.
+
+{% highlight rust %}
+for item in vec.iter() {
+    // If vec is Vec<T>, item is a borrowed reference &T
+}
+{% endhighlight %}
+
+`into_iter()` moves the collection into the loop, so it's not valid afterwards. Each element in the loop is not a reference.
+
+{% highlight rust %}
+for item in vec.into_iter() {
+    // If vec is Vec<T>, item is T, and was moved from vec
+}
+// vec is not valid anymore
+{% endhighlight %}
+
+If you wish to mutate the element:
+
+{% highlight rust %}
+for mut item in vec.into_iter() {
+    // item was moved from vec
+}
+{% endhighlight %}
+
+
 ## Result
 
 Keyword: Exceptions
@@ -421,6 +449,7 @@ use std::collections::BTreeMap;
 let mut my_map = btreemap! {};
 
 // Create initialized
+use maplit::btreemap;
 let my_map = btreemap! {
     "blue" => 1,
     "green" => 2,
@@ -437,6 +466,7 @@ There's an analogy between `BTreeSet` and `HashSet` with `BTreeMap` and `HashMap
 let mut my_map = btreeset![];
 
 // Create initialized
+use maplit::btreeset;
 let fruits = btreeset![
     "apple",
     "banana"
@@ -517,46 +547,83 @@ let [a, b] = vec.as_slice() else {
 
 ## HashMap
 
-Reference: [HashMap](https://doc.rust-lang.org/std/collections/struct.HashMap.html)
+Reference: [HashMap](https://doc.rust-lang.org/std/collections/struct.HashMap.html).
+
+Import name:
 
 {% highlight rust %}
 use std::collections::HashMap;
+{% endhighlight %}
 
-// Type definition
+Type definition:
+
+{% highlight rust %}
 HashMap<String, String>;
+{% endhighlight %}
 
-// Create empty
+Create empty:
+
+{% highlight rust %}
 let mut my_map = HashMap::new()
+{% endhighlight %}
 
-// Create initialized
+Create initialized:
+
+{% highlight rust %}
 let my_map = HashMap::from([
     ("blue", 1),
     ("green", 2),
     ("red", 3),
 ]);
+{% endhighlight %}
 
-// Insert
+or
+
+{% highlight rust %}
+use maplit::hashmap;
+let my_map = hashmap!{
+    "blue" => 1,
+    "green" => 2,
+    "red" => 3
+};
+{% endhighlight %}
+
+Insert:
+
+{% highlight rust %}
 my_map.insert(
     "key_a".to_string(),
     "value_a".to_string(),
 );
+{% endhighlight %}
 
-// Access
+Access:
+
+{% highlight rust %}
 match my_map.get("key_a") {
     Some(value) => println!("value={}", value),
     None => println!("not found")
 }
+{% endhighlight %}
 
-// Update
+Update
+
+{% highlight rust %}
 if let Some(value) = my_map.get_mut(key) {
     *curr_value = 1;
 }
+{% endhighlight %}
 
-// All values
+All values
+
+{% highlight rust %}
 for value in my_map.values() {
 }
+{% endhighlight %}
 
-// All keys
+All keys
+
+{% highlight rust %}
 for key in my_map.keys() {
 }
 {% endhighlight %}
@@ -575,6 +642,12 @@ Create:
 let s = HashSet::new();
 {% endhighlight %}
 
+Create initialized:
+
+{% highlight rust %}
+use maplit::hashset;
+let my_map = hashset![1, 2, 3];
+{% endhighlight %}
 
 From vector:
 
@@ -770,7 +843,37 @@ fn f() {
 }
 {% endhighlight %}
 
-# Ownership
+# Memory Management
+
+## Smart Pointers
+
+`Box` is analogous to `std::unique_ptr` in C++.
+
+{% highlight rust %}
+let x = Box::new(5);
+{% endhighlight %}
+
+Remembering that move happens by default on assignment in Rust:
+
+{% highlight rust %}
+let y = x; // x is now invalid
+{% endhighlight %}
+
+`std::sync::Arc` is analogous to `std::shared_ptr` in C++. It's a reference counted pointer to the heap. Creation:
+
+{% highlight rust %}
+let x = Arc::new(5);
+{% endhighlight %}
+
+Share ownership:
+
+{% highlight rust %}
+let y = Arc::clone(&x);
+{% endhighlight %}
+
+
+
+## Ownership
 
 In Rust we have 3 ways of passing data from one variable to another:
 
