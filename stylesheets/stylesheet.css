@@ -473,11 +473,7 @@ theorem {
   margin-bottom: 10px;
 }
 
-proof {
-  display: none;
-}
-
-proof_body {
+proof, nonproof {
   display: none;
 }
 

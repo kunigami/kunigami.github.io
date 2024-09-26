@@ -143,13 +143,30 @@ A & 0\\
 \end{array} \right]$$
 
 <proof>
+
+<b>Definitions.</b> In all proofs for <i>Lemma 9</i>, <i>Lemma 10</i> and <i>Lemma 11</i> we'll use the same pattern, so let's define some terminology to avoid repeating ourselves. $M$ will denote the resulting matrix, i.e. in this case:
+
+$$
+M = \left[ \begin{array}{rr}
+A & 0\\
+0 & B\\
+\end{array} \right]
+$$
+
+Let $C$ denote a subset of columns of a matrix. A subset of columns can be split into two parts, which we call the <b>positive partition</b> ($C_+$) and the <b>negative partition</b> ($C_-$). The result of summing all column vectors in $C_+$ and subtracting from $C_-$ will be denoted by $S(C)$. We'll call such sum <b>unimodular</b> if all its entries belong to $\curly{-1, 0, 1}$. Further abusing the notation, we'll also call a scalar <b>unimodular</b> if it's one of $\curly{-1, 0, 1}$.
+<br /><br />
+<hr />
 We can use the equivalence between TU $(i)$ and $(iii)$, described in the section <i>Equivalences</i>. We first observe that $A' = \left[ \begin{array}{c} A \\0 \end{array} \right]$ is TU and so is $B' = \left[ \begin{array}{c} 0 \\B \end{array} \right]$.
 <br /><br />
-Let $M = [A' \mid B']$ and $C$ any subset of columns of $M$. Let $C_A$ be the columns intersecting $A'$ and $C_B$ those intersecting $B'$. We know that there exists a partition of $C_A$, $C_{A_1}$ and $C_{A_2}$ such that the sum of columns in $C_{A_1}$ minus those in $C_{A_2}$ have entries in $\curly{-1, 0, 1}$ and similarly for $C_B$ into $C_{B_1}$ and $C_{B_2}$.
+So we have that $M = [A' \mid B']$. Let $C$ any subset of columns of $M$. Let $C_A$ be the columns intersecting $A'$ and $C_B$ those intersecting $B'$. We know that $S(C_A)$ is unimodular and so is $S(C_B)$.
 <br ><br />
-Now we consider the partition of $C$ into $C_1 = C_{A_1} \cup C_{B_1}$ and $C_2 = C_{A_2} \cup C_{B_2}$. We claim that the sum of columns in $C_1$ minus those in $C_{2}$ have entries in $\curly{-1, 0, 1}$. Let $l$ be the sum of columns in $C_1$, $r$ be the sum of columns in $C_2$ and $v = l - r$.
+Now we consider the partition of $C$ into $C_+ = C_{A+} \cup C_{B+}$ and $C_- = C_{A-} \cup C_{B-}$. We claim that $S(C)$ is unimodular. Let $v = S(C)$ and $v_i$ one of its elements for the $i$-th row.
 <br ><br />
-Consider an element in row $i$, $v_i$. If $i$ is a row intersecting $A$, then $l_i$ and $r_i$ only contains non-zero elements from $C_{A_1}$ and $C_{A_2}$ (because the corresponding entries in $C_{B_1}$ and $C_{B_2}$ are from the 0 matrix), respectively and since $A'$ is TU, their difference must be in $\curly{-1, 0, 1}$. Same if $i$ intersects $B$. Thus $M$ satisfies $(iii)$ and is thus TU.
+If $i$ intersects the top of $M$, i.e. $[A 0]$, $v_i$ can be written as:
+
+$$v_i = \sum_{j \in C_{A+}} a_{ij} - \sum_{j \in C_{A-}} a_{ij}$$
+
+No terms from $C_{B+}$ and $C_{B-}$ appear because they're zero. And since $A'$ is TU, $S(A')$ is unimodular and hence $v_i$ is also unimodular. If $i$ intersects the bottom of $M$, $[0 B]$, we can arrive to a similar conclusion.
 </proof>
 
 
@@ -172,31 +189,37 @@ is TU.
 
 <proof>
 
-Let $M' = A' \oplus_2 B'$. Like in <i>Lemma 9</i>, We shall prove that $M$ is TU by showing that for any subset of its columns $C$, there's a partition $C_1$ and $C_2$ such that the sum of the column vectors in $C_1$ minus those in $C_2$ yields a column vector $v$ with entries in $\curly{-1, 0, 1}$.
+Leveraging the definitions from <i>Lemma 9</i>, we shall prove that $M$ is TU by showing that $S(C)$ is unimodular. Let $X = \left[ \begin{array}{c} A \\0 \end{array} \right]$ and $Y = \left[ \begin{array}{c} ab \\ B \end{array} \right]$ so that $M = [X \mid Y]$. Let $C_X$, $C_Y$ be the subset of $C$ intersecting $X$ and $Y$, respectively. Let $v = S(C)$ and consinder a row $i$.
 <br /><br />
+<b>Case 1.</b> Row $i$ intersects $[0 \mid B]$. Then we're done, because $[0 \mid B]$ is TU.
+<br /><br />
+<b>Case 2.</b> Row $i$ intersects $[A \mid ab]$, we can express $v_i$ as:
 
-Let's split $M'$ as $M' = [X \mid Y]$, where $X = \left[ \begin{array}{c} A \\0 \end{array} \right]$ and $Y = \left[ \begin{array}{c} ab \\ B \end{array} \right]$.
-<br /><br />
-Let $C_{1X}$, $C_{2X}$ be the set of columns of $C_1$, $C_2$ intersecting $X$ and $C_{1Y}$, $C_{2Y}$ be the set of columns of $C_1$, $C_2$ intersecting $Y$. Let $v_i$ be the $i$-th element of $v$ as defined above.
-<br /><br />
-<b>Case 1.</b> Row $i$ only intersects $B$. Then we're done, because $[0 \mid B]$ is TU.<br /><br />
-<b>Case 2.</b> Otherwise, we can express $v$ as:
-
-$$v_i = \sum_{j \in C_{1X}} a_{ij} - \sum_{j \in C_{2X}} a_{ij} + \sum_{j \in C_{1Y}} a_i b_j - \sum_{j \in C_{2Y}} a_i b_j$$
+$$v_i = \sum_{j \in C_{X+}} a_{ij} - \sum_{j \in C_{X-}} a_{ij} + \sum_{j \in C_{Y+}} a_i b_j - \sum_{j \in C_{Y-}} a_i b_j$$
 
 Where $a_{ij}$ is an entry in $A$, $a_i$ in $a$, and $b_j$ in $b$. Moving $a_i$ out of the sums:
 
-$$= \sum_{j \in C_{1X}} a_{ij} - \sum_{j \in C_{2X}} a_{ij} + a_i(\sum_{j \in C_{1Y}}  b_j - \sum_{j \in C_{2Y}} b_j)$$
+$$= \sum_{j \in C_{X+}} a_{ij} - \sum_{j \in C_{X-}} a_{ij} + a_i(\sum_{j \in C_{Y+}}  b_j - \sum_{j \in C_{Y-}} b_j)$$
 
-Now, let $C' = C_{1Y} \cup C_{2Y}$. $C'$ is a subset of columns of $\left[ \begin{array}{c} b \\ B \end{array} \right]$. Since such matrix is TU, there's a partition $C_{1Y}$ and $C_{2Y}$ such that the sum $\sum_{j \in C_{1Y}}  b_j - \sum_{j \in C_{2Y}} b_j$ belongs to $\curly{-1, 0, 1}$. We thus choose $C_{1Y}$ and $C_{2Y}$ this way (which still keeps <i>Case 1</i> valid), which reduces our equation to:
+Since $Y$ is TU, $S(Y)$ is unimodular and thus
 
-$$(10.1) = a_i \delta + \sum_{j \in C_{1X}} a_{ij} - \sum_{j \in C_{2X}} a_{ij}$$
+$$\delta = \sum_{j \in C_{Y+}}  b_j - \sum_{j \in C_{Y-}} b_j$$
 
-With $\delta \in \curly{-1, 0, 1}$. If $\delta = 0$, it is as if $C_{1Y}$ and $C_{2Y}$ were empty, which reduces to the case where $C$ only intersects $A$. Since $A$ is TU, we're done.
+is also unimodular. Note that $\delta$ doesn't depend on $i$, just on the choice of columns $C_{Y+}$ and $C_{Y-}$. So we have:
+
+$$(10.1) = a_i \delta + \sum_{j \in C_{X+}} a_{ij} - \sum_{j \in C_{X-}} a_{ij}$$
+
+With $\delta \in \curly{-1, 0, 1}$. If $\delta = 0$, it is as if $C_{Y+}$ and $C_{Y-}$ were empty, which reduces to the case where $C$ only intersects $A$. Since $A$ is TU, we're done.
 <br /><br />
-Otherwise, consider the set of columns $C' = C_{1X} \cup C_{2X} \cup \curly{a}$. Since this is a subset of $[A \mid a]$, which is TU, there must be exist a partition of it, $C_{1A}$ and $C_{1B}$ such that the sum of column in $C_{1A}$ minus the ones in $C_{1B}$ yields $\curly{-1, 0, 1}$. If $a$ belongs to $C_{1A}$ and $\delta = 1$, we choose $C_{1X} = C_{1A} \setminus \curly{a}$ and $C_{2X} = C_{2A}$. If $a$ belongs to $C_{1B}$ and $\delta = -1$, we choose $C_{1X} = C_{1A}$ and $C_{2X} = C_{2A} \setminus \curly{a}$ and we get that $(10.1)$ is in $\curly{-1, 0, 1}$ and we're done.
-<br /><br />
-If $a$ belongs to $C_{2B}$ and $\delta = 1$ or $a$ belongs to $C_{2A}$ and $\delta = -1$, we can flip $C_{1Y}$ and $C_{2Y}$ which will cause the sign of $\delta$ to flip (note that this doesn't affect <i>Case 1</i> nor the case where $\delta = 0$) and gives us that $v_i$ is in $\curly{-1, 0, 1}$.
+Otherwise, consider the set of columns $C_{X'} = C_{X} \cup \curly{a}$. Since this is a subset of $[A \mid a]$, which is TU, $S(C_{X'})$ is unimodular, with column $a$ belonging to either $C_{X'+}$ or $C_{X'-}$. If it's the latter, we can swap the partitions which would have the result of multiplying $S(C_{X'})$ by $-1$ but doesn't change its unimodularity, so assume $a$ is in $C_{X'+}$. Let $u = S(C_{X'})$. For the $i$-th row we have:
+
+$$u_i = a_i + \sum_{j \in C_{X+}} a_{ij} - \sum_{j \in C_{X-}} a_{ij}$$
+
+Similarly, suppose $\delta = -1$. We can swap $C_{Y+}$ and $C_{Y-}$ which would have the effect of multiplying $S(Y)$ by $-1$, including $\delta$. So we can assume $\delta = 1$ (note this doesn't invalidate <i>Case 1</i>). So $(10.1)$ becomes:
+
+$$(10.1) = a_i + \sum_{j \in C_{X+}} a_{ij} - \sum_{j \in C_{X-}} a_{ij}$$
+
+Which is exactly $u_i$, which is unimodular. So $v = S(C)$ is unimodular and $M$ is TU.
 <br /><br />
 A parting note is that our choice of partition cannot be coupled with any one specific row $i$, since the partition is applied across all rows, equally. QED.
 </proof>
@@ -219,6 +242,85 @@ A & ab\\
 dc & B\\
 \end{array} \right]$$
 
+where $a$, $d$ are column vectors and $b$, $c$ are row vectors. The 0 and 1 are scalars (i.e. do not denote a matrix of 0s and 1s).
+
+<proof>
+
+Leveraging the definitions from <i>Lemma 9</i>, we shall prove that $M$ is TU by showing that $S(C)$ is unimodular. Let $X = \left[ \begin{array}{c} A \\ dc \end{array} \right]$ and $Y = \left[ \begin{array}{c} ab \\ B \end{array} \right]$ so that $M = [X \mid Y]$. Let $C_X$, $C_Y$ be the subset of $C$ intersecting $X$ and $Y$, respectively. Let $v = S(C)$ and consinder a row $i$.
+<br /><br />
+<b>Case 1.</b> Row $i$ intersects $A$ and $ab$, in which case $v_i$ is:
+
+$$v_i = \sum_{j \in C_{X+}} a_{ij} - \sum_{j \in C_{X-}} a_{ij} + \sum_{j \in C_{Y+}} a_i b_j - \sum_{j \in C_{Y-}} a_i b_j$$
+
+Which is exactly as in <i>Lemma 10</i>. Isolating $a_i$ and noticing the sums of $b_j$ do not depend on the row, so it's a constant $\delta$ with a fixed choice of partition, we have:
+
+$$v_i = \delta a_i + \sum_{j \in C_{X+}} a_{ij} - \sum_{j \in C_{X-}} a_{ij}$$
+
+With
+
+$$\delta =  \sum_{j \in C_{Y+}} b_j - \sum_{j \in C_{Y-}} b_j$$
+
+Consider the following matrix
+
+$$
+\left[ \begin{array}{rr}
+0 & b\\
+d & B\\
+\end{array} \right]
+$$
+
+which is TU. Let $C_{Y'} = C_Y \cup \curly{d}$. There's a partition $C_{Y'+}, C_{Y'-}$ for which $S(C_{Y'})$ is unimodular. We want column $d$ to belong to $C_{Y'-}$. If it does not, we swap $C_{Y'+}$ and $C_{Y'-}$. The first row of $S(C_{Y'})$ is exactly $\delta$ and it's unimodular, so $\delta \in \curly{-1, 0, 1}$.
+<br /><br />
+If $\delta = 0$, then $S(C_X)$ is unimodular because $A$ is TU and we're done. Assume $\delta \ne 0$. Like before, we note that the matrix
+
+$$
+\left[ \begin{array}{rr}
+A & a\\
+c & 0\\
+\end{array} \right]
+$$
+
+is TU. Let $C_{X'} = C_X \cup \curly{a}$. Since the matrix is TU, $S(C_{X'})$ is unimodular for partitions $C_{X'+}$ and $C_{X'-}$. As before, we can swap partitions to make sure that $a$ belongs to $C_{X'+}$, so that the ssum:
+
+$$a_i + \sum_{j \in C_{X'+}} a_{ij} - \sum_{j \in C_{X'-}} a_{ij}$$
+
+is unimodular. If $\delta = 1$, we can set $C_{X+} = C_{X'+}$ and $C_{X-} = C_{X'-}$ and we're done. If $\delta = -1$, we cannot freely manipulate the sign of $\delta$ like in <i>Lemma 10</i> since it affects <i>Case 2</i> in this case.
+<br /><br />
+However, we have that this matrix is TU:
+
+$$
+\left[ \begin{array}{rr}
+1 & b\\
+d & B\\
+\end{array} \right]
+$$
+
+Let $C_{Y''} = C_Y \cup \curly{d}$ and let $(C_{Y''+}, C_{Y''-})$ be a partition such that $w' = S(C_{Y''})$ is unimodular for this matrix. The first element is given by:
+
+$${w'}_1 = \pm 1 + \sum_{j \in C_{Y''+}} b_j - \sum_{j \in C_{Y''-}} b_j$$
+
+The $\pm$ depends on whether we include the column $1 / d$ in the positive or the negative partition. Let's make sure it's on the negative partition (by appropriate swapping) and since ${w'}_1$ is unimodular, we can set $C_{Y+} = C_{Y''+}$ and $C_{Y-} = C_{Y''-}$ and can conclude that
+
+$${w'}_1 = -1 + \delta$$
+
+Which forces $\delta$ to not be $-1$, but in this case $\delta$ could be $2$. However, we claim that if $\delta$ in $C_{Y'}$ is odd, then $\delta$ in $C_{Y''}$ is odd too. To avoid confusion let's define:
+
+$$\delta' =  \sum_{j \in C_{Y'+}} b_j - \sum_{j \in C_{Y'-}} b_j = P' - N'$$
+
+and
+
+$$\delta'' =  \sum_{j \in C_{Y''+}} b_j) - \sum_{j \in C_{Y''-}} b_j = P'' - N''$$
+
+Since $\delta'$ is odd, exactly one of $P'$ and $N'$ is odd. Without loss of generality, assume $P'$ is. Thus $N'$ is even. We can "convert" the partition $(C_{Y'+}, C_{Y'-})$ into $(C_{Y''+}, C_{Y''-})$ by moving one element at a time from the positive to the negative partitions and vice-versa, because they're the partition of the same set of columns, $C_Y \cup \curly{d}$.
+<br /><br />
+Let's consider the move one column $x$ from/to $C_{Y'+}$ to/from $C_{Y'-}$. If $b_x = 0$, it has no effect in $P'$ nor $N'$ so $\delta'$'s parity is maintained. Suppose $b_x = 1$. Then the effect of moving from $C_{Y'+}$ to $C_{Y'-}$ is that it subtracts $1$ from $P'$ and adds $1$ to $N'$. $P'$ is now even and $N'$ odd, but the parity of $\delta'$ is unchanged. The same logic applies for $b_x = -1$ or moving from $C_{Y'-}$ to $C_{Y'+}$.
+<br /><br />
+Since $\delta' = -1$ at this point, we conclude that $\delta''$ is odd too, and more specifically $1$! So we choose the partition $C_{Y+} = C_{Y''+}$ and $C_{Y-} = C_{Y''-}$ and we're done!
+<br /><br />
+
+<b>Case 2.</b> Row $i$ intersects $[dc \mid B]$. This is the symmetrical opposite of <i>Case 1</i>. Noting that we're assuming column $\left[ \begin{array}{c} a \\ \curly{0,1} \end{array} \right]$ is in the positive partition and $\left[ \begin{array}{c} \curly{0,1} \\ d \end{array} \right]$ in the negative one, required by <i>Case 1</i>.
+
+</proof>
 
 ## Equivalences
 

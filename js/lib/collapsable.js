@@ -1,9 +1,9 @@
 
-const COLLAPSED_TEXT = "Show proof";
-const EXPANDED_TEXT = "Hide proof";
 
-function create_expand_link(body) {
+function create_expand_link(body, display_name) {
     const link = document.createElement('a');
+    const COLLAPSED_TEXT = "Show " + display_name;
+    const EXPANDED_TEXT = "Hide " + display_name;
 
     link.href = '#';
     link.textContent = COLLAPSED_TEXT;
@@ -21,38 +21,44 @@ function create_expand_link(body) {
     return link;
 }
 
-function add_proofs() {
-    let elements = document.getElementsByTagName("proof");
+function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function add_collpsable(tag_name, display_name, display_name_capitalized) {
+    let elements = document.getElementsByTagName(tag_name);
     for (var i = 0; i < elements.length; i++) {
         let element = elements[i];
 
         const children = element.children;
         element.children = [];
-        const proof_body = document.createElement('proof_body');
-        const proof_text = document.createElement('b');
-        proof_text.textContent = 'Proof.';
-        proof_body.appendChild(proof_text);
+        const inner_body = document.createElement('collapsable_body');
+        inner_body.style.display = 'none';
+        const inner_text = document.createElement('b');
+        inner_text.textContent = capitalize(display_name) + ".";
+        inner_body.appendChild(inner_text);
 
-        // Transfer children to proof_body
+        // Transfer children to inner_body
         while (element.firstChild) {
-            proof_body.appendChild(element.firstChild);
+            inner_body.appendChild(element.firstChild);
         }
         const text = document.createElement('p');
         text.textContent = element.textContent;
         element.textContent = '';
-        proof_body.appendChild(text);
+        inner_body.appendChild(text);
 
-        // We can now make the proof visible since the main
+        // We can now make the block visible since the main
         // child is hidden
         element.style.display = 'block';
 
-        element.appendChild(proof_body);
+        element.appendChild(inner_body);
 
-        const expand_link = create_expand_link(proof_body);
+        const expand_link = create_expand_link(inner_body, display_name);
         element.appendChild(expand_link);
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    add_proofs();
+    add_collpsable("proof", "proof");
+    add_collpsable("nonproof", "non-proof");
 });
