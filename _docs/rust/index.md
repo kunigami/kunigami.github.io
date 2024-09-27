@@ -687,6 +687,10 @@ if !queue.is_empty() {
 
 # Object Oriented
 
+
+
+## Structures
+
 {% highlight rust %}
 pub structure MyClass {
     my_field: bool,
@@ -711,6 +715,118 @@ impl MyClass {
     }
 }
 {% endhighlight %}
+
+
+## Traits
+
+Traits are analogous to interfaces in other languages (though it can have default implementation).
+
+{% highlight rust %}
+pub trait Summary {
+    fn summarize(&self) -> String;
+}
+{% endhighlight %}
+
+Implement a trait for a structure:
+
+{% highlight rust %}
+pub struct Article {
+    pub text: String,
+}
+
+impl Summary for Article {
+    fn summarize(&self) -> String {
+        self.text
+    }
+}
+{% endhighlight %}
+
+Note: we can't implement external traits on external types.
+
+### Default implementation
+
+{% highlight rust %}
+pub trait Summary {
+    fn summarize(&self) -> String {
+        String::from("(Read more...)")
+    }
+}
+
+impl Summary for Article {}
+{% endhighlight %}
+
+### Trait type
+
+Traits can be used as type constraints:
+
+{% highlight rust %}
+pub fn notify(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
+}
+{% endhighlight %}
+
+Syntax sugar to:
+
+{% highlight rust %}
+pub fn notify<T: Summary>(item: &T) {
+    println!("Breaking news! {}", item.summarize());
+}
+{% endhighlight %}
+
+### Multiple trait types
+
+Multiple traits requirement:
+
+{% highlight rust %}
+pub fn notify(item: &impl Summary + Display) {
+    ...
+}
+{% endhighlight %}
+
+or
+
+{% highlight rust %}
+pub fn notify<T: Summary + Display>(item: &T) {
+    ...
+}
+{% endhighlight %}
+
+### Return trait type
+
+{% highlight rust %}
+pub fn get() -> impl Summary {
+    ...
+}
+{% endhighlight %}
+
+Note however that `get()` cannot return different implementations of `Summary`.
+
+### Conditional struct implementation
+
+Below, the method `my_summary` is only implemented for template types implementing `Summary`, e.g. `C<Article>`.
+
+{% highlight rust %}
+struct C<T> {
+    x: T,
+}
+
+impl<T: Display> C<T> {
+    fn my_display(&self) {
+        ...
+    }
+}
+{% endhighlight %}
+
+### Conditional trait implementation
+
+A trait can be implemented for a struct conditioned on its type satisfying some other trait:
+
+{% highlight rust %}
+impl<T: Display> AnotherTrait for T {
+    ...
+}
+{% endhighlight %}
+
 
 # I/O
 
