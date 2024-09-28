@@ -45,6 +45,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [General]({{ site.url }}/docs/python/)
 * [Audio]({{ site.url }}/docs/python/audio.html)
+* [Jupyter]({{ site.url }}/docs/python/jupyter.html)
 * [Matplotlib]({{ site.url }}/docs/python/matplotlib.html)
 * [NumPy]({{ site.url }}/docs/python/numpy.html)
 * [Pandas]({{ site.url }}/docs/python/pandas.html)
