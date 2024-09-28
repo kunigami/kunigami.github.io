@@ -334,7 +334,7 @@ $$P = \{x \mid a \le Ax \le b; c \le x \le d \}$$
 
 has integer vertices.
 
-$(iii)$ Any subset of columns $C$ of $A$ can be split in two parts $C_1$ and $C_2$ such that the sums such that the sum of columns in $C_1$ minus those in $C_2$ yields a column vector with entries in $\curly{-1, 0, 1}$.
+$(iii)$ Any subset of columns $C$ of $A$ can be split in two parts $C_{+}$ and $C_{-}$ such that the sums such that the sum of columns in $C_{+}$ minus those in $C_{-}$ yields a column vector with entries in $\curly{-1, 0, 1}$.
 
 $(iv)$ Each non-singular submatrix of $A$ has a row with an odd number of non-zero elements
 
@@ -346,7 +346,7 @@ To prove these equivalences, we just need to find a cycle involving all these it
 
 * $(i) \rightarrow (ii)$ - *Corollary 16*.
 * $(ii) \rightarrow (iii)$ - *Theorem 17*.
-* $(iii) \rightarrow (iv)$ - *TBD*.
+* $(iii) \rightarrow (iv)$ - *Theorem 18*.
 * $(iii) \rightarrow (v)$ - *TBD*.
 * $(iv) \rightarrow (vi)$ - *TBD*.
 * $(v) \rightarrow (vi)$ - *TBD*.
@@ -471,7 +471,7 @@ $$\left[ \begin{array}{c} A \\ -A \\ I \\ -I \end{array} \right]$$
 by $x$. Since that matrix can be obtained using properties of TU matrices, we conlude it's TU and by <i>Theorem 15</i>.
 </proof>
 
-**Theorem 17.** Let $A$ be a TU matrix. Let $C$ be any subset of columns of $A$. Then there exists a partition of $C$ into two parts $C_1$ and $C_2$ such that the sum of columns in $C_1$ minus those in $C_2$ yields a column vector with entries in $\curly{-1, 0, 1}$.
+**Theorem 17.** Let $A$ be a TU matrix. Let $C$ be any subset of columns of $A$. Then there exists a partition of $C$ into two parts $C_{+}$ and $C_{-}$ such that the sum of columns in $C_{+}$ minus those in $C_{-}$ yields a column vector with entries in $\curly{-1, 0, 1}$.
 
 <proof>
 Consider the polytope:
@@ -486,7 +486,7 @@ Then $\lfloor \frac{1}{2} A d \rfloor$ is the column vector where the $i$-th ele
 <br /><br />
 This polytope is not empty because the vector $x = \frac{1}{2} d$ satisfies all the constraints and is thus an internal point of $P$. Due to $0 \le x \le d$, every integer point in this polytope must be a $\curly{0, 1}$-vector.
 <br /><br />
-Now define the vector $y = d - 2x$. Let's analyze its contents. If $d_j = 0$, then $x_j = 0$, so $y_j = 0$. Now suppose $d_j = 1$. If $x_j = 0$, then $y_j = 1$ and if $x_j = 1$, then $y_j = -1$. We can interpret $y$ as follows: if $y_j = 1$, then $j$ is a column in $C_1$ and if $y_j = -1$, then $j$ is a column in $C_2$. Thus $Ay$ represents the sum of columns in $C_1$ minus the sum of columns in $C_2$, exactly the thing the theorem wants to calculate. It remains to prove that $Ay$ only contains entries in $\curly{-1, 0, 1}$.
+Now define the vector $y = d - 2x$. Let's analyze its contents. If $d_j = 0$, then $x_j = 0$, so $y_j = 0$. Now suppose $d_j = 1$. If $x_j = 0$, then $y_j = 1$ and if $x_j = 1$, then $y_j = -1$. We can interpret $y$ as follows: if $y_j = 1$, then $j$ is a column in $C_{+}$ and if $y_j = -1$, then $j$ is a column in $C_{-}$. Thus $Ay$ represents the sum of columns in $C_{+}$ minus the sum of columns in $C_{-}$, exactly the thing the theorem wants to calculate. It remains to prove that $Ay$ only contains entries in $\curly{-1, 0, 1}$.
 <br /><br />
 Let's define $u = Ax$ and $w = Ay$. From the constraints we have that the $i$-th element of $u$ is subject to:
 
@@ -506,6 +506,21 @@ QED
 
 </proof>
 
+**Theorem 18.** Let $C$ be any subset of columns of $A$. Then there exists a partition of $C$ into two parts $C_{+}$ and $C_{-}$ such that the sum of columns in $C_{+}$ minus those in $C_{-}$ yields a
+column vector with entries in $\curly{-1, 0, 1}$.
+
+Then any nonsingular submatrix of $A$ has at least one row where the number of non-zero entries is odd.
+
+<proof>
+
+Let's do a contrapositive proof. Suppose a submatrix $A'$ is such that all its rows have an even number of non-zero entries. We'll show it's singular, i.e. its determinant is $0$.
+<br /><br />
+Let $C$ be the columns of $A'$. Since this is a subset of columns of $C$, there's a partition $(C_+, C_-)$ such that the sum of the column vectors in $C_+$ minus those in $C_-$ yields a column vector with entries in $\curly{-1, 0, 1}$. But since the number of non-zero elements on each row is even, the sum must be even too, which can only mean they're all $0$.
+<br /><br />
+Let be a row vector, with $x_j = 1$ if column $j \in C_+$ and $x_j = -1$ if $j \in C_-$. Then we have that $A'x = 0$. Since $x \neq 0$, it implies $A'$ is singular.
+
+QED
+</proof>
 
 ## References
 
