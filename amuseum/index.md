@@ -15,7 +15,7 @@ Welcome to my personal virtual museum.
 
 This page links to a collection of different types of things I find interesting in particular in art (all forms: painting, sculture, architecture, etc.). It's an attempt to strengthen memories of experiences and an opportunity to learn more about them.
 
-I try to organize them by country, even though this might not be accurate. I also have pages for classes of works of art, but nor for specific artists. For example, I would have a page *Impressionism* but not a dedicated page for Monet.
+I try to organize them by country, even though this might not be accurate. Pages are organized by classes of works of art, not for specific artists. For example, I would have a page *Impressionism* but not a dedicated page for Monet.
 
 As an exception, I might list individual works of art or artifacts if they have particular historical significance, e.g. the *Rosetta Stone*.
 
@@ -44,6 +44,9 @@ As an exception, I might list individual works of art or artifacts if they have 
 
 * [Calçada]({{ root }}/calcada.html)
 
+## Spain 🇪🇸
+
+* [Moorish Architecture]({{ root }}/moorish.html)
 
 ## United Kingdom 🇬🇧
 
