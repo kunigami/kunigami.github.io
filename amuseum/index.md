@@ -28,6 +28,10 @@ As an exception, I might list individual works of art or artifacts if they have 
 * [Animal Mummies]({{ root }}/animal-mummies.html)
 * [Rosetta Stone]({{ root }}/rosetta-stone.html)
 
+## India 🇮🇳
+
+* [Mughal Architecture]({{ root }}/mughal.html)
+
 ## Iraq 🇮🇶
 
 * [Lamassu]({{ root }}/lamassu.html)
@@ -36,7 +40,7 @@ As an exception, I might list individual works of art or artifacts if they have 
 
 * [Dogū]({{ root }}/dogu.html)
 
-## Portugal 🇪🇬
+## Portugal 🇵🇹
 
 * [Calçada]({{ root }}/calcada.html)
 
