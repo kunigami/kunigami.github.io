@@ -28,13 +28,7 @@ The transpose of an $m \times n$ matrix $M$ , denoted as $M^T$, is a $n \times m
 
 ### Determinant
 
-The determinant of a square matrix $A$, denoted by $\mid A \mid$, is a scalar that can be recursively defined as
-
-$$\mid A \mid = \sum_{i=1}^{m}  a_{ij} (-1)^{i + j} \mid M^{-}_{ij} \mid$$
-
-For any choice of column $j$. Here $A_{ij}^{-}$ is the matrix resulting from removing row $i$ and column $j$ from $A$. The base of this recursion is $m = 1$, for which $\mid A \mid = a_{11}$
-
-The determinant $\mid A_{ij}^{-} \mid$ is also called the *minor* of $A$. In this context $(-1)^{i + j} \mid A_{ij}^{-} \mid$ is called the *cofactor* of $a_{ij}$.
+See [Determinants]({{site.url}}/docs/math/determinants.html).
 
 ### Diagonal
 

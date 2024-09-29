@@ -326,7 +326,7 @@ Since $\delta' = -1$ at this point, we conclude that $\delta''$ is odd too, and 
 
 There are many different characterizations of totally unimodular matrices. Let $A$ be a matrix with entries in $\curly{-1, 0, 1}$. Then the following are equivalent:
 
-$(i)$ $A$ is totally unimodular
+$(i)$ $A$ is totally unimodular.
 
 $(ii)$ If $a, b, c, d$ are integral vectors, the polytope
 
@@ -334,7 +334,9 @@ $$P = \{x \mid a \le Ax \le b; c \le x \le d \}$$
 
 has integer vertices.
 
-$(iii)$ Any subset of columns $C$ of $A$ can be split in two parts $C_{+}$ and $C_{-}$ such that the sums such that the sum of columns in $C_{+}$ minus those in $C_{-}$ yields a column vector with entries in $\curly{-1, 0, 1}$.
+Let $A$ be a matrix with entries in $\curly{-1, 0, 1}$. We define $A$ as **bipartite unimodular** if for every subset of columns $C$ of $A$, there is a partition $(C_{+}, C_{-})$ of $C$ such that the sums such that the sum of columns in $C_{+}$ minus those in $C_{-}$ yields a column vector with entries in $\curly{-1, 0, 1}$
+
+$(iii)$ $A$ is bipartite unimodular.
 
 $(iv)$ Each non-singular submatrix of $A$ has a row with an odd number of non-zero elements
 
@@ -471,7 +473,7 @@ $$\left[ \begin{array}{c} A \\ -A \\ I \\ -I \end{array} \right]$$
 by $x$. Since that matrix can be obtained using properties of TU matrices, we conlude it's TU and by <i>Theorem 15</i>.
 </proof>
 
-**Theorem 17.** Let $A$ be a TU matrix. Let $C$ be any subset of columns of $A$. Then there exists a partition of $C$ into two parts $C_{+}$ and $C_{-}$ such that the sum of columns in $C_{+}$ minus those in $C_{-}$ yields a column vector with entries in $\curly{-1, 0, 1}$.
+**Theorem 17.** If $A$ is a TU matrix then it is *bipartite unimodular*.
 
 <proof>
 Consider the polytope:
@@ -506,10 +508,7 @@ QED
 
 </proof>
 
-**Theorem 18.** Let $C$ be any subset of columns of $A$. Then there exists a partition of $C$ into two parts $C_{+}$ and $C_{-}$ such that the sum of columns in $C_{+}$ minus those in $C_{-}$ yields a
-column vector with entries in $\curly{-1, 0, 1}$.
-
-Then any nonsingular submatrix of $A$ has at least one row where the number of non-zero entries is odd.
+**Theorem 18.** If $A$ is *bipartite unimodular*, then any nonsingular submatrix of $A$ has at least one row where the number of non-zero entries is odd.
 
 <proof>
 
@@ -521,6 +520,23 @@ Let be a row vector, with $x_j = 1$ if column $j \in C_+$ and $x_j = -1$ if $j \
 
 QED
 </proof>
+
+**Theorem 19.** If $A$ is *bipartite unimodular*, then the sum of entries in any square submatrix with even row and colum sums is divisible by 4.
+
+<proof>
+Let $B$ be any submatrix of $A$ whose sum of columns and rows is even. Let $C$ be the set of its columns. Since $C$ is a subset of column of $A$ and it is bipartite unimodular, there's a $(C_{+}, C_{-})$ partition such that the sum of column in $C_{+}$ minus those in $C_{-}$ is in $\curly{-1, 0, 1}$.
+<br /><br />
+But since we're assuming that the sum is even, it must be zero. Let $\sigma(M)$ represent the sum of entries in matrix $M$. Let $B_+$ and $B_-$ be the submatrix of $B$ corresponding to $C_{+}$ and $C_{-}$, respectively.
+<br /><br />
+Then we conclude that $\sigma(B_+) = \sigma(B_-)$. Let $c_j$ be the $j$-th column vector of $B$, and $\sigma(c_j)$ its sum, which is even by hypothesis. We can write $\sigma(B_+)$ as:
+
+$$\sigma(B_+) = \sum_{j \in C_{+}} \sigma(c_j)$$
+
+Which tells us that $\sigma(B_+)$ is even, say $2k$. Finally, we have that $\sigma(B) = \sigma(B_+) + \sigma(B_-) = 2 \sigma(B_+) = 4k$.
+
+QED. Note: nowhere in the proof do we seem to require that $B$ be square.
+</proof>
+
 
 ## References
 

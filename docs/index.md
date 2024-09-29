@@ -62,6 +62,9 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 ## Math
 
+* Linear Algebra
+  * [Matrices]({{ site.url }}/docs/math/matrix.html)
+  * [Determinants]({{ site.url }}/docs/math/determinants.html)
 * Real Analysis
   * [Derivative]({{ site.url }}/docs/math/derivative.html)
   * [Integral]({{ site.url }}/docs/math/integral.html)
@@ -71,7 +74,6 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * Complex Analysis
   * [Complex Numbers]({{ site.url }}/docs/math/complex.html)
   * [Complex Power Series]({{ site.url }}/docs/math/complex_power_series.html)
-* [Matrices]({{ site.url }}/docs/math/matrix.html)
 * [Probability]({{ site.url }}/docs/math/probability.html)
 * [Set Theory]({{ site.url }}/docs/math/set.html)
 * [Topology]({{ site.url }}/docs/math/topology.html)
