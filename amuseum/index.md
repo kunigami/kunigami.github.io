@@ -48,6 +48,7 @@ As an exception, I might list individual works of art or artifacts if they have 
 
 * [Moorish Architecture]({{ root }}/moorish.html)
 
-## United Kingdom 🇬🇧
+## Multiple Countries 🇺🇳
 
-* [Roman Baths]({{ root }}/roman-baths-uk.html)
+* [Rock-cut Architecture]({{ root }}/rock-cut.html)
+* [Roman Baths]({{ root }}/roman-baths.html)
