@@ -39,6 +39,7 @@ As an exception, I might list individual works of art or artifacts if they have 
 ## Japan 🇯🇵
 
 * [Dogū]({{ root }}/dogu.html)
+* [Haniwa]({{ root }}/haniwa.html)
 
 ## Portugal 🇵🇹
 
