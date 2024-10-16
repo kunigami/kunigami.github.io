@@ -20,6 +20,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [General]({{ site.url }}/docs/cpp/)
 * [Concurrency]({{ site.url }}/docs/cpp/concurrency.html)
+* [CMake]({{ site.url }}/docs/cpp/cmake.html)
 * [External Libraries]({{ site.url }}/docs/cpp/external_libs.html)
 
 ## Java
