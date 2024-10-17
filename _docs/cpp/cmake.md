@@ -42,6 +42,28 @@ add_executable(binary main.cpp)
 target_link_libraries(binary PUBLIC mylib)
 {% endhighlight %}
 
+## Specifying C++ Standard Version
+
+Equivalent to `-std=20` in gcc/llvm.
+
+{% highlight cmake %}
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+{% endhighlight %}
+
+## Adding custom `make` subcommand
+
+`make run`:
+
+{% highlight cmake %}
+add_custom_target(run
+    COMMAND binary  # i.e. ./binary
+    DEPENDS binary  # target name
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    COMMENT "runs binary"
+)
+{% endhighlight %}
+
 ## Variables
 
 Set:
