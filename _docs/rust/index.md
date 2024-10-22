@@ -308,6 +308,14 @@ if n < 0 {
 }
 {% endhighlight %}
 
+Early-return/continue:
+
+{% highlight rust %}
+let Some(value) = maybe else {
+    continue;
+}
+{% endhighlight %}
+
 ## Loops
 
 {% highlight rust %}
@@ -435,6 +443,32 @@ fn propagate(v: i32) -> Result<i32> {
     Ok(x + 1)
 }
 {% endhighlight %}
+
+Keyword: rethrow
+
+If some context is needed, we can use `with_context()`:
+
+{% highlight rust %}
+use anyhow::{Result, anyhow};
+...
+fn propagate(v: i32) -> Result<i32> {
+    let x = maybe(v).with_context(||
+        format!("third_error")
+    )?;
+    Ok(x + 1)
+}
+{% endhighlight %}
+
+In case of error
+
+```
+third_error
+
+Caused by:
+0: original_error
+1: secondary_error
+
+```
 
 # Data structures
 
