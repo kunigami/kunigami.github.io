@@ -1,12 +1,16 @@
 ---
 layout: post
-title: "How Hard Is Uno?"
+title: "The Computational Complexity of Uno"
 tags: [computational complexity, puzzle]
-vanity: "2024-09-14-how-hard-is-uno"
+vanity: "2024-10-30-how-hard-is-uno"
 excerpt_separator: <!--more-->
 ---
 
 {% include blog_vars.html %}
+
+<figure class="image_float_left">
+  <img src="{{resources_path}}/uno-logo.svg" alt="SVG of the Uno logo" style="width: 100px;" />
+</figure>
 
 In this post we provide a summary of the results from the paper *UNO is hard, even for a single player* by Demaine et al [1]. To keep it shorter, basic familiarity with the [rules of UNO](https://www.unorules.com/) [2], the card game, is expected.
 
@@ -132,7 +136,7 @@ The result that the 2-player competitive variant of Uno can be solved in polynom
 
 ## References
 
-* [1] https://erikdemaine.org/papers/Uno_TCS/
+* [[1](https://erikdemaine.org/papers/Uno_TCS/)] Erik D. Demaine, Martin L. Demaine, Ryuhei Uehara, Takeaki Uno, and Yushi Uno, "UNO is hard, even for a single player".
 * [[2](https://www.kuniga.me/docs/cs/computational_complexity.html)] NP-Incompleteness - Computational Complexity Cheat Sheet
 * [3] A. S. Fraenkel, E. R. Scheinerman and D. Ullman. Undirected edge geography. Theoretical Computer Science 112, 371–381 (1993).
 * [[4](https://en.wikipedia.org/wiki/Matching_(graph_theory))] Wikipedia - Matching (graph theory)
