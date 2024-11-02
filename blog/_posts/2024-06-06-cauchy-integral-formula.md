@@ -45,7 +45,7 @@ These results will be crucial to the main topic of this post: *Cauchy's Integral
 
 What happens if we try to apply the Cauchy integral theorem to this function:
 
-$$F(z) = \frac{f(z) - f(a)}{z - a}$$
+$$(1) \quad F(z) = \frac{f(z) - f(a)}{z - a}$$
 
 for some $a$ not on the curve $\gamma$? We can interpret this function as a rate of change (how much f(z) changes when $z$ does). In fact, notice that $\lim_{z \rightarrow a} F(z)$ is essentially $f'(a)$.
 
@@ -57,7 +57,7 @@ from this we're be able to derive *Cauchy's Integral Formula*.
 
 **Lemma 1 (Cauchy's Integral Formula).** Let $f(z)$ be holomorphic in an open disk $\Delta$, and a closed curve $\gamma$ in $\Delta$ and a point $a \in \Delta$ not on $\gamma$ and such that $n(\gamma, a) = 1$. Then:
 
-$$(1) \quad f(a) = \frac{1}{2\pi i} \int_{\gamma} \frac{f(z)}{z - a} dz$$
+$$(2) \quad f(a) = \frac{1}{2\pi i} \int_{\gamma} \frac{f(z)}{z - a} dz$$
 
 <proof>
 Consider the following function:
@@ -114,7 +114,7 @@ We can also compute the integral $f(z)/(z - a)$ on the boundary of a simple curv
 
 $$\int_{\abs{z} = 1} \frac{e^z}{z} dz$$
 
-Let $f(z) = e^z$ and $a = 0$. Then $F(z)$ as in $(A)$ is holomorphic in the disk $\abs{z} \lt 2$ except at $a$. This allows us to use $(1)$ where $\gamma$ is $\abs{z} = 1$ (since $n(\gamma, a) = 1$ for any point inside a circle):
+Let $f(z) = e^z$ and $a = 0$. Then $F(z)$ as in $(1)$ is holomorphic in the disk $\abs{z} \lt 2$ except at $a$. This allows us to use $(2)$ where $\gamma$ is $\abs{z} = 1$ (since $n(\gamma, a) = 1$ for any point inside a circle):
 
 $$e^{0} = 1 = \frac{1}{2\pi i}\int_{\abs{z} = 1} \frac{e^z}{z} dz$$
 
@@ -128,13 +128,13 @@ Recall from [6], that a complex derivative is given by:
 
 $$f'(z) =  \lim_{h \rightarrow 0} \frac{f(z + h) - f(z)}{h}$$
 
-where $h$ is a complex number. We want to prove that if $f'(z)$ exists, then $f^{''}(z)$ exists, i.e. it's infinitely differentiable. We'll go further and provide an explicit formula for the $n$-th derivative  (equation $(3)$). The proof can be derived from Cauchy's Integral Formula.
+where $h$ is a complex number. We want to prove that if $f'(z)$ exists, then $f^{''}(z)$ exists, i.e. it's infinitely differentiable. We'll go further and provide an explicit formula for the $n$-th derivative  (equation $(4)$). The proof can be derived from Cauchy's Integral Formula.
 
 Before that however, we'll need an auxiliary lemma:
 
 **Lemma 2.** Let $f(z)$ be a continuous function on the closed curve $\gamma$. Then
 
-$$(2) \quad F_n(a) = \int_{\gamma} \frac{f(z)}{(z - a)^n} dz$$
+$$(3) \quad F_n(a) = \int_{\gamma} \frac{f(z)}{(z - a)^n} dz$$
 
 <p>
 is holomorphic in each of the regions determined by $\gamma$ and the derivative is $F'_n(a) = n F_{n + 1}(a)$.
@@ -142,7 +142,7 @@ is holomorphic in each of the regions determined by $\gamma$ and the derivative 
 
 <proof>
 We'll prove by induction, starting with the base $n = 1$. So our goal is to to show $F_1$ is holomorphic and that $F'_1(a) = F_2(a)$ for $a \not\in \gamma$.<br /><br />
-We'll first show that $F_1$ is continuous at any point $a_0$. One way to show this is that for every $\epsilon > 0$, we can find a neighborhood around $a_0$, $\abs{a - a_0} \lt \delta$, for which $\abs{F_1(a) - F_1(a_0)} \lt \epsilon$. Let's compute $F_1(a) - F_1(a_0)$, by first replacing $(2)$:
+We'll first show that $F_1$ is continuous at any point $a_0$. One way to show this is that for every $\epsilon > 0$, we can find a neighborhood around $a_0$, $\abs{a - a_0} \lt \delta$, for which $\abs{F_1(a) - F_1(a_0)} \lt \epsilon$. Let's compute $F_1(a) - F_1(a_0)$, by first replacing $(3)$:
 
 $$F_1(a) - F_1(a_0) = \int_{\gamma} \frac{f(z)}{z - a} dz - \int_{\gamma} \frac{f(z)}{z - a_0} dz$$
 
@@ -167,7 +167,7 @@ $$(2.3) \quad \abs{z - a_0} \gt \delta$$
   <figcaption>Figure 2.1</figcaption>
 </figure>
 
-Let's find $\abs{F_2(a_0) - F_1'(a_0)}$, by replacing $F_2$ by $(2)$ and $F_1'$
+Let's find $\abs{F_2(a_0) - F_1'(a_0)}$, by replacing $F_2$ by $(3)$ and $F_1'$
 
 We now compute $\abs{F_1(a) - F_1(a_0)}$ by replacing $(2.B)$:
 
@@ -233,7 +233,7 @@ So we conclude that $F'_1(a_0) = F_2(a_0)$. Note, again, that since we didn't sp
 
 This was the inductive basis. The inductive hypothesis is that we'll assume $F_{n-1}$ is holomorphic and $F'_{n-1} = n F_{n}$ (this hypothesis is applicable to $G_n$ as well). We need to prove that $F_{n}$ is holomorphic and $F'_{n} = n F_{n + 1}$.
 
-Let's compute $F_n(a) - F_n(a_0)$ by replacing their definition $(2)$:
+Let's compute $F_n(a) - F_n(a_0)$ by replacing their definition $(3)$:
 
 $$(2.4) \quad F_n(a) - F_n(a_0) = \int_\gamma \frac{f(z)}{(z - a)^n}dz - \int_\gamma \frac{f(z)}{(z - a_0)^n}dz$$
 
@@ -286,7 +286,7 @@ $$F'_n(a_0) = n F_{n+1}(a_0)$$
 <i>QED</i>
 </proof>
 
-We note that we can write $(1)$ as:
+We note that we can write $(2)$ as:
 
 $$f(a) =\frac{1}{2\pi i} F_1(a)$$
 
@@ -294,15 +294,15 @@ We can now use *Lemma 2* to compute the $n$-th derivative of $f(a)$:
 
 **Lemma 3.** Let $f(z)$ be a holomorphic in $\Delta$ and let $\gamma$ a closed curve in $\Delta$, and $a$ such that $n(\gamma, a) = 1$. Then
 
-$$(3) \quad f^{(n)}(a) = \frac{n!}{2\pi i} \int_\gamma \frac{f(z)}{(z - a)^{n+1}} dz$$
+$$(4) \quad f^{(n)}(a) = \frac{n!}{2\pi i} \int_\gamma \frac{f(z)}{(z - a)^{n+1}} dz$$
 
 <proof>
 
-We start with $(1)$:
+We start with $(2)$:
 
 $$f(a) = \frac{1}{2\pi i} \int_{\gamma} \frac{f(z)}{z - a} dz$$
 
-Then replace it by $(2)$ from <i>Lemma 2</i>:
+Then replace it by $(3)$ from <i>Lemma 2</i>:
 
 $$f(a) =\frac{1}{2\pi i} F_1(a)$$
 
@@ -314,9 +314,9 @@ Which, from <i>Lemma 2</i> is:
 
 $$(2.6) \quad f'(a) = \frac{1}{2\pi i} F_2(a)$$
 
-Similarly, for $f^{(2)}(a)$:
+Similarly, for $f^{(3)}(a)$:
 
-$$f^{(2)}(a) = \frac{f'}{da}(a)$$
+$$f^{(3)}(a) = \frac{f'}{da}(a)$$
 
 Replacing by $(2.6)$:
 
@@ -324,11 +324,11 @@ $$= \frac{1}{2\pi i} F'_2(a)$$
 
 Using <i>Lemma 2</i> again:
 
-$$f^{(2)}(a) = \frac{1}{2\pi i} F_3(a)$$
+$$f^{(3)}(a) = \frac{1}{2\pi i} F_3(a)$$
 
-For $f^{(3)}$:
+For $f^{(4)}$:
 
-$$f^{(3)}(a) = \frac{f^{(2)}}{da}(a) = \frac{2}{2\pi i} F'_3(a) = \frac{6}{2\pi i} F_4(a)$$
+$$f^{(4)}(a) = \frac{f^{(3)}}{da}(a) = \frac{2}{2\pi i} F'_3(a) = \frac{6}{2\pi i} F_4(a)$$
 
 you get the idea. For the $n$-th derivative we have:
 
@@ -358,11 +358,11 @@ Suppose $f(z)$ is holomorphic and bounded. We can then obtain an upperbound for 
 
 **Lemma 6 (Cauchy's Estimate).** Let $f(z)$ be holomorphic and bounded by a finite $M$ in a region $\Omega$ (i.e. , $\abs{f(z)} \le M$ for all $z \in \Omega$). Let $C$ be a circle of radius $r$ centered in $a$ ($C$ is inside $\Omega$). Then:
 
-$$(4) \quad \abs{f^{(n)}(a)} \le \frac{n! M}{r^{n}}$$
+$$(5) \quad \abs{f^{(n)}(a)} \le \frac{n! M}{r^{n}}$$
 
 <proof>
 
-By $(3)$ of <i>Lemma 3</i> we have:
+By $(4)$ of <i>Lemma 3</i> we have:
 
 $$\abs{f^{(n)}(a)} = \abs{\frac{n!}{2\pi i} \int_C \frac{f(z)}{(z - a)^{n+1}} dz}$$
 
@@ -386,7 +386,7 @@ We can use this result to prove another famous result, *Liouville's Theorem*:
 
 <proof>
 
-We'll use Cauchy's estimate to find an upper bound of $f'(a)$. By hypothesis $\abs{f(z)} \le M$, so we have from $(4)$ and $n = 1$:
+We'll use Cauchy's estimate to find an upper bound of $f'(a)$. By hypothesis $\abs{f(z)} \le M$, so we have from $(5)$ and $n = 1$:
 
 $$\abs{f'(a)} \le \frac{M}{r}$$
 
