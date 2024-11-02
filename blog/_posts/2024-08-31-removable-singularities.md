@@ -27,9 +27,15 @@ The previous posts from the series:
 1. [Cauchy's Integral Formula]({{blog}}/2024/06/06/cauchy-integral-formula.html)
 1. [Holomorphic Functions are Analytic]({{blog}}/2024/07/02/holomorphic-functions-are-analytic.html)
 
-## Definition
+## Definitions
 
-A **removable singularity** is an isolated point at which a holomorphic function is not defined, but it's possible to "extend" the function such it is made holomorphic there.
+Let $f$ be a holomorphic function in $\Omega$. A **singularity** is is a point $a$ where a function is not defined, that is, $a \not\in \Omega$.
+
+A singularity is "isolated" if nothing around it is a singularity. More formally, point $a$ is an **isolated singularity** if $a \not\in \Omega$ and there exists a radius $r \gt 0$ such that $f$ is holomorphic in the punctured disk $0 \lt \abs{z - a} \lt r$.
+
+A **removable singularity** is a special type of isolated singularity with the property that $\lim_{z \rightarrow a} (z - a) f(z) = 0$.
+
+One nice thing about removable singularities is that it's possible to "extend" the function $f$ such it is made holomorphic there as well (*Theorem 1*), so that it's not a singularity anymore, effectively "removing" it, hence the terminology.
 
 **Theorem 1.** Let $f(z)$ be a holomorphic function in $\Omega \setminus \curly{a}$. Then
 
@@ -232,9 +238,9 @@ $$
 (4) \quad f(z) = f(a) + (z - a) f_1(a) + (z - a)^2 f_2(a) + \cdots \\ + (z - a)^{n-1} f_{n-1}(a) +  (z - a)^n f_n(z)
 $$
 
-We can now use *Lemma 2* to express $f_k$ as the $k$-th derivative of $f$.
+We can now use *Lemma 3* to express $f_k$ as the $k$-th derivative of $f$.
 
-**Lemma 2.** Let $f$ be a holomorphic function in $\Omega$ and $f_k$ be defined as
+**Lemma 3.** Let $f$ be a holomorphic function in $\Omega$ and $f_k$ be defined as
 
 $$f_k(z) = \frac{f_{k-1}(z) - f_{k-1}(a)}{z - a}$$
 
@@ -279,7 +285,7 @@ $$
 (6) \quad f(z) = f_n(z) (z - a)^n + \sum_{k = 0}^{n - 1} \frac{f^{(k)}(a)}{k!} (z - a)^k
 $$
 
-Noting that if $f(z)$ is holomorphic in $\Omega$, so is $f_n(z)$. We can use *Lemma 3* to express $f_n$ as a function of $f$ as well.
+Noting that if $f(z)$ is holomorphic in $\Omega$, so is $f_n(z)$. We can use *Lemma 4* to express $f_n$ as a function of $f$ as well.
 
 **Lemma 4.** Let $f_n$ be a holomorphic function defined as:
 
@@ -381,6 +387,26 @@ I'm not sure how this result is useful though. It seems to be that computing $f_
 $$
 f(z) = \frac{1}{2\pi i} \int_{C} \frac{f(w)dw}{(w- z)}
 $$
+
+## Alternative Characterizations
+
+It's useful to consider other definitions of *removable singularity*, because they might be used to contrast with other types of isolated singularities.
+
+**Corollary 6.** A point $a$ is a removable singularity if and only if $\lim_{z \rightarrow a} f(z)$ exists.
+
+<proof>
+
+One direction follows from <i>Theorem 1</i>: we know that $g(a)$ is holomorphic and hence continuous and that $g(a) = \lim_{z \rightarrow a} f(z)$, so the limit exists.
+<br /><br />
+If $\lim_{z \rightarrow a} f(z)$ exists, then $f(z)$ is bounded in a neighborhood of $a$ by some $L$, so
+
+$$
+\lim_{z \rightarrow a} \abs{z - a}\abs{f(z)} \lt  \lim_{z \rightarrow a} \abs{z - a} L = 0
+$$
+
+and thus $\lim_{z \rightarrow a} (z - a) f(z) = 0$ which is the definition of removable singularity.
+</proof>
+
 
 
 

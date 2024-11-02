@@ -25,9 +25,13 @@ Given a metric space $(X, d)$, a subset $N$ of $X$ is a *neighborhood of point* 
 
 ## Limit Point
 
-Given a metric space $(X, d)$ and a subset $A \subseteq X$, a point $x \in X$ is **limit point** if every neighborhood of $x$ contains a point of $A$ different than $x$. Note that $x$ doesn't need to be in $A$, nor that every point in $A$ is a limit point (e.g. in the set $\mathbb{N}$ no element is a limit point).
+Given a metric space $(X, d)$ and a subset $A \subseteq X$, a point $x \in X$ is a **limit point** if every neighborhood of $x$ contains a point of $A$ different than $x$. Note that $x$ doesn't need to be in $A$, nor that every point in $A$ is a limit point
 
-*Example.* If $A = \curly{1/x : x \in \mathbb{R}}$, then $0$ is a limit point of $A$ even though it's not in $A$, since for any ball $B(0, \delta)$ contains $\delta > 0$ and $\delta \in A$.
+Example of a limit point of a set that is not on the set: If $A = \curly{1/x : x \in \mathbb{R}}$, then $0$ is a limit point of $A$ even though it's not in $A$, since for any ball $B(0, \delta)$ contains $\delta > 0$ and $\delta \in A$.
+
+Example of a set without limit points: The set $\mathbb{N}$ has no limit point because every number is "isolated".
+
+An alternative definition in terms of sequences is: a point $x \in X$ is a limit point of $A \subseteq X$ if there exists a sequence in $A$, $\curly{a_n}$ with $a_n \ne x$ such that $\lim_{n \rightarrow \infity} a_n = x$.
 
 ## Open Set
 
