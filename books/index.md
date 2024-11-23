@@ -42,3 +42,7 @@ Notes on some of the books I read, usually from those I liked and learned a lot 
 # Philosophy
 
 * [Letters from a Stoic]({{site.url}}/books/letters-from-a-stoic.html), Seneca
+
+# Psychology
+
+* [The Art of Thinking Clearly]({{site.url}}/books/the-art-of-thinking-clearly.html), Rolf Dobelli
