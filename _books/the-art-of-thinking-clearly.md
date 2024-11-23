@@ -35,7 +35,7 @@ In reality people with the right build and athleticism are the ones that are mor
 
 ## 3. Clustering Illusion
 
-Seeing patterns where they don’t exist. The visual version of this bias as a name: [pareidolia](https://en.wikipedia.org/wiki/Pareidolia).
+Seeing patterns where they don’t exist. The visual version of this bias has a name: [pareidolia](https://en.wikipedia.org/wiki/Pareidolia).
 
 ## 4. Social Proof
 
@@ -414,7 +414,7 @@ If you're well paid in your job, it's more efficient for you to earn money and d
 
 This is similar to [Effective Altruism](https://en.wikipedia.org/wiki/Effective_altruism).
 
-## 66. Affect heuristic
+## 66. Affect Heuristic
 
 Our assessment of risks and benefits, and hence decision making, might depend on our emotional state, which in turn could be influenced by some completely unrelated event.
 
@@ -669,6 +669,20 @@ And that:
 > Nothing beats books for understanding the world
 
 This seems to be a special case of *Neomania*.
+
+## Summary
+
+There are many different items on this book so it's hard to summarize, but I'll attempt to put them in broad categories:
+
+**Incomplete Data.** Extraplolation from incomplete data. Chapters: 1, 3, 7, 8, 10, 11, 14, 15, 30, 31, 37?, 38, 39, 48, 66, 71, 73, 75, 80, 81, 83, 95 and 96.
+
+**Social Natural Selection.** Some built-in behavior might have helped us survive as a society early on, but today it can be problematic: 4, 6, 9, 13, 22, 25, 33, 43, 52, 54, 74, 77, 79 and 87.
+
+**Individual Natural Selection.** Some built-in behavior might have helped us survive as individuals, including fears and egotistical behavior: 18, 21, 23, 27, 32, 44, 68, 69, 72, 80, 81, 82, 86, 89 and 99.
+
+**Self Blindness.** Not survival related, but the fact that we have trouble putting ourselves outside our heads. Examples: 15, 17, 23, 45, 50, 51, 60, 67, 77, 78, 84, 88, 91 and 94.
+
+**Math.** Our inability to grok abstract mathematical concepts such as probability, statistics and logic. Chapters: 12, 17, 19, 20, 24, 26, 28, 29, 34, 35, 36, 37, 40, 41, 49, 55, 58, 61, 63, 75 and 98.
 
 ## My review
 
