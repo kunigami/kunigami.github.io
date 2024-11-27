@@ -134,9 +134,10 @@ body {
   background-color: #fff;
   box-sizing: border-box;
   color: #5b5b5b;
-  font-size: 16px;
-  font-family: 'Lora', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-family: 'Crimson Pro', Verdana, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+  line-height: normal;
 }
 
 h1,
@@ -150,7 +151,7 @@ h5,
 h6 {
   margin: 10px 0;
   color: #5b5b5b;
-  font-family: Verdana;
+  font-family: 'Open Sans', Verdana;
   letter-spacing: -1px;
   text-decoration: none;
 }
@@ -415,8 +416,8 @@ form {
 }
 
 figcaption {
-  color: #6b6b6b;
-  font-size: 13px;
+  color: #7b7b7b;
+  font-size: 16px;
 }
 
 .monospace {
