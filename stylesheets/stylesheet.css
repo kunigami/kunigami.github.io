@@ -498,7 +498,7 @@ proof, nonproof {
 
 @media only screen and (max-width: 1000px) {
   body {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   h1 {
@@ -506,11 +506,11 @@ proof, nonproof {
   }
 
   h2 {
-    font-size: 40px;
+    font-size: 45px;
   }
 
   h3 {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   pre, code {
@@ -534,6 +534,10 @@ proof, nonproof {
   }
 
   p {
-    margin: 15px 0 30px 0;
+    margin: 25px 0 50px 0;
+  }
+
+  .image_float_left img {
+    width: 250px;
   }
 }
