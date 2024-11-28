@@ -498,7 +498,7 @@ proof, nonproof {
 
 @media only screen and (max-width: 1000px) {
   body {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   h1 {
@@ -510,7 +510,7 @@ proof, nonproof {
   }
 
   h3 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   pre, code {
@@ -531,5 +531,9 @@ proof, nonproof {
   .inner {
     width: 100%;
     padding: 0 20px;
+  }
+
+  p {
+    margin: 15px 0 30px 0;
   }
 }
