@@ -43,7 +43,7 @@ In the case of finite automata, the class of languages that they define is calle
 
 ### Push-down automata
 
-A push-down automata is essentially a finite automata equipped with a stack. The symbols that can go into the stack are those from the input and also some additional ones. In this automaton, the transition function takes as input, the state $$p$$, the input symbol $$c$$ and the element at the top of the stack $$X$$. It outputs the new state $$q$$ and the new top of the stack that will replace the top $$X$$, which can be more than one element or event the empty symbol, meaning that we didn't put any element on top.
+A push-down automata is essentially a finite automata equipped with a stack. The symbols that can go into the stack are those from the input and also some additional ones. In this automaton, the transition function takes as input, the state $$p$$, the input symbol $$c$$ and the element at the top of the stack $$X$$. It outputs the new state $$q$$ and the new top of the stack that will replace the top $$X$$, which can be more than one element or even the empty symbol, meaning that we didn't put any element on top.
 
 This type of automaton can be shown to be equivalent to a [context-free grammar](http://en.wikipedia.org/wiki/Context-free_grammar) (CFG), which is out of the scope of this post as well, but it's very common for describing programming languages.
 
@@ -60,17 +60,20 @@ So, what is exactly a Turing machine? It's a device with an state, an infinite t
     <figcaption> Figure 2: A concept of the Turing Machine</figcaption>
 </figure>
 
-The transition function that takes as input the state $$p$$ and the input symbol pointed by the needle $$c$$ and it outputs the new state $$q$$, the new symbol that will be written replacing $$c$$ and the direction that the needle moves after that (either right or left). In case there's no defined transition function for a state and input symbol, we say that the machine halts.
+The transition function that takes as input the state $$p$$ and the input symbol pointed by the needle $$c$$ and it outputs the new state $$q$$, the new symbol that will be written replacing $$c$$ and the direction that the needle moves after that (either right or left). In case there's no defined transition function for a state and input symbol, we say that the machine **halts**.
 
-There are two main flavors of TM regarding when an input considered accepted: On options is that the TM has a set of final states and whenever we get to one of that states, we accept. The other option is by accepting when the TM halts.
+There are two main flavors of TM regarding when an input is considered accepted:
+
+1. The TM has a set of final states and whenever we get to one of those states, we accept.
+2. We accept when the TM halts.
 
 It's possible to show that in the general case both versions are equivalent, in the sense that both define the same class of languages, which was historically denoted by **recursive enumerable languages**.
 
-An **algorithm** for a decision problem is a special type of TM that accepts by final state and it's always guaranteed to halt (whether or not it accepts). The class of languages that are defined by algorithms are called **recursive languages**.
+An **algorithm** for a decision problem is a special type of TM that accepts by final states and it's always guaranteed to halt (whether or not it accepts). The class of languages that are defined by algorithms are called **recursive languages**.
 
 ### Extending Turing machines
 
-We can simulate more general TMs using our definition of TM. For example, we can model a TM with multiple tracks. Instead of having a single element, each position on the tape can contain a tuple, where each element of the such tuple represents the element on each tape with the same position.
+We can simulate more general TMs using our the basic TM. For example, we can model a TM with multiple tracks. Instead of having a single element, each position on the tape can contain a tuple, where each element of the such tuple represents the element on each tape with the same position.
 
 We can even have multiple needles, by using a dedicated tape for representing the current position of each additional needle.
 
