@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 {% include blog_vars.html %}
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/uno-logo.svg" alt="SVG of the Uno logo" style="width: 100px;" />
+  <img src="{{resources_path}}/uno-logo.svg" alt="SVG of the Uno logo" />
 </figure>
 
 In this post we provide a summary of the results from the paper *UNO is hard, even for a single player* by Demaine et al [1]. To keep it shorter, basic familiarity with the [rules of UNO](https://www.unorules.com/) [2], the card game, is expected.

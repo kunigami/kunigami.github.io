@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 {% include blog_vars.html %}
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/bloom.jpeg" alt="A still life painting of flowers in bloom" style="width: 100px;" />
+  <img src="{{resources_path}}/bloom.jpeg" alt="A still life painting of flowers in bloom" />
 </figure>
 
 Recently at work we were trying to solve a performance bottleneck. A part of the system was making requests to a remote key-value store but we saw that the majority of the requests resulted in the key not existing in the store.

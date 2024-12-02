@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 {% include blog_vars.html %}
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/riemann.jpeg" alt="Portrait of Bernhard Riemann" style="width: 100px;" />
+  <img src="{{resources_path}}/riemann.jpeg" alt="Portrait of Bernhard Riemann" />
 </figure>
 
 This is the 7-th post in the series with my notes on complex integration, corresponding to *Chapter 4* in Ahlfors' Complex Analysis.

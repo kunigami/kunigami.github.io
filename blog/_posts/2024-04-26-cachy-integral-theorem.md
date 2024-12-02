@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 {% include blog_vars.html %}
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/cauchy.png" alt="portrait of Cauchy from Wikipedia" style="width: 100px;" />
+  <img src="{{resources_path}}/cauchy.png" alt="portrait of Cauchy from Wikipedia" />
 </figure>
 <br />
 This is our third post in the series with my notes on complex integration, corresponding to *Chapter 4* in Ahlfors' Complex Analysis.

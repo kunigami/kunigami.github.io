@@ -18,9 +18,9 @@ title: Blog
   </div>
 {% endfor %}
 
-<figure class="center_children">
-<a href="{{site.url}}/blog/archive.html" style="font-size: 18px; margin-top: 50px">Visit archive to see all posts...</a>
-</figure>
+<p class="center_children">
+<a href="{{site.url}}/blog/archive.html" style="margin-top: 50px">Visit archive to see all posts...</a>
+</p>
 
 ## Sub-pages
 

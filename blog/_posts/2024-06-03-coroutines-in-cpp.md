@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/logo.svg" alt="C++ logo" style="width: 100px;" />
+  <img src="{{resources_path}}/logo.svg" alt="C++ logo" />
 </figure>
 
 In this post we'll discuss coroutines in C++, which is a feature introduced in C++20. We'll first start by understanding what coroutines mean in C++, comparing briefly with coroutines in other languages.

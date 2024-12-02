@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 {% include blog_vars.html %}
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/logo.svg" alt="C++ logo" style="width: 100px;" />
+  <img src="{{resources_path}}/logo.svg" alt="C++ logo" />
 </figure>
 
 In the [previous post]({{blog}}/2024/06/03/coroutines-in-cpp.html) we started studying coroutines in C++. One of the main takeaways is that the coroutine API offered by STL is pretty low level and not very useful for end developers.

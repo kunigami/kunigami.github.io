@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 {% include blog_vars.html %}
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/thumbnail.svg" alt="a bunch of lines and circles abstract art" style="width: 100px;" />
+  <img src="{{resources_path}}/thumbnail.svg" alt="a bunch of lines and circles abstract art" />
 </figure>
 
 This is our second post in the series with my notes on complex integration, corresponding to *Chapter 4* in Ahlfors' Complex Analysis.

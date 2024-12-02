@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 {% include blog_vars.html %}
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/globe.svg" alt="SVG of a globe" style="width: 100px;" />
+  <img src="{{resources_path}}/globe.svg" alt="SVG of a globe" />
 </figure>
 
 In this post we'd like to discuss the Geography game. In the variant we'll consider, an instance of the game is an undirected graph, and a token placed in one of its vertices.

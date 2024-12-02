@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/thumbnail.jpeg" alt="A still life painting of a beaker" style="width: 100px;" />
+  <img src="{{resources_path}}/thumbnail.jpeg" alt="A still life painting of a beaker" />
 </figure>
 
 This is our fifth post in the series with my notes on complex integration, corresponding to *Chapter 4* in Ahlfors' Complex Analysis.
