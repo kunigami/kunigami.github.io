@@ -410,6 +410,10 @@ form {
   margin-right: 20px;
 }
 
+.image_float_left img {
+  width: 100px;
+}
+
 .image_float_right {
   float: right;
   margin-left: 20px;

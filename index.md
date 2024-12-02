@@ -26,12 +26,16 @@ like to learn and build things.
             <td><img src="{{ site.url }}/resources/home/bookshelf.jpg" alt="Photo of two rows of my bookshelf"/></td>
         </tr>
         <tr>
+            <td><a href="{{ site.url }}/amuseum/">Virtual Museum</a> - Note on types of fine arts I find interesting.</td>
+            <td><img src="{{ site.url }}/resources/home/amuseum.jpg" alt="Picture of a Dogū figurine"/></td>
+        </tr>
+        <tr>
             <td><a href="{{ site.url }}/wanderlust/">Wanderlust</a> - World Map with places I'd like to visit or have visited. (2020 - present)</td>
             <td><img src="{{ site.url }}/resources/home/wanderlust.png" alt="Screenshot of the Wanderlust page"/></td>
         </tr>
         <tr>
             <td><a href="{{ site.url }}/bulls_and_cows/">Bulls and Cows Solver</a> - Solver for the game "Bulls and Cows" (aka "MOO"). (2018)</td>
-            <td><img src="{{ site.url }}/resources/home/bulls_and_cows.png" alt="Screenshot of the Wanderlust page"/></td>
+            <td><img src="{{ site.url }}/resources/home/bulls_and_cows.png" alt="Screenshot of the 'Bulls and Cows' page"/></td>
         </tr>
     </tbody>
 </table>
