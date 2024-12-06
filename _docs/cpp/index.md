@@ -1059,6 +1059,41 @@ Avoid importing the same file multiple times:
 
 Cleaner and less error-prone than using the triad `#ifndef/#define/#endif`.
 
+## Forward Declaration
+
+Useful to avoid dependencies when the size of the class doesn't need to be known in the header file. Example:
+
+{% highlight c++ %}
+// my_header.h
+#include "C.h"
+
+void f(C* c);
+{% endhighlight %}
+
+we can get rid of `#include "C.h"` via:
+
+{% highlight c++ %}
+// my_header.h
+class C;
+
+void f(C* c);
+{% endhighlight %}
+
+**Namespaced class.** If the class being forwarded is within a namespace, we must forward-declare it within a namespace. Example:
+
+{% highlight c++ %}
+// my_header.h
+
+namespace c_ns {
+class C;
+}
+
+void f(c_ns::C* c);
+{% endhighlight %}
+
+**unique_ptr.** It's not possible to use forward declaration with `std::unique_ptr` because it relies on the destructor function.
+
+
 # Concurrency
 
 See [Concurrency]({{ site.url }}/docs/cpp/concurrency.html).
