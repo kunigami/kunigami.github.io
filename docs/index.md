@@ -15,6 +15,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 * [Computational Complexity]({{ site.url }}/docs/cs/computational_complexity.html)
 * [Distributed Systems]({{ site.url }}/docs/cs/distributed.html)
+* [Operating Systems]({{ site.url }}/docs/cs/operating_systems.html)
 
 ## C++
 
