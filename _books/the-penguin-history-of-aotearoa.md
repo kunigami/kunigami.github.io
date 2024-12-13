@@ -4,11 +4,17 @@ title: "The Penguin History of Aotearoa"
 vanity: the-penguin-history-of-aotearoa
 ---
 
+{% include blog_vars.html %}
+
+<figure class="image_float_left">
+  <img src="{{site.url}}/resources/books/aotearoa.jpg" alt="Book cover" />
+</figure>
+
 This is a comprehensive book about New Zealand, from the early Maōri settlement from East Polynesia to recent years. Overall a very informative book and easy to read.
 
 ## Chapter 1
 
-Eruption of Taupo volcano was possibly described by Romans and Chinese because it affected far away lands
+Eruption of Taupo volcano was possibly described by Romans and Chinese because it affected far away lands.
 
 ## Chapter 2 - Seeds of Rangiātea
 
@@ -21,6 +27,11 @@ The East Polynesias that arrived at Chatham Islands became culturally different 
 ## Chapter 7 - Distance Perforated
 
 This chapter describes the first European incursions in the area. In particular, Abel Tasman from the Dutch VOC landed just north of Punakaiki (a famous tourist spot today in South island) but apparently he didn't spend much time inland. Tasman also names places like the Tasman Sea and the island of Tasmania.
+
+<figure class="center_children">
+  <img src="{{resources_path_books}}/punakaiki.jpg" alt="See caption" />
+  <figcaption>"Pancake-like" rock formations at Punakaiki. In situ, 2023.</figcaption>
+</figure>
 
 The West coast of Australia used to be called New Holland.
 
@@ -46,7 +57,7 @@ This focuses on the treaty of Waitangi which was vague and the Maōri translatio
 
 The treaty was signed by some Maōri chiefs, many not understanding the extension of the treaty, also since Maōri were not a unified entity, there's debate on whether it had validity across the entire islands.
 
-## Chapter 13
+## Chapter 13 - Tangata Wehua Respond
 
 This describes the Northern Wars between Maōri and settlers in the North island.
 
@@ -56,7 +67,16 @@ The Otago gold rush in the 1860's the attracted a lot of immigrants to the South
 
 ## Chapter 15 - A time of Turbulence
 
-Mentions the Waikato Wars, which was the second and last armed conflict between Maōri and Europeans.
+The Maōris started believing that they could achieve unity by selecting a king, in the models of the British monarchy. They chose Te Wherowhero (aka Pōtatau) and the movement supporting him called Kīngitanga.
+
+Pōtatau was the leader of the Waikato Maōri. The European settlers saw the Kīngitanga movement as a threat, after some disputes over land, the conflicts escalated into a war, with Europeans and their allies attacking forts (pās) within the Waikato region (the region between Aukland and Hamilton).
+
+There was also another set of conflicts in the Taranaki region. These wars and others are part of the called *New Zealand Wars*, the second and last armed conflict between Maōri and Europeans.
+
+<figure class="center_children">
+  <img src="{{resources_path_books}}/wharepu.png" alt="See caption" />
+  <figcaption>Portrait of Te Aho-o-te-Rangi Wharepu, by Charles F. Goldie. Oil on canvas. Wharepu was a member of the Waikato Maōri and a veteran from the Waikato war. Auckland Museum, 2023.</figcaption>
+</figure>
 
 ## Chapter 16 - A functioning nation?
 
