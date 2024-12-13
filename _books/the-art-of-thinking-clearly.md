@@ -692,6 +692,10 @@ It seems like the author squeezed some of the traps so they add up to 99 items. 
 
 Rating: 5/5.
 
+## Related Books
+
+[Thinking in Systems: A Primer]({{blog}}/2023/08/05/review-thinking-in-systems.html) by Donella H. Meadows. There's a chapter in that book called *Systems Traps* which is related to *Psychological Traps*. In particular, *Rule beating* appears to be the same as *Incentive Super-response Tendency* (following the letter rather than the spirit of the law).
+
 ## References
 
 * [1] Deceit, Desire and the Novel, René Girard
