@@ -13,7 +13,7 @@ Git directions. Suppose the post is being written on a branch named `new_post`.
 git checkout new_post
 git reset $(git merge-base master $(git branch --show-current))
 git add -A
-git commit -m "new post: $(git rev-parse --abbrev-ref HEAD)$"
+git commit -m "new post: $(git rev-parse --abbrev-ref HEAD)"
 git checkout master
 git merge new_post
 {% endhighlight %}
