@@ -11,6 +11,10 @@ title: Books
 
 Notes on some of the books I read, usually from those I liked and learned a lot from. Books are grouped by theme and within each theme sorted by title.
 
+# Business
+
+* [The Inovator's Dilemma]({{site.url}}/books/the-innovators-dilemma), Clayton M. Christensen
+
 # History
 
 ## Africa
