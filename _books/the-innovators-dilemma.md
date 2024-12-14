@@ -53,6 +53,14 @@ I had heard of the *Innovator's Dilemma* before but I always assumed it meant co
 
 The book counters that notion with examples where a company replaced its product with a new improved one. The key is that it was aimed at the same customers as the incumbent product.
 
+### Book History
+
+I got this book from a [Little Free Library](https://littlefreelibrary.org/)! I had this book on my wishlist since Meta had launched Threads. I thought it could be a case of a company overcoming the *Innovator's Dilemma* by launching a competitor to its own products (Facebook and Instagram), but turns out, as discussed above, this is not what the dilemma is about.
+
+### Book Structure
+
+The copy I have (from 2000) has about 250 pages, but I found that the bulk of the theory can be obtained from the introduction, which is around 25 pages. The rest of the book is mostly applying the theory to examples.
+
 ### Electric Cars
 
 I was very curious about the last chapter, since we can check the innovator's dilemma theory with the benefit of hindsight.
@@ -76,10 +84,6 @@ One thing I'm skeptical about is that there's a solution for the innovator's dil
 I feel like it's just impossible to time the market. It just appears that startups did so due to *survivorship bias*. At any given moment there are multiple startups trying to break into some niche market and failing, disappearing from view.
 
 It's infeasible for a company to keep branching out into every possible small market and keep doing it continuously until the time is right.
-
-### Book Structure
-
-The copy I have (from 2000) has about 250 pages, but I found that the bulk of the theory can be obtained from the introduction, which is around 25 pages. The rest of the book is mostly applying the theory to examples.
 
 ### Summary
 
