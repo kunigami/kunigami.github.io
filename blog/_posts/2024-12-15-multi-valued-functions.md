@@ -33,7 +33,7 @@ More generally, a complex number can be written in polar form as $z = \abs{z}e^{
 
 $$\abs{z}^{1/n} \exp\paren{i(\theta + 2k\pi)/n} \quad k = 0, \cdots, n-1$$
 
-Geometrically, we can interpret these as $n$ points in the circumference of a circle centered at the origin with radius $\abs{z}^{1/n}$, equally spaced and started with an offset $\theta / 3$.
+Geometrically, we can interpret these as $n$ points in the circumference of a circle centered at the origin with radius $\abs{z}^{1/n}$, equally spaced and started with an offset $\theta / n$.
 
 <figure class="center_children">
   <img src="{{resources_path}}/roots3.png" alt="See caption." />
@@ -43,7 +43,7 @@ Geometrically, we can interpret these as $n$ points in the circumference of a ci
 
 So the $n$-th root is a multi-valued function, which is not nice to work with. Is it possible to obtain a single-valued function from a multi-valued one?
 
-One idea is to restrict the image to a subset in which only one value is allowed. For example, for the square root, we could restrict the image to only numbers that have non-negative real values. This would work well for complex with non-zero real parts, since they have at least one of the roots in the positive $x$-axis.
+One idea is to restrict the image to a subset in which only one value is allowed. For example, for the square root, we could restrict the image to only numbers that have non-negative real values. This would work well for complex numbers with non-zero real parts, since they have at least one of the roots in the positive $x$-axis.
 
 It would not work for points on the $y$-axis (i.e. zero real part) because both its roots would be included. If we changed the image restriction to "only numbers that have positive" real parts, then both roots would be excluded. It can get complicated.
 
@@ -60,7 +60,7 @@ Let's consider the function $f(z) = z^{1/3}$. As we've discussed, it maps each p
   <figcaption>Figure 2. A point $p$ and its 3 images labeled $a, b$ and $c$. If we trace a point $z$ starting from $p$ and going around the circle clockwise (red path) and landing back on $p$, the corresponding path in the image could correspond to going from $a$ to $b$. If we go around another time (green path), the path in the image would then go from $b$ to $c$.</figcaption>
 </figure>
 
-Now imagine we have a point $z$ at $p$ and we start moving it along the circumference show in *Figure 2*, counter-clockwise. Let's arbitrarily focus on one of the image of $p$, say $a$, so that's where $z$ starts at.
+Now imagine we have a point $z$ at $p$ and we start moving it along the circumference shown in *Figure 2*, counter-clockwise. The point $z$ will have 3 images, but let's arbitrarily focus on one of the images, say the one starting at $a$.
 
 As we move $z$ with angular speed $\omega$, its image will move accordingly along the corresponding circumference, except that it will have angular speed $\omega / 3$.
 
@@ -68,7 +68,7 @@ Which means that once $z$ completes a full revolution (red path in *Figure 2*), 
 
 ## Branch Point
 
-Now, suppose $z$ doesn't have to move along the circumference. It's free to wander around the way it wants, as long as it comes back to $p$. As before, suppose we're looking initially looking at the image $a$ of $p$. Can we tell in which of the images $z$ will end up with once it's back to $p$?
+Now, suppose $z$ doesn't have to move along the circumference. It's free to wander around the way it wants, as long as it comes back to $p$. As before, suppose we're looking initially looking at the image $a$ of $p$. Can we tell in which of the images of $p$ will $z$ end up with once it's back at $p$?
 
 <figure class="center_children">
   <img src="{{resources_path}}/crazy-path.png" alt="See caption." />
@@ -81,13 +81,13 @@ Such a point (the origin in this case) is called the **branch point**.
 
 ## Branch Cut
 
-Intuitively then, one way to avoid a function from generating multiple values when "moving a point around", is to prevent it from encircling the branch point. One way to do this is to draw a line from the branch point to the infinity, and remove points on that line from the domain, for example the curve $C$ in *Figure 4* (left).
+One way to avoid a function from generating multiple values when "moving a point around", is to prevent it from encircling the branch point. One way to do this is to draw a line from the branch point to the infinity, and remove points on that line from the domain, for example the curve $C$ in *Figure 4* (left).
 
 This line is called the **branch cut**. If the branch point is the origin, a common choice for the branch cut is the non-positive real axis.
 
 ## Branches
 
-If we exclude the points on the branch cut $C$, we can partition the image into regions defined as follows: a let $z$ and $w$ be distinct points in $\Omega \setminus C$. Then points $f(a)$ and $f(b)$ belong to the same region if there's a path from $z$ to $w$.
+If we exclude the points on the branch cut $C$, we can partition the image into regions defined as follows: Let $\Omega$ be the original domain of $f(z)$. Let $z$ and $w$ be distinct points in $\Omega \setminus C$. Then points $f(a)$ and $f(b)$ belong to the same region if there's a path from $z$ to $w$ in $\Omega \setminus C$.
 
 For $f(z) = z^{1/3}$ we could have something like:
 
