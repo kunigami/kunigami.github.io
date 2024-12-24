@@ -195,9 +195,6 @@ Which again, holds for the other arithmetic operations, including for division b
 </proof>
 
 
-
-
-
 ## Conclusion
 
 In this post we learned about holomorphic functions. Despire the scary name, their definition is relatively simple: functions that are differentiable everywhere in their domain.
