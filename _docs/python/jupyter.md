@@ -5,6 +5,23 @@ title: "Jupyter Cheatsheet"
 
 {% include blog_vars.html %}
 
+
+## Installing
+
+Only need the first time. Create a venv following [this notes](https://www.kuniga.me/docs/python/venv.html):
+
+{% highlight text %}
+mkdir ~/my_env
+python3 -m venv ~/my_env
+source ~/my_env/activate
+{% endhighlight %}
+
+Install Jupyter:
+
+{% highlight text %}
+pip install jupyter
+{% endhighlight %}
+
 ## Start in a clean environment
 
 Create a venv following [this notes](https://www.kuniga.me/docs/python/venv.html):
