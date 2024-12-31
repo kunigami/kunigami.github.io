@@ -43,6 +43,7 @@ As an exception, I might list individual works of art or artifacts if they have 
 
 ## Portugal 🇵🇹
 
+* [Azuleijo]({{ root }}/azuleijo.html)
 * [Calçada]({{ root }}/calcada.html)
 
 ## Spain 🇪🇸
