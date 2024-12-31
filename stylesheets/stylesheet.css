@@ -447,6 +447,10 @@ figcaption {
   width: 15%
 }
 
+.books-table img {
+  height: 100px;
+}
+
 .charities-table td.text {
   vertical-align: middle;
 }
