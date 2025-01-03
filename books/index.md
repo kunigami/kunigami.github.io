@@ -15,9 +15,15 @@ Notes on some of the books I read, usually from those I liked and learned a lot 
 
 * [The Inovator's Dilemma]({{site.url}}/books/the-innovators-dilemma), Clayton M. Christensen
 
+# Biographies
+
+* [Long Walk to Freedom]({{site.url}}/books/long-walk-to-freedom), Nelson Mandela.
+
 # History
 
 ## Africa
+
+* [Peoples and Cultures of Africa - Southern Africa]({{site.url}}/books/peoples-and-cultures-of-africa-southern), Peter Mitchell
 
 ### South Africa
 
@@ -50,3 +56,4 @@ Notes on some of the books I read, usually from those I liked and learned a lot 
 # Psychology
 
 * [The Art of Thinking Clearly]({{site.url}}/books/the-art-of-thinking-clearly.html), Rolf Dobelli
+* [The Highly Sensitive Person]({{site.url}}/books/the-highly-sensitive-person.html), Elaine N. Aron
