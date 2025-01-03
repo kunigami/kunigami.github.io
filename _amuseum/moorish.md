@@ -66,7 +66,7 @@ Interior walls are highly decorated with geometric and arabesque motifs.
 
 ### Zelij
 
-Is a mosaic tilework, where pieces are of different colors and form Islamic geometric patterns. It can be seen in many walls in the interior of palaces in Andalucia. Zelij became its own cultural asset in Portugal, where it's known as *Azuleijo*.
+Is a mosaic tilework, where pieces are of different colors and form Islamic geometric patterns. It can be seen in many walls in the interior of palaces in Andalucia. Zelij became its own cultural asset in Portugal, where it's known as [azuleijo]({{site.url}}/amuseum/azuleijo.html).
 
 <figure class="center_children">
   <img src="{{resources_path_amuseum}}/zelij.jpg" alt="See caption." />
