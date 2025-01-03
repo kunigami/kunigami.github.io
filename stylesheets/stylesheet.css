@@ -552,4 +552,8 @@ proof, nonproof {
   .image_float_left img {
     width: 250px;
   }
+
+  .MathJax_CHTML {
+    font-size: 120% !important;
+  }
 }

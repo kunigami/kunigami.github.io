@@ -12,34 +12,34 @@
 <!-- MathJax -->
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-    extensions: [
-        "MathMenu.js",
-        "MathZoom.js",
-        "AssistiveMML.js",
-        "a11y/accessibility-menu.js"
-    ],
-    tex2jax: {
-        inlineMath: [['$','$'], ['$$','$$'], ["\\(","\\)"]],
-    },
-    jax: ["input/TeX", "output/CommonHTML"],
-    TeX: {
         extensions: [
-        "AMSmath.js",
-        "AMSsymbols.js",
-        "noErrors.js",
-        "noUndefined.js",
+            "MathMenu.js",
+            "MathZoom.js",
+            "AssistiveMML.js",
+            "a11y/accessibility-menu.js"
         ],
-        Macros: {
-        hash: "{\\#}",
-        ket: ["{\\mid #1 \\rangle}", 1],
-        abs: ["{\\left \\lvert #1 \\right \\rvert}", 1],
-        curly: ["\\{ #1 \\}", 1],
-        Mod: ["{\\ (\\mbox{mod} \\ #1)}", 1],
-        norm: ["{\\lvert\\lvert #1 \\rvert\\rvert}", 1],
-        vec: ["\\boldsymbol{#1}", 1],
-        paren: ["{\\left( #1 \\right)}", 1],
+        tex2jax: {
+            inlineMath: [['$','$'], ['$$','$$'], ["\\(","\\)"]],
+        },
+        jax: ["input/TeX", "output/CommonHTML"],
+        TeX: {
+            extensions: [
+                "AMSmath.js",
+                "AMSsymbols.js",
+                "noErrors.js",
+                "noUndefined.js",
+            ],
+            Macros: {
+                hash: "{\\#}",
+                ket: ["{\\mid #1 \\rangle}", 1],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}", 1],
+                curly: ["\\{ #1 \\}", 1],
+                Mod: ["{\\ (\\mbox{mod} \\ #1)}", 1],
+                norm: ["{\\lvert\\lvert #1 \\rvert\\rvert}", 1],
+                vec: ["\\boldsymbol{#1}", 1],
+                paren: ["{\\left( #1 \\right)}", 1],
+            }
         }
-    }
     });
 </script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
