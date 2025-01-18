@@ -41,6 +41,8 @@ $$
 \end{equation}
 {% endhighlight %}
 
+Note: the period `.` after `right` is not a typo, it's necessary.
+
 **Rendered:**
 
 $$
