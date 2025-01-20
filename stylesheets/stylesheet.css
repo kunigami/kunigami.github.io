@@ -439,12 +439,17 @@ figcaption {
   vertical-align: bottom;
 }
 
-.books-table td {
+.books-table td,
+.projects-table td {
   vertical-align: top;
 }
 
 .books-table th.thumbnail {
   width: 15%
+}
+
+.projects-table img {
+  width: 220px;
 }
 
 .books-table img {

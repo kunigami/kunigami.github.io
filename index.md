@@ -11,7 +11,7 @@ like to learn and build things.
 
 ## Pages
 
-<table class="books-table">
+<table class="projects-table">
     <tbody>
         <tr>
             <td><a href="{{ site.url }}/blog/">NP-Incompleteness</a> - My technical blog. (2009 - present)</td>
