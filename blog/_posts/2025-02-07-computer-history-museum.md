@@ -16,7 +16,7 @@ I've visited the Computer History Museum in Mountain View California several tim
 
 <!--more-->
 
-The museum is organized in multiple sections and are order more or less chronologically. For example, the first sections cover primitive computing machines (physical calculators, punch cards), then comes analog computers, mainframes, super computers, personal computers, computer games, mobile devices and finally the web.
+The museum is organized in multiple sections and are ordered more or less chronologically. For example, the first sections cover primitive computing machines (physical calculators, punch cards), then comes analog computers, mainframes, super computers, personal computers, computer games, mobile devices and finally the web.
 
 In between there are sections dedicated to storage, computer graphics, AI and robotics.
 
@@ -64,10 +64,6 @@ Another cool application of puncturing holes on paper is for data visualization.
   <img src="{{resources_path}}/atlas.jpg" alt="See caption." />
   <figcaption>The Botanical Society of the British Isles Atlas of the British Flora (photo taken in 2024).</figcaption>
 </figure>
-
-
-
-Planimeter
 
 ENIAC, from 1945, stands for *Electronic Numerical Integrator and Computer* and is considered the first general-purpose digital computer. The museum has parts of it on display.
 
