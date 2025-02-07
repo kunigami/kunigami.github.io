@@ -94,7 +94,7 @@ The IBM System/360 was a mainframe first released in 1964. The museum has the Mo
 </figure>
 
 
-The Cray-1 was a super-computer designed by Seymour Cray and released in 1975. It was capable of 160MFLOPS (for comparison, nowadays a personal computer such as an Apple Macbook can do up to 320GFLOPS). It cost about U$8 in 1977 (equivalent to U$40 million in 2023).
+The Cray-1 was a super-computer designed by Seymour Cray and released in 1975. It was capable of 160MFLOPS (for comparison, nowadays a personal computer such as an Apple Macbook can do up to 320GFLOPS). It cost about 8 million USD in 1977 (equivalent to 40 million USD in 2023).
 
 <figure class="center_children">
   <img src="{{resources_path}}/cray.jpg" alt="See caption." />
@@ -119,7 +119,7 @@ I find it pretty intresting to see how things played out, with Symbian eventuall
 
 There's a section of the museum on the opposite side of the reception which I think I have missed in all my previous visits. It has a gallery of random exhibits on technology, including more recent games such as World of Warcraft.
 
-I was an avid (to put is nicely) player of Blizzard games such as Diablo, Starcraft and Warcraft (including DotA), but never got into World of Warcraft (luckily I guess). The museum has one of the hardware from a World of Warcraft server.
+I was an avid (to put it nicely) player of Blizzard games such as Diablo, Starcraft and Warcraft (including DotA), but never got into World of Warcraft (luckily I guess). The museum has the actual hardware from a World of Warcraft server.
 
 <figure class="center_children">
   <img src="{{resources_path}}/wow.jpg" alt="See caption." />
@@ -138,3 +138,5 @@ This section also has a copy of the robot [Ameca](https://en.wikipedia.org/wiki/
 I believe this is my first post on what I call *Nerd Tourism*. I love visiting museums but most of them don't fit in the usual theme of my blog, so I tend to document them in [https://www.kuniga.me/amuseum/](https://www.kuniga.me/amuseum) instead.
 
 I have visited some science museums such as [Lawrence Berkeley National Laboratory](https://en.wikipedia.org/wiki/Lawrence_Berkeley_National_Laboratory), the [MIT Museum](https://en.wikipedia.org/wiki/MIT_Museum), [Museum of Science and Industry](https://en.wikipedia.org/wiki/Museum_of_Science_and_Industry_(Chicago)) in Chicago, [The Tech Interactive](https://en.wikipedia.org/wiki/The_Tech_Interactive) in San Jose, The [Exploratorium](https://en.wikipedia.org/wiki/Exploratorium) and the [California Academy of Sciences](https://en.wikipedia.org/wiki/California_Academy_of_Sciences) in San Francisco. Each could be worth a post, but for I never took the time to write one.
+
+I also have other nerd spots in my to-go list, mainly in Europe. I hope to post about them some day.
