@@ -36,7 +36,7 @@ The first section is about mechanical computing devices. It showcases the [Napie
   <figcaption>Napier's Bones (photo taken in 2024).</figcaption>
 </figure>
 
-The Curta calculator is a neat device from 1948, developed by Curt Herzstark. This device also has an intriguing backstory: Curt was an Austrian of partial Jewish ancestry who was sent to concentration camp, but the Nazis spared his life because he was known to be working on this device. The workings of the Curta is well described in this short [Numberphile video](https://www.youtube.com/watch?v=ZDn_DDsBWws).
+The Curta calculator is a neat device from 1948, developed by Curt Herzstark. This device also has an intriguing backstory: Curt was an Austrian of partial Jewish ancestry who was sent to a concentration camp, but the Nazis spared his life because he was known to be working on this device. The workings of the Curta is well described in this short [Numberphile video](https://www.youtube.com/watch?v=ZDn_DDsBWws).
 
 <figure class="center_children">
   <img src="{{resources_path}}/curta.jpg" alt="See caption." />
@@ -137,6 +137,6 @@ This section also has a copy of the robot [Ameca](https://en.wikipedia.org/wiki/
 
 I believe this is my first post on what I call *Nerd Tourism*. I love visiting museums but most of them don't fit in the usual theme of my blog, so I tend to document them in [https://www.kuniga.me/amuseum/](https://www.kuniga.me/amuseum) instead.
 
-I have visited some science museums such as [Lawrence Berkeley National Laboratory](https://en.wikipedia.org/wiki/Lawrence_Berkeley_National_Laboratory), the [MIT Museum](https://en.wikipedia.org/wiki/MIT_Museum), [Museum of Science and Industry](https://en.wikipedia.org/wiki/Museum_of_Science_and_Industry_(Chicago)) in Chicago, [The Tech Interactive](https://en.wikipedia.org/wiki/The_Tech_Interactive) in San Jose, The [Exploratorium](https://en.wikipedia.org/wiki/Exploratorium) and the [California Academy of Sciences](https://en.wikipedia.org/wiki/California_Academy_of_Sciences) in San Francisco. Each could be worth a post, but for I never took the time to write one.
+I have visited some science museums such as the [Lawrence Berkeley National Laboratory](https://en.wikipedia.org/wiki/Lawrence_Berkeley_National_Laboratory), the [MIT Museum](https://en.wikipedia.org/wiki/MIT_Museum), [Museum of Science and Industry](https://en.wikipedia.org/wiki/Museum_of_Science_and_Industry_(Chicago)) in Chicago, [The Tech Interactive](https://en.wikipedia.org/wiki/The_Tech_Interactive) in San Jose, the [Exploratorium](https://en.wikipedia.org/wiki/Exploratorium) and the [California Academy of Sciences](https://en.wikipedia.org/wiki/California_Academy_of_Sciences) in San Francisco. Each could be worth a post, but I never took the time to write one.
 
-I also have other nerd spots in my to-go list, mainly in Europe. I hope to post about them some day.
+I also have other nerd spots in my to-go list, mainly in Europe. I hope to visit and post about them some day.
