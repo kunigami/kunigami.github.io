@@ -1842,18 +1842,37 @@ const markers = [
 
   // Vietnam
   {
+    name: "Chăm Ruins in Mỹ Sơn",
+    description:
+      "The Chăm civilization (Champa) was a kingdom in what is now central Vietnam from the 2nd to the 19th century. Influenced by Indian culture, the Chăm people practiced Hinduism and later Buddhism, constructing impressive temple complexes like Mỹ Sơn.",
+    lat: 15.764468047752997,
+    lng: 108.12527866492422,
+    img_name: "cham.jpg",
+    img_link: "https://photos.app.goo.gl/z5SSjaQMvv4hZ3Af7",
+    photographer: "me",
+    visited: true,
+  },
+  {
     name: "Hạ Long Bay",
     description: "Multiple tree-covered limestone islands.",
     lat: 20.9361865,
     lng: 107.1593762,
     category: "nature",
+    img_name: "ha_long.jpg",
+    img_link: "https://photos.app.goo.gl/myGJsDfRqL98CwHVA",
+    photographer: "me",
+    visited: true,
   },
   {
     name: "Huế",
     description:
-      "Huế is a city in central Vietnam that was the seat of Nguyen Dynasty emperors and the national capital from 1802 to 1945.",
+      "Huế is a city in central Vietnam that was the seat of Nguyen Dynasty emperors and the national capital from 1802 to 1945. Photo: Mausoleum of Emperor Khai Dinh",
     lat: 16.46800192863555,
     lng: 107.57920881748073,
+    img_name: "hue.jpg",
+    img_link: "https://photos.app.goo.gl/T5fyoCveapARhASf6",
+    photographer: "me",
+    visited: true,
   },
   {
     name: "Mù Cang Chải",
