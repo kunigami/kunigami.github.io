@@ -51,6 +51,10 @@ Books are grouped by theme and within each theme sorted by title.
 
 * [India in the Persianate Age]({{books}}/india-in-the-persianate-age.html), Richard M. Eaton
 
+### Southeast Asia
+
+* [Singapore: A Very Short History]({{books}}/singapore-a-very-short-history.html), Alvin Tan
+
 ## Europe
 
 * [The Anglo-Saxons]({{books}}/the-anglo-saxons), Marc Morris ⭐
