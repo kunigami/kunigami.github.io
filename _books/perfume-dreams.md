@@ -6,6 +6,10 @@ vanity: perfume-dreams
 
 {% include blog_vars.html %}
 
+<figure class="image_float_left">
+  <img src="{{site.url}}/resources/books/perfume_dreams.jpg" alt="Book cover" />
+</figure>
+
 Full title: *Perfume Dreams, Reflections on the Vietnamese Diaspora*, by Andrew Lam. The title of the book comes from the Perfume River in Hue, Vietnam where Lam spent part of his childhood. The dream is perhaps a reference to his memories and the longing for a place that no longer exists, the Vietnam of his youth.
 
 This is a memoir by Lam, who fled Vietnam a few days before Saigon fell to the North. Lam's father was a high rank military and they fled in an American military airplane when Lam was a child.
