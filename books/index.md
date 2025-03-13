@@ -53,6 +53,7 @@ Books are grouped by theme and within each theme sorted by title.
 
 ### Southeast Asia
 
+* [Perfume Dreams]({{books}}/perfume-dreams.html), Andrew Lam
 * [Singapore: A Very Short History]({{books}}/singapore-a-very-short-history.html), Alvin Tan
 
 ## Europe
