@@ -68,15 +68,15 @@ Get the next element:
 {% highlight rust %}
 // returns Split class which implements Iterator
 let mut parts = s.split(',');
-let e: Optional<&str> = parts.next();
+let e: Option<&str> = parts.next();
 {% endhighlight %}
 
 NOTE: `next()` is not idempotent.
 
 
-## Optional
+## Option
 
-* Type: `optional<T>`
+* Type: `option<T>`
 {% highlight rust %}
 // Handle option:
 match my_option {
@@ -108,6 +108,19 @@ Test if none:
 {% highlight rust %}
 my_option.is_none()
 {% endhighlight %}
+
+Get a default value if none:
+
+{% highlight rust %}
+let v = my_option.unwrap_or(default_value)
+{% endhighlight %}
+
+or if the default is expensive to compute:
+
+{% highlight rust %}
+let v = my_option.unwrap_or_else(|| get_default_value())
+{% endhighlight %}
+
 
 ## Pair
 
