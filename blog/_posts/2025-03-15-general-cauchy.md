@@ -28,7 +28,7 @@ We define a chain as a "union" of arcs. For example in *Figure 1*. More formally
 
 <figure class="center_children">
   <img src="{{resources_path}}/curves.jpg" alt="See caption." />
-  <figcaption>Figure 1. A chain with each arc with a different color. The blue and pink arcs overlap and cancel each other.</figcaption>
+  <figcaption>Figure 1. A chain where each arc has a different color. The blue and pink arcs overlap and cancel each other.</figcaption>
 </figure>
 
 **Definition.** A **chain** is a set of arcs $\gamma_1, \gamma_2, \cdots, \gamma_n$, denoted by $\gamma_1 + \gamma_2 + \cdots + \gamma_n$ such that
@@ -121,11 +121,11 @@ $$(1) \quad \int_\gamma f(z) dz = 0$$
 
 For any cycle $\gamma$ satisfying $\gamma \sim 0 \, (\mbox{mod } \Omega)$.
 
-Notice that in this result we don't assume anything about $\Omega$. However, if it's a simply connect region, then all cycles in it are homologous to zero, so we can claim that:
+Notice that in this result we don't assume anything about $\Omega$. However, if it's a simply connected region, then all cycles in it are homologous to zero, so we can claim that:
 
 **Corollary 3.** If $f(z)$ is holomorphic in a simply connected region $\Omega$, then
 
-$$(1) \quad \int_\gamma f(z) dz = 0$$
+$$\int_\gamma f(z) dz = 0$$
 
 For any cycles in $\Omega$.
 
