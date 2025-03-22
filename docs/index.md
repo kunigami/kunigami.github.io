@@ -34,6 +34,10 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [General]({{ site.url }}/docs/javascript/)
 * [NPM]({{ site.url }}/docs/javascript/npm.html)
 
+## History
+
+* [Vietnam]({{ site.url }}/docs/history/vietnam/)
+
 ## Languages
 
 * [French]({{ site.url }}/docs/languages/french/)
