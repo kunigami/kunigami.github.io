@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="132 146 622 207">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 7 6" markerWidth="7" markerHeight="6" color="black">
+      <g>
+        <path d="M 4.8 0 L 0 0 M 0 -1.8 L 4.8 0 L 0 1.8" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" fill="none" stroke="none" stroke-dasharray="none" fill-opacity="1" stroke-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_28">
+        <rect x="134.8711" y="163.25781" width="158.39844" height="47.03906" fill="#76d6ff"/>
+        <path d="M 134.04146 163.25793 L 293.7577 163.23619 M 293.3227 162.67237 L 293.33297 211.4153 M 294.31628 210.57237 L 134.6389 210.56752 M 135.30868 211.0144 L 134.86804 162.92505 M 134.16644 163.0198 L 293.4478 163.00714 M 293.46497 162.54736 L 293.52067 210.44733 M 294.44127 210.48816 L 135.42958 210.50732 M 135.34716 210.8902 L 134.87904 163.13388" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(139.8711 174.17126)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="29.920766" y="20" xml:space="preserve">C++ Code</tspan>
+        </text>
+      </g>
+      <g id="Graphic_26">
+        <rect x="591.53516" y="281.89062" width="158.39844" height="66.88672" fill="#73fb79"/>
+        <path d="M 591.0632 281.8919 L 750.6979 281.45865 M 750.2479 280.7109 L 750.0026 349.7947 M 750.9047 348.81156 L 590.8623 348.4394 M 591.1669 348.75055 L 591.53975 281.0572 M 591.18786 281.64516 L 750.37015 281.28476 M 750.4849 280.5863 L 750.139 348.6845 M 751.0295 348.75816 L 591.2935 348.3447 M 591.2197 348.62515 L 591.56834 281.76512" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(596.53516 290.12183)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="34.11966" y="20" xml:space="preserve">Semantic </tspan>
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="37.867727" y="45.21216" xml:space="preserve">Analysis</tspan>
+        </text>
+      </g>
+      <g id="Graphic_25">
+        <rect x="380.95703" y="149.6836" width="158.39844" height="74.1875" fill="#73fb79"/>
+        <path d="M 380.2889 149.68416 L 540.2578 149.54786 M 539.8061 148.70677 L 538.929 224.58788 M 539.41376 224.28324 L 380.68888 223.72817 M 381.19354 224.72214 L 380.9548 148.97485 M 380.41384 149.4956 L 539.92133 149.40013 M 539.9654 148.58216 L 539.16306 224.15777 M 539.5387 224.18274 L 381.31516 223.6794 M 381.2536 224.59734 L 381.00283 149.55884" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(385.95703 161.56519)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="42.53513" y="20" xml:space="preserve">Lexical</tspan>
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="37.867727" y="45.21216" xml:space="preserve">Analysis</tspan>
+        </text>
+      </g>
+      <g id="Graphic_24">
+        <rect x="591.53516" y="156.98438" width="158.39844" height="66.88672" fill="#73fb79"/>
+        <path d="M 590.67086 156.9835 L 749.974 157.14492 M 749.4965 156.21037 L 750.0182 224.03735 M 750.8291 223.65852 L 590.6717 223.92715 M 591.3662 224.84997 L 591.5366 156.4003 M 590.79586 156.85313 L 749.6288 156.89832 M 749.7032 156.08474 L 750.2183 223.5343 M 750.95425 223.63593 L 591.4937 223.92036 M 591.4334 224.72483 L 591.5936 156.8592" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(596.53516 165.21558)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="34.07546" y="20" xml:space="preserve">Syntactic </tspan>
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="37.867727" y="45.21216" xml:space="preserve">Analysis</tspan>
+        </text>
+      </g>
+      <g id="Graphic_23">
+        <rect x="362.3867" y="281.89062" width="158.39844" height="66.88672" fill="#73fb79"/>
+        <path d="M 362.07626 281.88973 L 520.9636 282.3475 M 520.4849 282.06945 L 520.3707 349.39307 M 520.7678 348.94426 L 361.9279 349.02876 M 362.82556 349.88404 L 362.38375 281.43124 M 362.20146 281.69255 L 520.6097 282.12698 M 520.61393 281.94446 L 520.54706 348.81956 M 520.89285 348.87457 L 362.94506 348.94256 M 362.89996 349.75937 L 362.45776 281.76597" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(367.3867 290.12183)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="37.248943" y="20" xml:space="preserve">LLVM IR</tspan>
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="26.879882" y="45.21216" xml:space="preserve">Generator</tspan>
+        </text>
+      </g>
+      <g id="Line_22">
+        <path d="M 293.2563 186.78431 L 367.69006 186.27242 M 293.5061 186.50633 L 366.96307 185.89486" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_19">
+        <path d="M 539.6652 188.16906 L 579.0985 188.08596 M 539.91484 187.74022 L 578.3188 187.61583" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_17">
+        <rect x="134.8711" y="295.875" width="158.39844" height="47.03906" fill="#76d6ff"/>
+        <path d="M 134.13363 295.87394 L 294.27635 296.1037 M 293.75915 295.2711 L 292.8675 344.2264 M 293.7753 343.35124 L 134.34034 343.3413 M 134.90451 343.78777 L 134.87077 295.41365 M 134.25878 295.6509 L 293.86908 295.9208 M 293.9223 295.1468 L 293.01935 343.2264 M 293.9003 343.24897 L 135.0292 343.275 M 135.02202 343.66278 L 134.89284 295.75007" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(139.8711 306.78845)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="37.248943" y="20" xml:space="preserve">LLVM IR</tspan>
+        </text>
+      </g>
+      <g id="Line_16">
+        <path d="M 670.7695 223.00417 L 669.9214 268.11955 M 671.09916 222.75567 L 670.252 266.78846" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_14">
+        <path d="M 591.68706 315.3293 L 533.2914 315.56687 M 591.93746 315.17624 L 534.6601 315.51466" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_11">
+        <path d="M 362.2155 316.7504 L 306.49595 317.7549 M 362.46996 316.74814 L 307.9175 317.52414" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>
