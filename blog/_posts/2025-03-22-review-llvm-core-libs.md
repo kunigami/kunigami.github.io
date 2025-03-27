@@ -196,7 +196,7 @@ The `e` indicates a little endian addressing (big endian would be `E`. Neat!). T
 
 Like the frontent, the backend is composed of multiple steps. Its aim is to convert the LLVM IR into either object code or assembly.
 
-Figure 3 depicts the main steps, which are called passes.
+*Figure 3* depicts the main steps, which are called **passes**. We can see there are multiple passes and they look independent. With this design LLVM achieves more modularity which helps with reuse and testing. It might sacrifice performance in case passes could be combined to avoid repeated operations.
 
 <figure class="center_children">
   <img src="{{resources_path}}/backend.svg" alt="See caption." width="500" />
