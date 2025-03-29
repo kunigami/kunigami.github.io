@@ -15,9 +15,9 @@ vanity: "2025-03-22-review-llvm-core-libs"
 
 In this post I’ll share my notes on the book *Getting Started with LLVM Core Libraries* by Bruno Cardoso Lopes and Rafael Auler.
 
-The book is aimed at people interested in developing code using LLVM internal libraries. It's very practical in the sense that it provides lots of code examples, but installation steps and command lines.
+The book is aimed at people interested in developing code using LLVM internal libraries. It's very practical in the sense that it provides lots of code examples, installation steps and command lines.
 
-My main objective on reading this book was to get a better understand on how LLVM worked and so I skimmed most of the parts around how to setup and run things. Hence I'll focus more on the high level parts of the book in my summary.
+My main objective in reading this book was to get a better understanding on how LLVM worked and so I skimmed most of the parts around setting up and running things. I'll focus instead more on the high level / conceptual parts of the book in my summary.
 
 <!--more-->
 
@@ -329,7 +329,7 @@ A particularly relevant tool is `clang-query`, a CLI which allows testing AST ma
 
 ## Conclusion
 
-Overall the book is very well written and detailed. As I mentioned at the start, my main goal was to get a better understand on how LLVM worked so I didn't find the code details very useful.
+Overall the book is very well written and detailed. As I mentioned at the start, my main goal was to to better understand how LLVM worked so I didn't find the code details very useful.
 
 I did learn a few things about LLVM:
 
