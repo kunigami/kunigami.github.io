@@ -874,6 +874,34 @@ impl<T: Display> AnotherTrait for T {
 }
 {% endhighlight %}
 
+### Dynamic dispatch
+
+If we want to have a pointer to objects of a class implementing a trait `MyTrait`, we can use dynamic dispatch so that methods are resolved at runtime. Example:
+
+{% highlight rust %}
+struct A {}
+struct B {}
+trait MyTrait {
+    fn method(&self) {}
+}
+
+impl MyTrait for A {
+    fn method(&self) {}
+}
+impl MyTrait for B {
+    fn method(&self) {}
+}
+
+fn f(ptr: Arc<dyn MyTrait>) {
+    ptr.method()
+}
+
+
+f(Arc::new(A {}));
+f(Arc::new(B {}));
+{% endhighlight %}
+
+
 
 # I/O
 
@@ -904,6 +932,23 @@ Vector:
 let vec = vec![1, 2, 3, 4, 5];
 println!("Vector:\n{:#?}", vec);
 {% endhighlight %}
+
+## Temporary File
+
+{% highlight rust %}
+use tempfile::NamedTempFile;
+use std::io::{Write, Read};
+
+let mut tmp_file = NamedTempFile::new()?;
+
+// Write
+writeln!(tmp_file, "Hello world!")?;
+
+// Read
+let mut contents = String::new();
+tmp_file.reopen()?.read_to_string(&mut contents)?;
+{% endhighlight %}
+
 
 # Math
 
