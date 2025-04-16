@@ -329,6 +329,7 @@ let Some(value) = maybe else {
 }
 {% endhighlight %}
 
+
 ## Loops
 
 {% highlight rust %}
@@ -428,6 +429,17 @@ fn maybe(v: i32) -> Result<i32> {
 {% endhighlight %}
 
 The rest is the same. Noting that `anyhow::Result<T>` is an alias for `Result<T, anyhow::Error>`. The `anyhow:Error` is created using the macro `anyhow!`.
+
+To map `Result<T, E>` into `Result<T>`:
+
+{% highlight rust %}
+use anyhow::{Result, anyhow};
+fn my_func() -> Result<T, E>;
+
+my_func()
+    .map_err(|e| Error::new(e).context("new error"))?;
+{% endhighlight %}
+
 
 ### Propagation
 
