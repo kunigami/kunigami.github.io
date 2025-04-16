@@ -18,9 +18,7 @@ excerpt_separator: <!--more-->
 This is a post with my notes on complex integration, corresponding to Chapter 4 in Ahlfors’ Complex Analysis.
 
 In the last post of the series, we studied [The General Form of Cauchy's Theorem
-]({{blog}}/2025/03/15/general-cauchy.html). One of the outcomes in generalizing it for multiply connected regions was the concept of the *modules of periodicity*.
-
-In this post we'll explore this idea further and see how it can be used as a tool for solving integrals, via *Cauchy's Residue Theorem*.
+]({{blog}}/2025/03/15/general-cauchy.html). One of the outcomes in generalizing it for multiply connected regions was the concept of the *modules of periodicity*. In this post we'll explore this idea further and see how it can be used as a tool for solving integrals, via *Cauchy's Residue Theorem*.
 
 <!--more-->
 
