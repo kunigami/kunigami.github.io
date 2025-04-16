@@ -125,9 +125,18 @@ if __name__ == "__main__":
     code = ""
     with open(filename, "r") as f:
         code = f.read()
+    
+    if code == "":
+        print("No code found. Exiting...")
+        exit(0)
 
     new_code = fix_equations(code)
 
+    if new_code == code:
+        print("No changes made.")
+        exit(0)
+
     # write back
+    print("Writing back to ", filename)
     with open(filename, "w") as f:
         f.write(new_code)
