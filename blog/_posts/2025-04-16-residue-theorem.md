@@ -289,7 +289,7 @@ The answer to the question at the start is: "Because it leaves residues on every
 
 Coincidentally, I just heard this joke recently on the [Oxford Mathematics Instagram account](https://www.instagram.com/p/DIgQwuBMa7Y/) as I was finishing up this post! I would have not gotten the joke before studying this topic.
 
-In this post we saw that residues are connected to modules of periodicity but they provide a more practical method for finding them and like modules of periodicity they're useful because the integral of a function can be expressed as a linear combination of them. Residues are particularly easy to find at poles.
+In this post we saw that residues are connected to modules of periodicity but they're easier to compute, and like modules of periodicity they're useful because the integral of a function can be expressed as a linear combination of them. Residues are particularly easy to find at poles.
 
 We learned about some connections between residues and Cauchy's Integral Formula and also that the change in argument of a function over a curve can be computed from the difference of zeros and poles of a function contained inside it.
 
