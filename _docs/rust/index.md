@@ -759,13 +759,13 @@ impl MyClass {
     // Constructor-like
     pub fn new() -> MyClass {
         return MyClass {
-        my_field: true,
+            my_field: true,
         }
     }
 
     // Read Method
-    pub fn set(&self, value: bool) {
-        self.my_field = value;
+    pub fn get(&self) -> bool {
+        self.my_field
     }
 
     // Write Method
@@ -775,6 +775,34 @@ impl MyClass {
 }
 {% endhighlight %}
 
+### Interior Mutability
+
+Keywords: Bypass read-only of `&self`.
+
+By default you can't mutate a field inside a method if you pass `&self`. There's a way to bypass this for implementation details, by using `RefCell`, `Mutext` or `Atomic` types.
+
+{% highlight rust %}
+pub structure MyClass {
+    my_field: bool,
+    was_called: Arc<AtomicBool>,
+}
+
+impl MyClass {
+    // Constructor-like
+    pub fn new() -> MyClass {
+        return MyClass {
+            my_field: true,
+            was_called: Arc::new(AtomicBool::new(false))
+        }
+    }
+
+    // Read Method with internal mutability
+    pub fn get(&self) -> bool {
+        self.was_called.store(true, Ordering::Relaxed);
+        self.my_field
+    }
+}
+{% endhighlight %}
 
 ## Traits
 
