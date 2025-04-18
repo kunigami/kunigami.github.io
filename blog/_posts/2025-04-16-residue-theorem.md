@@ -56,19 +56,23 @@ $$\int_{C_j} g(z) = 0$$
 
 By *Corollary 1* in [4] we conclude that $g(z)$ is the derivative of a holomorphic function in $\Omega'$. To avoid accounting for the other holes of $\Omega'$, we can shrink the domain to the annulus $0 \lt \abs{z - a_j} \lt \delta$. This let's us defined the residue in simpler terms:
 
-**Definition.** Let $f(z)$ be a holomorphic function except at an singularity $a$. The **residue** of $f(z)$ at $a$ is the scalar $R$ for which the function $f(z) - (z - a)$ is the derivative of a holomorphic function in $0 \lt \abs{z - a_j} \lt \delta$.
+**Definition.** Let $f(z)$ be a holomorphic function except at an singularity $a$. The **residue** of $f(z)$ at $a$ is the scalar $R$ for which the function $f(z) - R / (z - a)$ is the derivative of a holomorphic function in $0 \lt \abs{z - a_j} \lt \delta$.
 
-The residue can be denoted by $\mbox{Res}_{z = a} f(z)$.
+The residue can be denoted by $\mbox{Res}_{z = a} f(z)$. By this definition, $f(z) - R / (z - a)$ is not necessarily holomorphic in $0 \lt \abs{z - a_j} \lt \delta$, but by *Corollary 1* in [4] we can claim that:
+
+$$(1) \quad \int_{\gamma} \left( f(z) - \frac{\mbox{Res}_{z = a} f(z)}{z - a} \right) dz = 0$$
+
+We'll come back to this equation later.
 
 ## The Residue Theorem
 
 In [2] we learned that the integral of a holomorphic function in a multiply connected region can be expressed as a linear combination of the modules of periodicity:
 
 $$
-(1) \quad \int_\gamma f(z) dz = \sum_{j = 1}^{n - 1} c_j P_j
+(2) \quad \int_\gamma f(z) dz = \sum_{j = 1}^{n - 1} c_j P_j
 $$
 
-where $c_j$ is the number of times $\gamma$ winds around the hole, or equivalently, the singularity $a_j$, or in short, $n(\gamma, a_j)$. Replacing these in $(1)$:
+where $c_j$ is the number of times $\gamma$ winds around the hole, or equivalently, the singularity $a_j$, or in short, $n(\gamma, a_j)$. Replacing these in $(2)$:
 
 $$
 = \sum_{j = 1}^{n - 1} n(\gamma, a_j) P_j
@@ -85,7 +89,7 @@ This is known as **Cauchy's Residue Theorem**. Summarizing:
 **Theorem 1.** Let $f(z)$ be a holomorphic function except for isolated singularities $a_j$ in a region $\Omega$. Then:
 
 $$
-(2) \quad \frac{1}{2\pi i} \int_\gamma f(z) dz = \sum_{j = 1}^{n} n(\gamma, a_j) \mbox{Res}_{z = a_j} f(z)
+(3) \quad \frac{1}{2\pi i} \int_\gamma f(z) dz = \sum_{j = 1}^{n} n(\gamma, a_j) \mbox{Res}_{z = a_j} f(z)
 $$
 
 For any cycle $\gamma$ that is homologous to 0 in $\Omega$ not passing through any of the singularities.
@@ -94,15 +98,15 @@ For any cycle $\gamma$ that is homologous to 0 in $\Omega$ not passing through a
 
 One question we might ask ourselves is why are residues useful? Couldn't we just use the definition of modules of periodicity directly? Why do we need residues which is just modules of periodicity divided by $2 \pi i$?
 
-The advantage is not on the definition of the residue itself but rather because of this formula:
+The advantage is not on the definition of the residue itself but rather because of equation $(1)$:
 
-$$\int_{\gamma} f(z) - \frac{\mbox{Res}_{z = a_j} f(z)}{z - a} dz = 0$$
+$$\int_{\gamma} \left( f(z) - \frac{\mbox{Res}_{z = a} f(z)}{z - a} \right) dz = 0$$
 
 Suppose we can write $f(z)$ as:
 
 $$f(z) = \frac{\alpha}{z - a} + g(z)$$
 
-where $g(z)$ is holomorphic in $\Omega$. This form is particularly useful if the singularity is a pole. In *Lemma 4* in [5], we showed that if $f(z)$ has a pole of order $m$, it can be written as the Laurent series:
+where $g(z)$ is the derivative of a holomorphic function. Then $\alpha$ is the residue! This is particularly useful if the singularity is a pole. In *Lemma 4* in [5], we showed that if $f(z)$ has a pole of order $m$, it can be written as the Laurent series:
 
 $$
 f(z) = \sum_{n=-m}^{\infty} c_n (z - a)^n
@@ -138,15 +142,15 @@ For $a \ne b$. We can compute the Laurent series expansion around $a$ to conclud
 
 ## Connections
 
-We can obtain Cauchy's Integral formula from $(2)$, by using the function $f(z) / (z - a)$, where $f(z)$ is holomorphic in $\Omega$. Since $f(z)$ is holomorphic, it's analytic [6] and can be written as the convergent series:
+We can obtain Cauchy's Integral formula from $(3)$, by using the function $f(z) / (z - a)$, where $f(z)$ is holomorphic in $\Omega$. Since $f(z)$ is holomorphic, it's analytic [6] and can be written as the convergent series:
 
-$$(3) \quad f(z) = \sum_{j = 0}^{\infty} c_j (z - a)^j$$
+$$(4) \quad f(z) = \sum_{j = 0}^{\infty} c_j (z - a)^j$$
 
 Dividing by $(z - a)$ and isolating the first term we get:
 
 $$\frac{f(z)}{z - a} = \frac{c_0}{z - a} + \sum_{j = 1}^{\infty} c_j (z - a)^{j - 1}$$
 
-The summand on the right hand side forms a series corresponding to a holomorphic function, and as we've seen in the *Application: Poles* section, that means that $c_0$ is the residue of $f(z) / (z - a)$. The coefficient $c_0$ can be found via $(3)$ be setting $z = a$, which gives us $f(a)$, thus we can replace those in $(2)$ to obtain:
+The summand on the right hand side forms a series corresponding to a holomorphic function, and as we've seen in the *Application: Poles* section, that means that $c_0$ is the residue of $f(z) / (z - a)$. The coefficient $c_0$ can be found via $(4)$ be setting $z = a$, which gives us $f(a)$, thus we can replace those in $(3)$ to obtain:
 
 $$
 \frac{1}{2\pi i} \int_\gamma f(z) dz = n(\gamma, a) f(a)
@@ -186,10 +190,10 @@ Dividing by $f(z)$:
 
 $$\frac{f'(z)}{f(z)} = \frac{g'(z)}{g(z)} + \sum_{j = 1}^{n} \frac{m_j}{(z - z_j)} $$
 
-The first term is a holomorphic function because $g(z) \ne 0$. The other terms have poles at $z_j$. As we saw in *Example 1*, the residue for pole $z_j$ is $m_j$. Plugging these into $(2)$ gives us, for the function $f'(z) / f(z)$:
+The first term is a holomorphic function because $g(z) \ne 0$. The other terms have poles at $z_j$. As we saw in *Example 1*, the residue for pole $z_j$ is $m_j$. Plugging these into $(3)$ gives us, for the function $f'(z) / f(z)$:
 
 $$
-(4) \quad \frac{1}{2\pi i} \int_\gamma \frac{f'(z)}{f(z)} dz = \sum_{j = 1}^{n} n(\gamma, a_j) m_j
+(5) \quad \frac{1}{2\pi i} \int_\gamma \frac{f'(z)}{f(z)} dz = \sum_{j = 1}^{n} n(\gamma, a_j) m_j
 $$
 
 Note that nowhere in our calculation we require $m_j$ to be positive. We can thus generalize *Lemma 1* in [8] with *Lemma 2*:
@@ -241,12 +245,12 @@ $$f(z) = \frac{\prod_{j = 1}^{n_z} (z - z_j)^{m_j}}{\prod_{j = 1}^{n_p} (z - p_j
 
 </proof>
 
-Which we can simplify as a single product where some of the exponents might be negative. This allow us to generalize $(4)$ to *Theorem 3*, known as the **Argument Principle**:
+Which we can simplify as a single product where some of the exponents might be negative. This allow us to generalize $(5)$ to *Theorem 3*, known as the **Argument Principle**:
 
 **Theorem 3.** Let $f(z)$ be a function with zeroes $z_1, z_2, \cdots, z_{n_z}$ of order $m_1, m_2, \cdots, m_{n_p}$ and poles $p_1, p_2, \cdots, p_{n_p}$ of order $n_1, n_2, \cdots, n_{n_p}$:
 
 $$
-(5) \quad \frac{1}{2\pi i} \int_\gamma \frac{f'(z)}{f(z)} dz = \sum_{j = 1}^{n} n(\gamma, z_j) m_j - \sum_{j = 1}^{n} n(\gamma, p_j) n_j
+(6) \quad \frac{1}{2\pi i} \int_\gamma \frac{f'(z)}{f(z)} dz = \sum_{j = 1}^{n} n(\gamma, z_j) m_j - \sum_{j = 1}^{n} n(\gamma, p_j) n_j
 $$
 
 For any cycle $\gamma$ homologous to 0 in $\Omega$ that does not pass through any of the zeros or poles.
@@ -267,7 +271,7 @@ So the change in $f(z)$ for a small delta $dz$ corresponds to a change in magnit
 
 $$\frac{d \ln f(z)}{dz} = \frac{f'(z)}{f(z)}$$
 
-So when we integrate the right hand size over $\gamma$, we're computing the overall change in magnitude and argument. However, $(5)$ only has the imaginary part (multiply both sides by $i$ to see it). This means the net change in magnitude of $f(z)$ is 0. The net change in argument, let's call it $\Delta_{\mbox{arg}}$ can be obtained via:
+So when we integrate the right hand size over $\gamma$, we're computing the overall change in magnitude and argument. However, $(6)$ only has the imaginary part (multiply both sides by $i$ to see it). This means the net change in magnitude of $f(z)$ is 0. The net change in argument, let's call it $\Delta_{\mbox{arg}}$ can be obtained via:
 
 $$\int_\gamma \frac{f'(z)}{f(z)} dz = i \Delta_{\mbox{arg}}$$
 
@@ -279,9 +283,7 @@ If $\gamma$ is a simple curve and we only count zeros and poles contained inside
 
 $$\Delta_{\mbox{arg}} = 2 \pi \left(\sum_{j = 1}^{n_j} m_j - \sum_{j = 1}^{n_p} n_j\right)$$
 
-
-In English, this means the total change in argument when $z$ travels around the curve $\gamma$ is the difference between the number of zeros and poles (multiplied by their order) contained inside $\gamma$ (for which the winding number is 1) times $2 \pi$.
-
+Note that $m_j$ and $n_j$ are integers so $\Delta_{\mbox{arg}} = 2\pi k$, corresponding to how many revolutions around the origin. It makes intuitive sense since $z$ is travelling around a closed circle, so it starts and stop at the same place.
 
 ## Conclusion
 
