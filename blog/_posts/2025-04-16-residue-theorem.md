@@ -283,7 +283,7 @@ If $\gamma$ is a simple curve and we only count zeros and poles contained inside
 
 $$\Delta_{\mbox{arg}} = 2 \pi \left(\sum_{j = 1}^{n_j} m_j - \sum_{j = 1}^{n_p} n_j\right)$$
 
-Note that $m_j$ and $n_j$ are integers so $\Delta_{\mbox{arg}} = 2\pi k$, corresponding to how many revolutions f(z)$ performed around the origin as $z$ went around $\gamma$. It makes intuitive sense since $z$ is travelling around a closed circle, so it starts and stop at the same place.
+Note that $m_j$ and $n_j$ are integers so $\Delta_{\mbox{arg}} = 2\pi k$, corresponding to how many revolutions $f(z)$ performed around the origin as $z$ went around $\gamma$. It makes intuitive sense since $z$ is travelling around a closed circle, so it starts and stop at the same place.
 
 ## Conclusion
 
