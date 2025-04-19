@@ -51,6 +51,27 @@ enum Direction {
 }
 {% endhighlight %}
 
+Adding conversion to string:
+
+{% highlight rust %}
+use std::fmt;
+
+impl fmt::Display for Direction {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let s = match self {
+            Color::N => "North",
+            Color::E => "East",
+            Color::S => "South",
+            Color::W => "West",
+        };
+        write!(f, "{}", s)
+    }
+}
+
+// In code
+let s = Direction::N.to_string();
+{% endhighlight %}
+
 ## Integers
 
 * Types: `i8`, `i16`, `i32`, `i64`, `u8`, `u16`, `u32`, `u64`
