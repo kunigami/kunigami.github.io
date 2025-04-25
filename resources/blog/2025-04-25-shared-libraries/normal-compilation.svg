@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="165 196 507 266" width="500">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 7 6" markerWidth="7" markerHeight="6" color="black">
+      <g>
+        <path d="M 4.8 0 L 0 0 M 0 -1.8 L 4.8 0 L 0 1.8" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" stroke-opacity="1" stroke="none" fill="none" stroke-dasharray="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <rect fill="white" x="165" y="196" width="507" height="266"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <rect x="339.26953" y="410.41016" width="158.39844" height="47.03906" fill="#80ff80"/>
+        <path d="M 338.5896 410.4116 L 498.74566 410.0678 M 498.0839 409.34893 L 497.8488 458.0036 M 498.4815 457.5603 L 338.80892 457.8181 M 339.30275 458.74043 L 339.26895 409.56894 M 338.71437 410.18643 L 498.20534 409.917 M 498.3323 409.22453 L 498.0751 457.4368 M 498.6066 457.5016 L 339.4273 457.7995 M 339.403 458.61545 L 339.35555 410.2852" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(344.26953 421.3236)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="48.360545" y="20" xml:space="preserve">.a.out</tspan>
+        </text>
+      </g>
+      <g id="Graphic_3">
+        <rect x="339.26953" y="286.9336" width="158.39844" height="47.03906" fill="#80ff80"/>
+        <path d="M 338.78575 286.9325 L 498.6076 287.29877 M 497.9594 286.66956 L 497.3415 334.07755 M 497.6443 333.7056 L 339.40425 334.14554 M 339.71124 335.136 L 339.2607 285.96774 M 338.91083 286.7741 L 498.0763 287.11805 M 498.16046 286.54555 L 497.4729 333.58145 M 497.76964 333.694 L 339.82733 334.082 M 339.8043 335.0113 L 339.34294 286.80907" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(344.26953 297.84705)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="21.78817" y="20" xml:space="preserve">my_file_1.o</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <rect x="510.1719" y="286.9336" width="158.39844" height="47.03906" fill="#80ff80"/>
+        <path d="M 509.88426 286.93347 L 669.3719 287.00214 M 668.7241 286.46665 L 668.7442 334.6281 M 669.4595 334.3298 L 509.1519 333.9466 M 510.00343 334.2582 L 510.1731 286.59303 M 510.0093 286.7169 L 668.8494 286.79565 M 668.87785 286.34164 L 668.8981 334.2031 M 669.5844 334.2403 L 510.1295 333.84103 M 510.0893 334.13306 L 510.23266 286.80837" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(515.1719 297.84705)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="21.611373" y="20" xml:space="preserve">my_file_2.o</tspan>
+        </text>
+      </g>
+      <g id="Line_5">
+        <path d="M 418.4674 333.28976 L 418.51947 397.3332 M 418.7669 333.0397 L 418.98484 395.8057" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_6">
+        <path d="M 556.4757 334.21093 L 461.6368 403.5538 M 556.82364 334.09485 L 462.91564 402.5768" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_12">
+        <rect x="168.36719" y="286.9336" width="158.39844" height="47.03906" fill="#80ff80"/>
+        <path d="M 167.3989 286.9354 L 327.46273 286.6375 M 326.8859 286.0938 L 326.90273 334.78244 M 327.20732 334.3013 L 167.60982 334.3806 M 168.40072 335.23553 L 168.36678 286.34562 M 167.5238 286.7533 L 327.011 286.4664 M 327.0358 285.9688 L 327.1512 334.1764 M 327.33234 334.21354 L 168.52514 334.2884 M 168.42914 335.1106 L 168.45203 286.80862" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(173.36719 297.84705)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="43.26883" y="20" xml:space="preserve">main.o</tspan>
+        </text>
+      </g>
+      <g id="Graphic_13">
+        <rect x="168.36719" y="199.23047" width="158.39844" height="47.03906" fill="#76d6ff"/>
+        <path d="M 167.59507 199.22847 L 327.32467 199.64152 M 326.76037 199.18785 L 326.3948 246.62984 M 327.12014 246.21878 L 168.20514 246.48202 M 168.80862 247.40454 L 168.36066 198.51785 M 167.72037 198.9882 L 326.88207 199.44087 M 326.9879 199.06364 L 326.54905 246.09518 M 327.24528 246.17813 L 168.92534 246.4693 M 168.82986 247.2805 L 168.4394 199.10595" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(173.36719 210.14392)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="34.278777" y="20" xml:space="preserve">main.cpp</tspan>
+        </text>
+      </g>
+      <g id="Graphic_14">
+        <rect x="339.26953" y="199.23047" width="158.39844" height="47.03906" fill="#76d6ff"/>
+        <path d="M 338.69357 199.23005 L 498.08896 199.34504 M 497.528 198.98499 L 497.79763 246.1804 M 498.1853 245.84056 L 338.7028 246.2861 M 339.099 247.27674 L 339.2725 198.39315 M 338.8186 199.05658 L 497.6551 199.11847 M 497.7082 198.85967 L 497.97424 245.71634 M 498.3103 245.722 L 339.22773 246.22835 M 339.11307 247.15134 L 339.32913 199.10524" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(344.26953 210.14392)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="12.798114" y="20" xml:space="preserve">my_file_1.cpp</tspan>
+        </text>
+      </g>
+      <g id="Graphic_15">
+        <rect x="510.1719" y="199.23047" width="158.39844" height="47.03906" fill="#76d6ff"/>
+        <path d="M 509.7921 199.2309 L 668.85324 199.0486 M 668.3038 198.78213 L 668.1928 246.73093 M 669.00045 246.46523 L 509.4505 246.08666 M 510.40646 246.3989 L 510.1671 198.26848 M 509.91696 198.99924 L 668.4282 198.92106 M 668.43664 198.65715 L 668.3994 246.3385 M 669.1253 246.39377 L 510.52986 245.9874 M 510.4133 246.2745 L 510.21886 199.10586" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(515.1719 210.14392)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="12.621318" y="20" xml:space="preserve">my_file_2.cpp</tspan>
+        </text>
+      </g>
+      <g id="Line_16">
+        <path d="M 589.4307 245.40323 L 588.54386 273.16216 M 589.7604 245.15578 L 588.8887 271.83222" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_17">
+        <path d="M 418.4154 245.79558 L 419.4562 274.55347 M 418.86136 245.53849 L 419.7819 273.23534" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_18">
+        <path d="M 247.53725 246.18734 L 248.28514 273.94525 M 247.8497 245.93565 L 248.6752 272.64412" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_19">
+        <path d="M 280.9411 334.57255 L 375.34603 401.7263 M 281.29477 334.17682 L 374.8862 400.69853" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>
