@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="272 -264 722 406" width="565">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 7 6" markerWidth="7" markerHeight="6" color="black">
+      <g>
+        <path d="M 4.8 0 L 0 0 M 0 -1.8 L 4.8 0 L 0 1.8" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 7 6" markerWidth="7" markerHeight="6" color="#76d6ff">
+      <g>
+        <path d="M 4.8 0 L 0 0 M 0 -1.8 L 4.8 0 L 0 1.8" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker_3" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-6 -3 7 6" markerWidth="7" markerHeight="6" color="#76d6ff">
+      <g>
+        <path d="M -4.8 0 L 0 0 M 0 1.8 L -4.8 0 L 0 -1.8" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" stroke-opacity="1" stroke="none" fill="none" stroke-dasharray="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <rect fill="white" x="272" y="-264" width="722" height="406"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_43">
+        <rect x="782.9852" y="-89.14062" width="207.0664" height="183.40234" fill="#ffc0ff"/>
+        <path d="M 782.098 -89.13869 L 990.4689 -89.59399 M 990.1655 -90.26889 L 990.5469 94.38825 M 991.0405 93.86046 L 782.68285 94.59415 M 783.4209 95.31177 L 782.9835 -89.84353 M 782.2228 -89.37467 L 990.2919 -89.72738 M 990.3475 -90.394 L 990.7704 93.737 M 991.166 93.8577 L 783.5442 94.48283 M 783.4766 95.18693 L 783.0538 -89.26549" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(787.9852 -84.14062)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">GOT</tspan>
+        </text>
+      </g>
+      <g id="Graphic_42">
+        <path d="M 802.7847 -33.089513 L 962.0718 -33.24745 M 961.765 -34.01524 L 961.5121 14.5252 M 962.3426 13.9304 L 802.2203 13.472444 M 803.1524 14.1271 L 803.1176 -33.66807 M 802.9096 -33.267306 L 961.8858 -33.479197 M 961.9943 -34.139698 L 961.7124 13.803409 M 962.4674 13.880541 L 803.2768 13.411282 M 803.2153 14.002146 L 803.1993 -33.21481" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(808.118 -22.176392)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="13.045628" y="20" xml:space="preserve">f(): </tspan>
+          <tspan font-family="Chalkduster" font-size="16" fill="#0432ff" y="20" xml:space="preserve">0x50c03a</tspan>
+        </text>
+      </g>
+      <g id="Graphic_41">
+        <path d="M 802.5885 20.56204 L 962.2098 20.70089 M 961.906 19.840092 L 961.0075 68.6269 M 961.4298 67.960354 L 802.375 67.321995 M 802.7474 67.90726 L 803.1215 20.10896 M 802.7136 20.317437 L 962.0152 20.495552 M 962.0577 19.715584 L 961.1896 67.83453 M 961.5546 67.8634 L 802.8765 67.30458 M 802.81745 67.78183 L 803.2119 20.437257" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(808.118 31.475952)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="8.696456" y="20" xml:space="preserve">h(): 0x401046</tspan>
+        </text>
+      </g>
+      <g id="Graphic_40">
+        <rect x="468.1211" y="-261" width="213" height="400.90234" fill="#c0ffc0"/>
+        <path d="M 467.39545 -261.00148 L 680.9526 -260.5658 M 680.6228 -261.5197 L 681.13 140.37725 M 681.8716 139.63719 L 467.7828 139.82084 M 468.3553 140.3359 L 468.1209 -261.32888 M 467.5206 -261.1879 L 680.7491 -260.74454 M 680.82184 -261.6448 L 681.2714 139.5128 M 681.9967 139.61813 L 468.48 139.72132 M 468.4326 140.21092 L 468.2276 -261.125" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(473.1211 -256)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">PLT</tspan>
+        </text>
+      </g>
+      <g id="Graphic_39">
+        <path d="M 483.83796 20.345143 L 664.45195 20.07217 M 664.1153 19.776906 L 663.993 68.30718 M 664.3201 67.49662 L 483.82614 67.49687 M 484.59206 67.94419 L 484.7631 19.389553 M 483.96295 20.21692 L 664.2395 19.921613 M 664.3617 19.652212 L 664.2349 67.37191 M 664.4451 67.43048 L 484.71863 67.44274 M 484.6765 67.81905 L 484.8789 20.21873" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(489.75977 31.257202)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">0x401036: push </tspan>
+        </text>
+      </g>
+      <g id="Graphic_38">
+        <path d="M 484.3918 -33.1563 L 664.59 -33.131863 M 664.24165 -33.520235 L 664.5044 15.256628 M 665.1573 14.375623 L 484.2308 14.191947 M 485.1971 14.572012 L 484.75217 -33.985742 M 484.5168 -33.35133 L 664.36875 -33.38098 M 664.4104 -33.64547 L 664.712 14.249485 M 665.2823 14.26238 L 485.3185 14.183698 M 485.2887 14.447317 L 484.76653 -33.280167" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(489.75977 -22.242798)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">0x401030: *jmp </tspan>
+        </text>
+      </g>
+      <g id="Graphic_37">
+        <path d="M 484.1956 73.84275 L 664.7281 74.16413 M 664.37674 73.68263 L 663.9967 121.70607 M 664.9945 120.7553 L 484.3855 120.38815 M 484.7938 120.69986 L 484.75925 73.1389 M 484.32064 73.7059 L 664.4981 73.94142 M 664.5928 73.55835 L 664.1892 120.62876 M 665.1193 120.71996 L 484.9185 120.29965 M 484.8926 120.57488 L 484.77915 73.71883" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(489.75977 84.7572)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">0x40103b: jmp </tspan>
+        </text>
+      </g>
+      <g id="Graphic_36">
+        <path d="M 483.99946 -221.30697 L 664.8661 -221.69421 M 664.50205 -222.26688 L 664.5089 -173.74678 M 665.0817 -174.01899 L 483.7902 -174.56914 M 484.38575 -173.57468 L 484.7643 -221.88875 M 484.1243 -221.51062 L 664.627 -221.88851 M 664.6405 -222.39188 L 664.66634 -174.14573 M 665.20656 -174.10142 L 484.5183 -174.61174 M 484.49177 -173.69983 L 484.79177 -221.43432" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(489.75977 -210.39514)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">0x401020: push </tspan>
+        </text>
+      </g>
+      <g id="Graphic_35">
+        <path d="M 483.8033 -169.5464 L 665.0042 -169.6365 M 664.6401 -170.30224 L 664.0089 -122.53563 M 664.9189 -122.88204 L 484.19485 -122.60832 M 484.9981 -121.68511 L 484.7575 -170.00237 M 483.9283 -169.69186 L 664.7563 -169.8044 M 664.8259 -170.42644 L 664.1435 -123.0056 M 665.04405 -122.88658 L 485.1185 -122.73406 M 485.1113 -121.81005 L 484.8044 -169.67147" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(489.75977 -158.63342)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">0x401026: jmp </tspan>
+        </text>
+      </g>
+      <g id="Graphic_34">
+        <text transform="translate(489.75977 -90.43811)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="76.91437" y="20" xml:space="preserve">…</tspan>
+        </text>
+      </g>
+      <g id="Graphic_33">
+        <rect x="275" y="12.921875" width="158.39844" height="47.03906" fill="#ffffc0"/>
+        <path d="M 274.4012 12.923755 L 434.1963 12.422036 M 433.82114 11.572295 L 432.92986 60.831985 M 433.75926 60.34523 L 274.99443 60.25107 M 275.44088 61.039285 L 274.99124 11.965764 M 274.5261 12.769674 L 433.9304 12.184171 M 433.97663 11.447847 L 433.1388 60.2211 M 433.88424 60.246504 L 275.5586 60.2166 M 275.44345 60.91541 L 275.06986 12.79738" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(280 23.835327)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="39.653362" y="20" xml:space="preserve">f()@PLT</tspan>
+        </text>
+      </g>
+      <g id="Line_32">
+        <path d="M 422.1825 12.471677 L 471.4177 -5.6732434 M 422.36617 12.041726 L 470.8579 -5.8104365" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_31">
+        <path d="M 676.40015 -9.634304 L 790.366 -9.390331 M 676.6503 -9.959707 L 789.7996 -9.762278" marker-end="url(#StickArrow_Marker_2)" marker-start="url(#StickArrow_Marker_3)" stroke="#76d6ff" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8.0,8.0" stroke-width="2"/>
+      </g>
+      <g id="Line_30">
+        <path d="M 664.4824 -9.636719 C 691.2031 1.29042 710.5163 -151.2867 817.8126 -154.61019 M 664.4824 -9.636719 C 691.7031 .79042 711.0163 -151.7867 818.3126 -155.11019" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_26">
+        <text transform="translate(307.3609 -22.176392)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="5684342e-19" y="20" xml:space="preserve">call f()</tspan>
+        </text>
+      </g>
+      <g id="Graphic_24">
+        <text transform="translate(691.85755 -40.929688)" fill="#76d6ff">
+          <tspan font-family="Chalkduster" font-size="16" fill="#76d6ff" x="0" y="20" xml:space="preserve">lookup</tspan>
+        </text>
+      </g>
+      <g id="Graphic_23">
+        <rect x="831.6531" y="-176.71875" width="158.39844" height="47.03906" fill="#ffffc0"/>
+        <path d="M 831.3427 -176.71964 L 990.23 -176.26189 M 989.7515 -176.53992 L 989.6368 -129.06396 M 990.0342 -129.51277 L 831.1943 -129.42827 M 832.0943 -128.57301 L 831.6489 -177.17813 M 831.4679 -176.91682 L 989.8761 -176.4824 M 989.8806 -176.66492 L 989.8135 -129.63744 M 990.1593 -129.58246 L 832.2115 -129.51447 M 832.1687 -128.69755 L 831.7242 -176.84326" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(836.6531 -165.8053)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="13.045628" y="20" xml:space="preserve">0x50c03a: f()</tspan>
+        </text>
+      </g>
+      <g id="Graphic_21">
+        <text transform="translate(843.5031 -210.39514)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="4973799e-19" y="20" xml:space="preserve">f() executes</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

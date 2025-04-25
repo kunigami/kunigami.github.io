@@ -343,15 +343,27 @@ LD_LIBRARY_PATH=. gdb ./a.out
 0x404018 <f()@got.plt>: 0x401036 <f()@plt+6>
 {% endhighlight %}
 
-So the effect is that it moves on to the next instruction (as if it was a no-op). The next instruction is `push $0x0`, pushing the index `0` to the stack (this will be used for the linker to write back at position `0` of the GOT). It then jumps to `.plt` (`401020`) which pushes the address of the `GOT` to the stack and then jumps to the address held by `GOT + 0x2fe4` which is the linker code responsible for doing the actual symbol lookup.
+So the effect is that it moves on to the next instruction (as if it was a no-op). The next instruction is `push $0x0`, pushing the index `0` to the stack (this will be used for the linker to write back at position `0` of the GOT). It then jumps to `.plt` (`401020`) which pushes the address of the `GOT` to the stack and then jumps to the address held by `GOT + 0x2fe4` which is the linker code responsible for doing the actual symbol lookup. This example is depicted in *Figure 6*.
 
-Once it finds the address of `f()` in the corresponding DSO, it will write to `GOT + 0x2fe2`, so that next time we jump into `f()@plt`, we'll jump directly to the real address of `f()`!
+<figure class="center_children">
+  <img src="{{resources_path}}/lookup-cold.svg" alt="See caption." width="450" />
+  <figcaption>Figure 6: "Cold" lookup of `f()`'s address. It has to go through many hoops and eventually invoke the dynamic linker code to search for `f()` among the DSOs.</figcaption>
+</figure>
+
+Once it finds the address of `f()` in the corresponding DSO, it will write to `GOT + 0x2fe2`, so that next time we jump into `f()@plt`, we'll jump directly to the real address of `f()`! *Figure 7* illustrates this flow.
+
+<figure class="center_children">
+  <img src="{{resources_path}}/lookup-warm.svg" alt="See caption." width="450" />
+  <figcaption>Figure 6: "Warmed up" lookup of `f()`'s address. When the PLT looks up on the GOT and jumps, it goes straight to `f()`'s address.</figcaption>
+</figure>
+
 
 We note a few things from this clever process:
 
 * Neither the original binary code nor the PLT code are modified when the linker resolves the address of `f()`. Only the GOT is.
-* The address resolution is lazy, so for functions that are never invoked we need pay the cost of resolving its address.
-* There's always a level indirection when we do `jump f()`: it first needs to jump to the PLT and then to the actual address of `f()`.
+* The address resolution is lazy, so for functions that are never invoked we need pay the cost of resolving their addresses.
+* There's always a level indirection when we invoke `f()@PLT`: it first needs to jump to the PLT and then to the actual address of `f()`.
+* There are no conditionals in the lookup process aside from the linker code. That is, we don't check if the entry is set in the GOT, we always unconditionally jump to the address stored in there.
 
 ### Symbol Lookup: DSO
 
