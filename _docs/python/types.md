@@ -61,6 +61,21 @@ ID = Union[str, int]
 MyNewType = Tuple[int, str]
 {% endhighlight %}
 
+## JSON Structs
+
+Keywords: dict, record, json.
+
+{% highlight python %}
+class Person(TypedDict):
+    name: str
+    age: int
+
+p: Person = {
+    "name": "Joe",
+    "age": 32,
+}
+{% endhighlight %}
+
 # Annotation Syntax
 
 How to provide annotation in different scenarios.
