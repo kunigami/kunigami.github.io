@@ -150,7 +150,7 @@ Note: The environment variable `LD_LIBRARY_PATH` is the list of directories the 
   <figcaption>Figure 5: Execution of a binary with dynamic linking. The dynamic linker will load the dependencies at the start up of the program.</figcaption>
 </figure>
 
-If we compile with dynamic linking, it won't dinclude the code from `my_file.cpp` into the compiled binary, but will add metadata for the dynamic linker to know what to link. This also tells the compiler which symbols are ok to not have definitions for because they will be provided during runtime.
+If we compile with dynamic linking, it won't include the code from `my_file.cpp` into the compiled binary, but will add metadata for the dynamic linker to know what to link. This also tells the compiler which symbols are ok to not have definitions for because they will be provided during runtime.
 
 To exemplify the fact that the `a.out` binary does not have the code from `my_file.cpp`, we can actually change the code of the latter to print "dynamic":
 

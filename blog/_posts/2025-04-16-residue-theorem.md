@@ -176,11 +176,13 @@ $$f(z) = (z - z_1)^{m_1}(z - z_2)^{m_2} \cdots (z - z_n)^{m_n} g(z) = g(z) \prod
 
 where $g(z)$ is a holomorphic function with $g(a) \ne 0$. Differentiating it gives us the equation:
 
-$$f'(z) = g'(z) \prod_{j = 1}^{n} (z - z_j)^{m_j} + g(z) \sum_{j = 1}^{n} m_j (z - z_j)^{m_j - 1} \prod_{k = 1, k \ne j}^{n} (z - z_k)^{m_k}$$
+$$f'(z) = g'(z) \prod_{j = 1}^{n} (z - z_j)^{m_j} + \\
+g(z) \sum_{j = 1}^{n} m_j (z - z_j)^{m_j - 1} \prod_{k = 1, k \ne j}^{n} (z - z_k)^{m_k}$$
 
 We can replace the definition of $f(z) / g(z) = \prod_{j = 1}^{n} (z - z_j)^{m_j}$ back here and get:
 
-$$f'(z) = g'(z) \frac{f(z)}{g(z)} + g(z) \sum_{j = 1}^{n} m_j (z - z_j)^{m_j - 1} \frac{f(z)}{g(z) (z - z_j)^{m_j}} $$
+$$f'(z) = g'(z) \frac{f(z)}{g(z)} + \\
+g(z) \sum_{j = 1}^{n} m_j (z - z_j)^{m_j - 1} \frac{f(z)}{g(z) (z - z_j)^{m_j}} $$
 
 Cancelling terms:
 
