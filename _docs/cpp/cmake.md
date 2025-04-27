@@ -39,7 +39,11 @@ project(
 add_library(mylib STATIC lib.cpp lib.h)
 
 add_executable(binary main.cpp)
-target_link_libraries(binary PUBLIC mylib)
+target_link_libraries(
+        binary PRIVATE
+        mylib1
+        mylib2
+)
 {% endhighlight %}
 
 ## Specifying C++ Standard Version
