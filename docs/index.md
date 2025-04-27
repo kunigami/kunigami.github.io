@@ -87,6 +87,10 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Topology]({{ site.url }}/docs/math/topology.html)
 * [Trigonometry]({{ site.url }}/docs/math/trigonometry.html)
 
+## Linux
+
+* [Linux]({{ site.url }}/docs/linux/)
+* [Ubuntu]({{ site.url }}/docs/linux/ubuntu)
 
 ## MacOS
 
@@ -101,4 +105,3 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Blog]({{ site.url }}/docs/blog/)
 * [Git]({{ site.url }}/docs/git/git.html)
 * [LaTeX]({{ site.url }}/docs/latex/latex.html)
-* [Linux]({{ site.url }}/docs/linux/)
