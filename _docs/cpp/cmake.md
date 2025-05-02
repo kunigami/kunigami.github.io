@@ -55,6 +55,12 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 {% endhighlight %}
 
+## Debug mode
+
+{% highlight cmake %}
+set(CMAKE_BUILD_TYPE Debug)
+{% endhighlight %}
+
 ## Adding custom `make` subcommand
 
 `make run`:
