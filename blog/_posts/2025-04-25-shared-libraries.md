@@ -455,6 +455,8 @@ I had no idea that that calling functions from DSOs involved a level of indirect
 
 In [Local Inter-Process Communication]({{blog}}/2024/12/07/local-ipc.html), we covered shared memory segments as a way to communicate between processes, and we also raised the issue related to ABI compatibility if the processes are using incompatible binaries.
 
+In [Function Objects in C++]({{blog}}/2023/06/01/functions-in-cpp.html), we briefly discussed how function calls happen at the machine code level, in that case for ARM intruction set.
+
 ## References
 
 * [[1]({{blog}}/2025/04/12/elf.html)] NP-Incompleteness: ELF: Executable and Linkable Format
