@@ -78,9 +78,9 @@ std::packaged_task<int()> pkg([]() {
 
 // get a handle to the (future) result of the packaged task
 std::future<int> fut = pkg.get_future();
-// run the packaged task
+// run the packaged task (blocking)
 pkg();
-// block until fut is set
+// fut should be set already
 auto result = fut.get();
 cout << result << endl;
 {% endhighlight %}
