@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Shared Libraries"
-tags: [compilers, cpp, operating systems]
+tags: [compilers, c++, operating systems]
 excerpt_separator: <!--more-->
 vanity: "2025-04-25-shared-libraries"
 ---

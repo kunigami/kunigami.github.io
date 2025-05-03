@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Coroutines in C++: A Minimal Library"
-tags: [cpp]
+tags: [c++]
 vanity: "2024-08-23-coroutines-in-cpp-2"
 excerpt_separator: <!--more-->
 ---

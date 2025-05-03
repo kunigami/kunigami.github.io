@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Review: Getting Started with LLVM Core Libraries"
-tags: [review, compilers, cpp]
+tags: [review, compilers, c++]
 excerpt_separator: <!--more-->
 vanity: "2025-03-22-review-llvm-core-libs"
 ---

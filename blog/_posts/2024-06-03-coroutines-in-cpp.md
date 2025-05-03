@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Coroutines in C++ - The API"
-tags: [cpp]
+tags: [c++]
 vanity: "2024-06-03-coroutines-in-cpp"
 excerpt_separator: <!--more-->
 ---
