@@ -50,3 +50,7 @@ Notes on some of the books I read, usually from those I liked and learned a lot 
 # Psychology
 
 * [The Art of Thinking Clearly]({{site.url}}/books/the-art-of-thinking-clearly.html), Rolf Dobelli
+
+# Science
+
+* [The Code Breaker]({{site.url}}/books/the-code-breaker.html), Walter Isaacson
