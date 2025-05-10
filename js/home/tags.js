@@ -119,7 +119,6 @@ class TagsApp extends React.Component {
         };
 
         const content = Object.entries(tagsHierarchyWithAllTags).map(([parent, tags]) => {
-            console.log(tagsHierarchyWithAllTags);
             const content = tags.filter(tag => tag in postsByTag).map(tag => {
                 const postsContent = postsByTag[tag]
                     .sort((postA, postB) => postA.title.localeCompare(postB.title))
