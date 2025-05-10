@@ -1,6 +1,19 @@
 const GUESS = 0;
 const SUBTREE = 1;
 
+class Header extends React.Component {
+  render() {
+    return (
+      <div id="header_wrap">
+        <header className="inner">
+          <h1 id="project_title">{this.props.title}</h1>
+          {this.props.children}
+        </header>
+      </div>
+    );
+  }
+}
+
 class BullsAndCows extends React.Component {
   constructor(props) {
     super(props);
@@ -64,7 +77,7 @@ class BullsAndCows extends React.Component {
             </a>.
           </p>
         </Header>
-        <Body>
+        <section id="main_content" className="inner">
           <ol>{itemsReact}</ol>
           {solvedMessage}
           <div>
@@ -73,7 +86,7 @@ class BullsAndCows extends React.Component {
               Reset
             </button>
           </div>
-        </Body>
+        </section>
       </div>
     );
   }
