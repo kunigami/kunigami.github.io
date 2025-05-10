@@ -73,3 +73,7 @@ Books are grouped by theme and within each theme sorted by title.
 
 * [The Art of Thinking Clearly]({{books}}/the-art-of-thinking-clearly.html), Rolf Dobelli ⭐
 * [The Highly Sensitive Person]({{books}}/the-highly-sensitive-person.html), Elaine N. Aron
+
+# Science
+
+* [The Code Breaker]({{site.url}}/books/the-code-breaker.html), Walter Isaacson
