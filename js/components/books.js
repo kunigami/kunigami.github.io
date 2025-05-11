@@ -12,7 +12,8 @@ class BookLink extends HTMLElement {
     render() {
         const title = this.getAttribute('title');
         const vanity = this.getAttribute('vanity');
-        const url = `{{site.url}}/books/${vanity}`;
+        const baseUrl = this.getAttribute('base_url');
+        const url = `${baseUrl}/books/${vanity}`;
         const a = document.createElement('a');
         a.setAttribute('href', url);
         a.textContent = title;
@@ -39,7 +40,8 @@ class BookCover extends HTMLElement {
 
     render() {
         const file = this.getAttribute('image');
-        const path = `https://www.kuniga.me/resources/books/${file}`;
+        const baseUrl = this.getAttribute('base_url');
+        const path = `${baseUrl}/resources/books/${file}`;
         const img = document.createElement('img');
         img.setAttribute('src', path);
         img.style.height = '100px';
@@ -118,7 +120,6 @@ class BookTable extends HTMLElement {
             ['Cover','10%'],
         ];
         const rows = JSON.parse(this.getAttribute('data') || '[]');
-        console.log(rows);
 
         const table = document.createElement('table');
         table.className = 'books-index';
@@ -131,7 +132,6 @@ class BookTable extends HTMLElement {
         const trHead = document.createElement('tr');
         headers.forEach(h => {
           const th = document.createElement('th');
-          console.log(h)
           th.textContent = h[0].trim();
           th.style.border = '1px solid #ccc';
           th.style.padding = '8px';
@@ -141,6 +141,7 @@ class BookTable extends HTMLElement {
         });
         thead.appendChild(trHead);
         table.appendChild(thead);
+        const baseUrl = this.getAttribute('base_url');
 
         // Create tbody
         const tbody = document.createElement('tbody');
@@ -151,6 +152,7 @@ class BookTable extends HTMLElement {
             const titleInner = document.createElement('book-link');
             titleInner.setAttribute('title', row['title']);
             titleInner.setAttribute('vanity', row['vanity']);
+            titleInner.setAttribute('base_url', baseUrl);
             title.appendChild(this.center(titleInner));
 
             const author = this.td({width: '30%'});
@@ -164,6 +166,7 @@ class BookTable extends HTMLElement {
             const cover = this.td({width: '10%'});
             const coverInner = document.createElement('book-cover');
             coverInner.setAttribute('image', row['image']);
+            coverInner.setAttribute('base_url', baseUrl);
             cover.appendChild(this.center(coverInner));
 
             const year = this.td({width: '10%'});

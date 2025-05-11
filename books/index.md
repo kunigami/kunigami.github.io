@@ -17,6 +17,7 @@ title: Books
 Notes on some of the books I've read. List below sorted by reverse chronological order. (Work in progress)
 
 <book-table
+  base_url="{{site.url}}"
   headers="Name, Age, Country"
   data='[
     {
