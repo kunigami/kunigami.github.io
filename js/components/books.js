@@ -78,17 +78,27 @@ class BookRating extends HTMLElement {
 }
 customElements.define('book-rating', BookRating);
 
+function strCmp(a, b) {
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+}
+
+function intCmp(a, b) {
+    return a - b;
+}
+
 class BookTable extends HTMLElement {
     constructor() {
       super();
+      this.rows = null;
+      this.sortBy = null;
+      this.asc = true;
       this.attachShadow({ mode: 'open' });
     }
 
     async connectedCallback() {
-
         const response = await fetch('data.json');
-        const rows = await response.json();
-        this.render(rows);
+        this.rows = await response.json();
+        this.render();
     }
 
     td(options) {
@@ -111,15 +121,58 @@ class BookTable extends HTMLElement {
         return span;
     }
 
-    render(rows) {
+    getSortedRows() {
+        let cmp = null;
+        let key;
+        switch (this.sortBy) {
+            case 'Title':
+                cmp = strCmp;
+                key = 'title';
+                break;
+
+            case 'Author':
+                cmp = strCmp;
+                key = 'author';
+                break;
+
+            case 'Category':
+                cmp = strCmp;
+                key = 'category';
+                break;
+
+            case 'Rating':
+                cmp = intCmp;
+                key = 'rating';
+                break;
+
+            case 'Year Read':
+                    cmp = intCmp;
+                    key = 'year';
+                    break;
+        }
+
+        if (!cmp) {
+            return this.rows;
+        }
+
+        const clone = [...this.rows];
+        let sign = this.asc ? 1 : -1;
+        clone.sort((a, b) => cmp(a[key], b[key]) * sign);
+        return clone;
+    }
+
+    render() {
+        // title | width | sortable
         const headers = [
-            ['Title', '25%'],
-            ['Authors', '25%'],
-            ['Rating', '20%'],
-            ['Category', '15%'],
-            ['Year Read', '10%'],
-            ['Cover','10%'],
+            ['Title', '25%', true],
+            ['Author', '25%', true],
+            ['Rating', '20%', true],
+            ['Category', '15%', true],
+            ['Year Read', '10%', true],
+            ['Cover','10%', false],
         ];
+
+        let rows = this.getSortedRows();
 
         const table = document.createElement('table');
         table.className = 'books-index';
@@ -131,13 +184,36 @@ class BookTable extends HTMLElement {
         const thead = document.createElement('thead');
         const trHead = document.createElement('tr');
         headers.forEach(h => {
-          const th = document.createElement('th');
-          th.textContent = h[0].trim();
-          th.style.border = '1px solid #ccc';
-          th.style.padding = '8px';
-          th.style.background = '#f0f0f0';
-          th.style.width = h[1];
-          trHead.appendChild(th);
+            const th = document.createElement('th');
+            if (h[2]) {
+                th.addEventListener('click', (e) => {
+                    if (this.sortBy) {
+                        if (this.asc) {
+                            this.asc = false;
+                        } else {
+                            this.sortBy = null;
+                        }
+                    } else {
+                        this.sortBy = h[0];
+                        this.asc = true;
+                    }
+                    this.render();
+                });
+            }
+            th.textContent = h[0].trim();
+            if (this.sortBy == h[0]) {
+                if (this.asc) {
+                    th.textContent += ' ⬇️';
+                } else {
+                    th.textContent += ' ⬆️';
+                }
+            }
+
+            th.style.border = '1px solid #ccc';
+            th.style.padding = '8px';
+            th.style.background = '#f0f0f0';
+            th.style.width = h[1];
+            trHead.appendChild(th);
         });
         thead.appendChild(trHead);
         table.appendChild(thead);

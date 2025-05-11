@@ -6,7 +6,7 @@
     "rating": 5,
     "image": "singapore-a-very-short-history.jpg",
     "category": "History",
-    "year": "2025"
+    "year": 2025
   },
   {
       "title": "Perfume Dreams",
@@ -15,7 +15,7 @@
       "rating": 4,
       "image": "perfume_dreams.jpg",
       "category": "History",
-      "year": "2025"
+      "year": 2025
     },
     {
       "title": "The Anglo-Saxons",
@@ -24,7 +24,7 @@
       "rating": 5,
       "image": "the-anglo-saxons.jpg",
       "category": "History",
-      "year": "2024"
+      "year": 2024
     },
     {
       "title": "Moorish Spain",
@@ -33,7 +33,7 @@
       "rating": 5,
       "image": "moorish-spain.jpg",
       "category": "History",
-      "year": "2024"
+      "year": 2024
     },
     {
       "title": "The Code Breaker",
@@ -42,7 +42,7 @@
       "rating": 5,
       "image": "code-breaker.jpg",
       "category": "Science",
-      "year": "2024"
+      "year": 2024
     },
     {
       "title": "The Inovator's Dilemma",
@@ -51,7 +51,7 @@
       "rating": 4,
       "image": "innovators_dilemma.jpg",
       "category": "Business",
-      "year": "2024"
+      "year": 2024
     },
     {
       "title": "Long Walk to Freedom",
@@ -60,7 +60,7 @@
       "rating": 4,
       "image": "long-walk-freedom.jpg",
       "category": "Biography",
-      "year": "2024"
+      "year": 2024
     },
     {
       "title": "Peoples and Cultures of Africa - Southern Africa",
@@ -69,7 +69,7 @@
       "rating": 4,
       "image": "peoples-and-cultures-of-africa-southern.jpg",
       "category": "History",
-      "year": "2024"
+      "year": 2024
     },
     {
       "title": "An Arid Eden",
@@ -78,7 +78,7 @@
       "rating": 4,
       "image": "arid-eden.jpg",
       "category": "History",
-      "year": "2024"
+      "year": 2024
     },
     {
       "title": "The Art of Thinking Clearly",
@@ -87,7 +87,7 @@
       "rating": 5,
       "image": "taotc.jpg",
       "category": "Psychology",
-      "year": "2024"
+      "year": 2024
     },
     {
       "title": "The Highly Sensitive Person",
@@ -96,7 +96,7 @@
       "rating": 3,
       "image": "hsp.jpg",
       "category": "Psychology",
-      "year": "2024"
+      "year": 2024
     },
     {
       "title": "Letters from a Stoic",
@@ -105,7 +105,7 @@
       "rating": 5,
       "image": "letters-from-a-stoic.jpg",
       "category": "Philosophy",
-      "year": "2023"
+      "year": 2023
     },
     {
       "title": "The Penguin History of Aotearoa",
@@ -114,7 +114,7 @@
       "rating": 5,
       "image": "aotearoa.jpg",
       "category": "History",
-      "year": "2023"
+      "year": 2023
     },
     {
       "title": "A New Illustrated History of Taiwan",
@@ -123,7 +123,7 @@
       "rating": 5,
       "image": "a-new-illustrated-history-of-taiwan.jpg",
       "category": "History",
-      "year": "2023"
+      "year": 2023
     },
     {
       "title": "Formosa Betrayed",
@@ -132,7 +132,7 @@
       "rating": 4,
       "image": "formosa-betrayed.jpg",
       "category": "History",
-      "year": "2023"
+      "year": 2023
     },
     {
       "title": "Imperial China",
@@ -141,7 +141,7 @@
       "rating": 5,
       "image": "imperial-china.jpg",
       "category": "History",
-      "year": "2023"
+      "year": 2023
     },
     {
       "title": "India in the Persianate Age",
@@ -150,7 +150,7 @@
       "rating": 5,
       "image": "india-in-the-persianate-age.jpg",
       "category": "History",
-      "year": "2023"
+      "year": 2023
     },
     {
       "title": "1499 - O Brasil Antes the Cabral",
@@ -159,6 +159,6 @@
       "rating": 4,
       "image": "brasil-antes-de-cabral.jpg",
       "category": "History",
-      "year": "2023"
+      "year": 2023
     }
 ]
