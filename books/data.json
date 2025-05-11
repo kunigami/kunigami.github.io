@@ -1,0 +1,164 @@
+[
+  {
+    "title": "Singapore: A Very Short History",
+    "vanity": "singapore-a-very-short-history",
+    "author": "Alvin Tan",
+    "rating": 5,
+    "image": "singapore-a-very-short-history.jpg",
+    "category": "History",
+    "year": "2025"
+  },
+  {
+      "title": "Perfume Dreams",
+      "vanity": "perfume-dreams",
+      "author": "Andrew Lam",
+      "rating": 4,
+      "image": "perfume_dreams.jpg",
+      "category": "History",
+      "year": "2025"
+    },
+    {
+      "title": "The Anglo-Saxons",
+      "vanity": "the-anglo-saxons",
+      "author": "Marc Morris",
+      "rating": 5,
+      "image": "the-anglo-saxons.jpg",
+      "category": "History",
+      "year": "2024"
+    },
+    {
+      "title": "Moorish Spain",
+      "vanity": "moorish-spain",
+      "author": "Richard Fletcher",
+      "rating": 5,
+      "image": "moorish-spain.jpg",
+      "category": "History",
+      "year": "2024"
+    },
+    {
+      "title": "The Code Breaker",
+      "vanity": "the-code-breaker",
+      "author": "Walter Isaacson",
+      "rating": 5,
+      "image": "code-breaker.jpg",
+      "category": "Science",
+      "year": "2024"
+    },
+    {
+      "title": "The Inovator's Dilemma",
+      "vanity": "the-innovators-dilemma",
+      "author": "Clayton M. Christensen",
+      "rating": 4,
+      "image": "innovators_dilemma.jpg",
+      "category": "Business",
+      "year": "2024"
+    },
+    {
+      "title": "Long Walk to Freedom",
+      "vanity": "long-walk-to-freedom",
+      "author": "Nelson Mandela",
+      "rating": 4,
+      "image": "long-walk-freedom.jpg",
+      "category": "Biography",
+      "year": "2024"
+    },
+    {
+      "title": "Peoples and Cultures of Africa - Southern Africa",
+      "vanity": "peoples-and-cultures-of-africa-southern",
+      "author": "Peter Mitchell",
+      "rating": 4,
+      "image": "peoples-and-cultures-of-africa-southern.jpg",
+      "category": "History",
+      "year": "2024"
+    },
+    {
+      "title": "An Arid Eden",
+      "vanity": "an-arid-eden",
+      "author": "Garth Owen-Smith",
+      "rating": 4,
+      "image": "arid-eden.jpg",
+      "category": "History",
+      "year": "2024"
+    },
+    {
+      "title": "The Art of Thinking Clearly",
+      "vanity": "the-art-of-thinking-clearly",
+      "author": "Rolf Dobelli",
+      "rating": 5,
+      "image": "taotc.jpg",
+      "category": "Psychology",
+      "year": "2024"
+    },
+    {
+      "title": "The Highly Sensitive Person",
+      "vanity": "the-highly-sensitive-person",
+      "author": "Elaine N. Aron",
+      "rating": 3,
+      "image": "hsp.jpg",
+      "category": "Psychology",
+      "year": "2024"
+    },
+    {
+      "title": "Letters from a Stoic",
+      "vanity": "letters-from-a-stoic",
+      "author": "Seneca",
+      "rating": 5,
+      "image": "letters-from-a-stoic.jpg",
+      "category": "Philosophy",
+      "year": "2023"
+    },
+    {
+      "title": "The Penguin History of Aotearoa",
+      "vanity": "the-penguin-history-of-aotearoa",
+      "author": "Michael King",
+      "rating": 5,
+      "image": "aotearoa.jpg",
+      "category": "History",
+      "year": "2023"
+    },
+    {
+      "title": "A New Illustrated History of Taiwan",
+      "vanity": "a-new-illustrated-history-of-taiwan",
+      "author": "Wan-yao Chou",
+      "rating": 5,
+      "image": "a-new-illustrated-history-of-taiwan.jpg",
+      "category": "History",
+      "year": "2023"
+    },
+    {
+      "title": "Formosa Betrayed",
+      "vanity": "formosa-betrayed",
+      "author": "George H. Kerr",
+      "rating": 4,
+      "image": "formosa-betrayed.jpg",
+      "category": "History",
+      "year": "2023"
+    },
+    {
+      "title": "Imperial China",
+      "vanity": "imperial-china",
+      "author": "George H. Kerr",
+      "rating": 5,
+      "image": "imperial-china.jpg",
+      "category": "History",
+      "year": "2023"
+    },
+    {
+      "title": "India in the Persianate Age",
+      "vanity": "india-in-the-persianate-age",
+      "author": "Richard M. Eaton",
+      "rating": 5,
+      "image": "india-in-the-persianate-age.jpg",
+      "category": "History",
+      "year": "2023"
+    },
+    {
+      "title": "1499 - O Brasil Antes the Cabral",
+      "vanity": "brasil-antes-de-cabral",
+      "author": "Reinaldo José Lopes",
+      "rating": 4,
+      "image": "brasil-antes-de-cabral.jpg",
+      "category": "History",
+      "year": "2023"
+    }
+]

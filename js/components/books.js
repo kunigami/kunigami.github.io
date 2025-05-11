@@ -21,9 +21,7 @@ class BookLink extends HTMLElement {
         a.style.color = '#358497';
         a.style.textShadow = 'none';
 
-        const td = document.createElement('td');
-        td.appendChild(a);
-        this.shadowRoot.appendChild(td);
+        this.shadowRoot.appendChild(a);
     }
 }
 customElements.define('book-link', BookLink);
@@ -86,8 +84,11 @@ class BookTable extends HTMLElement {
       this.attachShadow({ mode: 'open' });
     }
 
-    connectedCallback() {
-      this.render();
+    async connectedCallback() {
+
+        const response = await fetch('data.json');
+        const rows = await response.json();
+        this.render(rows);
     }
 
     td(options) {
@@ -110,16 +111,15 @@ class BookTable extends HTMLElement {
         return span;
     }
 
-    render() {
+    render(rows) {
         const headers = [
             ['Title', '25%'],
             ['Authors', '25%'],
             ['Rating', '20%'],
             ['Category', '15%'],
-            ['Year', '10%'],
+            ['Year Read', '10%'],
             ['Cover','10%'],
         ];
-        const rows = JSON.parse(this.getAttribute('data') || '[]');
 
         const table = document.createElement('table');
         table.className = 'books-index';
