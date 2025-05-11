@@ -199,6 +199,8 @@ class BookTable extends HTMLElement {
                     }
                     this.render();
                 });
+
+                th.style.cursor = 'pointer';
             }
             th.textContent = h[0].trim();
             if (this.sortBy == h[0]) {
