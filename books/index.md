@@ -3,7 +3,10 @@ layout: page
 title: Books
 ---
 
+
 {% include blog_vars.html %}
+
+<script type="text/javascript" src="{{site.baseurl}}/js/components/books.js"></script>
 
 <p>
   <a href="{{ site.url }}">kuniga.me</a> > <a href="{{ site.url }}/books">Books</a>
@@ -11,13 +14,35 @@ title: Books
 
 {% assign root = site.url | append: "/books" %}
 
-Notes on some of the books I've read. For those I liked and learned a lot from (⭐), the notes are a lot more extensive and detailed.
+Notes on some of the books I've read. List below sorted by reverse chronological order. (Work in progress)
 
-Books are grouped by theme and within each theme sorted by title.
+<book-table
+  headers="Name, Age, Country"
+  data='[
+    {
+      "title": "The Code Breaker",
+      "vanity": "the-code-breaker",
+      "author": "Walter Isaacson",
+      "rating": 5,
+      "image": "code-breaker.jpg",
+      "category": "Science",
+      "year": "2024"
+    },
 
-# Business
+    {
+      "title": "The Inovators Dilemma",
+      "vanity": "the-innovators-dilemma",
+      "author": "Clayton M. Christensen",
+      "rating": 4,
+      "image": "innovators_dilemma.jpg",
+      "category": "Business",
+      "year": "2024"
+    }
 
-* [The Inovator's Dilemma]({{books}}/the-innovators-dilemma), Clayton M. Christensen ⭐
+  ]'
+>
+</book-table>
+
 
 # Biographies
 
@@ -73,7 +98,3 @@ Books are grouped by theme and within each theme sorted by title.
 
 * [The Art of Thinking Clearly]({{books}}/the-art-of-thinking-clearly.html), Rolf Dobelli ⭐
 * [The Highly Sensitive Person]({{books}}/the-highly-sensitive-person.html), Elaine N. Aron
-
-# Science
-
-* [The Code Breaker]({{site.url}}/books/the-code-breaker.html), Walter Isaacson

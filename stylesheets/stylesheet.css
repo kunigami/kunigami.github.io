@@ -439,6 +439,29 @@ figcaption {
   vertical-align: bottom;
 }
 
+.books-table table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.books-table td:nth-child(1) {
+  width: 90%;
+}
+.books-table td:nth-child(2) {
+  width: 10%;
+}
+
+/* For the books/ page */
+.books-index table {
+  width: 100%;
+  table-layout: fixed;
+}
+.books-index td {
+  display: flex;
+  justify-content: center;
+}
+
+
 .books-table td,
 .projects-table td {
   vertical-align: top;
