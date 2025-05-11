@@ -16,9 +16,9 @@ This is a book about the history of CRISPR, the discovery that allows for gene e
 
 Doudna's trajectory can be summarized as follows: she was born and raised in Hilo in Hawaii. She got interested in science at early age and eventually did her PhD at Harvard and then became a professor of chemistry at UC Berkeley.
 
-Her research was around RNA interference. People studying CRISPR thought it worked via RNA interference, ahd that's how she got looped in. In 2009 she met Emmanuelle Charpentier at a conference and they started collaborating which led to the discovery of how CRISPR works and reproduce it in bacteria, followed by a seminal paper in 2012.
+Her research was around RNA interference. People studying CRISPR thought it worked via RNA interference, ahd that's how she got looped in. In 2009 she met Emmanuelle Charpentier at a conference and they started collaborating which led to the discovery of how CRISPR works and eventually doing DNA editing in a bacteria, followed by a seminal paper in 2012.
 
-The next step would be to make CRISPR work in mamalian cells. Feng Zhang was able to obtain better results and patented the discovery which led to ongoing legal battles between them. While the debate about who deserved credit for making CRISP work in human cells hasn't settled, Charpentier and Doudna received a join Nobel prize in 2023, but Feng wasn't included in the nomination.
+The next step would be to make CRISPR work in mamalian cells. Feng Zhang was able to obtain better results and patented the discovery which led to ongoing legal battles between them. While the debate about who deserved credit for making CRISP work in human cells hasn't settled, Charpentier and Doudna received a join Nobel prize in 2023, but Feng wasn't included in the award.
 
 ## The path to CRISPR
 
@@ -59,7 +59,7 @@ Another pervasive theme throughout the book is the practice of science. On wheth
 
 The book provides a glimpse on how lab leaders contribute to research:
 
-> Although she takes a hands-off approach during the early stages of a researcher's project, as it gets close to fruition she engages intensely.
+> Although she [Doudna] takes a hands-off approach during the early stages of a researcher's project, as it gets close to fruition she engages intensely.
 
 Competition in science:
 
@@ -69,7 +69,7 @@ and:
 
 > Scientists are mainly motivated by the joy that comes from understanding nature, but most will admit that they are also driven by the rewards, both psychic and substantive, of being the first to make a discovery.
 
-Still on the topic of competition, Doudna's advisor, Szostak switched from studying DNA to RNA, in part because the field studying DNA was too crowded:
+Still on the topic of competition, Doudna's advisor, Szostak, switched from studying DNA to RNA, in part because the field studying DNA was too crowded:
 
 > Never do something that a thousand people are doing.
 
@@ -119,9 +119,9 @@ Apparently because of safety concerns (it chopping DNA other than the intended t
 
 Isaacson is a master storyteller. He built a narrative around individuals, with Doudna as protagonist, Feng Zhang and the Broad Institute as antagonists, and He Jiankui as the outcast, and highlighted the drama involving them.
 
-Perhaps in order to build a cohesive and engaging story, Isaacson might have been more generous towards Doudna and less so to Zhang. Reality is usually a lot more nuanced than stories.
+Perhaps in order to build a cohesive and engaging story, Isaacson might have been more generous towards Doudna and less so to Zhang. Reality is usually a lot more nuanced than stories (see *Story Bias* in [The Art of Thinking Clearly]({{site.url}}/books/the-art-of-thinking-clearly)).
 
-I also learned quite a bit about Doudna's life, the history of CRISPR and the ethics around gene editing. I also liked the coverage of the scientific method.Other random Things I learned:
+I also learned quite a bit about Doudna's life, the history of CRISPR and the ethics around gene editing. I also liked the coverage of the scientific method. Other random Things I learned:
 
 * Isaac Asimov was professor of biochemist at Boston University.
 * There's the concept of *in vivo* (in the organism), *in vitro* (in the lab) and more recently we have *in silico* (in a computer).
