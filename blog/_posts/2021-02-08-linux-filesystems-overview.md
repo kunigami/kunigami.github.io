@@ -8,11 +8,11 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-In this post we’ll cover a diversity of topics concerning the linux filesystem. We’ll start with a high-level overview a filesystem.
+In this post we’ll cover a diversity of topics concerning the Linux filesystem. We’ll start with a high-level overview a filesystem.
 
-We then cover specific concepts such as types of filesystems, files, permissions. We continue by exploring some examples of commonly layout of the linux directories hierachy.
+We then cover specific concepts such as types of filesystems, files, permissions. We continue by exploring some examples of commonly layout of the Linux directories hierachy.
 
-This post expects some basic familiarity with linux.
+This post expects some basic familiarity with Linux.
 
 <!--more-->
 
@@ -432,8 +432,8 @@ One conclusion from the last section is that not only files are a suitable abstr
 * [[15](https://lwn.net/Articles/434821/)] LWN.net: Persistent storage for a kernel's "dying breath"
 * [[16](https://github.com/libfuse/libfuse)] Github - libfuse/libfuse
 * [[17](https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt)] The Linux Kernal Archives: hugetlbpage
-* [[18]](https://man7.org/linux/man-pages/man7/cgroups.7.html) cgroups(7) — Linux manual page
+* [[18]](https://man7.org/Linux/man-pages/man7/cgroups.7.html) cgroups(7) — Linux manual page
 * [[19](https://lwn.net/Articles/153366/)] LWN.net: securityfs
 * [[20](https://en.wikipedia.org/wiki/Devpts)] Wikipedia: devpts
 * [[21](https://en.wikipedia.org/wiki/Named_pipe)] Wikipedia: Named pipe
-* [[22](https://www.linuxtopia.org/online_books/introduction_to_linux/linux_Special_modes.html)] Linuxtopia - 3.4.2.5. Special modes
+* [[22](https://www.Linuxtopia.org/online_books/introduction_to_Linux/Linux_Special_modes.html)] Linuxtopia - 3.4.2.5. Special modes
