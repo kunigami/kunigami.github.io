@@ -361,7 +361,7 @@ Once it finds the address of `f()` in the corresponding DSO, it will write to `G
 We note a few things from this clever process:
 
 * Neither the original binary code nor the PLT code are modified when the linker resolves the address of `f()`. Only the GOT is.
-* The address resolution is lazy, so for functions that are never invoked we need pay the cost of resolving their addresses.
+* The address resolution is lazy, so for functions that are never invoked, we don't need to pay the cost of resolving their addresses.
 * There's always a level indirection when we invoke `f()@PLT`: it first needs to jump to the PLT and then to the actual address of `f()`.
 * There are no conditionals in the lookup process aside from the linker code. That is, we don't check if the entry is set in the GOT, we always unconditionally jump to the address stored in there.
 

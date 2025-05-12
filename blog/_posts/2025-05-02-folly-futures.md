@@ -12,7 +12,7 @@ vanity: "2025-05-02-folly-futures"
   <img src="{{resources_shared}}/folly-logo.svg" alt="Folly Logo" />
 </figure>
 
-In this post I wish to cover futures in the [Folly library](https://github.com/facebook/folly) [2]. I've discussed C++ futures in a [previous post]({{blog}}/2023/06/08/futures-in-cpp.html), but Folly futures are slightly different, so this post aims to cover the differences. It's high recommended to familiarize yourself with C++ futures first.
+In this post I wish to cover futures in the [Folly library](https://github.com/facebook/folly) [2]. I've discussed C++ futures in a [previous post]({{blog}}/2023/06/08/futures-in-cpp.html), but Folly futures are slightly different, so this post aims to cover the differences. It's highly recommended to familiarize yourself with C++ futures first.
 
 The reason for studying Folly futures is because I want to study Folly coroutines and they make use of Folly futures and related mechanims such as executors, so I thought it would be beneficial to cover them separately.
 
