@@ -131,6 +131,8 @@ For any cycles in $\Omega$.
 
 So until now, we knew that $(1)$ held as long as $\Omega$ as a circle or rectangle, but now we have relaxed the condition to any simply connected region!
 
+This also means we can generalize Cauchy's Integral Formula [6] to simply connected regions.
+
 This is the main result we wanted to prove in this post. We now consider some variants and further generalizations.
 
 ## Locally Exact Differential
@@ -229,3 +231,4 @@ The modules of periodicity will be useful in our next top of study, *The Calculu
 * [[3]({{blog}}/2024/04/13/path-independent-line-integrals.html)] NP-Incompleteness: Path-Independent Line Integrals
 * [[4]({{blog}}/2024/12/24/open-map.html)] NP-Incompleteness: The Open Mapping Theorem
 * [[5]({{blog}}/2024/05/09/the-winding-number.html)] NP-Incompleteness: The Winding Number
+* [[6]({{blog}}/2024/06/06/cauchy-integral-formula.html)] NP-Incompleteness: Cauchy's Integral Formula
