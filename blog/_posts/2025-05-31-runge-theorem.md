@@ -32,7 +32,7 @@ $$
 f(z) = \sum_{n = -\infty}^{\infty} c_n (z - a)^n
 $$
 
-Now what if we generalize the domain beyong an open disk or annular region    ?
+Now what if we generalize the domain beyong an open disk or annular region?
 
 ## Region with holes
 
@@ -166,6 +166,12 @@ This leads to *Runge's Theorem*:
 Then $f(z)$ can be approximated by a rational function where the only poles are those in $A$.
 
 Unfortunately the theorem only shows the existence of such a function but not how to construct it, as opposed to the *Taylor series* or *Laurent series* approximations.
+
+## Conclusion
+
+In this post we learned that a function can be approximated by a rational function which might contain poles.
+
+If the domain of $f(z)$ contains holes, we can actually choose one point for each hole and prove that a rational function with poles corresponding to those points exist, but we don't have a way to find it!
 
 ## References
 
