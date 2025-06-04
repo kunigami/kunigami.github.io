@@ -1,5 +1,14 @@
 [
   {
+    "title": "Portlandness",
+    "vanity": "portlandness",
+    "author": "David Banis, Hunter Shobe",
+    "rating": 4,
+    "image": "portlandness.jpg",
+    "category": "Travel",
+    "year": 2025
+  },
+  {
     "title": "Singapore: A Very Short History",
     "vanity": "singapore-a-very-short-history",
     "author": "Alvin Tan",
