@@ -115,6 +115,13 @@ class BookTable extends HTMLElement {
         return div;
     }
 
+    cell(child) {
+        const div = document.createElement('div');
+        div.style.marginRight = '10px';
+        div.appendChild(child);
+        return div;
+    }
+
     text(msg) {
         const span = document.createElement('span');
         span.textContent = msg;
@@ -231,27 +238,27 @@ class BookTable extends HTMLElement {
             titleInner.setAttribute('title', row['title']);
             titleInner.setAttribute('vanity', row['vanity']);
             titleInner.setAttribute('base_url', baseUrl);
-            title.appendChild(this.center(titleInner));
+            title.appendChild(this.cell(titleInner));
 
             const author = this.td({width: '30%'});
-            author.appendChild(this.center(this.text(row['author'])));
+            author.appendChild(this.cell(this.text(row['author'])));
 
             const rating = this.td({width: '10%'});
             const ratingInner = document.createElement('book-rating');
             ratingInner.setAttribute('rating', row['rating']);
-            rating.appendChild(this.center(ratingInner));
+            rating.appendChild(this.cell(ratingInner));
+
+            const category = this.td({width: '10%'});
+            category.appendChild(this.cell(this.text(row['category'])));
+
+            const year = this.td({width: '10%'});
+            year.appendChild(this.cell(this.text(row['year'])));
 
             const cover = this.td({width: '10%'});
             const coverInner = document.createElement('book-cover');
             coverInner.setAttribute('image', row['image']);
             coverInner.setAttribute('base_url', baseUrl);
             cover.appendChild(this.center(coverInner));
-
-            const year = this.td({width: '10%'});
-            year.appendChild(this.center(this.text(row['year'])));
-
-            const category = this.td({width: '10%'});
-            category.appendChild(this.center(this.text(row['category'])));
 
             tr.appendChild(title);
             tr.appendChild(author);
