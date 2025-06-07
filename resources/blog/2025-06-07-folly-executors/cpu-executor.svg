@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="13 215 734 288">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 7 6" markerWidth="7" markerHeight="6" color="black">
+      <g>
+        <path d="M 4.8 0 L 0 0 M 0 -1.8 L 4.8 0 L 0 1.8" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke-dasharray="none" stroke="none" fill="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="13" y="215" width="734" height="288"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <rect x="15.566406" y="275.68555" width="158.39844" height="47.03906" fill="#ebebeb"/>
+        <path d="M 14.88646 275.687 L 175.04253 275.3432 M 174.38076 274.62432 L 174.1457 323.279 M 174.77839 322.8357 L 15.105798 323.0935 M 15.59963 324.0158 L 15.565828 274.84433 M 15.011246 275.46182 L 174.50222 275.1924 M 174.62919 274.49992 L 174.37195 322.7122 M 174.9035 322.777 L 15.724168 323.0749 M 15.699887 323.89084 L 15.652426 275.56057" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(20.566406 286.599)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="46.44231" y="20" xml:space="preserve">Client</tspan>
+        </text>
+      </g>
+      <g id="Graphic_7">
+        <rect x="303.26953" y="395.9414" width="123.23047" height="66.88672" fill="#73fb79"/>
+        <path d="M 302.8204 395.94074 L 426.8874 396.12436 M 426.26685 395.8659 L 426.15863 463.8852 M 426.6276 463.04793 L 303.03554 463.2163 M 303.30254 463.73017 L 303.2692 395.2268 M 302.94544 395.7996 L 426.3915 395.96124 M 426.4035 395.7409 L 426.39634 462.92374 M 426.7527 462.9747 L 303.4273 463.09863 M 303.3669 463.6052 L 303.29246 395.81646" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(308.26953 416.7787)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="24.641754" y="20" xml:space="preserve">Worker</tspan>
+        </text>
+      </g>
+      <g id="Graphic_8">
+        <rect x="432.7676" y="265.76172" width="158.39844" height="66.88672" fill="#73fb79"/>
+        <path d="M 432.51463 265.7619 L 591.41535 265.6479 M 590.7962 264.7334 L 591.3273 333.25604 M 592.20645 332.4886 L 432.3789 332.84203 M 433.20413 333.42264 L 432.76216 264.92247 M 432.63957 265.56257 L 590.9282 265.45915 M 591.0105 264.6077 L 591.4602 332.36544 M 592.3317 332.46246 L 433.32557 332.803 M 433.2613 333.29807 L 432.7779 265.63746" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(437.7676 286.599)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="7.962755" y="20" xml:space="preserve">Priority Queue</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <rect x="450.35156" y="395.9414" width="123.23047" height="66.88672" fill="#73fb79"/>
+        <path d="M 449.5448 395.9441 L 573.6933 395.5306 M 573.08835 394.7102 L 573.23425 463.9863 M 573.7853 463.294 L 449.5582 462.82147 M 450.18277 463.4745 L 450.35397 394.97746 M 449.66976 395.81157 L 573.2148 395.31643 M 573.2553 394.5851 L 573.3991 463.1668 M 573.9102 463.18997 L 450.30923 462.7417 M 450.23274 463.3493 L 450.47425 395.8164" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(455.35156 416.7787)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="24.641754" y="20" xml:space="preserve">Worker</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <rect x="597.4336" y="395.9414" width="123.23047" height="66.88672" fill="#73fb79"/>
+        <path d="M 596.823 395.93994 L 721.6373 396.23864 M 721.0455 395.50734 L 720.808 463.5368 M 721.7801 462.9158 L 597.2356 462.6268 M 597.669 463.34666 L 597.4324 395.6028 M 596.9481 395.74924 L 721.1682 395.99403 M 721.2901 395.38276 L 721.00395 462.7888 M 721.905 462.8589 L 597.7912 462.62576 M 597.71176 463.22195 L 597.5437 395.81646" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(602.4336 416.7787)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="24.641754" y="20" xml:space="preserve">Worker</tspan>
+        </text>
+      </g>
+      <g id="Line_11">
+        <path d="M 403.1772 395.4882 L 464.77095 341.4265 M 403.26376 395.05197 L 464.1142 341.91863" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_12">
+        <path d="M 511.9573 396.87796 L 512.2134 344.80513 M 512.0931 396.6274 L 512.36336 345.70795" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_13">
+        <path d="M 621.2978 395.9557 L 559.6683 342.27144 M 621.3964 395.87956 L 560.6771 342.8792" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_14">
+        <path d="M 173.81293 299.204 L 419.70956 299.43446 M 174.06302 298.85706 L 418.8419 298.98108" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_15">
+        <text transform="translate(210.49802 270.76172)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">add()</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="Canvas_1_executor">
+      <title>executor</title>
+      <g id="Graphic_6">
+        <path d="M 284.5266 217.50714 L 743.5255 217.98591 M 742.8953 217.63516 L 743.1654 500.50654 M 743.9648 499.5988 L 284.34256 499.5839 M 284.80402 500.0299 L 285.17264 216.9179 M 284.65168 217.2992 L 743.02065 217.85006 M 743.0793 217.5101 L 743.3735 499.4737 M 744.0898 499.4785 L 284.9296 499.51146 M 284.87554 499.9048 L 285.20742 217.3827" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(290.17188 222.5078)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">CPU Executor</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
