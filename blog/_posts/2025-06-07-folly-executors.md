@@ -18,6 +18,8 @@ In this post we want to delve into the executors. One of them being the IO execu
 
 <!--more-->
 
+## Executor
+
 At a high-level an executor is like a scheduler that receives lambda functions and decides when to run them. An executor is a class that implements this simple interface:
 
 {% highlight cpp %}
@@ -26,11 +28,11 @@ class Executor {
 };
 {% endhighlight %}
 
-As we can see it has a lot of leeway to do whatever it wants. Let's cover a few types of executors.
+As we can see it has a lot of leeway to do whatever it wants. Let's cover a few types of executors. In what follows, we'll also refer to the callback passed to the `.add()` function as a **task**.
 
 ## InlineExecutor
 
-The inline executor is the simplest type of executor, which doesn't do any scheduling: it just runs the function right away, on the same thread:
+The inline executor is the simplest type of executor, which doesn't do any scheduling: it just runs the task right away, on the same thread:
 
 {% highlight cpp %}
 class InlineExecutor {
@@ -49,13 +51,13 @@ exec.add([]() { std::cout << "during\n"; });
 std::cout << "after\n";
 {% endhighlight %}
 
-This prints *before*, *during* and *after*. It is possible for the callback to also call `.add()` and schedule others callbacks. In this case they're executed as soon as they're scheduled.
+This prints *before*, *during* and *after*. It is possible for the callback to also call `.add()` and schedule new tasks. In this case they're executed as soon as they're scheduled.
 
 It is very easy to understand but not very useful in general. The most useful ones are `CPUThreadPoolExecutor` and `IOThreadPoolExecutor`, which we cover next.
 
 ## CPUThreadPoolExecutor
 
-The `CPUThreadPoolExecutor` has a thread pool of size `N`. Whenever we schedule a callback via `.add()`, this executor adds to a priority queue with a default priority. It's possible to specify the priority by calling `.addWithPriority()`.
+The `CPUThreadPoolExecutor` has a thread pool of size `N`. Whenever we schedule a task via `.add()`, this executor adds to a priority queue with a default priority. It's possible to specify the priority by calling `.addWithPriority()`.
 
 A worker thread will then try to get a task from that queue and execute it to completion. As we discussed in the previous section, the execution of a function might cause new entries to be added to the end of the queue.
 
@@ -70,13 +72,13 @@ A worker thread will then try to get a task from that queue and execute it to co
 Like the CPU counterpart, the `IOThreadPoolExecutor` also has a thread pool of size `N`. Typically `N` is the number of CPU cores available in the system. Each of these threads is running an async event loop via the `libevent` library, as we covered in [Asynchronous I/O Overview
 ]({{blog}}/2025/05/16/async-io.html).
 
-When we call `.add()`, it picks a thread from the pool in a round-robin fashion, but the picking is sticky: if will pick the same thread for the same calling thread (it basically memoizes which thread was picked for this current thread).
+When we call `.add()`, it picks a thread from the pool in a round-robin fashion, but the picking is sticky: if will pick the same thread for the same calling thread (it basically memoizes which thread was picked for the calling thread).
 
-Then it adds the callback to a queue on that thread, the event loop will then get tasks from that queue to execute.
+Then it adds the task to a queue on that thread, the event loop will then get tasks from that queue to execute.
 
 <figure class="center_children">
   <img src="{{resources_path}}/io-executor.svg" alt="See caption." width="500" />
-  <figcaption>Figure 2: The IOThreadPoolExecutor chooses a thread to schedule the callback on. Each thread has its own queue and an async event loop.</figcaption>
+  <figcaption>Figure 2: The IOThreadPoolExecutor chooses a thread to schedule the task on. Each thread has its own queue and an async event loop.</figcaption>
 </figure>
 
 ### Example
