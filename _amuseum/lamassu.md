@@ -13,6 +13,11 @@ vanity: lamassu
 
 Lamassu was a Sumerian which from Assyrian times was depicted as a hybrid of a human head, bird wings, and the body of a bull [1]. It was typically placed at entrance in palaces and usually in pairs.
 
+<figure class="center_children">
+  <img src="{{resources_path_amuseum}}/bookstopper.jpg" alt="Picture of a lamassu." />
+  <figcaption>I like Lamassus so much I bought this book stopper at the British Museum</figcaption>
+</figure>
+
 
 ## References
 
