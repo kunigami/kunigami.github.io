@@ -31,7 +31,7 @@ Example of a limit point of a set that is not on the set: If $A = \curly{1/x : x
 
 Example of a set without limit points: The set $\mathbb{N}$ has no limit point because every number is "isolated".
 
-An alternative definition in terms of sequences is: a point $x \in X$ is a limit point of $A \subseteq X$ if there exists a sequence in $A$, $\curly{a_n}$ with $a_n \ne x$ such that $\lim_{n \rightarrow \infity} a_n = x$.
+An alternative definition in terms of sequences is: a point $x \in X$ is a limit point of $A \subseteq X$ if there exists a sequence in $A$, $\curly{a_n}$ with $a_n \ne x$ such that $\lim_{n \rightarrow \infty} a_n = x$.
 
 ## Open Set
 
