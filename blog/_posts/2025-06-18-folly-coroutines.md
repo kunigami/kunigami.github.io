@@ -9,7 +9,7 @@ vanity: "2025-06-18-folly-coroutines"
 {% include blog_vars.html %}
 
 <figure class="image_float_left">
-  <img src="{{resources_path}}/thumbnail.png" alt="Folly Logo" />
+  <img src="{{resources_shared}}/folly-logo.svg" alt="Folly Logo" />
 </figure>
 
 In this post we'd like to discuss Folly coroutines. At a high-level, coroutines are a syntax sugar to Future and SemiFutures, which in turn are mechanisms for implementing asynchronous execution.
@@ -297,16 +297,42 @@ folly::coro::Task<int> f() {
 
 Unfortunately, this requires a signature change in `g()` and, in a more realistic scenario, all functions between the calling coroutine and the one eventually issuing `blockingWait()`, but with default parameters, it might still be more feasible than converting them all to coroutines.
 
+## Exceptions
+
+When discussing Folly futures [1], we mentioned:
+
+> A pitfall with this API is that it doesn’t handle nor propagate exceptions, it ignores it.
+
+Meaning that we need to explicitly register a handle for exceptions via `thenError()`. In coroutines the exception is propagated as we'd expect.
+
+{% highlight cpp %}
+folly::coro::Task<int> co_slow() {
+  co_await folly::futures::sleep(std::chrono::seconds{1});
+  co_return co_await co_value(10) + 1;
+}
+
+folly::coro::Task<int> co_slow2() {
+  try {
+    co_return co_await co_slow();
+  } catch (const std::exception& e) {
+    std::cout << "caught exception: " << e.what() << std::endl;
+    throw;
+  }
+}
+{% endhighlight %}
+
+We can do the usual try/catch, rethrow, etc.
+
 ## Conclusion
 
 I feel like a have a much better understanding of Folly coroutines after having studied [Folly Futures]({{blog}}/2025/05/02/folly-futures.html), [Folly executors]({{blog}}/2025/06/07/folly-executors.html) and now the Folly coroutines themselves.
 
 This is in contrast with my unsuccessful attempt at starting from first principles and studying [C++ coroutines]({{blog}}/2024/06/03/coroutines-in-cpp.html). I still don't have a good grasp on them, but have abandoned the plan for now.
 
-I still haven't studied many aspects of coroutines such as cancellations, dealing with exceptions, limiting concurrency, etc. but I plan to write about them if the opportunity arises.
+I still haven't studied some aspects of coroutines such as cancellations, limiting concurrency, etc. but if the opportunity arises I can write about them.
 
 ## References
 
-* [[1]]({{blog}}/2025/05/02/folly-futures.html) NP-Incompleteness: Folly Futures
-* [[2]]({{blog}}/2025/06/07/folly-executors.html) NP-Incompleteness: Folly Executors
-* [[3]]({{blog}}/2020/02/02/python-coroutines.html) NP-Incompleteness: Python Coroutines
+* [[1]({{blog}}/2025/05/02/folly-futures.html)] NP-Incompleteness: Folly Futures
+* [[2]({{blog}}/2025/06/07/folly-executors.html)] NP-Incompleteness: Folly Executors
+* [[3]({{blog}}/2020/02/02/python-coroutines.html)] NP-Incompleteness: Python Coroutines
