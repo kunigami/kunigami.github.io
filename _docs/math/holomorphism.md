@@ -39,6 +39,11 @@ In terms of the Taylor series coefficient:
 
 $$\abs{c_n} \le \frac{M}{r^n}$$
 
+## Liouville’s Theorem
+
+If $f(z)$ is holomorphic and bounded on the whole plane, then it's a constant function [2].
+
+
 
 ## References
 
