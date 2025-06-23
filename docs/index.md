@@ -77,6 +77,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
   * [Derivative]({{ site.url }}/docs/math/derivative.html)
   * [Integral]({{ site.url }}/docs/math/integral.html)
   * [Limit]({{ site.url }}/docs/math/limit.html)
+  * [Modulus]({{ site.url }}/docs/math/modulus.html)
   * [Sequence]({{ site.url }}/docs/math/sequence.html)
   * [Series]({{ site.url }}/docs/math/series.html)
 * Complex Analysis
