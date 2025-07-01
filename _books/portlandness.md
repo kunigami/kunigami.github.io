@@ -13,7 +13,7 @@ vanity: portlandness
 This is a book meant to explore different urban, cultural and geographical topics related to Portland. I bought this book during my first roadtrip to Portland in order to learn more about it.
 
 I knew almost nothing about Portland, so I found this book useful. Here are some stereotypes associated with the city:
-
+<br /><br />
 * Breweries
 * Coffee
 * Environmentally conscious
