@@ -9,6 +9,15 @@
     "year": 2025
   },
   {
+    "title": "Manna",
+    "vanity": "manna",
+    "author": "Marshall Brain",
+    "rating": 4,
+    "image": "manna.jpg",
+    "category": "Sci-fi",
+    "year": 2025
+  },
+  {
     "title": "Portlandness",
     "vanity": "portlandness",
     "author": "David Banis, Hunter Shobe",

@@ -25,8 +25,11 @@ function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-function add_collpsable(tag_name, display_name, display_name_capitalized) {
+function add_collpsable(tag_name, display_name, display_name_body) {
     let elements = document.getElementsByTagName(tag_name);
+    if (display_name_body == null) {
+        display_name_body = display_name;
+    }
     for (var i = 0; i < elements.length; i++) {
         let element = elements[i];
 
@@ -35,7 +38,9 @@ function add_collpsable(tag_name, display_name, display_name_capitalized) {
         const inner_body = document.createElement('collapsable_body');
         inner_body.style.display = 'none';
         const inner_text = document.createElement('b');
-        inner_text.textContent = capitalize(display_name) + ".";
+        if (display_name_body) {
+            inner_text.textContent = capitalize(display_name_body) + ".";
+        }
         inner_body.appendChild(inner_text);
 
         // Transfer children to inner_body
@@ -61,4 +66,5 @@ function add_collpsable(tag_name, display_name, display_name_capitalized) {
 document.addEventListener('DOMContentLoaded', function() {
     add_collpsable("proof", "proof");
     add_collpsable("nonproof", "non-proof");
+    add_collpsable("spoiler", "spoiler", "");
 });
