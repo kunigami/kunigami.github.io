@@ -15,9 +15,24 @@ for $h \in \mathbb{C}$ exists. Without any qualifications, a *holomorphic functi
 
 ## Properties
 
-Addition, subtraction and multiplication preserve holomorphism. Division preserves holomorphism as long as the divisor is non-zero [1].
+The following operations preserve holomorphism:
 
-Differetiation preserves holomorphism. In fact holomorphic functions are infinitely differentiable [2].
+### Arithmetic
+
+Let $f(z)$ and $g(z)$ be holomorphic functions in $\Omega$. Then the following functions are also holomorphic in $\Omega$:
+
+* $f(z) + g(z)$
+* $f(z) - g(z)$
+* $f(z) \cdot g(z)$
+* $f(z) / g(z)$ if $g(z) \ne 0$
+
+### Derivative
+
+If $f(z)$ is holomorphic in $\Omega$, then $f'(z)$ is also holomorphic in $\Omega$ [2].
+
+### Anti-derivative
+
+If $f(z)$ is a holomorphic function in $\Omega$, there exists a holomorphic function $g(z)$ in $\Omega$ such that $g'(z) = f(z)$.
 
 ## Analyticity
 
