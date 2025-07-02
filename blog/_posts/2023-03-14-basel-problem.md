@@ -219,7 +219,9 @@ So the Hadamard factorization theorem is a general version of the polynomial fac
 
 $$\frac{\sin(x)}{x} = \left( 1 - \left(\frac{x}{\pi}\right)^2 \right)\left( 1 - \left(\frac{x}{2\pi}\right)^2 \right)\left( 1 - \left(\frac{x}{3\pi}\right)^2 \right) \cdots$$
 
-*Proof*: We start noting that $\sin (0) = 0$, and it's the only 0 root, so $m = 1$. Then, for $\sin(x)$, the zeros are all of the form $\pi k$ for $k \in \mathbb{Z}$. Also from above we know that $\sin(x)$ has order $\rho = 1$, so $g(x)$ is a polynomial of the form $ax + b$ and $E_1(x) = (1 - x) \exp(x)$, so we have:
+<proof>
+
+We start noting that $\sin (0) = 0$, and it's the only 0 root, so $m = 1$. Then, for $\sin(x)$, the zeros are all of the form $\pi k$ for $k \in \mathbb{Z}$. Also from above we know that $\sin(x)$ has order $\rho = 1$, so $g(x)$ is a polynomial of the form $ax + b$ and $E_1(x) = (1 - x) \exp(x)$, so we have:
 
 $$\sin(x) = x e^{a + bx} \prod_{n \ne 0} \left(1 - \frac{x}{n \pi}\right) \exp\left(\frac{x}{n \pi}\right)$$
 
@@ -252,7 +254,7 @@ Now consider the derivative of $f(x)$ at 0, i.e. $f'(0)$. We know that if $f(x) 
 
 $$\frac{d\sin}{dx}(0) = \cos(0) = 1 = e^{a}$$
 
-So (8) becomes:
+So $(8)$ becomes:
 
 $$\sin(x) = x \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$$
 
@@ -260,7 +262,7 @@ Dividing by $x$ and expanding the terms in the product we get:
 
 $$(9) \quad \frac{\sin(x)}{x} = \left( 1 - \left(\frac{x}{\pi}\right)^2 \right)\left( 1 - \left(\frac{x}{2\pi}\right)^2 \right)\left( 1 - \left(\frac{x}{3\pi}\right)^2 \right) \cdots$$
 
-*QED.*
+</proof>
 
 ### Coefficient of $x^2$
 
@@ -307,21 +309,16 @@ $$\lim_{n \rightarrow \infty} \abs{a_n}^{\frac{1}{n}} = 0$$
 
 In [Cepstrum]({{blog}}/2021/10/23/cepstrum.html) we also used the Taylor series expansion for $\log(1 - x)$.
 
-## Recap
-
-* *What is the definition of entire functions?* A function that is differentiable at every point of the complex space.
-* *What is the definition of the maximum modulus function?* It's the real-valued function $M_f(r)$ corresponding to the maximum norm of a complex-valued function $f(z)$ among all $\abs{z} = r$.
-* *Why do we need maximum modulus functions?* So we can work with reals instead of complex numbers.
-* *What is the definition of order for entire functions?* $\rho$ such that $f(r) < e^{r^\rho}$ for all $r > R_0$.
-* *What is the Weierstrass Factorization theorem for polynomials?* It's the fundamental theorem of algebra.
 
 ## Appendix
 
-**Lemma 1.**
+**Lemma 1.** Let $n$ be a natural number. Then:
 
 $$\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$$
 
-*Proof*. We first show that $n! \ge (\sqrt{n})^n$. Suppose $n$ is odd, then let $n = 2k + 1$ for $k \ge 1$. We can multiple the terms of the product in pairs, pairing the last elements with the first elements, except the term at the middle:
+<proof>
+
+We first show that $n! \ge (\sqrt{n})^n$. Suppose $n$ is odd, then let $n = 2k + 1$ for $k \ge 1$. We can multiple the terms of the product in pairs, pairing the last elements with the first elements, except the term at the middle:
 
 $$(2k)! = (2k \cdot 1)((2k-1) \cdot 2) \cdots ((k + 1) \cdot (k - 1) k$$
 
@@ -349,13 +346,15 @@ We know that $\lim_{n \rightarrow \infty} \frac{1}{\sqrt{n}} = 0$, so
 
 $$\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$$
 
-*QED.*
+</proof>
 
 **Lemma 2** The order of a function can be defined as
 
 $$\rho = \limsup_{r \rightarrow \infty} \frac{\ln \ln M_f(r)}{\ln r}$$
 
-*Proof.* If $\rho$ is the order of $f(x)$, then by definition there exists $r \ge R_0$ such that:
+<proof>
+
+If $\rho$ is the order of $f(x)$, then by definition there exists $r \ge R_0$ such that:
 
 $$M_f(r) = e^{r^\rho}$$
 
@@ -395,14 +394,14 @@ And this is the definition of limit superior:
 
 $$\limsup_{r \rightarrow \infty} \frac{\ln \ln M_f(r)}{\ln r} = \rho$$
 
-*QED.*
+</proof>
 
 
 **Lemma 3**
 
 $$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
 
-*Proof.*
+<proof>
 
 $$\sin(x + iy) = \sin (x) \cos (iy) + \cos (x) \sin (iy)$$
 
@@ -456,7 +455,7 @@ Replacing the definition of $M_{\sin}(r)$:
 
 $$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
 
-*QED.*
+</proof>
 
 **Lemma 4**. The derivative of
 
@@ -464,13 +463,15 @@ $$x e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\righ
 
 at 0 is equal to $e^{a}$.
 
-*Proof*: We can use the product rule. First we derive the first factor, $\frac{dx}{dx}$, which is 1 and keep the other terms:
+<proof>
+
+We can use the product rule. First we derive the first factor, $\frac{dx}{dx}$, which is 1 and keep the other terms:
 
 $$e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$$
 
 Evaluating this at $x = 0$ yields $e^{a}$. When we derive the term $\left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$ for some $n$ and keep the rest, we'll have the factor $x$, so the product will evaluate to 0.
 
-*QED.*
+</proof>
 
 
 ## References
