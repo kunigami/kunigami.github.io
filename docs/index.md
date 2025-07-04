@@ -43,7 +43,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 ## Linguistics
 
-* [Figures of Speech]({{ site.url }}/docs/linguistics/figures_of_speech.md)
+* [Figures of Speech]({{ site.url }}/docs/linguistics/figures_of_speech.html)
 * Languages
   * [French]({{ site.url }}/docs/linguistics/french/)
 
