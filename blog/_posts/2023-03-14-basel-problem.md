@@ -293,8 +293,6 @@ Sheydvasser's answer on Quora [5] was the most helpful to understand the applica
 
 I just finished the excelent book *Real Analysis: A Long-Form Mathematics Textbook* by Jay Cummings and after writing this post I'm very interested in learning about complex analysis.
 
-If I get better understanding of the Weierstrass factorization theorem after studying complex analysis, I'll come back and edit this post.
-
 ## Related Posts
 
 Complex power series is central to signal processing, so not surprisingly a lot of posts from [this topic]({{blog}}/tags/#signal%20processing) have related parts with this post.
@@ -308,6 +306,9 @@ Compare that with the property power series representing entire function have (2
 $$\lim_{n \rightarrow \infty} \abs{a_n}^{\frac{1}{n}} = 0$$
 
 In [Cepstrum]({{blog}}/2021/10/23/cepstrum.html) we also used the Taylor series expansion for $\log(1 - x)$.
+
+
+[Weierstrass factorization theorem]({{blog}}/2025/07/02/weierstrass-factorization-theorem.html). That post has a reference to this one.
 
 
 ## Appendix
