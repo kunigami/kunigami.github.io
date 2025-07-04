@@ -27,6 +27,15 @@
     "year": 2025
   },
   {
+    "title": "Fire in the Lake",
+    "vanity": "fire-in-the-lake",
+    "author": "Frances FitzGerald",
+    "rating": 4,
+    "image": "fire-in-the-lake.jpg",
+    "category": "History",
+    "year": 2025
+  },
+  {
     "title": "Singapore: A Very Short History",
     "vanity": "singapore-a-very-short-history",
     "author": "Alvin Tan",
@@ -164,7 +173,7 @@
     {
       "title": "Imperial China",
       "vanity": "imperial-china",
-      "author": "George H. Kerr",
+      "author": "F. W. Mote",
       "rating": 5,
       "image": "imperial-china.jpg",
       "category": "History",
