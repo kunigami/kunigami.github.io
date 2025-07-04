@@ -41,9 +41,11 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Singapore]({{ site.url }}/docs/history/singapore/)
 * [Vietnam]({{ site.url }}/docs/history/vietnam/)
 
-## Languages
+## Linguistics
 
-* [French]({{ site.url }}/docs/languages/french/)
+* [Figures of Speech]({{ site.url }}/docs/linguistics/figures_of_speech.md)
+* Languages
+  * [French]({{ site.url }}/docs/linguistics/french/)
 
 ## Lean
 
