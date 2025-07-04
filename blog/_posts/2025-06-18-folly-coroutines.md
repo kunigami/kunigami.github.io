@@ -256,7 +256,7 @@ This doesn't work if `f()` is already running inside an event loop because Pytho
 
 There are several ways to address this, depending largely on how easy it is to change the sandwiched non-async code, but we'll not delve into it here. In Folly coroutines we don't have the constraint of having to run all the coroutines in the same executor, so an analogous implementation would be:
 
-{% highlight python %}
+{% highlight cpp %}
 folly::coro::Task<int> h() {
   co_return 42;
 }
@@ -275,27 +275,27 @@ folly::coro::Task<int> f() {
 
 Without arguments, `folly::coro::blockingWait()` uses a custom executor, `BlockingWaitExecutor`, which runs the callback in the same thread.
 
-In this example, this works even if we schedule `f()` on say, `CPUThreadPoolExecutor`, but I've seen cases where mixing executors made the callback from `h()` hang, though I'm not sure why.
+This is however an anti-pattern that can lead to deadlock. Suppose we have the following callstack:
 
-If we want to use the same executor, we can obtain the executor inside a coroutine via `co_await folly::coro::co_current_executor`. So we could get it in `f()` and pass it explicitly to `g()`:
-
-
-{% highlight python %}
-void g(folly::Executor::KeepAlive<> executor) {
-  int x = folly::coro::blockingWait(
-    folly::coro::co_withExecutor(std::move(executor), h()));
-  return x;
-}
-
-folly::coro::Task<int> f() {
-  folly::Executor::KeepAlive<> executor =
-    co_await folly::coro::co_current_executor;
-  int x = g(executor);
-  std::cout << x << std::endl;
-}
+{% highlight text %}
+- main()
+  - blockingWait(co_a(), executorA)
+    - b()
+      - blockingWait(co_c(), executorB)
+        - co_await co_d()
 {% endhighlight %}
 
-Unfortunately, this requires a signature change in `g()` and, in a more realistic scenario, all functions between the calling coroutine and the one eventually issuing `blockingWait()`, but with default parameters, it might still be more feasible than converting them all to coroutines.
+When we do `blockingWait(co_a(), executorA)`, some task `T1` will be scheduled at the end of `executorA`'s queue, which will be executed once `co_a()` returns. Then `co_a()`, calls `b()`, which calls `blockingWait(co_c(), executorB)`. Similarly, some task`T2` will be scheduled at the end of `executorB`'s queue. So far no problem.
+
+By default, when a coroutine calls `co_await` a task is scheduled in executor of the calling coroutine, so whe `co_c()` calls `co_await co_d()`, a task will be scheduled in `executorB`.
+
+However, it's possible for it to explicitly change the executor via:
+
+{% highlight cpp %}
+co_await co_withExecutor(executorA, co_d());
+{% endhighlight %}
+
+In this case, it will add a task `T3` to `executorA` instead. And here we have a deadlock: task `T3` will be scheduled behind task `T1` associated with `co_a()`. However, `T1` only gets executed once `co_a()` returns, which requires `blockingWait(co_c(), executorB)` to finish, which in turn depends on `T3` being processed.
 
 ## Exceptions
 
