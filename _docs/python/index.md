@@ -393,6 +393,40 @@ w = Wrapper()
 object.__setattr__(w, "foo", 'backdoor')
 {% endhighlight %}
 
+## Operator Overload
+
+Main operators can be overloaded:
+
+* `__str()__` - called when we do `str(x)`
+
+All the arithmetic ones, unary, comparison, etc.
+
+### Pipe Operator
+
+Operator overload can also be used to implement custom semantics, for example function composition via the "pipe operator":
+
+{% highlight python %}
+input: int = 10
+def f(int: x) -> bool:
+    return True
+
+def g(bool: y) -> str:
+    return "hello"
+
+def h(str: z) -> int:
+    return 8
+
+class Pipe(Generic[T]):
+    def __init__(self, value: T) -> None:
+        self.value = value
+
+    def __rshift__(self, func: Callable[[T], V]) -> Pipe[V]:
+        return Pipe(func(self.value))
+
+pipe = Pipe(input) >> f >> g >> h
+print(pipe.value)
+{% endhighlight %}
+
 
 # Flow Control
 
