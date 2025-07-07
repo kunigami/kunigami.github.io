@@ -87,6 +87,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
   * [Complex Numbers]({{ site.url }}/docs/math/complex.html)
   * [Complex Integral]({{ site.url }}/docs/math/complex_integral.html)
   * [Complex Power Series]({{ site.url }}/docs/math/complex_power_series.html)
+  * [Harmonic Functions]({{ site.url }}/docs/math/harmonic.html)
   * [Holomorphic Functions]({{ site.url }}/docs/math/holomorphism.html)
 * [Matrices]({{ site.url }}/docs/math/matrix.html)
 * [Probability]({{ site.url }}/docs/math/probability.html)
