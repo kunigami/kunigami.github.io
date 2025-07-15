@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="197 112 806 236">
+  <defs/>
+  <g id="Canvas_1" fill="none" stroke-dasharray="none" fill-opacity="1" stroke-opacity="1" stroke="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="197" y="112" width="806" height="236"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <rect x="200" y="200" width="150" height="100" fill="#73fb79"/>
+        <path d="M 199.32005 200.00154 L 351.0777 199.65758 M 350.41408 198.93877 L 350.18197 300.55438 M 350.81354 300.11103 L 199.5394 300.36895 M 200.0329 301.2912 L 199.99973 199.15878 M 199.44483 199.77635 L 350.53737 199.50687 M 350.6625 198.81405 L 350.4071 299.98733 M 350.93866 300.05232 L 200.15777 300.3503 M 200.13315 301.1662 L 200.08602 199.87501" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(205 237.39392)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="58.941436" y="20" xml:space="preserve">R1</tspan>
+        </text>
+      </g>
+      <g id="Graphic_3">
+        <rect x="350" y="200" width="300" height="100" fill="#73fb79"/>
+        <path d="M 349.5162 199.99941 L 650.9396 200.36447 M 650.28706 199.73592 L 649.6761 300.1049 M 649.97636 299.73333 L 350.1347 300.1725 M 350.4369 301.16337 L 349.99583 199.03411 M 349.64126 199.84104 L 650.4083 200.18446 M 650.4881 199.61139 L 649.80495 299.60878 M 650.1015 299.72172 L 350.5577 300.10933 M 350.52998 301.0385 L 350.0734 199.87522" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(355 237.39392)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="134.27735" y="20" xml:space="preserve">R2</tspan>
+        </text>
+      </g>
+      <g id="Line_9">
+        <path d="M 200.03227 135.88675 L 198.99197 187.88866 M 200.2973 135.63705 L 199.44844 186.43608" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_10">
+        <path d="M 999.9817 136.2789 L 1000.7755 189.28022 M 1000.3631 136.02693 L 1001.244 187.83807" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_11">
+        <path d="M 199.1711 162.5 L 1001.6703 162.5008 M 199.4211 162.0022 L 1000.7493 162.21043" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_12">
+        <text transform="translate(530 117.5)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">16 bytes</tspan>
+        </text>
+      </g>
+      <g id="Graphic_13">
+        <text transform="translate(242.5 317.5)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="45474735e-20" y="20" xml:space="preserve">3 bytes</tspan>
+        </text>
+      </g>
+      <g id="Graphic_14">
+        <text transform="translate(472.5033 317.5)" fill="black">
+          <tspan font-family="Chalkduster" font-size="16" fill="black" x="0" y="20" xml:space="preserve">6 bytes</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
