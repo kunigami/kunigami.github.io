@@ -321,7 +321,7 @@ folly::coro::Task<int> co_slow2() {
 }
 {% endhighlight %}
 
-We can do the usual try/catch, rethrow, etc.
+We can do the usual try/catch, rethrow, etc. Noting that we cannot use `co_await` / `co_yield` inside a `catch` block.
 
 ## Conclusion
 
