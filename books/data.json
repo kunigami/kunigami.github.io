@@ -54,6 +54,15 @@
       "year": 2025
     },
     {
+      "title": "The Scramble for Africa",
+      "vanity": "the-scramble-for-africa",
+      "author": "Thomas Pakenham",
+      "rating": 5,
+      "image": "scramble-for-africa.jpg",
+      "category": "History",
+      "year": 2025
+    },
+    {
       "title": "The Anglo-Saxons",
       "vanity": "the-anglo-saxons",
       "author": "Marc Morris",
