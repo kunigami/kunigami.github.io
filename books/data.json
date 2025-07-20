@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Body",
+    "vanity": "the-body",
+    "author": "Bill Bryson",
+    "rating": 5,
+    "image": "the-body.jpg",
+    "category": "Science",
+    "year": 2025
+  },
+  {
     "title": "Romancero Gitano",
     "vanity": "romancero-gitano",
     "author": "Federico Lorca",
