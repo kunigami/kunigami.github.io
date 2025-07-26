@@ -13,7 +13,8 @@ class BookLink extends HTMLElement {
         const title = this.getAttribute('title');
         const vanity = this.getAttribute('vanity');
         const baseUrl = this.getAttribute('base_url');
-        const url = `${baseUrl}/books/${vanity}`;
+        const customUrl = this.getAttribute('url');
+        const url = customUrl ? `${baseUrl}/${customUrl}` : `${baseUrl}/books/${vanity}`;
         const a = document.createElement('a');
         a.setAttribute('href', url);
         a.textContent = title;
@@ -238,6 +239,7 @@ class BookTable extends HTMLElement {
             titleInner.setAttribute('title', row['title']);
             titleInner.setAttribute('vanity', row['vanity']);
             titleInner.setAttribute('base_url', baseUrl);
+            titleInner.setAttribute('url', row['url'] ?? '');
             title.appendChild(this.cell(titleInner));
 
             const author = this.td({width: '30%'});

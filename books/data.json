@@ -1,5 +1,15 @@
 [
   {
+    "title": "Software Architecture: The Hard Parts",
+    "vanity": "the-hard-parts",
+    "url": "blog/2025/07/26/review-the-hard-parts.html",
+    "author": "Neal Ford et. al",
+    "rating": 5,
+    "image": "the-hard-parts.jpg",
+    "category": "Programming",
+    "year": 2025
+  },
+  {
     "title": "The Body",
     "vanity": "the-body",
     "author": "Bill Bryson",
