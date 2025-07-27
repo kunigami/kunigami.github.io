@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Folly Coroutines"
-tags: [cpp]
+tags: [c++]
 excerpt_separator: <!--more-->
 vanity: "2025-06-18-folly-coroutines"
 ---

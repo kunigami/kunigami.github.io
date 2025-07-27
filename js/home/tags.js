@@ -92,6 +92,14 @@ const tagsHierarchy = {
         'macos',
         'observable',
     ],
+    'reading': [
+        'paper reading',
+        'review',
+    ]
+}
+
+const toTitle = {
+    'review': 'Book Review',
 }
 
 const tagsToParent = {};
@@ -100,7 +108,10 @@ Object.entries(tagsHierarchy).forEach(([parent, tags]) => {
 });
 
 function titleize(name) {
-    const re = /[ \_]/
+    if (name in toTitle) {
+        return toTitle[name];
+    }
+    const re = /[ \_]/;
     return name.split(re).map(word => capitalize(word)).join(' ');
 }
 
