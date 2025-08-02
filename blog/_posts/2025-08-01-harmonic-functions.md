@@ -20,9 +20,9 @@ He also associated harmony with music. Centuries passed and further associations
 
 <!--more-->
 
-I couldn't find a clear definitive answer on how harmonic functions got their name, but [7] suggests it was Henry Poincaré who coined the term as a function that satisfied the Laplace equation.
+I couldn't find a clear definitive answer on how harmonic functions got their name, but [7] suggests it was Henry Poincaré who coined the term and definition as any function that satisfies the Laplace equation.
 
-Vaguely the association seems to be that, to compute properties of a wave equation in two dimensions, it is required to solve a partial differential equation which in the simplest case is the Laplace equation.
+Vaguely the association seems to be that, to compute properties of wave equations in two dimensions, it is required to solve a partial differential equation which in the simplest case is the Laplace equation.
 
 ## Definition
 
