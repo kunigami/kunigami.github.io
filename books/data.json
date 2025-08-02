@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Almanack of Naval Ravikant",
+    "vanity": "the-almanack-of-naval-ravikant",
+    "author": "Eric Jorgenson",
+    "rating": 5,
+    "image": "almanack-naval.jpg",
+    "category": "Business, Philosophy",
+    "year": 2025
+  },
+  {
     "title": "Software Architecture: The Hard Parts",
     "vanity": "the-hard-parts",
     "url": "blog/2025/07/26/review-the-hard-parts.html",
