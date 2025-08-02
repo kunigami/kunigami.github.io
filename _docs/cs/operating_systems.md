@@ -16,6 +16,38 @@ For Linux specifics, see the [Linux Cheat Sheet]({{site.url}}/docs/linux/).
 1. TOC
 {:toc}
 
+# Components
+
+## Kernel
+
+### Interrupts
+
+Signals that tell the CPU to pause and execute some function, the *interrupt handler*. Examples: key press, network packet arrival, system calls and exceptions.
+
+Interrupts are asynchronous: the execution of the handlers are queued by the kernel.
+
+### System Call
+
+System call is a special type of interrupt that a process can call to run kernel space functions, e.g. `read()`, `socket()`, `mmap()`.
+
+## Process
+
+## Thread
+
+* Threads share the same memory address and file descriptors but have dedicated stack and registers.
+
+# Memory
+
+## Paging
+
+When the system runs out of physical memory and it has to spill chunks of memory (page) to disk.
+
+## Swapping
+
+In Linux this is the same as paging.
+
+# Concurrency
+
 ## Lock
 
 * Binary State: A lock is either locked or unlocked
