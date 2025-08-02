@@ -139,7 +139,7 @@ This is the main result we wanted to prove in this post. We now consider some va
 
 In our post [Path-Independent Line Integrals]({{blog}}/2024/04/13/path-independent-line-integrals.html) [3], we said that a line integral $\int_\gamma f(z)dz$ can be expressed as a function of its real and imaginary parts: $\int_\gamma p(x)dx + q(y)dy$ or $\int_\gamma pdx + qdy$ for short. This form of the integrand is defined as a *differential form*. In this case, we can call its integrand a *differential*.
 
-The differential $p dx + q dy$ is called an *exact differential* in $\Omega$ if there exists a function $U(x, y): \Omega \rightarrow \mathbb{R}$ such that $\partial U(x, y)/\partial x = p(x)$ and $\partial U(x, y)/\partial y = q(y)$ or more concisely, that $dU = pdx + pdy$ [3].
+The differential $p dx + q dy$ is called an *exact differential* in $\Omega$ if there exists a function $U(x, y): \Omega \rightarrow \mathbb{R}$ such that $\partial U(x, y)/\partial x = p(x)$ and $\partial U(x, y)/\partial y = q(y)$ or more concisely, that $dU = pdx + qdy$ [3].
 
 **Definition.** A differential $p dx + q dy$ is called a **locally exact differential** if it's exact in *some* neighborhood of *every* point in the domain $\Omega$.
 
@@ -153,7 +153,7 @@ We can obtain an analogous result for locally exact differentials:
 
 **Theorem 4.** $p dx + q dy$ is a locally exact differential in $\Omega$, then
 
-$$\int_{\partial R} p dx + q dy = 0$$
+$$\int_{\partial \gamma} p dx + q dy = 0$$
 
 For *every* cycle $\gamma \sim 0$ in $\Omega$.
 
