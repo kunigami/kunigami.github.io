@@ -14,7 +14,7 @@ excerpt_separator: <!--more-->
 
 The concept of harmony in mathematics has been used since 6th century BC. Pythagoras is credited with this early association [6]:
 
-> Pythagorean philosophers advanced the unshakable belief that the essence of all things are numbers and that the universe was sustained by harmony.
+*"Pythagorean philosophers advanced the unshakable belief that the essence of all things are numbers and that the universe was sustained by harmony."*
 
 He also associated harmony with music. Centuries passed and further associations between music and trigonometric functions (sine waves) occured, leading to terminology such as harmonic series, harmonic analysis and harmonic functions. In this post we'll study harmonic functions.
 
