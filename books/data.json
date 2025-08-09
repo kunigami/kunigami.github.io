@@ -1,5 +1,14 @@
 [
   {
+    "title": "I, Robot",
+    "vanity": "i-robot",
+    "author": "Isaac Asimov",
+    "rating": 5,
+    "image": "i-robot.jpg",
+    "category": "Sci-fi",
+    "year": 2025
+  },
+  {
     "title": "The Almanack of Naval Ravikant",
     "vanity": "the-almanack-of-naval-ravikant",
     "author": "Eric Jorgenson",
