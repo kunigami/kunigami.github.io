@@ -104,6 +104,30 @@ In this story, the world is largely being governed by robots, with a few elected
 They eventually find out that some anti-robot organization had members in position of power and would not allow robots to govern. The 3rd law of robotics (self-preservation) kicked in and the mistakes were deliberate to either make the anti-robot folks look incompetent or eliminate their position.
 </spoiler>
 
+## Topics
+
+Some topics I found interesting and some thoughts on them.
+
+### Robo-psychology
+
+One character that appears in most of the stories is Susan Calvin, which is a robo-psychologist, someone who can understand robots "minds".
+
+I have some thoughts on complex systems and science. Of the major science branches, the progression in complexity is roughly: mathematics, physics, chemistry and then biology. If we include the humanities, the progression continues with psychology (individual) and social science (groups).
+
+The humanities are considered "soft sciences" and typically not as rigorous as the "hard sciences". This is not because folks in humanities lack any capacity, but rather that the human mind is so complex and hard to probe that it doesn't allow for more precise analysis.
+
+As artificial intelligence gets more and more complex, at some point it will be hard to reason about them, even if they were developed by humans. Thus the analogous to "soft sciences" for robots would make sense to me.
+
+### Neo-ludism
+
+In *Liar!*, one of the mathematicians is stuck on a problem, but relluctant to ask for help from the robot. He says:
+
+> Not that I particularly like having a robot tell me my job, nor that I think he can do it.
+
+When he does ask, the robot, programmed to not hurt his feelings, play dumb, much to the mathematician's relief. This reminds me of a striking thought in *Superintelligence* by Nick Bostrom in which he suggests something along these lines: that mathematicians should focus on advancing AI instead of trying to prove theorems, because AI would be much more capable at doing that.
+
+This also reminds me of the book [*Manna*]({{site.url}}/books/manna) by Marshall Brain which suggests that once humans are free from labor by advanced robots, they'd be (financially) free to pursue their passion and find purpose in science, but as I shared in my review, I think if we got to that point, robots would probably do a better job than us.
+
 ## Conclusion
 
 Overall I liked the book! I've been wanting to read Asimov in a long while. I think the thought experiments around the 3 laws of robotics are pretty interesting.
