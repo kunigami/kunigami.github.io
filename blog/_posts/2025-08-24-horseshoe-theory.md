@@ -33,13 +33,13 @@ I learned about the horseshoe theory after reading the [IQ Bell Curve / Midwit](
 
 The first time I recall noticing this phenomenon was while studying for college admissions. In the study book there was this exercise asking roughly:
 
-*Suppose we have an extremely precise scale. We first weigh 1kg of feathers and then 1kg of iron. Which one will be heavier according to the scale?*
+*Suppose we have an extremely precise scale. We weigh 1kg of feathers and 1kg of iron. Which one will be heavier according to the scale?*
 
-A noob / uneducated person might answer that the iron will be heavier since they imagine lifing some iron and lifting the same "amount" of feathers and the former definitely feels heavier.
+An uneducated person might answer that the iron will be heavier since they imagine lifing some iron and lifting the same "amount" of feathers and the former definitely feels heavier.
 
 Most people (myself included) will notice that both objects have the same mass of 1kg and think that the scale will report the same weight for both.
 
-Someone more experient / attentive might realize that because the iron is denser than the feathers, 1kg of feathers occupy a much larger volume than 1kg of iron. Then, assuming this experiment wasn't done in vacuum, there's buoyance, a force acting on an immersed object that is proportional to its volume. So there's a stronger force acting opposite to gravity on the feathers than on the iron, which would make the resulting force measured by the scale lower and it would report it being less heavy.
+Someone more experient might realize that because the iron is denser than the feathers, 1kg of feathers occupy a much larger volume than 1kg of iron. Then, assuming this experiment wasn't done in vacuum, there's buoyance, a force acting on an immersed object that is proportional to its volume. So there's a stronger force acting opposite to gravity on the feathers than on the iron, which would make the resulting force measured by the scale lower and it would report it being less heavy.
 
 The noob and expert would give the same answer but with different reasons! Needless to say this would be a terrible multiple choice question.
 
@@ -49,16 +49,18 @@ Programming has lots of options and opinions, so it's a breeding ground for this
 
 <figure class="center_children">
   <img src="{{resources_path}}/meme.jpg" alt="See caption." width="450" />
-  <figcaption>Figure 1: The midwit meme, include the character names for reference in the table below.</figcaption>
+  <figcaption>Figure 1: The midwit meme, with the character names for reference in the table below.</figcaption>
 </figure>
 
 <br /><br />
 
 | Simpleton | Midwit | Genius |
 | - | - | - |
-| No need for comments | Comment every function | Comments gets stale, comment sparingly |
+| No comments | Comment every function | Comments gets stale, comment sparingly |
 | What's O-notation? | Let's write assembly! | Profile first |
 | Monolith | Microservices | Monolith, but extract parts that need scaling or independent deployment. |
+| Functions | Object Oriented | Function(al?) |
+| Copy Pasta | DRY | Excessive abstraction is worse than duplication |
 
 ### The Golden Mean
 
