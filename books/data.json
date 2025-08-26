@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Tempest",
+    "vanity": "the-tempest",
+    "author": "William Shakespare",
+    "rating": 4,
+    "image": "the-tempest.jpg",
+    "category": "Drama",
+    "year": 2025
+  },
+  {
     "title": "I, Robot",
     "vanity": "i-robot",
     "author": "Isaac Asimov",
