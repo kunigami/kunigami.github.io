@@ -111,7 +111,7 @@ But at least there's recognition of the subjectivity of these ideas:
 
 > But because the social scientists can rarely attain the same criteria for "truth" as physicists or chemists, they have sometimes misused the discipline and taken merely the trappings of science as a camouflage for their own beliefs and values.
 
-The author also borrows from Shakespare's *Tempest*, to explain the complicated relationship between colonizer (Prospero) and the colonized (Caliban). Caliban resents Proposero but believes he can't survive without him.
+The author also borrows from Shakespare's [The Tempest]({{site.url}}/books/the-tempest), to explain the complicated relationship between colonizer (Prospero) and the colonized (Caliban). Caliban resents Proposero but believes he can't survive without him.
 
 > In a sense, then, it is the colonial and not the native who is a "child," for his desire to escape rises out of the sense of insecurity and inferiority he felt within his own culture. In the native he finds a fulfillment of his childish dreams of domination and an object (for the native is to him an object) upon which to project all his repressed desires.
 
@@ -126,7 +126,3 @@ This book reminds me a lot of [Formosa Betrayed](https://www.kuniga.me/books/for
 I bought this book for a trip to Vietnam, but after reading it, I decided to stop using books to learn about a country's history. I'm better off reading Wikipedia. I will still read books covering history in unique angles and perhaps might even have enjoyed this book more if I had a different set of expectations.
 
 One question that left me curious is why the outcome of the Korean war was different from that of Vietnam? One would think of similar Chinese culture influence in Korea. I don't know anything about Korean history, so this is a topic of interest now.
-
-Some books referenced in this one that might be an interesting read:
-
-* *The Tempest* by William Shakespare
