@@ -672,7 +672,7 @@ Worth noting that `std::move` and `std::forward` are both static casts.
 
 ### Item 24 - Distinguish universal references from rvalue references
 
-Universeal references are rvalue references where type deduction happens, either via `auto` or templates. Examples:
+Universal references are rvalue references where type deduction happens, either via `auto` or templates. Examples:
 
 {% highlight c++ %}
 template<typename T>

@@ -1249,3 +1249,56 @@ namespace a::b {
 {% endhighlight %}
 
 Will lead to a compilation error since it binds to `a::b::c` first, even though `x` *is* defined in `a::c`. If we comment the first line it works.
+
+
+# References
+
+## Rvalue References
+
+Inside a function, the type of a variable is always lvalue reference, even if declared as rvalue. Example:
+
+{% highlight c++ %}
+struct C {};
+
+void g(C& c) {
+  std::cout << "lvalue reference\n";
+}
+
+void g(C&& c) {
+  std::cout << "rvalue reference\n";
+}
+
+void f(C&& c) {
+  g(c); // lvalue ref
+}
+{% endhighlight %}
+
+To keep this as rvalue, we need to do `g(std::move(c))`.
+
+## Universal References
+
+Universal references are those with rvalue reference syntax but where type deduction happens, either via `auto` or templates. The deduced type is either lvalue or rvalue, depending how it was called. Example:
+
+{% highlight c++ %}
+struct C {};
+
+template <typename T>
+void f(T&& x) {
+  if constexpr (std::is_lvalue_reference_v<T>) {
+    std::cout << "lvalue reference\n";
+  } else {
+    std::cout << "rvalue reference\n";
+  }
+}
+
+C c;
+f(c); // lvalue ref
+f(std::move(c)); // rvalue ref
+{% endhighlight %}
+
+As with rvalue refs, inside `f()`, `x` is an lvalue reference, however, if we use `std::move(x)` and `T` was originally lvalue, we lose that info. If we want to preserve the reference type of `x`, we need to use `std::forward<T>(x)` (*Item 25* on [1]).
+
+# References
+{:.no_toc}
+
+* [[1]({{blog}}/2022/10/25/review-effective-modern-cpp.html)] Effective Modern C++, Scott Meyers
