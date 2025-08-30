@@ -123,7 +123,7 @@ With these definitions in place, *Lemma 1* is the result we'll use later:
 
 <i>Lemma 4</i> (see Appendix) shows that:
 
-$$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
+$$\lim_{r \rightarrow \infty} M_{\sin(r)} = \frac{e^r}{2}$$
 
 replacing that in $(3)$,
 
@@ -318,7 +318,7 @@ $$\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$$
 
 **Lemma 4.**
 
-$$\lim_{r \rightarrow \infty} M_{{\sin}(r)} = \frac{e^r}{2}$$
+$$\lim_{r \rightarrow \infty} M_{\sin(r)} = \frac{e^r}{2}$$
 
 <proof>
 
@@ -370,9 +370,9 @@ For $r \rightarrow \infty$, $e^{-r}$ tends to 0, so both sides converge to $\fra
 
 $$\lim_{r \rightarrow \infty} \max_{z = r} \abs{\sin z} = \frac{e^r}{2}$$
 
-Replacing the definition of $M_{\sin}(r)$:
+Replacing the definition of $M_{\sin(r)}$:
 
-$$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
+$$\lim_{r \rightarrow \infty} M_{\sin(r)} = \frac{e^r}{2}$$
 
 </proof>
 
