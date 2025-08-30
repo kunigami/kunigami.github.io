@@ -89,7 +89,7 @@ that satisfies:
 
 $$(2) \quad \lim_{n \rightarrow \infty} \abs{a_n}^{\frac{1}{n}} = 0$$
 
-Is an entire function. The coefficients from $\sin(x)$'s Taylor series are either 0, or $\frac{1}{n!}$. *Lemma 1* (see Appendix) shows that $\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$ so (2) holds for all the coefficients as $n \rightarrow \infty$ which proves $\sin(x)$ is an entire function.
+Is an entire function. The coefficients from $\sin(x)$'s Taylor series are either 0, or $\frac{1}{n!}$. *Lemma 2* (see Appendix) shows that $\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$ so (2) holds for all the coefficients as $n \rightarrow \infty$ which proves $\sin(x)$ is an entire function.
 
 ### Order of an Entire Function
 
@@ -111,7 +111,7 @@ For all $r > R_0$, for some $R_0$. The **order** of a function is the smallest n
 
 We wish to find $\rho$ such that every element in $P$ is smaller or equal to it. However $P$ is infinite and might not have a maximum element, so we need to use infimum: $\rho = \inf P$.
 
-*Lemma 2* (see Appendix) shows that the order of a function can be also defined via:
+*Lemma 3* (see Appendix) shows that the order of a function can be also defined via:
 
 $$(4) \quad \rho = \limsup_{r \rightarrow \infty} \frac{\ln \ln M_f(r)}{\ln r}$$
 
@@ -123,7 +123,7 @@ We may ask, why not just $\sup \curly {x_r, r \in \mathbb{N}}$? It maybe be that
 
 We may then ask, why not just $\lim_{r \rightarrow \infty} x_r$? The series might not converge to a single value (e.g. it could oscilate). By taking the *supremum* we obtain a single number for the upper-bound.
 
-With these definitions in place, let's compute the order for $\sin x$. *Lemma 3* (see Appendix) shows that:
+With these definitions in place, let's compute the order for $\sin x$. *Lemma 4* (see Appendix) shows that:
 
 $$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
 
@@ -250,7 +250,7 @@ Since this has to hold for all $x$, this implies $b = 0$. We have now that:
 
 $$(8) \quad \sin(x) = x e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$$
 
-Now consider the derivative of $f(x)$ at 0, i.e. $f'(0)$. We know that if $f(x) = \sin x$, then $f'(x) = \cos x$ and $f'(0) = 1$. On the other side we can use the generalized product rule and evaluate it at 0. *Lemma 4* proves it's equal to $e^a$, so
+Now consider the derivative of $f(x)$ at 0, i.e. $f'(0)$. We know that if $f(x) = \sin x$, then $f'(x) = \cos x$ and $f'(0) = 1$. On the other side we can use the generalized product rule and evaluate it at 0. *Lemma 5* proves it's equal to $e^a$, so
 
 $$\frac{d\sin}{dx}(0) = \cos(0) = 1 = e^{a}$$
 
@@ -313,7 +313,7 @@ In [Cepstrum]({{blog}}/2021/10/23/cepstrum.html) we also used the Taylor series 
 
 ## Appendix
 
-**Lemma 1.** Let $n$ be a natural number. Then:
+**Lemma 2.** Let $n$ be a natural number. Then:
 
 $$\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$$
 
@@ -349,7 +349,7 @@ $$\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$$
 
 </proof>
 
-**Lemma 2** The order of a function can be defined as
+**Lemma 3** The order of a function can be defined as
 
 $$\rho = \limsup_{r \rightarrow \infty} \frac{\ln \ln M_f(r)}{\ln r}$$
 
@@ -398,7 +398,7 @@ $$\limsup_{r \rightarrow \infty} \frac{\ln \ln M_f(r)}{\ln r} = \rho$$
 </proof>
 
 
-**Lemma 3**
+**Lemma 4.**
 
 $$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
 
@@ -458,7 +458,7 @@ $$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
 
 </proof>
 
-**Lemma 4**. The derivative of
+**Lemma 5.** The derivative of
 
 $$x e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$$
 

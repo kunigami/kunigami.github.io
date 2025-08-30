@@ -46,20 +46,23 @@ def is_number(c):
     return c.isdigit()
 
 
-def find_statements_id_in_order(code) -> Dict[str, str]:
+def find_statements_id_in_order(code) -> Dict[Tuple[str, str], str]:
     stmts_ids_by_ns = {}
 
     i = 0
     while i < len(code):
         found = False
         for stmt in STATEMENT_KEYWORDS:
-            stmt_regex = f"\\*\\*{stmt} ([A-Z0-9])\\.\\*\\*"
+            stmt_regex = f"\\*\\*{stmt} ([A-Z0-9])(\\.?)\\*\\*"
             # magic number 10: big enough to enclose the statement
-            matches = re.search(stmt_regex, code[i : i + len(stmt) + 10])
+            chunk = code[i : i + len(stmt) + 10]
+            matches = re.search(stmt_regex, chunk)
             if matches:
                 needle = matches.group(0)
                 id = matches.group(1)
-                stmts_ids_by_ns[id] = stmt
+                if id in stmts_ids_by_ns:
+                    raise Exception(f'{chunk} failed: id {id} already in stmts_ids_by_ns: {stmts_ids_by_ns[id]}')
+                stmts_ids_by_ns[(id,stmt)] = stmt
                 i += len(needle)
                 found = True
                 break
@@ -84,16 +87,18 @@ def make_tmp_id(ns, num):
 def fix_equations(code):
 
     stmts_by_id = find_statements_id_in_order(code)
+    print(stmts_by_id)
 
     for cnt, id in enumerate(stmts_by_id):
+        stmt_id, _ = id
         stmt = stmts_by_id[id]
         # Replace Theorem A with Theorem__placeholder__ 1
-        old = f"{stmt} {id}"
+        old = f"{stmt} {stmt_id}"
         new = f"{stmt}__placeholder__ {cnt + 1}"
         code = code.replace(old, new)
 
         # Replace (A.1) with (1__placeholder__.1)
-        old_eq = f"({id}."
+        old_eq = f"({stmt_id}."
         new_eq = f"({cnt + 1}__placeholder__."
         code = code.replace(old_eq, new_eq)
 
