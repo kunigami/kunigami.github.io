@@ -51,3 +51,17 @@ $$\abs{a + b} \le \abs{a} + \abs{b}$$
 Multiplication:
 
 $$\abs{a \cdot b} = \abs{a} \cdot \abs{b}$$
+
+## Expontential
+
+If $z = x + i y$
+
+$$
+\abs{e^z} = e^{x}
+$$
+
+<proof>
+$$\abs{e^z} = \abs{e^x} \abs{e^{i y}}$$
+
+The second factor is a complex number in polar form with $r = 1$, so the only portion that contributes to resulting modulus is the first factor, which is real.
+</proof>
