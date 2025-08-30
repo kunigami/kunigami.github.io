@@ -79,7 +79,7 @@ $$(1) \quad f'(z_0) = \lim_{z \rightarrow z_0} \frac{f(z) - f(z_0)}{z - z_0}$$
 
 Except that the values involved are complex numbers. A function $f$ is **complex differentiable** at $z_0$ if the limit (1) exists.
 
-Let $U$ be an [open set]({{docs}}/math/topology.html). We say $f$ is **holomorphic** if it's complex differentiable at every point in $U$. If $U$ is the whole complex space, i.e. $U = \mathbb{C}$ in our case, then $f$ is called an **entire funcion**.
+Let $U$ be an [open set]({{docs}}/math/topology.html). We say $f$ is [**holomorphic**]({{blog}}/2023/12/21/holomorphic-functions.html) if it's complex differentiable at every point in $U$. If $U$ is the whole complex space, i.e. $U = \mathbb{C}$ in our case, then $f$ is called an **entire funcion**.
 
 It's possible to show that a power series:
 
@@ -89,7 +89,7 @@ that satisfies:
 
 $$(2) \quad \lim_{n \rightarrow \infty} \abs{a_n}^{\frac{1}{n}} = 0$$
 
-Is an entire function. The coefficients from $\sin(x)$'s Taylor series are either 0, or $\frac{1}{n!}$. *Lemma 2* (see Appendix) shows that $\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$ so (2) holds for all the coefficients as $n \rightarrow \infty$ which proves $\sin(x)$ is an entire function.
+Is an entire function. The coefficients from $\sin(x)$'s Taylor series are either 0, or $\frac{1}{n!}$. *Lemma 3* (see Appendix) shows that $\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$ so (2) holds for all the coefficients as $n \rightarrow \infty$ which proves $\sin(x)$ is an entire function.
 
 ### Order of an Entire Function
 
@@ -103,17 +103,9 @@ The natural way to do this is to work with their norm which is real-valued. So i
 
 So if we want to find an upperbound on how fast $f$ grows for a given $r \in \mathbb{R}$, we can take the largest value of $f$ for any $z \in C_r$, that is $\max_{\abs{z} = r} \abs{f(z)}$. This is defined as **maximum modulus function** and denoted as $M_f(r)$. Note that this is a real-valued function $M_f(r) : \mathbb{R} \rightarrow \mathbb{R}$.
 
-Now we wish to find an upperbound for $M_f(r)$. Since $f$ is a power series of potentially infinite degree, we can't expect to say $M_f(r)$, bounded  $r^{d}$ for some degree $d$. What if we used a much bigger number, such as $e^{r^d}$, in hopes we can find a smaller $d$, possibly finite? We say that a function $f$ has **finite order** if:
+We can define a factor corresponding to the hyper-expontential growth of $f(z)$, denoted by $\lambda$, called **order** and defined as:
 
-$$(3) \quad M_f(r) < e^{r^d}$$
-
-For all $r > R_0$, for some $R_0$. The **order** of a function is the smallest non-negative $d$ such that (3) holds. More formally, define $\rho(r)$ such that $M_f(r) = e^{r^{\rho(r)}}$ and also the set $P_{r > R_0} = \curly{\rho(r) \ge 0}$.
-
-We wish to find $\rho$ such that every element in $P$ is smaller or equal to it. However $P$ is infinite and might not have a maximum element, so we need to use infimum: $\rho = \inf P$.
-
-*Lemma 3* (see Appendix) shows that the order of a function can be also defined via:
-
-$$(4) \quad \rho = \limsup_{r \rightarrow \infty} \frac{\ln \ln M_f(r)}{\ln r}$$
+$$(3) \quad \lambda = \limsup_{r \rightarrow \infty} \frac{\ln \ln M_f(r)}{\ln r}$$
 
 Where $\limsup_{r \rightarrow \infty}$ is called the *limit superior* and defined as:
 
@@ -123,144 +115,117 @@ We may ask, why not just $\sup \curly {x_r, r \in \mathbb{N}}$? It maybe be that
 
 We may then ask, why not just $\lim_{r \rightarrow \infty} x_r$? The series might not converge to a single value (e.g. it could oscilate). By taking the *supremum* we obtain a single number for the upper-bound.
 
-With these definitions in place, let's compute the order for $\sin x$. *Lemma 4* (see Appendix) shows that:
+With these definitions in place, *Lemma 1* is the result we'll use later:
 
-$$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
-
-replacing that in (4),
-
-$$\rho = \lim_{r \rightarrow \infty} \frac{\ln \ln \frac{e^r}{2}}{\ln r} = \lim_{r \rightarrow \infty} \frac{\ln (r  - \ln 2)}{\ln r}$$
-
-We can apply L'Hôpital's rule to find this limit noting that $\frac{d(\ln (r  - \ln 2))}{dr} = \frac{1}{r - \ln 2}$:
-
-$$\rho = \lim_{r \rightarrow \infty} \frac{r}{r - \ln 2} = 1$$
-
-Thus *$\sin(x)$ has order 1*. *QED*
-
-We can also show that a finite polynomial has order 0. Let $P(x) = \sum_{k = 0}^{n} a_i x^k$. If $\alpha = \sum_{k = 0}^{n} a_i$ then $P(x) \le \alpha x^n$ (for large enough $x$). Since $x$ is real, $M_f(r) = P(r) \le \alpha r^n$.
-
-If we plug $r^n$ in (4), we get
-
-$$\rho = \lim_{r \rightarrow \infty} \frac{\ln \ln \alpha r^n}{\ln r} = \lim_{r \rightarrow \infty} \frac{\ln(n \ln r + \ln \alpha)}{\ln r}$$
-
-And using L'Hôpital's rule again we'll see this converges to:
-
-$$\rho = \lim_{r \rightarrow \infty} \frac{\alpha}{\alpha \ln r + \ln b}$$
-
-Since $\ln r$ is monotonically increasing and the other terms are constants, this converges to $\rho = 0$.
-
-### Weierstrass Factorization Theorem
-
-Going back to the analogy with polynomials, we can write a polynomial as a product of terms involving its roots. For example, for $x^2 - 5x + 4$. Its roots are $1$ and $4$, so it can be written as $(x - 1)(x - 4)$. This is known as the [fundamental theorem of algebra](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra).
-
-Sometimes roots have the same value, for example, $x^4 - 5x^3 + 4x^2$ has roots $1$, $4$ and twice $0$, so it can be written as $(x - 0)(x - 0)(x - 1)(x - 4)$ or $x^2 (x - 1)(x - 4)$. In this case we say root $0$ has **multiplicity** 2.
-
-How can we build an analogous factorization for infinite power series? Let $z_n$ be the sequence of all roots of $f$. We could perphaps represent them as an infinite product of their roots:
-
-$$f(x) \stackrel{?}{=} x^m \prod_{n = 1}^{\infty} (x - z_n)$$
-
-Where $m$ is the multiplicity of root 0.
-
-However the exponential function $\exp(x)$, an entire function, doesn't have zeroes, so a product only involving its roots doesn't suffice. In fact, it's possible to show $\exp(g(x))$ for some entire function $g(x)$ is also an entire function without zeros, so at minimum we need to include these factors in the product if we wish to represent exponentials:
-
-$$f(x) \stackrel{?}{=} x^m  e^{g(x)} \prod_{n = 1}^{\infty} (x - z_n)$$
-
-The major problem is that we need this infinite product to converge to a specific value $f(x)$ when given some $x$. Intuitively, when we multiply infinitely many small factors they will tend to 0, but if they're too big they'll not converge to a finite value.
-
-The idea is to multiply the terms by some "attenuating" factor, encoded in what's called **Weierstrass elementary factors**, which are defined as:
-
-$$\begin{equation}
-  E_n(x) =\left\{
-  \begin{array}{@{}ll@{}}
-    (1 - x), & \text{if}\ n = 0 \\
-    (1 - x) \exp(\sum_{i=1}^{n} \frac{x^i}{i}), & \text{otherwise}
-  \end{array}\right.
-\end{equation}$$
-
-The term $\exp(\sum_{i=1}^{n} \frac{x^i}{i})$ is the $n$-th order Taylor series expansion for $-\log(1 - x)$. Note that $E_n(x): \mathbb{C} \rightarrow \mathbb{C}$. It's possible to show that if $\abs{x} \le \abs{z_n}$, then [7]:
-
-$$(5) \quad \left\lvert E_{n}(\frac{x}{z_n}) \right\rvert \le 1 + \left(\frac{\abs{x}}{\abs{z_n}}\right)^{n + 1}$$
-
-We then use that $\prod (1 + a_n)$ converges iff $\sum a_n$ converges, where $a_n \ge 0$, so if
-
-$$(6) \quad \sum_{n = 1}^{\infty} \left(\frac{\abs{x}}{\abs{z_n}}\right)^{p_n + 1}$$
-
-converges for some choice of exponents $p_n$, then
-
-$$\prod_{n = 1}^{\infty} 1 + \left(\frac{\abs{x}}{\abs{z_n}}\right)^{p_n + 1}$$
-
-converges and by (5):
-
-$$(7) \quad \prod_{n = 1}^{\infty} \left\lvert E_{p_n}\left(\frac{x}{z_n}\right) \right\rvert$$
-
-also converges. Note that this is only true if $\abs{x} \le \abs{z_n}$. However, since we have infinitely many roots $z_n$ and $\lim \abs{z_n} \rightarrow \infty$, it's possible to choose a large enought $n'$ such that $\abs{x} \le \abs{z_n}$ for $n \ge n'$, so
-
-$$\prod_{n = n'}^{\infty} \left\lvert E_{p_n} \left( \frac{x}{z_n} \right) \right\rvert$$
-
-coverges. For $n = 1, \dots, n'-1$ the product has finite terms so it converges, so we see (7) converges for all $n$. This is just to provide an intuition behind the *Weierstrass elementary factors*, but the **Weierstrass factoring theorem** states that there exists $p_n$, satisfying (6), and $g(x)$ we can actually represent $f(x)$ via:
-
-$$f(x) = x^{m} e^{g(x)} \prod_{n = 1}^{\infty} E_{p_n} \left( \frac{x}{z_n} \right)$$
-
-This theorem is not constructive: it doesn't show how to find $g(x)$ nor $p_n$, but just states that they exist. However, there's a more specific version of this theorem known as the *Hadamard factorization theorem*. It states that if $f$ has an integer order $\rho$ (it's a bit more general than this, but let's narrow it down for our purposes), we can replace $p_n$ by $\rho$ and that $g(x)$ is a polynomial of degree at most $\rho$:
-
-$$f(x) = x^{m} e^{g(x)} \prod_{n = 1}^{\infty} E_{\rho} \left( \frac{x}{z_n} \right)$$
-
-As an exercise, let's try this for a polynomial $P(x)$ of degree $n$, which is an entire function of order 0 as shown above. Then $g(x) = a$ for some constant $a$ and $E_0(x) = (1 - x)$, which gives us:
-
-$$P(x) = x^{m} e^{a} \prod_{k = 1}^{n - m} \left(1 - \frac{x}{z_k}\right)$$
-
-This is not quite the same form as the polynomial factorization, but if we allow $e^{a} = \pm \prod_{k=1}^{n - m} z_k$, then
-
-$$P(x) = x^{m} \left(\pm \prod_{k=1}^{n - m} z_k \right) \prod_{k = 1}^{n - m} \left(\frac{z_k - x}{z_k}\right) = x^{m} \prod_{k = 1}^{n - m} (x - z_k)$$
-
-So the Hadamard factorization theorem is a general version of the polynomial factorization. The Hadamard factorization theorem will also be used to prove:
-
-**Theorem 1**
-
-$$\frac{\sin(x)}{x} = \left( 1 - \left(\frac{x}{\pi}\right)^2 \right)\left( 1 - \left(\frac{x}{2\pi}\right)^2 \right)\left( 1 - \left(\frac{x}{3\pi}\right)^2 \right) \cdots$$
+**Lemma 1.** The order of $\sin(z)$ is 1.
 
 <proof>
 
-We start noting that $\sin (0) = 0$, and it's the only 0 root, so $m = 1$. Then, for $\sin(x)$, the zeros are all of the form $\pi k$ for $k \in \mathbb{Z}$. Also from above we know that $\sin(x)$ has order $\rho = 1$, so $g(x)$ is a polynomial of the form $ax + b$ and $E_1(x) = (1 - x) \exp(x)$, so we have:
+<i>Lemma 4</i> (see Appendix) shows that:
 
-$$\sin(x) = x e^{a + bx} \prod_{n \ne 0} \left(1 - \frac{x}{n \pi}\right) \exp\left(\frac{x}{n \pi}\right)$$
+$$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
+
+replacing that in $(3)$,
+
+$$\lambda = \lim_{r \rightarrow \infty} \frac{\ln \ln \frac{e^r}{2}}{\ln r} = \lim_{r \rightarrow \infty} \frac{\ln (r  - \ln 2)}{\ln r}$$
+
+We can apply L'Hôpital's rule to find this limit noting that $\frac{d(\ln (r  - \ln 2))}{dr} = \frac{1}{r - \ln 2}$:
+
+$$\lambda = \lim_{r \rightarrow \infty} \frac{r}{r - \ln 2} = 1$$
+
+Thus $\sin(x)$ has order 1. QED
+
+</proof>
+
+### Weierstrass Factorization Theorem
+
+Going back to the analogy with polynomials, we can write a polynomial as a product of terms involving its zeros (also called roots). For example, for $x^2 - 5x + 4$. Its zeros are $1$ and $4$, so it can be written as $(x - 1)(x - 4)$. This is known as the [fundamental theorem of algebra](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra).
+
+Sometimes zeros have the same value, for example, $x^4 - 5x^3 + 4x^2$ has zeros $1$, $4$ and twice $0$, so it can be written as $(x - 0)(x - 0)(x - 1)(x - 4)$ or $x^2 (x - 1)(x - 4)$. In this case we say the zero $0$ has **multiplicity** 2.
+
+The problem with this formula is if the function has an infinite number of zeros, which is unfortunately the case with transcendental function such as $\sin(z)$.
+
+The [Weierstrass Factorization Theorem]({{blog}}/2025/07/02/weierstrass-factorization-theorem.html) generalizes the fundamental theorem of algebra by showing an entire function can be written as:
+
+$$f(z) = z^m  e^{g(z)} \prod_{k = 1}^{\infty} E_{n_k}(z/a_n)$$
+
+For some choice of $n_k$. Here $a_n$ are the zeros of $f(z)$ and $E_n$ is defined as:
+
+$$
+(4) \quad E_n(w) = (1 - w)\exp \left(\sum_{i=1}^{n} \frac{w^k}{k}\right)
+$$
+
+And assuming that for $n = 0$ the sum is 1. The Weierstrass theorem is not constructive however: it doesn't show how to find $g(x)$ nor $n_k$, but just states that they exist. A special case is if we can prove that the sum:
+
+$$
+\sum_{n = 1}^\infty \frac{1}{\abs{a_n}^{h + 1}}
+$$
+
+converges, then we can replace $n_k$ with $h$. So if we find the smallest $h$ for which it holds, we can simplify $(4)$. We still have no bounds on the degree of $g(z)$.
+
+Fortunately, there's a more specific version of this theorem known as the [Hadamard factorization theorem]({{blog}}/2025/08/30/hadamard-theorem.html). It states that if $f(z)$ has order $\lambda$, there exists $h$, called the **genus of** $f(z)$, such that $h \le \lambda \le h + 1$ such that we can replace $n_k$ in Weierstrass' formula $(4)$ by $h$ and that $g(x)$ is a polynomial of degree at most $h$:
+
+$$f(z) = z^{m} e^{g(z)} \prod_{n = 1}^{\infty} E_{h} \left( \frac{z}{a_n} \right)$$
+
+We can use the Hadamard factorization theorem to prove:
+
+**Theorem 2.**
+
+$$(5) \quad \frac{\sin(z)}{z} = \left( 1 - \left(\frac{z}{\pi}\right)^2 \right)\left( 1 - \left(\frac{z}{2\pi}\right)^2 \right)\left( 1 - \left(\frac{z}{3\pi}\right)^2 \right) \cdots$$
+
+<proof>
+
+We start noting that $\sin (0) = 0$, and it's the only 0 root, so $m = 1$. Then, for $\sin(z)$, the zeros are all of the form $\pi k$ for $k \in \mathbb{Z}$. Also from <i>Lemma 1</i>, we know that $\sin(z)$ has order $\lambda = 1$, so by Hadamard's theorem, the genus $h$ is either $0$ or $1$ (since $h \le \lambda \le h + 1$).
+<br /><br />
+We first rule out $h = 0$ because
+$$
+\sum_{n \ne 0}^\infty \frac{1}{(\pi \abs{n})^{h + 1}}
+$$
+does not converge for $h = 0$, because it reduces to:
+$$
+\frac{2}{\pi^2} \sum_{n = 1}^\infty \frac{1}{n}
+$$
+which is the harmonic series, which is known to not converge. Hence the genus must be 1.
+<br /><br />
+So we have that $g(z)$ is a polynomial of degree at most 1, $a + bz$ and $E_1(w) = (1 - w) \exp(w)$, so we have:
+
+$$\sin(z) = z e^{a + bz} \prod_{n \ne 0} \left(1 - \frac{z}{a \pi}\right) \exp\left(\frac{z}{n \pi}\right)$$
 
 Note that index range $n$ is symmetric around the origin, so that for every $n$ there exist a corresponding $-n$. If we group these pairs together we obtain:
 
-$$\sin(x) = x e^{a + bx} \prod_{n = 1}^{\infty} \left(1 - \frac{x}{n \pi}\right) \exp\left(\frac{x}{n \pi}\right) \left(1 - \frac{x}{-n \pi}\right) \exp\left(\frac{x}{-n \pi}\right) $$
+$$\sin(z) = z e^{a + bz} \prod_{n = 1}^{\infty} \left(1 - \frac{z}{n \pi}\right) \exp\left(\frac{z}{n \pi}\right) \left(1 - \frac{z}{-n \pi}\right) \exp\left(\frac{z}{-n \pi}\right) $$
 
-The terms $\exp\left(\frac{x}{n \pi}\right)$ and $\exp\left(\frac{x}{-n \pi}\right)$ cancel each other out and if we use that $(1 - x)(1 + x) = 1 - x^2$, we can simplify to:
+The terms $\exp\left(\frac{z}{n \pi}\right)$ and $\exp\left(\frac{z}{-n \pi}\right)$ cancel each other out and if we use that $(1 - z)(1 + z) = 1 - z^2$, we can simplify to:
 
-$$\sin(x) = x e^{a + bx} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$$
+$$\sin(z) = z e^{a + bz} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{z}{n \pi}\right) ^2\right)$$
 
+We can find the coefficients $a$ and $b$ by using some identities of $f(z)$ [5]. First we use the fact that $\sin(z) = -\sin(-z)$. The terms $\left( \frac{x}{n \pi}\right) ^2$ are the same for $z$ and $-z$ so we can eliminate them, leaving us with:
 
-We can find the coefficients $a$ and $b$ by using some identities of $f(x)$ [5]. First we use the fact that $\sin(x) = -\sin(-x)$. The terms $\left( \frac{x}{n \pi}\right) ^2$ are the same for $x$ and $-x$ so we can eliminate them, leaving us with:
-
-$$x e^{bx} = -(-x e^{-bx})$$
+$$z e^{bz} = -(-z e^{-bz})$$
 
 That is,
 
-$$e^{bx} = e^{-bx}$$
+$$e^{bz} = e^{-bz}$$
 
 Taking the logarithm on both sides:
 
-$$bx = -bx$$
+$$bz = -bz$$
 
-Since this has to hold for all $x$, this implies $b = 0$. We have now that:
+Since this has to hold for all $z$, this implies $b = 0$. We have now that:
 
-$$(8) \quad \sin(x) = x e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$$
+$$(2.1) \quad \sin(z) = z e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{z}{n \pi}\right) ^2\right)$$
 
-Now consider the derivative of $f(x)$ at 0, i.e. $f'(0)$. We know that if $f(x) = \sin x$, then $f'(x) = \cos x$ and $f'(0) = 1$. On the other side we can use the generalized product rule and evaluate it at 0. *Lemma 5* proves it's equal to $e^a$, so
+Now consider the derivative of $f(z)$ at 0, i.e. $f'(0)$. We know that if $f(z) = \sin z$, then $f'(z) = \cos z$ and $f'(0) = 1$. On the other side we can use the generalized product rule and evaluate it at 0. <i>Lemma 5</i> proves it's equal to $e^a$, so
 
-$$\frac{d\sin}{dx}(0) = \cos(0) = 1 = e^{a}$$
+$$\frac{d\sin}{dz}(0) = \cos(0) = 1 = e^{a}$$
 
-So $(8)$ becomes:
+So $(2.1)$ becomes:
 
-$$\sin(x) = x \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$$
+$$\sin(z) = z \prod_{n = 1}^{\infty} \left(1 - \left( \frac{z}{n \pi}\right) ^2\right)$$
 
-Dividing by $x$ and expanding the terms in the product we get:
+Dividing by $z$ and expanding the terms in the product we get:
 
-$$(9) \quad \frac{\sin(x)}{x} = \left( 1 - \left(\frac{x}{\pi}\right)^2 \right)\left( 1 - \left(\frac{x}{2\pi}\right)^2 \right)\left( 1 - \left(\frac{x}{3\pi}\right)^2 \right) \cdots$$
+$$\frac{\sin(z)}{z} = \left( 1 - \left(\frac{z}{\pi}\right)^2 \right)\left( 1 - \left(\frac{z}{2\pi}\right)^2 \right)\left( 1 - \left(\frac{z}{3\pi}\right)^2 \right) \cdots$$
 
 </proof>
 
@@ -274,7 +239,7 @@ Grouping by factors:
 
 $$1 + (b_3 + b_2 + b_1) x^2 + (b_2 b_3 + b_1 b_3 + b_1 b_2) x^4 + b_1 b_2 b_3 x^6$$
 
-We can observe the terms with $x^2$ are those where we have exactly one coefficient $b_i$, so in general, the resulting coefficient for $x^2$ given a product in this form, is the sum of all $b$'s. In (9), $b_i = -(\frac{1}{i\pi})^2$, so the coefficient for $x^2$ is:
+We can observe the terms with $x^2$ are those where we have exactly one coefficient $b_i$, so in general, the resulting coefficient for $x^2$ given a product in this form, is the sum of all $b$'s. In (5), $b_i = -(\frac{1}{i\pi})^2$, so the coefficient for $x^2$ is:
 
 $$-\left(\frac{1}{\pi^2} + \frac{1}{4\pi^2} + \frac{1}{9\pi^2} + \cdots \right) = - \frac{1}{\pi^2} \sum_{n = 1}^{\infty} \frac{1}{n^2}$$
 
@@ -310,10 +275,11 @@ In [Cepstrum]({{blog}}/2021/10/23/cepstrum.html) we also used the Taylor series 
 
 [Weierstrass factorization theorem]({{blog}}/2025/07/02/weierstrass-factorization-theorem.html). That post has a reference to this one.
 
+[Hadamard Factorization Theorem]({{blog}}/2025/08/30/hadamard-theorem.html). That post has a reference to this one.
 
 ## Appendix
 
-**Lemma 2.** Let $n$ be a natural number. Then:
+**Lemma 3.** Let $n$ be a natural number. Then:
 
 $$\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$$
 
@@ -349,58 +315,10 @@ $$\lim_{n \rightarrow \infty} \abs{\frac{1}{n!}}^{\frac{1}{n}} = 0$$
 
 </proof>
 
-**Lemma 3** The order of a function can be defined as
-
-$$\rho = \limsup_{r \rightarrow \infty} \frac{\ln \ln M_f(r)}{\ln r}$$
-
-<proof>
-
-If $\rho$ is the order of $f(x)$, then by definition there exists $r \ge R_0$ such that:
-
-$$M_f(r) = e^{r^\rho}$$
-
-We can always assume $R_0$ is positive and thus for some $\epsilon > 0$, we have $e^{r^\rho} < e^{r^(\rho + \epsilon)}$.
-
-Also since $\rho$ is a infimum for (3), for any $R_0$ there must be some $r > R_0$ such that
-
-$$M_f(r) > e^{r^{(\rho - \epsilon)}}$$
-
-if not the case we'd find a smaller infimum. So
-
-$$e^{r^{(\rho - \epsilon)}} < M_f(r) < e^{r^{(\rho + \epsilon)}}$$
-
-Taking the logarithm twice:
-
-$$\ln r {(\rho - \epsilon)} < \ln \ln M_f(r) < \ln r {(\rho + \epsilon)}$$
-
-Dividing by $\ln r$ and subtracting $\rho$:
-
-$$-\epsilon < \frac{\ln \ln M_f(r)}{\ln r} - \rho < \epsilon$$
-
-Which is equivalent to:
-
-$$\left\lvert \frac{\ln \ln M_f(r)}{\ln r} - \rho \right\rvert < \epsilon$$
-
-For any $\epsilon$ we can find *some* large enough $r$ such that the above holds. This does not necessary hold for all $r > R_0$ because $M_f(r)$ might not converge to a single value.
-
-However, since $\rho$ is the infimum for $r > R_0$, we know that:
-
-$$\left\lvert \left(\sup_{r > R_0} \frac{\ln \ln M_f(r)}{\ln r}\right) - \rho \right\rvert < \epsilon$$
-
-So now we can say that is true for all $r > R_0$ and this is the definition of limit:
-
-$$\lim_{R_0 \rightarrow \infty} \left(\sup_{r > R_0} \frac{\ln \ln M_f(r)}{\ln r}\right) = \rho$$
-
-And this is the definition of limit superior:
-
-$$\limsup_{r \rightarrow \infty} \frac{\ln \ln M_f(r)}{\ln r} = \rho$$
-
-</proof>
-
 
 **Lemma 4.**
 
-$$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
+$$\lim_{r \rightarrow \infty} M_{{\sin}(r)} = \frac{e^r}{2}$$
 
 <proof>
 
@@ -458,19 +376,19 @@ $$\lim_{r \rightarrow \infty} M_{\sin}(r) = \frac{e^r}{2}$$
 
 </proof>
 
-**Lemma 5.** The derivative of
+**Lemma 5.** Let
 
-$$x e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$$
+$$f(z) = z e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{z}{n \pi}\right) ^2\right)$$
 
-at 0 is equal to $e^{a}$.
+Then $f'(0) = e^{a}$.
 
 <proof>
 
-We can use the product rule. First we derive the first factor, $\frac{dx}{dx}$, which is 1 and keep the other terms:
+We can use the product rule. First we derive the first factor, $\frac{z}{dz}$, which is 1 and keep the other terms:
 
-$$e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$$
+$$e^{a} \prod_{n = 1}^{\infty} \left(1 - \left( \frac{z}{n \pi}\right) ^2\right)$$
 
-Evaluating this at $x = 0$ yields $e^{a}$. When we derive the term $\left(1 - \left( \frac{x}{n \pi}\right) ^2\right)$ for some $n$ and keep the rest, we'll have the factor $x$, so the product will evaluate to 0.
+Evaluating this at $z = 0$ yields $e^{a}$. When we derive the term $\left(1 - \left( \frac{z}{n \pi}\right) ^2\right)$ for some $n$ and keep the rest, we'll have the factor $z$, so the product will evaluate to 0.
 
 </proof>
 

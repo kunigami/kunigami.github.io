@@ -53,13 +53,16 @@ def find_statements_id_in_order(code) -> Dict[Tuple[str, str], str]:
     while i < len(code):
         found = False
         for stmt in STATEMENT_KEYWORDS:
-            stmt_regex = f"\\*\\*{stmt} ([A-Z0-9])(\\.?)\\*\\*"
+            stmt_regex = f"^\\*\\*{stmt} ([A-Z0-9])(\\.?)\\*\\*"
             # magic number 10: big enough to enclose the statement
             chunk = code[i : i + len(stmt) + 10]
             matches = re.search(stmt_regex, chunk)
             if matches:
                 needle = matches.group(0)
                 id = matches.group(1)
+                has_dot = matches.group(2)
+                if not has_dot:
+                    raise Exception(f'Wrong format. Should have a dot **[statement].** - got {chunk}')
                 if id in stmts_ids_by_ns:
                     raise Exception(f'{chunk} failed: id {id} already in stmts_ids_by_ns: {stmts_ids_by_ns[id]}')
                 stmts_ids_by_ns[(id,stmt)] = stmt
