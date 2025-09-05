@@ -1,5 +1,14 @@
 [
   {
+    "title": "Nonviolent Communication",
+    "vanity": "nonviolent-communication",
+    "author": "Marshall B. Rosenberg",
+    "rating": 5,
+    "image": "nvc.jpg",
+    "category": "Psychology",
+    "year": 2025
+  },
+  {
     "title": "The Tempest",
     "vanity": "the-tempest",
     "author": "William Shakespare",
