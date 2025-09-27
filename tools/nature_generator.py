@@ -28,6 +28,35 @@ HIERARCHY = {
 }
 
 
+def generate_links(path, name, content, node_type, depth=0):
+    if node_type == "Species":
+        return ""
+
+    child_type = HIERARCHY[node_type]
+    subpages = content["children"]
+    name_norm = normalize(name)
+    links = []
+    indent = "  " * depth
+    for subpage_name, subpage_info in subpages.items():
+        subpage_title = subpage_name
+        if "alias" in subpage_info:
+            alias = subpage_info["alias"]
+            subpage_title = f"{subpage_title} ({alias})"
+
+        subpage_name_norm = normalize(subpage_name)
+        subpage_path = path / name_norm / (subpage_name_norm + ".html")
+        link = f"{indent}* [{subpage_title}]({get_url(subpage_path)})"
+        links.append(link)
+        # Links for the children
+        for subpage_name, subpage in subpages.items():
+            child_links = generate_links(
+                path / name_norm, subpage_name, subpage, child_type, depth + 1
+            )
+            links.append(child_links)
+
+    return "\n".join(links)
+
+
 def generate_page(path, name, content, node_type):
     if node_type == "Species":
         return
@@ -38,18 +67,7 @@ def generate_page(path, name, content, node_type):
     name_norm = normalize(name)
     subpages = content["children"]
 
-    subpages_links = []
-    for subpage_name, subpage_info in subpages.items():
-        subpage_title = subpage_name
-        if "alias" in subpage_info:
-            alias = subpage_info["alias"]
-            subpage_title = f"{subpage_title} ({alias})"
-
-        subpage_name_norm = normalize(subpage_name)
-        subpage_path = path / name_norm / (subpage_name_norm + ".html")
-        link = f"* [{subpage_title}]({get_url(subpage_path)})"
-        subpages_links.append(link)
-    subpages_content = "\n".join(subpages_links)
+    subpages_content = generate_links(path, name, content, node_type)
 
     if name_norm == "_nature":
         title = "Nature"
@@ -64,7 +82,7 @@ title: "{title}"
 
 {{% include blog_vars.html %}}
 
-## {child_type}
+## Index
 {subpages_content}
 
 """
