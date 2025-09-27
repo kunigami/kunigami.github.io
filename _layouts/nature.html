@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<script type="text/javascript" src="{{site.baseurl}}/js/components/breadcrumb.js"></script>
+
+<div id="page">
+    <div class="inner">
+        <p>
+            <page-breadcrumb base="{{site.url}}" path="{{page.url}}" />
+        </p>
+
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+    </div>
+</div>

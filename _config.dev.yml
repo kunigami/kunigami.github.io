@@ -6,6 +6,8 @@ collections:
     output: true
   books:
     output: true
+  nature:
+    output: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

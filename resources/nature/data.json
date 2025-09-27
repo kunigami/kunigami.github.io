@@ -1,0 +1,31 @@
+{
+    "children": {
+        "Animalia": {
+            "children": {
+                "Chordata": {
+                    "children": {
+                        "Mammalia": {
+                            "children": {
+                                "Artiodactyla": {
+                                    "children": {
+                                        "Cervidae": {
+                                            "children": {
+                                                "Cervus": {
+                                                    "children": {
+                                                        "Cervus Canadensis": {
+                                                            "alias": "Elk"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
