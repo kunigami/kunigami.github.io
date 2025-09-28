@@ -57,13 +57,22 @@ def generate_links(path, name, content, node_type, depth=0):
 
 
 def generate_page(path, name, content, node_type):
+    name_norm = normalize(name)
+
     if node_type == "Species":
+        resources_path = Path("resources/nature") / name_norm
+        os.makedirs(resources_path, exist_ok=True)
+
+        file_path = path / f"{name_norm}.md"
+        # Creates if doesn't exist
+        with open(file_path, "a"):
+            pass
+
         return
 
     print(path / name)
 
     child_type = HIERARCHY[node_type]
-    name_norm = normalize(name)
     subpages = content["children"]
 
     subpages_content = generate_links(path, name, content, node_type)

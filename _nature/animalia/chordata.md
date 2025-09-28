@@ -18,6 +18,11 @@ title: "Phylum: Chordata"
         * [Least Chipmunk]({{site.url}}/nature/animalia/chordata/mammalia/rodentia/sciuridae/neotamias/least_chipmunk.html)
 
 * [Aves]({{site.url}}/nature/animalia/chordata/aves.html)
+  * [Galliformes]({{site.url}}/nature/animalia/chordata/aves/galliformes.html)
+    * [Phasianidae]({{site.url}}/nature/animalia/chordata/aves/galliformes/phasianidae.html)
+      * [Dendragapus]({{site.url}}/nature/animalia/chordata/aves/galliformes/phasianidae/dendragapus.html)
+        * [Dendragapus Obscurus (Dusky Grouse)]({{site.url}}/nature/animalia/chordata/aves/galliformes/phasianidae/dendragapus/dendragapus_obscurus.html)
+
   * [Passeriformes]({{site.url}}/nature/animalia/chordata/aves/passeriformes.html)
     * [Corvidae]({{site.url}}/nature/animalia/chordata/aves/passeriformes/corvidae.html)
       * [Perisoreus]({{site.url}}/nature/animalia/chordata/aves/passeriformes/corvidae/perisoreus.html)

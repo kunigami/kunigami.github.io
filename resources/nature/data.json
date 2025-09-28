@@ -40,6 +40,21 @@
                         },
                         "Aves": {
                             "children": {
+                                "Galliformes": {
+                                    "children": {
+                                        "Phasianidae": {
+                                            "children": {
+                                                "Dendragapus": {
+                                                    "children": {
+                                                        "Dendragapus Obscurus": {
+                                                            "alias": "Dusky Grouse"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 "Passeriformes": {
                                     "children": {
                                         "Corvidae": {
