@@ -48,11 +48,10 @@ def generate_links(path, name, content, node_type, depth=0):
         link = f"{indent}* [{subpage_title}]({get_url(subpage_path)})"
         links.append(link)
         # Links for the children
-        for subpage_name, subpage in subpages.items():
-            child_links = generate_links(
-                path / name_norm, subpage_name, subpage, child_type, depth + 1
-            )
-            links.append(child_links)
+        child_links = generate_links(
+            path / name_norm, subpage_name, subpage_info, child_type, depth + 1
+        )
+        links.append(child_links)
 
     return "\n".join(links)
 

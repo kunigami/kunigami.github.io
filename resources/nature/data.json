@@ -20,6 +20,47 @@
                                             }
                                         }
                                     }
+                                },
+                                "Rodentia": {
+                                    "children": {
+                                        "Sciuridae": {
+                                            "children": {
+                                                "Neotamias": {
+                                                    "alias": "Chipmunk",
+                                                    "children": {
+                                                        "Least Chipmunk": {
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "Aves": {
+                            "children": {
+                                "Passeriformes": {
+                                    "children": {
+                                        "Corvidae": {
+                                            "children": {
+                                                "Perisoreus": {
+                                                    "children": {
+                                                        "Perisoreus Canadensis": {
+                                                            "alias": "Canada Jay"
+                                                        }
+                                                    }
+                                                },
+                                                "Cyanocitta": {
+                                                    "children": {
+                                                        "Cyanocitta Stelleri": {
+                                                            "alias": "Steller's Jay"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
