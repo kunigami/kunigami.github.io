@@ -27,6 +27,12 @@ Modulus:
 
 $$\abs{z}^2 = z \overline{z}$$
 
+**Euler's identity**:
+
+$$
+e^{i\pi} + 1 = 0
+$$
+
 ### Properties
 
 Conjugate is invariant with the arithmetic operations of addition, subtraction, multiplication and division:
@@ -44,24 +50,40 @@ $$
 
 ### Properties
 
-Triangle inequality:
+**Triangle inequality.**
 
 $$\abs{a + b} \le \abs{a} + \abs{b}$$
 
-Multiplication:
+**Multiplication.**
 
 $$\abs{a \cdot b} = \abs{a} \cdot \abs{b}$$
 
-## Expontential
-
-If $z = x + i y$
+**Exponential.** Let $x$ be a real value and $z$ a complex number. Then:
 
 $$
-\abs{e^z} = e^{x}
+\abs{x^z} = x^{\Re(z)}
 $$
 
 <proof>
-$$\abs{e^z} = \abs{e^x} \abs{e^{i y}}$$
 
-The second factor is a complex number in polar form with $r = 1$, so the only portion that contributes to resulting modulus is the first factor, which is real.
+Rebase $x^z$ as $e^{z \log x}$ and let $z = a + i b$ for $a, b \in \mathbb{R}$. Then:
+
+$$x^z = e^{a \log x} e^{i b \log x}$$
+
+Apply modulus:
+
+$$\abs{x^z} = \abs{e^{a \log x}} \abs{e^{i b \log x}}$$
+
+The second term is a complex number in polar notation with $r = 1$ and $\theta = b \log x$, so $\abs{e^{i b \log x}} = 1$ and hence:
+
+$$\abs{x^z} = \abs{e^{a \log x}}$$
+
+Since all terms are reals,
+
+$$\abs{e^{a \log x}} = e^{a \log x}$$
+
+Rebasing back:
+
+$$= x^{a} = x^{\Re(z)}$$
+
 </proof>
