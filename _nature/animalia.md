@@ -19,6 +19,11 @@ title: "Kingdom: Animalia"
           * [Least Chipmunk]({{site.url}}/nature/animalia/chordata/mammalia/rodentia/sciuridae/neotamias/least_chipmunk.html)
 
   * [Aves]({{site.url}}/nature/animalia/chordata/aves.html)
+    * [Anseriformes (Waterfowl)]({{site.url}}/nature/animalia/chordata/aves/anseriformes.html)
+      * [Anatidae (Duck, Geese, Swans)]({{site.url}}/nature/animalia/chordata/aves/anseriformes/anatidae.html)
+        * [Alopochen]({{site.url}}/nature/animalia/chordata/aves/anseriformes/anatidae/alopochen.html)
+          * [Alopochen aegyptiaca (Egyptian Goose)]({{site.url}}/nature/animalia/chordata/aves/anseriformes/anatidae/alopochen/alopochen_aegyptiaca.html)
+
     * [Galliformes]({{site.url}}/nature/animalia/chordata/aves/galliformes.html)
       * [Phasianidae]({{site.url}}/nature/animalia/chordata/aves/galliformes/phasianidae.html)
         * [Dendragapus]({{site.url}}/nature/animalia/chordata/aves/galliformes/phasianidae/dendragapus.html)
@@ -31,5 +36,20 @@ title: "Kingdom: Animalia"
 
         * [Cyanocitta]({{site.url}}/nature/animalia/chordata/aves/passeriformes/corvidae/cyanocitta.html)
           * [Cyanocitta Stelleri (Steller's Jay)]({{site.url}}/nature/animalia/chordata/aves/passeriformes/corvidae/cyanocitta/cyanocitta_stelleri.html)
+
+    * [Pelecaniformes]({{site.url}}/nature/animalia/chordata/aves/pelecaniformes.html)
+      * [Threskiornithidae (Ibis)]({{site.url}}/nature/animalia/chordata/aves/pelecaniformes/threskiornithidae.html)
+        * [Bostrychia]({{site.url}}/nature/animalia/chordata/aves/pelecaniformes/threskiornithidae/bostrychia.html)
+          * [Bostrychia Hagedash (Hadada Ibis)]({{site.url}}/nature/animalia/chordata/aves/pelecaniformes/threskiornithidae/bostrychia/bostrychia_hagedash.html)
+
+    * [Sphenisciformes (Penguin)]({{site.url}}/nature/animalia/chordata/aves/sphenisciformes.html)
+      * [Spheniscidae (Penguin)]({{site.url}}/nature/animalia/chordata/aves/sphenisciformes/spheniscidae.html)
+        * [Spheniscus (Banded Penguin)]({{site.url}}/nature/animalia/chordata/aves/sphenisciformes/spheniscidae/spheniscus.html)
+          * [Spheniscus Demersus (African Penguin)]({{site.url}}/nature/animalia/chordata/aves/sphenisciformes/spheniscidae/spheniscus/spheniscus_demersus.html)
+
+    * [Struthioniformes (Ostrich)]({{site.url}}/nature/animalia/chordata/aves/struthioniformes.html)
+      * [Struthionidae (Ostrich)]({{site.url}}/nature/animalia/chordata/aves/struthioniformes/struthionidae.html)
+        * [Struthio (Ostrich)]({{site.url}}/nature/animalia/chordata/aves/struthioniformes/struthionidae/struthio.html)
+          * [Struthio Camelus (Ostrich)]({{site.url}}/nature/animalia/chordata/aves/struthioniformes/struthionidae/struthio/struthio_camelus.html)
 
 

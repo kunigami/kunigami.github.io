@@ -40,6 +40,23 @@
                         },
                         "Aves": {
                             "children": {
+                                "Anseriformes": {
+                                    "alias": "Waterfowl",
+                                    "children": {
+                                        "Anatidae": {
+                                            "alias": "Duck, Geese, Swans",
+                                            "children": {
+                                                "Alopochen": {
+                                                    "children": {
+                                                        "Alopochen aegyptiaca": {
+                                                            "alias": "Egyptian Goose"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 "Galliformes": {
                                     "children": {
                                         "Phasianidae": {
@@ -70,6 +87,58 @@
                                                     "children": {
                                                         "Cyanocitta Stelleri": {
                                                             "alias": "Steller's Jay"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "Pelecaniformes": {
+                                    "children": {
+                                        "Threskiornithidae": {
+                                            "alias": "Ibis",
+                                            "children": {
+                                                "Bostrychia": {
+                                                    "children": {
+                                                        "Bostrychia Hagedash": {
+                                                            "alias": "Hadada Ibis"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "Sphenisciformes": {
+                                    "alias": "Penguin",
+                                    "children": {
+                                        "Spheniscidae": {
+                                            "alias": "Penguin",
+                                            "children": {
+                                                "Spheniscus": {
+                                                    "alias": "Banded Penguin",
+                                                    "children": {
+                                                        "Spheniscus Demersus": {
+                                                            "alias": "African Penguin"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "Struthioniformes": {
+                                    "alias": "Ostrich",
+                                    "children": {
+                                        "Struthionidae": {
+                                            "alias": "Ostrich",
+                                            "children": {
+                                                "Struthio": {
+                                                    "alias": "Ostrich",
+                                                    "children": {
+                                                        "Struthio Camelus": {
+                                                            "alias": "Ostrich"
                                                         }
                                                     }
                                                 }
