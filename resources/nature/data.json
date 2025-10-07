@@ -21,6 +21,21 @@
                                         }
                                     }
                                 },
+                                "Carnivora": {
+                                    "children": {
+                                        "Herpestidae": {
+                                            "children": {
+                                                "Mungos": {
+                                                    "children": {
+                                                       "Mungos Mungo": {
+                                                            "alias": "Banded Mongoose"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 "Rodentia": {
                                     "children": {
                                         "Sciuridae": {
@@ -28,7 +43,8 @@
                                                 "Neotamias": {
                                                     "alias": "Chipmunk",
                                                     "children": {
-                                                        "Least Chipmunk": {
+                                                        "Neotamias Minimus": {
+                                                            "alias": "Least Chipmunk"
                                                         }
                                                     }
                                                 }
