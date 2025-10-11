@@ -16,6 +16,11 @@ title: "Class: Aves"
     * [Dendragapus]({{site.url}}/nature/animalia/chordata/aves/galliformes/phasianidae/dendragapus.html)
       * [Dendragapus Obscurus (Dusky Grouse)]({{site.url}}/nature/animalia/chordata/aves/galliformes/phasianidae/dendragapus/dendragapus_obscurus.html)
 
+* [Otidiformes (Bustard)]({{site.url}}/nature/animalia/chordata/aves/otidiformes.html)
+  * [Otididae (Bustard)]({{site.url}}/nature/animalia/chordata/aves/otidiformes/otididae.html)
+    * [Ardeotis]({{site.url}}/nature/animalia/chordata/aves/otidiformes/otididae/ardeotis.html)
+      * [Ardeotis Kori (Kori Bustard)]({{site.url}}/nature/animalia/chordata/aves/otidiformes/otididae/ardeotis/ardeotis_kori.html)
+
 * [Passeriformes]({{site.url}}/nature/animalia/chordata/aves/passeriformes.html)
   * [Corvidae]({{site.url}}/nature/animalia/chordata/aves/passeriformes/corvidae.html)
     * [Perisoreus]({{site.url}}/nature/animalia/chordata/aves/passeriformes/corvidae/perisoreus.html)
@@ -23,6 +28,10 @@ title: "Class: Aves"
 
     * [Cyanocitta]({{site.url}}/nature/animalia/chordata/aves/passeriformes/corvidae/cyanocitta.html)
       * [Cyanocitta Stelleri (Steller's Jay)]({{site.url}}/nature/animalia/chordata/aves/passeriformes/corvidae/cyanocitta/cyanocitta_stelleri.html)
+
+  * [Muscicapidae]({{site.url}}/nature/animalia/chordata/aves/passeriformes/muscicapidae.html)
+    * [Cossypha]({{site.url}}/nature/animalia/chordata/aves/passeriformes/muscicapidae/cossypha.html)
+      * [Cossypha Heuglini (Heuglin's Robin)]({{site.url}}/nature/animalia/chordata/aves/passeriformes/muscicapidae/cossypha/cossypha_heuglini.html)
 
 * [Pelecaniformes]({{site.url}}/nature/animalia/chordata/aves/pelecaniformes.html)
   * [Threskiornithidae (Ibis)]({{site.url}}/nature/animalia/chordata/aves/pelecaniformes/threskiornithidae.html)

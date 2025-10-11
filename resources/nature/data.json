@@ -18,6 +18,18 @@
                                                     }
                                                 }
                                             }
+                                        },
+                                        "Giraffidae": {
+                                            "children": {
+                                                "Giraffa": {
+                                                    "alias": "Giraffe",
+                                                    "children": {
+                                                        "Giraffa Giraffa": {
+                                                            "alias": "Southern Giraffe"
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 },
@@ -29,6 +41,23 @@
                                                     "children": {
                                                        "Mungos Mungo": {
                                                             "alias": "Banded Mongoose"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "Proboscidea": {
+                                    "children": {
+                                        "Elephantidae": {
+                                            "alias": "Elephant",
+                                            "children": {
+                                                "Loxodonta": {
+                                                    "alias": "African Elephant",
+                                                    "children": {
+                                                        "Loxodonta Africana": {
+                                                            "alias": "African Bush Elephant"
                                                         }
                                                     }
                                                 }
@@ -88,6 +117,23 @@
                                         }
                                     }
                                 },
+                                "Otidiformes": {
+                                    "alias": "Bustard",
+                                    "children": {
+                                        "Otididae": {
+                                            "alias": "Bustard",
+                                            "children": {
+                                                "Ardeotis": {
+                                                    "children": {
+                                                        "Ardeotis Kori": {
+                                                            "alias": "Kori Bustard"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 "Passeriformes": {
                                     "children": {
                                         "Corvidae": {
@@ -103,6 +149,17 @@
                                                     "children": {
                                                         "Cyanocitta Stelleri": {
                                                             "alias": "Steller's Jay"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "Muscicapidae": {
+                                            "children": {
+                                                "Cossypha": {
+                                                    "children": {
+                                                        "Cossypha Heuglini": {
+                                                            "alias": "Heuglin's Robin"
                                                         }
                                                     }
                                                 }
