@@ -1,5 +1,15 @@
 [
   {
+    "title": "Systems Performance",
+    "vanity": "systems-performance",
+    "url": "blog/2025/10/10/review-systems-performance.html",
+    "author": "Brendan Gregg",
+    "rating": 4,
+    "image": "systems-performance.jpg",
+    "category": "Programming",
+    "year": 2025
+  },
+  {
     "title": "Nonviolent Communication",
     "vanity": "nonviolent-communication",
     "author": "Marshall B. Rosenberg",

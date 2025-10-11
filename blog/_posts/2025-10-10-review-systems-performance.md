@@ -10,7 +10,7 @@ vanity: "2025-10-10-review-systems-performance"
 
 
 <figure class="image_float_left">
-  <img src="{{resources}}/books/the-hard-parts.jpg" alt="Book cover." />
+  <img src="{{resources}}/books/systems-performance.jpg" alt="Book cover." />
 </figure>
 
 
