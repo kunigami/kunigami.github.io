@@ -3,7 +3,7 @@ layout: post
 title: "Review: Systems Performance"
 tags: [review, distributed systems, operating systems]
 excerpt_separator: <!--more-->
-vanity: "2025-09-13-review-systems-performance"
+vanity: "2025-10-10-review-systems-performance"
 ---
 
 {% include blog_vars.html %}
@@ -18,11 +18,12 @@ In this post I’ll share my notes on the book *Systems Performance* by Brendan 
 
 In summary, this book covers major components of an operating system such as CPU, memory, disk and network and for each of them provides methodologies and tools for analyzing performance.
 
+<!--more-->
+
 The book focuses on two families of operating systems: Solaris and Linux. The concepts are largely shared between them but some tooling and metrics are specific to one of the other.
 
 The book has over 700 pages and 13 chapters. This is a pretty thick volume, but I skipped anything related to Solaris and any details about a tool called DTrace. The author seems to be an expert on this tool and spends a considerable number of pages on scripts for it, but a cursory search tells me DTrace is not very popular or developed for Linux systems.
 
-<!--more-->
 
 The audience of the book is for performance engineers, who need to find performance issues without knowledge of the application. One example is for a cloud provider where they might need to help customers with their performance problems but they don't have expertise on the client's code.
 
