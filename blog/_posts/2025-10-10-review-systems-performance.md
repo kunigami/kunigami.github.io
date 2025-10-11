@@ -24,29 +24,29 @@ The book focuses on two families of operating systems: Solaris and Linux. The co
 
 The book has over 700 pages and 13 chapters. This is a pretty thick volume, but I skipped anything related to Solaris and any details about a tool called DTrace. The author seems to be an expert on this tool and spends a considerable number of pages on scripts for it, but a cursory search tells me DTrace is not very popular or developed for Linux systems.
 
+The audience of the book is for performance engineers, who need to find performance issues without knowledge of the application. One example is of a cloud provider where they might need to help customers with their performance problems but they don't have expertise on the client's code.
 
-The audience of the book is for performance engineers, who need to find performance issues without knowledge of the application. One example is for a cloud provider where they might need to help customers with their performance problems but they don't have expertise on the client's code.
-
-A lot of the chapters provide overview of operating systems topics such as CPU, Memory, Disk and Network. In compiling my notes, I also did extra search to help understand some parts better, so the content presented here is not strictly from the book.
+A lot of the chapters provide an overview of operating systems topics such as CPU, Memory, Disk and Network. In compiling my notes, I also did extra searching to help me understand some parts better, so the content presented here is not strictly from the book.
 
 In what follows I list some topics I learned from the book and found interesting.
 
 ## Methodology
 
-The book provides suggestions of processes or methodologies to follow when debugging some performance issue. Many of them feels like common sense such as having a runbook or checklist to follow during investigation to make sure we're not missing anything obvious. This includes metrics to look at, tools to use, and processes to try, e.g. microbenchmarking.
+The book provides suggestions of processes or methodologies to follow when debugging performance issues. Many of them feels like common sense such as having a runbook or checklist to follow during an investigation to make sure one is not missing anything obvious. This includes metrics to look at, tools to use, and processes to try, e.g. microbenchmarking.
 
-Another is comparing metrics from before and after since we can narrow down when something changed and what. If aggregate metrics don't provide enough detail, we might want to trace individual events (via perf and DTrace).
+Another is comparing metrics from before and after since it can help narrow down when something changed and what. If aggregate metrics don't provide enough detail, we might want to trace individual events (via perf and DTrace).
 
 The two main processes I learned from the book are the *USE Method* and *Workload Characterization*.
 
-**USE Method.** stands for Utilization, Saturation and Errors. This is a quick checklist for ruling out issues. Errors are usually the easiest to detect. Utilization is measured in percentage, but once a system is at peak utilization, we need to look at saturation metrics (e.g. queueing).
+**USE Method.** Stands for Utilization, Saturation and Errors. This is a quick checklist for ruling out issues. Errors are usually the easiest to detect. Utilization is measured in percentage, but once a system is at peak utilization, we need to look at saturation metrics (e.g. queueing).
 
 **Workload Characterization.** Focuses on describing the input (load) to the system. Questions we might ask:
 
 * Who is causing the load? e.g. process ID
 * What are the load characteristics? e.g. throughput
 * How is the load changing over time?
-* One outcome of this is to realize some load was not meant to be there, for example, an unexpected backup mechanism causing high disk and CPU utilization. As the author says:
+
+One outcome is to realize some load was not meant to be there, for example, an unexpected backup mechanism causing high disk and CPU utilization. As the author says:
 
 > Sometimes the best performance wins are the result of eliminating unnecessary work.
 
@@ -56,13 +56,13 @@ The author suggests having a checklist for load characterization questions to av
 
 **Kernel and CPU work.** For most CPU operations performed by the user process such as arithmetic, control flow, memory reads/writes, the kernel is not involved. It gets involved for I/O, interrupts or when page faults happen during memory access.
 
-**Jiffy.** Historically, a jiffy was the "virtual clock tick" of the Linux kernel, corresponding to the smallest unit of time supported and was about 4ms, so kernel scheduling would be a multiple of this. Nowards the kernel has high resolution timers with sub-jiffy granularity.
+**Jiffy.** Historically, a jiffy was the "virtual clock tick" of the Linux kernel, corresponding to the smallest unit of time supported and was about 4ms, so kernel scheduling would be a multiple of this. Nowadays the kernel has high resolution timers with sub-jiffy granularity.
 
-**Processes and threads.** The kernel doesn't distinguish between user processes and threads. Both as called tasks, but the task corresponding to user threads share more stuff.
+**Processes and threads.** The kernel doesn't distinguish between user processes and threads. Both are called tasks, but the task corresponding to user threads typically share more stuff (e.g. memory address space).
 
-**Lazy Evaluation.** The kernel maps virtual memory to physical on demand, when a write occurs, not when memory is allocated. This might mean we can `std::bad_alloc` not when we call `malloc()` but when we perform a write.
+**Lazy Evaluation.** The kernel maps virtual memory to physical on demand, when a write occurs, not when memory is first allocated. This means we can get a `std::bad_alloc` not when we call `malloc()` but when we perform a write.
 
-When `fork()`-ing a process the kernel uses copy-on-write (COW). Instead of immediately copying the code, data, stack and heap, it only does when one of the processes perform a write.
+When `fork()`-ing a process the kernel uses copy-on-write (COW). Instead of immediately copying the code, data, stack and heap, it only does so when one of the processes performs a write.
 
 **Paging vs. Swapping.** In Linux swapping and paging are the same thing and it means moving pages (4KB) from memory to disk.
 
@@ -74,11 +74,11 @@ The book provides an interesting post from Linus Torvalds:
 
 **Sockets, Cores, Hardware Threads.** Sockets is the physical slot where a CPU die connects to the motherboard. A given CPU die typically has multiple cores and each core might have one or more hardware threads. Each CPU core has its own [L1 cache]({{blog}}/2020/04/24/cpu-cache.html), but threads share them. **Logical CPUs** corresponds to the total number of hardware threads.
 
-**CPU stalls.** Is when it's waiting for data from the main memory.
+**CPU stalls.** Is when the CPU is waiting for data from the main memory.
 
-**Instruction width.** corresponds to how many instructions a CPU can process within a clock cycle.
+**Instruction width.** Corresponds to how many instructions a CPU can process within a clock cycle (parallelism).
 
-**CPU Saturation.** is when there is more work to do than CPUs to run them on. The kernel maintains a queue that can be queried via:
+**CPU Saturation.** Is when there is more work to do than CPUs to run them on. The kernel maintains a queue that can be queried via:
 
 {% highlight text %}
 $ vmstat 1
@@ -116,13 +116,11 @@ sys     0m0.878s
 
 **Anonymous and non-anonymous.** Anonymous memory is not backed by a file or disk. This includes the heap and stack. Example of non-anonymous memory is code, shared libraries and memory-mapped files.
 
-**Memory utilization.** User space allocators such as [jemalloc](https://www.kuniga.me/blog/2025/07/15/jemalloc.html) typically doesn't return memory back to the kernel, even when calling `free()`. It keeps the memory around in case more is requested later.
+**Memory utilization.** User space allocators such as [jemalloc](https://www.kuniga.me/blog/2025/07/15/jemalloc.html) typically don't return memory back to the kernel, even when calling `free()`. It keeps the memory around in case more is requested later.
 
 This means that if tracking memory utilization we might not see it going down. A more useful approach is to track/profile memory allocations.
 
-**Memory reclamation.** The kernel can reclaim memory in two ways when there's memory pressure: for memory backed by disk (non-anonymous), the memory acts as a cache, so it can drop them.
-
-If no such memory is available, it can start swapping anonymous page to disk. If it can't perform swaps it might attempt to kill specific processes (OOM killer).
+**Memory reclamation.** The kernel can reclaim memory back when there's memory pressure. First, it tries to evit memory backed by disk (non-anonymous). In this case, since the memory acts as a cache for the files on disk, it can drop them. In case no such memory can be evicted, it tries to swap anonymous page to disk. Finally, if it can't perform swaps it might attempt to kill specific processes (OOM killer).
 
 **Shared Libraries.** If multiple processes use the same library, the kernel doesn't load a copy of them in memory for each process. It instead loads it once and maps the corresponding virtual address of each process to the same position in physical memory.
 
@@ -134,7 +132,7 @@ The tool `ps` reports resident memory for each process under the column `RSS` wh
 pmap -x <pid>
 {% endhighlight %}
 
-It's most useful for the non-anonymous because it show how much memory the main binary and shared library occupies. It breaks down them by write mode:
+It's most useful for the non-anonymous because it shows how much memory the main binary and shared library occupy. It breaks down them by write mode:
 
 {% highlight text %}
 Address           Kbytes     RSS   Dirty Mode  Mapping
@@ -152,17 +150,17 @@ Address           Kbytes     RSS   Dirty Mode  Mapping
 
 ## Filesystem
 
-**Block vs. Extent.** Block-based filesystems store data in fixed-sized blocks. It can lead to a lot of blocks for large files, which adds overhead due to metadata per block. Extent-based filesystems tries to use a single block, called extent, defined by an offset + size, and if the file grows it *extends* the existing block instead of allocating new ones. This reduces overhead of having too many small blocks.
+**Block vs. Extent.** Block-based filesystems store data in fixed-sized blocks. It can lead to a lot of blocks for large files, which adds overhead due to metadata per block. Extent-based filesystems tries to use a single block, called *extent*, defined by an offset + size, and if the file grows it *extends* the existing block instead of allocating new ones. This reduces overhead of having too many small blocks.
 
-If it can't, because due to some existing block, it then starts a new extent in a new location. It's still possible to have fragmentation this way, so some filesytems pre-allocate space to allow for growth.
+If it can't, because of some existing block, it then starts a new extent in a new location. It is still possible to have fragmentation this way, so some filesytems pre-allocate space to allow for growth.
 
-**Copy-on-Write.** In filesystems implementing this, block data is immutable. If modification need to be made, a new block with the modification is created elsewhere and pointers updated.
+**Copy-on-Write.** In filesystems implementing this, block data is immutable. If modifications need to be made, a new block with the modification is created elsewhere and pointers updated.
 
 This model is more fault tolerance since if a crash happens during the write, the old data is intact. It can lead to performance overhead if the block is big.
 
 **Volumes and Pools Storage.** I had trouble understanding the difference between these two. A mental model that makes sense to me is that: a volume is synonymous with virtual disk or block device. There's a 1:1 relationship between a filesystem and a volume.
 
-A volume can be backed by exactly one physical disk or a portion of a physical disk. It can also be backed by multiple disks. In this case, the layer that abstracts this away from the volume, so that it "seems" a single disk is the pool storage.
+A volume can be backed by exactly one physical disk or a portion of a physical disk. It can also be backed by multiple disks. In this latter case, the layer that abstracts this away from the volume - so that it "seems" a single disk - is the pool storage.
 
 The way the book presents these concepts suggests these are mutually exclusive, which is confusing.
 
@@ -176,15 +174,13 @@ echo 1 > /proc/sys/vm/drop_caches
 
 Most of the new things I learned were about SSDs (Solid State Drives).
 
-**Flash.** is organized into pages (4-16KB) and grouped into blocks (1-16MB). Reads and writes are done based on page granularity. However, writes do not happen in-place. Instead they copy the page data, modify and then write, no matter how small the write is.
-
-Writes can only happen in erased pages and pages can only be erased in batch (blocks). So generally writes are slower than reads (up to 2-3x), as opposed to HDDs in which read and write performance are more similar.
+**Flash.** is organized into pages (4-16KB) and grouped into blocks (1-16MB). Reads and writes are done based at the page granularity. Writes do not happen in-place. Instead they first read the page data, modify and then write in a different location, no matter how small the write is. Also, writes can only happen in erased pages and pages can only be erased in batch (blocks). So generally writes are slower than reads (up to 2-3x), as opposed to HDDs in which read and write performance are more similar.
 
 **Lifespan.** SSDs are known for having limited amount of writes it supports. A low-end SSDs might support 1k writes on a given block. High-end SSDs can support up to 100k.
 
-To reduce this problem, SSD controllers try to spread the load so that it doesn't keep writing on the same block over. The SSD might also be overprovisioned: internally it has more capacity than stated, so that the controller can affort having a few bad blocks.
+To reduce this problem, SSD controllers try to spread the load so that it doesn't keep writing on the same block over. The SSD might also be overprovisioned: internally it has more capacity than stated, so that the controller can afford having a few blocks go bad.
 
-**Storage Interfaces.** These are standards defining how a storage device communicates with the host, not only the protocols but the hardware interfaces. For HDDs, SATA and SAS are often used. SATA stands for Serial ATA (*Advanced Technology Attachment*) and SAS stands for Serial Attached SCSI (*Small Computer System Interface*). SAS is more performant and robust, and it used by Enterprise systems. SATA is more common in consumer devices.
+**Storage Interfaces.** These are standards defining how a storage device communicates with the host, not only the protocols but the hardware interfaces. For HDDs, SATA and SAS are often used. SATA stands for Serial ATA (*Advanced Technology Attachment*) and SAS stands for Serial Attached SCSI (*Small Computer System Interface*). SAS is more performant and robust, and is used by Enterprise systems. SATA is more common in consumer devices.
 
 SSDs typically use the NVMe (Non-Volatile Memory Express) procotol, generally on top of the PCIe (*Peripheral Component Interconnect Express*) bus.
 
@@ -193,15 +189,15 @@ SSDs typically use the NVMe (Non-Volatile Memory Express) procotol, generally on
 
 ## Network
 
-**Network Interface Card.** or NIC. It's a component that connects the computer with the physical network. It has one or more ports (e.g. eth0, eth1, etc.), and a network controller, a microprocessor that transfers packets from the ports to the OS.
+**Network Interface Card.** or NIC. It's a component that connects the computer with the physical network. It has one or more ports (e.g. eth0, eth1, etc.), and a network controller: a microprocessor that transfers packets from the ports to the OS.
 
-**Buffering.** TCP can buffer packets both at the sender and receiver level. Buffering can also happen lower in the stack, such as at routers and switches.
+**Buffering.** TCP can buffer packets both at the sender and receiver level. Buffering can also happen lower in the stack, such as routers and switches.
 
 **Three-way Handshake.** TCP specifies the three-way handshake protocol for a client-server to establish a connection. The client first sends a SYN packet to the server. The server replies with a SYN + ACK packet and finally the client sends an ACK packet.
 
 The kernel keeps separate queues for connections that haven't been ACKed by the client and those that have. The reason is that it won't create sockets for connections on the first queue, to protect against a type of DDoS attack in which clients flood the server with SYN requests.
 
-Once a connection is established (i.e. server receives ACK packet from client), it gets moved to the second queue and a socket is created. Then a process in user space can process an entry from the queue [`accept()`]({{blog}}/2020/03/07/sockets.html) that connection.
+Once a connection is established (i.e. server receives ACK packet from client), it gets moved to the second queue and a socket is created. Then the program in user space can process an entry from the queue [`accept()`]({{blog}}/2020/03/07/sockets.html) that connection.
 
 If there's a flood of SYN connections and the first queue gets full, it can drop packets. The rationale is that legitimate clients will do a retransmit. Packet drops can be used as a proxy for network saturation and explain connection latency.
 
@@ -217,15 +213,15 @@ It can be used to probe for error handling because routers can return error mess
 
 ## Virtualization
 
-**OS Virtualization** is when there's a single OS, but it supports multiple tenants for example via Linux namespaces.
+**OS Virtualization** is when there's a single OS, but it supports multiple tenants.
 
-In **Hardware Virtualization** tenants are different OSes, so for example Window and Linux can coexist on the same physical host. The coordinator for this is called a **hypervisor** and can be of type 1 or type 2.
+In **Hardware Virtualization** tenants are different OSes, so for example Window and Linux OSes can coexist in the same physical host. The component responsible for coordinating this is called a **hypervisor** and can be of type 1 or type 2.
 
-*Type 1* hypervisor is a bare-metal type of hypervisor and is its own specialized OS, called the host OS. It's more performant but requires hardware support. For example, Google Compute Engine and Amazon AWS use a regular Linux as the host OS with a module called KVM (*Kernel-based Virtual Machine*) + QEMU (user space), while VMWare provides a custom lightweight OS called VMware ESX.
+A *Type 1* hypervisor, also known as "bare-metal", is its own specialized OS, called the host OS. It's more performant but requires hardware support. For example, Google Compute Engine and Amazon AWS use a regular Linux as the host OS with a kernel module called KVM (*Kernel-based Virtual Machine*) and a user-space program called QEMU (*Quick EMUlator*), while VMWare provides a custom lightweight OS called VMware ESX.
 
-There is a type of virtualization called *paravirtualization* in which does not require hardware support but the host OS must be modified to support virtualization.
+There is a type of virtualization called *paravirtualization* in which does not require hardware support but the host OS must be modified to support virtualization. Apparently AWS used to use this, but it got phased-out.
 
-*Type 2* hypervisor runs as a user space process on the host OS, such as *VMware Workstation* and *VirtualBox*.
+A *Type 2* hypervisor runs as a user space process on the host OS, such as *VMware Workstation* and *VirtualBox*, so it emulates everything outside of the kernel, so it can be slow.
 
 From Systems Performance point of view, OS virtualization is much better, since it has fewer layers and the same tooling and metrics can be used for analysis.
 
