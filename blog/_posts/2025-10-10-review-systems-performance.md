@@ -233,4 +233,4 @@ I didn't get a lot of value from the performance analysis from this book. Perhap
 
 I did find it quite a good refresher on OS concepts. I learned many new things about network and virtualization in particular.
 
-The tools present overlap a lot and feel like an encyclopedia. The methodology feels scattered and abstract, even when applied to specific dimensions such as CPU and memory. On that node, my favorite chapter was the last one, where the author provides a case study on how we root caused some performance issue. I wish he provided more examples instead of going for completeness, but perhaps the goal of the book is to be used as reference.
+The tools presented overlap a lot and it felt like an encyclopedia. The methodology feels scattered and abstract, even when applied to specific dimensions such as CPU and memory. On that note, my favorite chapter was the last one, where the author provides a case study on how we root caused some performance issue. I wish he provided more examples instead of going for completeness, but perhaps the goal of the book is to be used as reference.
