@@ -1,5 +1,14 @@
 [
   {
+    "title": "Atomic Habits",
+    "vanity": "atomic-habits",
+    "author": "James Clear",
+    "rating": 5,
+    "image": "atomic-habits.jpg",
+    "category": "Psychology",
+    "year": 2025
+  },
+  {
     "title": "Systems Performance",
     "vanity": "systems-performance",
     "url": "blog/2025/10/10/review-systems-performance.html",
