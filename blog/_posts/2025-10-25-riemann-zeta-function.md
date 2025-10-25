@@ -327,23 +327,25 @@ $$
 
 This formula is useful when $\Re(s) \lt 0$, because then $\Re(1 - s) \gt 1$ and we can more easily compute $\zeta(1 - s)$ (since it's the Dirichlet series), than we can compute $\zeta(s)$. We'd still need to use $(3)$ for the interval $0 \le \Re(s) \lt 1$.
 
-## Zeros of the Riemman Zeta Function
+## Zeros and Poles of the Riemman Zeta Function
 
-What are the zeros of the zeta function? For $\Re(s) \gt 1$, the zeta function coincides with the Dirichlet series, which only has positive terms so it can't add up to 0, so no zeros there.
+**Zeroes.** What are the zeros of the zeta function? For $\Re(s) \gt 1$, the zeta function coincides with the Dirichlet series, which only has positive terms so it can't add up to 0, so no zeros there.
 
-If we assume $\Re(s) \lt 0$, then $\zeta(1 - s)$ doesn't have zeros so if they exist it must come from the other factors of $(2)$. Let's define:
+Let's assume $\Re(s) \lt 0$. In this case $\zeta(1 - s)$ cannot be 0 because it coincides with the Dirichlet series (case above). So the zeros must come from the remaining factors. Let's define:
 
 $$
 A(s) = 2^s \pi^{s-1} \sin \left(\frac{\pi s}{2}\right) \Gamma(1 - s)
 $$
 
-So $(2)$ becomes $\zeta(s) = A(s) \zeta(1 - s)$ and analyze the zeros of $A(s)$. In [4] we learned that the Gamma function $\Gamma(z)$ has the non-positive integers as poles, so assuming $z = 1 - s$, then $\Gamma(1 - s)$ has poles for $s$ as the positive integers.
-
 The function $\sin(z)$ has zeros for $\pi n$, so assuming $z = \pi s / 2$, $\sin(\pi s / 2)$ has zeros for the even integers, $s = 0, \pm 2, \pm 4, \cdots$.
 
-So for $A(s)$, the positive zeros of $\sin(\pi s / 2)$ will cancel out the poles of $\Gamma(1 - s)$. We'll left with the negative even zeros, which are now the zeros of $\zeta(s)$, which are called the **trivial zeros**.
+However, recall from [4] that the Gamma function $\Gamma(z)$ has the non-positive integers as poles, so assuming $z = 1 - s$, then $\Gamma(1 - s)$ has poles for $s$ as the positive integers. So the even poles will cancel out with the positive zeros of $\sin(\pi s / 2)$.
 
-We're left to find zeros in the strip $0 \le \Re(s) \le 1$. The **Riemann Hypothesis** state that all zeros in this strip, known as the **non-trivial zeroes** have $\Re(s) = 1/2$.
+We'll be left with the negative even zeros, which are now the zeros of $\zeta(s)$, which are called the **trivial zeros**. That is, $\zeta(s) = 0$ for $s = 2k$, $k \in \mathbb{N}$.
+
+Lastly, we need to find the zeros in the strip $0 \le \Re(s) \le 1$. The **Riemann Hypothesis** state that all zeros in this strip, known as the **non-trivial zeroes**, have $\Re(s) = 1/2$.
+
+**Poles.** We've cancelled out the even poles of $\Gamma(1 - s)$ but we're still left with the odd poles. Suppose $s = 2k + 1$. Then $\zeta(1 - s)$ in $(2)$ becomes $\zeta(-2k)$. If $k > 0$, then $-2k$ is a trivial zero and thus $\zeta(1 - s)$ cancels out the odd poles. What remains is the only pole of the zeta function, $s = 1$.
 
 ## Conclusion
 
