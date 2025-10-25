@@ -13,7 +13,7 @@ else
     echo "Do you want to continue? (y/N)"
     read -r response
     if [[ "$response" == "y" || "$response" == "Y" ]]; then
-        git merge $current_branch
+        git merge $current_branch --no-edit
     else
         echo "Skip running: git merge $current_branch"
     fi
