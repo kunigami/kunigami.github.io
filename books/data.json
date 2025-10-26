@@ -1,5 +1,14 @@
 [
   {
+    "title": "A Lady's Life in the Rocky Mountains",
+    "vanity": "a-ladys-life-in-the-rocky-mountains",
+    "author": "Isabella L. Bird",
+    "rating": 4,
+    "image": "a-ladys-life-in-the-rocky-mountains.jpg",
+    "category": "Memoir",
+    "year": 2025
+  },
+  {
     "title": "Atomic Habits",
     "vanity": "atomic-habits",
     "author": "James Clear",
