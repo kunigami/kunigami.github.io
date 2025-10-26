@@ -339,11 +339,11 @@ $$
 A(s) = 2^s \pi^{s-1} \sin \left(\frac{\pi s}{2}\right) \Gamma(1 - s)
 $$
 
-The function $\sin(z)$ has zeros for $\pi n$, so assuming $z = \pi s / 2$, $\sin(\pi s / 2)$ has zeros for the even integers, $s = 0, \pm 2, \pm 4, \cdots$.
+So that $(2)$ becomes $\zeta(s) = A(s) \zeta(1 - s)$. The function $\sin(z)$ has zeros for $\pi n$, so assuming $z = \pi s / 2$, $\sin(\pi s / 2)$ has zeros for the even integers, $s = 0, \pm 2, \pm 4, \cdots$.
 
 However, recall from [4] that the Gamma function $\Gamma(z)$ has the non-positive integers as poles, so assuming $z = 1 - s$, then $\Gamma(1 - s)$ has poles for $s$ as the positive integers. So the even poles will cancel out with the positive zeros of $\sin(\pi s / 2)$.
 
-We'll be left with the negative even zeros, which are now the zeros of $\zeta(s)$, which are called the **trivial zeros**. That is, $\zeta(s) = 0$ for $s = 2k$, $k \in \mathbb{N}$.
+We'll be left with the negative even zeros, which are now the zeros of $\zeta(s)$, which are called the **trivial zeros**. That is, $\zeta(s) = 0$ for $s = -2k$, $k \in \mathbb{N}$.
 
 Lastly, we need to find the zeros in the strip $0 \le \Re(s) \le 1$. The **Riemann Hypothesis** state that all zeros in this strip, known as the **non-trivial zeroes**, have $\Re(s) = 1/2$.
 
