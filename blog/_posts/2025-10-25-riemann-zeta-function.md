@@ -13,7 +13,9 @@ excerpt_separator: <!--more-->
   <img src="{{resources_path}}/riemann.jpg" alt="" />
 </figure>
 
-Bernhard Riemann was a German mathematician. Among his contributions is the rigorous forumation of the integral, known as the Riemann integral. In complex analysis, he's also known for the Riemann surfaces and in number theory, for the Riemann zeta function and the Riemann hypothesis with connections to prime number distribution.
+Bernhard Riemann was a German mathematician. He initially planned to study theology at the University of Göttingen, but switched to mathematics on advice of Carl Friedrich Gauss.
+
+Among Riemann's contributions is a rigorous formulation of the integral operator, known as the Riemann integral. In complex analysis, he's also known for the Riemann surfaces and in number theory, for the Riemann zeta function and the Riemann hypothesis with connections to the distribution of prime numbers.
 
 In this post we'll study the Riemann zeta function and briefly mention the Riemann hypothesis.
 
@@ -149,7 +151,7 @@ QED
 
 This is know as the **Euler product**.
 
-## Gamma
+## Gamma Function
 
 There's a really neat formula combining the Dirichlet series and gamma functions, known as the **Mellin Integral**:
 
@@ -203,7 +205,7 @@ QED.
 
 The requirement that $\Re(s) > 1$ is because the integral only converges on these conditions. What if we chose a path other than the positive real line?
 
-### Hankel Contour
+## Hankel Contour
 
 The Hankel contour is a curve depicted below:
 
