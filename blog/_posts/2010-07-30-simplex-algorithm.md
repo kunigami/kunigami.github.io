@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
   <img src="{{resources_path}}/dantzig.jpg" alt="Portait of George Dantzig" />
 </figure>
 
-[George Dantzig](https://en.wikipedia.org/wiki/George_Dantzig) (1914-2005) can be considered the father of linear programming, since he invented the Simplex method, the first algorithm for solving linear programs. In its worst case, the simplex algorithm has exponential complexity as a function of the input size, and polynomial algorithms have been developed to solve linear programs, such as the interior-point method.
+[George Dantzig](https://en.wikipedia.org/wiki/George_Dantzig) (1914-2005) can be considered the father of linear programming, since he invented the [simplex algorithm](https://en.wikipedia.org/wiki/Simplex_algorithm), the first algorithm for solving linear programs. In its worst case, the simplex algorithm has exponential complexity as a function of the input size, and polynomial algorithms have been developed to solve linear programs, such as the [interior-point method](https://en.wikipedia.org/wiki/Interior-point_method).
 
 In practice, however, the simplex algorithm performs very well. Furthermore, it possesses characteristics that make it ideal for branch-and-bound algorithms, which are used to solve integer linear programs.
 
