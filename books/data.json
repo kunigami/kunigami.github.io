@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Man from the Future",
+    "vanity": "the-man-from-the-future",
+    "author": "Ananyo Bhattacharya",
+    "rating": 4,
+    "image": "the-man-from-the-future.jpg",
+    "category": "Biography",
+    "year": 2025
+  },
+  {
     "title": "A Lady's Life in the Rocky Mountains",
     "vanity": "a-ladys-life-in-the-rocky-mountains",
     "author": "Isabella L. Bird",
