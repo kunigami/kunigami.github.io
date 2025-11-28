@@ -735,6 +735,40 @@ TType getter(T val) {
 }
 {% endhighlight %}
 
+## Transforms
+
+Type-level transforms using templates. See [Type Traits in C++](https://www.kuniga.me/blog/2022/12/08/type-traits-in-cpp.html) for more.
+
+{% highlight c++ %}
+bool f(bool x) {
+  std::cout << "bool " << x << std::endl;
+  return !x;
+}
+
+int f(int x) {
+  std::cout << "int " << x << std::endl;
+  return x + 1;
+}
+
+template <typename... Types>
+struct Context {
+  // tuples can be used to model a "list" of types
+  void apply(const std::tuple<Types...>& tup) {
+    // This is like ".map()" for tuples
+    auto result = std::apply(
+        [](auto... value) {
+          return std::make_tuple(f(value)...);
+        },
+        tup
+    );
+  }
+};
+
+Context<int, bool> c;
+c.apply(std::make_tuple(1, true));
+{% endhighlight %}
+
+
 ## Specialization
 
 ### Type alias
