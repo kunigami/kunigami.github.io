@@ -1,5 +1,14 @@
 [
   {
+    "title": "Pachinko",
+    "vanity": "pachinko",
+    "author": "Min Jin Lee",
+    "rating": 4,
+    "image": "pachinko.jpg",
+    "category": "Fiction",
+    "year": 2025
+  },
+  {
     "title": "The Man from the Future",
     "vanity": "the-man-from-the-future",
     "author": "Ananyo Bhattacharya",
