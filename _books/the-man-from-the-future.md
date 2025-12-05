@@ -17,7 +17,7 @@ This includes: quantum mechanics, the atomic bomb, the modern computer, game the
 
 Instead of summarizing the contents of this book I'll cover topics or ideas I found interesting or personally relatable.
 
-**Environment.** von Neumann is no doubt one of the smartest men ever to walk on earth, but I found interesting that his upbringing in Hungary also maximized his potential. He was from family a well-off family that encouraged education and had private tutors.
+**Environment.** von Neumann is no doubt one of the smartest men ever to walk on earth, but I found interesting that his upbringing in Hungary also maximized his potential. He was from a well-off family that encouraged education and had private tutors.
 
 Von Neumann was also jewish and there was concerns about the tolerant climate in Hungary towards them might change. According to the book:
 
@@ -50,7 +50,7 @@ While von Neumann wasn't involved in the field of Artificial Intelligence, he sa
 
 > Prior to von Neumann, the fields of computer science and neuroscience were two islands with no bridge between them.
 
-**Pascal Wager.** Von Neumann's family was from a Jewish background but to avoid persecution they converted to Catholicism. However, for most of his life, Von Neumann which was non-religious. He changed his stance when he realized his end was near. According to his daugther he said:
+**Pascal Wager.** Von Neumann's family was from a Jewish background but to avoid persecution they converted to Catholicism. However, for most of his life, Von Neumann was non-religious. He changed his stance when he realized his end was near. According to his daugther he said:
 
 > Catholicism was a very rough religion to live in but it was the only one to die in.
 
@@ -70,6 +70,6 @@ Chris Langton:
 
 ## Conclusion
 
-This book provides a good overview of von Neumann's life and the many areas that have his fingerprints. It reminds of Walter Isaacson's [biography of Jennifer Doudna](http://localhost:4000/books/the-code-breaker), which is part biography and part the history of CRIPR.
+This book provides a good overview of von Neumann's life and the many areas that have his fingerprints. It reminds of Walter Isaacson's [biography of Jennifer Doudna]({{site.url}}/books/the-code-breaker), which is part biography and part the history of CRIPR.
 
 I enjoyed most of the book, except for the chapters on Game Theory and the RAND which I found a bit tedious.
