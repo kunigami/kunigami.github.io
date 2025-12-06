@@ -18,6 +18,15 @@
     "year": 2025
   },
   {
+    "title": "Ficciones",
+    "vanity": "ficciones",
+    "author": "Jorge Luis Borges",
+    "rating": 5,
+    "image": "ficciones.jpg",
+    "category": "Fiction",
+    "year": 2025
+  },
+  {
     "title": "The Man from the Future",
     "vanity": "the-man-from-the-future",
     "author": "Ananyo Bhattacharya",
