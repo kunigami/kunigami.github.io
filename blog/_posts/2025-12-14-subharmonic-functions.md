@@ -19,6 +19,8 @@ After the [Treaty of Trianon](https://en.wikipedia.org/wiki/Treaty_of_Trianon), 
 
 Frigyes is considered one of the founders of functional analysis and has many theorems named after him, such as the [Riesz–Fischer theorem](https://en.wikipedia.org/wiki/Riesz%E2%80%93Fischer_theorem) and the [F. and M. Riesz theorem](https://en.wikipedia.org/wiki/F._and_M._Riesz_theorem), which is also named after his brother Marcel Riesz. One of the concepts Riesz came up with is the subharmonic functions, which we study in this post.
 
+<!--more-->
+
 ## Intuition
 
 Recall that harmonic functions [2] are defined as:
