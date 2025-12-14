@@ -14,7 +14,7 @@ from typing import Dict, List, Tuple
 # Equation numbers e.g. (A) or (1.A)
 EQUATION_ID_REGEX = r"^\(([0-9]+)?.?([A-z0-9]+)\)"
 
-STATEMENT_KEYWORDS = {"Lemma", "Theorem", "Corollary"}
+STATEMENT_KEYWORDS = {"Definition", "Lemma", "Theorem", "Corollary"}
 
 ID_REGEX = r"^[A-Z0-9]+"
 
