@@ -169,5 +169,5 @@ Many of the posts I wrote under distributed systems has been mentioned in the bo
 * [Consistent Hashing]({{blog}}/2019/04/12/consistent-hashing.html)
 * [Log Structured Merge Trees]({{blog}}/2018/07/20/log-structured-merge-trees.html)
 * [Notes on Zookeeper]({{blog}}/2015/08/07/notes-on-zookeeper.html)
-* [Paper Reading - Spanner: Google's Globally-Distributed Database]({{blog}}/2017/04/27/paper-reading-spanner-google's-globally-distributed-database.html)
+* [[Paper] Spanner: Google's Globally-Distributed Database]({{blog}}/2017/04/27/paper-reading-spanner-google's-globally-distributed-database.html)
 * [The Paxos Protocol]({{blog}}/2014/04/14/the-paxos-protocol.html)

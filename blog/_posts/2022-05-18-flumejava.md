@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Reading - FlumeJava"
+title: "[Paper] FlumeJava"
 tags: [ distributed systems, java, paper reading]
 vanity: "2022-05-18-flumejava"
 excerpt_separator: <!--more-->

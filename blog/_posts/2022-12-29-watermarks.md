@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Reading - Watermarks in Stream Processing"
+title: "[Paper] Watermarks in Stream Processing"
 tags: [distributed systems, paper reading]
 excerpt_separator: <!--more-->
 vanity: "2022-12-29-watermarks"
@@ -152,4 +152,4 @@ On the experiment itself, it seems like the watermark latency is not being affec
 ## References
 
 * [[1](https://vldb.org/pvldb/vol14/p3135-begoli.pdf)] Watermarks in Stream Processing: Semantics and Comparative Analysis of Apache Flink and Google Cloud Dataflow, Akidau et al.
-* [[2]({{blog}}/2022/08/18/state-management-flink.html)] NP-Incompleteness: Paper Reading - State Management In Apache Flink
+* [[2]({{blog}}/2022/08/18/state-management-flink.html)] NP-Incompleteness: [Paper] State Management In Apache Flink

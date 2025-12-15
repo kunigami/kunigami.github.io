@@ -206,7 +206,7 @@ The notebook is available on [Github]({{github}}/collage.ipynb).
 
 I was very pleased with the results. The image at the beginning of the post is a collage from photos I think haven't been included in previous retros and was generated using this notebook.
 
-I thought the savings from this automation would be marginal since I'd only use this once a year, but turns out this is also helpful for other cases too, like showing comparison charts side by side like in the post [Paper Reading - Watermaks in Stream Processing]({{blog}}/2022/12/29/watermarks.html). In the past I would do some hacky manipulation using MacOS's preview to put two images together.
+I thought the savings from this automation would be marginal since I'd only use this once a year, but turns out this is also helpful for other cases too, like showing comparison charts side by side like in the post [[Paper] Watermaks in Stream Processing]({{blog}}/2022/12/29/watermarks.html). In the past I would do some hacky manipulation using MacOS's preview to put two images together.
 
 ## Further Improvements
 

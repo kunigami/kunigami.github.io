@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Reading - State Management In Apache Flink"
+title: "[Paper] State Management In Apache Flink"
 tags: [ distributed systems, paper reading]
 vanity: "2022-08-18-state-management-flink"
 excerpt_separator: <!--more-->
@@ -190,7 +190,7 @@ The paper is well written but the space limitation makes it infeasible to provid
 ## References
 
 * [[1](http://www.vldb.org/pvldb/vol10/p1718-carbone.pdf)] State Management In Apache Flink: Consistent Stateful Distributed Stream Processing - Carbone et al.
-* [[2]({{blog}}/2022/05/18/flumejava.html)] NP-Incompleteness: Paper Reading - FlumeJava
+* [[2]({{blog}}/2022/05/18/flumejava.html)] NP-Incompleteness: [Paper] FlumeJava
 * [[3]({{blog}}/2015/08/07/notes-on-zookeeper.html)] NP-Incompleteness: Notes on Zookeeper
 * [[4]({{blog}}/2022/07/26/review-streaming-systems.html)] NP-Incompleteness: Review: Streaming Systems
 * [[5](https://flink.apache.org/features/2017/07/04/flink-rescalable-state.html)] A Deep Dive into Rescalable State in Apache Flink

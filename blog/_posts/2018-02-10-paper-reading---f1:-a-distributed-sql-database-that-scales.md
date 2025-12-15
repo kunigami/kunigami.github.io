@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Reading - F1: A Distributed SQL Database That Scales"
+title: "[Paper] F1: A Distributed SQL Database That Scales"
 tags: [databases, distributed systems, paper reading]
 ---
 
