@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: The Design of Everyday Things"
+title: "[Book] The Design of Everyday Things"
 tags: [human-computer interaction, review]
 ---
 

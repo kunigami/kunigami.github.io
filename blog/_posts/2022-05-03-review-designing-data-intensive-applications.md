@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Designing Data Intensive Applications"
+title: "[Book] Designing Data Intensive Applications"
 tags: [review, distributed systems]
 excerpt_separator: <!--more-->
 vanity: "2022-05-03-review-designing-data-intensive-applications"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Software Architecture - The Hard Parts"
+title: "[Book] Software Architecture - The Hard Parts"
 tags: [review, distributed systems, software engineering]
 excerpt_separator: <!--more-->
 vanity: "2025-03-22-review-llvm-core-libs"

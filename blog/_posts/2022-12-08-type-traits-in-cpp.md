@@ -688,7 +688,7 @@ I found it super clever how the STL uses seemingly unrelated syntax as the build
 * [[2](https://www9.open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0377r0.html)] std::integral_constant with a Deduced Value Type, Matt Calabrese
 * [[3](https://eli.thegreenplace.net/2014/sfinae-and-enable_if/)] SFINAE and enable_if, Eli Bendersky.
 * https://github.com/Quuxplusone/from-scratch
-* [[4](https://www.kuniga.me/blog/2022/10/25/review-effective-modern-cpp.html#item-28---understand-reference-collapsing)] NP-Incompleteness - Review: Effecive Modern C++ (Item 28)
+* [[4](https://www.kuniga.me/blog/2022/10/25/review-effective-modern-cpp.html#item-28---understand-reference-collapsing)] NP-Incompleteness - [Book] Effecive Modern C++ (Item 28)
 * [[5](https://en.cppreference.com/w/cpp/types/remove_extent)]  C++ reference - `std::remove_extent`
 * [[6](https://en.cppreference.com/w/cpp/types/decay)] C++ reference - `std::decay`
 * [[7](https://stackoverflow.com/questions/27501400/the-implementation-of-stdforward)] StackOverflow - The implementation of std::forward

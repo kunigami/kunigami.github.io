@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Code Complete 2"
+title: "[Book] Code Complete 2"
 tags: [review, software engineering]
 ---
 

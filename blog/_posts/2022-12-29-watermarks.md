@@ -145,7 +145,7 @@ On the experiment itself, it seems like the watermark latency is not being affec
 
 ## Related Posts
 
-[Review: Designing Data Intensive Applications]({{blog}}/2022/05/03/review-designing-data-intensive-applications.html) - As noted in this paper, Google's systems like Cloud Dataflow have to make different tradeoffs compared to open-source distributed systems like Flink because of preemption. This was mentioned in the book *Designing Data Intensive Applications* as well, albeit in the cotext of batch processing:
+[[Book] Designing Data Intensive Applications]({{blog}}/2022/05/03/review-designing-data-intensive-applications.html) - As noted in this paper, Google's systems like Cloud Dataflow have to make different tradeoffs compared to open-source distributed systems like Flink because of preemption. This was mentioned in the book *Designing Data Intensive Applications* as well, albeit in the cotext of batch processing:
 
 > The original Map-Reduce framework proposed by Google is “overly” fault tolerant because at Google batch jobs were often preempted in favor of higher priority tasks.
 

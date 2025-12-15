@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Thinking In Systems"
+title: "[Book] Thinking In Systems"
 tags: [review]
 excerpt_separator: <!--more-->
 vanity: "2023-08-05-review-thinking-in-systems"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Real Analysis"
+title: "[Book] Real Analysis"
 tags: [review, analysis, topology]
 excerpt_separator: <!--more-->
 vanity: "2023-04-21-review-real-analysis"

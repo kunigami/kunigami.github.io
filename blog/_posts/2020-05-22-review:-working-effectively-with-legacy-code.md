@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Working Effectively With Legacy Code"
+title: "[Book] Working Effectively With Legacy Code"
 description: "Review of Michael C. Feathers' Working Effectively With Legacy Code"
 tags: [review, software engineering]
 ---
@@ -66,4 +66,4 @@ The major negative of the book is that it contains a lot of obvious typos and ty
 
 ## Related Posts
 
-* [Review: Code Complete 2]({{site.url}}/blog/2016/06/01/review:-code-complete-2.html) - This is another review of a highly practical and pragmatic book that I believe made me a better programmer. The overlap in content is minimal, so they're a nice complement.
+* [[Book] Code Complete 2]({{site.url}}/blog/2016/06/01/review:-code-complete-2.html) - This is another review of a highly practical and pragmatic book that I believe made me a better programmer. The overlap in content is minimal, so they're a nice complement.

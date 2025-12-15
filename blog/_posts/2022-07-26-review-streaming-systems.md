@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Streaming Systems"
+title: "[Book] Streaming Systems"
 tags: [review, distributed systems]
 excerpt_separator: <!--more-->
 vanity: "2022-07-26-review-streaming-systems"
@@ -209,7 +209,7 @@ As mentioned in my Chapter 2 notes, I found the "What, Where, When and How" view
 
 ## Related Posts
 
-* [Review: Designing Data Intensive Applications]({{blog}}/2022/05/03/review-designing-data-intensive-applications.html) - Martin Kleppmann's book discusses practical distributed systems more broadly but it does have a section on stream processing. He also provides a view of stream and tables, including the calculus analogy: stream being the derivative of tables and tables the integral of streams.
+* [[Book] Designing Data Intensive Applications]({{blog}}/2022/05/03/review-designing-data-intensive-applications.html) - Martin Kleppmann's book discusses practical distributed systems more broadly but it does have a section on stream processing. He also provides a view of stream and tables, including the calculus analogy: stream being the derivative of tables and tables the integral of streams.
 
 ## References
 

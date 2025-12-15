@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Systems Performance"
+title: "[Book] Systems Performance"
 tags: [review, distributed systems, operating systems]
 excerpt_separator: <!--more-->
 vanity: "2025-10-10-review-systems-performance"

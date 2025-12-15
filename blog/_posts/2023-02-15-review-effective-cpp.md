@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review: Effective C++"
+title: "[Book] Effective C++"
 tags: [review, c++]
 excerpt_separator: <!--more-->
 vanity: "2023-02-15-review-effective-cpp"
@@ -714,7 +714,7 @@ I thought I liked the typography better from *Effective Modern C++* but comparin
 ## Related Posts
 {:.no_toc}
 
-[Review: Effective Modern C++]({{blog}}/2022/10/25/review-effective-modern-cpp.html). It was interesting to read the book series in reverse chronological order and seeing how things evolved. The smart pointers and type traits from TR made into the STL for example and some recommendations around `std::bind` were made obsolete.
+[[Book] Effective Modern C++]({{blog}}/2022/10/25/review-effective-modern-cpp.html). It was interesting to read the book series in reverse chronological order and seeing how things evolved. The smart pointers and type traits from TR made into the STL for example and some recommendations around `std::bind` were made obsolete.
 
 [Type Traits in C++]({{blog}}/2022/12/08/type-traits-in-cpp.html). Type traits leverage the template mechanisms discussed in *Chapter 7*. In fact *Item 47* is about type traits but I omitted in my review because many things changed regarding type traits in C++11 and I had learned a lot about type traits from writing the post already.
 

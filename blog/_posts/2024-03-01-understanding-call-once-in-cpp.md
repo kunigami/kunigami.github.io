@@ -331,7 +331,7 @@ Running:
 
 * [[1](https://en.cppreference.com/w/cpp/thread/call_once)] C++ reference - std::call_once
 * [[2](https://codereview.stackexchange.com/questions/117468/stdonce-flag-and-stdcall-once-implementation
-)] Code Review: std::once_flag and std::call_once implementation
+)] Code [Book] std::once_flag and std::call_once implementation
 * [[3](https://github.com/gcc-mirror/gcc/blob/5c30ecfa81cb64c8c5b52f561f54acf2d87d57ea/libstdc%2B%2B-v3/include/std/mutex)] libstdc-v3 - mutex
 * [[4](https://github.com/facebook/folly/blob/main/folly/synchronization/CallOnce.h)] Folly - call_once
 * [[5](https://eli.thegreenplace.net/2018/basics-of-futexes/)] Eli Bendersky's website - Basics of Futexes
