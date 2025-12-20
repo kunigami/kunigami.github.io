@@ -531,6 +531,12 @@ proof, nonproof {
   margin: 0 5px;
 }
 
+.quote_author {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
 /* ----------------------------------------------------------------------------
  * Small Device Styles
  * ----------------------------------------------------------------------------
