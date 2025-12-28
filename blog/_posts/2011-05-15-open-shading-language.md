@@ -128,7 +128,7 @@ To obtain the color, we have the following procedure called **radiance**:
 
 Step 1 is essentially geometry. In our example, since we are dealing with spheres, it is easy to compute the points of intersection of the ray with them and then find the first object hit.
 
-Step 2 is easy in our scene, since each sphere is associated with a unique share group.
+Step 2 is easy in our scene, since each sphere is associated with a unique shader group.
 
 A shader group is associated with a **closure expression**, which is composed of addition and multiplication operators by a scalar or color. A closure expression is essentially a tree, and the final color is returned by a leaf (called **primitive**).
 

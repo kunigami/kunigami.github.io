@@ -211,14 +211,14 @@ fact =
       \n -> if n == 0 then 1 else return n * fact (n - 1)
 {% endhighlight %}
 
-For `n = 0`, the function will return 1 and will not to the trouble of calculating `fact(n - 1)`.
+For `n = 0`, the function will return 1 and will not go to the trouble of calculating `fact(n - 1)`.
 
 Let's now unwrap the function for 2 steps:
 
 {% highlight haskell %}
 fact = fact' fact = fact' (fact' fact)
   = if n == 0 then 1 else return n *
-    (if (n - 1) == 0 then 1 he return (n - 1) * fact (n - 2))
+    (if (n - 1) == 0 then 1 then return (n - 1) * fact (n - 2))
 {% endhighlight %}
 
 For `n = 1`, you can see that a lazy evaluation needs no further evaluations than that.
@@ -250,7 +250,7 @@ y :: (a -> a) -> a
 y = \f -> (\x -> f (out xx)) (In (\x -> f (out xx)))
 {% endhighlight %}
 
-To avoid problems with infinite type, we encapsulate the second term `(\x -> f (x x))` in a new type, `Rec a`, through the `In` constructor. Lambda functions take `x` which is of type `Rec a` and so we cannot apply `x` to `x` directly. Before we must "unwrap: the function contained in it using out.
+To avoid problems with infinite type, we encapsulate the second term `(\x -> f (x x))` in a new type, `Rec a`, through the `In` constructor. Lambda functions take `x` which is of type `Rec a` and so we cannot apply `x` to `x` directly. Before we must "unwrap" the function contained in it using out.
 
 Remembering, the `newtype` defines a structure similar to an algebraic data type, with the difference that it only allows a constructor, in the case defined by `In`, and a "getter", specified by `out`.
 

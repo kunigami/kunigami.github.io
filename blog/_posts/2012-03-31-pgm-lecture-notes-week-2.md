@@ -122,7 +122,7 @@ This model is not very expressive. To get an idea, consider a set of $n$ random 
 
 The weakness of the previous model lies in the restriction of factors to only two variables. To remedy this, we can use the **general Gibbs distribution**, which is a generalization of pairwise Markov networks. In this case, edges can be incident to more than two vertices, as in a [hypergraph](https://en.wikipedia.org/wiki/Hypergraph).
 
-More formally, we have a set of factors $\Phi = \curly{\phi_1(D_1), \cdots, \phi_k(D_k)}$ where each $D_i$ is the set of random variables included in the factor $\phi_i$, and is called the **domain**. Taking the product of the factors of the graph, we get
+More formally, we have a set of factors $\Phi = \{\phi_1(D_1), \cdots, \phi_k(D_k)\}$ where each $D_i$ is the set of random variables included in the factor $\phi_i$, and is called the **domain**. Taking the product of the factors of the graph, we get
 
 $$\tilde P_{\Phi}(X_1, \cdots, X_k) = \prod_{i = 1}^{k} \phi(D_i)$$
 
@@ -138,7 +138,7 @@ $$P_{\Phi}(X_1, \cdots, X_k) = \frac{1}{Z_{\Phi}(X_1, \cdots, X_k)} \prod_{i = 1
 
 With this, we can present the definition of factorization for Markov networks.
 
-**Factorization.** A probability distribution $P$ factors a Markov network $H$ if there is a set of factors $\Phi = \curly{\phi_1(D_1), \cdots, \phi(D_k)}$ such that
+**Factorization.** A probability distribution $P$ factors a Markov network $H$ if there is a set of factors $\Phi = \{\phi_1(D_1), \cdots, \phi(D_k)\}$ such that
 
 * (1) $P = P_{\Phi}$
 * (2) $H = H_\Phi$
@@ -161,9 +161,9 @@ $$P_{\Phi}(Y \mid X) = \dfrac{\tilde P_{\Phi}(X, Y)}{Z_{\Phi}(X)}$$
 
 **Logistic model.** is a particular case of CRF, where we have a variable $Y$ connected to a set of variables $X = X_1, \cdots, X_k$ and where the factor of each $(Y, X_i)$ is given by
 
-$$\phi_i(X_i, Y) = \exp(w_i 1\curly{X_i = 1, Y = 1})$$
+$$\phi_i(X_i, Y) = \exp(w_i 1\{X_i = 1, Y = 1\})$$
 
-where $1\curly{X_i = 1, Y = 1}$ is an indicator function, which returns 1 if the variables have the indicated values or 0 otherwise. Thus, for $Y = 1$, $\phi_i(X_i, Y = 1) = \exp(w_i X_i)$ and for $Y = 0$, $\phi_i(X_i, Y = 0) = \exp(0) = 1$.
+where $1\{X_i = 1, Y = 1\}$ is an indicator function, which returns 1 if the variables have the indicated values or 0 otherwise. Thus, for $Y = 1$, $\phi_i(X_i, Y = 1) = \exp(w_i X_i)$ and for $Y = 0$, $\phi_i(X_i, Y = 0) = \exp(0) = 1$.
 
 In this case, the product of the factors is:
 

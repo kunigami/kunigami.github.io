@@ -1,5 +1,15 @@
 [
   {
+    "title": "BPF Performance Tools",
+    "vanity": "bpf",
+    "url": "blog/2025/12/28/book-bpf-performance-tools.html",
+    "author": "Brendan Gregg",
+    "rating": 5,
+    "image": "bpf.jpg",
+    "category": "Programming",
+    "year": 2025
+  },
+  {
     "title": "Pachinko",
     "vanity": "pachinko",
     "author": "Min Jin Lee",

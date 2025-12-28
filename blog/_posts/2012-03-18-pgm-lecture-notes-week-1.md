@@ -56,7 +56,7 @@ Reasoning occurs when we observe (that is, fix the value of) a random variable $
 
 We say that there is a flow of influence from a variable $X$ to $Y$, if the observation of $X$ influences the probability distribution of $Y$. This flow also depends on which other variables in the network besides $X$ are observed. Then we refer to the **evidence set** as a set of network variables observed and we will call $Z$.
 
-The influence of flow is represented by a path (not necessarily directed) in the graph, which is called the **active trail**.Let $X$, $W$ and $Y$be variables corresponding to consecutive vertices in a path. The possible relationships between them are:
+The influence of flow is represented by a path (not necessarily directed) in the graph, which is called the **active trail**. Let $X$, $W$ and $Y$ be variables corresponding to consecutive vertices in a path. The possible relationships between them are:
 
 
 $$
@@ -118,7 +118,7 @@ Template Models aim to abstract structures that are repeated. This makes the mod
 
 ## Time Models
 
-There are problems that must be modeled considering the passage of time. In general, we discretize time in pieces of fixed size and create random variables associated with each piece. In this case, the variable is usually represented by $X^{(t)} $ and a set of variables corresponding to an interval $t$ to $t'$ by: $X^{((t: t')} = \curly{X^{(t)}, \cdots, X^{(t')}}$.
+There are problems that must be modeled considering the passage of time. In general, we discretize time in pieces of fixed size and create random variables associated with each piece. In this case, the variable is usually represented by $X^{(t)} $ and a set of variables corresponding to an interval $t$ to $t'$ by: $X^{(t: t')} = \{X^{(t)}, \cdots, X^{(t')}\}$.
 
 To simplify temporal models, we can make the following assumptions:
 

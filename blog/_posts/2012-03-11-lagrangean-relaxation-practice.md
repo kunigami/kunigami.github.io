@@ -66,7 +66,7 @@ We will use the relaxation from our [previous post]({{site.url}}/blog/2012/02/05
 
 For the other algorithm parameters we used: $$\pi = 2$$, $$T_\pi = 0.2$$ and $$N = 30$$.
 
-I've implementated it in C ++, trying to separate the problem (class `FacilityLocationimplementing` implementing class `LagrangeanModel`) from the algorithm (class `GradientMethod`). As usual, the code is on [github](https://github.com/kunigami/blog-examples/tree/master/lagrangean-relaxation).
+I've implemented it in C ++, trying to separate the problem (class `FacilityLocation` implementing class `LagrangeanModel`) from the algorithm (class `GradientMethod`). As usual, the code is on [github](https://github.com/kunigami/blog-examples/tree/master/lagrangean-relaxation).
 
 ## Computational results
 

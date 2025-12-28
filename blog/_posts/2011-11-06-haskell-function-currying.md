@@ -100,7 +100,7 @@ In the first case, we are basically defining a new wrapper function that will ca
 
 By default, the substitution of arguments is done from the first argument, that is, from left to right. However, for functions with two (binary) parameters, we can use infix notation to replace the second argument first.
 
-The infix notation consists of calling the function between(backticksbacktick). For example, the sum function could be called like this:
+The infix notation consists of calling the function between backticks. For example, the sum function could be called like this:
 
 {% highlight haskell %}
 1 `sum` 2 -- 3

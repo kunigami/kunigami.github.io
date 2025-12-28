@@ -18,13 +18,13 @@ Finally, we'll present a simple example implementation on Python.
 
 ### Set Cover
 
-The Sudoku puzzle can be modeled as a more generaal problem, the set cover problem.
+The Sudoku puzzle can be modeled as a more general problem, the set cover problem.
 
 Given a set of items `U` and a set `S` of sets each of which covering some subset of `U`, the set cover problem consists in finding a subset of `S` such that each element is covered by exactly one set. This problem is known to be NP-Complete.
 
 The set cover can be viewed as a binary matrix where the columns represent the elements to be covered and the rows represent the sets. An entry 1 in the cell `i,j`, means that the set `i` covers element `j`.
 
-The objective is then finding a subset of the rows that such that for each column, it has exactly an entry 1 in exactly one column.
+The objective is then finding a subset of the rows such that for each column, there is exactly one entry of 1.
 
 In fact, this is the constraint matrix of a common integer linear programming formulation for this problem.
 

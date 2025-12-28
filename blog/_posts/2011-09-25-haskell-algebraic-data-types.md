@@ -10,7 +10,7 @@ vanity: "2011-09-25-haskell-algebraic-data-types"
 
 Haskell uses an elegant syntax to represent a type of data structure, analogous to many other structures present in languages ​​such as C and C++. These structures are called *algebraic data types*.
 
-This is the second post about my studies in Haskell. The first can be found [here](({{blog}}/2011/08/07/haskell.html)).
+This is the second post about my studies in Haskell. The first can be found [here]({{blog}}/2011/08/07/haskell.html).
 
 This post makes analogies with some basic C++ features but prior knowledge is not required.
 
@@ -62,13 +62,13 @@ data BookInfo = Book ISBN Title [Author]
 
 ## Enum
 
-Another C++ structure that can be represented succinctly in Haskell is the enumation structure. Consider an `enum` representing RGB colors:
+Another C++ structure that can be represented succinctly in Haskell is the enumeration structure. Consider an `enum` representing RGB colors:
 
 {% highlight c++ %}
 enum Color { Red, Green, Blue };
 {% endhighlight %}
 
-An algebraic data type admits more than one constructor, as long as they have different names. Also, constructors don't need to have parameters, which allows you to write the enum abovelike this:
+An algebraic data type admits more than one constructor, as long as they have different names. Also, constructors don't need to have parameters, which allows you to write the enum above like this:
 
 {% highlight haskell %}
 data Color = Red | Green | Blue

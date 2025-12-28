@@ -4,13 +4,13 @@ title: "Flood it! An exact approach"
 tags: [approximation algorithms, c++, coin-or, computational complexity, integer programming]
 ---
 
-[Flood-it](http://www.labpixies.com/gadget_page.php?id=10) is a game created by LabPixies, which was recently aquired by Google.
+[Flood-it](http://www.labpixies.com/gadget_page.php?id=10) is a game created by LabPixies, which was recently acquired by Google.
 
 The game consists of a $$n \times n$$ board with random colors cells. Let's call the top-left cell a *seed cell* and the region connected to the seed cell and with the same color as it, the *flooded region*. At each round, the player chooses a color for the flooded region which may flood adjacent regions, expanding the flooded region. The final objective is to flood all the board.
 
 <figure class="center_children">
     <a href="http://kunigami.files.wordpress.com/2013/09/flooding.png"><img src="{{site.url}}/resources/blog/2012-09-16-flood-it!-an-exact-approach/2013_09_flooding.png" alt="" /></a>
-    <figcaption> Figure 1. Flooding proccess [1]</figcaption>
+    <figcaption> Figure 1. Flooding process [1]</figcaption>
 </figure>
 
 In the original game, there are three different sizes of boards: 14, 21 or 28. The number of colors is always 6.

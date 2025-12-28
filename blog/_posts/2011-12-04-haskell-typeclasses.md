@@ -51,7 +51,7 @@ instance Compare Boolean where
          equals False False = True
          equals _ _ = False
 
-instance Compares RGBColor where
+instance Compare RGBColor where
          equals Red Red = True
          equals Green Green = True
          equals Blue Blue = True
@@ -146,7 +146,7 @@ newtype Wrapper = Wrapper [Boolean]
 Now we can implement the function, with the inconvenience of wrapping the data of the new type with `Wrapper`:
 
 {% highlight haskell %}
-instance Compares Wrapper where
+instance Compare Wrapper where
   equals (Wrapper x) (Wrapper y ) = equalAux xy
     where equalAux (xa:a) (xb:b) | different xa xb = False
                                  | otherwise = equalAux ab

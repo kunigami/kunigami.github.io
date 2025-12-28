@@ -111,7 +111,7 @@ public class SoundEmissor implements AnimalVisitor {
 }
 ...
 public static void emitSound(Animal animal){
-    SoundEmissor soundEmissor = new SoundEmission();
+    SoundEmissor soundEmissor = new SoundEmissor();
     animal.accept(soundEmissor);
 }
 
@@ -123,7 +123,7 @@ Another advantage is that the visitor implementation can be chosen at runtime an
 
 ### Visitors in C++
 
-In C++ we don’t have `instanceof`, but we can use the `typeid()` operator instead. According to [1], if the argument to this operator is a reference or a dereferenced pointer to a polymorfic class, `typeid()` will return a `type_info` corresponding to the runtime object type.
+In C++ we don't have `instanceof`, but we can use the `typeid()` operator instead. According to [1], if the argument to this operator is a reference or a dereferenced pointer to a polymorphic class, `typeid()` will return a `type_info` corresponding to the runtime object type.
 
 {% highlight cpp %}
 

@@ -10,7 +10,7 @@ In this post we will comment briefly on relaxations of Integer Linear formulatio
 
 In Integer Linear Programming, we use the term *relaxation* to indicate that some of the constraints of the original problem have been relaxed. Probably the best known example of relaxation is linear relaxation. In such case, we remove the integer constraints from the model.
 
-More formally, if we have a formulation Frepresented by
+More formally, if we have a formulation F represented by
 
 $$z = \min \{c (x): x \in P \}$$
 
@@ -50,7 +50,7 @@ Subject to
 
 $$\begin {array} {llcll} & A_2x & \le & b_2 & \\& x & \ge & 0 & \\& x & \in & Z^n & \\& u & \ge & 0, & u \in R^m_1 \end {array}$$
 
-Where $$u$$ is a vector representing the Lagrangian multipliers (one for each inequality removed). For example, consider the inequality jthat will be removed:
+Where $$u$$ is a vector representing the Lagrangian multipliers (one for each inequality removed). For example, consider the inequality j that will be removed:
 
 $$\sum_{i = 1}^n a_{ij} x_i \le b_j$$
 
@@ -68,7 +68,7 @@ The problem of the location of facilities is widely studied in the literature. O
 
 We basically have a bipartite graph where one partition corresponds to the set of customers $$C$$ and the other to the set of facilities $$F$$. Each customer $$i$$ can potentially be serviced by the factory $$j$$, at cost one $$c_{i, j}$$. In addition, a cost is paid $$c_j$$ for opening the factory $$j$$, given by $$y_j$$. The goal is to serve all customers at the lowest cost.
 
-We will present an entire linear formulation for this problem. Let $$x_{i, j}$$ a binary variable be worth 1 s if the customer iis served by the factory jand the variable $$y_j$$ a binary variable worth 1 if and only if the factory $$j$$ has been opened. We have the following formulation:
+We will present an entire linear formulation for this problem. Let $$x_{i, j}$$ a binary variable be worth 1 if the customer i is served by the factory j and the variable $$y_j$$ a binary variable worth 1 if and only if the factory $$j$$ has been opened. We have the following formulation:
 
 $$z = \min \sum_{i \in C, j \in F} x_{ij} c_{ij} + \sum_{j \in F} y_j c_j$$
 
