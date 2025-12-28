@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Music of the Primes",
+    "vanity": "the-music-of-the-primes",
+    "author": "Marcus du Sautoy",
+    "rating": 5,
+    "image": "the-music-of-the-primes.jpg",
+    "category": "Math",
+    "year": 2025
+  },
+  {
     "title": "BPF Performance Tools",
     "vanity": "bpf",
     "url": "blog/2025/12/28/book-bpf-performance-tools.html",
