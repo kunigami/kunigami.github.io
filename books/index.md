@@ -14,7 +14,7 @@ title: Books
 
 {% assign root = site.url | append: "/books" %}
 
-Notes on some of the books I've read. List below sorted by reverse chronological order. (Work in progress)
+Notes on some of the books I've read. Since 2025 I've included every book I read. The list below sorted by reverse chronological order.
 
 <book-table
   base_url="{{site.url}}"
