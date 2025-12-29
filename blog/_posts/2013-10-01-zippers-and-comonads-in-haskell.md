@@ -263,7 +263,7 @@ This will print out 20 lines of a [Sierpinski Triangle](http://en.wikipedia.org/
 
 <figure class="center_children">
     <a href="http://en.wikipedia.org/wiki/File:Sierpinski_triangle_evolution.svg"><img src="{{site.url}}/resources/blog/2013-10-01-zippers-and-comonads-in-haskell/2014_08_sierpinsk-triangle.png" alt="S" /></a>
-    <figcaption> Sierpinsk Triangle Construction</figcaption>
+    <figcaption> Sierpinski Triangle Construction</figcaption>
 </figure>
 
 ### Conclusion

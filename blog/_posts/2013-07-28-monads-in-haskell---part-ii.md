@@ -55,11 +55,11 @@ instance Monoid [a] where
 
 {% endhighlight %}
 
-So going back to the Writer monad definition, we have that the "logging" type must be a monoid type. And we define the monad over the type `(Writer w)` which can be seem as wapper on the type `a`.
+So going back to the Writer monad definition, we have that the "logging" type must be a monoid type. And we define the monad over the type `(Writer w)` which can be seen as a wrapper on the type `a`.
 
-The `return` function consists in wrapping an instance of the type a into the type `(Writer w)`, so the simplest one is to just have an empty instance of type `w`. Since it's a monoid, we can use the functiion `mempty`.
+The `return` function consists in wrapping an instance of the type a into the type `(Writer w)`, so the simplest one is to just have an empty instance of type `w`. Since it's a monoid, we can use the function `mempty`.
 
-The chain operator `(>>=)` takes an instance of type a wrapped into the `(Wrapper w)` and pass it to a function that operates on the type a and wraps the resulting type into `(Wrapper w)` again. In our implementation of the monad for `(Writer w)`, we extract the element `x`, apply `f` on it and compose a new log message combining the incoming log message and the one returned by function `f`, using the `mappend` function.
+The chain operator `(>>=)` takes an instance of type a wrapped into the `(Writer w)` and pass it to a function that operates on the type a and wraps the resulting type into `(Writer w)` again. In our implementation of the monad for `(Writer w)`, we extract the element `x`, apply `f` on it and compose a new log message combining the incoming log message and the one returned by function `f`, using the `mappend` function.
 
 This implementation is available in the `Control.Monad.Writer` module. One simple example that uses the Writer Monad is a function that operates over numbers and log them:
 

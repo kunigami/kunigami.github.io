@@ -64,7 +64,7 @@ This operator can also be combined with the `not` operator.
 
 ### Numeric Types
 
-Numeric types can be one of the following: `int` (plain integer), `float` (floating point numbers), `long` (long integers) and `complex`. `int`'s are like C++'s long, 32 bits of precision. `float`'s are equivalent to C++'s double, usually 64 bits, 53 bits for mantisse, 10 bits for exponents and 1 bit for sinal. `long`'s have unlimited precision. `complex` is a pair of floats (named `real` and `imag`).
+Numeric types can be one of the following: `int` (plain integer), `float` (floating point numbers), `long` (long integers) and `complex`. `int`'s are like C++'s long, 32 bits of precision. `float`'s are equivalent to C++'s double, usually 64 bits, 53 bits for mantisse, 10 bits for exponents and 1 bit for sign. `long`'s have unlimited precision. `complex` is a pair of floats (named `real` and `imag`).
 
 **Math operations.** Most operators are the same as other languages. The different ones include `//`, which performs floored quotient, for comparison
 

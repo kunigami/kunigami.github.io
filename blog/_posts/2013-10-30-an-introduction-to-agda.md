@@ -214,7 +214,7 @@ head (x :: xs) = x
 
 {% endhighlight %}
 
-**Proofs as types.** We are now going to write an example on how to use dependent types to encode proofs ( as types.
+**Proofs as types.** We are now going to write an example on how to use dependent types to encode proofs as types.
 
 Let's start by defining data types to represent the two possible values of a boolean. Note that we don't specify constructors here.
 

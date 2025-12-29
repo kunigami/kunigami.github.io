@@ -9,7 +9,7 @@ tags: [artificial intelligence, calculus, combinatorial optimization, coursera]
 </figure>
 [Andrew Ng](http://en.wikipedia.org/wiki/Andrew_Ng) is a Computer Science professor at Stanford. He is also one of the co-founders of the Coursera platform. Andrew recently joined the Chinese company [Baidu](http://en.wikipedia.org/wiki/Baidu) as a chief scientist.
 
-His main research focus is on Machine Learning, Artificial Intelligence and Deep Learning. He teaches the Machine Learning class in Coursera, which lasts 10 weeks and is comprised of videos, multiple choice assignments and programming assingments (with Octave).
+His main research focus is on Machine Learning, Artificial Intelligence and Deep Learning. He teaches the Machine Learning class in Coursera, which lasts 10 weeks and is comprised of videos, multiple choice assignments and programming assignments (with Octave).
 
 Professor Andrew is a very good lecturer and makes the content more accessible by relying more on intuition rather than rigor, but always mentioning that a given result is backed by mathematical proofs. The material is very practical and he often discusses about real world techniques and applications.
 

@@ -50,7 +50,7 @@ More specifically, the protocol is as follows:
 
 **Proposer**
 
-  First, the proposer picks up an unique number $$n$$ and broadcasts a *prepare request* wit label $$n$$ to the acceptors.
+  First, the proposer picks up an unique number $$n$$ and broadcasts a *prepare request* with label $$n$$ to the acceptors.
 
 **Acceptor**
 

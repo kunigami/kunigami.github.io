@@ -38,7 +38,7 @@ Now, let's cover some of the basic aspects of emacs lisp.
 
 {% endhighlight %}
 
-Similarly, for operators, we first provide the operator and then the parameters, so the  For example, to add two numbers:
+Similarly, for operators, we first provide the operator and then the parameters. For example, to add two numbers:
 
 {% highlight lisp %}
 
@@ -193,7 +193,7 @@ The `car` function will retrieve the first element of the list and `cdr` will ge
 {% highlight lisp %}
 
 (car '(1 2 3)) ;; 1
-(cdr '(1 2 3)) ;; (1 2 3)
+(cdr '(1 2 3)) ;; (2 3)
 
 {% endhighlight %}
 
