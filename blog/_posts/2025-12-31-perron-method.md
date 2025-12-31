@@ -201,7 +201,7 @@ By the definition on Perron's function, $u(z) \ge V(z)$ and $\liminf_{z \rightar
 
 Now if there's a barrier at each point $\zeta \in \delta \Omega$, we have $\lim_{z \rightarrow \zeta} u(z) = f(\zeta)$. Since $u$ is harmonic (*Lemma 2*), Perron's function is a solution. In other words, a sufficient condition for the Dirichlet problem to have a solution is that we can find the appropriate barrier functions.
 
-So barrier is this sort of "tracks" which does not directly related to the solution but they provide evidence a solution exists. Also notice that the barrier function is independent of $f$, it only depends on the region $\Omega$.
+So barrier is this sort of "tracks" which does not directly relate to the solution but they provide evidence a solution exists. Also notice that the barrier function is independent of $f$, it only depends on the region $\Omega$.
 
 ## Examples of Barriers
 
