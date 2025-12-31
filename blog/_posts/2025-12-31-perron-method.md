@@ -47,7 +47,7 @@ Notice how $v$ is a "weaker" version of the function $v^\*$ we're looking for, w
 
 We observe that $\mathcal{B}(f)$ has at least the same cardinality as the reals because any constant function $v(z) = c$ for $c \le -M$ belongs to it. Next we define the *Perron function* (I came up with this name for convenience. I don't think this term is used in the literature).
 
-**Definition 1.** Let the function $u(z)$ be the lower upper bound of $v(z)$ for $v \in \mathcal{B}(f)$. More precisely, for each $z \in \Omega$, $u(z)$ is the supremum of the set $\curly{v(z) : v \in \mathcal{B}(f)}$. We can this function the **Perron function** of $f$.
+**Definition 1.** Let the function $u(z)$ be the lower upper bound of $v(z)$ for $v \in \mathcal{B}(f)$. More precisely, for each $z \in \Omega$, $u(z)$ is the supremum of the set $\curly{v(z) : v \in \mathcal{B}(f)}$. We call this function the **Perron function** of $f$.
 
 Now *Lemma 2* shows that the Perron's function is harmonic.
 
