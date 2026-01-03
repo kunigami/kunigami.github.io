@@ -1,5 +1,14 @@
 [
   {
+    "title": "Notes from the Underground",
+    "vanity": "notes-from-the-underground",
+    "author": "Fyodor Dostoevsky",
+    "rating": 5,
+    "image": "notes-from-the-underground.jpg",
+    "category": "Fiction",
+    "year": 2026
+  },
+  {
     "title": "The Music of the Primes",
     "vanity": "the-music-of-the-primes",
     "author": "Marcus du Sautoy",
