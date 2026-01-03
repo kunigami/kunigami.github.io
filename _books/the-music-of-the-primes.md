@@ -124,6 +124,14 @@ Weil is credited to creating the field of algebraic geometry, which provided a n
 
 > He believed that the development of new mathematical ideas went hand-in-hand with the development of sophisticated forms of language.
 
+### Removing Scaffoldings
+
+The book mentions that Gauss had one of his work rejected and from them on would only publish results that were perfectly ironed down.
+
+> He always claimed that mathematics was like a piece of architecture. An architect never leaves the scaffolding for people to see how the building was constructed.
+
+Riemann followed a similar philosophy and would not publish partial results. It was later discovered that he didn't prove his own hypothesis, his personal notes had shown that he already knew about the many breakthroughs from mathematicians found later.
+
 ### Layman Language
 
 Speaking of language, one aspect that often got in the way of understanding things more precisely is the language used: many terms I knew were referred to by some more generic terms to make it accessible to a more general audience and I had to keep "translating" what he meant.
