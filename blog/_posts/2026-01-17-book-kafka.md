@@ -224,7 +224,7 @@ Kafka is the input source for stream processing frameworks such as Flink, but it
 
 ## Conclusion
 
-I got what I wanted from this book: I learned a lot about Kafka! The part I found the most interesting and difficult was the transactions. I found it amusing how Kafka uses special topics for a bunch of internal operations including checkpointing and transactions, but also cluster-replication, it's how in Linux everything is a file and Kafka everything is a topic.
+I got what I wanted from this book: I learned a lot about Kafka! The part I found the most interesting and difficult was the transactions. I found it amusing how Kafka uses special topics for a bunch of internal operations including checkpointing and transactions, but also cluster-replication. It's how in Linux everything is a file and in Kafka everything is a topic.
 
 As I was trying to write down my understanding, I found some difficult topics such as compaction and transactions were missing details so I had to complement with external research.
 
