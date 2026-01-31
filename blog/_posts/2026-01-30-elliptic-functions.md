@@ -633,6 +633,8 @@ $$
 
 </proof>
 
+Because simple poles (poles of order 1) have non-zero residue, it means that a non-constant elliptic function cannot have a single simple pole.
+
 **Lemma 11.** A non-constant elliptic fuction has equally many poles as it has zeros.
 <proof>
 From <i>Lemma 2</i> and <i>Lemma 3</i> we conclude that $g = f'/f$ is an elliptic function with same periods as $f$. Let $z_1, z_2, \dots, z_n$ be the zeros of $f$ with order $m_1, \dots, m_n$ and $p_1, p_2, \dots, p_n$ be the poles of $f$ with order $n_1, \dots, n_n$. From the <i>Argument Principle</i> (<i>Theorem 3</i> in [5]), we have that
