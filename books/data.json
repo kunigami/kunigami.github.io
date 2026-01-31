@@ -1,5 +1,14 @@
 [
   {
+    "title": "Kafka: The Definitive Guide",
+    "vanity": "kafka",
+    "author": "Gwen Shapira et al.",
+    "rating": 4,
+    "image": "kafka.jpg",
+    "category": "Programming",
+    "year": 2026
+  },
+  {
     "title": "Notes from the Underground",
     "vanity": "notes-from-the-underground",
     "author": "Fyodor Dostoevsky",
