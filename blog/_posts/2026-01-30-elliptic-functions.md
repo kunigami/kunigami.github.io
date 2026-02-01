@@ -17,7 +17,7 @@ Suppose we're given a circle of radius $r$ and two points in its perimeter, and 
 
 For ellipses this is not as trivial. In the 18th century, Giulio Fagnano and Leonhard Euler were the first to use integrals to compute the arc length of an ellipse and these became known as *elliptic integrals*.
 
-Niels Abel and Carl Jacobi studied the inverse of elliptic integrals and later realized they were doubly periodic, that is they have two fundamental periods, as oppose to trigonometric functions line sine that has a single period. Due to this connection double periodic functions became kwnon as *elliptic functions*.
+Niels Abel and Carl Jacobi studied the inverse of elliptic integrals and later realized they were doubly periodic, that is they have two fundamental periods, as oppose to trigonometric functions line sine that has a single period. Due to this connection double periodic functions became known as *elliptic functions*.
 
 <!--more-->
 
@@ -29,7 +29,7 @@ As the name suggests, periodic functions are those with image that repeats indef
 
 More generally, a function $f(z)$ is called **periodic** if $f(z) = f(z + w)$ for all $z$ in the domain, in which case $w$ is called the **period**. For this post, we'll restrict ourselves to meromorphic functions.
 
-If $w$ is the period of a function, that is $f(z) = f(z + w)$, inductively we can conclude that any integral multiple of $w$ is also a period, that is $f(z) = (z + nw)$. If a period is not an integral multiple of any other period we call it the **fundamental period**. If a function has only one fundamental period, then $f$ is called **simply periodic**. For the remainder of the post, when we say periodic, we'll imply simply periodic.
+If $w$ is the period of a function, that is $f(z) = f(z + w)$, inductively we can conclude that any integral multiple of $w$ is also a period, that is $f(z) = f(z + nw)$. If a period is not an integral multiple of any other period we call it the **fundamental period**. If a function has only one fundamental period, then $f$ is called **simply periodic**. For the remainder of the post, when we say periodic, we'll imply simply periodic.
 
 The function $f(z) = e^{2\pi i z / w}$ is the simplest periodic function and surprisingly, every periodic function can be expressed in terms of this one.
 
@@ -76,7 +76,7 @@ $$
 which then lets us express $f(z)$ as:
 
 $$
-f(z) = g \circ \zeta(z) = \sum_{-\infty}^\infty c_n e^{2 \pi n z / w}
+f(z) = g \circ \zeta(z) = \sum_{-\infty}^\infty c_n e^{2 \pi i n z / w}
 $$
 
 which is the Fourier series [3].
@@ -106,7 +106,7 @@ $$
 w = n_1 w_1 + n_2 w_2
 $$
 
-We define the set of such periods as the **period module** of $f(z)$, denoted by $M$. Even if we don't know $w_1$ and $w_2$ explicitly, we can guarantee that any integral linear combination of any other 2 periods in $M$ is also in $M$, as show in *Lemma 4*.
+We define the set of such periods as the **period module** of $f(z)$, denoted by $M$. Even if we don't know $w_1$ and $w_2$ explicitly, we can guarantee that any integral linear combination of any other 2 periods in $M$ is also in $M$, as shown in *Lemma 4*.
 
 **Lemma 4.** Let $M$ be the period module of $f(z)$ and $u, v$ any periods in $M$. Then any integral linear combination of $u, v$ is also in $M$.
 
@@ -127,7 +127,7 @@ $$
 rearranging terms and grouping by $w_1, w_2$:
 
 $$
-w = (n_1 a_1 + n_2 b_1) w_1 + (n_1 a_2 _ n_2 b_2) w_2
+w = (n_1 a_1 + n_2 b_1) w_1 + (n_1 a_2 + n_2 b_2) w_2
 $$
 
 Since all coefficients involved are integers, $w$ is also a integral linear combination of $w_1, w_2$ and thus belongs to $M$.
@@ -422,7 +422,7 @@ $$
 \end{array}
 $$
 
-We call it the **fundamental region** and depicted it in *Figure 1*. Our first result is to show a base exists in it, as show in *Lemmaa F*.
+We call it the **fundamental region** and depicted it in *Figure 1*. Our first result is to show a base exists in it, as shown in *Lemma 7*.
 
 <figure class="center_children">
   <img src="{{resources_path}}/fundamental-region.png" alt="See caption" />
@@ -516,7 +516,7 @@ $$
 using $ad - bc = \pm 1$:
 
 $$
-\Im(r') = \pm \frac{r - \overline{r}}{2pi \abs{cr + d}^2}
+\Im(r') = \pm \frac{r - \overline{r}}{2i \abs{cr + d}^2}
 $$
 
 using that $\Im(z) = (z - \overline{z})/(2i)$:
@@ -560,9 +560,9 @@ in the complex plan, this equation corresponds to a circle of radius $1/\abs{c}$
 <br /><br />
 If $\abs{c} = 1$, $(8.3)$ becomes $\abs{r \pm d} \le 1$. Since $\abs{z} \ge \abs{\Re(z)}$, then $\abs{\Re(r) \pm d} \le \abs{r \pm d} \le 1$. Since $\abs{\Re(r)} \le 1/2$, $d$ cannot be too large. If $\abs{d} \ge 2$, then $\abs{r \pm d} \gt 1$ a contradiction, so $d \in \curly{-1, 0, 1}$.
 <br /><br />
-Now suppose $d = 1$. Then $(8.3)$ becomes $\abs{r + 1} \le 1$ which is the unit circle centered in $(-1, 0)$. The intersection between this circle and the unit circumference at the origin is a single point is $(-1/2, \sqrt{3}{2})$. However this point does not belong to the fundamental region (this is easier to visualizer in <i>Figure 1</i> of the fundamental region). Thus $d \ne -1$.
+Now suppose $d = 1$. Then $(8.3)$ becomes $\abs{r + 1} \le 1$ which is the unit circle centered in $(-1, 0)$. The intersection between this circle and the unit circumference at the origin is a single point is $(-1/2, \sqrt{3}/2)$. However this point does not belong to the fundamental region (this is easier to visualizer in <i>Figure 1</i> of the fundamental region). Thus $d \ne -1$.
 <br /><br />
-Now suppose $d = -1$. Then $(8.3)$ becomes $\abs{r - 1} \le 1$ which is the unit circle centered in $(1, 0)$. The intersection between this circle and the unit circumference at the origin is a single point is $r = (1/2, \sqrt{3}{2})$ which does belong to the fundamental region. But since this point is on the circumference of  $\abs{r - 1} \le 1$, we have the equality $\abs{r - 1} = 1$, which implies $\abs{cr + d}^2 = 1$ and thus $\Im(r') = \Im(r)$, and thus $\Im(r') = \sqrt{3}{2}$ but there's a single point with this image in the fundamental region and thus $r = r'$.
+Now suppose $d = -1$. Then $(8.3)$ becomes $\abs{r - 1} \le 1$ which is the unit circle centered in $(1, 0)$. The intersection between this circle and the unit circumference at the origin is a single point is $r = (1/2, \sqrt{3}/2)$ which does belong to the fundamental region. But since this point is on the circumference of  $\abs{r - 1} \le 1$, we have the equality $\abs{r - 1} = 1$, which implies $\abs{cr + d}^2 = 1$ and thus $\Im(r') = \Im(r)$, and thus $\Im(r') = \sqrt{3}/2$ but there's a single point with this image in the fundamental region and thus $r = r'$.
 <br /><br />
 Finally suppose $d = 0$. Then $(8.3)$ becomes $\abs{r} \le 1$. Since $\abs{r} \ge 1$ in the fundamental region, $\abs{r} = 1$. From $(8.2)$ we get $bc = -1$. Since $\abs{c} = 1$, $\abs{b} = 1$ and they have opposite signs. From $(1)$ we get:
 
@@ -580,7 +580,7 @@ Since $a$ is real, the imaginary parts of $r'$ and $r$ cancel out and $\Im(r') =
 
 $$\Re(r') + \Re(\overline{r}) = \Re(r') + \Re(r) = \pm a$$
 
-Since $-1/2 \lt Re(r'), Re(r) \le 1/2$, their sum is at most $1$ and never $-1$, so $a \in \abs{0, 1}$. If $a = 1$, then it must be that $Re(r) = Re(r') = 1/2$. Since $\Im(r') = \Im(r)$, $r' = r$. Now if $a = 0$, $r' = -\overline{r}$ so $\Re(r') = -\Re(r)$. However, since $\abs{r} = 1$ and $\abs{r'} = 1$, property $(iv)$ tells us $\Re(r'), \Re(r) \ge 0$, so it must be that $\Re(r') = \Re(r) = 0$. In this case $\Im(r') = \Im(r) = 1$ and $r' - r$.
+Since $-1/2 \lt Re(r'), Re(r) \le 1/2$, their sum is at most $1$ and never $-1$, so $a \in \curly{0, 1}$. If $a = 1$, then it must be that $Re(r) = Re(r') = 1/2$. Since $\Im(r') = \Im(r)$, $r' = r$. Now if $a = 0$, $r' = -\overline{r}$ so $\Re(r') = -\Re(r)$. However, since $\abs{r} = 1$ and $\abs{r'} = 1$, property $(iv)$ tells us $\Re(r'), \Re(r) \ge 0$, so it must be that $\Re(r') = \Re(r) = 0$. In this case $\Im(r') = \Im(r) = 1$ and $r' = r$.
 <br /><br />
 So we proved that no matter which valid combination of $a, b, c$ and $d$, we end up with $r' = r$.
 </proof>
@@ -589,9 +589,9 @@ we define any base $(w_1, w_2)$ with $r = w_2 / w_1$ in the fundamental region a
 
 ### Lattice
 
-Any base $(w_1, w_2)$ of the module period induces a lattice. The points on this latice are those of the form $n_1 w_1 + n_2 w_2$. Each "cell" on this lattice is a parallelogram formed by adjence points $(n_1 w_1, n_2 w_2)$, $((n_1 + 1) w_1, n_2 w_2)$, $(n_1 w_1, (n_2 + 1) w_2)$, $((n_1 + 1) w_1, (n_2 + 1) w_2)$.
+Any base $(w_1, w_2)$ of the module period induces a lattice. The points on this lattice are those of the form $n_1 w_1 + n_2 w_2$. Each "cell" on this lattice is a parallelogram formed by adjacent points $(n_1 w_1, n_2 w_2)$, $((n_1 + 1) w_1, n_2 w_2)$, $(n_1 w_1, (n_2 + 1) w_2)$, $((n_1 + 1) w_1, (n_2 + 1) w_2)$.
 
-The property of elliptic functions is that for any $a$, $f(a) = f(a + n_1 w_1 + n_2 w_2)$, so for any two points in different parallelograms in the same relative position within their respective parallelograms have the same value. Thus, an elliptic function is fully specified for the entire complex plain just from a single parallelogram.
+The property of elliptic functions is that for any $a$, $f(a) = f(a + n_1 w_1 + n_2 w_2)$, so for any two points in different parallelograms in the same relative position within their respective parallelograms have the same value. Thus, an elliptic function is fully specified for the entire complex plane just from a single parallelogram.
 
 <figure class="center_children">
   <img src="{{resources_path}}/lattice.png" alt="See caption" />
@@ -609,7 +609,7 @@ We now consider some properties of elliptic functions. *Lemma 2* and *Lemma 3* a
 
 $$f(z) = f(z + w_1) \quad \mbox{and} \quad f(z) = f(z + w_2)$$
 
-By definition elliptic functions are meromorphic. If they have no poles then they're holomorphics. Since $f$ is fully specified from a single parallelogram, its value is bounded in this finite region. According to Liouville's theorem, a bounded holomoprhic function must be constant.
+By definition elliptic functions are meromorphic. If they have no poles then they're holomorphics. Since $f$ is fully specified from a single parallelogram, its value is bounded in this finite region. According to Liouville's theorem, a bounded holomorphic function must be constant.
 
 **Corollary 9.** An elliptic function without poles is a constant.
 
@@ -635,7 +635,7 @@ $$
 
 Because simple poles (poles of order 1) have non-zero residue, it means that a non-constant elliptic function cannot have a single simple pole.
 
-**Lemma 11.** A non-constant elliptic fuction has equally many poles as it has zeros.
+**Lemma 11.** A non-constant elliptic function has equally many poles as it has zeros.
 <proof>
 From <i>Lemma 2</i> and <i>Lemma 3</i> we conclude that $g = f'/f$ is an elliptic function with same periods as $f$. Let $z_1, z_2, \dots, z_n$ be the zeros of $f$ with order $m_1, \dots, m_n$ and $p_1, p_2, \dots, p_n$ be the poles of $f$ with order $n_1, \dots, n_n$. From the <i>Argument Principle</i> (<i>Theorem 3</i> in [5]), we have that
 
@@ -697,7 +697,7 @@ $$
 \sum_{j = 1}^{n} z_j m_j - \sum_{j = 1}^{n} p_j n_j = w_1 n_1 + w_2 n_2
 $$
 
-The integer $w_1 n_1 + w_2 n_2$ belongs to $M$. So by defnition $\sum_{j = 1}^{n} z_j m_j$ and $\sum_{j = 1}^{n} p_j n_j$ are congruent.
+The integer $w_1 n_1 + w_2 n_2$ belongs to $M$. So by definition $\sum_{j = 1}^{n} z_j m_j$ and $\sum_{j = 1}^{n} p_j n_j$ are congruent.
 
 </proof>
 

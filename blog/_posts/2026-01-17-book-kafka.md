@@ -36,7 +36,7 @@ At the most basic level, Kafka is a distributed queue: you can have multiple hos
 
 **Messages and Batch.** A *message* is equivalent to a row in a database. For performance reasons, the unit of data in Kafka is a *batch* of data. How a batch is encoded is transparent to Kafka (of course it must be consistent between producers and consumers) but a typical serialization used is [Apache Avro](https://avro.apache.org/).
 
-Relately, data can have an underlying schema, but these are also transparent to Kafka. The schema must be stored externally to be used by both producers and consumers.
+Relatedly, data can have an underlying schema, but these are also transparent to Kafka. The schema must be stored externally to be used by both producers and consumers.
 
 **Topics, Partitions and Segments.** Kafka is actually a set of queues, not a single one. Each queue is called a *topic*.
 
@@ -82,7 +82,7 @@ The client wanting to read from Kafka must use a Kafka consumer library. As ment
 
 Sometimes we need key affinity, for example if the client aggregates the data and needs all the data with the same key to go to it. It's possible to configure static assignment.
 
-The way it works is that the consumer is by staying in an inifite loop and constantly calling `poll()` on the consumer client.
+The way it works is that the consumer is by staying in an infinite loop and constantly calling `poll()` on the consumer client.
 
 {% highlight scala %}
 while (true) {
@@ -93,7 +93,7 @@ while (true) {
     if (custCountryMap.containsKey(record.value())) {
       updatedCount = custCountryMap.get(record.value()) + 1;
     }
-    custCountryMap.put(record. value), updatedCount);
+    custCountryMap.put(record.value(), updatedCount);
     JSONObject json = new JSONObject(custCountryMap) ;
     System.out.println(json.toString());
   }
@@ -105,7 +105,7 @@ while (true) {
 
 The consumer also has the flexibility to decide when Kafka saves a checkpoint, by turning off automatic commits and calling an explicit method, `commitSync()`. There's an async version `commitAsync()` which doesn't block during checkpoint but also doesn't handle retries, so some care must be taken to ensure the right semantics. Exactly-once-semantics will be covered later.
 
-Some care must also be taken when repatitioning happens. Suppose we add a new member to the consumer group. Then some existing members will "lose" the partitions they're reading from, so they must commit a checkpoint before that happens. It's possible to subscribe to such events.
+Some care must also be taken when repartitioning happens. Suppose we add a new member to the consumer group. Then some existing members will "lose" the partitions they're reading from, so they must commit a checkpoint before that happens. It's possible to subscribe to such events.
 
 The broker that keeps tab of offsets is called the *group coordinator*, and it is also the partition leader of a topic called `__consumer_offsets` (partitioned by the consumer group ID). This topic is only used for durability in case the leader crashes and the offset map must be reconstructed.
 
@@ -113,7 +113,7 @@ The broker that keeps tab of offsets is called the *group coordinator*, and it i
 
 Kafka uses Zookeeper as a source of truth to which brokers are part of a cluster. Brokers must periodically send a heartbeat to the Zookeeper ensemble otherwise they're considered dead.
 
-Zookeeper is also used to elect a leader among the brokers, called the **coordinator**. The controller is responsible for deciding which brokers are the leader of a partition and which are the followers, so it must know when brokers leave or join the cluster.
+Zookeeper is also used to elect a leader among the brokers, called the **controller**. The controller is responsible for deciding which brokers are the leader of a partition and which are the followers, so it must know when brokers leave or join the cluster.
 
 ### Replication
 
@@ -123,7 +123,7 @@ The follower constantly asks for data from the leader, so the leader has an idea
 
 ### Retention
 
-Each partition is implemented via a set of files. By default each file contains either 1 GB or 1 week worth of data, whichever is smaller. When eithere of these limits is reached, Kafka starts writing to a new file.
+Each partition is implemented via a set of files. By default each file contains either 1 GB or 1 week worth of data, whichever is smaller. When either of these limits is reached, Kafka starts writing to a new file.
 
 The file contains metadata of the date range contained in it, so an asynchronous process can constantly delete files where all messages in it are out of retention.
 
@@ -133,13 +133,13 @@ Kafka stores an index that maps logical topic offsets to actual files and file o
 
 An index is a tradeoff between storage and compute. If we store every single message in the index it would take too much space. No index would make lookups take too long.
 
-This index is needed because consumers can specifcy a time in the past for replay or to recover from a checkpoint.
+This index is needed because consumers can specify a time in the past for replay or to recover from a checkpoint.
 
 ### Compaction
 
 To implement the compaction, a background thread process a segment. It builds a in-memory hash table indexed by keys, containing the offset of the most recent message for that key. Then it does a second pass and it filters out any message that has a corresponding entry in the hash map with a smaller offset, and creates a new segment. The book is very confusing about this process, suggesting this is done in one pass.
 
-Note that this is an "eventual" compaction. Customers reading from the past might still see "dirty" messages. It's assumed that clients reading from compacted topics are themselves writing to some sort of key value store that also retains only the last entry.
+Note that this is an "eventual" compaction. Consumers reading from the past might still see "dirty" messages. It's assumed that clients reading from compacted topics are themselves writing to some sort of key value store that also retains only the last entry.
 
 A similar mechanism is used even for non-compacted topics, when data must be deleted. The producer might indicate a message called a *tombstone*, which is basically a message with the key to be deleted and a null value. Consumers are supposed to handle this tombstone: if they process this message
 
@@ -167,14 +167,14 @@ producer.initTransactions();
 while (true) {
   try {
     ConsumerRecords<Integer, String> records = consumer.poll();
-    if (records.count) > 0) {
+    if (records.count() > 0) {
       producer.beginTransaction();
       for (ConsumerRecord<Integer, String> record: records) {
         ProducerRecord<Integer, String> customizedRecord = transform(record);
         producer.send(customizedRecord);
       }
-      Map<TopcPartitton, OffsetAndMetadata> offsets = consumeroffsets();
-      producer.sendoffsetsToTransaction(offsets, consumer.groupMetadata());
+      Map<TopicPartition, OffsetAndMetadata> offsets = consumerOffsets();
+      producer.sendOffsetsToTransaction(offsets, consumer.groupMetadata());
       producer.commitTransaction();
     }
   } catch (KafkaException e) {
@@ -190,7 +190,7 @@ To prevent multiple producers with the same ID writing to Kafka, it uses a fenci
 
 When writing a message, the broker will check if the timestamp on the message matches the one in the map. If not it will reject. This prevents multiple producers from being alive at the same time. If a new producer starts and registers a higher timestamp, it overtakes all the other existing producers.
 
-When a producer calls `initTransactions()` Kafka also selects one of the brokers to be the *transaction coordinator* (hash of the producer ID, so the mapping is sticky). It will keep in-memory metadata about the transaction, such as state and which partitions are participating in the transaction. This broker is also the partition leader of a special internal topic named `__transaction_state` (partitioned by producer ID) which can be used to restore the .
+When a producer calls `initTransactions()` Kafka also selects one of the brokers to be the *transaction coordinator* (hash of the producer ID, so the mapping is sticky). It will keep in-memory metadata about the transaction, such as state and which partitions are participating in the transaction. This broker is also the partition leader of a special internal topic named `__transaction_state` (partitioned by producer ID) which can be used to restore the state.
 
 ### Begin Transaction
 
@@ -202,7 +202,7 @@ The coordinator writes a message to `__transaction_state` with all partitions th
 
 In addition to sending the messages, we also need to update the offsets for the consumers. Note that it's the producer that commits the offset now, not the consumer: `producer.sendoffsetsToTransaction(offsets, consumer.groupMetadata())`.
 
-The *group coordinator* will keep non-committed offsets in a special place and once the transaction is comitted it will merge these offsets into its main map.
+The *group coordinator* will keep non-committed offsets in a special place and once the transaction is committed it will merge these offsets into its main map.
 
 
 ### Commit Transaction
@@ -215,7 +215,7 @@ Since the offset topic `__consumer_offsets` has also been changed during the tra
 
 Similarly, if the transaction needs to aborted, the producer calls `producer.abortTransaction()` and the coordinator go through the same process but instead of a "commit" marker, it will have a "abort" marker. Messages between starting at a marker and ending in the "abort" marker are considered deleted.
 
-Differently from the success case, in a aborted transaction, we need the consumer to call `resetToLastCommittedPositions()`. While the `__consumer_offsets` also received the "abort" marker and will know not to return the pending offsets, on the client side we already moved to the next offset, so need to reset.
+Differently from the success case, in an aborted transaction, we need the consumer to call `resetToLastCommittedPositions()`. While the `__consumer_offsets` also received the "abort" marker and will know not to return the pending offsets, on the client side we already moved to the next offset, so need to reset.
 
 ## Data Pipelines
 
