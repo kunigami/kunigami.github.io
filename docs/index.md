@@ -18,7 +18,15 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Distributed Systems]({{ site.url }}/docs/cs/distributed.html)
 * [Operating Systems]({{ site.url }}/docs/cs/operating_systems.html)
 
-## C++
+## History
+
+* [Morocco]({{ site.url }}/docs/history/morocco/)
+* [Singapore]({{ site.url }}/docs/history/singapore/)
+* [Vietnam]({{ site.url }}/docs/history/vietnam/)
+
+## Programming
+
+### C++
 
 * [General]({{ site.url }}/docs/cpp/)
 * [Concurrency]({{ site.url }}/docs/cpp/concurrency.html)
@@ -26,34 +34,22 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [External Libraries]({{ site.url }}/docs/cpp/external_libs.html)
 * [GDB]({{ site.url }}/docs/cpp/gdb.html)
 
-## Java
+### Java
 
 * [General]({{ site.url }}/docs/java/)
 * [Maven]({{ site.url }}/docs/java/maven.html)
 
-## JavaScript
+### JavaScript
 
 * [General]({{ site.url }}/docs/javascript/)
 * [NPM]({{ site.url }}/docs/javascript/npm.html)
 
-## History
-
-* [Morocco]({{ site.url }}/docs/history/morocco/)
-* [Singapore]({{ site.url }}/docs/history/singapore/)
-* [Vietnam]({{ site.url }}/docs/history/vietnam/)
-
-## Linguistics
-
-* [Figures of Speech]({{ site.url }}/docs/linguistics/figures_of_speech.html)
-* Languages
-  * [French]({{ site.url }}/docs/linguistics/french/)
-
-## Lean
+### Lean
 
 * [General]({{ site.url }}/docs/lean/)
 * [Proofs]({{ site.url }}/docs/lean/proofs.html)
 
-## Python
+### Python
 
 * [General]({{ site.url }}/docs/python/)
 * [Audio]({{ site.url }}/docs/python/audio.html)
@@ -67,48 +63,71 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Unit Test]({{ site.url }}/docs/python/unittest.html)
 * [Virtual Environment]({{ site.url }}/docs/python/venv.html)
 
-## Rust
+### Rust
 
 * [General]({{ site.url }}/docs/rust/)
 * [Cargo]({{ site.url }}/docs/rust/cargo.html)
 
+## Linguistics
+
+* [Figures of Speech]({{ site.url }}/docs/linguistics/figures_of_speech.html)
+* Languages
+  * [French]({{ site.url }}/docs/linguistics/french/)
+
+
 ## Math
 
-* Linear Algebra
-  * [Matrices]({{ site.url }}/docs/math/matrix.html)
-  * [Determinants]({{ site.url }}/docs/math/determinants.html)
-* Real Analysis
-  * [Derivative]({{ site.url }}/docs/math/derivative.html)
-  * [Integral]({{ site.url }}/docs/math/integral.html)
-  * [Limit]({{ site.url }}/docs/math/limit.html)
-  * [Modulus]({{ site.url }}/docs/math/modulus.html)
-  * [Sequence]({{ site.url }}/docs/math/sequence.html)
-  * [Series]({{ site.url }}/docs/math/series.html)
-* Complex Analysis
-  * [Complex Numbers]({{ site.url }}/docs/math/complex.html)
-  * [Complex Integral]({{ site.url }}/docs/math/complex_integral.html)
-  * [Complex Power Series]({{ site.url }}/docs/math/complex_power_series.html)
-  * [Harmonic Functions]({{ site.url }}/docs/math/harmonic.html)
-  * [Holomorphic Functions]({{ site.url }}/docs/math/holomorphism.html)
+### Algebra
+
 * [Matrices]({{ site.url }}/docs/math/matrix.html)
-* [Probability]({{ site.url }}/docs/math/probability.html)
-* [Set Theory]({{ site.url }}/docs/math/set.html)
-* [Topology]({{ site.url }}/docs/math/topology.html)
+* [Determinants]({{ site.url }}/docs/math/determinants.html)
+
+### Analysis
+
+* [Complex Numbers]({{ site.url }}/docs/math/complex.html)
+* [Complex Integral]({{ site.url }}/docs/math/complex_integral.html)
+* [Complex Power Series]({{ site.url }}/docs/math/complex_power_series.html)
+* [Derivative]({{ site.url }}/docs/math/derivative.html)
+* [Integral]({{ site.url }}/docs/math/integral.html)
+* [Harmonic Functions]({{ site.url }}/docs/math/harmonic.html)
+* [Holomorphic Functions]({{ site.url }}/docs/math/holomorphism.html)
+* [Limit]({{ site.url }}/docs/math/limit.html)
+* [Modulus]({{ site.url }}/docs/math/modulus.html)
+* [Sequence]({{ site.url }}/docs/math/sequence.html)
+* [Series]({{ site.url }}/docs/math/series.html)
 * [Trigonometry]({{ site.url }}/docs/math/trigonometry.html)
 
-## Linux
+### Probability
+
+* [Probability]({{ site.url }}/docs/math/probability.html)
+
+### Logic
+
+* [Set Theory]({{ site.url }}/docs/math/set.html)
+
+### Topology
+
+* [Topology]({{ site.url }}/docs/math/topology.html)
+
+## Psychology
+
+* [Fallacies]({{ site.url }}/docs/psychology/fallacies.html)
+
+## Sofware
+
+### Linux
 
 * [Linux]({{ site.url }}/docs/linux/)
 * [Ubuntu]({{ site.url }}/docs/linux/ubuntu)
 
-## MacOS
+### MacOS
 
 * [Core Audio]({{ site.url }}/docs/macos/core_audio.html)
 * [Core Foundation]({{ site.url }}/docs/macos/core_foundation.html)
 * [Homebrew]({{ site.url }}/docs/macos/homebrew.html)
 * [Xcode]({{ site.url }}/docs/macos/xcode.html)
 
-## Misc
+### Misc
 
 * [Bash]({{ site.url }}/docs/bash/bash.html)
 * [Blog]({{ site.url }}/docs/blog/)
