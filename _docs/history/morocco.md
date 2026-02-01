@@ -172,6 +172,8 @@ They lived under the Almohads. When they started being weakened in Spain the Mar
 
 In 1276, they extended the old city as Fez Jdid. Fez lived its golden age during this time.
 
+In 1304 Ibn Battuta, the famous world traveller was born in Tangier, and died in 1369 in Marrakesh.
+
 In 1325 the sultan Abu Said Uthman II built the Al-Attarine Madrasa in Fes.
 
 <figure class="center_children">
@@ -196,11 +198,15 @@ The Wattasids didn't last long and were unable to keep the Portuguese advance in
 
 ### Saadi Dynasty (1549 - 1659)
 
-The dynasty started in the Sous valley of Southern Morocco and they were ethnically Arabs. Under Mo al-Shaykh expanded to Marrakesh in 1525 and then conquered Fez from the Wattasids.
+The Saadian (or Sharifian) dynasty started in 1510 when Muhammad al-Qa'im was declared leader of the tries in the Sous Valley (Southern Morocco). After his death in 1517 he was succeeded by his son Ahmad al-Araj, who conquered Marrakesh in 1525.
 
-He was killed by the Ottomans in 1557, but his successor al-Ghalib had a relatively peaceful reign.
+In 1544, after conquering Fez from the Wattasids, his brother Mohammed al-Shaykh was declared sultan of Morroco the first of the Saadian dynasty. He was killed by the Ottomans in 1557, but his son and successor al-Ghalib had a relatively peaceful reign until his death in 1574. His son Abu Abdallah acceded to the throne.
 
-Later, after a struggle of succession al-Mansur became sultan. He defeated the Songhai empire and established the Pashalik, a government centered in Timbuktu. He built the El Badi palace, which got sacked by sultan Moulay Ismail (Alawi dynasty).
+Abd al-Malik, another of Mohammed al-Shaykh sons had fled during al-Ghalib's reign and took exile in the Ottoman empire in Constantinople. He later formed an army in Ottoman Algeria and in 1576 won several battles against his nephew and took over the throne. In 1578, Abu Abdallah then aligned himself with the Portuguese king, Sebastião I and fought his uncle and the Ottomans in the battle of Ksar el Kebir (Alcácer Quibir). All three monarchs died during in the battle, which is why it's also known as the *Battle of Three Kings*.
+
+Al-Malik side was victorious and for Portugal this was a disastrous loss. The king left no heir and the capture and ransom of many Portuguese nobles bankrupted Portugal who fell under control of the Spanish crown until 1640.
+
+Al-Malik's son, Ahmad al-Mansur, became sultan in 1578. He defeated the Songhai empire and established the Pashalik, a government centered in Timbuktu. He built the El Badi palace, which got sacked by sultan Moulay Ismail (Alawi dynasty).
 
 <figure class="center_children">
   <img src="{{resources_path_history}}/el-badi.jpg" alt="See caption." />
