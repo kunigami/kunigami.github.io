@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Mindbody Prescription",
+    "vanity": "mindbody-prescription",
+    "author": "John E. Sarno",
+    "rating": 1,
+    "image": "mindbody.jpg",
+    "category": "Psychology",
+    "year": 2026
+  },
+  {
     "title": "Kafka: The Definitive Guide",
     "vanity": "kafka",
     "author": "Gwen Shapira et al.",
