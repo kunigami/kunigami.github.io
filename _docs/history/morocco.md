@@ -206,7 +206,7 @@ Abd al-Malik, another of Mohammed al-Shaykh sons had fled during al-Ghalib's rei
 
 Al-Malik side was victorious and for Portugal this was a disastrous loss. The king left no heir and the capture and ransom of many Portuguese nobles bankrupted Portugal who fell under control of the Spanish crown until 1640.
 
-Al-Malik's son, Ahmad al-Mansur, became sultan in 1578. He defeated the Songhai empire and established the Pashalik, a government centered in Timbuktu. He built the El Badi palace, which got sacked by sultan Moulay Ismail (Alawi dynasty).
+Al-Malik's son, Ahmad al-Mansur, became sultan in 1578. He defeated the [Songhai empire](https://www.kuniga.me/docs/history/mali) in 1591 and established the Pashalik, a government centered in Timbuktu. He built the El Badi palace, which got sacked by sultan Moulay Ismail (Alawi dynasty).
 
 <figure class="center_children">
   <img src="{{resources_path_history}}/el-badi.jpg" alt="See caption." />
