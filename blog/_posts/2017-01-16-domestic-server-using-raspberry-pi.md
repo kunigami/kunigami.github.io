@@ -199,6 +199,10 @@ sudo ddclient -debug
 For my MediaLink router it's under *Advanced Settings* &gt; *Virtual Server* &gt; *Port Range Forwarding*.
 
 *NOTE:* There's one current issue I haven't been able to figure out. The port forwarding seem to only work if I access it from outside of my local network, that is, through my phone network or via some VPN. It might be some issue with MediaLink.
+## Related Posts
+
+Mentioned by [Network Sockets]({{blog}}/2020/03/07/sockets.html).
+
 ### Conclusion
 In this post we learned some details of the Internet Protocol and learned how to configure a Raspberry Pi to act as a server in a domestic network.
 ### References

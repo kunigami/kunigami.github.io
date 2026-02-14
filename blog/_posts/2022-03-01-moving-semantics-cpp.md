@@ -260,6 +260,8 @@ let mut vec2 = vec1;
 println!("{}", vec1.len());
 {% endhighlight %}
 
+Mentioned by [[Book] Effective Modern C++]({{blog}}/2022/10/25/review-effective-modern-cpp.html).
+
 
 ## References
 

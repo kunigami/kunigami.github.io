@@ -439,6 +439,10 @@ $$
 
 We can see that the constraints matrix of the above formulation is a submatrix of the max circulation problem and by Property 3, it's also TU, which in turn means the corresponding polytope has integral vertices.
 
+## Related Posts
+
+Mentioned by [Elliptic Functions]({{blog}}/2026/01/30/elliptic-functions.html).
+
 ## Conclusion
 
 In this post, we introduced the concept of total unimodular matrices and presented two simple examples: the incidence matrix of a bipartite graph and the incidence matrix of a directed graph.

@@ -357,6 +357,10 @@ In the example above, none of the allocated raw pointers are freed because upon 
 
 The complete implementation including tests is available on [Github]({{github}}/).
 
+## Related Posts
+
+Mentioned by [[Book] Effective Modern C++]({{blog}}/2022/10/25/review-effective-modern-cpp.html).
+
 ## Conclusion
 
 From [4] it seems like a lot of people attempt to write their own implementation. I found it an useful exercise and learned about a few things:

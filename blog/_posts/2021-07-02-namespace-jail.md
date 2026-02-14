@@ -533,6 +533,10 @@ bin   home   lib   lib32   lib64   libx32   old_root   proc   tmp   usr
 
 The full example is available on [Github]({{github}}/main.cpp).
 
+## Related Posts
+
+Mentioned by [Local Inter-Process Communication]({{blog}}/2024/12/07/local-ipc.html) and [[Book] Effective Modern C++]({{blog}}/2022/10/25/review-effective-modern-cpp.html).
+
 ## Conclusion
 
 In this post we went through all the details of creating a shell process with user and mount namespaces. Once we unmount the old root after `pivot_root`, the old root does not stay around (though hidden) like it does via chroot [8].

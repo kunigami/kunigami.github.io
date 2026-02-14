@@ -423,6 +423,10 @@ main = do
 
 Given that we have our binaries, I've started a server first and then ran two client binaries. I was able to type messages in each of the clients and verified the server was handling them properly.
 
+## Related Posts
+
+Mentioned by [Network Sockets]({{blog}}/2020/03/07/sockets.html).
+
 ### Conclusion
 
 Writing this post, I've learned about network programming and debugging in Haskell. I've had classes about network programming back in college, but it didn't seem fun at the time. When we study things for our own curiosity, it's much more interesting.

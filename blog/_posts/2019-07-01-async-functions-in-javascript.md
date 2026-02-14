@@ -360,6 +360,10 @@ In a world where we can remember where we were when an async execution happened,
 
 This translation relies on the existence of generators being fully supported by the runtime. In a world where generators didn't exist as first class citizens, how could we implement them via helpers and also transpilation? We could probably use some sort of iterators and `switch`es to simulate resuming execution at specific points in code, but this is out of the scope of this post and left as food for thought.
 
+## Related Posts
+
+Mentioned by [Coroutines in C++ - The API]({{blog}}/2024/06/03/coroutines-in-cpp.html).
+
 ### Conclusion
 
 In this post we learned about some more language features that help with code authoring and readability, namely generators and async functions. These are very useful abstractions that ends up being added to programming languages such as Python, C#, and Hack.

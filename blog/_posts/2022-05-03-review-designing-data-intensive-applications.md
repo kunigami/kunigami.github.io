@@ -171,3 +171,5 @@ Many of the posts I wrote under distributed systems has been mentioned in the bo
 * [Notes on Zookeeper]({{blog}}/2015/08/07/notes-on-zookeeper.html)
 * [[Paper] Spanner: Google's Globally-Distributed Database]({{blog}}/2017/04/27/paper-reading-spanner-google's-globally-distributed-database.html)
 * [The Paxos Protocol]({{blog}}/2014/04/14/the-paxos-protocol.html)
+
+Mentioned by [RAII]({{blog}}/2023/04/29/raii.html).

@@ -302,6 +302,10 @@ Suppose that in a given node we have a $$n \times m$$ matrix. In the naive appro
 
 In the worst case, using a sparse matrix will lead to the same complexity, but hard set cover instances are generally sparse, so in practice we may have a performance boost. Also, since we do everything in-place, our memory footprint is considerably smaller.
 
+## Related Posts
+
+Mentioned by [Buddy Memory Allocation]({{blog}}/2020/07/31/buddy-memory-allocation.html).
+
 ### References
 
 * [[1](http://arxiv.org/pdf/cs/0011047v1.pdf)] 

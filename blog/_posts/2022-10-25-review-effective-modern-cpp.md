@@ -1255,6 +1255,8 @@ The book also manages to make the content accessible but also detailed and techn
 * [Move Semantics in C++]({{blog}}/2022/03/01/moving-semantics-cpp.html) - As discussed above, that post overlaps in content with *Item 23*.
 * [Smart Pointers in C++]({{blog}}/2022/06/10/smart-pointers-cpp.html) - As discussed above, that post overlaps in content with *Item 18*, *Item 19* and *Item 21*.
 
+Mentioned by [Customization Point Objects in C++]({{blog}}/2025/09/10/cpo-in-cpp.html).
+
 ## References
 {:.no_toc}
 

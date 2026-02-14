@@ -223,3 +223,7 @@ $$Pr\{\mbox{\hash  up moves} > cL(n) \mbox{ among } O(cL(n)) \mbox{ moves}\} = 1
 Since $$(c'- 1) > L(c'e)$$ for sufficiently large values of $$c'$$, we can choose $$c'$$ to make $$\alpha$$ arbitrarily large, which makes the probability above very high, proving the claim.
 
 We conclude that the number of movements is $$O(cL(n)) = O(L(n))$$ with high probability.
+
+## Related Posts
+
+Mentioned by [Buddy Memory Allocation]({{blog}}/2020/07/31/buddy-memory-allocation.html).

@@ -516,6 +516,10 @@ slept 2
 
 Which means that the first sleep executed but yielded the execution back to the scheduler after the `sleep()` call. The second `sleep()` got run, printing *"will sleep 2"*.
 
+## Related Posts
+
+Mentioned by [Coroutines in C++ - The API]({{blog}}/2024/06/03/coroutines-in-cpp.html) and [Asynchronous I/O Overview]({{blog}}/2025/05/16/async-io.html).
+
 ## Conclusion
 
 I've used async/await and event loops in other languages such as Hack and JavaScript, but only recently ran into it in Python. I kept seeing mentions of coroutines and that led me to study it in more details. Overall I felt like I learned a lot.

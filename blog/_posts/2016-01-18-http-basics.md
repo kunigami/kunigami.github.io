@@ -273,6 +273,10 @@ There also several topics we didn't cover like HTTP pipeline or general web atta
 
 Overall it was very interesting to read about internet security.
 
+## Related Posts
+
+Mentioned by [Network Sockets]({{blog}}/2020/03/07/sockets.html).
+
 ### References
 
 * [[1](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)] Wikipedia - Hypertext Transfer Protocol

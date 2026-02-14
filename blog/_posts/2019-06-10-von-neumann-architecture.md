@@ -90,6 +90,10 @@ The speed improvements of RAM memories haven't followed the ones from the CPU. T
 
 To work around this limitation CPU cache is currently being used. Alternative solutions include adding an in-chip memory to reduce latency in the transportation of data.
 
+## Related Posts
+
+Mentioned by [Function Objects in C++]({{blog}}/2023/06/01/functions-in-cpp.html).
+
 ### Conclusion
 
 I didn't have a good idea of what to write, but I was interested in understanding how close we are to practical limits of current computer architectures, so the idea was to go back to the early inception of computer architectures and learn some about it.

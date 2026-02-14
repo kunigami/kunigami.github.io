@@ -413,6 +413,8 @@ One conclusion from the last section is that not only files are a suitable abstr
 
 * [Sockets]({{site.url}}/blog/2020/03/07/sockets.html). As discussed in this post, we previously talked about network sockets, which is another case of data transfer (between different machines the network) that is modeled as a file. We can see that in that post where it mentions `socket()` returns a file descriptor.
 
+Mentioned by [Local Inter-Process Communication]({{blog}}/2024/12/07/local-ipc.html).
+
 ## References
 
 * [[1](https://tldp.org/LDP/intro-linux/html/chap_03.html)] Introduction to Linux: Chapter 3. About files and the file system

@@ -376,6 +376,8 @@ It turned out to be really hard and looking at the source code for the GCC imple
 
 [Von Neumann Architecture](https://www.kuniga.me/blog/2019/06/10/von-neumann-architecture.html) - In that post we touched on the idea of storing data and instructions in the same place.
 
+Mentioned by [Shared Libraries]({{blog}}/2025/04/25/shared-libraries.html).
+
 ## References
 
 * [[1](https://en.cppreference.com/w/cpp/utility/functional/function)] cppreference.com - std::function
