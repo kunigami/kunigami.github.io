@@ -221,6 +221,9 @@ Differently from the success case, in an aborted transaction, we need the consum
 
 Kafka is the input source for stream processing frameworks such as Flink, but it also provides its own stream processing framework known as *Kafka Connect*. This is mostly useful for sending data from Kafka to another source type (e.g. MySQL) or vice-versa, with simple transformations.
 
+## Related Posts
+
+In the post [Queues](https://www.kuniga.me/blog/2025/03/29/queues.html) we discussed queues in general.
 
 ## Conclusion
 
