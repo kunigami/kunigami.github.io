@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Caves of Steel",
+    "vanity": "the-caves-of-steel",
+    "author": "Isaac Asimov",
+    "rating": 4,
+    "image": "the-caves-of-steel.jpg",
+    "category": "Sci-fi",
+    "year": 2026
+  },
+  {
     "title": "The Mindbody Prescription",
     "vanity": "mindbody-prescription",
     "author": "John E. Sarno",
