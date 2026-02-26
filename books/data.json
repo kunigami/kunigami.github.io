@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Golden Trade of the Moors",
+    "vanity": "the-golden-trade-of-the-moors",
+    "author": "Edward William Bovill",
+    "rating": 4,
+    "image": "the-golden-trade.jpg",
+    "category": "History",
+    "year": 2026
+  },
+  {
     "title": "The Caves of Steel",
     "vanity": "the-caves-of-steel",
     "author": "Isaac Asimov",
