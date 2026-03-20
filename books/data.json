@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Naked Sun",
+    "vanity": "the-naked-sun",
+    "author": "Isaac Asimov",
+    "rating": 5,
+    "image": "the-naked-sun.jpg",
+    "category": "Sci-fi",
+    "year": 2026
+  },
+  {
     "title": "The Golden Trade of the Moors",
     "vanity": "the-golden-trade-of-the-moors",
     "author": "Edward William Bovill",
