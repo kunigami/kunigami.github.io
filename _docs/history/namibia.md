@@ -1,8 +1,7 @@
 ---
 layout: doc
-title: "History of Vietnam Cheatsheet"
+title: "History of Namibia Cheatsheet"
 ---
-
 
 {% include blog_vars.html %}
 
