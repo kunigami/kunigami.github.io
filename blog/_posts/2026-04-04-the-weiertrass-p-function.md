@@ -23,7 +23,7 @@ Then we introduced doubly periodic functions, also known as elliptic functions. 
 
 The symbol ℘ denoting the Weierstrass elliptic function seems to be the only unicode character that represents a very specific mathematical object.
 
-Even symbols you might associate with specific meanings such as π, is just a Greek letter, so it's not exclusively used to represent a constant. Even glyphs like ℝ often associated with the set of real numbers is just a convention.
+Even symbols you might associate with specific meanings, such as π, are just Greek letters, so they're not exclusively used to represent a constant. Even glyphs like ℝ, often associated with the set of real numbers, are just conventions.
 
 Physics has its counterpart, ℏ, denoting Planck's constant.
 
@@ -79,7 +79,7 @@ $$
 (1.1) \quad \sum_{w \in M, w \ne 0} \frac{1}{w^3}
 $$
 
-converges. The key observation is that the number of $w \in M$ in a disk of radius $r$ is proportional to $O(r^2)$ rate because they're vertices of a lattice. That is, there exists a constant $\alpha$ such that $\# \curly{w \in M : \abs{w} \le r} \le \alpha r^2$.
+converges. The key observation is that the number of $w \in M$ in a disk of radius $r$ grows at an $O(r^2)$ rate because they're vertices of a lattice. That is, there exists a constant $\alpha$ such that $\# \curly{w \in M : \abs{w} \le r} \le \alpha r^2$.
 <br /><br />
 Now consider the annulus $n \le \abs{w} \lt n + 1$. The number of points in this region, denoted by $a_n$ can be estimated as:
 
@@ -117,7 +117,7 @@ So in some carefully chosen region $(2)$ is holomorphic and thus the series in $
 
 **Corollary 2.** The function $\wp$ has a double pole at 0.
 
-With that information we just need that:
+With that information we just need to show:
 
 **Lemma 3.** $\wp(z) = \wp(z + \lambda)$ for any  $\lambda \in M$
 
@@ -189,7 +189,7 @@ $$
 g(z) = 2 c_1 z + 2 c_3 z^3 + 2 c_5 z^5 \dots
 $$
 
-This means $g(z)$ have no poles and is thus holomorphic around 0, in fact $g(0) = 0$ by replacing it above. $g(z)$ also has the same period $w \in M$ as $f(z)$ because $g(z + w) = f(z + w) - f(-z - w) = f(z) - f(-z)$. The only other poles $g(z)$ might have are for $w \in M$ because these are the poles for $f(z)$ (since $1/f(0) = 1/f(w) = 0$), but since $g(w) = g(0)$ we conclude $g$ is a elliptic function without poles which means $g$ is constant and thus 0. This means that $f(z) = f(-z)$ everywhere.
+This means $g(z)$ has no poles and is thus holomorphic around 0, in fact $g(0) = 0$ by replacing it above. $g(z)$ also has the same period $w \in M$ as $f(z)$ because $g(z + w) = f(z + w) - f(-z - w) = f(z) - f(-z)$. The only other poles $g(z)$ might have are for $w \in M$ because these are the poles for $f(z)$ (since $1/f(0) = 1/f(w) = 0$), but since $g(w) = g(0)$ we conclude $g$ is an elliptic function without poles which means $g$ is constant and thus 0. This means that $f(z) = f(-z)$ everywhere.
 
 </proof>
 
@@ -261,9 +261,9 @@ $$
 so around $\lambda$ the only pole is $1/(z - \lambda)$. This gives us the residue 1 around any $\lambda \in M$.
 </proof>
 
-From *Lemma 40* in [2], which claims that the sum of residues of an elliptic is 0, this implies that $\zeta$ is not a periodic function. It is however, as *Lemma 8* shows, a *quasi-periodic* function. A **quasi-periodic** function $f$ is one for which $f(z) = f(z + w) + \eta_w$ for some constant $\eta_w \in \mathbb{C}$ dependent on $w$.
+From *Lemma 40* in [2], which claims that the sum of residues of an elliptic function is 0, this implies that $\zeta$ is not a periodic function. It is however, as *Lemma 8* shows, a *quasi-periodic* function. A **quasi-periodic** function $f$ is one for which $f(z) = f(z + w) + \eta_w$ for some constant $\eta_w \in \mathbb{C}$ dependent on $w$.
 
-Note that a quasi-periodic is a weaker version of periodic functions, since the latter are quasi-periodic functions with $\eta_w = 0$.
+Note that a quasi-periodic function is a weaker version of periodic functions, since the latter are quasi-periodic functions with $\eta_w = 0$.
 
 **Lemma 8.** The function $\zeta$ is quasi-periodic.
 
@@ -301,7 +301,7 @@ $$
 (8.2) \quad  \zeta(z + \lambda) = \frac{1}{(z + \lambda) - (a + \lambda)} + k(z + \lambda) = \frac{1}{z - a} + k(z + \lambda)
 $$
 
-so both $(8.1)$ and $(8.2)$ have a single pole when $z$ is around $a$. If we subtract one for another:
+so both $(8.1)$ and $(8.2)$ have a single pole when $z$ is around $a$. If we subtract one from another:
 
 $$
 g_\lambda(z) = \zeta(z + \lambda) - \zeta(z) = k(z + \lambda) - h(z)
@@ -318,7 +318,7 @@ which is the definition of a quasi-periodic function.
 
 There's a nice identity between the base of the period module and the corresponding quasi-period constants for the zeta function, known as **Legendre's Relation**. *Lemma 9* has more details:
 
-**Lemma 9.** Let $(w_1, w_2)$ be a base for the period module $M$. Let $\eta_1, \eta_2$ be the constants for in $\zeta(z + w_1) = \zeta(z) + \eta_1$ and $\zeta(z + w_2) = \zeta(z) + \eta_2$. Then:
+**Lemma 9.** Let $(w_1, w_2)$ be a base for the period module $M$. Let $\eta_1, \eta_2$ be the constants in $\zeta(z + w_1) = \zeta(z) + \eta_1$ and $\zeta(z + w_2) = \zeta(z) + \eta_2$. Then:
 
 $$
 w_1 \eta_2 + w_2 \eta_1 = 2 \pi i
@@ -393,7 +393,7 @@ Adding together, the remaining integral of $I_2$ and $I_3$ cancel with $I_4$ and
 **Lemma 10.** The function $\zeta(z)$ is odd.
 
 <proof>
-This is similar to the proof to <i>Lemma 4</i>. We define $g(z) = \zeta(z) + \zeta(-z)$, then around 0 the principal $1/z$ will cancel out making $g(z)$ a holomorphic function, so for $z \rightarrow 0$, $g(z) = 0$.
+This is similar to the proof to <i>Lemma 4</i>. We define $g(z) = \zeta(z) + \zeta(-z)$, then around 0 the principal part $1/z$ will cancel out making $g(z)$ a holomorphic function, so for $z \rightarrow 0$, $g(z) = 0$.
 <br /><br />
 We now use the fact that $\wp$ is even, and we have:
 
@@ -435,7 +435,7 @@ $$
 (11.1) \quad \ln \sigma(z) = \ln z + \sum_{w \in M, w \ne 0} \left( \ln \left(1 - \frac{z}{w} \right) + \frac{z}{w} +  \frac{z^2}{2w^2} \right)
 $$
 
-both $\ln z$ and $\ln (1 - z/w)$ exist since $z \not \in M$ and we can choose a suitable branch to make it a single-valued function. We can show the series converge in $(11.1)$ in which case we can differentiate term by term, to obtain:
+both $\ln z$ and $\ln (1 - z/w)$ exist since $z \not \in M$ and we can choose a suitable branch to make it a single-valued function. We can show the series converges in $(11.1)$ in which case we can differentiate term by term, to obtain:
 
 $$
 \frac{d\ln \sigma(z)}{dz} = \frac{1}{z} + \sum_{w \in M, w \ne 0} \left( \frac{d}{dz} \ln \left(1 - \frac{z}{w} \right) + \frac{1}{w} +  \frac{z}{w^2} \right)
@@ -508,7 +508,7 @@ $$
 \wp'(z) = -2 \frac{1}{z^3} + \sum_{w \in M, w \ne 0} \left(-2 \frac{1}{(z - w)^3}\right)
 $$
 
-The term $1/w^2$ disappears because it's constant wrt to $z$. Now we don't have to handle $w = 0$ separately and can move it to the sum:
+The term $1/w^2$ disappears because it's constant wrt $z$. Now we don't have to handle $w = 0$ separately and can move it to the sum:
 
 $$
 = -2 \sum_{w \in M} \frac{1}{(z - w)^3}
@@ -544,7 +544,7 @@ Now suppose $2a \in M$. We wish to prove $\wp'(a) = 0$. The hypothesis gives us 
 
 ## Elliptic Functions
 
-We're now ready to show that every elliptical function can be written from $\wp(z)$ and $\wp'(z)$. We handle even functions and odd functions separately, but since any function can be decomposed into even and odd functions [6].
+We're now ready to show that every elliptical function can be written from $\wp(z)$ and $\wp'(z)$. We handle even functions and odd functions separately, which suffices since any function can be decomposed into even and odd functions [6].
 
 **Lemma 16.** Let $f(z)$ be an even elliptic function. Then there exists a rational function $R$, such that:
 
@@ -663,9 +663,9 @@ $$
 f(z) = \sum_{n = -m}^{\infty} c_n (-1)^n (z + a)^n
 $$
 
-Which tells us that while they functions for $a$ and $-a$ when they're distinct points are not exactly the same as in the second case, there's this constraint that their coefficients on the Laurent series match up to a negative sign. In particular their principal part have the same coefficients. This is important because we now need to come up with a single function $Q_a(\wp(z))$ that cancels out the principal parts at both $a$ and $-a$.
+Which tells us that while the functions for $a$ and $-a$ when they're distinct points are not exactly the same as in the second case, there's this constraint that their coefficients on the Laurent series match up to a negative sign. In particular their principal part have the same coefficients. This is important because we now need to come up with a single function $Q_a(\wp(z))$ that cancels out the principal parts at both $a$ and $-a$.
 <br /><br />
-It turns out this function is still a linear combination of $1/(\wp(z) \pm \wp(a))$ as in the second case, but we need to show why. Since $2a \not \in M$, we have <i>Lemma 15</i> that $\wp'(a) \ne 0$. Since $a$ is not a pole of $\wp$, consider its Taylor expansion around $a$:
+It turns out this function is still a linear combination of $1/(\wp(z) \pm \wp(a))$ as in the second case, but we need to show why. Since $2a \not \in M$, we have from <i>Lemma 15</i> that $\wp'(a) \ne 0$. Since $a$ is not a pole of $\wp$, consider its Taylor expansion around $a$:
 
 $$
 \wp(z) = \wp(a) + \wp'(a)(z - a) + \frac{\wp''(a)}{2!}(z - a)^2 + \cdots
@@ -725,7 +725,7 @@ then we can use the construct from the first case to eliminate the poles of $f(z
 
 Recall that a rational function is of the form $R(z) = P(z)/Q(z)$ where $P$ and $Q$ are polynomials of $z$ and $Q(z) \ne 0$. Now for odd functions:
 
-**Lemma 17.** Let $f(z)$ be an odd function. Then the exists a rational function $R(z)$ such that $f(z) = \wp'(z) R(\wp(z))$.
+**Lemma 17.** Let $f(z)$ be an odd function. Then there exists a rational function $R(z)$ such that $f(z) = \wp'(z) R(\wp(z))$.
 
 <proof>
 We define:
@@ -746,7 +746,7 @@ $$
 H(z) = h(z) - h(-z)
 $$
 
-we have $H(z) = 0$ for all $z$ that is not a pole of $h(z)$, so its Laurent series near any pole $a$ would need to have all coefficients 0. So now we reduce the odd function $f(z)$ to the even $h(z)$, and we can use <i>Lemma 16</i> to show that exists some $Q(\wp(z))$ such that:
+we have $H(z) = 0$ for all $z$ that is not a pole of $h(z)$, so its Laurent series near any pole $a$ would need to have all coefficients 0. So now we reduce the odd function $f(z)$ to the even $h(z)$, and we can use <i>Lemma 16</i> to show that there exists some $Q(\wp(z))$ such that:
 
 $$
 h(z) = Q(\wp(z)) + C
@@ -776,7 +776,7 @@ Since elliptic functions are closed under arithmetic operations, we conclude tha
 
 ## Conclusion
 
-In this post we introduced the the Weierstrass functions which includes the $\wp$, the zeta and the sigma functions. We ended up not using the latter two, but I included them because they're discussed in Ahlfors.
+In this post we introduced the Weierstrass functions which include the $\wp$, the zeta and the sigma functions. We ended up not using the latter two, but I included them because they're discussed in Ahlfors.
 
 The proof that every elliptic function can be expressed from $\wp(z)$ was extremely difficult to understand. It has many subtle details and every time I re-read the proof I realized I had glossed over something.
 
