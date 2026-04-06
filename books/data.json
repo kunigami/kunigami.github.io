@@ -1,5 +1,14 @@
 [
   {
+    "title": "Complex Analysis",
+    "vanity": "complex-analysis",
+    "author": "Lars V. Ahlfors",
+    "rating": 3,
+    "image": "alfhors.png",
+    "category": "Math",
+    "year": 2026
+  },
+  {
     "title": "The Naked Sun",
     "vanity": "the-naked-sun",
     "author": "Isaac Asimov",
