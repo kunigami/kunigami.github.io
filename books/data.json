@@ -1,5 +1,14 @@
 [
   {
+    "title": "O Homem Que Calculava",
+    "vanity": "o-homem-que-calculava",
+    "author": "Malba Tahan",
+    "rating": 5,
+    "image": "o-homem-que-calculava.jpg",
+    "category": "Fiction / Math",
+    "year": 2026
+  },
+  {
     "title": "Complex Analysis",
     "vanity": "complex-analysis",
     "author": "Lars V. Ahlfors",
@@ -114,7 +123,7 @@
     "author": "Ananyo Bhattacharya",
     "rating": 4,
     "image": "the-man-from-the-future.jpg",
-    "category": "Biography",
+    "category": "Biography / Math",
     "year": 2025
   },
   {
