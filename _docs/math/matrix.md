@@ -141,8 +141,22 @@ then $x^T M x$ is the 2-variable polynomial: $a_{11}x_1^2 + (a_{12} + a_{21})x_1
 The Hessian is a $n \times n$ matrix where entries correspond to the 2nd partial derivaties of a $n$-dimensional function. In particular, entry $a_{ij}$ is $\partial f(x) / \partial i \partial j$. For the 2-dimensional case:
 
 $$
-M = \begin{bmatrix}
+H = \begin{bmatrix}
   \frac{\partial f(r)}{\partial^2 x} & \frac{\partial f(r)}{\partial x \partial y} \\
   \frac{\partial f(r)}{\partial y \partial x} & \frac{\partial f(r)}{\partial^2 y} \\
 \end{bmatrix}
+$$
+
+The Hessian is typically denoted by $H$ or more explicitly by $H_f$. Note that the Hessian represents a function that takes in $r$ and returns a matrix, so $H_f(a)$ is the matrix obtained when we evaluate the partial derivatives at $a$.
+
+The Hessian matrix appears in the Taylor expansion of a multi-variable function around a point $a$ when we only consider the 2nd-order terms:
+
+$$
+f(a + \delta) = f(a) + \nabla f(a) \delta + \frac{1}{2} \delta^T H_f(a) \delta + o(\abs{\delta}^2)
+$$
+
+Here $\delta$ is a small $n$-dimensional vector. The notation $o(\abs{\delta}^2)$ means this term grows slower than $\abs{\delta}^2$, in other words
+
+$$
+\lim_{\abs{\delta} \rightarrow \infty} \frac{o(\abs{\delta}^2)}{\abs{\delta}^2} = 0
 $$
