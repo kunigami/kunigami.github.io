@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Doc
+layout: doc
+title: "Greek Mythology"
 ---
 
 <p>
@@ -17,6 +17,10 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Databases]({{ site.url }}/docs/cs/databases.html)
 * [Distributed Systems]({{ site.url }}/docs/cs/distributed.html)
 * [Operating Systems]({{ site.url }}/docs/cs/operating_systems.html)
+
+## Culture
+
+* [Greek Mythology]({{ site.url }}/docs/culture/greek-mythology.html)
 
 ## History
 
