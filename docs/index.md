@@ -1,13 +1,7 @@
 ---
 layout: doc
-title: "Greek Mythology"
+title: "Cheat Sheets"
 ---
-
-<p>
-  <a href="{{ site.url }}">kuniga.me</a> > <a href="{{ site.url }}/docs">Docs</a>
-</p>
-
-# Cheat Sheets
 
 Cheat Sheets are different from posts in that they're a living document (posts are not constantly updated).
 
