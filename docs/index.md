@@ -1,7 +1,13 @@
 ---
-layout: doc
-title: "Cheat Sheets"
+layout: page
+title: Doc
 ---
+
+<p>
+  <a href="{{ site.url }}">kuniga.me</a> > <a href="{{ site.url }}/docs">Docs</a>
+</p>
+
+# Cheat Sheets
 
 Cheat Sheets are different from posts in that they're a living document (posts are not constantly updated).
 
@@ -24,6 +30,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Namibia]({{ site.url }}/docs/history/namibia/)
 * [Singapore]({{ site.url }}/docs/history/singapore/)
 * [Vietnam]({{ site.url }}/docs/history/vietnam/)
+* [Zimbabwe]({{ site.url }}/docs/history/zimbabwe/)
 
 ## Programming
 
@@ -85,18 +92,27 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 
 ### Analysis
 
-* [Complex Numbers]({{ site.url }}/docs/math/complex.html)
-* [Complex Integral]({{ site.url }}/docs/math/complex_integral.html)
-* [Complex Power Series]({{ site.url }}/docs/math/complex_power_series.html)
+### Real Analysis
+
 * [Derivative]({{ site.url }}/docs/math/derivative.html)
 * [Integral]({{ site.url }}/docs/math/integral.html)
-* [Harmonic Functions]({{ site.url }}/docs/math/harmonic.html)
-* [Holomorphic Functions]({{ site.url }}/docs/math/holomorphism.html)
 * [Limit]({{ site.url }}/docs/math/limit.html)
 * [Modulus]({{ site.url }}/docs/math/modulus.html)
 * [Sequence]({{ site.url }}/docs/math/sequence.html)
 * [Series]({{ site.url }}/docs/math/series.html)
 * [Trigonometry]({{ site.url }}/docs/math/trigonometry.html)
+
+### Complex Analysis
+
+* [Complex Numbers]({{ site.url }}/docs/math/complex.html)
+* [Complex Integral]({{ site.url }}/docs/math/complex_integral.html)
+* [Complex Power Series]({{ site.url }}/docs/math/complex_power_series.html)
+* [Harmonic Functions]({{ site.url }}/docs/math/harmonic.html)
+* [Holomorphic Functions]({{ site.url }}/docs/math/holomorphism.html)
+
+## Functional Analysis
+
+* [Functional Analysis]({{ site.url }}/docs/math/functional_analysis.html)
 
 ### Probability
 
