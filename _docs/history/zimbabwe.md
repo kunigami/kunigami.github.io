@@ -40,7 +40,7 @@ The Ndebele conquered the Shona people, especially in Matabeleland, but outside 
 
 ## British Colony (1890-1965)
 
-Cecil Rhodes was a British diamond magnate in the Cape Colony. He wanted to expand British control to the North. He ran a private enterprise (the British South Africa Company or BSAC) and got the imperial support for his plans. In 1888 he tricked the ruler of the Ndebele, Lobengula, to obtain concession for their land.
+Cecil Rhodes was a British diamond magnate in the Cape Colony. He wanted to expand British control to the North. He ran a private enterprise (the British South Africa Company or BSAC) and got the imperial support for his plans. In 1888 he tricked the ruler of the Ndebele, Lobengula, to obtain concession for their land. The book *The Scramble For Africa* describes this process in more detail.
 
 In 1890 BSAC sent an expedition known as the Pioneer Column which occupied the territory and founded a settlement called Salisbury (today's Harare). In 1893, the Ndebele waged war against the British marking the First Matabele War. They were defeated and the BSAC occupied Matabeleland. Around 1896 the Ndebele and Shona resisted the occupation, known as the first Chimurenga (a Shona word for "struggle") but were also defeated.
 
@@ -58,7 +58,7 @@ More and more white settlers arrived and became large land owners, dispossessing
 
 After World War II, Britain started decolonization and to aid independence of its colonies, it wanted to establish majority rule. The minority white settlers who held power were against it. As nearby colonies such as Zambia and Malawi moved to African-led governments, the white leader Ian Smith decided to declare unilateral independence in 1965 and renamed Southern Rhodesia to simply Rhodesia (since Northern Rhodesia was now Zambia).
 
-African nationalist leaders were arrested and armed resistance began. Two main movements took place: ZANU (Shona-based) and ZAPU (Ndebele-based). In the book An Arid Eden, the author Garth Owen-Smith witnessed this period of turmoil. He worked on a farm for white settlers and at some point was ambushed by a guerrilla unit.
+African nationalist leaders were arrested and armed resistance began. Two main movements took place: ZANU (Shona-based) and ZAPU (Ndebele-based). In the book *An Arid Eden* [1], the author Garth Owen-Smith witnessed this period of turmoil. He worked on a farm for white settlers and at some point was ambushed by a guerrilla unit.
 
 In 1979 the war ended with negotiations and plans for election and transition. This period, from 1965 to 1979, also marks the Second Chimurenga.
 
@@ -75,3 +75,8 @@ Mugabe consolidated power and remained the leader of the country until his force
 ## Recent (2017-)
 
 There were some improvements but the ZANU-PF party still rules and many of the old systems are still in place.
+
+## Related Books
+
+* [[1](https://www.kuniga.me/books/an-arid-eden)] An Arid Eden, Garth Owen-Smith
+* [[2](https://www.kuniga.me/books/the-scramble-for-africa)] The Scramble For Africa, Thomas Pakenham
