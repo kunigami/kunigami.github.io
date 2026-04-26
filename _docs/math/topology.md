@@ -153,6 +153,19 @@ A function $f:(X, \tau) \rightarrow (Y, \tau')$ is said to be *continuous at poi
 
 An equivalent definition: $f:(X, \tau) \rightarrow (Y, \tau')$ is continuous if and only if for every $U$ that is an open set in $Y$, $f^{-1}(U)$ is an open set in $X$.
 
+Another equivalent definition is that $f:(X, \tau) \rightarrow (Y, \tau')$ is continuous if and only if for every $U$ that is a closed set in $Y$, $f^{-1}(U)$ is a close set in $X$.
+
+<proof>
+The key to show this is this identity:
+
+$$f^{-1}(C(U)) = C(f^{-1}(U))$$
+
+Where $C(U)$ is the complement of $U$. Let $x \in f^{-1}(C(U))$, then $f(x) \in C(U)$ by definition. Which means $f(x) \not \in U$, and thus $x \not \in f^{-1}(U)$, again by definition. Thus $x \in C(f^{-1}(U))$, so we proved these sets are equivalent.
+<br /><br />
+
+This says that the pre-image of the complement of $U$ is the complement of the pre-image of $U$. Now if $U$ is an open set and the pre-image $U$ is an open set, then $C(U)$ is a closed set and $f^{-1}(C(U))$ is a closed set.
+</proof>
+
 ## Homeomorphism
 
 Topological spaces $(X, \tau)$ and $(Y, \tau')$ are called *homeomorphic* if there exist *inverse* functions $f:X \rightarrow Y$ and $g:Y \rightarrow X$ and $f$ and $g$ are continuous.
