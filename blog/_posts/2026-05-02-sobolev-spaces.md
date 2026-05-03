@@ -258,7 +258,7 @@ $$
 which is a contradiction. The same argument applies for negative measure.
 </proof>
 
-*Stability under limits* means that if we have a sequence of functions that converges to $u$ and their corresponding weak derivatives converge to $g$, then $g$ is a weak derivative of $u$.
+To say weak derivatives are *stable under limits* means that if we have a sequence of functions that converges to $u$ and their corresponding weak derivatives converge to $g$, then $g$ is a weak derivative of $u$, as shown in *Lemma 3*:
 
 **Lemma 3.** Let $u_n$ be a family of functions in $L^2$ with weak derivatives ($\partial_i u_n$) also in $L^2$ with the following properties:
 
@@ -486,9 +486,9 @@ which is consistent with the norm defined before. This is enough to show that $W
 
 I spent a lot of time (with ChatGPT) trying to get an intuition for weak derivatives and am still not truly satisfied. I do get the idea that we relax the conditions for a derivative by defining it via one of its properties instead.
 
-The same idea is used in vector spaces: Banach spaces are defined with respect to the norm, which is more general than Hilbert spaces which are defined from the inner product. The inner product defines a norm, but norms can be defined independently. Same idea in topology (e.g. defining things in terms of open sets instead of Euclidean distance).
+The same idea is used in vector spaces: Hilbert spaces are those with an inner product. Inner products can induce a norm, but norms can be defined independently of inner produts. Thus, Banach spaces only require norm, not inner product, being thus more general than Hilbert spaces.
 
-The part I don't understand is why this property specifically. Why was it chosen over any other property? Maybe once I learn more about its applications in physics I'll get a better sense.
+The same idea in appears in topology e.g. defining things in terms of open sets instead of Euclidean distance. The part I don't understand is why this property specifically. Why was it chosen over any other property? Maybe once I learn more about its applications in physics I'll get a better sense.
 
 I've read about Sobolev spaces on many occasions, especially when reading about physics, so I'm glad to finally understand them a little better.
 
