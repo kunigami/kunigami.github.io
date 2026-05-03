@@ -488,9 +488,9 @@ I spent a lot of time (with ChatGPT) trying to get an intuition for weak derivat
 
 The same idea is used in vector spaces: Hilbert spaces are those with an inner product. Inner products can induce a norm, but norms can be defined independently of inner produts. Thus, Banach spaces only require norm, not inner product, being thus more general than Hilbert spaces.
 
-The same idea in appears in topology e.g. defining things in terms of open sets instead of Euclidean distance. The part I don't understand is why this property specifically. Why was it chosen over any other property? Maybe once I learn more about its applications in physics I'll get a better sense.
+The same idea appears in topology e.g. defining things in terms of open sets instead of Euclidean distance. The part I don't understand is why this property specifically. Why was it chosen over any other property? Maybe once I learn more about its applications in physics I'll get a better sense.
 
-I've read about Sobolev spaces on many occasions, especially when reading about physics, so I'm glad to finally understand them a little better.
+I've read seen Sobolev spaces mentioned in several occasions, especially when reading about physics, but I had no idea what they meant, except that they sound cool. I'm glad to finally understand them a little better.
 
 ## References
 
