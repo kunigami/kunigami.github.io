@@ -36,3 +36,13 @@ $$\abs{f_k(x) - f(x)} \lt \epsilon$$
 Let $(f_k)$ be a sequence that converges uniformily to $f: A \rightarrow \mathbb{R}$. Then
 
 $$\lim_{k \rightarrow \infty} \int_{a}^{b} f_k(x)dx = \int_{a}^{b} f(x)dx$$
+
+### Cauchy Sequence
+
+A sequencey of functions $(f_k)$ is Cauchy if for every $\epsilon \gt 0$, exists $N$ such that for all $n, m \ge N$
+
+$$
+\sup_{x \in D} \abs{f_n(x) - f_m(x)} \lt \epsilon
+$$
+
+Note that $f_n$ does not need to converge to a single limit in the domain $D$. One example is the sequence of decimal approximations of $\sqrt{2}$: $1, 1.4, 1.41, 1.414, \cdots$. If the domain is the rationals $\mathbb{Q}$, then it doesn't converge since $\sqrt{2} \not \in \mathbb{Q}$. However, it gets arbitrarily close to it.
