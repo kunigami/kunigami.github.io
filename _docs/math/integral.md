@@ -42,3 +42,23 @@ L(f) &= \sup \curly{L(f, P) : P \in \cal{P}}
 $$
 
 Intuitively, $U(f)$ is the tighest upper bound for the area under the curve $f(x)$ and $L(f)$ is the tighest lower bound. If $U(f) = L(f)$, then we have an exact estimate for the area under the curve $f(x)$. The integral exists and $f$ is said to be **Darboux integrable**.
+
+## Identities
+
+### Divergence Theorem
+
+Let $f$ be a differentiable function with domain $\mathbb{R}^n$ and $\nabla f$ the gradient:
+
+$$
+\nabla f = \left(\frac{\partial f}{\partial x_1}, \cdots, \frac{\partial f}{\partial x_n} \right)
+$$
+
+let $\Omega$ be a subset of $\mathbb{R}^n$ and $\delta \Omega$ its boundary. Then the **divergence theorem** states:
+
+$$
+\int_\Omega \nabla f dx = \int_{\delta \Omega} (f \cdot \mathbf{n}) dS
+$$
+
+Here $dx$ is a infinitesimal box in $\Omega$, $dS$ is an infinitesimal bit in the boundary $\delta \Omega$ (dimension $n- 1$) and $\mathbf{n}$ the normal vector at that point.
+
+The intuition is that if we add the flow at each point inside a volume, it will cancel out and the only parts remaining will be the flow at the boundary.
