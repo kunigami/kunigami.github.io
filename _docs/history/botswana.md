@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "History of Namibia Cheatsheet"
+title: "History of Botswana Cheatsheet"
 ---
 
 {% include blog_vars.html %}
