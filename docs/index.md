@@ -21,6 +21,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 ## Culture
 
 * [Greek Mythology]({{ site.url }}/docs/culture/greek-mythology.html)
+* [Hindu Mythology]({{ site.url }}/docs/culture/hindu-mythology.html)
 
 ## History
 
