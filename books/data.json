@@ -11,6 +11,7 @@
   {
     "title": "Stream Processing with Apache Flink",
     "vanity": "flink",
+    "url": "blog/2026/04/28/book-flink.html",
     "author": "Fabian Hueske and Vasiliki Kalavri",
     "rating": 4,
     "image": "flink.jpg",
@@ -74,6 +75,7 @@
   {
     "title": "Kafka: The Definitive Guide",
     "vanity": "kafka",
+    "url": "blog/2026/01/17/book-kafka.html",
     "author": "Gwen Shapira et al.",
     "rating": 4,
     "image": "kafka.jpg",
