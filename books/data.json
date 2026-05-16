@@ -9,6 +9,15 @@
     "year": 2026
   },
   {
+    "title": "Stream Processing with Apache Flink",
+    "vanity": "flink",
+    "author": "Fabian Hueske and Vasiliki Kalavri",
+    "rating": 4,
+    "image": "flink.jpg",
+    "category": "Programming",
+    "year": 2026
+  },
+  {
     "title": "O Homem Que Calculava",
     "vanity": "o-homem-que-calculava",
     "author": "Malba Tahan",
