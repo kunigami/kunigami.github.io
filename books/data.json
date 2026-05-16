@@ -1,5 +1,14 @@
 [
   {
+    "title": "Project Hail Mary",
+    "vanity": "project-hail-mary",
+    "author": "Andy Weir",
+    "rating": 5,
+    "image": "hail-mary.jpg",
+    "category": "Sci-fi",
+    "year": 2026
+  },
+  {
     "title": "O Homem Que Calculava",
     "vanity": "o-homem-que-calculava",
     "author": "Malba Tahan",
