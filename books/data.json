@@ -1,5 +1,14 @@
 [
   {
+    "title": "Elbow Room",
+    "vanity": "elbow-room",
+    "author": "Daniel C. Dennett",
+    "rating": 4,
+    "image": "elbow-room.jpg",
+    "category": "Philosophy",
+    "year": 2026
+  },
+  {
     "title": "Project Hail Mary",
     "vanity": "project-hail-mary",
     "author": "Andy Weir",
