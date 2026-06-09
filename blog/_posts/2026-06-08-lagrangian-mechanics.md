@@ -51,7 +51,7 @@ $$
 Note that $S$ is a function of $q$, which is also a function, so $S$ is a [functional](https://www.kuniga.me/blog/2026/04/26/functionals.html) which returns a scalar. One way to see $q$ is as a curve from $q(t_0)$ to $q(t_1)$. And then we can also interpret $S[q]$ as a "score" for the curve $q$. A more mathematical interpretation of $S$ is of a generalized length. That is, if $q$ is a curve, then
 
 $$
-\int_{t_0}^{t_1} \abs{\dot{q}(t)} dt
+\int_{t_0}^{t_1} \norm{\dot{q}(t)} dt
 $$
 
 Is the length of this curve, so we could think of the Lagrangian as a more generalized version of length.
