@@ -27,7 +27,7 @@ Note that $\Omega$ can encode the position of multiple particles. If talking abo
 
 Let's denote by $\dot{q}$ the derivative of $q$ with respect to $t$. Following our previous interpretation, $\dot {q}(t)$ corresponds to the velocity of the particle at an instant $t$.
 
-The *Lagrangian* is a scalar function $L : \Omega \times \Omega \times \mathbb{R} \rightarrow \mathbb{R}$. In physics, it depends on $q, q'$ at an instant of time $t$, so we write
+The *Lagrangian* is a scalar function $L : \Omega \times \Omega \times \mathbb{R} \rightarrow \mathbb{R}$. In physics, it depends on $q, \dot{q}$ at an instant of time $t$, so we write
 
 $$
 L(q(t), \dot{q}(t), t)
@@ -45,7 +45,7 @@ $$
 We define the **action functional** as:
 
 $$
-S[q] = \int_{t_0}^{t_1} L(q(t), q'(t), t) dt
+S[q] = \int_{t_0}^{t_1} L(q(t), \dot{q}(t), t) dt
 $$
 
 Note that $S$ is a function of $q$, which is also a function, so $S$ is a [functional](https://www.kuniga.me/blog/2026/04/26/functionals.html) which returns a scalar. One way to see $q$ is as a curve from $q(t_0)$ to $q(t_1)$. And then we can also interpret $S[q]$ as a "score" for the curve $q$. A more mathematical interpretation of $S$ is of a generalized length. That is, if $q$ is a curve, then
@@ -92,7 +92,7 @@ $$
 f(x) = \langle x, y \rangle, \quad \forall x \in H
 $$
 
-Now consider the Fréchet derivative $DS_q$. Since it's a linear map over a Sobolev space, we can use the theorem and conclude that there's a unique element in $\Omega$ such that:
+Now consider the Fréchet derivative $DS_q$. Since it's a linear map and we're assuming $q$ is over the Euclidean space which is a Hilbert one, we can use the theorem and conclude that there's a unique element in $\Omega$ such that:
 
 $$
 DS_q[\eta] = \langle g, \eta \rangle, \quad \forall \eta \in H
@@ -145,6 +145,14 @@ $$
 S[q_\epsilon] = \int_{t_0}^{t_1} L(q_\epsilon(t), \dot{q_\epsilon}(t), t) dt
 $$
 
+By some algebra and calculus we obtain that:
+
+$$
+\delta S[q; \eta] = \int_{t_0}^{t_1} \left( \frac{\partial L}{\partial q} + \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} \right) \eta  dt
+$$
+
+<details>
+
 Using $q_\epsilon(t) = q(t) + \epsilon \eta(t)$ we have:
 
 $$
@@ -192,6 +200,8 @@ since $\eta(t_1) = \eta(t_0)$, the first term vanishes so we end up with:
 $$
 \delta S[q; \eta] = \int_{t_0}^{t_1} \left( \frac{\partial L}{\partial q} \eta + \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} \eta \right) dt = \int_{t_0}^{t_1} \left( \frac{\partial L}{\partial q} + \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} \right) \eta  dt
 $$
+
+</details>
 
 Let's define:
 
