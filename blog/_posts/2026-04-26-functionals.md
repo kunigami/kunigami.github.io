@@ -148,8 +148,9 @@ $$
 (1) \quad \lim_{\norm{h} \rightarrow 0} \frac{\norm{f(x + h) - f(x) - A(h)}}{\norm{h}} = 0
 $$
 
-For $h \in X$. Note that $f$ is not necessarily a functional, only if $Y = \mathbb{R}$ or $Y = \mathbb{C}$, and even if it is, it's not necessarily linear. However if $f$ is a functional, then the Fréchet derivative is a linear function because it's a linear map from a vector space to a field.
+For every $h \in X$. If so, $A(h)$ is the Fréchet derivative and commonly denoted as $Df(x)[h]$.
 
+Note that $f$ is not necessarily a functional, only if $Y = \mathbb{R}$ or $Y = \mathbb{C}$, and even if it is, it's not necessarily linear. However if $f$ is a functional, then the Fréchet derivative is a linear function because it's a linear map from a vector space to a field.
 
 This is a general definition of the differential we see in real analysis. If we take $X = Y = \mathbb{R}$, then we can simplify $(1)$ to:
 
