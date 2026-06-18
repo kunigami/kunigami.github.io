@@ -422,6 +422,7 @@ base->asFlatVector<StringView>()->set(2, StringView("Avian"));
 
 Note here that we're assuming the base vector is a flat vector, but that's not necessarily true.
 
+Next post on the series: [Velox Execution]({{blog}}/2026/06/04/velox-execution.html)
 
 
 ## Conclusion
@@ -431,6 +432,7 @@ I used Claude Code to help me with this post, by having it read the Velox codeba
 I particularly liked the process of asking questions: why is selectivity external while nullability is internal to the vector? It led to a deeper understanding of the high level design. That's one of the main reasons I like writing posts, even if no one ever reads them: it forces me to be more curious.
 
 I'm looking forward to covering other topics on Velox, in particular the execution engine and memory management.
+
 
 ## References
 
