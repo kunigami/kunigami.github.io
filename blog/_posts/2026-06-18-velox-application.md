@@ -369,13 +369,24 @@ void runToCompletionParallel(
 
 Once we start the task with 4 drivers, it will start running right away and only stop until the task receives a `noMoreSplits()` signal. Typically the `addSplits()` would be run on a separate thread.
 
+The full code is available on [Github](https://github.com/kunigami/kunigami.github.io/blob/master/blog/code/2026-06-18-velox-application/).
+
 ## Conclusion
 
 In this post we presented a minimal example of using Velox to process data end-to-end. In this process we covered the different concepts and terminology from Velox and provided a mental model for the execution, both serial and parallel.
 
 This example serves as a base from which to dive deeper into the Velox internals: execution and memory management.
 
+## Related Posts
+
+Map-reduce appears everywhere in distributed systems: Google's [FlumeJava]({{blog}}/2022/05/18/flumejava.html) is similar in spirit in the sense that it's a library that can be used to construct map-reduce jobs. It seems to operate at a higher level because it also deals with the creation of the jobs, while Velox is the underlying execution layer only.
+
+This is somewhat similar to Spark's [RDDs]({{blog}}/2022/06/17/rdd.html) and in fact in [3] the authors mention using Velox as the alternative engine for Spark.
+
+We didn't talk about them explicitly, but Velox relies on [Folly Futures]({{blog}}/2025/05/02/folly-futures.html) as we can see via the `taskCompletionFuture()` call in the last example.
+
 ## References
 
 * [[1]({{blog}}/2026/06/01/velox-vectors.html)] NP-Incompleteness - Velox: Vectors
 * [[2]({{blog}}/2025/06/07/folly-executors.html)] Folly Executors
+* [[3](https://vldb.org/pvldb/vol15/p3372-pedreira.pdf)] Velox: Meta's Unified Execution Engine, Pereira, Pedro et al.
