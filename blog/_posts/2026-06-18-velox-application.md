@@ -69,7 +69,7 @@ $$
 D = \sum_{i=1}^k p_i
 $$
 
-The main thread is responsible for reading data and sending it to the task. Since loading the whole data at once into memory is prohibitive, the data are chunked in **batches** which are the [Velox vectors]({{blog}}/2026/06/01/velox-vectors.html) we saw recently. The main thread doesn't actually query the storage, it instead creates instructions called **splits** and enqueues them on the task, which will be run later.
+Since loading the whole data at once into memory is prohibitive, the data are chunked in **batches** which are the [Velox vectors]({{blog}}/2026/06/01/velox-vectors.html) we saw recently. The instructions for querying these batches are called **splits** (e.g. which file and offset to read). There's a centralized queue to which splits are added and from which drivers read from.
 
 Typically the creation of splits is not the task itself, but the central coordinator we mentioned earlier. The worker will expose an API which the coordinator can call to add splits, so it will itself decide how to split the data and distribute to the workers pool. It's a push model.
 
@@ -79,7 +79,7 @@ When a driver is set to run on a thread it reads a split from the (shared) queue
 
 <figure class="center_children">
   <img src="{{resources_path}}/parallel.png" alt="See caption" />
-  <figcaption>Figure 3. In parallel mode, multiple drivers wait to be run on a thread from a thread pool and then independently consume splits from the queue. Two other drivers are waiting in the queue.</figcaption>
+  <figcaption>Figure 3. In parallel mode, multiple drivers wait to be run on a thread from a thread pool and then independently consume splits from the queue. In this picture, 2 drives are running on the available threads and 2 other drivers are waiting in the queue.</figcaption>
 </figure>
 
 In serial mode, this yields control back to the task, who will then run the next driver round-robin fashion. In parallel mode, the driver is rescheduled to the end of the thread pool (recall from [2] that `CPUThreadPoolExecutor` has a queue) and it will be eventually given a thread to run it again.
