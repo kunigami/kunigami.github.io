@@ -61,12 +61,6 @@ Tasks also need to send data to one another if they're processing the DAG of the
 
 It can also pass along requests by the JobManager for more task slots, by then requesting the underlying system (e.g. Kubernetes) to add more workers to the cluster.
 
-### Data Model
-
-Operator
-
-
-
 ### Data Transfer
 
 Data can be transferred within the same thread, across threads and across hosts. The intra-thread case is when operators are fused and data is passed between operators. The inter-thread or intra-host is when an operator has to be split. The inter-host case is when tasks need to communicate with multiple other tasks such as in shuffling operations.
