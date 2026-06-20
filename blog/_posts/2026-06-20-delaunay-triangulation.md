@@ -70,7 +70,7 @@ This means that for any fixed set of points, since its convex hull is unique, th
 
 ## Delaunay Triangulation
 
-The intuition about the Delaunay triangulation is that it avoids "skinny" triangles. It achieves that by requiring that for every triangle in the triangulation its circumcircle contains no other points in its interior.
+The intuition about the Delaunay triangulation is that it avoids "skinny" triangles. It achieves that by requiring that for every triangle in the triangulation its circumcircle contains no other points in its interior. When a triangle is skinny, their vertices are closer to be collinear and the circumcircle blows out, increasing the likelihood of including other vertices.
 
 It's not obvious why it's always possible to find a triangulation with this property. To prove that, we first need to introduce a technique called **lifting**. It consists in mapping each 2D point $(x, y)$ to a 3D one $(x, y, x^2 + y^2)$. Geometrically this is lifting the points onto the surface of the paraboloid $z = x^2 + y^2$. We denote by $p_i$ a point in the original set $P$ and by $p'_i$ the corresponding lifted point.
 
