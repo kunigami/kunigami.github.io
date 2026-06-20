@@ -50,6 +50,14 @@ Search the corpus for the key concepts with local `grep` (or `rg`) over
 `blog/_posts/` and `_books/` — one search per term/alias. Also match on shared
 **tags**.
 
+**Search full post bodies, not just tags/titles — this is where the best
+connections come from.** The strongest links are often posts whose tag/title
+gives no hint of the overlap; only a body-text search finds them. Real example:
+the Delaunay post's best match was "On Lifetime", tagged `opinion`, whose body
+happens to discuss triangulation and convex-hull algorithms — a tag/title-only
+search would have missed it entirely. So treat tags as a secondary signal and
+always grep the content.
+
 > Tooling note: do NOT use the `search_files` MCP tool or any Meta
 > infrastructure here — this is a plain local git repo, not a Biggrep-onboarded
 > one, so `search_files` errors out. Use `grep -rl -i "<term>" blog/_posts
