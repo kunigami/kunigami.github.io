@@ -52,7 +52,7 @@ $$
 $$
 
 
-The triangles add up $3t$ edges, but inner edges are counted twice. Let $e_i$ and $e_e$ be the inner and outer Edges of the triangulation, so we have $e = e_i + e_e$ and $3t = e + e_i$. The number of outer edges is equal to the number of points in the convex hull, so $e_i = e - h$ and $3t = 2e - h$. Replacing in (1.1) we have:
+The triangles add up $3t$ edges, but inner edges are counted twice. Let $e_i$ and $e_e$ be the inner and outer edges of the triangulation, so we have $e = e_i + e_e$ and $3t = e + e_i$. The number of outer edges is equal to the number of points in the convex hull, so $e_i = e - h$ and $3t = 2e - h$. Replacing in (1.1) we have:
 
 $$
 3n - 3e + 3t + 3 = 3n - 3e + 2e - h + 3 = 6
@@ -70,17 +70,17 @@ This means that for any fixed set of points, since its convex hull is unique, th
 
 ## Delaunay Triangulation
 
-The intuition about the Delaunay triangulation is that avoids "skinny" triangles. It achieves that by requiring that for every triangle in the triangulation its circumcircle contains no other points in its interior.
+The intuition about the Delaunay triangulation is that it avoids "skinny" triangles. It achieves that by requiring that for every triangle in the triangulation its circumcircle contains no other points in its interior.
 
-It's not obvious why it's always possible to find a tringulation with this property. To prove that, we first need to introduce a technique called **lifting**. It consists in mapping each 2D point $(x, y)$ to a 3D one $(x, y, x^2 + y^2)$. Geometrically this is lifting the points onto the surface of the paraboloid $z = x^2 + y^2$. We denote by $p_i$ a point in the original set $P$ and by $p'_i$ the corresponding lifted point.
+It's not obvious why it's always possible to find a triangulation with this property. To prove that, we first need to introduce a technique called **lifting**. It consists in mapping each 2D point $(x, y)$ to a 3D one $(x, y, x^2 + y^2)$. Geometrically this is lifting the points onto the surface of the paraboloid $z = x^2 + y^2$. We denote by $p_i$ a point in the original set $P$ and by $p'_i$ the corresponding lifted point.
 
 <figure class="center_children">
   <img src="{{resources_path}}/parabolloid.png" alt="See caption." />
-  <figcaption>Figure 1: Points mapped to the surface of a parabolloid. Screenshot from <a href="https://compgeo.github.io/voronoi-3d/src/index.html">compgeo.github.io</a>.</figcaption>
+  <figcaption>Figure 1: Points mapped to the surface of a paraboloid. Screenshot from <a href="https://compgeo.github.io/voronoi-3d/src/index.html">compgeo.github.io</a>.</figcaption>
 </figure>
 
 
-The first interesting observation is that circles map to planes in the liften space.
+The first interesting observation is that circles map to planes in the lifted space.
 
 **Lemma 2.** Let $p_1, p_2$ and $p_3$ be non-collinear points from $P$. They form a unique circle, which uniquely maps to a plane in the lifted space containing $p'_1$, $p'_2$ and $p'_3$.
 
@@ -104,11 +104,11 @@ $$
 z - ax - by - c = 0
 $$
 
-which is the equation of a plane in 3D. Since each $p_i$ satisfy the equation of the circle, their corresponding lifted points satisfy the equation of the plane.
+which is the equation of a plane in 3D. Since each $p_i$ satisfies the equation of the circle, their corresponding lifted points satisfy the equation of the plane.
 
 </proof>
 
-Now suppose a point lies inside the circle indued by $p_1, p_2$ and $p_3$. What's the relation with the corresponding plane in the liften space?
+Now suppose a point lies inside the circle induced by $p_1, p_2$ and $p_3$. What's the relation with the corresponding plane in the lifted space?
 
 **Lemma 3.** Let $C$ be the circle induced by $p_1, p_2$ and $p_3$. If a point $q$ lies inside $C$, it lies "below" the corresponding plane $P$ in the lifted space. If it is in $C$, it belongs to $P$ and if outside $C$ it lies "above" $P$.
 
@@ -120,9 +120,9 @@ $$
 d = x_q^2 + y_q^2 - ax_q - by_q - c
 $$
 
-If $q$ is inside the circle, then $d \lt 0$. Then
+If $q$ is inside the circle, then $d \lt 0$.
 
-We have $z_q = x_q^2 + y_q^2$. Compare that with $z$ when evaluated at the plane for at $(x_q, y_q)$:
+We have $z_q = x_q^2 + y_q^2$. Compare that with $z$ when evaluated at the plane at $(x_q, y_q)$:
 
 $$
 z = ax_q + by_q + c
@@ -138,7 +138,7 @@ so $z_q - z = d \lt 0$, or that $z_q \lt z$ so $q'$ lies below the plane. The ot
 
 </proof>
 
-Now take the 3D convex hull of the lifted points, which will be a polyhedra with faces. Consider a face that is visible from below. It contains a set of points $p'_1, p'_2, \cdots p'_k$ (mostly $k=3$ but it's possible to have more in degenerate cases). By definition these points are coplanar, and since the circle to plane mapping is unique, the corresponding points $p_1, p_2, \cdots p_k$ must be cocircular in the $xy$-plane.
+Now take the 3D convex hull of the lifted points, which will be a polyhedron with faces. Consider a face that is visible from below. It contains a set of points $p'_1, p'_2, \cdots p'_k$ (mostly $k=3$ but it's possible to have more in degenerate cases). By definition these points are coplanar, and since the circle to plane mapping is unique, the corresponding points $p_1, p_2, \cdots p_k$ must be cocircular in the $xy$-plane.
 
 <figure class="center_children">
   <img src="{{resources_path}}/convex_hull.png" alt="See caption." />
@@ -156,9 +156,9 @@ By construction we can guarantee every lifted point belongs to at least one face
 
 This proves not only that a Delaunay triangulation always exists but also provides an algorithm to find one.
 
-**Corolary E.** The Delaunay triangulation always exists for a set of non-collinear points.
+**Corollary E.** The Delaunay triangulation always exists for a set of non-collinear points.
 
-It's also possible to show that if there are no cocircular points in $P$, the every Delauney triangulation maps to the convex hull of the lifted space and hence that it is unique.
+It's also possible to show that if there are no cocircular points in $P$, then every Delaunay triangulation maps to the convex hull of the lifted space and hence that it is unique.
 
 ## The Bowyer–Watson Algorithm
 
@@ -194,9 +194,9 @@ def compute_delaunay(P):
 
 The complexity of this algorithm is $O(n^2)$ because of the 2 nested loops and the fact that the number of triangles in a triangulation is $O(n)$. But it's possible to optimize the bad triangle search to $O(\log n)$, to obtain a sub-quadratic algorithm.
 
-*Lemma 4* handles the more difficult task of proving the algorithm is correct. The gist of the proof is to show that what is algorithm is doing is essentially constructing the 3D convex hull of the lifted space incrementally.
+*Lemma 4* handles the more difficult task of proving the algorithm is correct. The gist of the proof is to show that what the algorithm is doing is essentially constructing the 3D convex hull of the lifted space incrementally.
 
-**Lemma 4.** The Bowyer–Watson finds the Delaunay triangulation of a set of non-collinear points $P$.
+**Lemma 4.** The Bowyer–Watson algorithm finds the Delaunay triangulation of a set of non-collinear points $P$.
 
 <proof>
 The first thing we prove is that at the end of each iteration the triangulation is the Delaunay triangulation of `a, b, c` and all the points added so far. We do it by induction. The base case is trivial since a triangle is the Delaunay triangulation of 3 non-collinear vertices. Now assume `tris` is a Delaunay triangulation at the start of an iteration.
@@ -205,7 +205,7 @@ The first thing we observe is that `bad_tris` is never empty. That's because sin
 <br /><br />
 The point `p` we're adding is contained in the circumcircles of `bad_tris`. Using the lifting argument these triangles correspond to faces in the convex hull visible from below. Since `p` is inside their circles by <i>Lemma 3</i> it lies "below" the supporting plane of those faces. This also means `p` is outside of the existing convex hull and we wish to extend it to include `p`.
 <br /><br />
-If we were to shine light from `p`, it would illuminate all the faces from the bad triangles but not the good ones. A convex hull containing `p` then would not contain the illuminated faces. Due to convexity, the union of the bad faces form a contiguous region. We can remove these faces and then connect the vertices of the hole with `p`. Since `p` is now coplanar with the vertices that were previously violating the Delaunay condition, this new triangulation is a Delaunay one. This process is essentially computing the 3D convex hull of the lifted points iteractively (i.e. an online algorithm).
+If we were to shine light from `p`, it would illuminate all the faces from the bad triangles but not the good ones. A convex hull containing `p` then would not contain the illuminated faces. Due to convexity, the union of the bad faces forms a contiguous region. We can remove these faces and then connect the vertices of the hole with `p`. Since `p` is now coplanar with the vertices that were previously violating the Delaunay condition, this new triangulation is a Delaunay one. This process is essentially computing the 3D convex hull of the lifted points iteratively (i.e. an online algorithm).
 <br /><br />
 Now we show the correctness of the last step. Removing a point from a convex hull only removes the faces adjacent to it. Since `a, b, c` are the outermost vertices, their removal won't affect faces involving only vertices of `P`, so the remaining faces visible from below are from the convex hull of `P` and is thus a Delaunay triangulation of `P`.
 </proof>
@@ -250,13 +250,13 @@ c_x-p_x & c_y-p_y & c_z-p_z
 $$
 
 <proof>
-Let $A, B, C$ and $P$ be the 3D points corresponding to $a, b, c, p$. That is, $A = (a_x, a_y, a_x^2 + a_y^2)$ and so on. Let translate the system so $A$ is at the origin. We have $u = B - A$ and $v = C - A$ and $w = P - a$. Then the cross product:
+Let $A, B, C$ and $P$ be the 3D points corresponding to $a, b, c, p$. That is, $A = (a_x, a_y, a_x^2 + a_y^2)$ and so on. Let's translate the system so $A$ is at the origin. We have $u = B - A$ and $v = C - A$ and $w = P - A$. Then the cross product:
 
 $$
 n = (B - A) \times (C - A)
 $$
 
-is the normal vector to the plane $ABC$. We claim that for faces on the lower convex hull, this vector points towards the interior of convex hull. We compute the $z$-coordinate explicitly as:
+is the normal vector to the plane $ABC$. We claim that for faces on the lower convex hull, this vector points towards the interior of the convex hull. We compute the $z$-coordinate explicitly as:
 
 $$
 n_z = (b_x - a_x)(c_y - a_y) - (b_y - a_y)(c_x - a_x)
@@ -265,13 +265,13 @@ $$
 which is positive because $a, b, c$ are counter-clockwise. Since this is from a lower face the normal points towards the interior. Then if we take the dot product of this with $(P - A)$ we can tell the orientation of $P$ with respect to the plane:
 
 $$
-n \dot (P - A)
+n \cdot (P - A)
 $$
 
-A negative values means it is on opposite sides, hence outside of the convex hull, below the plane and outside the circumcircle. The expression:
+A negative value means it is on opposite sides, hence outside of the convex hull, below the plane and outside the circumcircle. The expression:
 
 $$
-((B - A) \times (C - A)) \dot (P - A)
+((B - A) \times (C - A)) \cdot (P - A)
 $$
 
 computed through the determinant:
@@ -365,7 +365,7 @@ def has_any_vertex(t, vs):
 <br />
 ### Validation
 
-One way to test the correctness of our implementation is to check if the resulting triangulation is Delaunay. Which is applying the definition that no points in $P$ are in the circumcircle of a triangle in the triangulation
+One way to test the correctness of our implementation is to check if the resulting triangulation is Delaunay. Which is applying the definition that no points in $P$ are in the circumcircle of a triangle in the triangulation.
 
 {% highlight python %}
 def is_delaunay(P, tris):
@@ -395,10 +395,17 @@ assert e == 3 * n - 3 - h
 
 The full code is on Github.
 
+
 ## Conclusion
 
-I had a lot of fun studying the Delaunay triangulation and the implementation of the Bowyer-Watson algorithm. Computational geometry was my favorite theoretical computer science subject and I did my masters in this area.
+I had a lot of fun studying the Delaunay triangulation and the implementation of the Bowyer-Watson algorithm. Computational geometry was my favorite theoretical computer science subject and I did my master's in this area.
 
-I took a graduate class in Computational geometry and I do recall discussing Voronoi and Delaunay triangulation but don't recall any further details. I'd be very sad if I actually studied the proofs and the algorithm before because it felt very novel to me. I think about this [often](https://www.kuniga.me/blog/2022/12/27/on-memory.html).
+I took a graduate class in Computational geometry and I do recall hearing about Voronoi and Delaunay triangulation but don't recall how deep the classes went on these topics. I'd be very sad if I actually studied the proofs and the algorithm before because it felt very novel to me. I think about this [often](https://www.kuniga.me/blog/2022/12/27/on-memory.html).
 
-We've seen the relationship between Delaunay and 3D convex hulls here. In the future I hope to connect them Voronoi diagrams as well.
+We've seen the relationship between Delaunay and 3D convex hulls here. In the future I hope to connect them to Voronoi diagrams as well.
+
+## Related Posts
+
+In [On Lifetime]({{blog}}/2023/07/10/on-lifetime.html) I mention that I wrote Java applets for interactive computational geometry algorithms such as for polygon triangulation and finding the convex hull in 2D! It did cross my mind to write a JavaScript-based on for the Bowyer-Watson algorithm, especially if Claude can do most of the implementation, but it would still take some work to test, polish and read the code, so I decided to pass.
+
+In the [The Gauss-Lucas Theorem]({{blog}}/2023/11/03/gauss-lucas-theorem.html) we also deal with convex hulls and I used the same Python library `scipy.spatial.ConvexHull` for validating the number of edges property.
