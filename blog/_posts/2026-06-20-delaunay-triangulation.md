@@ -32,7 +32,7 @@ The advantage of this second definition is that it generalizes to higher dimensi
 
 ### Properties
 
-**Lemma A.** Let $P$ be a set of $n$ points in 2D and $h$ the number of points in its convex hull. Then the number of edges in any triangulation is:
+**Lemma 1.** Let $P$ be a set of $n$ points in 2D and $h$ the number of points in its convex hull. Then the number of edges in any triangulation is:
 
 $$
 e = 3n - 3 - h
@@ -48,11 +48,11 @@ $$
 Where $n$, $e$ and $f$ are the number of vertices, edges and faces respectively. Euler's formula counts the outer unbounded face too, so if $t$ is the number of triangles, then $f = t + 1$ so:
 
 $$
-(A.1) \quad n - e + t + 1 = 2
+(1.1) \quad n - e + t + 1 = 2
 $$
 
 
-The triangles add up $3t$ edges, but inner edges are counted twice. Let $e_i$ and $e_e$ be the inner and outer Edges of the triangulation, so we have $e = e_i + e_e$ and $3t = e + e_i$. The number of outer edges is equal to the number of points in the convex hull, so $e_i = e - h$ and $3t = 2e - h$. Replacing in (A.1) we have:
+The triangles add up $3t$ edges, but inner edges are counted twice. Let $e_i$ and $e_e$ be the inner and outer Edges of the triangulation, so we have $e = e_i + e_e$ and $3t = e + e_i$. The number of outer edges is equal to the number of points in the convex hull, so $e_i = e - h$ and $3t = 2e - h$. Replacing in (1.1) we have:
 
 $$
 3n - 3e + 3t + 3 = 3n - 3e + 2e - h + 3 = 6
@@ -82,7 +82,7 @@ It's not obvious why it's always possible to find a tringulation with this prope
 
 The first interesting observation is that circles map to planes in the liften space.
 
-**Lemma C.** Let $p_1, p_2$ and $p_3$ be non-collinear points from $P$. They form a unique circle, which uniquely maps to a plane in the lifted space containing $p'_1$, $p'_2$ and $p'_3$.
+**Lemma 2.** Let $p_1, p_2$ and $p_3$ be non-collinear points from $P$. They form a unique circle, which uniquely maps to a plane in the lifted space containing $p'_1$, $p'_2$ and $p'_3$.
 
 <proof>
 
@@ -110,7 +110,7 @@ which is the equation of a plane in 3D. Since each $p_i$ satisfy the equation of
 
 Now suppose a point lies inside the circle indued by $p_1, p_2$ and $p_3$. What's the relation with the corresponding plane in the liften space?
 
-**Lemma D.** Let $C$ be the circle induced by $p_1, p_2$ and $p_3$. If a point $q$ lies inside $C$, it lies "below" the corresponding plane $P$ in the lifted space. If it is in $C$, it belongs to $P$ and if outside $C$ it lies "above" $P$.
+**Lemma 3.** Let $C$ be the circle induced by $p_1, p_2$ and $p_3$. If a point $q$ lies inside $C$, it lies "below" the corresponding plane $P$ in the lifted space. If it is in $C$, it belongs to $P$ and if outside $C$ it lies "above" $P$.
 
 <proof>
 
@@ -145,7 +145,7 @@ Now take the 3D convex hull of the lifted points, which will be a polyhedra with
   <figcaption>Figure 2: The 3D convex hull of the lifted points. It's hard to see its details in this resolution. Check out the source website if still available. Screenshot from <a href="https://compgeo.github.io/voronoi-3d/src/index.html">compgeo.github.io</a>.</figcaption>
 </figure>
 
-We claim that such a circle contains no other point of $P$. If it did, by *Lemma D* it would map to a lifted point below the plane, which would then lie outside the convex hull, a contradiction. So this satisfies the constraint of the Delaunay triangulation. However, it's possible that $k \gt 3$ but in that case we can triangulate the corresponding polygon in any way we want since for any 3 points we'll obtain the same circle which will still not contain the other *inside*.
+We claim that such a circle contains no other point of $P$. If it did, by *Lemma 3* it would map to a lifted point below the plane, which would then lie outside the convex hull, a contradiction. So this satisfies the constraint of the Delaunay triangulation. However, it's possible that $k \gt 3$ but in that case we can triangulate the corresponding polygon in any way we want since for any 3 points we'll obtain the same circle which will still not contain the other *inside*.
 
 By construction we can guarantee every lifted point belongs to at least one face of the convex hull that is visible from below. So if we project each face that is visible from below onto the $xy$-plane and perform triangulation of the degenerate cases, we'll obtain a Delaunay triangulation!
 
@@ -194,16 +194,16 @@ def compute_delaunay(P):
 
 The complexity of this algorithm is $O(n^2)$ because of the 2 nested loops and the fact that the number of triangles in a triangulation is $O(n)$. But it's possible to optimize the bad triangle search to $O(\log n)$, to obtain a sub-quadratic algorithm.
 
-*Lemma F* handles the more difficult task of proving the algorithm is correct. The gist of the proof is to show that what is algorithm is doing is essentially constructing the 3D convex hull of the lifted space incrementally.
+*Lemma 4* handles the more difficult task of proving the algorithm is correct. The gist of the proof is to show that what is algorithm is doing is essentially constructing the 3D convex hull of the lifted space incrementally.
 
-**Lemma F.** The Bowyer–Watson finds the Delaunay triangulation of a set of non-collinear points $P$.
+**Lemma 4.** The Bowyer–Watson finds the Delaunay triangulation of a set of non-collinear points $P$.
 
 <proof>
 The first thing we prove is that at the end of each iteration the triangulation is the Delaunay triangulation of `a, b, c` and all the points added so far. We do it by induction. The base case is trivial since a triangle is the Delaunay triangulation of 3 non-collinear vertices. Now assume `tris` is a Delaunay triangulation at the start of an iteration.
 <br /><br />
 The first thing we observe is that `bad_tris` is never empty. That's because since `p` lies inside the bounding triangle and `tris` is a valid triangulation for it, it must lie inside one triangle `x, y, z`, so such a triangle is bad. Note that it can't lie on the edge because we're assuming no three points are collinear.
 <br /><br />
-The point `p` we're adding is contained in the circumcircles of `bad_tris`. Using the lifting argument these triangles correspond to faces in the convex hull visible from below. Since `p` is inside their circles by <i>Lemma D</i> it lies "below" the supporting plane of those faces. This also means `p` is outside of the existing convex hull and we wish to extend it to include `p`.
+The point `p` we're adding is contained in the circumcircles of `bad_tris`. Using the lifting argument these triangles correspond to faces in the convex hull visible from below. Since `p` is inside their circles by <i>Lemma 3</i> it lies "below" the supporting plane of those faces. This also means `p` is outside of the existing convex hull and we wish to extend it to include `p`.
 <br /><br />
 If we were to shine light from `p`, it would illuminate all the faces from the bad triangles but not the good ones. A convex hull containing `p` then would not contain the illuminated faces. Due to convexity, the union of the bad faces form a contiguous region. We can remove these faces and then connect the vertices of the hole with `p`. Since `p` is now coplanar with the vertices that were previously violating the Delaunay condition, this new triangulation is a Delaunay one. This process is essentially computing the 3D convex hull of the lifted points iteractively (i.e. an online algorithm).
 <br /><br />
@@ -236,7 +236,7 @@ def bounding_triangle(P):
 
 We can use the lifting technique and instead of determining whether a point $p$ is inside the circumcircle of a triangle $a, b, c$ (which would require finding the circle equation and taking square roots), we check if it's "below" the supporting plane of their corresponding lifted points.
 
-**Lemma G.** Let $a = (a_x, a_y), b = (b_x, b_y), c = (c_x, c_y)$ be vertices of a triangle oriented counter-clockwise. Then a point $p = (p_x, p_y)$ lies within the circumcircle of this triangle if:
+**Lemma 5.** Let $a = (a_x, a_y), b = (b_x, b_y), c = (c_x, c_y)$ be vertices of a triangle oriented counter-clockwise. Then a point $p = (p_x, p_y)$ lies within the circumcircle of this triangle if:
 
 $$
 \det
