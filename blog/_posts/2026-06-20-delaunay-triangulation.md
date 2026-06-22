@@ -162,11 +162,11 @@ It's also possible to show that if there are no cocircular points in $P$, then e
 
 ## The Bowyer–Watson Algorithm
 
-The algorithm is conceptually simple. We start with an empty triangle that is big enough to contain all points in $P$. Suppose its vertices are $a, b, c$, then this triangle is the Delaunay triangulation for $a, b, c$.
+The algorithm is conceptually simple. We start with an empty triangle that is big enough to contain all points in $P$ and such that the circumcircle of any triangle in $P$ would contain any its vertices. Suppose its vertices are $a, b, c$, then this triangle is the Delaunay triangulation for $a, b, c$.
 
-Then we insert one point $p$ of $P$ at a time, removing and adding some edges such that the resulting triangulation is a Delaunay triangulation for the $a, b, c$ and all the points of $P$ added so far. At the end we remove $a, b, c$ and any edges connecting to them and we end up with a Delaunay triangulation for $P$.
+Then we insert one point $p$ of $P$ at a time. Once we add $p$, remove all triangles that violate the Delaunay conditions (i.e. their circumcicle contains $p$). This will leave out a "hole" whose border is a polygon. Now connect each vertex of this polygon to $p$, forming a new triangulation. This triangulation is a Delaunay triangulation for $a, b, c$ and all the points of $P$ added so far.
 
-A more precise implementation is the following:
+A Python implementation is the following:
 
 {% highlight python %}
 def compute_delaunay(P):
@@ -215,19 +215,14 @@ We can complete the implementation by defining the functions we used above, star
 
 ### Bounding Triangle
 
-Any sufficiently large triangle will do, but if we want to keep it relatively tight on the data, we can do:
+Generating a triangle based on the coordinates of $P$ is not enough because we need to guarantee that no circumcircle of any triangle in $P$ will contain $a, b$ or $c$. A simple but less robust approach is to just use a very large triangle:
 
 {% highlight python %}
-def bounding_triangle(P):
-    "right triangle guaranteed to strictly contain all points of P"
-    xs = [x for x, _ in P]
-    ys = [y for _, y in P]
-    minx, maxx = min(xs), max(xs)
-    miny, maxy = min(ys), max(ys)
-    d = max(maxx - minx, maxy - miny, 1)
-    a = (minx - d, miny - d)
-    b = (maxx + 3 * d, miny - d)
-    c = (minx - d, maxy + 3 * d)
+def bounding_triangle2(P):
+    "rectangle triangle enough to contain points of P"
+    a = (-MAXV, -MAXV)
+    b = (-MAXV, 2*MAXV)
+    c = (2*MAXV, -MAXV)
     return (a, b, c)
 {% endhighlight %}
 
@@ -393,7 +388,7 @@ n = len(P)
 assert e == 3 * n - 3 - h
 {% endhighlight %}
 
-The full code is on Github.
+The full code is on [Github]().
 
 
 ## Conclusion
