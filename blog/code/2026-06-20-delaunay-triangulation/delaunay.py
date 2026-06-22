@@ -64,6 +64,7 @@ def in_circumcircle(t, p) -> bool:
     )
     return det > 0
 
+
 def bounding_triangle(P):
     "rectangle triangle enough to contain points of P"
     a = (-MAXV, -MAXV)
