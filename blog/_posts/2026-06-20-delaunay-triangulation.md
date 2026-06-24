@@ -156,7 +156,7 @@ By construction we can guarantee every lifted point belongs to at least one face
 
 This proves not only that a Delaunay triangulation always exists but also provides an algorithm to find one.
 
-**Corollary E.** The Delaunay triangulation always exists for a set of non-collinear points.
+**Corollary 4.** The Delaunay triangulation always exists for a set of non-collinear points.
 
 It's also possible to show that if there are no cocircular points in $P$, then every Delaunay triangulation maps to the convex hull of the lifted space and hence that it is unique.
 
@@ -194,9 +194,9 @@ def compute_delaunay(P):
 
 The complexity of this algorithm is $O(n^2)$ because of the 2 nested loops and the fact that the number of triangles in a triangulation is $O(n)$. But it's possible to optimize the bad triangle search to $O(\log n)$, to obtain a sub-quadratic algorithm.
 
-*Lemma 4* handles the more difficult task of proving the algorithm is correct. The gist of the proof is to show that what the algorithm is doing is essentially constructing the 3D convex hull of the lifted space incrementally.
+*Lemma 5* handles the more difficult task of proving the algorithm is correct. The gist of the proof is to show that what the algorithm is doing is essentially constructing the 3D convex hull of the lifted space incrementally.
 
-**Lemma 4.** The Bowyer–Watson algorithm finds the Delaunay triangulation of a set of non-collinear points $P$.
+**Lemma 5.** The Bowyer–Watson algorithm finds the Delaunay triangulation of a set of non-collinear points $P$.
 
 <proof>
 The first thing we prove is that at the end of each iteration the triangulation is the Delaunay triangulation of `a, b, c` and all the points added so far. We do it by induction. The base case is trivial since a triangle is the Delaunay triangulation of 3 non-collinear vertices. Now assume `tris` is a Delaunay triangulation at the start of an iteration.
@@ -231,7 +231,7 @@ def bounding_triangle2(P):
 
 We can use the lifting technique and instead of determining whether a point $p$ is inside the circumcircle of a triangle $a, b, c$ (which would require finding the circle equation and taking square roots), we check if it's "below" the supporting plane of their corresponding lifted points.
 
-**Lemma 5.** Let $a = (a_x, a_y), b = (b_x, b_y), c = (c_x, c_y)$ be vertices of a triangle oriented counter-clockwise. Then a point $p = (p_x, p_y)$ lies within the circumcircle of this triangle if:
+**Lemma 6.** Let $a = (a_x, a_y), b = (b_x, b_y), c = (c_x, c_y)$ be vertices of a triangle oriented counter-clockwise. Then a point $p = (p_x, p_y)$ lies within the circumcircle of this triangle if:
 
 $$
 \det
