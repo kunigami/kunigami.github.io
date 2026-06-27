@@ -369,7 +369,7 @@ void runToCompletionParallel(
 
 Once we start the task with 4 drivers, it will start running right away and only stop until the task receives a `noMoreSplits()` signal. Typically the `addSplits()` would be run on a separate thread.
 
-The full code is available on [Github](https://github.com/kunigami/kunigami.github.io/blob/master/blog/code/2026-06-18-velox-application/).
+The full code is available on [Github]({{github}}).
 
 ## Conclusion
 

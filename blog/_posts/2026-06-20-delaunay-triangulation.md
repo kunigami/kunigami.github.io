@@ -388,7 +388,7 @@ n = len(P)
 assert e == 3 * n - 3 - h
 {% endhighlight %}
 
-The full code is on [Github]().
+The full code is on [Github]({{github}}/delaunay.py).
 
 
 ## Conclusion
