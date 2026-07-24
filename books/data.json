@@ -1,5 +1,14 @@
 [
   {
+    "title": "Monkeys are Made of Chocolate",
+    "vanity": "monkeys-chocolate",
+    "author": "Jack Ewing",
+    "rating": 4,
+    "image": "monkeys-chocolate.jpg",
+    "category": "Travel",
+    "year": 2026
+  },
+  {
     "title": "Elbow Room",
     "vanity": "elbow-room",
     "author": "Daniel C. Dennett",
