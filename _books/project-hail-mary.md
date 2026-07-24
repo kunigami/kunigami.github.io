@@ -60,6 +60,6 @@ I like how Andy Weir grounds his story in actual science. Like in *The Martian*,
 The protagonist also felt oddly similar to Mark Watney from *The Martian*, a loner trying to figure things out largely on his own. More generally, the characters sometimes came across as a bit flat and predictable. Rocky in particular occasionally felt more like a pet or mascot rather than a true equal. Still, the bond between Grace and Rocky, the plot twists, and the scientific realism made the story deeply immersive for me. 5/5.
 
 
-## Other Book Connections
+## Book Connections
 
 In one of Asimov's short stories, *Escape!* (From [I, Robot](https://www.kuniga.me/books/i-robot)) the characters also go through a very long journey which involves renering the occupands unconscious.
