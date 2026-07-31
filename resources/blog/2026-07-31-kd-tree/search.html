@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kd-tree nearest-neighbor search</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #20252b;
+      --muted: #68727c;
+      --border: #cbd2d9;
+      --surface: #f7f8fa;
+      --main: #1676b8;
+      --alternative: #c43d3d;
+      --best: #d99a16;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font: 15px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font: 700 24px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: 0;
+    }
+
+    .legend { display: flex; gap: 16px; color: var(--muted); font-size: 13px; }
+    .legend span { display: flex; align-items: center; gap: 6px; }
+    .swatch { width: 18px; height: 3px; background: currentColor; }
+    .main-color { color: var(--main); }
+    .alternative-color { color: var(--alternative); }
+
+    .visualization {
+      display: grid;
+      grid-template-columns: minmax(440px, 1fr) 512px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel-title {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    svg { display: block; max-width: 100%; height: auto; }
+
+    #tree {
+      width: 100%;
+      min-height: 512px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    #plane {
+      width: 512px;
+      aspect-ratio: 1;
+      background: #fff;
+      border: 1px solid var(--ink);
+    }
+
+    .tree-edge { stroke: #a5adb5; stroke-width: 1.5; }
+    .tree-node circle { fill: #fff; stroke: #747d86; stroke-width: 2; }
+    .tree-node text, .point-label {
+      fill: var(--ink);
+      font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .tree-node text { text-anchor: middle; dominant-baseline: central; }
+    .tree-node.current.main circle { stroke: var(--main); stroke-width: 4; }
+    .tree-node.current.alternative circle { stroke: var(--alternative); stroke-width: 4; }
+    .tree-node.best circle { fill: #fff1c9; }
+
+    .divider { stroke: #aab1b8; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+    .divider.current { stroke-width: 4; }
+    .divider.main { stroke: var(--main); }
+    .divider.alternative { stroke: var(--alternative); }
+    .lower-bound { stroke-width: 2; stroke-dasharray: 6 5; vector-effect: non-scaling-stroke; }
+    .lower-bound.main { stroke: var(--main); }
+    .lower-bound.alternative { stroke: var(--alternative); }
+    .point { fill: #fff; stroke: var(--ink); stroke-width: 2; vector-effect: non-scaling-stroke; }
+    .point.best { fill: #ffd46c; stroke: #7c5700; stroke-width: 3; }
+    .point.current { stroke-width: 4; }
+    .point.current.main { stroke: var(--main); }
+    .point.current.alternative { stroke: var(--alternative); }
+    .query { fill: var(--ink); }
+    .query-ring { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+    .point-label {
+      paint-order: stroke;
+      stroke: #fff;
+      stroke-width: 3px;
+      stroke-linejoin: round;
+    }
+
+    .status {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(130px, 1fr));
+      border: 1px solid var(--border);
+      border-bottom: 0;
+      margin-top: 18px;
+      background: var(--surface);
+    }
+
+    .metric { padding: 10px 14px; text-align: center; }
+    .metric + .metric { border-left: 1px solid var(--border); }
+    .metric-label { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .metric output { font: 700 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .controls button:last-child { justify-self: end; }
+    button {
+      width: 110px;
+      min-height: 40px;
+      border: 1px solid #8b959e;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+    }
+    button:hover:not(:disabled) { background: var(--surface); border-color: var(--ink); }
+    button:focus-visible { outline: 3px solid #79bce0; outline-offset: 2px; }
+    button:disabled { cursor: default; opacity: 0.4; }
+    #step-label { min-width: 120px; text-align: center; font: 700 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+    @media (max-width: 1100px) {
+      .visualization { grid-template-columns: 1fr; }
+      .tree-panel, .plane-panel { width: min(100%, 620px); margin: 0 auto; }
+      #tree { min-height: 440px; }
+      #plane { width: min(100%, 512px); }
+    }
+
+    @media (max-width: 560px) {
+      main { padding: 16px; }
+      header { align-items: stretch; flex-direction: column; }
+      .legend { flex-wrap: wrap; }
+      .status { grid-template-columns: 1fr; }
+      .metric + .metric { border-left: 0; border-top: 1px solid var(--border); }
+      .controls { grid-template-columns: 1fr 1fr; }
+      #step-label { grid-column: 1 / -1; grid-row: 1; }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>nearest-neighbor search</h1>
+      <div class="legend" aria-label="Branch legend">
+        <span class="main-color"><i class="swatch"></i>main branch</span>
+        <span class="alternative-color"><i class="swatch"></i>alternative branch</span>
+      </div>
+    </header>
+
+    <section class="visualization" aria-label="kd-tree nearest-neighbor visualization">
+      <div class="tree-panel">
+        <h2 class="panel-title">Binary tree</h2>
+        <svg id="tree" viewBox="0 0 540 512" role="img" aria-label="kd-tree search traversal"></svg>
+      </div>
+      <div class="plane-panel">
+        <h2 class="panel-title">2D space</h2>
+        <svg id="plane" viewBox="0 0 512 512" role="img" aria-label="kd-tree partitions and query point"></svg>
+      </div>
+    </section>
+
+    <section class="status" aria-label="Search bounds">
+      <div class="metric"><span class="metric-label">Nearest point</span><output id="nearest">-</output></div>
+      <div class="metric"><span class="metric-label">Upper bound (ub)</span><output id="upper-bound">-</output></div>
+      <div class="metric"><span class="metric-label">Partition distance (lb)</span><output id="lower-bound">-</output></div>
+    </section>
+    <nav class="controls" aria-label="Search controls">
+      <button id="previous" type="button">Previous</button>
+      <output id="step-label" aria-live="polite">Step 0 / 5</output>
+      <button id="next" type="button">Next</button>
+    </nav>
+  </main>
+
+  <script src="kd-tree.js"></script>
+  <script>
+    (() => {
+      "use strict";
+
+      const { allNodes, assignTreePositions, buildKdTree, distance, svgElement } = window.KDTreeDemo;
+      const QUERY = { x: 80, y: 50 };
+      const POINTS = [
+        { x: 30, y: 450 },
+        { x: 100, y: 375 },
+        { x: 256, y: 300 },
+        { x: 300, y: 256 },
+        { x: 20, y: 90 },
+        { x: 120, y: 45 },
+      ];
+
+      const treeSvg = document.querySelector("#tree");
+      const planeSvg = document.querySelector("#plane");
+      const previousButton = document.querySelector("#previous");
+      const nextButton = document.querySelector("#next");
+      const stepLabel = document.querySelector("#step-label");
+      const nearestOutput = document.querySelector("#nearest");
+      const upperOutput = document.querySelector("#upper-bound");
+      const lowerOutput = document.querySelector("#lower-bound");
+
+      let trace = [];
+      let step = 0;
+
+      function buildTrace(root) {
+        const events = [];
+        let best = null;
+        let ub = Infinity;
+
+        function search(node, branch) {
+          if (!node) return;
+          const pivotDistance = distance(QUERY, node.pivot);
+          if (pivotDistance < ub) {
+            best = node.pivot;
+            ub = pivotDistance;
+          }
+
+          const lb = Math.abs(QUERY[node.axis] - node.pivot[node.axis]);
+          events.push({ node, branch, best, ub, lb });
+
+          const queryOnLeft = QUERY[node.axis] <= node.pivot[node.axis];
+          const main = queryOnLeft ? node.left : node.right;
+          const alternative = queryOnLeft ? node.right : node.left;
+          search(main, "main");
+          if (lb < ub) search(alternative, "alternative");
+        }
+
+        search(root, "main");
+        return events;
+      }
+
+      function renderTree(nodes, event) {
+        treeSvg.replaceChildren();
+        for (const node of nodes) {
+          if (!node.parent) continue;
+          treeSvg.append(svgElement("line", {
+            x1: node.parent.treeX, y1: node.parent.treeY,
+            x2: node.treeX, y2: node.treeY,
+            class: "tree-edge",
+          }));
+        }
+
+        for (const node of nodes) {
+          const classes = ["tree-node"];
+          if (event && node === event.node) classes.push("current", event.branch);
+          if (event && node.pivot === event.best) classes.push("best");
+          const group = svgElement("g", {
+            class: classes.join(" "),
+            transform: `translate(${node.treeX} ${node.treeY})`,
+          });
+          group.append(svgElement("circle", { r: 29 }));
+          group.append(svgElement("text", { y: -5 }, `${node.pivot.x},`));
+          group.append(svgElement("text", { y: 9 }, `${node.pivot.y}`));
+          treeSvg.append(group);
+        }
+      }
+
+      function renderPlane(nodes, event) {
+        planeSvg.replaceChildren();
+
+        for (const node of nodes) {
+          const isX = node.axis === "x";
+          const current = event && node === event.node;
+          planeSvg.append(svgElement("line", {
+            x1: isX ? node.pivot.x : node.bounds.xMin,
+            y1: isX ? node.bounds.yMin : node.pivot.y,
+            x2: isX ? node.pivot.x : node.bounds.xMax,
+            y2: isX ? node.bounds.yMax : node.pivot.y,
+            class: `divider${current ? ` current ${event.branch}` : ""}`,
+          }));
+        }
+
+        if (event) {
+          const node = event.node;
+          const isX = node.axis === "x";
+          planeSvg.append(svgElement("line", {
+            x1: QUERY.x,
+            y1: QUERY.y,
+            x2: isX ? node.pivot.x : QUERY.x,
+            y2: isX ? QUERY.y : node.pivot.y,
+            class: `lower-bound ${event.branch}`,
+          }));
+        }
+
+        for (const node of nodes) {
+          const classes = ["point"];
+          if (event && node.pivot === event.best) classes.push("best");
+          if (event && node === event.node) classes.push("current", event.branch);
+          planeSvg.append(svgElement("circle", {
+            cx: node.pivot.x, cy: node.pivot.y, r: 6, class: classes.join(" "),
+          }));
+        }
+
+        planeSvg.append(svgElement("circle", { cx: QUERY.x, cy: QUERY.y, r: 10, class: "query-ring" }));
+        planeSvg.append(svgElement("path", {
+          d: `M ${QUERY.x} ${QUERY.y - 6} L ${QUERY.x + 6} ${QUERY.y} L ${QUERY.x} ${QUERY.y + 6} L ${QUERY.x - 6} ${QUERY.y} Z`,
+          class: "query",
+        }));
+        planeSvg.append(svgElement("text", {
+          x: QUERY.x + 12, y: QUERY.y - 12, class: "point-label",
+        }, `q = (${QUERY.x}, ${QUERY.y})`));
+      }
+
+      function formatDistance(value) {
+        return value.toFixed(2);
+      }
+
+      function render() {
+        const event = trace[step - 1] || null;
+        renderTree(nodes, event);
+        renderPlane(nodes, event);
+        stepLabel.value = `Step ${step} / ${trace.length}`;
+        stepLabel.textContent = stepLabel.value;
+        nearestOutput.value = event ? `(${event.best.x}, ${event.best.y})` : "-";
+        nearestOutput.textContent = nearestOutput.value;
+        upperOutput.value = event ? formatDistance(event.ub) : "-";
+        upperOutput.textContent = upperOutput.value;
+        lowerOutput.value = event ? formatDistance(event.lb) : "-";
+        lowerOutput.textContent = lowerOutput.value;
+        previousButton.disabled = step === 0;
+        nextButton.disabled = step === trace.length;
+      }
+
+      const root = buildKdTree(POINTS);
+      assignTreePositions(root, { width: 540, margin: 55, top: 70, levelGap: 145 });
+      const nodes = allNodes(root);
+      trace = buildTrace(root);
+
+      previousButton.addEventListener("click", () => { step = Math.max(0, step - 1); render(); });
+      nextButton.addEventListener("click", () => { step = Math.min(trace.length, step + 1); render(); });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") previousButton.click();
+        if (event.key === "ArrowRight") nextButton.click();
+      });
+      render();
+    })();
+  </script>
+</body>
+</html>

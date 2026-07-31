@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kd-tree construction</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #20252b;
+      --muted: #66717c;
+      --border: #cbd2d9;
+      --surface: #f7f8fa;
+      --x-axis: #c63c32;
+      --y-axis: #1976a3;
+      --active: #f2b84b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font: 15px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .legend {
+      display: flex;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .legend span { display: flex; align-items: center; gap: 6px; }
+    .swatch { width: 18px; height: 3px; background: currentColor; }
+    .x-color { color: var(--x-axis); }
+    .y-color { color: var(--y-axis); }
+
+    .visualization {
+      display: grid;
+      grid-template-columns: minmax(480px, 1fr) 512px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel-title {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    #tree {
+      width: 100%;
+      min-height: 512px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    #plane {
+      width: 512px;
+      aspect-ratio: 1;
+      background: #fff;
+      border: 1px solid var(--ink);
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .button-group { display: flex; gap: 8px; }
+
+    button {
+      min-width: 92px;
+      min-height: 40px;
+      border: 1px solid #8b959e;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+    }
+
+    button:hover:not(:disabled) { background: var(--surface); border-color: var(--ink); }
+    button:focus-visible { outline: 3px solid #79bce0; outline-offset: 2px; }
+    button:disabled { cursor: default; opacity: 0.4; }
+
+    #step-label {
+      min-width: 120px;
+      text-align: center;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-weight: 700;
+    }
+
+    .tree-edge { stroke: #a5adb5; stroke-width: 1.5; }
+    .tree-node circle { fill: #fff; stroke-width: 2; }
+    .tree-node text {
+      fill: var(--ink);
+      font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+    .tree-node.current circle { fill: #fff5d8; stroke: #a66c00; stroke-width: 3; }
+    .tree-node.x-node circle { stroke: var(--x-axis); }
+    .tree-node.y-node circle { stroke: var(--y-axis); }
+
+    .split-line { stroke-width: 2; vector-effect: non-scaling-stroke; }
+    .split-line.current { stroke-width: 4; }
+    .point { fill: #fff; stroke: var(--ink); stroke-width: 2; vector-effect: non-scaling-stroke; }
+    .point.visited { fill: var(--ink); }
+    .point.current { fill: var(--active); stroke: #744d00; stroke-width: 3; }
+    .point-label {
+      fill: var(--ink);
+      font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      paint-order: stroke;
+      stroke: #fff;
+      stroke-width: 3px;
+      stroke-linejoin: round;
+    }
+
+    @media (max-width: 1100px) {
+      .visualization { grid-template-columns: 1fr; }
+      .tree-panel, .plane-panel { width: min(100%, 620px); margin: 0 auto; }
+      #tree { min-height: 440px; }
+      #plane { width: min(100%, 512px); }
+    }
+
+    @media (max-width: 560px) {
+      main { padding: 16px; }
+      header, .controls { align-items: stretch; flex-direction: column; }
+      .legend { flex-wrap: wrap; }
+      .controls { gap: 12px; }
+      .button-group { display: grid; grid-template-columns: 1fr 1fr; }
+      button { min-width: 0; }
+      #step-label { order: -1; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>kd-tree construction</h1>
+      <div class="legend" aria-label="Split dimension legend">
+        <span class="x-color"><i class="swatch"></i>x split</span>
+        <span class="y-color"><i class="swatch"></i>y split</span>
+      </div>
+    </header>
+
+    <section class="visualization" aria-label="kd-tree visualization">
+      <div class="tree-panel">
+        <h2 class="panel-title">Binary tree</h2>
+        <svg id="tree" viewBox="0 0 560 512" role="img" aria-label="Revealed nodes in the kd-tree"></svg>
+      </div>
+      <div class="plane-panel">
+        <h2 class="panel-title">2D space</h2>
+        <svg id="plane" viewBox="0 0 512 512" role="img" aria-label="Points and kd-tree partitions"></svg>
+      </div>
+    </section>
+
+    <nav class="controls" aria-label="Construction controls">
+      <button id="regenerate" type="button">Regenerate</button>
+      <output id="step-label" aria-live="polite">Step 0 / 13</output>
+      <div class="button-group">
+        <button id="previous" type="button">Previous</button>
+        <button id="next" type="button">Next</button>
+      </div>
+    </nav>
+  </main>
+
+  <script src="kd-tree.js"></script>
+  <script>
+    (() => {
+      "use strict";
+
+      const { SIZE, assignTreePositions, buildKdTree, svgElement } = window.KDTreeDemo;
+      const POINT_COUNT = 13;
+      const MARGIN = 28;
+
+      const treeSvg = document.querySelector("#tree");
+      const planeSvg = document.querySelector("#plane");
+      const previousButton = document.querySelector("#previous");
+      const nextButton = document.querySelector("#next");
+      const regenerateButton = document.querySelector("#regenerate");
+      const stepLabel = document.querySelector("#step-label");
+
+      let root = null;
+      let traversal = [];
+      let step = 0;
+
+      function randomInteger(lo, hi) {
+        return lo + Math.floor(Math.random() * (hi - lo + 1));
+      }
+
+      function generatePoints() {
+        const points = [];
+        const usedX = new Set();
+        const usedY = new Set();
+
+        while (points.length < POINT_COUNT) {
+          const x = randomInteger(MARGIN, SIZE - MARGIN);
+          const y = randomInteger(MARGIN, SIZE - MARGIN);
+          if (usedX.has(x) || usedY.has(y)) continue;
+          usedX.add(x);
+          usedY.add(y);
+          points.push({ x, y, id: points.length });
+        }
+        return points;
+      }
+
+      function assignTraversal(node) {
+        if (!node) return;
+        node.order = traversal.length;
+        traversal.push(node);
+        assignTraversal(node.left);
+        assignTraversal(node.right);
+      }
+
+      function renderPlane() {
+        planeSvg.replaceChildren();
+        const current = traversal[step - 1] || null;
+
+        for (const node of traversal.slice(0, step)) {
+          const isX = node.axis === "x";
+          const line = svgElement("line", {
+            x1: isX ? node.pivot.x : node.bounds.xMin,
+            y1: isX ? node.bounds.yMin : node.pivot.y,
+            x2: isX ? node.pivot.x : node.bounds.xMax,
+            y2: isX ? node.bounds.yMax : node.pivot.y,
+            stroke: isX ? "var(--x-axis)" : "var(--y-axis)",
+            class: `split-line${node === current ? " current" : ""}`,
+          });
+          planeSvg.append(line);
+        }
+
+        for (const node of traversal) {
+          const visited = node.order < step;
+          const isCurrent = node === current;
+          planeSvg.append(svgElement("circle", {
+            cx: node.pivot.x,
+            cy: node.pivot.y,
+            r: isCurrent ? 6 : 4.5,
+            class: `point${visited ? " visited" : ""}${isCurrent ? " current" : ""}`,
+          }));
+
+          if (isCurrent) {
+            const anchorRight = node.pivot.x < SIZE - 90;
+            planeSvg.append(svgElement("text", {
+              x: node.pivot.x + (anchorRight ? 10 : -10),
+              y: node.pivot.y - 10,
+              "text-anchor": anchorRight ? "start" : "end",
+              class: "point-label",
+            }, `(${node.pivot.x}, ${node.pivot.y})`));
+          }
+        }
+      }
+
+      function renderTree() {
+        treeSvg.replaceChildren();
+        const current = traversal[step - 1] || null;
+        const visible = traversal.slice(0, step);
+
+        for (const node of visible) {
+          if (!node.parent || node.parent.order >= step) continue;
+          treeSvg.append(svgElement("line", {
+            x1: node.parent.treeX,
+            y1: node.parent.treeY,
+            x2: node.treeX,
+            y2: node.treeY,
+            class: "tree-edge",
+          }));
+        }
+
+        for (const node of visible) {
+          const group = svgElement("g", {
+            class: `tree-node ${node.axis}-node${node === current ? " current" : ""}`,
+            transform: `translate(${node.treeX} ${node.treeY})`,
+          });
+          group.append(svgElement("circle", { r: 25 }));
+          group.append(svgElement("text", { y: -4 }, `${node.pivot.x},`));
+          group.append(svgElement("text", { y: 9 }, `${node.pivot.y}`));
+          treeSvg.append(group);
+        }
+      }
+
+      function render() {
+        renderTree();
+        renderPlane();
+        stepLabel.value = `Step ${step} / ${POINT_COUNT}`;
+        stepLabel.textContent = stepLabel.value;
+        previousButton.disabled = step === 0;
+        nextButton.disabled = step === POINT_COUNT;
+      }
+
+      function regenerate() {
+        const points = generatePoints();
+        traversal = [];
+        root = buildKdTree(points);
+        assignTraversal(root);
+        assignTreePositions(root);
+        step = 0;
+        render();
+      }
+
+      previousButton.addEventListener("click", () => {
+        step = Math.max(0, step - 1);
+        render();
+      });
+
+      nextButton.addEventListener("click", () => {
+        step = Math.min(POINT_COUNT, step + 1);
+        render();
+      });
+
+      regenerateButton.addEventListener("click", regenerate);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") previousButton.click();
+        if (event.key === "ArrowRight") nextButton.click();
+      });
+
+      regenerate();
+    })();
+  </script>
+</body>
+</html>
