@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bowyer-Watson algorithm</title>
+  <style>
+    :root{color-scheme:light;--ink:#20252b;--muted:#68727c;--border:#cbd2d9;--surface:#f6f8f9;--bad:#c84343;--boundary:#d28b13;--new:#168478;--super:#8a939c}
+    *{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:15px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{width:min(1060px,100%);margin:auto;padding:24px}header{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}h1{margin:0;font:700 24px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:0}.legend{display:flex;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:12px}.legend span{display:flex;align-items:center;gap:5px}.swatch{width:16px;height:3px;background:currentColor}.bad-color{color:var(--bad)}.boundary-color{color:var(--boundary)}.new-color{color:var(--new)}
+    .workspace{display:grid;grid-template-columns:512px minmax(260px,1fr);gap:28px;align-items:start}.panel-title{margin:0 0 8px;color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0}#plane{display:block;width:512px;max-width:100%;aspect-ratio:1;background:#fff;border:1px solid var(--ink)}.side{min-height:512px;border-top:1px solid var(--border)}.phase{padding:16px 0;border-bottom:1px solid var(--border)}.phase-label{display:block;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase}#phase-name{display:block;margin-top:3px;font-size:20px;font-weight:700}#phase-detail{min-height:42px;margin:8px 0 0;color:var(--muted)}.metrics{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}.metric{padding:13px 0}.metric+.metric{padding-left:16px;border-left:1px solid var(--border)}.metric output{display:block;font:700 18px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.point-order{padding-top:16px}.point-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin:10px 0 0;padding:0;list-style:none}.point-list li{padding:4px 6px;border-left:3px solid transparent;color:var(--muted);font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.point-list li.inserted{color:var(--ink)}.point-list li.current{border-color:var(--new);background:#e5f4f1;color:var(--ink);font-weight:700}
+    .triangle{fill:#edf0f2;fill-opacity:.55;stroke:#7e8790;stroke-width:1.4;vector-effect:non-scaling-stroke}.triangle.super{fill:none;stroke:var(--super);stroke-dasharray:7 5}.triangle.bad{fill:#f7dede;fill-opacity:.85;stroke:var(--bad);stroke-width:2.5}.triangle.new{fill:#dff1ed;fill-opacity:.8;stroke:var(--new);stroke-width:2.2}.circle{fill:none;stroke:var(--bad);stroke-width:1.3;stroke-dasharray:5 4;opacity:.58;vector-effect:non-scaling-stroke}.boundary{stroke:var(--boundary);stroke-width:5;stroke-linecap:round;vector-effect:non-scaling-stroke}.point{fill:#fff;stroke:var(--ink);stroke-width:2;vector-effect:non-scaling-stroke}.point.inserted{fill:var(--ink)}.point.current{fill:#fff;stroke:var(--new);stroke-width:4}.point.super-point{fill:#fff;stroke:var(--super);stroke-dasharray:3 2}.point-label{fill:var(--ink);font:10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}
+    .controls{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}.controls button:last-child{justify-self:end}button{width:110px;min-height:40px;border:1px solid #8b959e;border-radius:4px;background:#fff;color:var(--ink);font:inherit;font-weight:650;cursor:pointer}button:hover:not(:disabled){background:var(--surface);border-color:var(--ink)}button:focus-visible{outline:3px solid #79bce0;outline-offset:2px}button:disabled{cursor:default;opacity:.4}#step-label{min-width:145px;text-align:center;font:700 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    @media(max-width:850px){.workspace{grid-template-columns:1fr}.plane-panel,.side{width:min(100%,512px);margin:auto}.side{min-height:0}}@media(max-width:560px){main{padding:16px}header{align-items:stretch;flex-direction:column}.controls{grid-template-columns:1fr 1fr}#step-label{grid-column:1/-1;grid-row:1}button{width:100%}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Bowyer-Watson</h1>
+      <div class="legend" aria-label="Visualization legend">
+        <span class="bad-color"><i class="swatch"></i>bad triangles</span>
+        <span class="boundary-color"><i class="swatch"></i>cavity boundary</span>
+        <span class="new-color"><i class="swatch"></i>new triangles</span>
+      </div>
+    </header>
+    <section class="workspace">
+      <div class="plane-panel"><h2 class="panel-title">Triangulation</h2><svg id="plane" viewBox="0 0 512 512" role="img" aria-label="Bowyer-Watson triangulation steps"></svg></div>
+      <aside class="side" aria-label="Current algorithm state">
+        <div class="phase"><span class="phase-label">Phase</span><output id="phase-name">Initialize</output><p id="phase-detail"></p></div>
+        <div class="metrics"><div class="metric"><span class="phase-label">Triangles</span><output id="triangle-count">1</output></div><div class="metric"><span class="phase-label">Boundary edges</span><output id="boundary-count">0</output></div></div>
+        <div class="point-order"><span class="phase-label">Insertion order</span><ol id="point-list" class="point-list"></ol></div>
+      </aside>
+    </section>
+    <nav class="controls" aria-label="Algorithm controls"><button id="previous" type="button">Previous</button><output id="step-label" aria-live="polite">Step 0</output><button id="next" type="button">Next</button></nav>
+  </main>
+  <script>
+    (()=>{
+      "use strict";
+      const POINTS=[[81,14],[3,94],[35,31],[28,17],[94,13],[86,94],[69,11],[75,54],[4,3],[11,27]].map(([x,y],i)=>({x,y,id:`p${i}`}));
+      const SUPER=[{x:-20,y:-20,id:"a",super:true},{x:-20,y:220,id:"b",super:true},{x:220,y:-20,id:"c",super:true}];
+      const MIN=-30,MAX=230,PAD=18,NS="http://www.w3.org/2000/svg";
+      const plane=document.querySelector("#plane"),phaseName=document.querySelector("#phase-name"),phaseDetail=document.querySelector("#phase-detail"),triangleCount=document.querySelector("#triangle-count"),boundaryCount=document.querySelector("#boundary-count"),pointList=document.querySelector("#point-list"),stepLabel=document.querySelector("#step-label"),previousButton=document.querySelector("#previous"),nextButton=document.querySelector("#next");
+      let step=0;
+      function el(name,attrs={},text=""){const e=document.createElementNS(NS,name);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text)e.textContent=text;return e}
+      function orient(a,b,c){return(b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x)}
+      function inCircle(t,p){let[a,b,c]=t;if(orient(a,b,c)<0)[b,c]=[c,b];const ax=a.x-p.x,ay=a.y-p.y,bx=b.x-p.x,by=b.y-p.y,cx=c.x-p.x,cy=c.y-p.y;return(ax*ax+ay*ay)*(bx*cy-cx*by)-(bx*bx+by*by)*(ax*cy-cx*ay)+(cx*cx+cy*cy)*(ax*by-bx*ay)>0}
+      function edge(a,b){return a.id<b.id?[a,b]:[b,a]}
+      function boundary(ts){const f=new Map;for(const[a,b,c]of ts)for(const e of[edge(a,b),edge(a,c),edge(b,c)]){const k=`${e[0].id}:${e[1].id}`,v=f.get(k)||{edge:e,count:0};v.count++;f.set(k,v)}return[...f.values()].filter(v=>v.count===1).map(v=>v.edge)}
+      function hasSuper(t){return t.some(p=>p.super)}
+      function buildStates(){const states=[{phase:"initialize",pointIndex:-1,triangles:[[...SUPER]],bad:[],boundary:[],fresh:[]}];let triangles=[[...SUPER]];POINTS.forEach((p,pointIndex)=>{const bad=triangles.filter(t=>inCircle(t,p)),good=triangles.filter(t=>!bad.includes(t)),border=boundary(bad),fresh=border.map(([a,b])=>[a,b,p]);states.push({phase:"inspect",pointIndex,triangles,bad,boundary:[],fresh:[]});states.push({phase:"cavity",pointIndex,triangles:good,bad:[],boundary:border,fresh:[]});triangles=[...good,...fresh];states.push({phase:"retriangulate",pointIndex,triangles,bad:[],boundary:[],fresh})});states.push({phase:"complete",pointIndex:POINTS.length,triangles:triangles.filter(t=>!hasSuper(t)),bad:[],boundary:[],fresh:[]});return states}
+      function scale(v){return PAD+(v-MIN)*(512-2*PAD)/(MAX-MIN)}function sx(p){return scale(p.x)}function sy(p){return 512-scale(p.y)}function polygon(t){return t.map(p=>`${sx(p)},${sy(p)}`).join(" ")}
+      function circle([a,b,c]){const d=2*(a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y));if(Math.abs(d)<1e-9)return null;const aa=a.x*a.x+a.y*a.y,bb=b.x*b.x+b.y*b.y,cc=c.x*c.x+c.y*c.y,x=(aa*(b.y-c.y)+bb*(c.y-a.y)+cc*(a.y-b.y))/d,y=(aa*(c.x-b.x)+bb*(a.x-c.x)+cc*(b.x-a.x))/d;return{x,y,r:Math.hypot(x-a.x,y-a.y)}}
+      function triClass(t,s){if(s.bad.includes(t))return"triangle bad";if(s.fresh.includes(t))return"triangle new";return`triangle${hasSuper(t)?" super":""}`}
+      function draw(s){plane.replaceChildren();for(const t of s.bad){const c=circle(t);if(c)plane.append(el("circle",{cx:scale(c.x),cy:512-scale(c.y),r:c.r*(512-2*PAD)/(MAX-MIN),class:"circle"}))}for(const t of s.triangles)plane.append(el("polygon",{points:polygon(t),class:triClass(t,s)}));for(const[a,b]of s.boundary)plane.append(el("line",{x1:sx(a),y1:sy(a),x2:sx(b),y2:sy(b),class:"boundary"}));const through=Math.min(s.pointIndex-(["inspect","cavity"].includes(s.phase)?1:0),POINTS.length-1);POINTS.forEach((p,i)=>{const current=i===s.pointIndex&&s.phase!=="complete",inserted=i<=through;plane.append(el("circle",{cx:sx(p),cy:sy(p),r:current?6:4.5,class:`point${inserted?" inserted":""}${current?" current":""}`}))});if(s.phase!=="complete")for(const p of SUPER)plane.append(el("circle",{cx:sx(p),cy:sy(p),r:4,class:"point super-point"}));if(s.pointIndex>=0&&s.pointIndex<POINTS.length){const p=POINTS[s.pointIndex];plane.append(el("text",{x:sx(p)+9,y:sy(p)-9,class:"point-label"},`(${p.x}, ${p.y})`))}}
+      const copy={initialize:["Initialize","Start with a super-triangle containing every input point."],inspect:["Find bad triangles","Find circumcircles containing the point being inserted."],cavity:["Expose cavity","Remove bad triangles; edges used once form the cavity boundary."],retriangulate:["Retriangulate","Connect the new point to every edge on the cavity boundary."],complete:["Complete","Remove every triangle incident to a super-triangle vertex."]};
+      function drawList(s){pointList.replaceChildren();POINTS.forEach((p,i)=>{const li=document.createElement("li"),current=i===s.pointIndex&&s.phase!=="complete";if(i<s.pointIndex||(i===s.pointIndex&&s.phase==="retriangulate")||s.phase==="complete")li.classList.add("inserted");if(current)li.classList.add("current");li.textContent=`${i+1}. (${p.x}, ${p.y})`;pointList.append(li)})}
+      function render(){const s=states[step],[name,detail]=copy[s.phase];draw(s);drawList(s);phaseName.value=name;phaseName.textContent=name;phaseDetail.textContent=detail;triangleCount.value=s.triangles.length;triangleCount.textContent=triangleCount.value;boundaryCount.value=s.boundary.length;boundaryCount.textContent=boundaryCount.value;stepLabel.value=`Step ${step} / ${states.length-1}`;stepLabel.textContent=stepLabel.value;previousButton.disabled=step===0;nextButton.disabled=step===states.length-1}
+      const states=buildStates();previousButton.addEventListener("click",()=>{step=Math.max(0,step-1);render()});nextButton.addEventListener("click",()=>{step=Math.min(states.length-1,step+1);render()});document.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")previousButton.click();if(e.key==="ArrowRight")nextButton.click()});render();
+    })();
+  </script>
+</body>
+</html>

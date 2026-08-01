@@ -166,6 +166,13 @@ The algorithm is conceptually simple. We start with an empty triangle that is bi
 
 Then we insert one point $p$ of $P$ at a time. Once we add $p$, remove all triangles that violate the Delaunay conditions (i.e. their circumcicle contains $p$). This will leave out a "hole" whose border is a polygon. Now connect each vertex of this polygon to $p$, forming a new triangulation. This triangulation is a Delaunay triangulation for $a, b, c$ and all the points of $P$ added so far.
 
+<figure class="center_children">
+  <img src="{{resources_path}}/bowyer-watson.png" alt="See caption." />
+  <figcaption>Figure 4: Screenshot from the step-by-step visualization of the <a href="{{resources_path}}/bowyer-watson.html">Bowyer–Watson algorithm</a> showing the "polygonal hole" by removing violating edges followed by connecting the current points to vertices in the polygon.</figcaption>
+</figure>
+
+[Open the interactive Bowyer-Watson visualization]({{resources_path}}/bowyer-watson.html).
+
 A Python implementation is the following:
 
 {% highlight python %}
@@ -401,6 +408,6 @@ We've seen the relationship between Delaunay and 3D convex hulls here. In the fu
 
 ## Related Posts
 
-In [On Lifetime]({{blog}}/2023/07/10/on-lifetime.html) I mention that I wrote Java applets for interactive computational geometry algorithms such as for polygon triangulation and finding the convex hull in 2D! It did cross my mind to write a JavaScript-based on for the Bowyer-Watson algorithm, especially if Claude can do most of the implementation, but it would still take some work to test, polish and read the code, so I decided to pass.
+In [On Lifetime]({{blog}}/2023/07/10/on-lifetime.html) I mention that I wrote Java applets for interactive computational geometry algorithms such as for polygon triangulation and finding the convex hull in 2D! I used Codex to vibe code the delaunay one and it one-shotted it.
 
 In the [The Gauss-Lucas Theorem]({{blog}}/2023/11/03/gauss-lucas-theorem.html) we also deal with convex hulls and I used the same Python library `scipy.spatial.ConvexHull` for validating the number of edges property.
