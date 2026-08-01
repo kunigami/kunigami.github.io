@@ -32,6 +32,19 @@ The `vanity` field must match the `YYYY-MM-DD-<slug>` portion of the filename (a
 - `_layouts/` - Jekyll layouts
 - `_docs/`, `_books/`, `_amuseum/`, `_nature/` - other Jekyll collections
 
+## Editing posts
+
+When asked to fix typos in a post, correct **only** misspellings, grammar (agreement,
+tense, missing words), and punctuation. Do **not** rephrase sentences for style,
+concision, or clarity — the prose should reflect the author's own voice.
+
+Leave block quotes untouched: quoted AI prompts and quotes of the author's earlier posts
+are reproduced verbatim on purpose.
+
+Anything else worth changing — awkward-but-correct phrasing, factual errors, stale
+cross-post references, code bugs in snippets — should be listed as a suggestion at the
+end of the response, not applied.
+
 ## Common include
 
 Posts start with `{% include blog_vars.html %}` which defines:

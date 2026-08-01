@@ -30,7 +30,7 @@ I also write PR summaries manually, mostly to force myself to understand what th
 
 ### For Personal
 
-For learning algorithms or solving programming puzzles, I write 100% of the code. I even turn off AI auto-complete. One reason is to keep my programming skills sharp (it's like hiking instead of driving), even if I might not need them in the future. The more important reason is that I find I learn better when I do things myself.
+For learning algorithms or solving [programming puzzles](https://github.com/kunigami/programming-contests), I write 100% of the code. I even turn off AI auto-complete. One reason is to keep my programming skills sharp (it's like hiking instead of driving), even if I might not need them in the future. The more important reason is that I find I learn better when I do things myself.
 
 That's also the reason why I write 100% of my blog posts manually. I use AI to correct typos and grammatical errors but explicitly ask it not to rephrase things, even if it improves clarity. I want my blog to reflect my way of thinking, even if it's gradually but increasingly being influenced by AI.
 
