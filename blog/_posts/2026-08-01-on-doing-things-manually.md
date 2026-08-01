@@ -38,15 +38,15 @@ A few times I did ask for feedback from AI on how to convey my ideas better, esp
 
 ## Reading
 
-I've been relying on AI for learning more and more, instead of reading textbooks. I still love [reading books](https://www.kuniga.me/books/) for fun, but for difficult subjects I find it more effective to do everything through AI. I have specific learning patterns and some textbooks are so dense I waste time trying to decipher missing information (I spent [2 years](https://www.kuniga.me/blog/2026/04/05/book-complex-analysis.html) reading a book on Complex Analysis).
+I've been relying more and more on AI for learning, instead of reading textbooks or Wikipedia. I still love [reading books](https://www.kuniga.me/books/) for fun, but for difficult subjects I find it more effective to do everything through AI. I have specific learning patterns and some textbooks are so dense I waste time trying to decipher missing information (I spent [2 years](https://www.kuniga.me/blog/2026/04/05/book-complex-analysis.html) reading a book on Complex Analysis).
 
-AI is very useful for digging into details on demand too. I might not care about details of a specific topic but want to keep asking for details on others. Printed books often cannot provide such a tailored experience. AI makes it easier to follow my curiosity, because if I had to buy textbooks or spend hours researching, I'd just not do it.
+AI is very useful for digging into details on demand too. I might not care about details of a specific topic but want to keep asking for details on others. Printed books often cannot provide such a tailored experience. AI makes it easier to follow my curiosity. If I had to buy textbooks or spend hours researching, I'd just not do it.
 
 The one concern with using AI is that some say that true learning only comes with struggle. If AI makes it too easy to digest things, am I learning optimally? Writing posts explaining stuff (even if no one reads it!) is even more important now, because it tests my understanding and keeps me honest, but I don't know if it's enough.
 
 ## Principles
 
-My guiding principle for when to use AI vs. not: what's the most effective way to learn and understand. I don't have qualms about relying on AI to do 100% of my grunt work, but I also don't aim to blindly automate my work without learning anything in the process.
+My guiding principle for when to use AI vs. not: what's the most effective way to learn and understand? I don't have qualms about relying on AI to do 100% of my grunt work, but I also don't aim to blindly automate my work without learning anything in the process.
 
 I'm fine to blindly let AI build tools to advance my projects but I'd like to be on top of the architecture and the algorithms that it uses, trade-offs taken, how the system deals with corner cases, etc.
 
