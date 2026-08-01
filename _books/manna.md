@@ -22,6 +22,13 @@ The author of the book is Marshall Brain, who created the site HowStuffWorks.com
 
 </spoiler>
 
+
+## Humans as AI Puppets
+
+Whenever I think of AI disruption I either think of people using AI or AI replacing humans, but never thought of AI using humans. That's one premise of the book manna stands for manager, and AI is the manager that dictates what humans should do (before robots do replace them).
+
+This is already happening with LLMs. Many times AI does all the work and humans are just there to stamp the work, approve permissions and put their face behind posts.
+
 ## Efficiency and Humanism
 
 As more and more people went out of jobs, employers could demand more and more efficiency from the employees, since there were so many to take their place. So people need to work ever more flawlessly and consistently, removing any trace of individualism and humanity, morphing into biological robots.
