@@ -55,3 +55,15 @@ I still think it's valuable to know and understand things instead of being an [A
 ## Conclusion
 
 To circle back to the start of the post, learning as a goal makes it easy to justify vibe-coding the JavaScript app to better understand Delaunay triangulation and KD-trees. My goal is not to learn how to write JavaScript apps, it's to learn the algorithms themselves.
+
+## Related Posts
+
+In my [2025 in Review post]({{blog}}/2026/01/01/2025-in-review.htm), I mentioned how I found learning history from Wikipedia instead of books more effective. I've since switched to using AI entirely for it. Most of my [notes](https://www.kuniga.me/docs/) for *History* have been through sessions with ChatGPT.
+
+In [The Weierstrass ℘-Function]({{blog}}/2026/04/04/the-weiertrass-p-function.html) also mention:
+
+> This proof is also not provided in Ahlfors (in any obvious way at least) and I relied entirely on ChatGPT to understand it! Like with learning history, I'm finding using ChatGPT a lot more effective at learning math: I can ask for it to explain me things in different angles and dig into different parts.
+
+This has been a consistent theme in many of my recent posts, so now that I have a dedicated post on this point I can stop repeating them or just link to here.
+
+[On Documentation]({{blog}}/2023/05/02/on-documentation.html) I asked the question: *Who Should Write (documentation)?*. Now we have a new option: AI. We should also consider a new point: who is the audience of documentation now? Humans or AI? Worth a separate post when my thoughts on this mature.

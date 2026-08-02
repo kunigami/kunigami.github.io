@@ -44,6 +44,26 @@ Read the input file fully. Extract:
   (aim for ~10–25 terms, including synonyms/aliases, e.g. "eigenvalue" ↔
   "eigenvector", "DAG" ↔ "directed acyclic graph").
 
+**Search for the concrete nouns, not the abstract topic.** The author writes
+about specifics; the abstraction is usually your summary of his point, and it
+often appears nowhere in the corpus. So for every theme in the input, also list
+the proper nouns that theme would be *expressed* through — tool and product
+names, book titles, author surnames, library and function names — and grep those
+too.
+
+Real example: for a post about relying on AI instead of textbooks, searching
+`textbook`, `self-study`, and `reading habit` found nothing, because the relevant
+posts say **"ChatGPT"** and **"Ahlfors"**. The whole cluster (*The Weierstrass
+℘-Function*, *[Book] Complex Analysis*, *Functionals*, *Sobolev Spaces*) was
+missed until `grep -ri chatgpt` surfaced it — one of those posts lists ChatGPT as
+its only reference.
+
+Names worth adding to the concept list whenever the input touches AI, learning,
+or tooling: `chatgpt`, `claude`, `codex`, `copilot`, `gpt-`, `llm`, `vibe.cod`.
+For a math or CS post, add the surnames of the authors whose books he's working
+through (`ahlfors`, `cummings`, `susskind`, …). Reference lists (`* [N] …` at the
+end of posts) are a good place to harvest these.
+
 ### 2. Find related posts and book summaries
 
 Search the corpus for the key concepts with local `grep` (or `rg`) over
