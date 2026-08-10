@@ -28,9 +28,34 @@ The `vanity` field must match the `YYYY-MM-DD-<slug>` portion of the filename (a
 - `blog/_posts/` - blog posts (Markdown)
 - `resources/blog/<vanity>/` - images and assets for a post (keyed by `vanity`)
 - `blog/code/<vanity>/` - code files for a post
+- `books/_posts/` - book summaries (Markdown)
+- `resources/books/` - book covers and images
 - `_includes/` - Jekyll includes (e.g. `blog_vars.html` sets up resource paths)
 - `_layouts/` - Jekyll layouts
-- `_docs/`, `_books/`, `_amuseum/`, `_nature/` - other Jekyll collections
+- `_docs/`, `_amuseum/`, `_nature/` - other Jekyll collections
+
+## Book posts
+
+Book summaries live in `books/_posts/YYYY-MM-DD-<slug>.md` and map to
+`/books/YYYY/MM/DD/<slug>.html`. Their frontmatter is:
+
+```yaml
+layout: books
+title: "Project Hail Mary"
+vanity: project-hail-mary
+rating: 5
+image: "hail-mary.jpg"
+author: "Andy Weir"
+category: "Sci-fi"
+```
+
+Unlike blog posts, `vanity` is the bare slug without the date. `image` is a filename
+under `resources/books/`. `books/index.md` renders the index table from these fields
+with Liquid, so a new book only needs a post — there is no separate index to update.
+
+`category` is a reserved Jekyll frontmatter key, which is why `_config.yml` pins an
+explicit `permalink` for the books scope; without it the category would be injected
+into the URL.
 
 ## Editing posts
 

@@ -9,7 +9,9 @@ title: Blog
 
 # NP-Incompleteness
 
-{% for post in site.posts limit:5 %}
+{% assign technical_posts = site.posts | where: "blog", "technical" %}
+
+{% for post in technical_posts limit:5 %}
   <div>
     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
     {{ post.date | date_to_string }}

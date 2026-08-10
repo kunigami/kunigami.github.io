@@ -4,8 +4,6 @@ collections:
     output: true
   amuseum:
     output: true
-  books:
-    output: true
   nature:
     output: true
 plugins:
@@ -15,3 +13,19 @@ title: NP-Incompleteness
 description: Kunigami's Technical Blog
 author: Guilherme Kunigami
 url: "https://www.kuniga.me"
+
+defaults:
+  - scope:
+      path: "blog"
+      type: "posts"
+    values:
+      blog: "technical"
+
+  - scope:
+      path: "books"
+      type: "posts"
+    values:
+      blog: "books"
+      # `category` is a reserved front matter key and would otherwise be
+      # injected into the URL, so pin the permalink explicitly.
+      permalink: /books/:year/:month/:day/:title.html

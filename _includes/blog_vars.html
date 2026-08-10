@@ -11,6 +11,10 @@
 {% assign resources_path_culture = site.url | append: "/resources/docs/culture" %}
 {% assign resources = site.url | append: "/resources/" %}
 {% assign resources_path_nature = site.url | append: "/resources/nature/" | append: page.vanity %}
+{%- comment -%} Cover figure for book posts, built from the post's `image` front matter {%- endcomment -%}
+{%- capture book_cover -%}<figure class="image_float_left">
+  <img src="{{ site.url }}/resources/books/{{ page.image }}" alt="Book cover" />
+</figure>{%- endcapture %}
 
 {% assign posts_so_far = 0 %}
 {% assign posts_last_year = 0 %}
