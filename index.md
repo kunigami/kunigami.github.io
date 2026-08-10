@@ -18,12 +18,12 @@ like to learn and build things.
             <td><img src="{{ site.url }}/resources/home/escher_drawing_hands.jpg" alt="Screenshot of the Wanderlust page"/></td>
         </tr>
         <tr>
-            <td><a href="{{ site.url }}/docs/">Cheat Sheets</a> - Notes for things I tend to look up often</td>
-            <td><img src="{{ site.url }}/resources/home/cheat_sheets.jpg" alt="Photo of a notebook" title="Source: https://unsplash.com/photos/5bYxXawHOQg" /></td>
+        <td><a href="{{ site.url }}/books/">Books</a> - Notes on some of the books I've read</td>
+            <td><img src="{{ site.url }}/resources/home/bookshelf.jpg" alt="Photo of two rows of my bookshelf"/></td>
         </tr>
         <tr>
-            <td><a href="{{ site.url }}/books/">Books</a> - Notes on some of the books I've read</td>
-            <td><img src="{{ site.url }}/resources/home/bookshelf.jpg" alt="Photo of two rows of my bookshelf"/></td>
+            <td><a href="{{ site.url }}/docs/">Second Brain</a> - Notes about everything else</td>
+            <td><img src="{{ site.url }}/resources/home/cheat_sheets.jpg" alt="Photo of a notebook" title="Source: https://unsplash.com/photos/5bYxXawHOQg" /></td>
         </tr>
         <tr>
             <td><a href="{{ site.url }}/amuseum/">Virtual Museum</a> - Note on types of fine arts I find interesting.</td>
