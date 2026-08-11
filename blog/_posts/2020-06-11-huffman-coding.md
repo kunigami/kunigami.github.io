@@ -3,7 +3,11 @@ layout: post
 title: "Huffman Coding"
 description: "Primer on the Huffman coding algorithm"
 tags: [data structures, python]
+excerpt_separator: <!--more-->
 ---
+
+{% include blog_vars.html %}
+
 
 David Albert Huffman was an American pioneer in computer science, known for his Huffman coding. He was also one of the pioneers in the field of mathematical origami [1].
 
@@ -13,6 +17,8 @@ Huffman worked on the problem for months, but none that he could prove to be the
 
 "Huffman code is one of the fundamental ideas that people in computer science and data communications are using all the time", says Donald E. Knuth [2].
 In this post we’ll study the Huffman coding algorithm and analyze it’s complexity and efficiency in terms of information theory.
+
+<!--more-->
 
 ## Problem
 
@@ -68,6 +74,9 @@ def build_tree(frequency_map):
 
 For the sake of code simplicity assume `front()` returns `None` if the queue is empty and the operator `less()` assumes `None` is infinite. Note we never have both operands equal to `None` since `Q1.length + Q2.lengh >= 2`. The complete implementation is on my [github](https://github.com/kunigami/blog-examples/tree/master/huffman).
 
+**Lemma 1.** This algorithm computes the Huffman tree correctly.
+
+<proof>
 Let’s get some intuition on why using two queues is a correct implementation. We need to prove that each step `x` and `y` are the nodes with the smallest frequencies over all nodes.
 
 Suppose that the queues store only the frequencies instead of the nodes. At a given iteration our queues are:
@@ -82,8 +91,10 @@ Our invariant is that:
 * 1) both queues are sorted and
 * 2) $$s_k$$ was obtained by adding the smallest of $$[a_{i-2}, a_{i-1}]$$, $$[a_{i-1}, s_{j-1}]$$ or $$[s_{j-1}, s_{j-2}]$$.
 
-Now let’s execute a step: we’ll either combine $$(ai, a_{i+1})$$, $$(ai + s_j)$$ or $$(s_j, s_{j+1})$$, the one that is the smallest of them (by our invariant we know that one of these have to be the smallest). We’ll call the result $$s_{k+1}$$ and by construction our invariant (2) is kept.
+<br /><br />
 
+Now let’s execute a step: we’ll either combine $$(ai, a_{i+1})$$, $$(ai + s_j)$$ or $$(s_j, s_{j+1})$$, the one that is the smallest of them (by our invariant we know that one of these have to be the smallest). We’ll call the result $$s_{k+1}$$ and by construction our invariant (2) is kept.
+<br /><br />
 Q1 is still sorted since we’re not adding elements to it. What remains is to show $$sks_{k+1} \ge s_ksk$$. Let’s consider the 3 possibilities:
 
 * $$s_{k+1} = [a_i, a_{i+1}]$$: we know by invariant (2) $$s_k \le [a_{i-2}, a_{i-1}]$$. Since $$a_i \ge a_{i-2}, a_{i+1} \ge a_{i-1}$$ by invariant (1), $$a_i +a_{i+1} \ge a_{i-2} + a_{i-1}$$, so $$s_{k+1} \ge s_k$$
@@ -91,6 +102,7 @@ Q1 is still sorted since we’re not adding elements to it. What remains is to s
 * $$s_{k+1} = s_{j-1} + s_{j-2}$$, we can use a similar argument.
 
 If both invariants hold, we can see that $$s_k$$ is the minimum sum of pairs of elements of either Q1 or Q2, proving the correctness of the approach.
+</proof>
 
 ### Encoding
 
@@ -117,7 +129,7 @@ def build_lookup(tree):
     return lookup
 {% endhighlight %}
 
-Note that we used a bit-array to save space (using '0'/'1' characters would defeat the purpuse since it would use 8 bits where we only need 1).
+Note that we used a bit-array to save space (using `'0'` and `'1'` characters would defeat the purpuse since it would use 8 bits where we only need 1).
 
 Then we can simple iterate over all symbols in the text:
 
@@ -170,31 +182,35 @@ Entropy can be regarded as the amount of information necessary to represent some
 
 It helps to think of entropy in terms of a channel capacity between a sender and a receiver. We want to know what is the minimum bandwidth (in bits/s) a channel would need to have to be able to transmit the data from the client to the server.
 
-Let’s workout some examples to make the notion more intuitive. Suppose our source emits one binary digit per second. What would be the capacity of our channel? We know from data types such as *byte*, *int32*, *int64* that the distinct numbers we can represent is $$2^{bits}$$, so for example a byte (8 bits) can represent $$2^{8} = 256$$ values. Conversely the number of bits to represent k values is given by $$\log(k)$$.
+Let’s workout some examples to make the notion more intuitive. Suppose our source emits one binary digit per second. What would be the capacity of our channel? We know from data types such as *byte*, *int32*, *int64* that the distinct numbers we can represent is $$2^{bits}$$, so for example a byte (8 bits) can represent $$2^{8} = 256$$ values. Conversely the number of bits to represent $k$ values is given by $\log(k)$.
 
 Thus, for a source emitting two values per second (0 or 1) we need exactly $$\log(2)$$ = 1 bit/second. Now imagine that the source only emits 1. How many bits do we need? Since it’s one value, we need $$\log(1)$$ = 0 bits/second. That’s right, we don’t need to send any information at all! The receiver will know the source has this property and doesn’t need to receive information to know what is coming!
 
-More generally, if bit 0 has relative frequency $$p_0$$ and one has relative frequency $$p_1$$, the entropy of the source his given by $$E = -p_0\log(p_0) -p_1\log(p_1)$$. So for a random case $$p_0=\frac{1}{2}$$ and $$p_1=\frac{1}{2}$$ we have $$E = -\frac{1}{2} \log(\frac{1}{2}) - \frac{1}{2} \log(\frac{1}{2}) = 1$$. when all digits are 1, $$p_0 = 0$$ and $$p_1 = 1$$. While $$\log(0)$$ is undefined, $$xlog(x)$$ converges to 0 as $$x$$ goes to 0, so we get $$E=0$$.
+More generally, if bit 0 has relative frequency $$p_0$$ and bit 1 has relative frequency $$p_1$$, the entropy of the source his given by $$E = -p_0\log(p_0) -p_1\log(p_1)$$. So for a random case $$p_0=\frac{1}{2}$$ and $$p_1=\frac{1}{2}$$ we have $$E = -\frac{1}{2} \log(\frac{1}{2}) - \frac{1}{2} \log(\frac{1}{2}) = 1$$. when all digits are 1, $$p_0 = 0$$ and $$p_1 = 1$$. While $$\log(0)$$ is undefined, $x \log(x)$ converges to 0 as $$x$$ goes to 0, so we get $$E=0$$.
 
 Let’s consider another case where $$p_0 = \frac{3}{4}$$ and $$p_1 = \frac{1}{4}$$. Then $$E=0.81$$, less than 1 bit/s. For a source with $$n$$ symbols, the entropy can be generalized to:
 
-$$H = \sum_{i=1}^{n} p_i \log(p_i) \quad (1)$$
+$$(1) \quad H = \sum_{i=1}^{n} p_i \log(p_i) $$
 
 ### Huffman Tree is optimal
 
-We'll now show that Huffman trees minimize the following function:
+**Lemma 2.** The Huffman tree minimizes the following function:
 
 $$\sum_{i=1}^{n} p_i l_i \quad (2)$$
 
 where $$l_i$$ is the length of the path from the root to node $$i$$.
 
+<proof>
+
 We'll describe the proof provided by Knuth in [3], based on induction on the number of symbols $$n$$, that is, suppose we know how to construct a tree with $$k < n$$ weights.
-
+<br /><br />
 Let be a minimal tree of size $$n$$ and $$V$$ the internal node with largest height. Let $$w_i$$ and $$w_j$$ be the children of such node. We can swap the children of $$V$$ with $$w_1$$ and $$w_2$$ without increasing the objective function. So we can asume an optimal tree exist where $$V$$ has $$w_1$$ ans $$w_2$$ as children.
-
+<br /><br />
 Combine $$V$$, $$w_1$$ and $$w_2$$ into one note with weight $$w_1+w_2$$. Now, construct an optimal tree for weights $$w_1+w_2, w_3, …, w_n$$, which we know how to do since it has $$n-1$$ weights. Such tree has a leaf node with weight $$w_1+w_2$$. We can "expand" that node into one with children $$w_1$$ and $$w_2$$. The cost of this function is $$U = T + w_1 + w_2$$.
-
+<br /><br />
 If $$T$$ is optimal, then $$U$$ is optimal. If not, there’s $$U^* < U$$, by our first argument we can find another tree with cost $$U^*$$ having $$w_1$$ and $$w_2$$ as children, by "shrinking" then into $$w_1+w_2, w_3, ... , wn$$, we could find a tree with cost $$< U - w_1 - w_2 = T$$, contradicting the fact $$T$$ is optimal. QED.
+
+</proof>
 
 Now, does the Huffman Tree minimize the entropy as defined by information theory? As we recall, the entropy is defined as (1)
 
