@@ -7,7 +7,6 @@ collections:
   nature:
     output: true
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 title: NP-Incompleteness
 description: Kunigami's Technical Blog
