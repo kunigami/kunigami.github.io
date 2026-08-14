@@ -28,3 +28,9 @@ defaults:
       # `category` is a reserved front matter key and would otherwise be
       # injected into the URL, so pin the permalink explicitly.
       permalink: /books/:year/:month/:day/:title.html
+
+  - scope:
+      path: "trips"
+      type: "posts"
+    values:
+      blog: "trips"
