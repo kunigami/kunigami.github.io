@@ -10,8 +10,10 @@ title: Blog
 
 # Archive
 
+{% assign technical_posts = site.posts | where: "blog", "technical" %}
+
 <ul>
-  {% for post in site.posts %}
+  {% for post in technical_posts %}
     <li>
       <span class="monospace">{{ post.date | date_to_string }} - </span><a href="{{ post.url }}">{{ post.title }}</a>
     </li>
