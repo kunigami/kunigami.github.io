@@ -16,8 +16,6 @@ Otakar Borůvka was a Czech mathematician who is best known for his work in grap
 
 Borůvka modeled the problem as the minimum spanning tree problem and then came up with the first known algorithm to solve it, now known as the Borůvka algorithm.
 
-Interestingly enough, the problem that motivated his algorithm can be modeled as a Euclidean graph, where vertices are cities and edges between them have costs corresponding to the Euclidean distance. However his algorithm works on general graphs and doesn't exploit the Euclidean properties.
-
 In this post we'll explore the Borůvka algorithm combined with [KD-trees]({{blog}}/2026/07/31/kd-tree.html) to solve the Euclidean Minimum Spanning Tree problem more efficiently.
 
 <!--more-->
@@ -28,7 +26,6 @@ The Euclidean Minimum Spanning Tree problem (EMST) consists in finding the [mini
 
 Algorithms such as Kruskal can find the MST of a graph $G(V, E)$ in $O(\abs{E} \log \abs{E})$. However in EMST the edges are implicit. The graph is a complete one where the weight of the edge between two points is their Euclidean distance, so a naive implementation consisting in computing the edges explicitly leads to a $O(N^2 \log N)$ algorithm.
 
-
 ## Solution
 
 In this post we'll explore a more efficient implementation using the Borůvka algorithm with [KD-trees]({{blog}}/2026/07/31/kd-tree.html) which runs closer to $O(N \log N)$ on average, even though the worst case is $O(N^2)$.
@@ -36,6 +33,8 @@ In this post we'll explore a more efficient implementation using the Borůvka al
 We'll start by describing the *Borůvka Algorithm* to compute the MST. Note that there's nothing special about it with respect to the Euclidean variant. It's just that it operates in batches and we can leverage that to search on the KD-trees more efficiently.
 
 ## Borůvka Algorithm
+
+Interestingly enough, the problem that motivated the Borůvka algorithm can be modeled as a Euclidean graph, where vertices are cities and edges between them have costs corresponding to the Euclidean distance. However his algorithm works on general graphs and doesn't exploit the Euclidean properties.
 
 Like Kruskal and Prim, the Borůvka algorithm is greedy, at each step taking the optimal decision and that leads to the optimal solution. In high level terms:
 
