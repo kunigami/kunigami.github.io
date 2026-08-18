@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Borůvka algorithm</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #20252b;
+      --muted: #68727c;
+      --border: #cbd2d9;
+      --surface: #f7f8fa;
+      --mst: #30363d;
+      --candidate: #d89014;
+      --active: #1676b8;
+      --accepted: #278447;
+      --rejected: #c43d3d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font: 15px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1220px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font: 700 24px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .legend span { display: flex; align-items: center; gap: 6px; }
+    .swatch { width: 20px; height: 0; border-top: 3px solid currentColor; }
+    .swatch.candidate { border-top-style: dashed; }
+    .mst-color { color: var(--mst); }
+    .candidate-color { color: var(--candidate); }
+    .active-color { color: var(--active); }
+
+    .visualization {
+      display: grid;
+      grid-template-columns: minmax(500px, 1fr) minmax(430px, 0.92fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel-title {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      border: 1px solid var(--border);
+    }
+
+    #plane { background: #fff; border-color: var(--ink); }
+    #forest { background: var(--surface); }
+
+    .mst-edge {
+      stroke: var(--mst);
+      stroke-width: 3;
+      stroke-linecap: round;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .candidate-edge {
+      stroke: var(--candidate);
+      stroke-width: 2.5;
+      stroke-dasharray: 8 6;
+      stroke-linecap: round;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .candidate-edge.active {
+      stroke: var(--active);
+      stroke-width: 5;
+      stroke-dasharray: none;
+    }
+
+    .candidate-edge.accepted { stroke: var(--accepted); }
+    .candidate-edge.rejected { stroke: var(--rejected); }
+
+    .point {
+      stroke: #343a40;
+      stroke-width: 2.5;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .point.active { stroke-width: 5; }
+
+    .point-label, .edge-label, .forest-label, .forest-title {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .point-label {
+      fill: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+      paint-order: stroke;
+      stroke: #fff;
+      stroke-width: 4px;
+      stroke-linejoin: round;
+    }
+
+    .edge-label-bg { fill: #fffdf7; stroke: #d6ad62; stroke-width: 1; }
+    .edge-label { fill: #78520f; font-size: 10px; text-anchor: middle; dominant-baseline: central; }
+
+    .component-box { fill: #fff; stroke-width: 2; }
+    .forest-edge { stroke: #a4adb6; stroke-width: 1.8; vector-effect: non-scaling-stroke; }
+    .forest-node { stroke-width: 2.5; }
+    .forest-root-ring { fill: none; stroke-width: 1.5; stroke-dasharray: 3 2; }
+    .forest-label { fill: var(--ink); font-size: 10px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+    .forest-title { font-size: 11px; font-weight: 700; }
+
+    .status {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      border-bottom: 0;
+      background: var(--surface);
+    }
+
+    .metric { padding: 10px 14px; text-align: center; }
+    .metric + .metric { border-left: 1px solid var(--border); }
+    .metric-label {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .metric output { font: 700 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+    .message {
+      min-height: 46px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      text-align: center;
+    }
+
+    .candidates {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-top: 0;
+      background: var(--surface);
+    }
+
+    .candidate-heading {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    #candidate-list { display: flex; flex-wrap: wrap; gap: 6px; min-height: 28px; }
+    .candidate-chip {
+      padding: 4px 8px;
+      border: 1px solid #d8b36f;
+      border-radius: 999px;
+      background: #fffaf0;
+      color: #694a14;
+      font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .candidate-empty { color: var(--muted); font-size: 13px; }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-top: 0;
+    }
+
+    .setup-controls, .step-controls { display: flex; align-items: center; gap: 8px; }
+    .step-controls { justify-content: end; }
+
+    button, select {
+      min-height: 40px;
+      border: 1px solid #8b959e;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 650;
+    }
+
+    button { min-width: 92px; cursor: pointer; }
+    select { padding: 0 30px 0 10px; }
+    button:hover:not(:disabled), select:hover { background: var(--surface); border-color: var(--ink); }
+    button:focus-visible, select:focus-visible { outline: 3px solid #79bce0; outline-offset: 2px; }
+    button:disabled { cursor: default; opacity: 0.4; }
+
+    #step-label {
+      min-width: 150px;
+      text-align: center;
+      font: 700 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    @media (max-width: 1050px) {
+      .visualization { grid-template-columns: 1fr; }
+      .graph-panel, .forest-panel { width: min(100%, 620px); margin: 0 auto; }
+    }
+
+    @media (max-width: 650px) {
+      main { padding: 16px; }
+      header { align-items: stretch; flex-direction: column; }
+      .status { grid-template-columns: 1fr 1fr; }
+      .metric:nth-child(3) { border-left: 0; border-top: 1px solid var(--border); }
+      .metric:nth-child(4) { border-top: 1px solid var(--border); }
+      .controls { grid-template-columns: 1fr; }
+      .setup-controls, .step-controls { justify-content: center; flex-wrap: wrap; }
+      #step-label { grid-row: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Borůvka algorithm</h1>
+      <div class="legend" aria-label="Edge legend">
+        <span class="mst-color"><i class="swatch"></i>MST edge</span>
+        <span class="candidate-color"><i class="swatch candidate"></i>component candidate</span>
+        <span class="active-color"><i class="swatch"></i>edge being processed</span>
+      </div>
+    </header>
+
+    <section class="visualization" aria-label="Boruvka algorithm visualization">
+      <div class="graph-panel">
+        <h2 class="panel-title">Euclidean graph</h2>
+        <svg id="plane" viewBox="0 0 520 520" role="img" aria-label="Points, MST edges, and candidate edges"></svg>
+      </div>
+      <div class="forest-panel">
+        <h2 class="panel-title">Union-find topology</h2>
+        <svg id="forest" viewBox="0 0 520 520" role="img" aria-label="Current union-find components and parent links"></svg>
+      </div>
+    </section>
+
+    <section class="status" aria-label="Algorithm status">
+      <div class="metric"><span class="metric-label">Phase</span><output id="phase">0</output></div>
+      <div class="metric"><span class="metric-label">Components</span><output id="component-count">0</output></div>
+      <div class="metric"><span class="metric-label">MST edges</span><output id="edge-count">0</output></div>
+      <div class="metric"><span class="metric-label">Total weight</span><output id="total-weight">0.00</output></div>
+    </section>
+
+    <div id="message" class="message" aria-live="polite"></div>
+
+    <section class="candidates" aria-label="Candidate edges selected for this phase">
+      <h2 class="candidate-heading">Candidate edge per component</h2>
+      <div id="candidate-list"></div>
+    </section>
+
+    <nav class="controls" aria-label="Animation controls">
+      <div class="setup-controls">
+        <label for="point-count">Points</label>
+        <select id="point-count">
+          <option>8</option>
+          <option selected>11</option>
+          <option>14</option>
+          <option>17</option>
+        </select>
+        <button id="regenerate" type="button">Regenerate</button>
+      </div>
+      <output id="step-label" aria-live="polite">Step 0 / 0</output>
+      <div class="step-controls">
+        <button id="previous" type="button">Previous</button>
+        <button id="next" type="button">Next</button>
+      </div>
+    </nav>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const SVG_NS = "http://www.w3.org/2000/svg";
+      const SIZE = 520;
+      const MARGIN = 42;
+      const COMPONENT_COLORS = [
+        "#66a6d9", "#e89b70", "#72bd8b", "#c68ad5", "#e2bd56",
+        "#65bfc2", "#e27f91", "#9ba965", "#8f9ee8", "#cf9562",
+        "#67b2a0", "#c58ab1", "#91a6b5", "#b2a14f", "#7ba0cc",
+        "#d18473", "#83b66e", "#a896d7",
+      ];
+
+      const planeSvg = document.querySelector("#plane");
+      const forestSvg = document.querySelector("#forest");
+      const phaseOutput = document.querySelector("#phase");
+      const componentOutput = document.querySelector("#component-count");
+      const edgeOutput = document.querySelector("#edge-count");
+      const weightOutput = document.querySelector("#total-weight");
+      const messageOutput = document.querySelector("#message");
+      const candidateList = document.querySelector("#candidate-list");
+      const stepLabel = document.querySelector("#step-label");
+      const pointCountSelect = document.querySelector("#point-count");
+      const regenerateButton = document.querySelector("#regenerate");
+      const previousButton = document.querySelector("#previous");
+      const nextButton = document.querySelector("#next");
+
+      let points = [];
+      let trace = [];
+      let step = 0;
+
+      function svgElement(name, attributes = {}, text = "") {
+        const element = document.createElementNS(SVG_NS, name);
+        for (const [key, value] of Object.entries(attributes)) {
+          element.setAttribute(key, value);
+        }
+        if (text) element.textContent = text;
+        return element;
+      }
+
+      function randomInteger(lo, hi) {
+        return lo + Math.floor(Math.random() * (hi - lo + 1));
+      }
+
+      function distance(a, b) {
+        return Math.hypot(a.x - b.x, a.y - b.y);
+      }
+
+      function edgeKey(edge) {
+        return edge.u < edge.v ? `${edge.u}:${edge.v}` : `${edge.v}:${edge.u}`;
+      }
+
+      function componentColor(label) {
+        return COMPONENT_COLORS[label % COMPONENT_COLORS.length];
+      }
+
+      class UnionFind {
+        constructor(n) {
+          this.parent = Array.from({ length: n }, (_, i) => i);
+          this.size = Array(n).fill(1);
+          this.count = n;
+        }
+
+        find(x) {
+          let root = x;
+          while (this.parent[root] !== root) root = this.parent[root];
+          while (this.parent[x] !== x) {
+            const next = this.parent[x];
+            this.parent[x] = root;
+            x = next;
+          }
+          return root;
+        }
+
+        union(a, b) {
+          let rootA = this.find(a);
+          let rootB = this.find(b);
+          if (rootA === rootB) return false;
+          if (
+            this.size[rootA] < this.size[rootB]
+            || (this.size[rootA] === this.size[rootB] && rootA > rootB)
+          ) {
+            [rootA, rootB] = [rootB, rootA];
+          }
+          this.parent[rootB] = rootA;
+          this.size[rootA] += this.size[rootB];
+          this.count -= 1;
+          return true;
+        }
+      }
+
+      function generatePoints(count) {
+        const generated = [];
+        const minimumSeparation = count > 14 ? 38 : count > 10 ? 48 : 58;
+        let attempts = 0;
+
+        while (generated.length < count && attempts < 20000) {
+          attempts += 1;
+          const point = {
+            x: randomInteger(MARGIN, SIZE - MARGIN),
+            y: randomInteger(MARGIN, SIZE - MARGIN),
+            id: generated.length,
+          };
+          if (generated.some((other) => distance(point, other) < minimumSeparation)) continue;
+          generated.push(point);
+        }
+
+        if (generated.length !== count) return generatePoints(count);
+        return generated;
+      }
+
+      function buildTrace(inputPoints) {
+        const uf = new UnionFind(inputPoints.length);
+        const mstEdges = [];
+        const events = [];
+        let phase = 0;
+
+        function capture(kind, message, options = {}) {
+          const roots = inputPoints.map((_, index) => uf.find(index));
+          const groupsByRoot = new Map();
+          for (let index = 0; index < roots.length; index += 1) {
+            const root = roots[index];
+            if (!groupsByRoot.has(root)) groupsByRoot.set(root, []);
+            groupsByRoot.get(root).push(index);
+          }
+          const groups = [...groupsByRoot.entries()]
+            .map(([root, members]) => ({ root, members, label: Math.min(...members) }))
+            .sort((a, b) => a.label - b.label);
+
+          events.push({
+            phase,
+            kind,
+            message,
+            roots,
+            parents: [...uf.parent],
+            groups,
+            mstEdges: mstEdges.map((edge) => ({ ...edge })),
+            candidates: (options.candidates || []).map((edge) => ({
+              ...edge,
+              chosenBy: [...edge.chosenBy],
+            })),
+            activeEdge: options.activeEdge ? { ...options.activeEdge } : null,
+            merged: options.merged ?? null,
+          });
+        }
+
+        capture("initial", "Initially every point is its own component.");
+
+        while (uf.count > 1) {
+          phase += 1;
+          const componentMembers = new Map();
+          for (let i = 0; i < inputPoints.length; i += 1) {
+            const root = uf.find(i);
+            if (!componentMembers.has(root)) componentMembers.set(root, []);
+            componentMembers.get(root).push(i);
+          }
+          const componentLabel = new Map(
+            [...componentMembers].map(([root, members]) => [root, Math.min(...members)]),
+          );
+
+          const best = new Map();
+          for (let u = 0; u < inputPoints.length; u += 1) {
+            for (let v = u + 1; v < inputPoints.length; v += 1) {
+              const componentU = uf.find(u);
+              const componentV = uf.find(v);
+              if (componentU === componentV) continue;
+
+              const weight = distance(inputPoints[u], inputPoints[v]);
+              const edge = { u, v, weight };
+              if (!best.has(componentU) || weight < best.get(componentU).weight) {
+                best.set(componentU, edge);
+              }
+              if (!best.has(componentV) || weight < best.get(componentV).weight) {
+                best.set(componentV, edge);
+              }
+            }
+          }
+
+          const uniqueCandidates = new Map();
+          for (const [component, edge] of best) {
+            const key = edgeKey(edge);
+            if (!uniqueCandidates.has(key)) {
+              uniqueCandidates.set(key, { ...edge, chosenBy: [] });
+            }
+            uniqueCandidates.get(key).chosenBy.push(componentLabel.get(component));
+          }
+          const candidates = [...uniqueCandidates.values()]
+            .map((edge) => ({ ...edge, chosenBy: edge.chosenBy.sort((a, b) => a - b) }))
+            .sort((a, b) => a.weight - b.weight || a.u - b.u || a.v - b.v);
+
+          capture(
+            "candidates",
+            `Phase ${phase}: each component selects its cheapest outgoing edge.`,
+            { candidates },
+          );
+
+          for (const candidate of candidates) {
+            const merged = uf.union(candidate.u, candidate.v);
+            if (merged) mstEdges.push({ ...candidate });
+            capture(
+              merged ? "merge" : "skip",
+              merged
+                ? `Accept P${candidate.u}–P${candidate.v}; its two components are merged.`
+                : `Skip P${candidate.u}–P${candidate.v}; the endpoints are already connected.`,
+              { candidates, activeEdge: candidate, merged },
+            );
+          }
+
+          if (uf.count > 1) {
+            capture(
+              "phase-complete",
+              `Phase ${phase} is complete. Recompute candidates for the new components.`,
+            );
+          }
+        }
+
+        capture("finished", "One component remains, so the minimum spanning tree is complete.");
+        return events;
+      }
+
+      function renderEdgeLabel(edge, index) {
+        const a = points[edge.u];
+        const b = points[edge.v];
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const length = Math.max(1, Math.hypot(dx, dy));
+        const offset = 10 + (index % 2) * 4;
+        const x = (a.x + b.x) / 2 - (dy / length) * offset;
+        const y = (a.y + b.y) / 2 + (dx / length) * offset;
+        const label = edge.chosenBy.map((component) => `C${component}`).join(",");
+        const width = Math.max(28, label.length * 6.4 + 10);
+        planeSvg.append(svgElement("rect", {
+          x: x - width / 2,
+          y: y - 9,
+          width,
+          height: 18,
+          rx: 8,
+          class: "edge-label-bg",
+        }));
+        planeSvg.append(svgElement("text", { x, y: y + 0.5, class: "edge-label" }, label));
+      }
+
+      function renderPlane(state) {
+        planeSvg.replaceChildren();
+        const activeKey = state.activeEdge ? edgeKey(state.activeEdge) : null;
+        const activePoints = state.activeEdge
+          ? new Set([state.activeEdge.u, state.activeEdge.v])
+          : new Set();
+
+        for (const edge of state.mstEdges) {
+          const a = points[edge.u];
+          const b = points[edge.v];
+          planeSvg.append(svgElement("line", {
+            x1: a.x, y1: a.y, x2: b.x, y2: b.y, class: "mst-edge",
+          }));
+        }
+
+        state.candidates.forEach((edge, index) => {
+          const a = points[edge.u];
+          const b = points[edge.v];
+          const active = edgeKey(edge) === activeKey;
+          const classes = ["candidate-edge"];
+          if (active) {
+            classes.push("active");
+            if (state.merged === true) classes.push("accepted");
+            if (state.merged === false) classes.push("rejected");
+          }
+          planeSvg.append(svgElement("line", {
+            x1: a.x, y1: a.y, x2: b.x, y2: b.y, class: classes.join(" "),
+          }));
+          if (!activeKey || active) renderEdgeLabel(edge, index);
+        });
+
+        const groupByRoot = new Map(state.groups.map((group) => [group.root, group]));
+        for (const point of points) {
+          const group = groupByRoot.get(state.roots[point.id]);
+          const color = componentColor(group.label);
+          planeSvg.append(svgElement("circle", {
+            cx: point.x,
+            cy: point.y,
+            r: activePoints.has(point.id) ? 10 : 8,
+            fill: color,
+            class: `point${activePoints.has(point.id) ? " active" : ""}`,
+          }));
+          const anchorRight = point.x < SIZE - 50;
+          planeSvg.append(svgElement("text", {
+            x: point.x + (anchorRight ? 12 : -12),
+            y: point.y - 11,
+            "text-anchor": anchorRight ? "start" : "end",
+            class: "point-label",
+          }, `P${point.id}`));
+        }
+      }
+
+      function memberDepth(member, parents) {
+        let depth = 0;
+        let current = member;
+        const seen = new Set();
+        while (parents[current] !== current && !seen.has(current)) {
+          seen.add(current);
+          current = parents[current];
+          depth += 1;
+        }
+        return depth;
+      }
+
+      function renderForest(state) {
+        forestSvg.replaceChildren();
+        const groups = state.groups;
+        const columns = groups.length > 8 ? 3 : groups.length > 3 ? 2 : 1;
+        const rows = Math.ceil(groups.length / columns);
+        const outer = 10;
+        const gap = 10;
+        const cellWidth = (SIZE - 2 * outer - gap * (columns - 1)) / columns;
+        const cellHeight = (SIZE - 2 * outer - gap * (rows - 1)) / rows;
+
+        groups.forEach((group, index) => {
+          const column = index % columns;
+          const row = Math.floor(index / columns);
+          const x = outer + column * (cellWidth + gap);
+          const y = outer + row * (cellHeight + gap);
+          const color = componentColor(group.label);
+
+          forestSvg.append(svgElement("rect", {
+            x, y, width: cellWidth, height: cellHeight, rx: 8,
+            stroke: color, class: "component-box",
+          }));
+          forestSvg.append(svgElement("text", {
+            x: x + 10, y: y + 16, fill: color, class: "forest-title",
+          }, `C${group.label} · root P${group.root}`));
+
+          const radius = groups.length > 8 ? 11 : group.members.length > 8 ? 12 : 14;
+          const levels = new Map();
+          let maximumDepth = 0;
+          for (const member of group.members) {
+            const depth = memberDepth(member, state.parents);
+            maximumDepth = Math.max(maximumDepth, depth);
+            if (!levels.has(depth)) levels.set(depth, []);
+            levels.get(depth).push(member);
+          }
+
+          const positions = new Map();
+          const graphTop = y + 32 + radius;
+          const graphBottom = y + cellHeight - radius - 10;
+          const graphHeight = Math.max(0, graphBottom - graphTop);
+          const levelGap = maximumDepth > 0 ? graphHeight / maximumDepth : 0;
+          for (const [depth, members] of [...levels].sort((a, b) => a[0] - b[0])) {
+            members.sort((a, b) => a - b);
+            members.forEach((member, memberIndex) => {
+              positions.set(member, {
+                x: x + ((memberIndex + 1) * cellWidth) / (members.length + 1),
+                y: graphTop + depth * levelGap,
+              });
+            });
+          }
+
+          for (const member of group.members) {
+            const parent = state.parents[member];
+            if (parent === member) continue;
+            const childPosition = positions.get(member);
+            const parentPosition = positions.get(parent);
+            if (!childPosition || !parentPosition) continue;
+            forestSvg.append(svgElement("line", {
+              x1: parentPosition.x,
+              y1: parentPosition.y,
+              x2: childPosition.x,
+              y2: childPosition.y,
+              class: "forest-edge",
+            }));
+          }
+
+          for (const member of group.members) {
+            const position = positions.get(member);
+            const isRoot = state.parents[member] === member;
+            if (isRoot) {
+              forestSvg.append(svgElement("circle", {
+                cx: position.x,
+                cy: position.y,
+                r: radius + 4,
+                stroke: color,
+                class: "forest-root-ring",
+              }));
+            }
+            forestSvg.append(svgElement("circle", {
+              cx: position.x,
+              cy: position.y,
+              r: radius,
+              fill: color,
+              stroke: "#343a40",
+              class: "forest-node",
+            }));
+            forestSvg.append(svgElement("text", {
+              x: position.x,
+              y: position.y + 0.5,
+              class: "forest-label",
+            }, `P${member}`));
+          }
+        });
+      }
+
+      function renderCandidates(state) {
+        candidateList.replaceChildren();
+        if (state.candidates.length === 0) {
+          const empty = document.createElement("span");
+          empty.className = "candidate-empty";
+          empty.textContent = "Candidates are computed at the start of each phase.";
+          candidateList.append(empty);
+          return;
+        }
+
+        for (const edge of state.candidates) {
+          const chip = document.createElement("span");
+          chip.className = "candidate-chip";
+          const components = edge.chosenBy.map((component) => `C${component}`).join(", ");
+          chip.textContent = `${components} → P${edge.u}–P${edge.v} (${edge.weight.toFixed(1)})`;
+          candidateList.append(chip);
+        }
+      }
+
+      function setOutput(element, value) {
+        element.value = value;
+        element.textContent = value;
+      }
+
+      function render() {
+        const state = trace[step];
+        renderPlane(state);
+        renderForest(state);
+        renderCandidates(state);
+
+        setOutput(phaseOutput, String(state.phase));
+        setOutput(componentOutput, String(state.groups.length));
+        setOutput(edgeOutput, String(state.mstEdges.length));
+        setOutput(
+          weightOutput,
+          state.mstEdges.reduce((sum, edge) => sum + edge.weight, 0).toFixed(2),
+        );
+        messageOutput.textContent = state.message;
+        setOutput(stepLabel, `Step ${step} / ${trace.length - 1}`);
+
+        previousButton.disabled = step === 0;
+        nextButton.disabled = step === trace.length - 1;
+      }
+
+      function regenerate() {
+        points = generatePoints(Number(pointCountSelect.value));
+        trace = buildTrace(points);
+        step = 0;
+        render();
+      }
+
+      previousButton.addEventListener("click", () => {
+        step = Math.max(0, step - 1);
+        render();
+      });
+
+      nextButton.addEventListener("click", () => {
+        step = Math.min(trace.length - 1, step + 1);
+        render();
+      });
+
+      regenerateButton.addEventListener("click", regenerate);
+      pointCountSelect.addEventListener("change", regenerate);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.target instanceof HTMLSelectElement) return;
+        if (event.key === "ArrowLeft") previousButton.click();
+        if (event.key === "ArrowRight") nextButton.click();
+      });
+
+      regenerate();
+    })();
+  </script>
+</body>
+</html>
