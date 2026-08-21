@@ -28,7 +28,7 @@ Algorithms such as Kruskal can find the MST of a graph $G(V, E)$ in $O(\abs{E} \
 
 ## Solution
 
-In this post we'll explore a more efficient implementation using the Borůvka algorithm with [KD-trees]({{blog}}/2026/07/31/kd-tree.html) which runs closer to $O(N \log N)$ on average, even though the worst case is $O(N^2)$.
+In this post we'll explore a more efficient implementation using the Borůvka algorithm with [KD-trees]({{blog}}/2026/07/31/kd-tree.html) which runs closer to $O(N \log^2 N)$ on average, even though the worst case is $O(N^2 \log N)$.
 
 We'll start by describing the *Borůvka Algorithm* to compute the MST. Note that there's nothing special about it with respect to the Euclidean variant. It's just that it operates in batches and we can leverage that to search on the KD-trees more efficiently.
 
@@ -371,7 +371,7 @@ class KDTreeBoruvka(KDTreeBoruvkaBased):
 
 3-) A larger and more intrusive optimization is to not search the kd-tree for one point at a time, but instead traverse the kd-tree side by side and compute the distance for all points using a single traversal.
 
-The algorithm is a lot more complicated and while my implementation of this version was 2x faster than the basic kd-tree one, it seems to be still a $O(N \log N)$ process.
+The algorithm is a lot more complicated and while my implementation of this version was 2x faster than the basic kd-tree one, it seems to be still a $O(N \log^2 N)$ process.
 
 4-) Codex did a version with even more heuristics and optimizations, reaching a 4x speed up, but it removed a lot of the abstractions and the code became very hard to read, so I don't think it's very instructive.
 
