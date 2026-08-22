@@ -27,7 +27,7 @@ Previous posts on the series:
 * [A Simple Application]({{blog}}/2026/06/18/velox-application.html)
 * [UDFs]({{blog}}/2026/07/23/velox-udfs.html)
 
-Velox has a custom memory allocator system because the same process can run short-lived queries from different clients. To avoid one query causing others to OOM, it can rely on OS-level limits such as cgroups and thus uses its own arbitrage.
+Velox has a custom memory allocator system because the same process can run short-lived queries from different clients. To avoid one query causing others to OOM, it cannot rely on OS-level limits such as cgroups and thus uses its own arbitrage.
 
 ## Components
 
