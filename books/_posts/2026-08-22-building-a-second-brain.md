@@ -2,7 +2,7 @@
 layout: books
 title: "Building a Second Brain"
 vanity: an-immense-world
-rating: 5
+rating: 4
 image: "building-a-second-brain.jpg"
 author: "Tiago Forte"
 category: "Business"
