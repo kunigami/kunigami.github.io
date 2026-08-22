@@ -36,6 +36,14 @@ That's also the reason why I write 100% of my blog posts manually. I use AI to [
 
 A few times I did ask for feedback from AI on how to convey my ideas better, especially when [reviewing books](https://www.kuniga.me/books/), which helped clarify my understanding.
 
+### Verum Ipsum Factum
+
+This is a quote by Giambattista Vico, an Italian philosopher, and it translates to *We only know what we make*. I read this in the book [Building a Second Brain](https://www.kuniga.me/books/2026/08/22/building-a-second-brain.html) and this is the main motivation to keep doing things manually and that's the main reason I blog.
+
+In college, I recall we had a physics class that consisted in running experiments and using machines such as an oscilloscope. We worked in groups of 3, and each experiment we rotate on who did the manual work and who did the note taking, etc.
+
+There was this one experiment with complicated steps and I wasn't the one doing the manual work. I tried as hard as I could to memorize how my classmate did it, but wasn't sure I had internalized it. As chance would have it, this was exactly the experiment we were asked to reproduce in the final exam and I couldn't do it properly. Luckily I didn't fail the course but it's a lesson I'll always remember.
+
 ## Reading
 
 I've been relying more and more on AI for learning, instead of reading textbooks or Wikipedia. I still love [reading books](https://www.kuniga.me/books/) for fun, but for difficult subjects I find it more effective to do everything through AI. I have specific learning patterns and some textbooks are so dense I waste time trying to decipher missing information (I spent [2 years](https://www.kuniga.me/blog/2026/04/05/book-complex-analysis.html) reading a book on Complex Analysis).
