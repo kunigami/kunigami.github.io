@@ -14,6 +14,8 @@ title: Books
 
 Notes on some of the books I've read. Since 2025 I've included every book I read. The list below sorted by reverse chronological order.
 
+Sometimes I re-read books. I update the original post instead of adding a new one.
+
 <table style="border-collapse: collapse; width: 100%; table-layout: fixed;">
   <thead>
     <tr>
