@@ -59,7 +59,7 @@ I think about causation often in terms of attribution (did person X really cause
 
 I'm very interested in time! The chapter *How does time pass?* presents some discussions such as whether only the present exists; that the past feels more real than the future due to relativity / speed of light (e.g. when we observe events far away in the universe we're witnessing something that happened in the past); whether time goes on "forever" or it's somewhat circular.
 
-There's a view called *eternalism* which I subscribe to, which believes all events across time are real. This sees time as a [4th dimension](({{books}}/2021/01/01/general-relativity-from-a-to-b.html) and that at any given time we're at a point in it, but that this 4th dimensional world "exists" already.
+There's a view called *eternalism* which I subscribe to, which believes all events across time are real. This sees time as a [4th dimension]({{books}}/2021/01/01/general-relativity-from-a-to-b.html) and that at any given time we're at a point in it, but that this 4th dimensional world "exists" already.
 
 In *What's a person?* some topics cover whether humans and other conscious animals have souls, in which case how does the soul-body interface work? It touches again on the topic of real world vs the realm of ideas and emergence (can consciousness arise from a physical brain). He talks about identity which to me is also similar to what was discussed in *What is a table?* and *What is a change?*.
 
