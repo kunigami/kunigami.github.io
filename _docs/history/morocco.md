@@ -81,7 +81,9 @@ Atlas Mountain Range. In Greek mythology the titan Atlas was said to live on the
 
 ## Muslim Conquest (c. 700)
 
-The Umayyad Caliphate invaded North Africa around the year 700. Not many reliable sources exist for details, but it brought the Arabic language and culture, including Islam, to Morocco.
+Since the 640s-670s the Umayyad Caliphate, centered in Damascus, started the conquest of North Africa. Around the year 700 they reached Morocco. Not many reliable sources exist for details, but it brought the Arabic language and culture, including Islam, to Morocco.
+
+The local population eventually joined the ranks of the Umayyad armies. In 710 under the general Tariq Ibn Ziyad, which is believed to be Berber, invaded the Iberian peninsula and started Andalusia.
 
 Around 743 the native Berbers revolted against the Umayyad Caliphate and managed to stay out of control of their successors, the Abbasids. They split into sub kingdoms: Barghawata, Sijilmasa, Nekor and Idrisid.
 
