@@ -29,9 +29,13 @@ Before we go over each in more detail, one thing I dislike about many metaphysic
 
 ## Summary
 
-For *What is a table?* he talks about particulars and properties. He says we can only experience things through their properties (e.g. shape, color), but properties can change (e.g. a brown table can be painted red) so it's hard to define exactly what a thing is. One option is to define things as a bundle of properties but then how do we distinguish different things with the exact same properties?
+### Particular and Properties
+
+In *What is a table?* the author talks about particulars and properties. He says we can only experience things through their properties (e.g. shape, color), but properties can change (e.g. a brown table can be painted red) so it's hard to define exactly what a thing is. One option is to define things as a bundle of properties but then how do we distinguish different things with the exact same properties?
 
 As a programmer I found an interesting analogy between classes and instances. Two instances might have the exact same properties but are different instances.
+
+### Plato's Heaven
 
 In *What is a circle?* he considers whether properties exist in our real world. He mentions [Plato's heaven](https://en.wikipedia.org/wiki/Hyperuranion) or the realm of ideas and properties as a separate realm from the real world.
 
@@ -43,11 +47,21 @@ I'm much more interested in this topic, mainly whether properties exist without 
   <figcaption>I loved this detail from the painting The School of Athens by Raphael <a href="https://en.wikipedia.org/wiki/The_School_of_Athens#/media/File:Sanzio_01_Plato_Aristotle.jpg">Wikipedia</a>. Plato on the left points upwards, to heavens, and Aristotle, who had an opposing view, points to Earth.</figcaption>
 </figure>
 
+### Particles and Emergent Behavior
+
 In *Are wholes just sums of parts?* he talks about two interesting ideas: whether there is the smallest particle or it's [turtles all the way down](https://en.wikipedia.org/wiki/Turtles_all_the_way_down), and about emergent behavior, i.e., how can we get a complex organism from "dumb" molecules. I'm very interested in emergent behavior.
+
+### Time
 
 *What is a change?* focuses on identity at different times. Am I the same "thing" as yesterday? There are two competing views here, endurantism and perdurantism. Endurantism thinks an object remains the same but its properties change. Perdurantism thinks that objects at different times are different instances. There's also exdurantism but I think it's just endurantism in disguise.
 
 I have thoughts on this, shared with *Permutation City*, in which our reality is more like frames in a movie or a point in 4D. However, I find the debate between endurantism and perdurantism also more semantic than ontological.
+
+I'm very interested in time! The chapter *How does time pass?* presents some discussions such as whether only the present exists; that the past feels more real than the future due to relativity / speed of light (e.g. when we observe events far away in the universe we're witnessing something that happened in the past); whether time goes on "forever" or it's somewhat circular.
+
+There's a view called *eternalism* which I subscribe to, which believes all events across time are real. This sees time as a [4th dimension]({{books}}/2021/01/01/general-relativity-from-a-to-b.html) and that at any given time we're at a point in it, but that this 4th dimensional world "exists" already.
+
+### Causation
 
 I always associate the question of causation to Hume. That's the only thing I remember from him. In *What is a cause?* it does bring him up. This quote summarizes my main issue with metaphysics:
 
@@ -57,17 +71,21 @@ That is, sometimes opposing views are just framing things differently or using d
 
 I think about causation often in terms of attribution (did person X really cause outcome Y?) and relatedly the counterfactuals (if person X didn't do anything, would Y happen?). But I think this is not metaphysical. This is about understanding causes in complex environments. The question philosophers ask "If I push a ball and it moves, was I the one causing it to move?" is not very interesting to me.
 
-I'm very interested in time! The chapter *How does time pass?* presents some discussions such as whether only the present exists; that the past feels more real than the future due to relativity / speed of light (e.g. when we observe events far away in the universe we're witnessing something that happened in the past); whether time goes on "forever" or it's somewhat circular.
-
-There's a view called *eternalism* which I subscribe to, which believes all events across time are real. This sees time as a [4th dimension]({{books}}/2021/01/01/general-relativity-from-a-to-b.html) and that at any given time we're at a point in it, but that this 4th dimensional world "exists" already.
+### Consciousness and Identity
 
 In *What's a person?* some topics cover whether humans and other conscious animals have souls, in which case how does the soul-body interface work? It touches again on the topic of real world vs the realm of ideas and emergence (can consciousness arise from a physical brain). He talks about identity which to me is also similar to what was discussed in *What is a table?* and *What is a change?*.
 
 I think a lot about identity but more on a psychological level. For example: if my brain started working differently tomorrow but I retain my memories, would I feel like I'm a different person? This also matters in dealing with people who are close to you: if someone you know gets dementia and behaves very differently, are they the same person? Would you treat them the same way?
 
+### Possibilities
+
 The chapter *What is possible?* discusses ways to reconcile the paths not taken. One appealing theory to me is the [Many worlds interpretation](https://en.wikipedia.org/wiki/Many-worlds_interpretation), which also helps us make sense of [quantum mechanics]({{books}}/2020/09/01/beyond-weird.html).
 
+### Negation
+
 The question *Is Nothing Something?* to me falls in the realm of semantics instead of ontology and the author concedes that as well, especially because in English you can say "There is no food in the fridge", which conveys "no food" is something. The major idea I got from this chapter is that Bertrand Russell concluded that we cannot have a logical system that doesn't include "negation". I think this is a lot more interesting than whether a hole exists or not.
+
+### Metaphysics and Science
 
 In the final chapter, *What is Metaphysics?*, Mumford concedes that metaphysics is useless in the sense that it doesn't have practical applications, but perhaps this is by definition. Once it has some practical manifestation it becomes the realm of science. Speaking of science, I like the framing that both metaphysics and science have the same goal (understand reality) but with different methods. Another interesting framing is that metaphysics is a continuum with physics. The more we understand from physics, the boundary between them moves (e.g. the discovery of relativity).
 
