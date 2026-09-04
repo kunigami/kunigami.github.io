@@ -30,6 +30,7 @@ Cheat Sheets are different from posts in that they're a living document (posts a
 * [Mali]({{ site.url }}/docs/history/mali/)
 * [Morocco]({{ site.url }}/docs/history/morocco/)
 * [Namibia]({{ site.url }}/docs/history/namibia/)
+* [Portugal]({{ site.url }}/docs/history/portugal/)
 * [Singapore]({{ site.url }}/docs/history/singapore/)
 * [South Africa]({{ site.url }}/docs/history/south-africa/)
 * [Vietnam]({{ site.url }}/docs/history/vietnam/)
