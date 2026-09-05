@@ -2,6 +2,7 @@
 layout: trips
 title: "Costa Rica"
 vanity: "2026-07-16-costa-rica"
+country: 🇨🇷
 ---
 
 {% include blog_vars.html %}

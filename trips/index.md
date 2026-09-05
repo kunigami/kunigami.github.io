@@ -14,6 +14,10 @@ title: Trips
 
 Memories on trips.
 
-{% for post in trips_posts %}
-* [{{ post.date | date: "%Y" }} {{ post.title }}]({{ post.url }})
-{% endfor %}
+<ul>
+  {% for post in trips_posts %}
+    <li>
+      <span class="monospace">{{ post.date | date: "%Y" }} - </span>{% if post.country %}{{ post.country }} {% endif %}<a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
