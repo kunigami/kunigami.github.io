@@ -110,7 +110,7 @@ title: CV
         <div class="cv-role">
           <header class="cv-role-header">
             <h4>MSc Researcher</h4>
-            <span class="cv-role-date">Jul 2009–Sep 2011 · 2 yrs 3 mos</span>
+            <span class="cv-role-date">Jul 2009–Sep 2011</span>
           </header>
           <p>Developed integer linear programming models for a combinatorial optimization problem with applications in cartography. I also developed a UI using Google Maps API to create/visualize some of the real-world instances.</p>
           <p>Five publications resulted from this project. Best dissertation award in the Computer Science department of that year.</p>
@@ -128,7 +128,7 @@ title: CV
         <div class="cv-role">
           <header class="cv-role-header">
             <h4>Teacher Assistant</h4>
-            <span class="cv-role-date">Mar 2010–Jul 2010 · 5 mos</span>
+            <span class="cv-role-date">Mar 2010–Jul 2010</span>
           </header>
           <p>Data Structures teacher assistant: responsible for practical classes, including helping students, creation of exercises statements, elaboration of test cases, implementation of the correction program and grading.</p>
           <ul class="cv-skills" aria-label="Teacher Assistant skills">
