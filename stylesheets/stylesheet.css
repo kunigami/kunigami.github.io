@@ -595,3 +595,163 @@ proof, nonproof {
     font-size: 100% !important;
   }
 }
+
+/* ----------------------------------------------------------------------------
+ * CV page
+ * ----------------------------------------------------------------------------
+ */
+
+.cv-page {
+  padding-bottom: 20px;
+}
+
+.cv-breadcrumb {
+  margin-bottom: 25px;
+}
+
+.cv-breadcrumb span {
+  margin-left: 5px;
+}
+
+.cv-section {
+  margin-bottom: 34px;
+}
+
+.cv-section > h2 {
+  margin-top: 0;
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  column-gap: 18px;
+  margin-bottom: 28px;
+}
+
+.cv-entry-logo {
+  box-sizing: border-box;
+  height: 50px;
+  margin: 0;
+  width: 50px;
+}
+
+#page .cv-entry-logo img {
+  border: 0;
+  box-shadow: none;
+  display: block;
+  height: 50px;
+  margin: 0;
+  max-width: none;
+  object-fit: contain;
+  padding: 0;
+  width: 50px;
+}
+
+.cv-entry-header {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.cv-entry-header h3 {
+  margin: 0 0 12px;
+}
+
+.cv-entry-date {
+  color: #777777;
+  flex-shrink: 0;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.cv-entry-content > p,
+.cv-role p {
+  margin-top: 0;
+}
+
+.cv-degree {
+  margin-top: 0;
+}
+
+.cv-role {
+  border-left: 2px solid #dddddd;
+  padding-left: 16px;
+}
+
+.cv-role + .cv-role {
+  margin-top: 25px;
+}
+
+.cv-role h4 {
+  margin: 0 0 8px;
+}
+
+.cv-role-header {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.cv-role-date {
+  color: #777777;
+  flex-shrink: 0;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+.cv-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: -5px 0 0;
+  padding: 0;
+}
+
+.cv-skills li {
+  background: #f2f2f2;
+  border-radius: 2px;
+  color: #666666;
+  font-size: 0.8em;
+  line-height: 1.3;
+  padding: 3px 7px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .cv-entry {
+    grid-template-columns: 70px minmax(0, 1fr);
+    column-gap: 20px;
+  }
+
+  .cv-entry-logo,
+  #page .cv-entry-logo img {
+    height: 70px;
+    width: 70px;
+  }
+
+}
+
+@media only screen and (max-width: 540px) {
+  .cv-entry-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cv-entry-date {
+    margin-bottom: 12px;
+  }
+
+  .cv-role-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cv-role-date {
+    margin-bottom: 8px;
+  }
+
+}
