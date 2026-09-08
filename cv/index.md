@@ -57,6 +57,24 @@ title: CV
 
     <article class="cv-entry">
       <figure class="cv-entry-logo">
+        <img src="{{ resources }}cv/cflex_logo.png" alt="CFlex logo" />
+      </figure>
+      <div class="cv-entry-content">
+        <header class="cv-entry-header">
+          <h3>CFlex</h3>
+          <span class="cv-entry-date">Aug 2011–Sep 2012</span>
+        </header>
+        <p class="cv-degree">Researcher</p>
+        <p>Research and development in railway operations research. Developed algorithms for train scheduling and explored scheduling of railroad crew.</p>
+        <ul class="cv-skills" aria-label="CFlex Researcher skills">
+          <li>Java</li>
+          <li>Operations Research</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="cv-entry">
+      <figure class="cv-entry-logo">
         <img src="{{ resources }}cv/gsoc_logo.svg" alt="Google Summer of Code logo" />
       </figure>
       <div class="cv-entry-content">
@@ -64,6 +82,7 @@ title: CV
           <h3>Google Summer of Code</h3>
           <span class="cv-entry-date">2011</span>
         </header>
+        <p class="cv-degree">Intern</p>
         <p>I was selected by the BRL-CAD organization to improve their shading system to include support to the Open Shading Language, OSL.</p>
         <ul class="cv-skills" aria-label="Google Summer of Code skills">
           <li>C++</li>

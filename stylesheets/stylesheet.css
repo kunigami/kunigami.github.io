@@ -558,6 +558,10 @@ proof, nonproof {
     font-size: 40px;
   }
 
+  h4 {
+    font-size: 35px;
+  }
+
   pre, code {
     font-size: 28px;
   }
