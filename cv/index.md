@@ -28,9 +28,9 @@ title: CV
         <div class="cv-role">
           <header class="cv-role-header">
             <h4>Stream Processing</h4>
-            <span class="cv-role-date">2022–2025</span>
+            <span class="cv-role-date">2022–2026</span>
           </header>
-          <p>Developed and supported Meta's distributed stream processing engine in C++. Main projects include adding stream join capabilities, plugin system for extending platform, release system (Rust), observability.</p>
+          <p>Developed and supported Meta's distributed stream processing engine in C++. Main projects included: implementing stream joins, plugin system to run user code, release system (CI/CD) and observability tools.</p>
           <ul class="cv-skills" aria-label="Stream Processing skills">
             <li>C++</li>
             <li>Python</li>
@@ -131,6 +131,7 @@ title: CV
             <h4>MSc Researcher</h4>
             <span class="cv-role-date">Jul 2009–Sep 2011</span>
           </header>
+          <p>Advisors: Pedro J. Rezende and Cid C. de Souza</p>
           <p>Developed integer linear programming models for a combinatorial optimization problem with applications in cartography. I also developed a UI using Google Maps API to create/visualize some of the real-world instances.</p>
           <p>Five publications resulted from this project. Best dissertation award in the Computer Science department of that year.</p>
           <ul class="cv-skills" aria-label="MSc Researcher skills">
