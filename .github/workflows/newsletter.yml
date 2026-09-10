@@ -1,0 +1,40 @@
+name: Send newsletter
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::377238675852:role/newsletter-github-actions
+          aws-region: us-west-2
+
+      - name: Restore unsubscribe private key
+        working-directory: newsletter
+        env:
+          UNSUBSCRIBE_PRIVATE_KEY: ${{ secrets.UNSUBSCRIBE_PRIVATE_KEY }}
+        run: printf '%s' "$UNSUBSCRIBE_PRIVATE_KEY" > unsubscribe-private.pem
+
+      - name: Run newsletter sender
+        working-directory: newsletter
+        run: uv run python sender/send.py

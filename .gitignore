@@ -5,3 +5,6 @@ _site/
 vendor/
 .bundle/
 __pycache__/
+newsletter/unsubscribe-private.pem
+newsletter/**/*.zip
+newsletter/unsubscribe/package/

@@ -1,0 +1,12 @@
+[project]
+name = "newsletter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "boto3>=1.43.91",
+    "cryptography>=50.0.1",
+    "feedparser>=6.0.14",
+]
