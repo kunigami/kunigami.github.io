@@ -340,6 +340,51 @@ form {
   padding: 20px;
 }
 
+.newsletter {
+  margin-top: 30px;
+}
+
+.newsletter h2 {
+  margin-top: 0;
+}
+
+.newsletter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.newsletter input,
+.newsletter button {
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border: 1px solid #5b5b5b;
+  border-radius: 2px;
+  font: inherit;
+}
+
+.newsletter input {
+  flex: 1 1 200px;
+  min-width: 0;
+  color: inherit;
+}
+
+.newsletter button {
+  background: #358497;
+  color: #fff;
+  cursor: pointer;
+}
+
+.newsletter button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.newsletter [role="status"] {
+  margin: 10px 0 0;
+}
+
 details {
   cursor: pointer;
 }

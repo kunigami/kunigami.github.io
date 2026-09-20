@@ -1,0 +1,12 @@
+<form class="newsletter" id="newsletter-form">
+  <h2>Subscribe by email</h2>
+  <p>Get new blog posts in your inbox.</p>
+  <label for="newsletter-email">Email address</label>
+  <div class="newsletter-controls">
+    <input id="newsletter-email" name="email" type="email" autocomplete="email" required />
+    <button type="submit" disabled>Subscribe</button>
+  </div>
+  <p role="status" id="newsletter-status"></p>
+  <noscript>Please enable JavaScript to subscribe by email.</noscript>
+</form>
+<script src="{{ site.baseurl }}/js/newsletter.js" defer></script>

@@ -13,7 +13,7 @@ dynamodb = boto3.resource("dynamodb")
 table = dynamodb.Table(os.environ["TABLE_NAME"])
 
 
-def lambda_handler(event, context):
+def lambda_handler(event, context):        
     body = json.loads(event.get("body", "{}"))
     email = body.get("email", "").strip().lower()
 

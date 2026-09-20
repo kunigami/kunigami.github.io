@@ -24,6 +24,8 @@ title: Blog
 <a href="{{site.url}}/blog/archive.html" style="margin-top: 50px">Visit archive to see all posts...</a>
 </p>
 
+{% include newsletter.html %}
+
 ## Sub-pages
 
 * [About]({{ site.url }}/blog/about/)

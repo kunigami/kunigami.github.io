@@ -27,6 +27,8 @@ layout: default
             Tags: {{ tags | array_to_sentence_string: '' }}
         </div>
 
+        {% include newsletter.html %}
+
         <script src="https://giscus.app/client.js"
             data-repo="kunigami/kunigami.github.io"
             data-theme="https://www.kuniga.me/stylesheets/giscus.css"
