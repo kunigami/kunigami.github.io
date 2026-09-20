@@ -19,10 +19,7 @@ dynamodb = boto3.resource("dynamodb", region_name=REGION)
 subscribers_table = dynamodb.Table(TABLE_NAME)
 ses = boto3.client("sesv2", region_name=REGION)
 
-
-UNSUBSCRIBE_URL = (
-    "https://6bw9ncflac.execute-api.us-west-2.amazonaws.com/unsubscribe"
-)
+UNSUBSCRIBE_URL = "https://newsletter.kuniga.me/unsubscribe"
 
 PRIVATE_KEY_PATH = Path(__file__).parent.parent / "unsubscribe-private.pem"
 

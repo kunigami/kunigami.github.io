@@ -47,9 +47,8 @@ def lambda_handler(event, context):
         "token": confirmation_token,
     })
 
-    # confirmation_url = f"https://kuniga.me/newsletter/confirm?{params}"
     confirmation_url = (
-        "https://6bw9ncflac.execute-api.us-west-2.amazonaws.com/confirm"
+        "https://newsletter.kuniga.me/confirm"
         f"?{params}"
     )
 
