@@ -32,15 +32,32 @@ def lambda_handler(event, context):
     now = int(time.time())
     expires_at = now + 24 * 60 * 60  # 24 hours
 
-    table.put_item(
-        Item={
-            "email": email,
-            "status": "pending",
-            "token_hash": token_hash,
-            "created_at": now,
-            "token_expires_at": expires_at,
+    try:
+        table.put_item(
+            Item={
+                "email": email,
+                "status": "pending",
+                "token_hash": token_hash,
+                "created_at": now,
+                "token_expires_at": expires_at,
+            },
+            ConditionExpression=(
+                "attribute_not_exists(email) OR #status <> :subscribed"
+            ),
+            ExpressionAttributeNames={
+                "#status": "status",
+            },
+            ExpressionAttributeValues={
+                ":subscribed": "subscribed",
+            },
+        )
+    except dynamodb.meta.client.exceptions.ConditionalCheckFailedException:
+        # Already subscribed. Return the same response so we don't reveal
+        # whether this address is on the mailing list.
+        return {
+            "statusCode": 200,
+            "body": json.dumps({"success": True}),
         }
-    )
 
     params = urlencode({
         "email": email,

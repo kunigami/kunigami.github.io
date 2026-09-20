@@ -70,7 +70,6 @@ def lambda_handler(event, context):
     <p>Unsubscribe {safe_email} from kuniga.me?</p>
 
     <form method="POST">
-    <form method="POST">
         <input type="hidden" name="email" value="{safe_email}">
         <input type="hidden" name="sig" value="{safe_sig}">
         <button type="submit">Unsubscribe</button>
