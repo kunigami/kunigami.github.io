@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   send:
+    if: github.repository == 'kunigami/kunigami.github.io'
     runs-on: ubuntu-latest
 
     steps:
