@@ -62,9 +62,7 @@ class UnsubscribeTest(unittest.TestCase):
                 base64.b64encode(body.encode()).decode() if encoded else body
             )
             event["isBase64Encoded"] = encoded
-        # Keep the Lambda's request logging out of test output.
-        with patch("builtins.print"):
-            return self.handler.lambda_handler(event, None)
+        return self.handler.lambda_handler(event, None)
 
     def test_signature_verifies_normalized_email_without_base64_padding(self):
         email = " Reader+Blog@Example.COM "

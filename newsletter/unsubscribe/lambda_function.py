@@ -1,5 +1,4 @@
 import html
-import json
 import os
 
 import boto3
@@ -44,7 +43,6 @@ def response(status_code, body, content_type="text/html; charset=utf-8"):
 
 
 def lambda_handler(event, context):
-    print(json.dumps(event))
     method = event.get("requestContext", {}).get("http", {}).get("method")
 
     if method == "GET":
