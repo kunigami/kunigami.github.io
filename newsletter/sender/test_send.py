@@ -119,11 +119,16 @@ class SenderTest(unittest.TestCase):
 
         self.ses.send_email.assert_called_once()
         body = self.ses.send_email.call_args.kwargs["Content"]["Simple"]["Body"]
-        links = BeautifulSoup(body["Html"]["Data"], "html.parser").find_all("a")
+        html = BeautifulSoup(body["Html"]["Data"], "html.parser")
+        links = html.find_all("a")
         self.assertEqual(
             [link["href"] for link in links],
-            [article_url, post["url"], unsubscribe_url],
+            [post["url"], article_url, unsubscribe_url],
         )
+        title_link = html.find("h1").find("a")
+        self.assertEqual(title_link["href"], post["url"])
+        self.assertEqual(title_link.get_text(), post["title"])
+        self.assertNotIn("Read online", html.get_text())
         for link in links:
             with self.subTest(url=link["href"]):
                 self.assertTrue(link.has_attr("ses:no-track"))

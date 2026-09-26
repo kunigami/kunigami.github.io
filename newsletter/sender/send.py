@@ -153,13 +153,9 @@ Unsubscribe:
 <!doctype html>
 <html>
   <body>
-    <h1>{escape(post["title"])}</h1>
+    <h1><a href="{escape(post["url"])}">{escape(post["title"])}</a></h1>
 
     {content_html}
-
-    <p>
-      <a href="{escape(post["url"])}">Read online</a>
-    </p>
 
     <hr>
 
