@@ -40,6 +40,12 @@ The API gateway serves as a router: it redirects requests to specific URLs, e.g.
 
 ### Sending Emails
 
+<figure class="center_children">
+  <img src="{{resources_path}}/send.svg" alt="See caption" style="width: 600px" />
+  <figcaption>Figure 1. Component diagram for sending an email.</figcaption>
+</figure>
+
+
 We assume there's a list of emails stored in a key-value store, DynamoDB in our case. To avoid sending duplicate emails to the same destination in case of partial failures, we also store the last post URL sent to a given email.
 
 The code to send emails, `newsletter/sender/send.py`, is relatively straightforward: read the list of recipients from the DB, and for each we use Amazon's SES (Simple Email Service) to send the email:
@@ -80,17 +86,35 @@ Then the API gateway redirects this request to the lambda function. The function
 * Inserts an entry on the DB marking this email as pending and that token
 * Sends a confirmation email to the recipient with a confirmation link with that token.
 
+<figure class="center_children">
+  <img src="{{resources_path}}/subscribe.svg" alt="See caption" style="width: 600px" />
+  <figcaption>Figure 2. First part of the subscription flow: sending a confirmation email and writing an entry to the DB.</figcaption>
+</figure>
+
+
 Clicking the link sends a GET request to `https://newsletter.kuniga.me/subscribe` which then validates that the token matches what's stored in the DB.
 
 There's potential for a DDoS attack here because even though we require a confirmation email to actually start receiving the newsletter, subscribing an email via the UI adds an entry to the DB. To prevent abuse, we set a QPS limit on this flow.
 
+<figure class="center_children">
+  <img src="{{resources_path}}/confirm.svg" alt="See caption" style="width: 600px" />
+  <figcaption>Figure 3. Second part of the subscription flow: checking the hash and writing to the DB.</figcaption>
+</figure>
+
 ### Unsubscription
 
-For each newsletter we send to a recipient, we generate an unsubscribe link containing a signature that is essentially the recipient address encoded with a private key, e.g. `https://newsletter.kuniga.me/unsubscribe?email=alice@example.com&sig=<signature>`
+For each newsletter we send to a recipient, we generate an unsubscribe link containing a [Ed25519](https://en.wikipedia.org/wiki/EdDSA) signature that is essentially the recipient address encoded with a private key, e.g. `https://newsletter.kuniga.me/unsubscribe?email=alice@example.com&sig=<signature>`. 
 
 This endpoint is also routed to a lambda function which will decode the signature using a public key and verify the payload matches the email.
 
 This flow prevents a bad actor from unsubscribing an email they don't own, but if the newsletter recipient shares the URL or the post containing the link to unsubscribe, then someone else can use that URL to unsubscribe.
+
+
+<figure class="center_children">
+  <img src="{{resources_path}}/unsubscribe.svg" alt="See caption" style="width: 600px" />
+  <figcaption>Figure 4. Unsubscription flow: check if the signature matches the email and then mark the entry in the DB as unsubscribed</figcaption>
+</figure>
+
 
 ## Authentication
 
