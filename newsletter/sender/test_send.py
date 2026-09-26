@@ -1,4 +1,5 @@
 import importlib.util
+import io
 from pathlib import Path
 import unittest
 from unittest.mock import Mock, patch
@@ -26,6 +27,61 @@ class SenderTest(unittest.TestCase):
 
     def test_preprocess_empty_content(self):
         self.assertEqual(self.sender.preprocess_content(""), "")
+
+    def test_test_mode_always_sends_only_to_recipient_without_database_access(self):
+        post = {"id": "latest-post"}
+        with (
+            patch.object(self.sender, "get_latest_post", return_value=post),
+            patch.object(self.sender, "send_email") as send_email,
+            patch.object(self.sender, "get_subscribers") as get_subscribers,
+            patch.object(self.sender, "mark_sent") as mark_sent,
+            patch.object(self.sender, "subscribers_table") as table,
+        ):
+            for _ in range(2):
+                send_email.reset_mock()
+                self.sender.main(["--test-recipient", " me@example.com "])
+                send_email.assert_called_once_with("me@example.com", post)
+            get_subscribers.assert_not_called()
+            mark_sent.assert_not_called()
+            self.assertEqual(table.mock_calls, [])
+
+    def test_invalid_test_recipient_does_not_fall_back_to_subscribers(self):
+        cases = [
+            ["--test-recipient"],
+            ["--test-recipient", ""],
+            ["--test-recipient", "   "],
+            ["--test-recipient", "not-an-email"],
+            ["--test-recipient", "one@example.com,two@example.com"],
+        ]
+        with (
+            patch.object(self.sender, "get_latest_post") as get_latest_post,
+            patch.object(self.sender, "get_subscribers") as get_subscribers,
+            patch.object(self.sender, "send_email") as send_email,
+            patch("sys.stderr", new_callable=io.StringIO),
+        ):
+            for argv in cases:
+                with self.subTest(argv=argv), self.assertRaises(SystemExit) as error:
+                    self.sender.main(argv)
+                self.assertEqual(error.exception.code, 2)
+            get_latest_post.assert_not_called()
+            get_subscribers.assert_not_called()
+            send_email.assert_not_called()
+
+    def test_normal_mode_skips_sent_posts_and_marks_new_sends(self):
+        post = {"id": "latest-post"}
+        subscribers = [
+            {"email": "already@example.com", "last_sent_post": post["id"]},
+            {"email": "new@example.com"},
+        ]
+        with (
+            patch.object(self.sender, "get_latest_post", return_value=post),
+            patch.object(self.sender, "get_subscribers", return_value=subscribers),
+            patch.object(self.sender, "send_email") as send_email,
+            patch.object(self.sender, "mark_sent") as mark_sent,
+        ):
+            self.sender.main([])
+            send_email.assert_called_once_with("new@example.com", post)
+            mark_sent.assert_called_once_with("new@example.com", post["id"])
 
     def test_preprocess_removes_multiple_spoilers(self):
         content = (

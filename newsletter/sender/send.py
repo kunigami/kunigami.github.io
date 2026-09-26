@@ -1,4 +1,6 @@
+import argparse
 import base64
+import re
 import feedparser
 from pathlib import Path
 from urllib.parse import urlencode
@@ -196,8 +198,27 @@ Unsubscribe:
         },
     )
 
-def main():
+def test_recipient(value):
+    email = value.strip()
+    if not re.fullmatch(r"[^@\s,;<>]+@[^@\s,;<>]+\.[^@\s,;<>]+", email):
+        raise argparse.ArgumentTypeError("Provide a single email address")
+    return email
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Send the latest newsletter post")
+    parser.add_argument(
+        "--test-recipient",
+        type=test_recipient,
+        help="Send only to this address, without reading or updating subscribers",
+    )
+    args = parser.parse_args(argv)
     post = get_latest_post()
+
+    if args.test_recipient is not None:
+        print(f"Sending test email to {args.test_recipient}...")
+        send_email(args.test_recipient, post)
+        return
 
     subscribers = get_subscribers()
 
