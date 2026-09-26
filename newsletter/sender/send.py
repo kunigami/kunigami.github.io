@@ -113,10 +113,17 @@ def get_subscribers():
 
     return items
 
+def preprocess_content(content_html):
+    soup = BeautifulSoup(content_html, "html.parser")
+    for spoiler in soup.find_all("spoiler"):
+        spoiler.decompose()
+    return str(soup)
+
+
 def send_email(email, post):
     unsubscribe_url = make_unsubscribe_url(email)
 
-    content_html = post["content_html"]
+    content_html = preprocess_content(post["content_html"])
 
     content_text = BeautifulSoup(
         content_html,
@@ -160,6 +167,12 @@ Unsubscribe:
   </body>
 </html>
 """.strip()
+
+    # Ask SES to preserve direct URLs instead of adding click-tracking redirects.
+    html_soup = BeautifulSoup(html_body, "html.parser")
+    for link in html_soup.find_all("a", href=True):
+        link["ses:no-track"] = ""
+    html_body = str(html_soup)
 
     ses.send_email(
         FromEmailAddress="newsletter@kuniga.me",
