@@ -16,6 +16,8 @@ Notes on some of the books I've read. Since 2025 I've included every book I read
 
 Sometimes I re-read books. I update the original post instead of adding a new one.
 
+Books with *(Language)* means the review itself is in that language, not just that I read the book in that language.
+
 <table style="border-collapse: collapse; width: 100%; table-layout: fixed;">
   <thead>
     <tr>
