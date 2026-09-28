@@ -17,6 +17,30 @@ title: CV
 
     <article class="cv-entry">
       <figure class="cv-entry-logo">
+        <img src="{{ resources }}cv/openai_logo.jpeg" alt="Open AI logo" />
+      </figure>
+      <div class="cv-entry-content">
+        <header class="cv-entry-header">
+          <h3>Open AI</h3>
+          <span class="cv-entry-date">Sep 2026–present</span>
+        </header>
+
+        <div class="cv-role">
+          <header class="cv-role-header">
+            <h4>Systems Performance</h4>
+            <span class="cv-role-date">Sep 2026–present</span>
+          </header>
+          <ul class="cv-skills" aria-label="Systems Performance skills">
+            <li>Python</li>
+            <li>Rust</li>
+            <li>Operating Systems</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="cv-entry">
+      <figure class="cv-entry-logo">
         <img src="{{ resources }}cv/meta_logo.jpeg" alt="Meta logo" />
       </figure>
       <div class="cv-entry-content">
@@ -28,7 +52,7 @@ title: CV
         <div class="cv-role">
           <header class="cv-role-header">
             <h4>Stream Processing</h4>
-            <span class="cv-role-date">2022–2026</span>
+            <span class="cv-role-date">Apr 2022–Sep 2026</span>
           </header>
           <p>Developed and supported Meta's distributed stream processing engine in C++. Main projects included: implementing stream joins, plugin system to run user code, release system (CI/CD) and observability tools.</p>
           <ul class="cv-skills" aria-label="Stream Processing skills">
@@ -43,9 +67,9 @@ title: CV
         <div class="cv-role">
           <header class="cv-role-header">
             <h4>Data Tools</h4>
-            <span class="cv-role-date">2012–2021</span>
+            <span class="cv-role-date">Oct 2012– Apr 2022</span>
           </header>
-          <p>Developed internal tools for data analyics and observability. One of the creators of the main dashboard platform; created <a href="https://engineering.fb.com/2022/04/26/developer-tools/sql-notebooks/">SQL notebooks</a>, both used widely at Meta as of 2026.</p>
+          <p>Developed internal tools for data analyics and observability. One of the creators of the company's dashboard platform; created <a href="https://engineering.fb.com/2022/04/26/developer-tools/sql-notebooks/">SQL notebooks</a>, both used widely at Meta as of 2026.</p>
           <ul class="cv-skills" aria-label="Data Tools skills">
             <li>JavaScript</li>
             <li>Hack</li>
