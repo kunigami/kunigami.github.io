@@ -83,17 +83,20 @@ class SenderTest(unittest.TestCase):
             send_email.assert_called_once_with("new@example.com", post)
             mark_sent.assert_called_once_with("new@example.com", post["id"])
 
-    def test_preprocess_removes_multiple_spoilers(self):
+    def test_preprocess_replaces_multiple_spoilers(self):
         content = (
             "<p>Before<spoiler>First secret</spoiler>between</p>"
             "<spoiler>Second secret</spoiler><p>After</p>"
         )
         self.assertEqual(
             self.sender.preprocess_content(content),
-            "<p>Beforebetween</p><p>After</p>",
+            "<p>Before[Content deleted due to spoilers. "
+            "Visit the post on the blog to see it.]between</p>"
+            "[Content deleted due to spoilers. "
+            "Visit the post on the blog to see it.]<p>After</p>",
         )
 
-    def test_preprocess_removes_spoilers_with_nested_html(self):
+    def test_preprocess_replaces_spoilers_with_nested_html(self):
         content = (
             "<p>Public</p><spoiler><div>Secret <strong>answer</strong>"
             '<a href="/secret">details</a><spoiler>Nested secret</spoiler>'
@@ -101,7 +104,8 @@ class SenderTest(unittest.TestCase):
         )
         self.assertEqual(
             self.sender.preprocess_content(content),
-            "<p>Public</p><p>More public</p>",
+            "<p>Public</p>[Content deleted due to spoilers. "
+            "Visit the post on the blog to see it.]<p>More public</p>",
         )
 
     def test_send_email_preserves_direct_links(self):
@@ -156,7 +160,12 @@ class SenderTest(unittest.TestCase):
                 self.assertIn("Public text", body[representation]["Data"])
                 self.assertNotIn("Secret", body[representation]["Data"])
                 self.assertNotIn("answer", body[representation]["Data"])
-                self.assertNotIn("spoiler", body[representation]["Data"])
+                self.assertNotIn("<spoiler", body[representation]["Data"])
+                self.assertIn(
+                    "[Content deleted due to spoilers. "
+                    "Visit the post on the blog to see it.]",
+                    body[representation]["Data"],
+                )
         self.assertIn("<p>Public text</p>", body["Html"]["Data"])
         self.assertNotIn("<p>", body["Text"]["Data"])
         self.assertEqual(post["content_html"], original_content)

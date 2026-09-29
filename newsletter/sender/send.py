@@ -117,7 +117,11 @@ def get_subscribers():
 
 def preprocess_content(content_html):
     soup = BeautifulSoup(content_html, "html.parser")
-    for spoiler in soup.find_all("spoiler"):
+    # Process inner spoilers first so an outer spoiler removes their notices too.
+    for spoiler in reversed(soup.find_all("spoiler")):
+        spoiler.replace_with(
+            "[Content deleted due to spoilers. Visit the post on the blog to see it.]"
+        )
         spoiler.decompose()
     return str(soup)
 
