@@ -12,6 +12,7 @@ I got a puzzle as gift recently called [A-Puzzle-A-Day](https://www.dragonfjord.
 
 Here's a possible solution for today:
 
+{% include react.html %}
 <script type="text/javascript" src="{{resources_path}}/sol.json"></script>
 <script type="text/babel" src="{{resources_path}}/calendar.js"></script>
 <div class="center_children">
