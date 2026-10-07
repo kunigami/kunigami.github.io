@@ -506,5 +506,4 @@ We also wrote a new future type from scratch to get a better understanding of wh
 
 I have now studied async/coroutines in four languages: [JavaScript](https://www.kuniga.me/blog/2019/07/01/async-functions-in-javascript.html), [Python](https://www.kuniga.me/blog/2020/02/02/python-coroutines.html), [C++](https://www.kuniga.me/blog/2025/06/18/folly-coroutines.html) and now Rust. Each language implements coroutines and async functions in different ways and with different semantics, so I never feel I can immediately understand them in a new language.
 
-I think it's useful to do a comparison between Folly C++ coroutines and Tokio coroutines since, unlike Python and JS, these languages support parallel execution. Off the top of my head, Folly has the concept of executors which allow you to control the scheduling of tasks, while Tokio's runtime is more restricted. Another architectural difference which I'm not sure 
 
