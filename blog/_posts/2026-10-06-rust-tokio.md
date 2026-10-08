@@ -2,7 +2,7 @@
 layout: post
 title: "Tokio: Overview"
 tags: [rust]
-vanity: "2026-09-26-tokio"
+vanity: "2026-10-06-rust-tokio"
 excerpt_separator: <!--more-->
 ---
 
