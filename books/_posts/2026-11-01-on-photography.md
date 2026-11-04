@@ -120,6 +120,8 @@ One interesting point of view is that photography often doesn't seem like art be
 
 > Photography is not, to begin with, an art form at all. Like language, it is a medium in which works of art (among other things) are made. Out of language, one can make scientific discourse, (...), and Balzac's Paris. Out of photography, one can make passport pictures, (...), and Atget's Paris.
 
+I think it doesn't fully answer the question of whether photography is art. If we narrow the question and consider those meant for aesthetics, e.g. Atget's Paris, are these art?
+
 
 ## Conclusion
 
