@@ -177,7 +177,7 @@ Unsubscribe:
     html_body = str(html_soup)
 
     ses.send_email(
-        FromEmailAddress="newsletter@kuniga.me",
+        FromEmailAddress="NP-Incompleteness <newsletter@kuniga.me>",
         Destination={
             "ToAddresses": [email],
         },
