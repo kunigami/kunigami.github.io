@@ -127,7 +127,7 @@ class SenderTest(unittest.TestCase):
         links = html.find_all("a")
         self.assertEqual(
             [link["href"] for link in links],
-            [post["url"], article_url, unsubscribe_url],
+            [post["url"], article_url, "https://www.kuniga.me/blog/", unsubscribe_url],
         )
         title_link = html.find("h1").find("a")
         self.assertEqual(title_link["href"], post["url"])

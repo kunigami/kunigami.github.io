@@ -149,8 +149,7 @@ New post on kuniga.me:
 Read online:
 {post["url"]}
 
-Unsubscribe:
-{unsubscribe_url}
+More Posts: https://www.kuniga.me/blog/ | Unsubscribe: {unsubscribe_url}
 """.strip()
 
     html_body = f"""
@@ -164,6 +163,7 @@ Unsubscribe:
     <hr>
 
     <p>
+      <a href="https://www.kuniga.me/blog/">More Posts</a> |
       <a href="{escape(unsubscribe_url)}">Unsubscribe</a>
     </p>
   </body>
