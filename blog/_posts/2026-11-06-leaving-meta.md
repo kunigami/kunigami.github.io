@@ -182,7 +182,13 @@ The bitter lesson learned here is that we can't simply trust AI, especially for 
 
 **Tracer.** Another project an intern in our team and I explored with AI was a tracer for our engine. It was aware of [Folly coroutines](https://www.kuniga.me/blog/2025/06/18/folly-coroutines.html) and had a Gantt-chart visualization. This made me realize I'm very interested in working with systems and performance optimization! I'll have more to say about these in the future.
 
-**Cache Tuning.** One last thing I did before leaving was to use AI to find some wins from tuning cache sizes. The automation was mostly handled by AI, so it took me only a day or so of dedicated work but the savings were enough to pay my salary for a year!
+**Cache Tuning.** One last thing I did before leaving was to use AI to find some wins from tuning cache sizes. The automation was mostly handled by AI, so it took me only a day or so of dedicated work but the savings were enough to pay my salary for a year! 
+
+I did study the architecture of our [cache library](https://www.kuniga.me/blog/2026/08/28/cachelib.html) but it was AI (Claude) who found and proposed the improvement after debugging an OOM issue in production. The only motivation to study it was to understand the proposal and why it helped.
+
+Before AI, I used to get some many OOMs during oncall that it was infeasible to go debug them. We typically waited for our auto-scaler to scale horizontally or vertically, but this of course could sweep inefficiencies under the rug. With AI I could fire an agent to go debug while I dealt with other fires and sometimes it found gems like the one above.
+
+**Lesson 6.** Take advantage of AI to get to the bottom of (more) things.
 
 One reflection here is that in the past I really hated tuning configurations because it was a very tedious process and it didn't lead to durable artifacts. So I much preferred writing and landing code. With AI, not only can it automate most of the process, including experimentation, but since I don't write code anymore by hand, I'm not as attached to it.
 
@@ -196,7 +202,7 @@ When I moved to the backend team, the project was already pretty mature and had 
 
 I don't regret my move in the least! It did trigger my imposter syndrome regularly and the oncall was extremely heavy, but I feel like I learned way more in the past 4 years than in the previous 9.
 
-**Lesson 6.** Sometimes growth comes at the detriment of impact. But I now see learning as deferred impact.
+**Lesson 7.** Sometimes growth comes at the detriment of impact. But I now see learning as deferred impact.
 
 ## What's Next
 
