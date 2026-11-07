@@ -24,13 +24,13 @@ I did 3 rounds of interviews remotely from Brazil, then Facebook flew me to Cali
 
 As a digression, one nice perk that Meta had was that for long distance flights employees could book business class, no matter your role or level. I flew maybe a handful of times to the offices in London and Tel Aviv.
 
-Anyway, I later learned that the onsite interview wasn't just formalities. I just did not know how much money Silicon Valley was willing to spend on employees. It turned out to be really good because I was so relaxed that I did the interviews at my best capacity. It would be almost a year before I actually joined because of immigration cycles.
+Anyway, I later learned that the onsite interview wasn't just formalities. I just did not know how much money Silicon Valley was willing to spend on candidates. This misunderstanding turned out to be really good because I was so relaxed that I did the interviews at my best capacity. It would be almost a year before I actually joined because of immigration cycles.
 
 ## Data Tools (2012-2022)
 
 ### Bootcamp
 
-When I joined Facebook, we had this program called bootcamp. By default, when you joined the company you were not pre-assigned to a team. You had about 4-6 weeks to go through training, try tasks from a few different teams and by the end you were supposed to choose a team.
+When I joined Facebook, it had this program called bootcamp. By default, when you started you were not pre-assigned to a team. You had about 4-6 weeks to go through training, try tasks from a few different teams and by the end you were supposed to choose a team.
 
 I think it was a good idea for the newcomers, even more so for new grads, because they might not have any idea of what kind of stuff was interesting to them before they actually try some tasks out. It was not as good for some teams because they might not look as interesting, so they really struggled to fill headcounts.
 
@@ -46,7 +46,9 @@ But the bootcamp manager's feedback also instilled in me an urgency / anxiety to
 
 More consequentially, this ended up influencing the team I chose. I ended up not working on any major backend task because the setup was so cumbersome and slow to ramp up on that I was afraid I was not going to be productive there, and this made me choose a frontend team, even though I initially wanted a backend team. It would be almost 10 years before I gave backend a try again.
 
-Finally, one negative aspect of bootcamp was that a lot of engineers used it to delegate tasks they wanted to get done with minimum effort, so they spent as little time as possible scoping it and were stingy with their help. I recall asking an engineer for help on their task and they replied something along the lines that I needed to figure it out on my own. I think this was eventually fixed by holding task owners more accountable for them.
+Finally, one negative aspect of bootcamp was that a lot of engineers used it to delegate tasks they wanted to get done with minimum effort, so they spent as little time as possible scoping it and were stingy with their help. I recall asking an engineer for help on their task and they replied something along the lines that I needed to figure it out on my own. I think this was eventually fixed by holding task owners more accountable for them. 
+
+The bootcamp process ended a few years before I left.
 
 ### Communication
 
@@ -68,9 +70,9 @@ I was so busy trying to keep my head above (the perceived at least) water and fi
 
 ### Dashboards
 
-My first large project was to create a new dashboard tool. We decided to make it very general so it was easy to add new queries and visualizations to it, making it very expressive, but also not super easy to use. One of my favorite things to do was to see the very creative way non-SWEs used the dashboard primitives to build tools. It also had an intermediate JSON representation that would have made it pretty useful for agents today.
+My first large project was to create a new dashboard tool. We decided to make it very general so it was easy to add new queries and visualizations to it, making it very expressive, but also not super easy to use. I loved to find very creative ways non-SWEs used the dashboard primitives to build tools. It also had an intermediate JSON representation that would have made it pretty useful for agents today.
 
-I worked on this tool for a long time with two other teammates, but it eventually got moved to a different office and started being supported by an entire team. Over time, as this tool got more popular, it turned more into a proper product, so a lot more user-friendly, but also less flexible.
+I worked on this tool for a long time (maybe 2017?) with two other teammates, but it eventually got moved to a different office and started being supported by an entire team. Over time, as this tool got more popular, it turned more into a proper product, so a lot more user-friendly, but also less flexible.
 
 For the longest time, this was the only officially supported dashboard tool at the company, even when it had over 50k employees and this let us save money from licensing tools like Tableau. I think a good part of why it got widely adopted was that we supported both observability and analytics use cases, and that we had a power user who championed it for us when we were starting. In return, we implemented a lot of features for this power user and his org.
 
@@ -105,7 +107,7 @@ The most interesting one was doing a hack-a-month in Tel Aviv. I had no plans to
   <figcaption>Jerusalem, which I visited during a weekend trip.</figcaption>
 </figure>
 
-Serendipitously, the team that took over the dashboarding tool was based in Tel Aviv, so I ended up working with folks there until I moved teams.
+Serendipitously, the team that took over the dashboarding tool was also based in Tel Aviv, so I ended up working with folks there (as a sister team) until I moved teams.
 
 ### SQL Notebook
 
@@ -140,7 +142,7 @@ I was very lucky that my manager at the time was receptive to this idea and help
 
 ### Ramp up
 
-One of the first realizations I had was that for distributed systems development happens mostly locally, so it's not much different from single-node programming. Before, I had the impression that it was super difficult, requiring running things in the cloud and whatnot. You do need to think about how work is distributed across multiple nodes, but this is a different level of abstraction, and we typically don't have to mix them.
+One of the first realizations I had was that for distributed systems, development happens mostly locally, so it's not much different from single-node programming. Before, I had the impression that it was super difficult, requiring running things in the cloud and whatnot. You do need to think about how work is distributed across multiple nodes, but this is a different level of abstraction, and we typically don't have to mix them.
 
 Despite that, a stream processing engine *is* very complex, even on a single node and ours was especially so because it grew organically over many years, so it had a lot of quirks. There were also many components, so while an individual can ramp up on a few components, knowing how all components work in detail was really hard.
 
@@ -194,7 +196,7 @@ When I moved to the backend team, the project was already pretty mature and had 
 
 I don't regret my move in the least! It did trigger my imposter syndrome regularly and the oncall was extremely heavy, but I feel like I learned way more in the past 4 years than in the previous 9.
 
-**Lesson 6.** Sometimes growth comes at the detriment of impact. But I now see that as deferred impact.
+**Lesson 6.** Sometimes growth comes at the detriment of impact. But I now see learning as deferred impact.
 
 ## What's Next
 
