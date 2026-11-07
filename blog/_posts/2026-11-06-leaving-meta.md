@@ -70,9 +70,9 @@ I was so busy trying to keep my head above (the perceived at least) water and fi
 
 ### Dashboards
 
-My first large project was to create a new dashboard tool. We decided to make it very general so it was easy to add new queries and visualizations to it, making it very expressive, but also not super easy to use. I loved to find very creative ways non-SWEs used the dashboard primitives to build tools. It also had an intermediate JSON representation that would have made it pretty useful for agents today.
+My first large project was to create a new dashboard tool. We decided to make it very general so it was easy to add new queries and visualizations to it, making it very expressive, but also not super easy to use. I loved to find thee very creative ways non-SWEs used the dashboard primitives to build tools. It also had an intermediate JSON representation that would have made it pretty useful for agents today.
 
-I worked on this tool for a long time (maybe 2017?) with two other teammates, but it eventually got moved to a different office and started being supported by an entire team. Over time, as this tool got more popular, it turned more into a proper product, so a lot more user-friendly, but also less flexible.
+I worked on this tool for a long time (maybe until 2017?) with two other teammates, but it eventually got moved to a different office and started being supported by an entire team. Over time, as this tool got more popular, it turned more into a proper product, so a lot more user-friendly, but also less flexible.
 
 For the longest time, this was the only officially supported dashboard tool at the company, even when it had over 50k employees and this let us save money from licensing tools like Tableau. I think a good part of why it got widely adopted was that we supported both observability and analytics use cases, and that we had a power user who championed it for us when we were starting. In return, we implemented a lot of features for this power user and his org.
 
@@ -154,7 +154,7 @@ One thing that was extremely valuable was to read technical books in particular 
 
 ### Stream Joins
 
-I worked on a few major projects during this time. The first was implementing stream joins which was a missing feature needed to migrate away from an old system. The guarantees from this feature are pretty bad and I'm not proud of it, but we copied the semantics from the legacy system, and we were rushing to finish the migration, I think it was the right call at the time.
+I worked on a few major projects during this time. The first was implementing stream joins which was a missing feature needed to migrate away from an old system. The guarantees from this feature are pretty bad and I'm not proud of it, but we copied the semantics from the legacy system, and we were rushing to finish the migration, so I think it was the right call at the time.
 
 Algorithm-wise, this was likely the hardest project I ever worked on. To give an idea of the complexity, the feature from the old system even had a paper written on it [Providing streaming joins as a service at Facebook](https://dl.acm.org/doi/abs/10.14778/3229863.3229869). I also read a paper on Google's [Photon](https://www.kuniga.me/blog/2022/09/27/photon.html) which implements a stream join but it's for a more narrow use case, so it wasn't that useful.
 
@@ -176,11 +176,13 @@ The idea was then to have the AI agent find the code to generate the same output
 
 When I took a deep look at the code, it was a complete mess. I ended up having to rewrite most of it, this time, with a lot more handholding. Unfortunately, I didn't finish this project before I left. It was a massive undertaking with no obvious short-term impact and we only signed up for it because we overestimated AI's ability to self-drive on this, so I ended up losing motivation. I also got a bit burnt out from the frustration of fixing the AI mess and having to redo much of the work.
 
-The bitter lesson learned here is that we can't simply trust AI, especially for complex codebases like this. I need to make sure to revisit my priors often because models improve rapidly. If I were to restart this project I'd try to make progress incrementally by adding one feature at a time and gradually push it to production instead of trying to cover all possible pipelines before doing that, and also take time to study the codebase (see [On Doing Things Manually]({{blog}}/2026/08/01/on-doing-things-manually.html)).
+**Lesson 6.** The bitter lesson learned here is that we can't simply trust AI, especially for complex codebases like this. However, I need to make sure to revisit my priors often because models improve rapidly. 
+
+If I were to restart this project I'd try to make progress incrementally by adding one feature at a time and gradually push it to production instead of trying to cover all possible pipelines before doing that, and also take time to study the codebase (see [On Doing Things Manually]({{blog}}/2026/08/01/on-doing-things-manually.html)).
 
 **Velox.** AI led me to explore a lot more big bets. One of them was to adopt Presto's engine called Velox in our stream processing engine. Velox is open source, so I wrote a [series of posts](https://www.kuniga.me/blog/2026/08/04/velox-memory.html) to learn more about it. I got a promising prototype but didn't have bandwidth to push this forward. This is another project that could significantly reduce our team's surface area long term and lead to open-sourcing, but it was harder to justify in the short term.
 
-**Tracer.** Another project an intern in our team and I explored with AI was a tracer for our engine. It was aware of [Folly coroutines](https://www.kuniga.me/blog/2025/06/18/folly-coroutines.html) and had a Gantt-chart visualization. This made me realize I'm very interested in working with systems and performance optimization! I'll have more to say about these in the future.
+**Tracer.** Another project an intern in our team and I explored with AI was a tracer for our engine. It was aware of [Folly coroutines](https://www.kuniga.me/blog/2025/06/18/folly-coroutines.html) and had a Gantt-chart visualization. I didn't use it long enough to claim it was very useful, but it was motivated by a debugging instance which took me (and Claude) hours to find but was clearly visible in this tool. This made me realize I'm very interested in working with systems and performance optimization! I'll have more to say about these in the future.
 
 **Cache Tuning.** One last thing I did before leaving was to use AI to find some wins from tuning cache sizes. The automation was mostly handled by AI, so it took me only a day or so of dedicated work but the savings were enough to pay my salary for a year! 
 
@@ -188,9 +190,9 @@ I did study the architecture of our [cache library](https://www.kuniga.me/blog/2
 
 Before AI, I used to get some many OOMs during oncall that it was infeasible to go debug them. We typically waited for our auto-scaler to scale horizontally or vertically, but this of course could sweep inefficiencies under the rug. With AI I could fire an agent to go debug while I dealt with other fires and sometimes it found gems like the one above.
 
-**Lesson 6.** Take advantage of AI to get to the bottom of (more) things.
+**Lesson 7.** Take advantage of AI to get to the bottom of (more) things.
 
-One reflection here is that in the past I really hated tuning configurations because it was a very tedious process and it didn't lead to durable artifacts. So I much preferred writing and landing code. With AI, not only can it automate most of the process, including experimentation, but since I don't write code anymore by hand, I'm not as attached to it.
+One reflection here is that in the past I really hated tuning configurations because it was a very tedious process and it didn't lead to [durable artifacts](https://www.kuniga.me/blog/2023/07/10/on-lifetime.html). So I much preferred writing and landing code. With AI, not only can it automate most of the process, including experimentation, but since I don't write code anymore by hand, I'm not as attached to landing code.
 
 ### Impact vs. Growth
 
@@ -202,7 +204,7 @@ When I moved to the backend team, the project was already pretty mature and had 
 
 I don't regret my move in the least! It did trigger my imposter syndrome regularly and the oncall was extremely heavy, but I feel like I learned way more in the past 4 years than in the previous 9.
 
-**Lesson 7.** Sometimes growth comes at the detriment of impact. But I now see learning as deferred impact.
+**Lesson 8.** Sometimes growth comes at the detriment of impact. But I now see learning as deferred impact.
 
 ## What's Next
 
