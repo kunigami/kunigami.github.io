@@ -202,7 +202,7 @@ Part of it is that Facebook was way smaller back then. I think it was much easie
 
 When I moved to the backend team, the project was already pretty mature and had existing experts on the bigger areas, so I found that I didn't have strong ownership. As those people moved teams or left the company and I learned more, I did feel like it started changing, so I also think there are also some advantages of staying on a team for longer.
 
-I don't regret my move in the least! It did trigger my imposter syndrome regularly and the oncall was extremely heavy, but I feel like I learned way more in the past 4 years than in the previous 9.
+I don't regret my move in the least! It did trigger my imposter syndrome regularly and the oncall was extremely heavy, but I feel like I learned way more in the past 4 years than in the previous 9 (this claim is probably exacerbated by recency bias).
 
 **Lesson 8.** Sometimes growth comes at the detriment of impact. But I now see learning as deferred impact.
 
