@@ -52,6 +52,10 @@ AI is very useful for digging into details on demand too. I might not care about
 
 The one concern with using AI is that some say that true learning only comes with struggle. If AI makes it too easy to digest things, am I learning optimally? Writing posts explaining stuff (even if no one reads it!) is even more important now, because it tests my understanding and keeps me honest, but I don't know if it's enough.
 
+Terence Tao says in his book *An Introduction to Measure Theory*:
+
+> The process of actually drawing the picture is at least as instructive as the picture itself.
+
 ## Principles
 
 My guiding principle for when to use AI vs. not: what's the most effective way to learn and understand? I don't have qualms about relying on AI to do 100% of my grunt work, but I also don't aim to blindly automate my work without learning anything in the process.
