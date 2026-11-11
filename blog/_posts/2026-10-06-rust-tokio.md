@@ -502,6 +502,8 @@ We covered two pitfalls: assuming `join!` will lead to parallelism and sandwichi
 
 We also wrote a new future type from scratch to get a better understanding of what happens at the "leaves" of the async call graph.
 
+One thing I hadn't realized was how local variables are written in the stack frame and that the compiler knows how big a stack frame is at compile time, so when it calls other functions recursively and needs to "restore the state", there's really no copies involved. This is not specific to Rust, it's true for C++ as well, assuming the function wasn't optimized by the compiler.
+
 ## Related posts
 
 I have now studied async/coroutines in four languages: [JavaScript](https://www.kuniga.me/blog/2019/07/01/async-functions-in-javascript.html), [Python](https://www.kuniga.me/blog/2020/02/02/python-coroutines.html), [C++](https://www.kuniga.me/blog/2025/06/18/folly-coroutines.html) and now Rust. Each language implements coroutines and async functions in different ways and with different semantics, so I never feel I can immediately understand them in a new language.
