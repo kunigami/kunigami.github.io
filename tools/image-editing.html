@@ -251,7 +251,7 @@
   </header>
 
   <main id="workspace" class="workspace" data-mode="edit" tabindex="0" aria-label="Image workspace" aria-describedby="instructions">
-    <p id="instructions" class="sr-only">Drop an image to add and select it. In Edit mode, drag images to move them and drag corners to resize. Hold Shift while resizing to change the aspect ratio. Arrow keys move the selection one pixel; Shift and arrow keys move it ten pixels. Click empty space or press Escape to deselect. In Drag mode, drag anywhere to pan. Scrolling pans in either mode.</p>
+    <p id="instructions" class="sr-only">Drop an image to add and select it. In Edit mode, drag images to move them and drag corners to resize. Hold Shift while resizing to change the aspect ratio. Arrow keys move the selection one pixel; Shift and arrow keys move it ten pixels. Press Delete to remove the selection. Click empty space or press Escape to deselect. In Drag mode, drag anywhere to pan. Scrolling pans in either mode.</p>
     <div id="world" class="world">
       <div id="selection" class="selection" hidden aria-hidden="true">
         <span class="handle" data-corner="nw"></span>
@@ -558,9 +558,23 @@
         return;
       }
 
-      const direction = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[event.key];
       const object = selectedObject();
-      if (!direction || !object) return;
+      if (!object) return;
+
+      if (event.key === "Delete") {
+        event.preventDefault();
+        elements.get(object.id).remove();
+        elements.delete(object.id);
+        state.objects = state.objects.filter(item => item.id !== object.id);
+        selectObject(null);
+        emptyState.hidden = state.objects.length > 0;
+        downloadButton.disabled = state.objects.length === 0;
+        announcement.textContent = `${object.image.alt} removed.`;
+        return;
+      }
+
+      const direction = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[event.key];
+      if (!direction) return;
       event.preventDefault();
       const step = event.shiftKey ? 10 : 1;
       object.x += direction[0] * step;
