@@ -9,6 +9,10 @@ country: 🇨🇷
 
 I went on a trip to Costa Rica for 15 days. We decided to book with a tour company called Intrepid because I'm getting old and don't want to deal with the logistics and I've had two other positive experiences with them.
 
+
+1. TOC
+{:toc}
+
 ## San Jose
 
 On the first day we had a few hours to kill before meeting with the group in San Jose. We ate at a soda, the name of a mom and pop restaurant in Costa Rica that serves typical food. I ate *gallo pinto*, a rice and beans dish and it was my favorite dish of the entire trip.
@@ -126,10 +130,10 @@ Later we also saw bigger animals while walking on our own: close ups of capuchin
 </figure>
 
 
-## Summary
+## Conclusion
 
 Summer is a good time to visit Costa Rica for the lush green and the turtle season, but the weather is not good for views of volcanoes. It's also not the best time for spotting the quetzal, March and April seem better.
 
-Costa Rica wasn't on my top list for cultural, historical and not even natural reasons. But I do love how it's a successful country, especially compared to neighboring Central American countries and in great part due to ecotourism, instead of fossil fuels or other natural resources, so I was glad to be a tourist there.
+I really like that Coast Rica is a successful country, especially compared to neighboring Central American countries and in great part due to ecotourism, instead of fossil fuels or other natural resources, so I was glad to be a tourist there. It made me think of *Why Nations Fail* by Acemoglu and Robinson.
 
 This is one of the trips that got me thinking the most about the reality of things and what I want to get from a trip.
