@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image workspace</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      color: #253047;
+      background: #fafbfc;
+      font: 14px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    [hidden] { display: none !important; }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex: none;
+      gap: 16px;
+      padding: 10px 20px;
+      background: #fff;
+      border-bottom: 1px solid #dfe4eb;
+    }
+
+    h1 { margin: 0; font-size: 15px; font-weight: 600; }
+
+    .toolbar-controls { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px; margin-left: auto; }
+    .grid-toggle { display: flex; align-items: center; gap: 6px; color: #566176; cursor: pointer; }
+    .grid-toggle input { width: 16px; height: 16px; margin: 0; accent-color: #3976df; }
+
+    .modes {
+      display: flex;
+      gap: 3px;
+      padding: 3px;
+      border: 1px solid #e0e5ed;
+      border-radius: 8px;
+      background: #f3f5f8;
+    }
+
+    .mode {
+      min-width: 68px;
+      padding: 6px 14px;
+      border: 0;
+      border-radius: 5px;
+      color: #566176;
+      background: transparent;
+      font: inherit;
+      font-weight: 550;
+      cursor: pointer;
+    }
+
+    .mode:hover { background: #e8edf5; }
+    .mode[aria-pressed="true"] { color: #2458b5; background: #fff; box-shadow: 0 1px 3px #25304720; }
+    .mode:focus-visible { outline: 2px solid #3976df; outline-offset: 2px; }
+
+    .button {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #d5dce7;
+      border-radius: 6px;
+      color: #253047;
+      background: #fff;
+      font: inherit;
+      font-weight: 550;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button:hover { background: #f0f3f8; }
+    .button.primary { border-color: #2458b5; color: #fff; background: #2458b5; }
+    .button.primary:hover { background: #1c478f; }
+    .button:disabled { opacity: 0.45; cursor: default; }
+    .button:focus-visible { outline: 2px solid #3976df; outline-offset: 3px; }
+
+    .download-dialog {
+      width: min(760px, calc(100% - 32px));
+      max-height: calc(100dvh - 32px);
+      padding: 24px;
+      overflow: auto;
+      border: 1px solid #dfe4eb;
+      border-radius: 12px;
+      color: #253047;
+      background: #fff;
+      box-shadow: 0 20px 70px #15243a40;
+    }
+
+    .download-dialog::backdrop { background: #17243b80; }
+    .download-dialog h2 { margin: 0; font-size: 20px; font-weight: 600; }
+    .download-details { margin: 6px 0 18px; color: #68758a; }
+    .export-status { margin: 24px 0; }
+
+    .preview-frame {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      border: 1px solid #dfe4eb;
+      border-radius: 6px;
+      background: #f5f7fa;
+    }
+
+    .export-preview {
+      display: block;
+      max-width: 100%;
+      max-height: 55vh;
+      object-fit: contain;
+      box-shadow: 0 0 0 1px #dfe4eb;
+      background-color: #fff;
+      background-image: conic-gradient(#e8ecf2 25%, transparent 0 50%, #e8ecf2 0 75%, transparent 0);
+      background-size: 16px 16px;
+    }
+
+    .dialog-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 20px; }
+    .export-dimensions { color: #68758a; }
+    .dialog-actions { display: flex; gap: 8px; margin-left: auto; }
+
+    .workspace {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      outline: none;
+      touch-action: none;
+      user-select: none;
+      background-image:
+        linear-gradient(to right, #dfe4eb80 1px, transparent 1px),
+        linear-gradient(to bottom, #dfe4eb80 1px, transparent 1px);
+      background-size: 10px 10px;
+    }
+
+    .workspace:focus-visible { box-shadow: inset 0 0 0 2px #3976df50; }
+    .workspace.grid-hidden { background-image: none; }
+    .workspace[data-mode="drag"] { cursor: grab; }
+    .workspace[data-mode="drag"] .image-object { cursor: inherit; }
+    .workspace[data-gesture] * { cursor: inherit !important; }
+
+    .workspace.is-drop-target::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      z-index: 2;
+      border: 2px dashed #3976df;
+      border-radius: 8px;
+      background: #3976df08;
+      pointer-events: none;
+    }
+
+    .world { position: absolute; top: 0; left: 0; width: 0; height: 0; }
+    .image-object { position: absolute; top: 0; left: 0; cursor: move; }
+    .image-object img { display: block; width: 100%; height: 100%; pointer-events: none; }
+
+    .selection {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      outline: 1px solid #3976df;
+      pointer-events: none;
+    }
+
+    .handle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 1.5px solid #3976df;
+      border-radius: 2px;
+      background: #fff;
+      pointer-events: auto;
+    }
+
+    .handle::before { content: ""; position: absolute; inset: -5px; }
+    .handle[data-corner="nw"] { top: -5px; left: -5px; cursor: nwse-resize; }
+    .handle[data-corner="ne"] { top: -5px; right: -5px; cursor: nesw-resize; }
+    .handle[data-corner="sw"] { bottom: -5px; left: -5px; cursor: nesw-resize; }
+    .handle[data-corner="se"] { bottom: -5px; right: -5px; cursor: nwse-resize; }
+
+    .empty-state {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      padding: 24px;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .empty-state strong { font-size: 20px; font-weight: 550; }
+    .empty-state span { max-width: 340px; color: #68758a; }
+
+    .notice {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      width: fit-content;
+      max-width: calc(100% - 32px);
+      margin: 0;
+      padding: 10px 14px;
+      border: 1px solid #e7c4bd;
+      border-radius: 6px;
+      color: #8c3b2d;
+      background: #fff8f5;
+      pointer-events: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 480px) {
+      .toolbar { padding: 8px 12px; }
+      .mode { min-width: 58px; padding-inline: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <h1>Image workspace</h1>
+    <div class="toolbar-controls">
+      <label class="grid-toggle" title="Show or hide the workspace grid">
+        <input id="grid-toggle" type="checkbox" checked aria-controls="workspace">
+        Grid
+      </label>
+      <div class="modes" role="group" aria-label="Workspace mode">
+        <button class="mode" type="button" data-mode="drag" aria-pressed="false" title="Drag anywhere to pan the workspace">Drag</button>
+        <button class="mode" type="button" data-mode="edit" aria-pressed="true" title="Select, move, and resize images">Edit</button>
+      </div>
+      <button id="download-button" class="button primary" type="button" disabled>Download</button>
+    </div>
+  </header>
+
+  <main id="workspace" class="workspace" data-mode="edit" tabindex="0" aria-label="Image workspace" aria-describedby="instructions">
+    <p id="instructions" class="sr-only">Drop an image to add and select it. In Edit mode, drag images to move them and drag corners to resize. Hold Shift while resizing to change the aspect ratio. Arrow keys move the selection one pixel; Shift and arrow keys move it ten pixels. Click empty space or press Escape to deselect. In Drag mode, drag anywhere to pan. Scrolling pans in either mode.</p>
+    <div id="world" class="world">
+      <div id="selection" class="selection" hidden aria-hidden="true">
+        <span class="handle" data-corner="nw"></span>
+        <span class="handle" data-corner="ne"></span>
+        <span class="handle" data-corner="sw"></span>
+        <span class="handle" data-corner="se"></span>
+      </div>
+    </div>
+    <div id="empty-state" class="empty-state">
+      <strong>Drop an image to begin</strong>
+      <span>Drag images to move them. Use the corners to resize and arrow keys to nudge.</span>
+    </div>
+    <p id="notice" class="notice" role="status" hidden></p>
+    <p id="announcement" class="sr-only" role="status"></p>
+  </main>
+
+  <dialog id="download-dialog" class="download-dialog" aria-labelledby="download-title" aria-describedby="download-details">
+    <h2 id="download-title">Download preview</h2>
+    <p id="download-details" class="download-details">PNG · Transparent background · 10 px margin</p>
+    <p id="export-status" class="export-status" role="status"></p>
+    <div id="preview-frame" class="preview-frame" hidden>
+      <img id="export-preview" class="export-preview" alt="Preview of all images in the composition">
+    </div>
+    <div class="dialog-footer">
+      <span id="export-dimensions" class="export-dimensions"></span>
+      <div class="dialog-actions">
+        <button id="close-download" class="button" type="button" autofocus>Close</button>
+        <a id="save-download" class="button primary" download="image-composition.png" hidden>Download PNG</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    "use strict";
+
+    const workspace = document.getElementById("workspace");
+    const world = document.getElementById("world");
+    const selection = document.getElementById("selection");
+    const emptyState = document.getElementById("empty-state");
+    const notice = document.getElementById("notice");
+    const announcement = document.getElementById("announcement");
+    const modeButtons = document.querySelectorAll(".mode");
+    const gridToggle = document.getElementById("grid-toggle");
+    const downloadButton = document.getElementById("download-button");
+    const downloadDialog = document.getElementById("download-dialog");
+    const exportStatus = document.getElementById("export-status");
+    const previewFrame = document.getElementById("preview-frame");
+    const exportPreview = document.getElementById("export-preview");
+    const exportDimensions = document.getElementById("export-dimensions");
+    const saveDownload = document.getElementById("save-download");
+
+    // Flat objects use workspace pixels. Only the viewport changes when panning.
+    const state = {
+      objects: [],
+      selectedId: null,
+      mode: "edit",
+      showGrid: true,
+      viewport: { x: 0, y: 0 }
+    };
+    const elements = new Map();
+    let nextId = 1;
+    let interaction = null;
+    let dragDepth = 0;
+    let previewUrl = null;
+    let previewRequest = 0;
+
+    function selectedObject() {
+      return state.objects.find(object => object.id === state.selectedId);
+    }
+
+    function positionElement(element, object) {
+      element.style.transform = `translate(${object.x}px, ${object.y}px)`;
+      element.style.width = `${object.width}px`;
+      element.style.height = `${object.height}px`;
+    }
+
+    function renderSelection() {
+      const object = selectedObject();
+      selection.hidden = state.mode !== "edit" || !object;
+      if (object) positionElement(selection, object);
+    }
+
+    function renderObject(object) {
+      positionElement(elements.get(object.id), object);
+      renderSelection();
+    }
+
+    function renderViewport() {
+      const { x, y } = state.viewport;
+      world.style.transform = `translate(${x}px, ${y}px)`;
+      workspace.style.backgroundPosition = `${x}px ${y}px`;
+    }
+
+    function selectObject(id) {
+      state.selectedId = id;
+      renderSelection();
+    }
+
+    function finishInteraction() {
+      if (!interaction) return;
+      const { pointerId } = interaction;
+      interaction = null;
+      delete workspace.dataset.gesture;
+      workspace.style.removeProperty("cursor");
+      if (workspace.hasPointerCapture(pointerId)) workspace.releasePointerCapture(pointerId);
+    }
+
+    function setMode(mode) {
+      finishInteraction();
+      state.mode = mode;
+      workspace.dataset.mode = mode;
+      modeButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.mode === mode)));
+      renderSelection();
+    }
+
+    modeButtons.forEach(button => button.addEventListener("click", () => {
+      setMode(button.dataset.mode);
+      workspace.focus({ preventScroll: true });
+    }));
+
+    gridToggle.addEventListener("change", () => {
+      state.showGrid = gridToggle.checked;
+      workspace.classList.toggle("grid-hidden", !state.showGrid);
+      workspace.focus({ preventScroll: true });
+    });
+
+    function createExportCanvas() {
+      const margin = 10;
+      const bounds = state.objects.reduce((box, object) => ({
+        left: Math.min(box.left, object.x),
+        top: Math.min(box.top, object.y),
+        right: Math.max(box.right, object.x + object.width),
+        bottom: Math.max(box.bottom, object.y + object.height)
+      }), { left: Infinity, top: Infinity, right: -Infinity, bottom: -Infinity });
+      // Round up so fractional object dimensions never clip the outer margin.
+      const width = Math.ceil(bounds.right - bounds.left + margin * 2);
+      const height = Math.ceil(bounds.bottom - bounds.top + margin * 2);
+      if (!Number.isFinite(width) || !Number.isFinite(height) || width < 1 || height < 1) {
+        throw new Error("Add an image before downloading.");
+      }
+      if (width > 16384 || height > 16384 || width * height > 32 * 1024 * 1024) {
+        throw new Error("This composition is too large to export. Move the images closer together or resize them.");
+      }
+
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const context = canvas.getContext("2d");
+      if (!context) throw new Error("Could not create the preview. Try a smaller composition.");
+      context.imageSmoothingQuality = "high";
+      // Array order matches the workspace's stacking order. Viewport and grid are display-only.
+      for (const object of state.objects) {
+        context.drawImage(object.image, object.x - bounds.left + margin, object.y - bounds.top + margin, object.width, object.height);
+      }
+      return canvas;
+    }
+
+    function clearExportPreview() {
+      previewRequest += 1;
+      exportPreview.removeAttribute("src");
+      saveDownload.removeAttribute("href");
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = null;
+    }
+
+    downloadButton.addEventListener("click", async () => {
+      if (!state.objects.length || downloadDialog.open) return;
+      finishInteraction();
+      clearExportPreview();
+      const request = previewRequest;
+      previewFrame.hidden = true;
+      saveDownload.hidden = true;
+      exportDimensions.textContent = "";
+      exportStatus.textContent = "Preparing preview…";
+      exportStatus.hidden = false;
+      downloadDialog.showModal();
+      let canvas;
+
+      try {
+        canvas = createExportCanvas();
+        const blob = await new Promise((resolve, reject) => {
+          canvas.toBlob(result => result ? resolve(result) : reject(new Error("Could not create the PNG. Try a smaller composition.")), "image/png");
+        });
+        if (request !== previewRequest || !downloadDialog.open) return;
+        previewUrl = URL.createObjectURL(blob);
+        exportPreview.src = previewUrl;
+        await exportPreview.decode();
+        if (request !== previewRequest || !downloadDialog.open) return;
+        // Preview and download share the exact same PNG.
+        saveDownload.href = previewUrl;
+        exportDimensions.textContent = `${canvas.width} × ${canvas.height} px`;
+        previewFrame.hidden = false;
+        saveDownload.hidden = false;
+        exportStatus.hidden = true;
+      } catch (error) {
+        if (request !== previewRequest || !downloadDialog.open) return;
+        exportStatus.textContent = error instanceof Error ? error.message : "Could not create the preview. Please try again.";
+      } finally {
+        if (canvas) canvas.width = canvas.height = 0;
+      }
+    });
+
+    document.getElementById("close-download").addEventListener("click", () => downloadDialog.close());
+    downloadDialog.addEventListener("close", () => {
+      // A queued close event from an earlier preview must not clear a newly opened one.
+      if (!downloadDialog.open) clearExportPreview();
+    });
+
+    workspace.addEventListener("pointerdown", event => {
+      if (event.button !== 0 || !event.isPrimary || interaction) return;
+      workspace.focus({ preventScroll: true });
+      event.preventDefault();
+
+      const start = { pointerId: event.pointerId, startX: event.clientX, startY: event.clientY };
+      let cursor;
+
+      if (state.mode === "drag") {
+        interaction = { ...start, type: "pan", origin: { ...state.viewport } };
+        cursor = "grabbing";
+      } else {
+        const handle = event.target.closest("[data-corner]");
+        const element = event.target.closest(".image-object");
+        const object = handle ? selectedObject() : state.objects.find(item => item.id === element?.dataset.id);
+        if (!object) {
+          selectObject(null);
+          return;
+        }
+
+        selectObject(object.id);
+        interaction = {
+          ...start,
+          type: handle ? "resize" : "move",
+          object,
+          origin: { x: object.x, y: object.y, width: object.width, height: object.height },
+          corner: handle?.dataset.corner
+        };
+        cursor = handle ? ("nw se".includes(interaction.corner) ? "nwse-resize" : "nesw-resize") : "move";
+      }
+
+      workspace.dataset.gesture = interaction.type;
+      workspace.style.cursor = cursor;
+      workspace.setPointerCapture(event.pointerId);
+    });
+
+    workspace.addEventListener("pointermove", event => {
+      if (!interaction || interaction.pointerId !== event.pointerId) return;
+      const { type, origin, object, corner } = interaction;
+      const dx = event.clientX - interaction.startX;
+      const dy = event.clientY - interaction.startY;
+
+      if (type === "pan") {
+        state.viewport.x = origin.x + dx;
+        state.viewport.y = origin.y + dy;
+        renderViewport();
+      } else if (type === "move") {
+        object.x = origin.x + dx;
+        object.y = origin.y + dy;
+        renderObject(object);
+      } else {
+        const west = corner.includes("w");
+        const north = corner.includes("n");
+        const widthChange = dx * (west ? -1 : 1);
+        const heightChange = dy * (north ? -1 : 1);
+        let width;
+        let height;
+
+        if (event.shiftKey) {
+          width = Math.max(1, origin.width + widthChange);
+          height = Math.max(1, origin.height + heightChange);
+        } else {
+          // Project the dragged corner onto the original diagonal to preserve its ratio.
+          const scale = Math.max(
+            1 / Math.min(origin.width, origin.height),
+            1 + (widthChange * origin.width + heightChange * origin.height) /
+              (origin.width ** 2 + origin.height ** 2)
+          );
+          width = origin.width * scale;
+          height = origin.height * scale;
+        }
+
+        object.width = width;
+        object.height = height;
+        // The opposite corner stays anchored, even at the minimum size of one pixel.
+        object.x = west ? origin.x + origin.width - width : origin.x;
+        object.y = north ? origin.y + origin.height - height : origin.y;
+        renderObject(object);
+      }
+    });
+
+    for (const eventName of ["pointerup", "pointercancel", "lostpointercapture"]) {
+      workspace.addEventListener(eventName, event => {
+        if (interaction?.pointerId === event.pointerId) finishInteraction();
+      });
+    }
+    window.addEventListener("blur", finishInteraction);
+
+    workspace.addEventListener("keydown", event => {
+      if (state.mode !== "edit" || interaction || event.ctrlKey || event.metaKey || event.altKey) return;
+      if (event.target.closest("input, textarea, select, button, [contenteditable]")) return;
+
+      if (event.key === "Escape") {
+        selectObject(null);
+        event.preventDefault();
+        return;
+      }
+
+      const direction = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[event.key];
+      const object = selectedObject();
+      if (!direction || !object) return;
+      event.preventDefault();
+      const step = event.shiftKey ? 10 : 1;
+      object.x += direction[0] * step;
+      object.y += direction[1] * step;
+      renderObject(object);
+    });
+
+    workspace.addEventListener("wheel", event => {
+      if (event.ctrlKey || event.metaKey) return;
+      event.preventDefault();
+      if (interaction) return;
+      const unitX = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? workspace.clientWidth : 1;
+      const unitY = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? workspace.clientHeight : 1;
+      let dx = event.deltaX * unitX;
+      let dy = event.deltaY * unitY;
+      if (event.shiftKey && dx === 0) [dx, dy] = [dy, 0];
+      state.viewport.x -= dx;
+      state.viewport.y -= dy;
+      renderViewport();
+    }, { passive: false });
+
+    function resetDropHighlight() {
+      dragDepth = 0;
+      workspace.classList.remove("is-drop-target");
+    }
+
+    function isFileDrag(event) {
+      return Array.from(event.dataTransfer?.types ?? []).includes("Files");
+    }
+
+    workspace.addEventListener("dragenter", event => {
+      if (!isFileDrag(event)) return;
+      event.preventDefault();
+      dragDepth += 1;
+      workspace.classList.add("is-drop-target");
+    });
+
+    workspace.addEventListener("dragleave", () => {
+      dragDepth = Math.max(0, dragDepth - 1);
+      if (dragDepth === 0) resetDropHighlight();
+    });
+
+    workspace.addEventListener("dragover", event => {
+      if (!isFileDrag(event)) return;
+      event.preventDefault();
+      event.dataTransfer.dropEffect = "copy";
+    });
+
+    workspace.addEventListener("drop", async event => {
+      event.preventDefault();
+      resetDropHighlight();
+      finishInteraction();
+      notice.hidden = true;
+      const file = Array.from(event.dataTransfer?.files ?? []).find(file =>
+        file.type.startsWith("image/") || (!file.type && /\.(png|jpe?g|gif|webp|svg|avif|bmp|ico)$/i.test(file.name))
+      );
+
+      if (!file) {
+        notice.textContent = "Drop an image file, such as a PNG, JPEG, or WebP.";
+        notice.hidden = false;
+        return;
+      }
+
+      const bounds = workspace.getBoundingClientRect();
+      const x = event.clientX - bounds.left - state.viewport.x;
+      const y = event.clientY - bounds.top - state.viewport.y;
+      const image = new Image();
+      const url = URL.createObjectURL(file);
+      image.src = url;
+      image.alt = file.name;
+      image.draggable = false;
+
+      try {
+        await image.decode();
+        if (!image.naturalWidth || !image.naturalHeight) throw new Error("Image has no dimensions");
+        // Fit the image and its corner handles inside the current viewport without upscaling.
+        const view = workspace.getBoundingClientRect();
+        const padding = Math.min(24, view.width / 4, view.height / 4);
+        const scale = Math.min(
+          1,
+          (view.width - padding * 2) / image.naturalWidth,
+          (view.height - padding * 2) / image.naturalHeight
+        );
+        const width = image.naturalWidth * scale;
+        const height = image.naturalHeight * scale;
+        const object = {
+          id: `image-${nextId++}`,
+          image,
+          x: Math.min(Math.max(x + state.viewport.x, padding), view.width - padding - width) - state.viewport.x,
+          y: Math.min(Math.max(y + state.viewport.y, padding), view.height - padding - height) - state.viewport.y,
+          width,
+          height
+        };
+        const element = document.createElement("div");
+        element.className = "image-object";
+        element.dataset.id = object.id;
+        element.append(image);
+        world.insertBefore(element, selection);
+        elements.set(object.id, element);
+        state.objects.push(object);
+        downloadButton.disabled = false;
+        emptyState.hidden = true;
+        renderObject(object);
+        setMode("edit");
+        selectObject(object.id);
+        workspace.focus({ preventScroll: true });
+        announcement.textContent = `${file.name} added and selected. Edit mode.`;
+      } catch {
+        notice.textContent = `Could not open “${file.name}”. Try a PNG, JPEG, or WebP image.`;
+        notice.hidden = false;
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+    });
+
+    // Prevent the browser from navigating to files dropped outside the workspace.
+    document.addEventListener("dragover", event => event.preventDefault());
+    document.addEventListener("drop", event => {
+      event.preventDefault();
+      resetDropHighlight();
+    });
+    document.addEventListener("dragend", resetDropHighlight);
+  </script>
+</body>
+</html>
