@@ -196,7 +196,7 @@ If I were to restart this project I'd try to make progress incrementally by addi
 
 I did study the architecture of our [cache library](https://www.kuniga.me/blog/2026/08/28/cachelib.html) but it was AI (Claude) who found and proposed the improvement after debugging an OOM issue in production. The only motivation to study it was to understand the proposal and why it helped.
 
-Before AI, I used to get so many OOMs during oncall that it was infeasible to go debug them. We typically waited for our auto-scaler to scale horizontally or vertically, but this of course could sweep inefficiencies under the rug. With AI I could fire up an agent to go debug while I dealt with other fires and sometimes it found gems like the one above.
+Before AI, I used to get so many OOMs alerts during oncall that it was infeasible to go debug them. We typically waited for our auto-scaler to scale it, but this of course could sweep inefficiencies under the rug. With AI I could fire up an agent to go debug while I dealt with other fires and sometimes it found gems like the one above.
 
 **Lesson 7.** Take advantage of AI to get to the bottom of (more) things.
 
