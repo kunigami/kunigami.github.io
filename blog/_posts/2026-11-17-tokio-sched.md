@@ -2,7 +2,7 @@
 layout: post
 title: "Tokio: Scheduling"
 tags: [rust]
-vanity: "2026-11-14-tokio-sched"
+vanity: "2026-11-17-tokio-sched"
 excerpt_separator: <!--more-->
 ---
 
