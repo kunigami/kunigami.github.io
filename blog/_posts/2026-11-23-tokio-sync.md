@@ -106,6 +106,11 @@ In our previous [post](https://www.kuniga.me/blog/2026/11/17/tokio-sched.html), 
 
 We didn't propose a solution to that issue because at that time I hadn't heard of `spawn_blocking()`! This is an interesting problem with Q&A learning with AI: we don't know what we don't know, so we need to exercise our curiosity and our critical thinking.
 
+## Related Posts
+
+Similar to how the main Tokio scheduler reminds me of `IOThreadPoolExecutor` in the context of [Folly coroutines](https://www.kuniga.me/blog/2025/06/18/folly-coroutines.html), the synchronous one reminds me of the [CPUThreadPoolExecutor](https://www.kuniga.me/blog/2025/06/07/folly-executors.html).
+
+
 ## References
 
 * [[1]](https://www.kuniga.me/blog/2026/11/17/tokio-sched.html) - NP-Incompleteness: Tokio: Scheduling

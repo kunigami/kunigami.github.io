@@ -201,6 +201,6 @@ In this post we learned more about how Tokio distributes work between threads. I
 
 ## Related Posts
 
-Not surprisingly, Tokio reminds me a lot of [Folly coroutines](https://www.kuniga.me/blog/2025/06/18/folly-coroutines.html) + `CPUThreadPoolExecutor` and `IOThreadPoolExecutor` [executors](https://www.kuniga.me/blog/2025/06/07/folly-executors.html). In Folly coroutines though the scheduling policy is decoupled from the coroutine machinery.
+Not surprisingly, Tokio reminds me a lot of [Folly coroutines](https://www.kuniga.me/blog/2025/06/18/folly-coroutines.html) + [`IOThreadPoolExecutor`](https://www.kuniga.me/blog/2025/06/07/folly-executors.html). In Folly coroutines though the scheduling policy is decoupled from the coroutine machinery.
 
 The LIFO slot optimization to leverage locality is a similar idea to [CPU Caches]({{blog}}/2020/04/24/cpu-cache.html).
