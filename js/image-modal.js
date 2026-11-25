@@ -3,7 +3,7 @@
   if (typeof HTMLDialogElement === 'undefined' ||
       typeof HTMLDialogElement.prototype.showModal !== 'function') return;
 
-  let dialog, image, original, trigger, previousOverflow;
+  let dialog, image, original, trigger, previousOverflow, openedWithKeyboard;
 
   function createDialog() {
     dialog = document.createElement('dialog');
@@ -53,7 +53,11 @@
       document.body.style.overflow = previousOverflow;
       previousOverflow = undefined;
       image.removeAttribute('src');
-      if (trigger && trigger.isConnected) trigger.focus();
+      if (trigger && trigger.isConnected) {
+        // Restore keyboard focus without leaving a ring on mouse-opened images.
+        if (openedWithKeyboard) trigger.focus({ preventScroll: true });
+        else trigger.blur();
+      }
     });
   }
 
@@ -65,6 +69,7 @@
     event.preventDefault();
     if (!dialog) createDialog();
     trigger = link;
+    openedWithKeyboard = event.detail === 0;
     image.alt = link.querySelector('img').alt;
     image.src = link.href;
     original.href = link.href;
