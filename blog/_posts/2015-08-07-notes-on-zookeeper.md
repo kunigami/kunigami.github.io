@@ -4,7 +4,7 @@ title: "Notes on Zookeeper"
 tags: [distributed systems]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://www.mapr.com/sites/default/files/zookeeper-image.png"><img src="{{site.url}}/resources/blog/2015-08-07-notes-on-zookeeper/2016_07_zookeeper-logo.png" alt="zookeeper-logo" /></a>
 </figure>
 

@@ -4,7 +4,7 @@ title: "Javascript Prototyping"
 tags: [javascript]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="http://kunigami.files.wordpress.com/3333/05/javascript-logo.png"><img src="{{site.url}}/resources/blog/2014-05-18-javascript-prototyping/3333_05_javascript-logo.png" alt="JavaScript-logo" /></a>
 </figure>
 

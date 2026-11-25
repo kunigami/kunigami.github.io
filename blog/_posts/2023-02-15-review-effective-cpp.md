@@ -8,7 +8,7 @@ vanity: "2023-02-15-review-effective-cpp"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/book_cover.jpg" alt="Effective C++ book cover" />
 </figure>
 

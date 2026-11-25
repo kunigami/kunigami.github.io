@@ -8,7 +8,7 @@ vanity: "2024-12-02-centralizing-thoughts"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/bulb.svg" alt="Image of a blend of lightbulb and a ink pen." />
 </figure>
 

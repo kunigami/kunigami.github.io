@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 
 <div class="headline">
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/thumbnail.png" alt="Abstract rendition of a multi-valued function" />
 </figure>
 

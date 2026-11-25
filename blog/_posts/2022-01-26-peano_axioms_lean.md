@@ -9,7 +9,7 @@ vanity: "2022-01-26-peano_axioms_lean"
 {% include blog_vars.html %}
 
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://commons.wikimedia.org/wiki/File:Giuseppe_Peano.jpg">
         <img src="{{resources_path}}/peano.jpeg" alt="Giuseppe Peano thumbnail" />
     </a>

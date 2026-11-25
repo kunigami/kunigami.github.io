@@ -8,7 +8,7 @@ vanity: "2026-04-05-book-complex-analysis"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources}}/books/alfhors.png" alt="Book cover." />
 </figure>
 

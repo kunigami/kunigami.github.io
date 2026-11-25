@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/perron.png" alt="Portrait of Oskar Perron. AI Generated." />
 </figure>
 

@@ -4,7 +4,7 @@ title: "An Introduction to Matroids"
 tags: [combinatorial optimization, combinatorics, integer programming, linear algebra]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="http://sunsite.berkeley.edu/uchistory/archives_exhibits/in_memoriam/catalog/lawler_eugene.html"><img src="{{site.url}}/resources/blog/2013-11-11-lawler-and-an-introduction-to-matroids/3013_10_lawler.png" alt="lawler" /></a>
 </figure>
 

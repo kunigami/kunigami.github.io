@@ -8,7 +8,7 @@ vanity: "2022-10-25-review-effective-modern-cpp"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/book_cover.jpg" alt="Effective Modern C++ book cover" />
 </figure>
 

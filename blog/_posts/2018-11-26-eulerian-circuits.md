@@ -4,7 +4,7 @@ title: "Eulerian Circuits"
 tags: [combinatorial optimization, computational complexity, graph theory, javascript]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2018-11-26-eulerian-circuits/2018_11_111px-leonhard_euler.jpg" alt="111px-Leonhard_Euler" />
 </figure>
 

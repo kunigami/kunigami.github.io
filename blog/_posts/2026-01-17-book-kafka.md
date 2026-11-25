@@ -8,7 +8,7 @@ vanity: "2026-01-17-book-kafka"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources}}/books/kafka.jpg" alt="Book cover." />
 </figure>
 

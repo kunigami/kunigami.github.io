@@ -8,7 +8,7 @@ vanity: "2010-08-13-dijkstra-and-the-longest-path"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/dijkstra.png" alt="Thumbnail of Dijkstra" />
 </figure>
 

@@ -5,7 +5,7 @@ description: "First impressions on the Observable platform"
 tags: [data visualization, javascript, observable]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2020-01-04-observable/2020_01_logo.png" alt="logo" />
 </figure>
 

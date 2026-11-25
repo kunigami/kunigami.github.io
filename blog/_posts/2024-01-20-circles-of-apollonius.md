@@ -8,7 +8,7 @@ vanity: "2024-01-20-circle-of-apollonius"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/apollonian.png" alt="a bunch of lines and circles abstract art" />
 </figure>
 

@@ -4,7 +4,7 @@ title: "Constructing Trees from a Distance Matrix"
 tags: [bioinformatics, evolutionary biology, graph theory]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2019-05-10-constructing-trees-from-a-distance-matrix/2019_05_dawkins.jpg" alt="dawkins" />
 </figure>
 

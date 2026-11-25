@@ -4,7 +4,7 @@ title: "Amortization and Persistence via Lazy Evaluation"
 tags: [data structures, ocaml]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://kunigami.files.wordpress.com/2344/07/cover.jpg"><img src="{{site.url}}/resources/blog/2017-03-19-amortization-and-persistence-via-lazy-evaluation/2344_07_cover.jpg" alt="" /></a>
 </figure>
 

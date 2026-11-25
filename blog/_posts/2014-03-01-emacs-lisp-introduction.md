@@ -4,7 +4,7 @@ title: "Emacs Lisp Introduction"
 tags: [emacs, lisp]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="http://kunigami.files.wordpress.com/4444/02/stallman.png"><img src="{{site.url}}/resources/blog/2014-03-01-emacs-lisp-introduction/4444_02_stallman.png" alt="stallman" /></a>
 </figure>
 

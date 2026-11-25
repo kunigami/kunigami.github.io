@@ -8,7 +8,7 @@ vanity: "2025-06-07-folly-executors"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_shared}}/folly-logo.svg" alt="Folly Logo" />
 </figure>
 

@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/wp.jpeg" alt="CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1196795" />
 </figure>
 

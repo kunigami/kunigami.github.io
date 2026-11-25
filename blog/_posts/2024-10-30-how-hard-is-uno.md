@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 
 <div class="headline">
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/uno-logo.svg" alt="SVG of the Uno logo" />
 </figure>
 

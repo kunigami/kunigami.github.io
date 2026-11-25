@@ -4,7 +4,7 @@ title: "Introduction to d3.js"
 tags: [d3.js, data visualization, javascript]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://kunigami.files.wordpress.com/4102/07/mike-bostock.jpeg"><img src="{{site.url}}/resources/blog/2014-08-25-introduction-to-d3.js/4102_07_mike-bostock.jpeg" alt="mike-bostock" /></a>
 </figure>
 

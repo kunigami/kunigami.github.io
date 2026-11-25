@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/human-coder.png" alt="Human writing code via a computer. Generated with Nano Banana. I don't mind using AI to generate thumbnails for me." />
 </figure>
 

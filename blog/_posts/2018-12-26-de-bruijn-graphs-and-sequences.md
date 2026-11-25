@@ -6,7 +6,7 @@ tags: [bioinformatics, c++, combinatorics, graph theory]
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://www.bookofproofs.org/history/nicolaas-govert-de-bruijn/"><img src="{{site.url}}/resources/blog/2018-12-26-de-bruijn-graphs-and-sequences/2018_12_De_Bruijn.jpeg" alt="De_Bruijn" /></a>
 </figure>
 
@@ -16,7 +16,7 @@ tags: [bioinformatics, c++, combinatorics, graph theory]
 <br />
 <br />
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://en.wikipedia.org/wiki/I._J._Good"><img src="{{site.url}}/resources/blog/2018-12-26-de-bruijn-graphs-and-sequences/2018_12_I._J._Good.jpg" alt="I._J._Good" /></a>
 </figure>
 

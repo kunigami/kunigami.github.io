@@ -6,7 +6,7 @@ tags: [haskell]
 
 ### Introduction
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://kunigami.files.wordpress.com/9999/04/bookcover.jpg"><img src="{{site.url}}/resources/blog/2015-05-14-haskell-concurrent-programming/9999_04_bookcover.jpg" alt="bookcover" /></a>
 </figure>
 

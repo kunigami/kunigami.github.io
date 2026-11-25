@@ -8,7 +8,7 @@ vanity: "2025-12-15-book-bpf-performance-tools"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources}}/books/bpf.jpg" alt="Book cover." />
 </figure>
 

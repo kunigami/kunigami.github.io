@@ -9,7 +9,7 @@ vanity: "2025-10-10-review-systems-performance"
 {% include blog_vars.html %}
 
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources}}/books/systems-performance.jpg" alt="Book cover." />
 </figure>
 

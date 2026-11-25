@@ -8,7 +8,7 @@ vanity: "2025-08-24-horseshoe-theory"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/horseshoe.png" alt="A horseshoe" />
 </figure>
 

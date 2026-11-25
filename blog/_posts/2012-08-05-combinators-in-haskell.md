@@ -8,7 +8,7 @@ vanity: "2012-08-05-combinators-in-haskell"
 ---
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://en.wikipedia.org/wiki/Paul_Graham_(programmer)#/media/File:Paulgraham_240x320.jpg">
         <img src="{{resources_path}}/paul-graham.jpeg" alt="Paul Graham Profile" />
     </a>

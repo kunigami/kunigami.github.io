@@ -8,7 +8,7 @@ vanity: "2026-07-23-velox-udfs"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_shared}}/velox-logo.svg" alt="Velox Logo" />
 </figure>
 

@@ -7,7 +7,7 @@ title: Guilherme Kunigami
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources}}/gk.png" alt="Profile" />
 </figure>
 

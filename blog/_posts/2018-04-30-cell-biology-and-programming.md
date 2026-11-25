@@ -4,7 +4,7 @@ title: "Cell biology and Programming"
 tags: [bioinformatics, genetics]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2018-04-30-cell-biology-and-programming/2018_04_rosalind.png" alt="rosalind" />
 </figure>
 
