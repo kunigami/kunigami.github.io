@@ -86,12 +86,14 @@ Same for `/amuseum/`.
 
 ## Expandable images
 
-Use this include in a post with separate thumbnail and full-size image paths:
+Use this include in a post with separate thumbnail and full-size image filenames.
+Both are resolved under `resources_path`, defined by `{% include blog_vars.html %}`
+as `{{ site.url }}/resources/blog/{{ page.vanity }}`:
 
 ```liquid
 {% include image-modal.html
-   thumbnail="/resources/blog/my-post/thumbnail.png"
-   full="/resources/blog/my-post/full.png"
+   thumbnail="thumbnail.png"
+   full="full.png"
    alt="Description of the image"
    caption="Optional caption" %}
 ```

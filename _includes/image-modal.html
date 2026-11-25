@@ -1,6 +1,6 @@
 <figure class="image-preview">
-  <a class="image-preview__link" href="{{ include.full | relative_url | escape }}" data-image-modal aria-haspopup="dialog" aria-label="{{ include.alt | default: 'Image' | prepend: 'Enlarge: ' | escape }}">
-    <img src="{{ include.thumbnail | relative_url | escape }}" alt="{{ include.alt | default: '' | escape }}" loading="lazy" decoding="async">
+  <a class="image-preview__link" href="{{ resources_path | append: '/' | append: include.full | escape }}" data-image-modal aria-haspopup="dialog" aria-label="{{ include.alt | default: 'Image' | prepend: 'Enlarge: ' | escape }}">
+    <img src="{{ resources_path | append: '/' | append: include.thumbnail | escape }}" alt="{{ include.alt | default: '' | escape }}" loading="lazy" decoding="async">
   </a>
   {% if include.caption %}<figcaption>{{ include.caption | escape }}</figcaption>{% endif %}
 </figure>
