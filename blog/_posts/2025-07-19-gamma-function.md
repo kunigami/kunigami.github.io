@@ -8,7 +8,7 @@ vanity: "2025-07-19-gamma-function"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/gamma-func.svg" alt="3D plot of the absolute value of the gamma function" />
 </figure>
 

@@ -4,7 +4,7 @@ title: "Consistent Hashing"
 tags: [data structures, distributed systems, rust]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2019-04-12-consistent-hashing/2019_03_lewin-leighton.png" alt="lewin-leighton" />
 </figure>
 

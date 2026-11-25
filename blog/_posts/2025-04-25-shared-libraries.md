@@ -8,7 +8,7 @@ vanity: "2025-04-25-shared-libraries"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/thumbnail.png" alt="Image of an library, AI-generated using anime style" />
 </figure>
 

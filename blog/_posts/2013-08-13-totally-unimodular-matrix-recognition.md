@@ -7,7 +7,7 @@ vanity: "2013-08-13-totally-unimodular-matrix-recognition"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="http://kunigami.files.wordpress.com/2111/08/seymour.png"><img src="{{resources_path}}/seymour.png" alt="" /></a>
 </figure>
 

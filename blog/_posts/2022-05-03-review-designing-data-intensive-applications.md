@@ -8,7 +8,7 @@ vanity: "2022-05-03-review-designing-data-intensive-applications"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/ddia.jpeg" alt="Designing Data Intensive Applications book cover" />
 </figure>
 

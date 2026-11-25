@@ -4,7 +4,7 @@ title: "Aho-Corasick"
 tags: [data structures, python]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2019-11-09-aho-corasick/2019_11_ahopic.jpg" alt="AhoPic" />
 </figure>Alfred Aho is a Canadian computer scientist. He is famous for the book Principles of Compiler Design co-authored with Jeffrey Ullman. Aho also developed a number of utilities for UNIX which has widespread usage, including the AWK programming language (acronym for Aho, Weinberger and Kernigham) and variants of grep.
 

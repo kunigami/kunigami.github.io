@@ -9,7 +9,7 @@ vanity: "2022-04-16-euclidean-algorithm-in-lean"
 {% include blog_vars.html %}
 
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://commons.wikimedia.org/wiki/File:Portrait_of_Euclid_Wellcome_L0019815.jpg">
         <img src="{{resources_path}}/euclid.jpeg" alt="Euclid thumbnail" />
     </a>

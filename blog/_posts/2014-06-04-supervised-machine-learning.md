@@ -4,7 +4,7 @@ title: "Supervised Machine Learning"
 tags: [artificial intelligence, calculus, combinatorial optimization, coursera]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="http://kunigami.files.wordpress.com/3333/05/andrew-ng.jpg"><img src="{{site.url}}/resources/blog/2014-06-04-supervised-machine-learning/3333_05_andrew-ng.jpg" alt="TIME Summit On Higher Education" /></a>
 </figure>
 [Andrew Ng](http://en.wikipedia.org/wiki/Andrew_Ng) is a Computer Science professor at Stanford. He is also one of the co-founders of the Coursera platform. Andrew recently joined the Chinese company [Baidu](http://en.wikipedia.org/wiki/Baidu) as a chief scientist.

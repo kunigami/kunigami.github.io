@@ -67,7 +67,10 @@ class SubscribeTest(unittest.TestCase):
         )
         self.ses.send_email.assert_called_once()
         message = self.ses.send_email.call_args.kwargs
-        self.assertEqual(message["FromEmailAddress"], "newsletter@kuniga.me")
+        self.assertEqual(
+            message["FromEmailAddress"],
+            "NP-Incompleteness <newsletter@kuniga.me>",
+        )
         self.assertEqual(
             message["Destination"], {"ToAddresses": ["reader+blog@example.com"]}
         )

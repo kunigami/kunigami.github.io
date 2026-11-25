@@ -4,7 +4,7 @@ title: "Haskell Profiling and Optimization"
 tags: [haskell, puzzle]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://kunigami.files.wordpress.com/4444/09/spoj-fb.jpg"><img src="{{site.url}}/resources/blog/2014-10-08-haskell-profiling-and-optimization/4444_09_spoj-fb.jpg" alt="spoj-fb" /></a>
 </figure>
 I've been practicing my Haskell skills by solving programming challenges. During my ACM-ICPC competitor days, I used to practice a lot on SPOJ. The good thing about SPOJ is that it accepts submissions in many many languages (most other sites are limited to C, C++, Pascal and Java).

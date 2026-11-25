@@ -9,7 +9,7 @@ vanity: "2025-03-22-review-llvm-core-libs"
 {% include blog_vars.html %}
 
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources}}/books/the-hard-parts.jpg" alt="Book cover." />
 </figure>
 

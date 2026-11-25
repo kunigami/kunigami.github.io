@@ -83,3 +83,21 @@ Same for `/amuseum/`.
 ## Plugins
 
 * RSS Feed: `jekyll-feed`
+
+## Expandable images
+
+Use this include in a post with separate thumbnail and full-size image paths:
+
+```liquid
+{% include image-modal.html
+   thumbnail="/resources/blog/my-post/thumbnail.png"
+   full="/resources/blog/my-post/full.png"
+   alt="Description of the image"
+   caption="Optional caption" %}
+```
+
+The thumbnail links to the original image without JavaScript. With JavaScript, it
+opens a keyboard-accessible modal. Close with Escape, the × button, or a click
+outside the dialog. The full-resolution image fits within the viewport; use
+“Open image in new tab” for the browser's native image view in a new tab. The full image loads
+only when opened. Multiple includes can share a page.

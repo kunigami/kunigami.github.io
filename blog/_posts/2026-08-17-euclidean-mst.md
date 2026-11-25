@@ -8,7 +8,7 @@ vanity: "2026-08-17-euclidean-mst"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/mst-logo.png" alt="MST Logo." />
 </figure>
 

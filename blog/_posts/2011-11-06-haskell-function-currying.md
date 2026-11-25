@@ -8,7 +8,7 @@ vanity: "2011-11-06-haskell-function-currying"
 ---
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{resources_path}}/haskell-curry.jpeg" alt="Haskell Curry"/>
 </figure>
 

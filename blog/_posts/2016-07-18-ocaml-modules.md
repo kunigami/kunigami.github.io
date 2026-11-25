@@ -4,7 +4,7 @@ title: "OCaml Modules"
 tags: [ocaml]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2016-07-18-ocaml-modules/8888_06_camel.gif" alt="camel" />
 </figure>
 

@@ -6,7 +6,7 @@ vanity: "2011-05-01-google-summer-of-code-2011"
 ---
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/brl-cad_logo.png" alt="BRL-CAD Logo" />
 </figure>
 
@@ -48,7 +48,7 @@ Where do shaders fit into this story? We have seen that shaders define material 
 
 Currently BRL-CAD shaders are implemented in C and compiled as dynamic libraries. The ray tracer dynamically loads the libraries that will be needed to render the scene. The main idea of ​​my proposal is to implement a new shader system that allows the use of shaders written in [OSL](http://opensource.imageworks.com/osl.html).
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/osl.jpeg" alt="BRL-CAD Logo" />
 </figure>
 

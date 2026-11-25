@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/jacobi.png" alt="https://en.wikipedia.org/wiki/Jacobi_elliptic_functions" />
 </figure>
 

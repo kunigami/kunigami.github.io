@@ -70,7 +70,7 @@ def lambda_handler(event, context):
     )
 
     ses.send_email(
-        FromEmailAddress="newsletter@kuniga.me",
+        FromEmailAddress="NP-Incompleteness <newsletter@kuniga.me>",
         Destination={
             "ToAddresses": [email],
         },

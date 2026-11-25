@@ -34,7 +34,7 @@ We'll now cover three popular secondary authentication mechanisms: SMS (text mes
 
 ## SMS
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://pixabay.com/en/text-mobile-chat-sms-980031/"><img src="{{site.url}}/resources/blog/2018-10-01-two-factor-authentication/2018_09_sms1.jpg" alt="sms" /></a>
 </figure>
 
@@ -51,7 +51,7 @@ This system has a vulnerability because a hacked carrier could be used to interc
 
 ## App Authentication
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2018-10-01-two-factor-authentication/2018_09_google_auth.png" alt="google_auth" />
 </figure> Another authentication method is to install a third-party app that can be used to generated the authentication codes. One popular option is the Google Authenticator App, which you can install on your phone (Android or iOS).
 
@@ -63,7 +63,7 @@ The precision of the timestamp defines on how much time the user has to copy and
 
 ## Hardware Authentication
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://www.yubico.com/product/yubikey-4-series/"><img src="{{site.url}}/resources/blog/2018-10-01-two-factor-authentication/2018_09_yubikey.png" alt="yubikey" /></a>
 </figure>
 

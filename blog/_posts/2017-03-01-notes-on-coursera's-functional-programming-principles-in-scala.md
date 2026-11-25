@@ -4,7 +4,7 @@ title: "Notes on Coursera's Functional Programming Principles in Scala"
 tags: [scala]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2017-03-01-notes-on-coursera's-functional-programming-principles-in-scala/2017_02_martin.png" alt="martin" />
 </figure>
 

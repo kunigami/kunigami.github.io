@@ -7,7 +7,7 @@ vanity: "2017-09-01-numerical-representations-as-inspiration-for-data-structures
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{resources_path}}/2344_07_cover.jpg" alt="Book" />
 </figure>
 

@@ -4,7 +4,7 @@ title: "Writing JavaScript using OCaml"
 tags: [javascript, ocaml]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://bucklescript.github.io/en/"><img src="{{site.url}}/resources/blog/2018-06-24-writing-javascript-using-ocaml/2018_06_output.png" alt="output" /></a>
 </figure>
 

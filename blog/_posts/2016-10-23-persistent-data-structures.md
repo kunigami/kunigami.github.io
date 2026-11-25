@@ -4,7 +4,7 @@ title: "Persistent Data Structures"
 tags: [data structures, ocaml]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2016-10-23-persistent-data-structures/2344_07_cover.jpg" alt="Book" />
 </figure>
 

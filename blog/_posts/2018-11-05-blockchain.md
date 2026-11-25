@@ -8,7 +8,7 @@ Blockchain has become a very popular technology recently due to the spread of Bi
 
 ### Motivation
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2018-11-05-blockchain/2018_11_bitcoin.png" alt="bitcoin" />
 </figure>
 Blockchain is a distributed data structure that can be used to implement a **distributed ledger** system. A distributed ledger orchestrates important operations (for example financial transactions) without the need of a centralized arbiter (such as a financial institution).

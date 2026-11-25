@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://en.wikipedia.org/wiki/Pietro_Mengoli#/media/File:Pietro_Mengoli.gif">
         <img src="{{resources_path}}/mengoli.png" alt="Pietro Mengoli thumbnail" />
     </a>

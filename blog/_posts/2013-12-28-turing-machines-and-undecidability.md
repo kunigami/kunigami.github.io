@@ -4,7 +4,7 @@ title: "Turing Machines and Undecidability"
 tags: [computational complexity]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="http://kunigami.files.wordpress.com/4444/12/ullman.jpg"><img src="{{site.url}}/resources/blog/2013-12-28-turing-machines-and-undecidability/4444_12_ullman.jpg" alt="ullman" /></a>
 </figure>
 

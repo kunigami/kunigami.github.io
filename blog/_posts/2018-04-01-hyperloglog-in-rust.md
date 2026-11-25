@@ -8,7 +8,7 @@ In this post we'll study the hyper log log algorithm and provide an implementati
 
 ## Introduction
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2018-04-01-hyperloglog-in-rust/2018_03_frajollet.png" alt="frajollet" />
 </figure>
 

@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/complex-system.png" alt="AI-generated image of a complex system" />
 </figure>
 

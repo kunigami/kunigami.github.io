@@ -14,7 +14,7 @@ We'll discuss libraries that solves different needs for software projects includ
 
 ### Packages/Libraries
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://kunigami.files.wordpress.com/4444/09/npm-logo.png"><img src="{{site.url}}/resources/blog/2016-02-15-developing-a-project-in-javascript/4444_09_npm-logo.png" alt="npm-logo" /></a>
 </figure>
 

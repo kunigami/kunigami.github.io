@@ -4,7 +4,7 @@ title: "DNA Sequencing"
 tags: [bioinformatics, genetics]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2018-09-04-dna-sequencing/2018_09_frederick-sanger.jpg" alt="Frederick-Sanger" />
     <figcaption> Frederick Sanger. <a href="https://en.wikipedia.org/wiki/File:Frederick_Sanger2.jpg">Wikipedia</a></figcaption>
 </figure>

@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/human-coder.png" alt="Human writing code via a computer. Generated with Nano Banana. I don't mind using AI to generate thumbnails for me." />
 </figure>
 
@@ -51,6 +51,10 @@ I've been relying more and more on AI for learning, instead of reading textbooks
 AI is very useful for digging into details on demand too. I might not care about details of a specific topic but want to keep asking for details on others. Printed books often cannot provide such a tailored experience. AI makes it easier to follow my curiosity. If I had to buy textbooks or spend hours researching, I'd just not do it.
 
 The one concern with using AI is that some say that true learning only comes with struggle. If AI makes it too easy to digest things, am I learning optimally? Writing posts explaining stuff (even if no one reads it!) is even more important now, because it tests my understanding and keeps me honest, but I don't know if it's enough.
+
+Terence Tao says in his book *An Introduction to Measure Theory*:
+
+> The process of actually drawing the picture is at least as instructive as the picture itself.
 
 ## Principles
 

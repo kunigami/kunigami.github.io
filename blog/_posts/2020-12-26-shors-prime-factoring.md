@@ -9,7 +9,7 @@ description: "Shor's Prime Factoring Algorithm"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{resources_path}}/peter-shor.png" alt="Peter Shor thumbnail" />
 </figure>
 

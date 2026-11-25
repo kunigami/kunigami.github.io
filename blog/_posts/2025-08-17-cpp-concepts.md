@@ -8,7 +8,7 @@ vanity: "2025-08-17-cpp-concepts"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_shared}}/cpp-logo.svg" alt="C++ Logo" />
 </figure>
 

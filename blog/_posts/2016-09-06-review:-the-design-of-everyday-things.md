@@ -4,7 +4,7 @@ title: "[Book] The Design of Everyday Things"
 tags: [human-computer interaction, review]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2016-09-06-review:-the-design-of-everyday-things/2222_09_don-norman.jpg" alt="don-norman" />
 </figure>
 

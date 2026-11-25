@@ -8,7 +8,7 @@ vanity: "2026-06-20-delaunay-triangulation"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/delaunay.png" alt="Delaunay triangulation." />
 </figure>
 

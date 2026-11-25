@@ -4,7 +4,7 @@ title: "Von Neumann Architecture"
 tags: [computer architecture]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2019-06-10-von-neumann-architecture/2019_06_220px-johnvonneumann-losalamos.gif" alt="220px-JohnvonNeumann-LosAlamos" />
 </figure>
 

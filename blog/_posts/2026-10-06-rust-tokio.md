@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_shared}}/tokio.svg" alt="Tokio logo" />
 </figure>
 
@@ -501,6 +501,8 @@ In this post we learned a bit about how Tokio operates at a high level, focusing
 We covered two pitfalls: assuming `join!` will lead to parallelism and sandwiching non-async code between async ones.
 
 We also wrote a new future type from scratch to get a better understanding of what happens at the "leaves" of the async call graph.
+
+One thing I hadn't realized was how local variables are written in the stack frame and that the compiler knows how big a stack frame is at compile time, so when it calls other functions recursively and needs to "restore the state", there's really no copies involved. This is not specific to Rust, it's true for C++ as well, assuming the function wasn't optimized by the compiler.
 
 ## Related posts
 

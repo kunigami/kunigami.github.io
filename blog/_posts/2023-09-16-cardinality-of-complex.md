@@ -8,7 +8,7 @@ vanity: "2023-09-16-cardinality-of-complex"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/cardinals.png" alt="image generated: two cardinal in front of a mass of people inside a cathedral" />
 </figure>
 

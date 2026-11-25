@@ -458,12 +458,12 @@ div.headline {
   overflow: hidden;
 }
 
-.image_float_left {
+.thumbnail_left {
   float: left;
   margin-right: 20px;
 }
 
-.image_float_left img {
+.thumbnail_left img {
   width: 100px;
 }
 
@@ -631,7 +631,7 @@ proof, nonproof {
     margin: 25px 0 50px 0;
   }
 
-  .image_float_left img {
+  .thumbnail_left img {
     width: 250px;
   }
 

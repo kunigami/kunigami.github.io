@@ -8,7 +8,7 @@ vanity: "2026-04-28-book-flink"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources}}/books/flink.jpg" alt="Book cover." />
 </figure>
 

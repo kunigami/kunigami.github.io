@@ -4,7 +4,7 @@ title: "An Introduction to Agda"
 tags: [agda, artificial intelligence, emacs, haskell]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="http://kunigami.files.wordpress.com/2031/10/martin-lof.png"><img src="{{site.url}}/resources/blog/2013-10-30-an-introduction-to-agda/2031_10_martin-lof.png" alt="Martin-Lof" /></a>
 </figure>
 

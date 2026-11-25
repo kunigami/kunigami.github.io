@@ -4,7 +4,7 @@ title: "The Paxos Protocol"
 tags: [distributed systems]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="http://kunigami.files.wordpress.com/2016/03/lamport.png"><img src="{{site.url}}/resources/blog/2014-04-14-the-paxos-protocol/2016_03_lamport.png" alt="lamport" /></a>
 </figure>
 

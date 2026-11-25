@@ -8,7 +8,7 @@ vanity: "2023-08-05-review-thinking-in-systems"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/tis.jpg" alt="Thinking In Systems book cover" />
 </figure>
 

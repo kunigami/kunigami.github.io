@@ -8,7 +8,7 @@ vanity: "2022-07-26-review-streaming-systems"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/strsys.jpeg" alt="Streaming Systems book cover" />
 </figure>
 

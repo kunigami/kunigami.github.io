@@ -1,0 +1,44 @@
+.image-preview { margin: 1.5em 0; text-align: center; }
+.image-preview__link { display: inline-block; max-width: 100%; cursor: zoom-in; }
+#page .image-preview img, .image-preview img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+.image-preview figcaption { margin-top: .5em; }
+.image-preview__link:focus-visible { outline: 3px solid #358497; outline-offset: 4px; }
+.image-modal {
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 96vw;
+  max-height: 94vh;
+  padding: 12px;
+  border: 0;
+  border-radius: 6px;
+  background: #fff;
+  color: #222;
+  overflow: auto;
+}
+.image-modal::backdrop { background: rgba(0, 0, 0, .8); }
+.image-modal__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+.image-modal__controls a { color: #176577; }
+.image-modal__controls button { padding: 6px 12px; font: inherit; cursor: pointer; }
+.image-modal .image-modal__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 78vh;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  object-fit: contain;
+}

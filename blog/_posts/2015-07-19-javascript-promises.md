@@ -4,7 +4,7 @@ title: "JavaScript Promises"
 tags: [javascript]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://kunigami.files.wordpress.com/3333/06/logo.png"><img src="{{site.url}}/resources/blog/2015-07-19-javascript-promises/3333_06_logo.png" alt="logo" /></a>
 </figure>
 

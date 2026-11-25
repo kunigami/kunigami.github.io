@@ -11,7 +11,7 @@ tweet: "We describe an algorithm to compute most likely states given observation
 {% include blog_vars.html %}
 
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://en.wikipedia.org/wiki/File:10-08ViterbiBIG.jpg">
         <img src="{{resources_path}}/viterbi-profile.png" alt="Andrew Viterbi thumbnail" />
     </a>

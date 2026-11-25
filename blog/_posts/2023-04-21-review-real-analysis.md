@@ -8,7 +8,7 @@ vanity: "2023-04-21-review-real-analysis"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/real_analysis.jpg" alt="Effective C++ book cover" />
 </figure>
 

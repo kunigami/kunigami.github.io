@@ -206,8 +206,6 @@ In 1881 British entrepreneurs obtained agreements from the sultan of Sulu and fo
 
 In 1884 Sandakan became the capital. The company encouraged plantations of tobacco and rubber.
 
-In 1942 Japan occupied Borneo and occupied Sandakan. Many prisoners of war were sent there. About 2400 prisoners were forced to march from there and all but 6 survived because they fled, which are now known as the Sandakan Death Marches.
-
 During the war Sandakan was destroyed and instead of reconstructing it the British moved the capital to Kota Kinabalu.
 
 The company did not have the means to reconstruct and administer Sabah so it transferred its assets to the British crown in 1946.
@@ -219,6 +217,18 @@ Brooke helped the Brunei representative stop the rebellion and in return he was 
 He became known as the white Rajah. His dynasty expanded the territory of Sarawak at the expense of Brunei including the Limbang district which is why Brunei is geographically separated into two today.
 
 In 1888 Sarawak became a British protectorate. Similar to Sabah, after the Japanese occupation of Borneo ended in 1945, the Brooke family decided to transfer control to Britain so in 1946 it became a crown colony.
+
+## Japanese Occupation (1941-1945)
+
+Japanese troops landed in Thailand in December 8th 1941 and started heading south. In December 10 and 11 Japanese aircrafts bombed Penang, and the British withdrew in the 16th. By the 19th the land troops reached Penang. By 11 January 1942 they reached Kuala Lumpur and in 8 February Singapore. The main objective of the Japanese was to capture Singapore since it was Britain's main naval base in Southeast Asia.
+
+A different front had reached Borneo in December 1941. The Japanese landed in several cities in Sarawah, Brunei and Sabah. Japan's main interest in Borneo was oil.
+
+Japan's occupation led to food shortage due to supply chain disruption, especially of rice. Ethnic Chinese were targered because of the war with China.
+
+Many prisoners of war were sent to Sandakan in Sabah. About 2,400 prisoners of war were forced to march from there and all but 6 survived because they fled, which are now known as the Sandakan Death Marches.
+
+Japan surrendered to the Allies in August 1945. After this, Japan started surrendering on its occupied territories. They formally surrendered at Labuan, Borneo on 10 September 1945, and the regional surrender in Singapore followed on 12 September.
 
 ## Unions
 

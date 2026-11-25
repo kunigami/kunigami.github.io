@@ -8,7 +8,7 @@ vanity: "2026-09-11-memory-reclaim"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_shared}}/tux.svg" alt="Tux mascot" height="100"  />
 </figure>
 

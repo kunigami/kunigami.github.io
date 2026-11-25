@@ -15,7 +15,7 @@ Note: we'll use box and rectangle interchangeably in this post.
 **History**
 
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2018-01-20-css-layout/2018_01_hakon.png" alt="hakon" />
 </figure>
 

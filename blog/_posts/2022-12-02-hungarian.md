@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 {% include blog_vars.html %}
 
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://en.wikipedia.org/wiki/File:Harold_W._Kuhn.jpg">
         <img src="{{resources_path}}/kuhn.jpg" alt="Harold W. Kuhn thumbnail" />
     </a>

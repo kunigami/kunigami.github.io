@@ -8,7 +8,7 @@ vanity: "2024-02-03-circles-symmetry"
 
 {% include blog_vars.html %}
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
   <img src="{{resources_path}}/thumbnail.png" alt="a bunch of lines and circles abstract art" />
 </figure>
 

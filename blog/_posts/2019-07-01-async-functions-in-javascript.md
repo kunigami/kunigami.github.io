@@ -4,7 +4,7 @@ title: "Async Functions in JavaScript"
 tags: [javascript]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <img src="{{site.url}}/resources/blog/2019-07-01-async-functions-in-javascript/2019_06_js.png" alt="js" />
 </figure>
 

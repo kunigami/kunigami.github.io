@@ -4,7 +4,7 @@ title: "Introduction to the R language for programmers"
 tags: [r]
 ---
 
-<figure class="image_float_left">
+<figure class="thumbnail_left">
     <a href="https://kunigami.files.wordpress.com/3014/11/r-logo.png"><img src="{{site.url}}/resources/blog/2014-12-30-introduction-to-the-r-language-for-programmers/3014_11_r-logo.png" alt="r-logo" /></a>
 </figure>
 
